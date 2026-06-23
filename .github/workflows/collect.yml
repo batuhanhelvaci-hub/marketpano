@@ -3,9 +3,9 @@ name: Veri Topla
 # Bu dosya GitHub'a her gun otomatik veri cektirir.
 on:
   schedule:
-    # Her gun saat 06:00 UTC'de calisir (Turkiye saati ~09:00).
+    # Her gun saat 09:00 UTC'de calisir = Turkiye saati 12:00 (UTC+3).
     # Saati degistirmek istersen: https://crontab.guru
-    - cron: '0 6 * * *'
+    - cron: '0 9 * * *'
   # Bu satir sayesinde GitHub'da "Run workflow" butonuyla elle de tetikleyebilirsin.
   workflow_dispatch:
 
