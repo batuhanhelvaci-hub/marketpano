@@ -1,0 +1,975 @@
+{
+  "generated_at": "2026-06-23T12:14:57.558617+00:00",
+  "exchanges": [
+    "Binance",
+    "OKX",
+    "Bybit",
+    "MEXC",
+    "Bitget",
+    "Gate",
+    "KuCoin",
+    "Coinbase"
+  ],
+  "assets": [
+    {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "rank": 1,
+      "market_cap_usd": 253820564232.67535,
+      "global_volume_24h_usd": 24667697353.87061,
+      "price_usd": 83591.10209007341,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 741966681.8284461,
+          "spot_usdc": 72974516.53213501,
+          "perp_volume_usd": 631369017.5600014,
+          "open_interest_usd": 95117816.15128858
+        },
+        "OKX": {
+          "spot_usdt": 554997241.3047602,
+          "spot_usdc": 68943668.76076785,
+          "perp_volume_usd": 169713951.90519312,
+          "open_interest_usd": 133980525.9232104
+        },
+        "Bybit": {
+          "spot_usdt": 444613456.81391925,
+          "spot_usdc": 53595387.98824704,
+          "perp_volume_usd": 654571683.2020427,
+          "open_interest_usd": 120064606.18703589
+        },
+        "MEXC": {
+          "spot_usdt": 731125094.6480718,
+          "spot_usdc": 27048122.137016263,
+          "perp_volume_usd": 689691751.5460366,
+          "open_interest_usd": 211382987.59622264
+        },
+        "Bitget": {
+          "spot_usdt": 772423333.8059695,
+          "spot_usdc": 3610274.013777337,
+          "perp_volume_usd": 304584630.27191967,
+          "open_interest_usd": 147285381.5565984
+        },
+        "Gate": {
+          "spot_usdt": 76466669.1057972,
+          "spot_usdc": 139480679.8736272,
+          "perp_volume_usd": 223189542.66642964,
+          "open_interest_usd": 210858070.33959165
+        },
+        "KuCoin": {
+          "spot_usdt": 518845186.4665294,
+          "spot_usdc": 94996583.87138781,
+          "perp_volume_usd": 740273409.0113984,
+          "open_interest_usd": 272999039.0994877
+        },
+        "Coinbase": {
+          "spot_usdt": 600980761.5297817,
+          "spot_usdc": 84294810.0228489,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 4441418425.503275,
+      "total_spot_usdc": 544944043.1998074,
+      "total_perp_volume_usd": 3413393986.1630216,
+      "total_open_interest_usd": 1191688426.8534353,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "rank": 2,
+      "market_cap_usd": 1138816687976.2686,
+      "global_volume_24h_usd": 7600766674.963816,
+      "price_usd": 31026.57133323018,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 343031137.51436454,
+          "spot_usdc": 112291348.13706681,
+          "perp_volume_usd": 812566465.1363413,
+          "open_interest_usd": 16756685.658711623
+        },
+        "OKX": {
+          "spot_usdt": 33638472.004656576,
+          "spot_usdc": 124543316.34153259,
+          "perp_volume_usd": 404047383.3619449,
+          "open_interest_usd": 326520046.45989054
+        },
+        "Bybit": {
+          "spot_usdt": 448643499.2335654,
+          "spot_usdc": 102022894.38671821,
+          "perp_volume_usd": 1149744796.1423254,
+          "open_interest_usd": 243955535.47500518
+        },
+        "MEXC": {
+          "spot_usdt": 137650932.5632039,
+          "spot_usdc": 26646076.742882885,
+          "perp_volume_usd": 637314486.6268688,
+          "open_interest_usd": 173857815.8655334
+        },
+        "Bitget": {
+          "spot_usdt": 783222272.0308348,
+          "spot_usdc": 66065770.97349997,
+          "perp_volume_usd": 955545433.6120718,
+          "open_interest_usd": 301496600.30152905
+        },
+        "Gate": {
+          "spot_usdt": 41096831.22096016,
+          "spot_usdc": 21679336.202402323,
+          "perp_volume_usd": 650091245.1796323,
+          "open_interest_usd": 212017318.6184275
+        },
+        "KuCoin": {
+          "spot_usdt": 747506327.7814708,
+          "spot_usdc": 187257304.40837252,
+          "perp_volume_usd": 209036326.53167105,
+          "open_interest_usd": 70871583.8838617
+        },
+        "Coinbase": {
+          "spot_usdt": 4078524.6883744905,
+          "spot_usdc": 110734343.15761758,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 2538867997.037431,
+      "total_spot_usdc": 751240390.3500929,
+      "total_perp_volume_usd": 4818346136.590856,
+      "total_open_interest_usd": 1345475586.262959,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "SOL",
+      "name": "Solana",
+      "rank": 3,
+      "market_cap_usd": 138943064206.46274,
+      "global_volume_24h_usd": 45484129887.60026,
+      "price_usd": 85826.46975655656,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 118966894.54675128,
+          "spot_usdc": 65649792.49163032,
+          "perp_volume_usd": 479042193.64613,
+          "open_interest_usd": 380011651.42190504
+        },
+        "OKX": {
+          "spot_usdt": 629399205.6094456,
+          "spot_usdc": 34915830.63018888,
+          "perp_volume_usd": 1433634218.581687,
+          "open_interest_usd": 278980441.9220121
+        },
+        "Bybit": {
+          "spot_usdt": 758875909.9713393,
+          "spot_usdc": 60840117.52348813,
+          "perp_volume_usd": 1271662401.7793732,
+          "open_interest_usd": 133737788.00905338
+        },
+        "MEXC": {
+          "spot_usdt": 468966372.66312134,
+          "spot_usdc": 98063417.55159846,
+          "perp_volume_usd": 378747110.34035516,
+          "open_interest_usd": 165085655.9944502
+        },
+        "Bitget": {
+          "spot_usdt": 720499973.9641937,
+          "spot_usdc": 113366304.78117162,
+          "perp_volume_usd": 481944399.6546329,
+          "open_interest_usd": 154063621.07724178
+        },
+        "Gate": {
+          "spot_usdt": 163151377.51850247,
+          "spot_usdc": 50631172.122826084,
+          "perp_volume_usd": 828370875.0637473,
+          "open_interest_usd": 311222680.05407804
+        },
+        "KuCoin": {
+          "spot_usdt": 3457625.005013658,
+          "spot_usdc": 126329628.09844974,
+          "perp_volume_usd": 44611896.60667852,
+          "open_interest_usd": 249815322.3597717
+        },
+        "Coinbase": {
+          "spot_usdt": 31600120.76121262,
+          "spot_usdc": 81099612.51689664,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 2894917480.03958,
+      "total_spot_usdc": 630895875.7162498,
+      "total_perp_volume_usd": 4918013095.672604,
+      "total_open_interest_usd": 1672917160.8385122,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "XRP",
+      "name": "XRP",
+      "rank": 4,
+      "market_cap_usd": 442736896801.28455,
+      "global_volume_24h_usd": 7514596034.096113,
+      "price_usd": 24488.995674683716,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 89225814.59055462,
+          "spot_usdc": 166873460.21860984,
+          "perp_volume_usd": 205686462.56960398,
+          "open_interest_usd": 239022561.6874174
+        },
+        "OKX": {
+          "spot_usdt": 700985252.9818083,
+          "spot_usdc": 57411253.5737634,
+          "perp_volume_usd": 913056111.4317083,
+          "open_interest_usd": 52512945.05735125
+        },
+        "Bybit": {
+          "spot_usdt": 403868971.0118482,
+          "spot_usdc": 107326816.53372923,
+          "perp_volume_usd": 963034995.3568066,
+          "open_interest_usd": 62674408.51577421
+        },
+        "MEXC": {
+          "spot_usdt": 555286791.0372281,
+          "spot_usdc": 171233143.09045404,
+          "perp_volume_usd": 491105637.88877654,
+          "open_interest_usd": 228416658.38271368
+        },
+        "Bitget": {
+          "spot_usdt": 377537528.1436858,
+          "spot_usdc": 31891054.334978253,
+          "perp_volume_usd": 257837944.91510242,
+          "open_interest_usd": 80339653.0489099
+        },
+        "Gate": {
+          "spot_usdt": 597922784.779214,
+          "spot_usdc": 125931163.66068596,
+          "perp_volume_usd": 1232157193.7403536,
+          "open_interest_usd": 116057577.1888805
+        },
+        "KuCoin": {
+          "spot_usdt": 470007808.4813504,
+          "spot_usdc": 31703609.035031423,
+          "perp_volume_usd": 1449067314.6895568,
+          "open_interest_usd": 133460095.85416713
+        },
+        "Coinbase": {
+          "spot_usdt": 461740076.1379724,
+          "spot_usdc": 57542430.898575895,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3656575027.163662,
+      "total_spot_usdc": 749912931.345828,
+      "total_perp_volume_usd": 5511945660.591908,
+      "total_open_interest_usd": 912483899.7352141,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "BNB",
+      "name": "BNB",
+      "rank": 5,
+      "market_cap_usd": 708439705640.531,
+      "global_volume_24h_usd": 2916946907.125092,
+      "price_usd": 4369.496665302721,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 179542941.768178,
+          "spot_usdc": 1453333.8431211628,
+          "perp_volume_usd": 49252558.61370897,
+          "open_interest_usd": 43746118.11667881
+        },
+        "OKX": {
+          "spot_usdt": 221735464.86696616,
+          "spot_usdc": 123658855.46745099,
+          "perp_volume_usd": 1345970482.4817314,
+          "open_interest_usd": 157682585.31709182
+        },
+        "Bybit": {
+          "spot_usdt": 220948344.4325796,
+          "spot_usdc": 195116986.27193284,
+          "perp_volume_usd": 803333799.4816114,
+          "open_interest_usd": 224207137.7033375
+        },
+        "MEXC": {
+          "spot_usdt": 47305469.262016736,
+          "spot_usdc": 48278644.18591317,
+          "perp_volume_usd": 901288026.0609306,
+          "open_interest_usd": 101590711.4189203
+        },
+        "Bitget": {
+          "spot_usdt": 676560763.1217413,
+          "spot_usdc": 65705116.87063831,
+          "perp_volume_usd": 238819972.31094676,
+          "open_interest_usd": 149665116.2505332
+        },
+        "Gate": {
+          "spot_usdt": 499065134.2468158,
+          "spot_usdc": 108119236.16503266,
+          "perp_volume_usd": 768692369.3194462,
+          "open_interest_usd": 97885656.8945762
+        },
+        "KuCoin": {
+          "spot_usdt": 707990096.3028744,
+          "spot_usdc": 52830957.93429204,
+          "perp_volume_usd": 1273602976.4003434,
+          "open_interest_usd": 232694133.31249797
+        },
+        "Coinbase": {
+          "spot_usdt": 533457392.9744589,
+          "spot_usdc": 78254139.61848247,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3086605606.9756308,
+      "total_spot_usdc": 673417270.3568636,
+      "total_perp_volume_usd": 5380960184.668718,
+      "total_open_interest_usd": 1007471459.0136358,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "rank": 6,
+      "market_cap_usd": 120356353988.51234,
+      "global_volume_24h_usd": 37214130282.25296,
+      "price_usd": 51089.2334448198,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 237760523.19831106,
+          "spot_usdc": 144413409.33791682,
+          "perp_volume_usd": 94238522.0325065,
+          "open_interest_usd": 131389078.61232054
+        },
+        "OKX": {
+          "spot_usdt": 290672643.72774005,
+          "spot_usdc": 105367926.40936516,
+          "perp_volume_usd": 543177571.7871252,
+          "open_interest_usd": 306218037.7459154
+        },
+        "Bybit": {
+          "spot_usdt": 323852764.14201224,
+          "spot_usdc": 152891848.6682274,
+          "perp_volume_usd": 1350241428.8655202,
+          "open_interest_usd": 237857106.95626122
+        },
+        "MEXC": {
+          "spot_usdt": 145583245.2044493,
+          "spot_usdc": 156274364.43737587,
+          "perp_volume_usd": 526429581.81004333,
+          "open_interest_usd": 12769111.581707459
+        },
+        "Bitget": {
+          "spot_usdt": 555844793.8043556,
+          "spot_usdc": 101123362.40362392,
+          "perp_volume_usd": 77112483.46447213,
+          "open_interest_usd": 127435985.92167036
+        },
+        "Gate": {
+          "spot_usdt": 257303904.54146478,
+          "spot_usdc": 120805589.29449907,
+          "perp_volume_usd": 1067885088.0674053,
+          "open_interest_usd": 33855988.091538645
+        },
+        "KuCoin": {
+          "spot_usdt": 199909658.77733642,
+          "spot_usdc": 164688866.61191055,
+          "perp_volume_usd": 270301460.93303174,
+          "open_interest_usd": 234875260.93531987
+        },
+        "Coinbase": {
+          "spot_usdt": 267545173.46083117,
+          "spot_usdc": 2843596.886556221,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 2278472706.8565006,
+      "total_spot_usdc": 948408964.0494751,
+      "total_perp_volume_usd": 3929386136.9601045,
+      "total_open_interest_usd": 1084400569.8447335,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "ADA",
+      "name": "Cardano",
+      "rank": 7,
+      "market_cap_usd": 958758050503.7479,
+      "global_volume_24h_usd": 12612978309.434656,
+      "price_usd": 31829.97487754304,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 243018832.64002424,
+          "spot_usdc": 56699366.46447993,
+          "perp_volume_usd": 735949340.8813425,
+          "open_interest_usd": 376685121.6669468
+        },
+        "OKX": {
+          "spot_usdt": 248705975.11599046,
+          "spot_usdc": 70920487.55282395,
+          "perp_volume_usd": 860418158.3293678,
+          "open_interest_usd": 360692982.9819342
+        },
+        "Bybit": {
+          "spot_usdt": 85559950.86050715,
+          "spot_usdc": 4555598.128005256,
+          "perp_volume_usd": 1402576056.6880107,
+          "open_interest_usd": 257436513.06809857
+        },
+        "MEXC": {
+          "spot_usdt": 472537271.6614871,
+          "spot_usdc": 51625952.10855523,
+          "perp_volume_usd": 21391708.79772939,
+          "open_interest_usd": 90224767.1205596
+        },
+        "Bitget": {
+          "spot_usdt": 40676492.67780736,
+          "spot_usdc": 140919935.22655913,
+          "perp_volume_usd": 779267010.3578391,
+          "open_interest_usd": 313854988.301703
+        },
+        "Gate": {
+          "spot_usdt": 605944676.935601,
+          "spot_usdc": 49847624.45416964,
+          "perp_volume_usd": 164018395.20824257,
+          "open_interest_usd": 76304543.59740621
+        },
+        "KuCoin": {
+          "spot_usdt": 585508181.4406905,
+          "spot_usdc": 79058461.85276113,
+          "perp_volume_usd": 761738056.3127071,
+          "open_interest_usd": 135871098.30027005
+        },
+        "Coinbase": {
+          "spot_usdt": 595301256.2423322,
+          "spot_usdc": 195365149.19116753,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 2877252637.57444,
+      "total_spot_usdc": 648992574.9785218,
+      "total_perp_volume_usd": 4725358726.575239,
+      "total_open_interest_usd": 1611070015.0369184,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "AVAX",
+      "name": "Avalanche",
+      "rank": 8,
+      "market_cap_usd": 601406801328.1697,
+      "global_volume_24h_usd": 31476492399.990955,
+      "price_usd": 30971.346793083114,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 70984233.6731853,
+          "spot_usdc": 58372089.49916548,
+          "perp_volume_usd": 588480229.9510435,
+          "open_interest_usd": 119692124.31142889
+        },
+        "OKX": {
+          "spot_usdt": 593410130.3034483,
+          "spot_usdc": 187239635.21205217,
+          "perp_volume_usd": 1102835046.7040293,
+          "open_interest_usd": 384503745.48772883
+        },
+        "Bybit": {
+          "spot_usdt": 131943128.13393375,
+          "spot_usdc": 108259420.2375434,
+          "perp_volume_usd": 819714300.5578183,
+          "open_interest_usd": 289364551.5610014
+        },
+        "MEXC": {
+          "spot_usdt": 775175401.1002936,
+          "spot_usdc": 155507938.33933508,
+          "perp_volume_usd": 84540618.45476735,
+          "open_interest_usd": 344191207.3733075
+        },
+        "Bitget": {
+          "spot_usdt": 468818510.14816666,
+          "spot_usdc": 167051830.20745146,
+          "perp_volume_usd": 774751455.3503462,
+          "open_interest_usd": 385845460.89065737
+        },
+        "Gate": {
+          "spot_usdt": 661056401.2606667,
+          "spot_usdc": 163178965.22909486,
+          "perp_volume_usd": 190457968.6387372,
+          "open_interest_usd": 227169072.2679546
+        },
+        "KuCoin": {
+          "spot_usdt": 40440884.14237422,
+          "spot_usdc": 30757703.092594158,
+          "perp_volume_usd": 1003057649.981889,
+          "open_interest_usd": 141627285.4768934
+        },
+        "Coinbase": {
+          "spot_usdt": 225159994.7782558,
+          "spot_usdc": 122037637.7831072,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 2966988683.540324,
+      "total_spot_usdc": 992405219.6003438,
+      "total_perp_volume_usd": 4563837269.638631,
+      "total_open_interest_usd": 1892393447.368972,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "LINK",
+      "name": "Chainlink",
+      "rank": 9,
+      "market_cap_usd": 838024746935.5623,
+      "global_volume_24h_usd": 48070121607.34462,
+      "price_usd": 54311.36335532288,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 202484720.75584766,
+          "spot_usdc": 143823032.80388388,
+          "perp_volume_usd": 501500646.5748299,
+          "open_interest_usd": 39253330.77650301
+        },
+        "OKX": {
+          "spot_usdt": 501040163.8967475,
+          "spot_usdc": 112441785.83096543,
+          "perp_volume_usd": 1460757337.2582524,
+          "open_interest_usd": 20863191.062871024
+        },
+        "Bybit": {
+          "spot_usdt": 495125922.61033773,
+          "spot_usdc": 56751870.06686371,
+          "perp_volume_usd": 51461460.44420713,
+          "open_interest_usd": 7162297.444621757
+        },
+        "MEXC": {
+          "spot_usdt": 447595337.79061157,
+          "spot_usdc": 166442236.5554971,
+          "perp_volume_usd": 1023659992.8013558,
+          "open_interest_usd": 160035346.78653488
+        },
+        "Bitget": {
+          "spot_usdt": 657921798.5697695,
+          "spot_usdc": 102884211.69529516,
+          "perp_volume_usd": 206052603.5375745,
+          "open_interest_usd": 339294904.8321754
+        },
+        "Gate": {
+          "spot_usdt": 759815596.9807616,
+          "spot_usdc": 160089274.05974656,
+          "perp_volume_usd": 599538382.0247424,
+          "open_interest_usd": 380478620.7953506
+        },
+        "KuCoin": {
+          "spot_usdt": 8772522.080577314,
+          "spot_usdc": 188249751.92583904,
+          "perp_volume_usd": 1090511938.5232465,
+          "open_interest_usd": 70122868.04574335
+        },
+        "Coinbase": {
+          "spot_usdt": 436705198.82706386,
+          "spot_usdc": 154508382.82145724,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3509461261.511717,
+      "total_spot_usdc": 1085190545.7595482,
+      "total_perp_volume_usd": 4933482361.164208,
+      "total_open_interest_usd": 1017210559.7438,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "TRX",
+      "name": "TRON",
+      "rank": 10,
+      "market_cap_usd": 244627879408.6244,
+      "global_volume_24h_usd": 10043319333.948067,
+      "price_usd": 9844.82560294661,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 304958553.5846416,
+          "spot_usdc": 74457965.528741,
+          "perp_volume_usd": 1453443200.8216205,
+          "open_interest_usd": 220111861.21505144
+        },
+        "OKX": {
+          "spot_usdt": 722461577.3378421,
+          "spot_usdc": 31303516.717458524,
+          "perp_volume_usd": 171614590.96855164,
+          "open_interest_usd": 223491347.89994577
+        },
+        "Bybit": {
+          "spot_usdt": 519239817.72620726,
+          "spot_usdc": 182345397.77600658,
+          "perp_volume_usd": 187142235.14663193,
+          "open_interest_usd": 85682462.36228333
+        },
+        "MEXC": {
+          "spot_usdt": 584047190.0465262,
+          "spot_usdc": 80516722.38301603,
+          "perp_volume_usd": 1385491192.2031572,
+          "open_interest_usd": 34228221.46022999
+        },
+        "Bitget": {
+          "spot_usdt": 661935941.2692374,
+          "spot_usdc": 128204437.96216725,
+          "perp_volume_usd": 332050746.9394041,
+          "open_interest_usd": 276722188.0757243
+        },
+        "Gate": {
+          "spot_usdt": 160290015.22827783,
+          "spot_usdc": 156869575.90007627,
+          "perp_volume_usd": 402168181.09809387,
+          "open_interest_usd": 288527811.1220419
+        },
+        "KuCoin": {
+          "spot_usdt": 170371662.06449464,
+          "spot_usdc": 195070033.54234034,
+          "perp_volume_usd": 1332465354.1552486,
+          "open_interest_usd": 334675888.9913129
+        },
+        "Coinbase": {
+          "spot_usdt": 432327116.84273416,
+          "spot_usdc": 43892110.28337303,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3555631874.0999613,
+      "total_spot_usdc": 892659760.093179,
+      "total_perp_volume_usd": 5264375501.332707,
+      "total_open_interest_usd": 1463439781.1265895,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "DOT",
+      "name": "Polkadot",
+      "rank": 11,
+      "market_cap_usd": 534467205502.56525,
+      "global_volume_24h_usd": 43198782956.4954,
+      "price_usd": 40190.758018274115,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 460131385.53325045,
+          "spot_usdc": 195154667.4700813,
+          "perp_volume_usd": 1013522256.2804393,
+          "open_interest_usd": 351949521.02819085
+        },
+        "OKX": {
+          "spot_usdt": 593664699.7765079,
+          "spot_usdc": 88398475.46733443,
+          "perp_volume_usd": 514946231.6986711,
+          "open_interest_usd": 182680759.8957044
+        },
+        "Bybit": {
+          "spot_usdt": 164908348.60496017,
+          "spot_usdc": 130671232.98250869,
+          "perp_volume_usd": 993858752.8204334,
+          "open_interest_usd": 358792944.57596344
+        },
+        "MEXC": {
+          "spot_usdt": 338546287.72065926,
+          "spot_usdc": 169955925.79370463,
+          "perp_volume_usd": 8565912.364895456,
+          "open_interest_usd": 169782737.14060265
+        },
+        "Bitget": {
+          "spot_usdt": 428212116.10534495,
+          "spot_usdc": 179064512.32806322,
+          "perp_volume_usd": 1408191336.7756498,
+          "open_interest_usd": 67417786.26178548
+        },
+        "Gate": {
+          "spot_usdt": 602607499.0015,
+          "spot_usdc": 57808757.694879785,
+          "perp_volume_usd": 756747618.0456858,
+          "open_interest_usd": 396242104.2143384
+        },
+        "KuCoin": {
+          "spot_usdt": 194082878.9740577,
+          "spot_usdc": 153284167.42813805,
+          "perp_volume_usd": 163645268.90136245,
+          "open_interest_usd": 143342740.77848557
+        },
+        "Coinbase": {
+          "spot_usdt": 710736385.7609016,
+          "spot_usdc": 118677477.92352617,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3492889601.477182,
+      "total_spot_usdc": 1093015217.0882363,
+      "total_perp_volume_usd": 4859477376.887137,
+      "total_open_interest_usd": 1670208593.8950708,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "MATIC",
+      "name": "Polygon",
+      "rank": 12,
+      "market_cap_usd": 759864697144.9028,
+      "global_volume_24h_usd": 44228127263.12539,
+      "price_usd": 50319.821241015416,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 750830697.6084901,
+          "spot_usdc": 56867664.74450804,
+          "perp_volume_usd": 563901210.5879203,
+          "open_interest_usd": 314866804.28459543
+        },
+        "OKX": {
+          "spot_usdt": 677267184.9461473,
+          "spot_usdc": 74283833.64523423,
+          "perp_volume_usd": 1460783395.5474737,
+          "open_interest_usd": 160543797.79496354
+        },
+        "Bybit": {
+          "spot_usdt": 152576204.0044524,
+          "spot_usdc": 42219662.52734013,
+          "perp_volume_usd": 1243634944.4045205,
+          "open_interest_usd": 184431976.64349088
+        },
+        "MEXC": {
+          "spot_usdt": 57452259.72150976,
+          "spot_usdc": 68897882.3869611,
+          "perp_volume_usd": 29096615.772794988,
+          "open_interest_usd": 174999032.11874303
+        },
+        "Bitget": {
+          "spot_usdt": 271201872.6879698,
+          "spot_usdc": 110036596.97033508,
+          "perp_volume_usd": 194113681.497933,
+          "open_interest_usd": 153440767.3838434
+        },
+        "Gate": {
+          "spot_usdt": 687560251.2376014,
+          "spot_usdc": 61265688.36069424,
+          "perp_volume_usd": 124756518.46662039,
+          "open_interest_usd": 172593340.18084726
+        },
+        "KuCoin": {
+          "spot_usdt": 548656909.298679,
+          "spot_usdc": 133596370.12114249,
+          "perp_volume_usd": 999785372.2187034,
+          "open_interest_usd": 305591790.5933946
+        },
+        "Coinbase": {
+          "spot_usdt": 559243803.2362772,
+          "spot_usdc": 189264012.70744202,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3704789182.741127,
+      "total_spot_usdc": 736431711.4636574,
+      "total_perp_volume_usd": 4616071738.495966,
+      "total_open_interest_usd": 1466467508.9998782,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "LTC",
+      "name": "Litecoin",
+      "rank": 13,
+      "market_cap_usd": 314996781420.929,
+      "global_volume_24h_usd": 6410287897.61902,
+      "price_usd": 46279.014942889924,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 512660429.8701294,
+          "spot_usdc": 145364538.2317556,
+          "perp_volume_usd": 206799734.49355987,
+          "open_interest_usd": 118209639.85456325
+        },
+        "OKX": {
+          "spot_usdt": 555113318.3821396,
+          "spot_usdc": 154583574.4838167,
+          "perp_volume_usd": 1143598149.6973903,
+          "open_interest_usd": 272247929.99929726
+        },
+        "Bybit": {
+          "spot_usdt": 393695681.5387723,
+          "spot_usdc": 116110020.92320801,
+          "perp_volume_usd": 126360730.43627277,
+          "open_interest_usd": 198768658.30545527
+        },
+        "MEXC": {
+          "spot_usdt": 283128731.91816765,
+          "spot_usdc": 184064916.93586984,
+          "perp_volume_usd": 45672931.95938138,
+          "open_interest_usd": 300650938.2899079
+        },
+        "Bitget": {
+          "spot_usdt": 426675883.1098865,
+          "spot_usdc": 104590987.23378015,
+          "perp_volume_usd": 225937783.09791794,
+          "open_interest_usd": 170009570.4509105
+        },
+        "Gate": {
+          "spot_usdt": 441727535.9161936,
+          "spot_usdc": 133455451.48785882,
+          "perp_volume_usd": 637581679.2600194,
+          "open_interest_usd": 226738249.76394776
+        },
+        "KuCoin": {
+          "spot_usdt": 722231241.8429976,
+          "spot_usdc": 67585637.02125901,
+          "perp_volume_usd": 1356497825.3574154,
+          "open_interest_usd": 181424875.43564275
+        },
+        "Coinbase": {
+          "spot_usdt": 591814567.7145523,
+          "spot_usdc": 64529287.90207744,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3927047390.292839,
+      "total_spot_usdc": 970284414.2196256,
+      "total_perp_volume_usd": 3742448834.301957,
+      "total_open_interest_usd": 1468049862.0997248,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "SHIB",
+      "name": "Shiba Inu",
+      "rank": 14,
+      "market_cap_usd": 759118029703.9026,
+      "global_volume_24h_usd": 19239978107.995342,
+      "price_usd": 39472.92860181994,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 80504839.27156378,
+          "spot_usdc": 57528837.773023464,
+          "perp_volume_usd": 668159867.7487512,
+          "open_interest_usd": 56346254.311801136
+        },
+        "OKX": {
+          "spot_usdt": 300244245.10219526,
+          "spot_usdc": 137880957.85988238,
+          "perp_volume_usd": 1327809708.653494,
+          "open_interest_usd": 104929602.96561225
+        },
+        "Bybit": {
+          "spot_usdt": 225322621.62526652,
+          "spot_usdc": 32399320.146735188,
+          "perp_volume_usd": 579027796.5713819,
+          "open_interest_usd": 37627300.05992627
+        },
+        "MEXC": {
+          "spot_usdt": 567401420.5397208,
+          "spot_usdc": 32031930.193535186,
+          "perp_volume_usd": 1335184002.1318562,
+          "open_interest_usd": 15382629.97835833
+        },
+        "Bitget": {
+          "spot_usdt": 111657267.21714586,
+          "spot_usdc": 115153193.97712438,
+          "perp_volume_usd": 1437850375.490867,
+          "open_interest_usd": 365100930.5954406
+        },
+        "Gate": {
+          "spot_usdt": 27479959.59590131,
+          "spot_usdc": 149769979.9095578,
+          "perp_volume_usd": 646928152.8587568,
+          "open_interest_usd": 175290080.54575455
+        },
+        "KuCoin": {
+          "spot_usdt": 91245494.5577618,
+          "spot_usdc": 137336401.1195707,
+          "perp_volume_usd": 91915456.8015622,
+          "open_interest_usd": 254910975.97783953
+        },
+        "Coinbase": {
+          "spot_usdt": 521919327.60662866,
+          "spot_usdc": 54534065.46511772,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 1925775175.5161839,
+      "total_spot_usdc": 716634686.4445468,
+      "total_perp_volume_usd": 6086875360.256669,
+      "total_open_interest_usd": 1009587774.4347327,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    },
+    {
+      "symbol": "UNI",
+      "name": "Uniswap",
+      "rank": 15,
+      "market_cap_usd": 496255614191.55615,
+      "global_volume_24h_usd": 26668069152.66474,
+      "price_usd": 59013.42962493161,
+      "exchanges": {
+        "Binance": {
+          "spot_usdt": 594087932.0523248,
+          "spot_usdc": 125118101.67904574,
+          "perp_volume_usd": 639452806.9084688,
+          "open_interest_usd": 311043765.53015226
+        },
+        "OKX": {
+          "spot_usdt": 319364429.4594026,
+          "spot_usdc": 90798172.69802982,
+          "perp_volume_usd": 452221845.67411685,
+          "open_interest_usd": 193971261.77203274
+        },
+        "Bybit": {
+          "spot_usdt": 785787508.0425723,
+          "spot_usdc": 107474989.67224783,
+          "perp_volume_usd": 409014140.95234334,
+          "open_interest_usd": 6841468.605766421
+        },
+        "MEXC": {
+          "spot_usdt": 293858278.37308145,
+          "spot_usdc": 9748488.125437116,
+          "perp_volume_usd": 1014336130.9278953,
+          "open_interest_usd": 141575472.9718626
+        },
+        "Bitget": {
+          "spot_usdt": 782595826.7511666,
+          "spot_usdc": 127109638.97067252,
+          "perp_volume_usd": 1065861785.1557696,
+          "open_interest_usd": 72584999.74847345
+        },
+        "Gate": {
+          "spot_usdt": 6624258.3088972205,
+          "spot_usdc": 71435299.1781594,
+          "perp_volume_usd": 902509552.516354,
+          "open_interest_usd": 347444513.48559767
+        },
+        "KuCoin": {
+          "spot_usdt": 157713007.66277397,
+          "spot_usdc": 198994727.14877936,
+          "perp_volume_usd": 267691330.48161864,
+          "open_interest_usd": 213062149.76875925
+        },
+        "Coinbase": {
+          "spot_usdt": 414213640.05509174,
+          "spot_usdc": 182904912.93820444,
+          "perp_volume_usd": 0,
+          "open_interest_usd": 0
+        }
+      },
+      "total_spot_usdt": 3354244880.705311,
+      "total_spot_usdc": 913584330.4105762,
+      "total_perp_volume_usd": 4751087592.616567,
+      "total_open_interest_usd": 1286523631.8826444,
+      "perp_exchange_count": 7,
+      "spot_exchange_count": 8
+    }
+  ]
+}
