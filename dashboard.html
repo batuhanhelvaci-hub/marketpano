@@ -3,280 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perp Listeleme Araştırması</title>
+<title>MarketPano · Perp Listeleme</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-  :root{
-    --bg:#0d1117; --panel:#161b22; --panel2:#1c232c; --line:#2a3441;
-    --ink:#e6edf3; --muted:#8b98a5; --accent:#3fb950; --accent2:#58a6ff;
-    --warn:#d29922; --radius:10px;
-  }
+  :root[data-theme="light"]{--bg:#f5f8fd;--panel:#ffffff;--panel2:#eef3fb;--brd:#dce5f2;--ink:#0e1726;--mut:#5b6b85;--brand:#003aff;--brand2:#0067ff;--perp:#7a5cff}
+  :root[data-theme="dark"]{--bg:#0b1220;--panel:#121a2b;--panel2:#1a2435;--brd:#243049;--ink:#e8eef7;--mut:#8a99b3;--brand:#0067ff;--brand2:#3b8dff;--perp:#9c84ff}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    background:var(--bg);color:var(--ink);line-height:1.5;padding:24px;font-size:14px}
-  .wrap{max-width:1400px;margin:0 auto}
-  header{margin-bottom:20px}
-  h1{font-size:22px;font-weight:600;letter-spacing:-0.3px}
-  .sub{color:var(--muted);font-size:13px;margin-top:4px}
-  .panel{background:var(--panel);border:1px solid var(--line);
-    border-radius:var(--radius);padding:16px;margin-bottom:16px}
-  .controls{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
-  .ctrl{display:flex;flex-direction:column;gap:5px}
-  .ctrl label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px}
-  select,input{background:var(--panel2);border:1px solid var(--line);color:var(--ink);
-    padding:8px 10px;border-radius:7px;font-size:13px;min-width:120px}
-  input[type=range]{min-width:160px;padding:0}
-  .rangeval{color:var(--accent2);font-variant-numeric:tabular-nums;font-size:12px}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media(max-width:900px){.grid2{grid-template-columns:1fr}}
-  .chart-box{background:var(--panel);border:1px solid var(--line);
-    border-radius:var(--radius);padding:16px}
-  .chart-box h3{font-size:14px;font-weight:600;margin-bottom:12px;color:var(--ink)}
-  canvas{max-height:300px}
-  table{width:100%;border-collapse:collapse;font-size:12.5px}
-  th,td{padding:8px 10px;text-align:right;border-bottom:1px solid var(--line);
-    white-space:nowrap}
-  th{color:var(--muted);font-weight:500;font-size:11px;text-transform:uppercase;
-    letter-spacing:0.4px;cursor:pointer;user-select:none;position:sticky;top:0;
-    background:var(--panel)}
-  th:hover{color:var(--ink)}
-  th.asset,td.asset{text-align:left}
-  td.asset{font-weight:600}
-  .rank{color:var(--muted);font-weight:400;margin-right:6px}
-  tbody tr:hover{background:var(--panel2)}
-  .num{font-variant-numeric:tabular-nums}
-  .pill{display:inline-block;padding:2px 7px;border-radius:20px;font-size:11px;
-    background:var(--panel2);border:1px solid var(--line)}
-  .pill.good{color:var(--accent);border-color:rgba(63,185,80,.3)}
-  .table-scroll{max-height:520px;overflow:auto}
-  .meta{color:var(--muted);font-size:12px;margin-top:8px}
-  .empty{padding:40px;text-align:center;color:var(--muted)}
-  .err{padding:30px;text-align:center;color:var(--warn);line-height:1.7}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px;color:var(--ink);background:var(--bg);min-height:100vh;padding:24px}
+  .wrap{max-width:1320px;margin:0 auto;background:var(--panel);border:1px solid var(--brd);border-radius:14px;overflow:hidden}
+  .hd{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--brd);gap:14px;flex-wrap:wrap}
+  .ttl{font-size:18px;font-weight:600;letter-spacing:-.3px}.ttl b{color:var(--brand2)}
+  .sub{font-size:12px;color:var(--mut);margin-top:2px}
+  .hd-right{display:flex;align-items:center;gap:12px}
+  .stamp{display:flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid var(--brd);border-radius:8px;padding:7px 12px;font-size:12px;color:var(--mut)}
+  .stamp .dotlive{width:7px;height:7px;border-radius:50%;background:#23D08A}
+  .stamp b{color:var(--ink);font-weight:600}
+  .seg{display:flex;border:1px solid var(--brd);border-radius:8px;overflow:hidden}
+  .seg button{background:transparent;border:0;color:var(--mut);padding:6px 12px;font-size:12px;cursor:pointer;font-weight:500}
+  .seg button.on{background:var(--brand);color:#fff}
+  .body{padding:18px 22px}
+  .filters{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:var(--panel2);border:1px solid var(--brd);border-radius:10px;padding:14px 16px;margin-bottom:16px}
+  .fl{display:flex;flex-direction:column;gap:5px}
+  .fl label{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+  select,input[type=text]{background:var(--panel);border:1px solid var(--brd);color:var(--ink);padding:8px 10px;border-radius:7px;font-size:13px}
+  .cnt{font-size:12px;color:var(--mut)}.cnt b{color:var(--brand2)}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr 1fr}}
+  .card{background:var(--panel2);border:1px solid var(--brd);border-radius:10px;padding:12px 14px}
+  .card .l{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+  .card .v{font-size:20px;font-weight:600;margin-top:3px}
+  .hint{font-size:12px;color:var(--mut);margin-bottom:8px}
+  .tbl-wrap{background:var(--panel);border:1px solid var(--brd);border-radius:10px;padding:0 0 4px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:12px;min-width:920px}
+  thead th{position:sticky;top:0;background:var(--panel);z-index:1}
+  .grp th{padding:8px 8px 4px;text-align:center;color:var(--mut);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--brd)}
+  .grp th.gspot{color:var(--brand2)}.grp th.gperp{color:var(--perp)}
+  .colh th{padding:5px 8px 9px;text-align:right;color:var(--mut);font-weight:500;font-size:10.5px;white-space:nowrap;border-bottom:1px solid var(--brd);cursor:pointer}
+  .colh th.l{text-align:left}.colh th:hover{color:var(--ink)}
+  td{padding:8px;text-align:right;border-bottom:1px solid var(--brd);white-space:nowrap}
+  td.l{text-align:left}
+  .arow{cursor:pointer}.arow:hover{background:var(--panel2)}
+  .sep{border-left:1px solid var(--brd)}
+  .rk{color:var(--mut);font-weight:400;margin-right:6px}.nm{color:var(--mut);font-weight:400}
+  .u{color:var(--mut);font-size:11px}
+  .tot{font-weight:600}.tspot{color:var(--brand2)}.tperp{color:var(--perp)}
+  .caret{display:inline-block;width:11px;color:var(--mut);transition:transform .15s}
+  .arow.open .caret{transform:rotate(90deg)}
+  .detail td{background:var(--panel2);padding:0}
+  .detail-inner{display:grid;grid-template-columns:1.7fr 1fr;gap:18px;padding:16px 18px}
+  @media(max-width:760px){.detail-inner{grid-template-columns:1fr}}
+  .bx{border:1px solid var(--brd);border-radius:8px;overflow:hidden;background:var(--panel)}
+  .bx h4{font-size:11px;font-weight:600;margin:0;padding:9px 12px;border-bottom:1px solid var(--brd);color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+  .brk{width:100%;border-collapse:collapse;font-size:11px;min-width:0}
+  .brk td,.brk th{padding:6px 9px;border-bottom:1px solid var(--brd);white-space:nowrap;text-align:right}
+  .brk th{color:var(--mut);font-weight:500;font-size:9.5px;text-transform:uppercase;letter-spacing:.2px}
+  .brk td.l,.brk th.l{text-align:left}
+  .brk .gspot{color:var(--brand2)}.brk .gperp{color:var(--perp)}
+  .brk tr:last-child td{border-bottom:0}
+  .brk .sep{border-left:1px solid var(--brd)}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:middle}
+  .pie-wrap{display:flex;align-items:center;justify-content:center;padding:10px}
+  .err{padding:30px;text-align:center;color:#d29922;line-height:1.7}
   .err code{background:var(--panel2);padding:2px 6px;border-radius:4px}
-  .count{color:var(--accent2);font-weight:600}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <h1>Perpetual Futures — Listeleme Araştırması</h1>
-    <div class="sub" id="genat">Veri yükleniyor…</div>
-  </header>
+  <div class="hd">
+    <div><div class="ttl">Market<b>Pano</b> · Perp Listeleme</div><div class="sub">Spot ve perp volume (24s), USDT / USDC kırılımı, open interest ve borsa dağılımı</div></div>
+    <div class="hd-right">
+      <div class="stamp"><span class="dotlive"></span>Veri: <b id="stamp">yükleniyor…</b></div>
+      <div class="seg"><button id="bLight" class="on" onclick="setTheme('light')">Açık</button><button id="bDark" onclick="setTheme('dark')">Koyu</button></div>
+    </div>
+  </div>
 
-  <div class="panel">
-    <div class="controls">
-      <div class="ctrl">
-        <label>Sırala</label>
+  <div class="body">
+    <div class="filters">
+      <div class="fl"><label>Sırala</label>
         <select id="sortBy">
-          <option value="total_perp_volume_usd">Perp Hacim (toplam)</option>
-          <option value="total_open_interest_usd">Open Interest (toplam)</option>
-          <option value="market_cap_usd">Market Cap</option>
-          <option value="global_volume_24h_usd">Global 24s Hacim</option>
-          <option value="total_spot_usdt">Spot USDT Hacim</option>
-          <option value="perp_exchange_count">Perp Borsa Sayısı</option>
-        </select>
-      </div>
-      <div class="ctrl">
-        <label>Min. Perp Borsa Sayısı</label>
-        <div><input type="range" id="minPerpEx" min="0" max="8" value="0">
-          <span class="rangeval" id="minPerpExVal">0</span></div>
-      </div>
-      <div class="ctrl">
-        <label>Min. Open Interest (M$)</label>
-        <div><input type="range" id="minOI" min="0" max="500" value="0" step="5">
-          <span class="rangeval" id="minOIVal">0</span></div>
-      </div>
-      <div class="ctrl">
-        <label>Ara (sembol/isim)</label>
-        <input type="text" id="search" placeholder="örn: BTC">
-      </div>
+          <option value="perpTot">Perp Volume (24s)</option>
+          <option value="spotTot">Spot Volume (24s)</option>
+          <option value="oi">Open Interest</option>
+          <option value="mcap">Market Cap</option>
+        </select></div>
+      <div class="fl"><label>Ara</label><input type="text" id="search" placeholder="örn: BTC" style="width:120px"></div>
+      <div class="cnt" style="margin-left:auto">Gösterilen: <b id="cnt">0</b> asset</div>
     </div>
-    <div class="meta">Filtre sonucu: <span class="count" id="resultCount">0</span> asset gösteriliyor</div>
-  </div>
 
-  <div class="grid2">
-    <div class="chart-box">
-      <h3>İlk 12 — Perp Hacim, borsa kırılımı (24s, M$)</h3>
-      <canvas id="chartPerp"></canvas>
-    </div>
-    <div class="chart-box">
-      <h3>İlk 12 — Open Interest (toplam, M$)</h3>
-      <canvas id="chartOI"></canvas>
-    </div>
-  </div>
+    <div class="cards" id="cards"></div>
 
-  <div class="panel" style="margin-top:16px">
-    <div class="table-scroll">
-      <table id="tbl">
-        <thead><tr id="thead"></tr></thead>
-        <tbody id="tbody"></tbody>
-      </table>
-    </div>
+    <div class="hint">İpucu: bir asset satırına tıkla → borsa kırılımında her borsanın spot/perp USDT ve USDC değerlerini ve dağılım grafiğini gör.</div>
+
+    <div class="tbl-wrap"><table>
+      <thead>
+        <tr class="grp"><th></th><th></th><th class="gspot sep" colspan="3">Spot Volume (24s)</th><th class="gperp sep" colspan="3">Perp Volume (24s)</th><th class="sep"></th></tr>
+        <tr class="colh" id="colh"></tr>
+      </thead>
+      <tbody id="tbd"></tbody>
+    </table></div>
   </div>
 </div>
 
 <script>
-const EXCH_COLORS = ['#3fb950','#58a6ff','#d29922','#f778ba','#a371f7',
-                     '#ff7b72','#39c5cf','#bc8cff'];
-let DATA = null, chartPerp = null, chartOI = null;
-let sortKey = 'total_perp_volume_usd', sortDir = -1;
+const EXCH_COLORS={Binance:'#F0B90B',OKX:'#2B3139',Bybit:'#FF7A00',MEXC:'#1652F0',Bitget:'#00CED1',Gate:'#E5402B',KuCoin:'#23D08A',Coinbase:'#7B61FF'};
+let DATA=null, EXCH=[], sortKey='perpTot', sortDir=-1, openSym=null, pieChart=null;
+const $=id=>document.getElementById(id);
+const M=v=>(v||0)/1e6;
+const f=v=>{v=v||0;if(v>=1e9)return '$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return '$'+(v/1e6).toFixed(1)+'M';if(v>=1e3)return '$'+(v/1e3).toFixed(1)+'K';return '$'+Math.round(v);};
+const colorFor=(e,i)=>EXCH_COLORS[e]||['#003aff','#00c2ff','#00d18f','#f5a623','#9b5cff','#ff5c8a','#ffd23f','#8a94a6'][i%8];
 
-const M = v => (v||0)/1e6;                 // -> milyon dolar
-const fmtUSD = v => {
-  v = v||0;
-  if (v >= 1e9) return '$'+(v/1e9).toFixed(2)+'B';
-  if (v >= 1e6) return '$'+(v/1e6).toFixed(1)+'M';
-  if (v >= 1e3) return '$'+(v/1e3).toFixed(1)+'K';
-  return '$'+v.toFixed(0);
-};
+function setTheme(t){document.documentElement.dataset.theme=t;$('bLight').classList.toggle('on',t==='light');$('bDark').classList.toggle('on',t==='dark');if(DATA)render();}
 
 async function load(){
   try{
-    const r = await fetch('data.json?_=' + Date.now());
+    const r=await fetch('data.json?_='+Date.now());
     if(!r.ok) throw new Error('HTTP '+r.status);
-    DATA = await r.json();
+    DATA=await r.json();
   }catch(e){
-    document.querySelector('.wrap').insertAdjacentHTML('beforeend',
-      `<div class="panel err">
-        <b>data.json bulunamadı.</b><br>
-        Önce <code>python collect.py</code> komutunu çalıştırıp veriyi üret,
-        sonra bu dosyayı bir web sunucusuyla aç:<br>
-        <code>python -m http.server</code> → tarayıcıda
-        <code>http://localhost:8000/dashboard.html</code><br>
-        (Dosyayı çift tıklayıp açmak <code>fetch</code> güvenlik kuralı yüzünden çalışmaz.)
-      </div>`);
+    document.querySelector('.body').innerHTML=
+      `<div class="err"><b>data.json bulunamadı.</b><br>
+      Önce <code>python collect.py</code> ile veriyi üret, sonra bu dosyayı bir web sunucusuyla aç
+      (örn. <code>python -m http.server</code> → <code>http://localhost:8000/dashboard.html</code>).
+      GitHub Pages üzerinde otomatik çalışır.</div>`;
     return;
   }
-  document.getElementById('genat').textContent =
-    'Veri zamanı: ' + new Date(DATA.generated_at).toLocaleString('tr-TR') +
-    '  ·  ' + DATA.exchanges.length + ' borsa  ·  ' + DATA.assets.length + ' asset';
-  buildHead();
-  bindControls();
-  render();
-}
-
-function buildHead(){
-  const cols = [
-    ['asset','Asset','asset'],
-    ['market_cap_usd','Market Cap'],
-    ['global_volume_24h_usd','Global 24s Hacim'],
-    ['total_spot_usdt','Spot USDT'],
-    ['total_spot_usdc','Spot USDC'],
-    ['total_perp_volume_usd','Perp Hacim'],
-    ['total_open_interest_usd','Open Interest'],
-    ['perp_exchange_count','Perp Borsa #'],
-  ];
-  document.getElementById('thead').innerHTML = cols.map(c =>
-    `<th class="${c[2]||''}" data-key="${c[0]}">${c[1]}</th>`).join('');
-  document.querySelectorAll('#thead th').forEach(th=>{
-    th.onclick = ()=>{
-      const k = th.dataset.key === 'asset' ? 'symbol' : th.dataset.key;
-      if(sortKey === k){ sortDir *= -1; } else { sortKey = k; sortDir = -1; }
-      document.getElementById('sortBy').value =
-        ['symbol','asset'].includes(k) ? sortKey : k;
-      render();
-    };
+  EXCH=DATA.exchanges||[];
+  // Tarih damgasi
+  try{
+    const d=new Date(DATA.generated_at);
+    $('stamp').textContent=d.toLocaleString('tr-TR',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  }catch(_){ $('stamp').textContent=DATA.generated_at||'-'; }
+  // Asset'leri normalize et: spot/perp USDT/USDC + OI turetilmis alanlar
+  DATA.assets.forEach(a=>{
+    const ex=a.exchanges||{};
+    a._spotU=0;a._spotC=0;a._perpU=0;a._perpC=0;a._oi=0;a._ex={};
+    EXCH.forEach(e=>{
+      const v=ex[e]||{};
+      const sU=+v.spot_usdt||0, sC=+v.spot_usdc||0;
+      const pU=+v.perp_usdt||0, pC=+v.perp_usdc||0;
+      const pV=+v.perp_volume_usd||0;
+      // perp USDT/USDC ayrimi yoksa, perp_volume_usd'yi USDT kabul et
+      const perpU = (pU||pC) ? pU : pV;
+      const perpC = pC;
+      const oi=+v.open_interest_usd||0;
+      a._ex[e]={spotU:sU,spotC:sC,perpU:perpU,perpC:perpC,oi:oi};
+      a._spotU+=sU;a._spotC+=sC;a._perpU+=perpU;a._perpC+=perpC;a._oi+=oi;
+    });
+    a._spotTot=a._spotU+a._spotC;
+    a._perpTot=a._perpU+a._perpC;
+    a._mcap=+a.market_cap_usd||0;
   });
+  head();render();
 }
 
-function bindControls(){
-  document.getElementById('sortBy').onchange = e=>{
-    sortKey = e.target.value; sortDir = -1; render();
-  };
-  const oi = document.getElementById('minOI');
-  const pe = document.getElementById('minPerpEx');
-  oi.oninput = ()=>{document.getElementById('minOIVal').textContent = oi.value; render();};
-  pe.oninput = ()=>{document.getElementById('minPerpExVal').textContent = pe.value; render();};
-  document.getElementById('search').oninput = render;
+function head(){
+  const cols=[["sym","Asset","l"],["_mcap","M.Cap"],["_spotU","USDT","sep"],["_spotC","USDC"],["_spotTot","Volume"],["_perpU","USDT","sep"],["_perpC","USDC"],["_perpTot","Volume"],["_oi","Open Int.","sep"]];
+  $('colh').innerHTML=cols.map(c=>`<th class="${c[2]==='sep'?'sep':''} ${c[2]==='l'?'l':''}" data-key="${c[0]}">${c[1]}</th>`).join('');
+  document.querySelectorAll('#colh th').forEach(th=>{th.onclick=()=>{const k=th.dataset.key;if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=-1;}render();};});
 }
 
-function filtered(){
-  const minOI = parseFloat(document.getElementById('minOI').value)*1e6;
-  const minPE = parseInt(document.getElementById('minPerpEx').value);
-  const q = document.getElementById('search').value.trim().toUpperCase();
-  return DATA.assets.filter(a=>{
-    if(a.total_open_interest_usd < minOI) return false;
-    if(a.perp_exchange_count < minPE) return false;
-    if(q && !(a.symbol.includes(q) || (a.name||'').toUpperCase().includes(q))) return false;
-    return true;
-  }).sort((x,y)=>{
-    const a = x[sortKey], b = y[sortKey];
-    if(typeof a === 'string') return sortDir * a.localeCompare(b);
-    return sortDir * ((a||0) - (b||0));
-  });
+function rows(){
+  const q=$('search').value.trim().toUpperCase();
+  let r=DATA.assets.filter(a=>!q||(a.symbol||'').includes(q)||(a.name||'').toUpperCase().includes(q));
+  r.sort((x,y)=>{const a=x[sortKey],b=y[sortKey];return typeof a==='string'?sortDir*a.localeCompare(b):sortDir*((a||0)-(b||0));});
+  return r;
 }
 
 function render(){
-  if(!DATA) return;
-  const rows = filtered();
-  document.getElementById('resultCount').textContent = rows.length;
-  renderTable(rows);
-  renderCharts(rows.slice(0,12));
-}
-
-function renderTable(rows){
-  const tb = document.getElementById('tbody');
-  if(!rows.length){ tb.innerHTML = '<tr><td colspan="8" class="empty">Filtreye uyan asset yok.</td></tr>'; return; }
-  tb.innerHTML = rows.map(a=>`
-    <tr>
-      <td class="asset"><span class="rank">${a.rank||'-'}</span>${a.symbol}
-        <span style="color:var(--muted);font-weight:400"> · ${a.name||''}</span></td>
-      <td class="num">${fmtUSD(a.market_cap_usd)}</td>
-      <td class="num">${fmtUSD(a.global_volume_24h_usd)}</td>
-      <td class="num">${fmtUSD(a.total_spot_usdt)}</td>
-      <td class="num">${fmtUSD(a.total_spot_usdc)}</td>
-      <td class="num">${fmtUSD(a.total_perp_volume_usd)}</td>
-      <td class="num">${fmtUSD(a.total_open_interest_usd)}</td>
-      <td class="num"><span class="pill ${a.perp_exchange_count>=3?'good':''}">${a.perp_exchange_count}/${DATA.exchanges.length}</span></td>
-    </tr>`).join('');
-}
-
-function renderCharts(top){
-  const labels = top.map(a=>a.symbol);
-  const exchs = DATA.exchanges;
-
-  // Perp hacmi: borsa bazinda yigili (stacked) bar
-  const perpDatasets = exchs.map((ex,i)=>({
-    label: ex,
-    data: top.map(a => M((a.exchanges[ex]||{}).perp_volume_usd)),
-    backgroundColor: EXCH_COLORS[i % EXCH_COLORS.length],
-  }));
-
-  if(chartPerp) chartPerp.destroy();
-  chartPerp = new Chart(document.getElementById('chartPerp'), {
-    type:'bar',
-    data:{labels, datasets:perpDatasets},
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{labels:{color:'#8b98a5',font:{size:10},boxWidth:10}},
-        tooltip:{callbacks:{label:c=>c.dataset.label+': $'+c.parsed.y.toFixed(1)+'M'}}},
-      scales:{
-        x:{stacked:true,ticks:{color:'#8b98a5'},grid:{color:'#2a3441'}},
-        y:{stacked:true,ticks:{color:'#8b98a5'},grid:{color:'#2a3441'}}
-      }
+  if(!DATA)return;
+  const r=rows();$('cnt').textContent=r.length;
+  const sT=r.reduce((s,a)=>s+a._spotTot,0),pT=r.reduce((s,a)=>s+a._perpTot,0),oiT=r.reduce((s,a)=>s+a._oi,0);
+  $('cards').innerHTML=`
+    <div class="card"><div class="l">Spot volume (24s)</div><div class="v">${f(sT)}</div></div>
+    <div class="card"><div class="l">Perp volume (24s)</div><div class="v">${f(pT)}</div></div>
+    <div class="card"><div class="l">Toplam open interest</div><div class="v">${f(oiT)}</div></div>
+    <div class="card"><div class="l">Perp / Spot oranı</div><div class="v">${sT?(pT/sT).toFixed(2):0}x</div></div>`;
+  let html='';
+  r.forEach(a=>{
+    const op=openSym===a.symbol;
+    html+=`<tr class="arow ${op?'open':''}" onclick="toggle('${a.symbol}')">
+      <td class="l"><span class="caret">▶</span><span class="rk">${a.rank||'-'}</span>${a.symbol} <span class="nm">· ${a.name||''}</span></td>
+      <td>${f(a._mcap)}</td>
+      <td class="u sep">${f(a._spotU)}</td><td class="u">${f(a._spotC)}</td><td class="tot tspot">${f(a._spotTot)}</td>
+      <td class="u sep">${f(a._perpU)}</td><td class="u">${f(a._perpC)}</td><td class="tot tperp">${f(a._perpTot)}</td>
+      <td class="tot sep">${f(a._oi)}</td></tr>`;
+    if(op){
+      let brk=EXCH.map((e,i)=>{const v=a._ex[e]||{};return `<tr>
+        <td class="l"><span class="dot" style="background:${colorFor(e,i)}"></span>${e}</td>
+        <td class="u sep">${f(v.spotU)}</td><td class="u">${f(v.spotC)}</td>
+        <td class="u sep">${f(v.perpU)}</td><td class="u">${f(v.perpC)}</td>
+        <td class="sep">${f(v.oi)}</td>
+        <td class="tot">${f((v.spotU||0)+(v.spotC||0)+(v.perpU||0)+(v.perpC||0))}</td></tr>`;}).join('');
+      html+=`<tr class="detail"><td colspan="9"><div class="detail-inner">
+        <div class="bx"><h4>${a.symbol} — borsa kırılımı (24s)</h4><table class="brk">
+          <tr><th class="l" rowspan="2">Borsa</th><th class="gspot sep" colspan="2">Spot</th><th class="gperp sep" colspan="2">Perp</th><th class="sep" rowspan="2">OI</th><th rowspan="2">Volume</th></tr>
+          <tr><th class="gspot sep">USDT</th><th class="gspot">USDC</th><th class="gperp sep">USDT</th><th class="gperp">USDC</th></tr>
+          ${brk}</table></div>
+        <div class="bx"><h4>${a.symbol} — volume'ün borsalara dağılımı</h4><div class="pie-wrap"><div style="position:relative;width:230px;height:200px"><canvas id="pie" role="img" aria-label="${a.symbol} borsa dağılımı">${a.symbol} dağılımı.</canvas></div></div></div>
+      </div></td></tr>`;
     }
   });
-
-  // Open interest: toplam (tek seri)
-  if(chartOI) chartOI.destroy();
-  chartOI = new Chart(document.getElementById('chartOI'), {
-    type:'bar',
-    data:{labels, datasets:[{
-      label:'Open Interest', data: top.map(a=>M(a.total_open_interest_usd)),
-      backgroundColor:'#58a6ff'
-    }]},
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      plugins:{legend:{display:false},
-        tooltip:{callbacks:{label:c=>'$'+c.parsed.y.toFixed(1)+'M'}}},
-      scales:{
-        x:{ticks:{color:'#8b98a5'},grid:{color:'#2a3441'}},
-        y:{ticks:{color:'#8b98a5'},grid:{color:'#2a3441'}}
-      }
-    }
-  });
+  $('tbd').innerHTML=html;
+  if(openSym){const a=DATA.assets.find(x=>x.symbol===openSym);if(a)drawPie(a);}
 }
 
+function drawPie(a){
+  const ctx=$('pie');if(!ctx)return;if(pieChart)pieChart.destroy();
+  const cs=getComputedStyle(document.documentElement);
+  pieChart=new Chart(ctx,{type:'doughnut',
+    data:{labels:EXCH,datasets:[{data:EXCH.map(e=>M((a._ex[e]||{}).spotU+(a._ex[e]||{}).spotC+(a._ex[e]||{}).perpU+(a._ex[e]||{}).perpC)),backgroundColor:EXCH.map((e,i)=>colorFor(e,i)),borderWidth:1.5,borderColor:cs.getPropertyValue('--panel').trim()}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:10},boxWidth:10,padding:6}},tooltip:{callbacks:{label:c=>c.label+': $'+c.parsed.toFixed(1)+'M'}}}}});
+}
+
+function toggle(sym){openSym=openSym===sym?null:sym;render();}
+$('sortBy').onchange=e=>{sortKey=e.target.value;sortDir=-1;render();};
+$('search').oninput=render;
+document.documentElement.dataset.theme='light';
 load();
 </script>
 </body>
