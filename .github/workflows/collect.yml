@@ -1,12 +1,8 @@
-name: Veri Topla
+name: Veri Topla (CMC + 6 Borsa)
 
-# Bu dosya GitHub'a her gun otomatik veri cektirir.
 on:
   schedule:
-    # Her gun saat 09:00 UTC'de calisir = Turkiye saati 12:00 (UTC+3).
-    # Saati degistirmek istersen: https://crontab.guru
     - cron: '0 9 * * *'
-  # Bu satir sayesinde GitHub'da "Run workflow" butonuyla elle de tetikleyebilirsin.
   workflow_dispatch:
 
 jobs:
@@ -24,13 +20,20 @@ jobs:
       - name: Gerekli paketi yukle
         run: pip install requests
 
-      - name: Veriyi cek
-        run: python collect.py
+      - name: CMC verisini cek
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python collect.py cmc
 
-      - name: data.json'u kaydet
+      - name: 6 borsa verisini cek
+        env:
+          CMC_API_KEY: ${{ secrets.CMC_API_KEY }}
+        run: python collect.py github
+
+      - name: Sonuclari kaydet
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add data.json
-          git commit -m "Veri guncellendi: $(date -u +%Y-%m-%d)" || echo "Degisiklik yok"
+          git add cmc.json borsa_github.json arsiv
+          git commit -m "Otomatik veri guncellendi" || echo "Degisiklik yok"
           git push
