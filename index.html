@@ -142,16 +142,21 @@
     <!-- ============ SEKME 3: ANALIZ ============ -->
     <div class="panel-view" id="view-analiz">
       <div class="filters">
-        <div class="fl"><label>Varlık</label><select id="aAsset"></select></div>
+        <div class="fl"><label>Mod</label>
+          <div class="seg"><button id="aModeGun" class="on" onclick="setAMode('tekgun')">Tek gün</button><button id="aModeTrend" onclick="setAMode('gunler')">Günler arası</button></div></div>
         <div class="fl"><label>Tür</label>
-          <select id="aMetric"><option value="spot">Spot Volume</option><option value="perp">Perp Volume</option><option value="oi">Open Interest</option></select></div>
+          <div class="seg"><button id="aSpot" class="on" onclick="setAMetric('spot')">Spot</button><button id="aPerp" onclick="setAMetric('perp')">Perp</button><button id="aOi" onclick="setAMetric('oi')">OI</button></div></div>
+        <div class="fl"><label>Varlık</label><select id="aAsset"></select></div>
+        <div class="fl" id="aDayWrap"><label id="aDayLabel">Gün</label><div id="aDayBox"></div></div>
+      </div>
+      <div class="filters" style="margin-top:-6px">
         <div class="fl" style="flex:1"><label>Borsalar (karşılaştır)</label><div class="checks" id="aChecks"></div></div>
       </div>
       <div class="cards" id="aCards"></div>
       <div class="chart-box">
-        <h3 id="aTitle">Zaman serisi</h3>
-        <div class="cs">Her nokta bir günü gösterir · günlük arşivden</div>
-        <div style="position:relative;height:340px"><canvas id="aChart" role="img" aria-label="Analiz zaman serisi">Zaman serisi grafiği.</canvas></div>
+        <h3 id="aTitle">Karşılaştırma</h3>
+        <div class="cs" id="aSub">Günlük arşivden</div>
+        <div style="position:relative;height:340px"><canvas id="aChart" role="img" aria-label="Analiz karşılaştırma grafiği">Karşılaştırma grafiği.</canvas></div>
       </div>
     </div>
   </div>
@@ -162,6 +167,13 @@ const EXCH_COLORS={Binance:'#F0B90B',OKX:'#2B3139',Bybit:'#FF7A00',MEXC:'#1652F0
 const ALL_EXCH=["Binance","OKX","Bybit","MEXC","Bitget","Gate","KuCoin","Coinbase"];
 const $=id=>document.getElementById(id);
 const f=v=>{v=v||0;if(v>=1e9)return '$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return '$'+(v/1e6).toFixed(1)+'M';if(v>=1e3)return '$'+(v/1e3).toFixed(1)+'K';return '$'+Math.round(v);};
+// Fiyat formati: kucuk fiyatlari (1$ alti) virgulden sonra basamakla goster
+const fprice=v=>{v=+v||0;
+  if(v>=1000)return '$'+v.toLocaleString('en-US',{maximumFractionDigits:0});
+  if(v>=1)return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  if(v>=0.01)return '$'+v.toFixed(4);
+  if(v>0)return '$'+v.toFixed(8);
+  return '$0';};
 const fp=v=>{if(v===null||v===undefined)return '—';const s=v>=0?'+':'';return s+v.toFixed(2)+'%';};
 const M=v=>(v||0)/1e6;
 const colorFor=(e,i)=>EXCH_COLORS[e]||['#003aff','#00c2ff','#00d18f','#f5a623','#9b5cff','#ff5c8a','#ffd23f','#8a94a6'][i%8];
@@ -169,6 +181,7 @@ const colorFor=(e,i)=>EXCH_COLORS[e]||['#003aff','#00c2ff','#00d18f','#f5a623','
 let CMC=null, BORSA=null, ARSIV={cmc:null,borsa:null};
 let cmcSort='rank',cmcDir=1, bSort='_perpTot',bDir=-1, openSym=null, pieMode='spot', pieChart=null;
 let aChart=null, aSelectedExch=new Set(['Binance','OKX','Bybit']);
+let aMode='tekgun', aMetric='spot', aSelectedDays=new Set();
 
 function setTheme(t){document.documentElement.dataset.theme=t;$('bLight').classList.toggle('on',t==='light');$('bDark').classList.toggle('on',t==='dark');redrawAll();}
 function showTab(t){
@@ -236,7 +249,7 @@ function renderCmc(){
   $('cmcCount').textContent=rows.length;
   $('cmcBody').innerHTML=rows.map(c=>`<tr>
     <td class="l"><span class="rk">${c.rank||'-'}</span><b>${c.symbol}</b> <span class="nm">· ${c.name||''}</span></td>
-    <td>${f(c.price_usd)}</td>
+    <td>${fprice(c.price_usd)}</td>
     <td>${f(c.market_cap_usd)}</td>
     <td>${f(c.spot_volume_24h_usd)}</td>
     <td class="${(c.percent_change_7d||0)>=0?'pos':'neg'}">${fp(c.percent_change_7d)}</td></tr>`).join('');
@@ -308,72 +321,121 @@ $('bSort').onchange=e=>{bSort=e.target.value;bDir=-1;renderBorsa();};
 $('bSearch').oninput=renderBorsa;
 
 /* ---------- SEKME 3: ANALIZ ---------- */
+function setAMode(m){aMode=m;$('aModeGun').classList.toggle('on',m==='tekgun');$('aModeTrend').classList.toggle('on',m==='gunler');buildDayBox();renderAnaliz();}
+function setAMetric(m){aMetric=m;$('aSpot').classList.toggle('on',m==='spot');$('aPerp').classList.toggle('on',m==='perp');$('aOi').classList.toggle('on',m==='oi');renderAnaliz();}
+
+function gunlerListesi(){ return (ARSIV.borsa&&ARSIV.borsa.gunler)||[]; }
+
 function prepAnaliz(){
-  // borsa arsiv gunleri var mi?
-  const gunler=(ARSIV.borsa&&ARSIV.borsa.gunler)||[];
-  // Asset listesi: guncel borsadan
+  // Asset listesi
   const sel=$('aAsset');sel.innerHTML='';
   const syms=(BORSA&&BORSA.assets||[]).map(a=>a.symbol);
   syms.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;sel.appendChild(o);});
-  // Borsa checkbox'lari
-  $('aChecks').innerHTML=ALL_EXCH.map(e=>`<span class="chk ${aSelectedExch.has(e)?'on':''}" data-e="${e}" onclick="toggleExch('${e}')"><span class="dot" style="background:${EXCH_COLORS[e]}"></span>${e}</span>`).join('');
   $('aAsset').onchange=renderAnaliz;
-  $('aMetric').onchange=renderAnaliz;
+  // Borsa secimleri
+  $('aChecks').innerHTML=ALL_EXCH.map(e=>`<span class="chk ${aSelectedExch.has(e)?'on':''}" data-e="${e}" onclick="toggleExch('${e}')"><span class="dot" style="background:${EXCH_COLORS[e]}"></span>${e}</span>`).join('');
+  // Varsayilan secili gun: en son gun
+  const g=gunlerListesi();
+  if(g.length && aSelectedDays.size===0) aSelectedDays.add(g[g.length-1]);
+  buildDayBox();
+}
+function buildDayBox(){
+  const g=gunlerListesi();
+  if(aMode==='tekgun'){
+    $('aDayLabel').textContent='Gün';
+    // tek secim: dropdown
+    $('aDayBox').innerHTML=`<select id="aDaySel">${g.map(d=>`<option value="${d}">${d}</option>`).join('')}</select>`;
+    // secili gunu koru
+    const cur=[...aSelectedDays][0];
+    const sel=$('aDaySel');
+    if(cur&&g.includes(cur))sel.value=cur; else if(g.length){aSelectedDays=new Set([g[g.length-1]]);sel.value=g[g.length-1];}
+    sel.onchange=()=>{aSelectedDays=new Set([sel.value]);renderAnaliz();};
+  }else{
+    $('aDayLabel').textContent='Günler (çoklu seç)';
+    $('aDayBox').innerHTML=`<div class="checks" id="aDayChecks">${g.map(d=>`<span class="chk ${aSelectedDays.has(d)?'on':''}" data-d="${d}" onclick="toggleDay('${d}')">${d}</span>`).join('')}</div>`;
+  }
+}
+function toggleDay(d){ if(aSelectedDays.has(d))aSelectedDays.delete(d);else aSelectedDays.add(d);
+  document.querySelectorAll('#aDayChecks .chk').forEach(c=>c.classList.toggle('on',aSelectedDays.has(c.dataset.d)));
+  renderAnaliz();
 }
 function toggleExch(e){ if(aSelectedExch.has(e))aSelectedExch.delete(e);else aSelectedExch.add(e);
   document.querySelectorAll('#aChecks .chk').forEach(c=>c.classList.toggle('on',aSelectedExch.has(c.dataset.e)));
   renderAnaliz();
 }
+async function loadDays(days){
+  if(!renderAnaliz._cache)renderAnaliz._cache={};
+  const out={};
+  for(const d of days){
+    if(renderAnaliz._cache[d]){out[d]=renderAnaliz._cache[d];continue;}
+    try{ const j=await getJSON('arsiv/borsa/'+d+'.json'); renderAnaliz._cache[d]=j; out[d]=j; }catch(e){}
+  }
+  return out;
+}
+function valFor(dayJson,asset,exch,metric){
+  if(!dayJson)return null;
+  const a=(dayJson.assets||[]).find(x=>x.symbol===asset);if(!a)return null;
+  const v=(a.exchanges||{})[exch];if(!v)return null;
+  return metric==='spot'?M((v.spot_usdt||0)+(v.spot_usdc||0)):metric==='perp'?M(v.perp_volume_usd||0):M(v.open_interest_usd||0);
+}
 async function renderAnaliz(){
-  const gunler=(ARSIV.borsa&&ARSIV.borsa.gunler)||[];
-  if(!gunler.length){
-    $('aCards').innerHTML='';
-    $('aTitle').textContent='Henüz arşiv yok';
-    if(aChart){aChart.destroy();aChart=null;}
-    return;
+  const g=gunlerListesi();
+  const metricName={spot:'Spot Volume',perp:'Perp Volume',oi:'Open Interest'}[aMetric];
+  if(!g.length){
+    $('aCards').innerHTML='';$('aTitle').textContent='Henüz arşiv yok';
+    $('aSub').textContent='guncelle.bat / GitHub çalıştıkça günlük arşiv birikir';
+    if(aChart){aChart.destroy();aChart=null;}return;
   }
-  const asset=$('aAsset').value, metric=$('aMetric').value;
-  // Gunluk dosyalari yukle (cache'le)
-  const dayData={};
-  for(const d of gunler){
-    if(!renderAnaliz._cache)renderAnaliz._cache={};
-    if(renderAnaliz._cache[d]){dayData[d]=renderAnaliz._cache[d];continue;}
-    try{ const j=await getJSON('arsiv/borsa/'+d+'.json'); renderAnaliz._cache[d]=j; dayData[d]=j; }catch(e){}
-  }
+  const asset=$('aAsset').value||(BORSA&&BORSA.assets[0]&&BORSA.assets[0].symbol);
   const exch=[...aSelectedExch];
   const cs=getComputedStyle(document.documentElement);
-  const datasets=exch.map((e,i)=>({
-    label:e,
-    data:gunler.map(d=>{
-      const j=dayData[d];if(!j)return null;
-      const a=(j.assets||[]).find(x=>x.symbol===asset);if(!a)return null;
-      const v=(a.exchanges||{})[e];if(!v)return null;
-      return metric==='spot'?M((v.spot_usdt||0)+(v.spot_usdc||0)):metric==='perp'?M(v.perp_volume_usd||0):M(v.open_interest_usd||0);
-    }),
-    borderColor:EXCH_COLORS[e]||colorFor(e,i),backgroundColor:'transparent',tension:.25,pointRadius:3,spanGaps:true
-  }));
-  const metricName={spot:'Spot Volume',perp:'Perp Volume',oi:'Open Interest'}[metric];
-  $('aTitle').textContent=`${asset} — ${metricName} (borsa karşılaştırma)`;
 
-  // Kartlar: dun-bugun degisim (secili ilk borsa toplamlari yerine asset toplami)
-  if(gunler.length>=2){
-    const son=dayData[gunler[gunler.length-1]], onceki=dayData[gunler[gunler.length-2]];
-    const sumFor=(j)=>{const a=(j.assets||[]).find(x=>x.symbol===asset);if(!a)return 0;return exch.reduce((s,e)=>{const v=(a.exchanges||{})[e];if(!v)return s;return s+(metric==='spot'?(v.spot_usdt||0)+(v.spot_usdc||0):metric==='perp'?(v.perp_volume_usd||0):(v.open_interest_usd||0));},0);};
-    const b=sumFor(son),o=sumFor(onceki),deg=o?((b-o)/o*100):0;
+  if(aMode==='tekgun'){
+    const day=[...aSelectedDays][0]||g[g.length-1];
+    const dd=await loadDays([day]);
+    const labels=exch;
+    const vals=exch.map(e=>valFor(dd[day],asset,e,aMetric)||0);
+    $('aTitle').textContent=`${asset} — ${metricName} · ${day}`;
+    $('aSub').textContent='Seçili borsaların o günkü değerleri (yan yana)';
+    const toplam=vals.reduce((s,v)=>s+v,0);
+    const enbuyuk=Math.max(...vals,0);const enbIdx=vals.indexOf(enbuyuk);
     $('aCards').innerHTML=`
-      <div class="card"><div class="l">dün (seçili borsalar)</div><div class="v">${f(o)}</div></div>
-      <div class="card"><div class="l">bugün</div><div class="v">${f(b)}</div></div>
-      <div class="card"><div class="l">değişim</div><div class="v ${deg>=0?'pos':'neg'}">${deg>=0?'▲':'▼'} ${Math.abs(deg).toFixed(1)}%</div></div>
-      <div class="card"><div class="l">gün sayısı</div><div class="v">${gunler.length}</div></div>`;
+      <div class="card"><div class="l">gün</div><div class="v" style="font-size:15px">${day}</div></div>
+      <div class="card"><div class="l">seçili borsa toplam</div><div class="v">${f(toplam*1e6)}</div></div>
+      <div class="card"><div class="l">en yüksek</div><div class="v">${labels[enbIdx]||'-'}</div></div>
+      <div class="card"><div class="l">borsa sayısı</div><div class="v">${exch.length}</div></div>`;
+    if(aChart)aChart.destroy();
+    aChart=new Chart($('aChart'),{type:'bar',
+      data:{labels,datasets:[{label:metricName,data:vals,backgroundColor:exch.map((e,i)=>colorFor(e,i))}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>metricName+': '+f(c.parsed.y*1e6)}}},
+        scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim()},grid:{display:false}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
   }else{
-    $('aCards').innerHTML=`<div class="card"><div class="l">gün sayısı</div><div class="v">${gunler.length}</div></div>
-      <div class="card"><div class="l">durum</div><div class="v" style="font-size:13px">Karşılaştırma için en az 2 gün gerekir</div></div>`;
+    // gunler arasi: secili gunler x ekseni, her borsa bir seri (gruplu cubuk)
+    const days=g.filter(d=>aSelectedDays.has(d));
+    const useDays=days.length?days:[g[g.length-1]];
+    const dd=await loadDays(useDays);
+    const datasets=exch.map((e,i)=>({label:e,data:useDays.map(d=>valFor(dd[d],asset,e,aMetric)||0),backgroundColor:colorFor(e,i)}));
+    $('aTitle').textContent=`${asset} — ${metricName} · günler arası`;
+    $('aSub').textContent='Seçili günlerde, seçili borsaların değişimi';
+    // degisim karti: ilk-son secili gun, secili borsa toplami
+    if(useDays.length>=2){
+      const sumDay=(d)=>exch.reduce((s,e)=>s+(valFor(dd[d],asset,e,aMetric)||0),0);
+      const ilk=sumDay(useDays[0]),son=sumDay(useDays[useDays.length-1]),deg=ilk?((son-ilk)/ilk*100):0;
+      $('aCards').innerHTML=`
+        <div class="card"><div class="l">${useDays[0]}</div><div class="v">${f(ilk*1e6)}</div></div>
+        <div class="card"><div class="l">${useDays[useDays.length-1]}</div><div class="v">${f(son*1e6)}</div></div>
+        <div class="card"><div class="l">değişim</div><div class="v ${deg>=0?'pos':'neg'}">${deg>=0?'▲':'▼'} ${Math.abs(deg).toFixed(1)}%</div></div>
+        <div class="card"><div class="l">seçili gün</div><div class="v">${useDays.length}</div></div>`;
+    }else{
+      $('aCards').innerHTML=`<div class="card"><div class="l">seçili gün</div><div class="v">${useDays.length}</div></div>
+        <div class="card"><div class="l">ipucu</div><div class="v" style="font-size:13px">Değişim için 2+ gün seç</div></div>`;
+    }
+    if(aChart)aChart.destroy();
+    aChart=new Chart($('aChart'),{type:'bar',
+      data:{labels:useDays,datasets},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+f(c.parsed.y*1e6)}}},
+        scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim()},grid:{display:false}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
   }
-
-  if(aChart)aChart.destroy();
-  aChart=new Chart($('aChart'),{type:'line',data:{labels:gunler,datasets},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+(c.parsed.y==null?'—':f(c.parsed.y*1e6))}}},
-    scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim(),font:{size:10}},grid:{color:cs.getPropertyValue('--brd').trim()}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),font:{size:10},callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
 }
 
 document.documentElement.dataset.theme='light';
