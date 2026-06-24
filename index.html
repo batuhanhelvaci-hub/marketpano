@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarketPano</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root[data-theme="light"]{--bg:#f5f8fd;--panel:#ffffff;--panel2:#eef3fb;--brd:#dce5f2;--ink:#0e1726;--mut:#5b6b85;--brand:#003aff;--brand2:#0067ff;--perp:#7a5cff;--oi:#00a98f;--pos:#0a9d57;--neg:#e5484d}
+  :root[data-theme="dark"]{--bg:#0b1220;--panel:#121a2b;--panel2:#1a2435;--brd:#243049;--ink:#e8eef7;--mut:#8a99b3;--brand:#0067ff;--brand2:#3b8dff;--perp:#9c84ff;--oi:#23d08a;--pos:#3fce8a;--neg:#ff6b6b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:14px;color:var(--ink);background:var(--bg);min-height:100vh;padding:24px}
+  .wrap{max-width:1340px;margin:0 auto;background:var(--panel);border:1px solid var(--brd);border-radius:14px;overflow:hidden}
+  .hd{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--brd);gap:14px;flex-wrap:wrap}
+  .ttl{font-size:18px;font-weight:600;letter-spacing:-.3px}.ttl b{color:var(--brand2)}
+  .sub{font-size:12px;color:var(--mut);margin-top:2px}
+  .hd-right{display:flex;align-items:center;gap:12px}
+  .stamp{display:flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid var(--brd);border-radius:8px;padding:7px 12px;font-size:12px;color:var(--mut)}
+  .stamp .dotlive{width:7px;height:7px;border-radius:50%;background:var(--oi)}
+  .stamp b{color:var(--ink);font-weight:600}
+  .seg{display:flex;border:1px solid var(--brd);border-radius:8px;overflow:hidden}
+  .seg button{background:transparent;border:0;color:var(--mut);padding:6px 12px;font-size:12px;cursor:pointer;font-weight:500}
+  .seg button.on{background:var(--brand);color:#fff}
+  /* Sekmeler */
+  .tabs{display:flex;gap:4px;padding:0 22px;border-bottom:1px solid var(--brd);background:var(--panel)}
+  .tab{padding:13px 18px;font-size:14px;font-weight:500;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tab.active{color:var(--brand2);border-bottom-color:var(--brand2)}
+  .tab:hover{color:var(--ink)}
+  .body{padding:18px 22px}
+  .panel-view{display:none}.panel-view.active{display:block}
+  /* Filtreler */
+  .filters{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:var(--panel2);border:1px solid var(--brd);border-radius:10px;padding:14px 16px;margin-bottom:16px}
+  .fl{display:flex;flex-direction:column;gap:5px}
+  .fl label{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+  select,input[type=text]{background:var(--panel);border:1px solid var(--brd);color:var(--ink);padding:8px 10px;border-radius:7px;font-size:13px}
+  .cnt{font-size:12px;color:var(--mut)}.cnt b{color:var(--brand2)}
+  /* Kartlar */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr 1fr}}
+  .card{background:var(--panel2);border:1px solid var(--brd);border-radius:10px;padding:12px 14px}
+  .card .l{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px}
+  .card .v{font-size:19px;font-weight:600;margin-top:3px}
+  /* Tablolar */
+  .tbl-wrap{background:var(--panel);border:1px solid var(--brd);border-radius:10px;padding:0 0 4px;overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  thead th{position:sticky;top:0;background:var(--panel);z-index:1}
+  .grp th{padding:8px 8px 4px;text-align:center;color:var(--mut);font-weight:600;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--brd)}
+  .grp th.gspot{color:var(--brand2)}.grp th.gperp{color:var(--perp)}
+  .colh th{padding:5px 8px 9px;text-align:right;color:var(--mut);font-weight:500;font-size:10.5px;white-space:nowrap;border-bottom:1px solid var(--brd);cursor:pointer}
+  .colh th.l{text-align:left}.colh th:hover{color:var(--ink)}
+  td{padding:8px;text-align:right;border-bottom:1px solid var(--brd);white-space:nowrap}
+  td.l{text-align:left}
+  .arow{cursor:pointer}.arow:hover{background:var(--panel2)}
+  .sep{border-left:1px solid var(--brd)}
+  .rk{color:var(--mut);font-weight:400;margin-right:6px}.nm{color:var(--mut);font-weight:400}
+  .u{color:var(--mut);font-size:11px}
+  .tot{font-weight:600}.tspot{color:var(--brand2)}.tperp{color:var(--perp)}
+  .pos{color:var(--pos)}.neg{color:var(--neg)}
+  .caret{display:inline-block;width:11px;color:var(--mut);transition:transform .15s}
+  .arow.open .caret{transform:rotate(90deg)}
+  /* Detay (borsa kirilimi + pasta) */
+  .detail td{background:var(--panel2);padding:0}
+  .detail-inner{display:grid;grid-template-columns:1.7fr 1fr;gap:18px;padding:16px 18px}
+  @media(max-width:760px){.detail-inner{grid-template-columns:1fr}}
+  .bx{border:1px solid var(--brd);border-radius:8px;overflow:hidden;background:var(--panel)}
+  .bx h4{font-size:11px;font-weight:600;margin:0;padding:9px 12px;border-bottom:1px solid var(--brd);color:var(--mut);text-transform:uppercase;letter-spacing:.4px;display:flex;justify-content:space-between;align-items:center}
+  .miniseg{display:flex;border:1px solid var(--brd);border-radius:6px;overflow:hidden}
+  .miniseg button{background:transparent;border:0;color:var(--mut);padding:3px 10px;font-size:10px;cursor:pointer;font-weight:600}
+  .miniseg button.on{background:var(--brand);color:#fff}
+  .brk{width:100%;border-collapse:collapse;font-size:11px}
+  .brk td,.brk th{padding:6px 9px;border-bottom:1px solid var(--brd);white-space:nowrap;text-align:right}
+  .brk th{color:var(--mut);font-weight:500;font-size:9.5px;text-transform:uppercase;letter-spacing:.2px}
+  .brk td.l,.brk th.l{text-align:left}
+  .brk .gspot{color:var(--brand2)}.brk .gperp{color:var(--perp)}
+  .brk tr:last-child td{border-bottom:0}.brk .sep{border-left:1px solid var(--brd)}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:middle}
+  .pie-wrap{display:flex;align-items:center;justify-content:center;padding:10px}
+  .err{padding:36px;text-align:center;color:#d29922;line-height:1.8}.err code{background:var(--panel2);padding:2px 6px;border-radius:4px}
+  .chart-box{background:var(--panel);border:1px solid var(--brd);border-radius:10px;padding:16px 18px;margin-bottom:16px}
+  .chart-box h3{font-size:14px;font-weight:600;margin-bottom:2px}.chart-box .cs{font-size:12px;color:var(--mut);margin-bottom:12px}
+  .checks{display:flex;flex-wrap:wrap;gap:8px}
+  .chk{display:flex;align-items:center;gap:5px;font-size:12px;background:var(--panel);border:1px solid var(--brd);border-radius:20px;padding:5px 11px;cursor:pointer;user-select:none}
+  .chk.on{border-color:var(--brand);color:var(--brand2);background:color-mix(in srgb,var(--brand) 10%,transparent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hd">
+    <div><div class="ttl">Market<b>Pano</b></div><div class="sub">CoinMarketCap, borsa hacimleri ve günlük arşiv analizi</div></div>
+    <div class="hd-right">
+      <div class="stamp"><span class="dotlive"></span>Veri: <b id="stamp">yükleniyor…</b></div>
+      <div class="seg"><button id="bLight" class="on" onclick="setTheme('light')">Açık</button><button id="bDark" onclick="setTheme('dark')">Koyu</button></div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="cmc" onclick="showTab('cmc')">CoinMarketCap</div>
+    <div class="tab" data-tab="borsa" onclick="showTab('borsa')">Borsalar</div>
+    <div class="tab" data-tab="analiz" onclick="showTab('analiz')">Analiz</div>
+  </div>
+
+  <div class="body">
+    <!-- ============ SEKME 1: CMC ============ -->
+    <div class="panel-view active" id="view-cmc">
+      <div class="filters">
+        <div class="fl"><label>Sırala</label>
+          <select id="cmcSort"><option value="rank">Sıra (market cap)</option><option value="spot_volume_24h_usd">Spot Hacim (24s)</option><option value="market_cap_usd">Market Cap</option><option value="percent_change_7d">7g %</option></select></div>
+        <div class="fl"><label>Ara</label><input type="text" id="cmcSearch" placeholder="örn: BTC" style="width:120px"></div>
+        <div class="cnt" style="margin-left:auto">Kaynak: <b id="cmcKaynak">—</b> · <b id="cmcCount">0</b> coin</div>
+      </div>
+      <div class="tbl-wrap"><table>
+        <thead><tr class="colh">
+          <th class="l" data-k="symbol">Coin</th>
+          <th data-k="price_usd">Fiyat</th>
+          <th data-k="market_cap_usd">Market Cap</th>
+          <th data-k="spot_volume_24h_usd">Spot Hacim (24s)</th>
+          <th data-k="percent_change_7d">7g %</th>
+        </tr></thead>
+        <tbody id="cmcBody"></tbody>
+      </table></div>
+    </div>
+
+    <!-- ============ SEKME 2: BORSALAR ============ -->
+    <div class="panel-view" id="view-borsa">
+      <div class="filters">
+        <div class="fl"><label>Sırala</label>
+          <select id="bSort"><option value="_perpTot">Perp Volume (24s)</option><option value="_spotTot">Spot Volume (24s)</option><option value="_oi">Open Interest</option><option value="_mcap">Market Cap</option></select></div>
+        <div class="fl"><label>Ara</label><input type="text" id="bSearch" placeholder="örn: BTC" style="width:120px"></div>
+        <div class="cnt" style="margin-left:auto"><b id="bCount">0</b> coin · 8 borsa</div>
+      </div>
+      <div class="cards" id="bCards"></div>
+      <div style="font-size:12px;color:var(--mut);margin-bottom:8px">İpucu: bir coine tıkla → borsa kırılımı (spot/perp, USDT/USDC) ve dağılım pastası açılır.</div>
+      <div class="tbl-wrap"><table>
+        <thead>
+          <tr class="grp"><th></th><th></th><th class="gspot sep" colspan="3">Spot Volume (24s)</th><th class="gperp sep" colspan="3">Perp Volume (24s)</th><th class="sep"></th></tr>
+          <tr class="colh" id="bColh"></tr>
+        </thead>
+        <tbody id="bBody"></tbody>
+      </table></div>
+    </div>
+
+    <!-- ============ SEKME 3: ANALIZ ============ -->
+    <div class="panel-view" id="view-analiz">
+      <div class="filters">
+        <div class="fl"><label>Varlık</label><select id="aAsset"></select></div>
+        <div class="fl"><label>Tür</label>
+          <select id="aMetric"><option value="spot">Spot Volume</option><option value="perp">Perp Volume</option><option value="oi">Open Interest</option></select></div>
+        <div class="fl" style="flex:1"><label>Borsalar (karşılaştır)</label><div class="checks" id="aChecks"></div></div>
+      </div>
+      <div class="cards" id="aCards"></div>
+      <div class="chart-box">
+        <h3 id="aTitle">Zaman serisi</h3>
+        <div class="cs">Her nokta bir günü gösterir · günlük arşivden</div>
+        <div style="position:relative;height:340px"><canvas id="aChart" role="img" aria-label="Analiz zaman serisi">Zaman serisi grafiği.</canvas></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const EXCH_COLORS={Binance:'#F0B90B',OKX:'#2B3139',Bybit:'#FF7A00',MEXC:'#1652F0',Bitget:'#00CED1',Gate:'#E5402B',KuCoin:'#23D08A',Coinbase:'#7B61FF'};
+const ALL_EXCH=["Binance","OKX","Bybit","MEXC","Bitget","Gate","KuCoin","Coinbase"];
+const $=id=>document.getElementById(id);
+const f=v=>{v=v||0;if(v>=1e9)return '$'+(v/1e9).toFixed(2)+'B';if(v>=1e6)return '$'+(v/1e6).toFixed(1)+'M';if(v>=1e3)return '$'+(v/1e3).toFixed(1)+'K';return '$'+Math.round(v);};
+const fp=v=>{if(v===null||v===undefined)return '—';const s=v>=0?'+':'';return s+v.toFixed(2)+'%';};
+const M=v=>(v||0)/1e6;
+const colorFor=(e,i)=>EXCH_COLORS[e]||['#003aff','#00c2ff','#00d18f','#f5a623','#9b5cff','#ff5c8a','#ffd23f','#8a94a6'][i%8];
+
+let CMC=null, BORSA=null, ARSIV={cmc:null,borsa:null};
+let cmcSort='rank',cmcDir=1, bSort='_perpTot',bDir=-1, openSym=null, pieMode='spot', pieChart=null;
+let aChart=null, aSelectedExch=new Set(['Binance','OKX','Bybit']);
+
+function setTheme(t){document.documentElement.dataset.theme=t;$('bLight').classList.toggle('on',t==='light');$('bDark').classList.toggle('on',t==='dark');redrawAll();}
+function showTab(t){
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===t));
+  document.querySelectorAll('.panel-view').forEach(x=>x.classList.remove('active'));
+  $('view-'+t).classList.add('active');
+  if(t==='analiz')renderAnaliz();
+}
+function redrawAll(){ if(CMC)renderCmc(); if(BORSA)renderBorsa(); if($('view-analiz').classList.contains('active'))renderAnaliz(); }
+
+async function getJSON(path){
+  const r=await fetch(path+'?_='+Date.now());
+  if(!r.ok) throw new Error('HTTP '+r.status+' '+path);
+  return r.json();
+}
+
+async function loadAll(){
+  // CMC
+  try{ CMC=await getJSON('cmc.json'); }catch(e){ CMC=null; }
+  // Borsa: github + local birlestir
+  let g=null,l=null;
+  try{ g=await getJSON('borsa_github.json'); }catch(e){}
+  try{ l=await getJSON('borsa_local.json'); }catch(e){}
+  BORSA=mergeBorsa(g,l);
+  // Arsiv indeksleri
+  try{ ARSIV.borsa=await getJSON('arsiv/borsa/index.json'); }catch(e){}
+  try{ ARSIV.cmc=await getJSON('arsiv/cmc/index.json'); }catch(e){}
+
+  // Zaman damgasi (en guncel hangisiyse)
+  const t=(BORSA&&BORSA.generated_at)||(CMC&&CMC.generated_at);
+  $('stamp').textContent=t?new Date(t).toLocaleString('tr-TR',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}):'veri yok';
+
+  buildBorsaHead();
+  if(CMC)renderCmc(); else cmcErr();
+  if(BORSA)renderBorsa(); else borsaErr();
+  prepAnaliz();
+}
+
+function mergeBorsa(g,l){
+  if(!g&&!l)return null;
+  const merged={};
+  [g,l].forEach(src=>{ if(!src)return;
+    (src.assets||[]).forEach(a=>{
+      const m=merged[a.symbol]||(merged[a.symbol]={symbol:a.symbol,name:a.name||'',rank:a.rank,_mcap:a.market_cap_usd||0,exchanges:{}});
+      Object.assign(m.exchanges,a.exchanges||{});
+    });
+  });
+  // turetilmis toplamlar
+  Object.values(merged).forEach(a=>{
+    a._spotU=0;a._spotC=0;a._perp=0;a._oi=0;
+    ALL_EXCH.forEach(e=>{const v=a.exchanges[e];if(v){a._spotU+=+v.spot_usdt||0;a._spotC+=+v.spot_usdc||0;a._perp+=+v.perp_volume_usd||0;a._oi+=+v.open_interest_usd||0;}});
+    a._spotTot=a._spotU+a._spotC;a._perpTot=a._perp;
+  });
+  return {generated_at:(g&&g.generated_at)||(l&&l.generated_at),
+    assets:Object.values(merged).sort((x,y)=>(x.rank||9999)-(y.rank||9999))};
+}
+
+/* ---------- SEKME 1: CMC ---------- */
+function cmcErr(){ $('cmcBody').innerHTML=`<tr><td colspan="5" class="err">cmc.json yok. GitHub'da CMC modu çalışınca oluşur.</td></tr>`; }
+function renderCmc(){
+  $('cmcKaynak').textContent=CMC.kaynak||'?';
+  const q=$('cmcSearch').value.trim().toUpperCase();
+  let rows=(CMC.coins||[]).filter(c=>!q||c.symbol.includes(q)||(c.name||'').toUpperCase().includes(q));
+  rows.sort((x,y)=>{const a=x[cmcSort],b=y[cmcSort];return typeof a==='string'?cmcDir*a.localeCompare(b):cmcDir*((a||0)-(b||0));});
+  $('cmcCount').textContent=rows.length;
+  $('cmcBody').innerHTML=rows.map(c=>`<tr>
+    <td class="l"><span class="rk">${c.rank||'-'}</span><b>${c.symbol}</b> <span class="nm">· ${c.name||''}</span></td>
+    <td>${f(c.price_usd)}</td>
+    <td>${f(c.market_cap_usd)}</td>
+    <td>${f(c.spot_volume_24h_usd)}</td>
+    <td class="${(c.percent_change_7d||0)>=0?'pos':'neg'}">${fp(c.percent_change_7d)}</td></tr>`).join('');
+}
+document.querySelectorAll('#view-cmc .colh th').forEach(th=>{th.onclick=()=>{const k=th.dataset.k;if(cmcSort===k)cmcDir*=-1;else{cmcSort=k;cmcDir=k==='symbol'?1:-1;}renderCmc();};});
+$('cmcSort').onchange=e=>{cmcSort=e.target.value;cmcDir=cmcSort==='rank'?1:-1;renderCmc();};
+$('cmcSearch').oninput=renderCmc;
+
+/* ---------- SEKME 2: BORSALAR ---------- */
+function borsaErr(){ $('bBody').innerHTML=`<tr><td colspan="9" class="err">Borsa verisi yok. GitHub (6 borsa) ve/veya yerel (Binance/Bybit) çalışınca oluşur.</td></tr>`; }
+function buildBorsaHead(){
+  const cols=[["symbol","Asset","l"],["_mcap","M.Cap"],["_spotU","USDT","sep"],["_spotC","USDC"],["_spotTot","Volume"],["_perpUSDT","USDT","sep"],["_perpUSDC","USDC"],["_perpTot","Volume"],["_oi","Open Int.","sep"]];
+  $('bColh').innerHTML=cols.map(c=>`<th class="${c[2]==='sep'?'sep':''} ${c[2]==='l'?'l':''}" data-k="${c[0]}">${c[1]}</th>`).join('');
+  document.querySelectorAll('#bColh th').forEach(th=>{th.onclick=()=>{const k=th.dataset.k;if(bSort===k)bDir*=-1;else{bSort=k;bDir=-1;}renderBorsa();};});
+}
+function renderBorsa(){
+  const q=$('bSearch').value.trim().toUpperCase();
+  let rows=(BORSA.assets||[]).filter(a=>!q||a.symbol.includes(q)||(a.name||'').toUpperCase().includes(q));
+  rows.sort((x,y)=>{const a=x[bSort],b=y[bSort];return typeof a==='string'?bDir*a.localeCompare(b):bDir*((a||0)-(b||0));});
+  $('bCount').textContent=rows.length;
+  const sT=rows.reduce((s,a)=>s+a._spotTot,0),pT=rows.reduce((s,a)=>s+a._perpTot,0),oiT=rows.reduce((s,a)=>s+a._oi,0);
+  $('bCards').innerHTML=`
+    <div class="card"><div class="l">Spot volume (24s)</div><div class="v">${f(sT)}</div></div>
+    <div class="card"><div class="l">Perp volume (24s)</div><div class="v">${f(pT)}</div></div>
+    <div class="card"><div class="l">Toplam open interest</div><div class="v">${f(oiT)}</div></div>
+    <div class="card"><div class="l">Perp / Spot oranı</div><div class="v">${sT?(pT/sT).toFixed(2):0}x</div></div>`;
+  let html='';
+  rows.forEach(a=>{
+    const op=openSym===a.symbol;
+    // perp USDT/USDC: su an perp tek volume; USDT kabul, USDC bos
+    html+=`<tr class="arow ${op?'open':''}" onclick="toggleRow('${a.symbol}')">
+      <td class="l"><span class="caret">▶</span><span class="rk">${a.rank||'-'}</span>${a.symbol} <span class="nm">· ${a.name||''}</span></td>
+      <td>${f(a._mcap)}</td>
+      <td class="u sep">${f(a._spotU)}</td><td class="u">${f(a._spotC)}</td><td class="tot tspot">${f(a._spotTot)}</td>
+      <td class="u sep">${f(a._perp)}</td><td class="u">$0</td><td class="tot tperp">${f(a._perpTot)}</td>
+      <td class="tot sep">${f(a._oi)}</td></tr>`;
+    if(op) html+=detailRow(a);
+  });
+  $('bBody').innerHTML=html;
+  if(openSym){const a=BORSA.assets.find(x=>x.symbol===openSym);if(a)drawPie(a);}
+}
+function detailRow(a){
+  let brk=ALL_EXCH.map((e,i)=>{const v=a.exchanges[e]||{};return `<tr>
+    <td class="l"><span class="dot" style="background:${colorFor(e,i)}"></span>${e}</td>
+    <td class="u sep">${f(v.spot_usdt)}</td><td class="u">${f(v.spot_usdc)}</td>
+    <td class="u sep">${f(v.perp_volume_usd)}</td><td class="u">$0</td>
+    <td class="sep">${f(v.open_interest_usd)}</td>
+    <td class="tot">${f((v.spot_usdt||0)+(v.spot_usdc||0)+(v.perp_volume_usd||0))}</td></tr>`;}).join('');
+  return `<tr class="detail"><td colspan="9"><div class="detail-inner">
+    <div class="bx"><h4>${a.symbol} — borsa kırılımı (24s)</h4><table class="brk">
+      <tr><th class="l" rowspan="2">Borsa</th><th class="gspot sep" colspan="2">Spot</th><th class="gperp sep" colspan="2">Perp</th><th class="sep" rowspan="2">OI</th><th rowspan="2">Volume</th></tr>
+      <tr><th class="gspot sep">USDT</th><th class="gspot">USDC</th><th class="gperp sep">USDT</th><th class="gperp">USDC</th></tr>${brk}</table></div>
+    <div class="bx"><h4><span>${a.symbol} — borsa dağılımı</span>
+      <span class="miniseg"><button class="${pieMode==='spot'?'on':''}" onclick="event.stopPropagation();setPie('spot')">Spot</button><button class="${pieMode==='perp'?'on':''}" onclick="event.stopPropagation();setPie('perp')">Perp</button></span></h4>
+      <div class="pie-wrap"><div style="position:relative;width:230px;height:200px"><canvas id="pie" role="img" aria-label="${a.symbol} dağılım">${a.symbol} dağılımı.</canvas></div></div></div>
+  </div></td></tr>`;
+}
+function toggleRow(sym){openSym=openSym===sym?null:sym;renderBorsa();}
+function setPie(m){pieMode=m;renderBorsa();}
+function drawPie(a){
+  const ctx=$('pie');if(!ctx)return;if(pieChart)pieChart.destroy();
+  const cs=getComputedStyle(document.documentElement);
+  const vals=ALL_EXCH.map(e=>{const v=a.exchanges[e]||{};return pieMode==='spot'?M((v.spot_usdt||0)+(v.spot_usdc||0)):M(v.perp_volume_usd||0);});
+  pieChart=new Chart(ctx,{type:'doughnut',
+    data:{labels:ALL_EXCH,datasets:[{data:vals,backgroundColor:ALL_EXCH.map((e,i)=>colorFor(e,i)),borderWidth:1.5,borderColor:cs.getPropertyValue('--panel').trim()}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:10},boxWidth:10,padding:6}},tooltip:{callbacks:{label:c=>c.label+': $'+c.parsed.toFixed(1)+'M'}}}}});
+}
+$('bSort').onchange=e=>{bSort=e.target.value;bDir=-1;renderBorsa();};
+$('bSearch').oninput=renderBorsa;
+
+/* ---------- SEKME 3: ANALIZ ---------- */
+function prepAnaliz(){
+  // borsa arsiv gunleri var mi?
+  const gunler=(ARSIV.borsa&&ARSIV.borsa.gunler)||[];
+  // Asset listesi: guncel borsadan
+  const sel=$('aAsset');sel.innerHTML='';
+  const syms=(BORSA&&BORSA.assets||[]).map(a=>a.symbol);
+  syms.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;sel.appendChild(o);});
+  // Borsa checkbox'lari
+  $('aChecks').innerHTML=ALL_EXCH.map(e=>`<span class="chk ${aSelectedExch.has(e)?'on':''}" data-e="${e}" onclick="toggleExch('${e}')"><span class="dot" style="background:${EXCH_COLORS[e]}"></span>${e}</span>`).join('');
+  $('aAsset').onchange=renderAnaliz;
+  $('aMetric').onchange=renderAnaliz;
+}
+function toggleExch(e){ if(aSelectedExch.has(e))aSelectedExch.delete(e);else aSelectedExch.add(e);
+  document.querySelectorAll('#aChecks .chk').forEach(c=>c.classList.toggle('on',aSelectedExch.has(c.dataset.e)));
+  renderAnaliz();
+}
+async function renderAnaliz(){
+  const gunler=(ARSIV.borsa&&ARSIV.borsa.gunler)||[];
+  if(!gunler.length){
+    $('aCards').innerHTML='';
+    $('aTitle').textContent='Henüz arşiv yok';
+    if(aChart){aChart.destroy();aChart=null;}
+    return;
+  }
+  const asset=$('aAsset').value, metric=$('aMetric').value;
+  // Gunluk dosyalari yukle (cache'le)
+  const dayData={};
+  for(const d of gunler){
+    if(!renderAnaliz._cache)renderAnaliz._cache={};
+    if(renderAnaliz._cache[d]){dayData[d]=renderAnaliz._cache[d];continue;}
+    try{ const j=await getJSON('arsiv/borsa/'+d+'.json'); renderAnaliz._cache[d]=j; dayData[d]=j; }catch(e){}
+  }
+  const exch=[...aSelectedExch];
+  const cs=getComputedStyle(document.documentElement);
+  const datasets=exch.map((e,i)=>({
+    label:e,
+    data:gunler.map(d=>{
+      const j=dayData[d];if(!j)return null;
+      const a=(j.assets||[]).find(x=>x.symbol===asset);if(!a)return null;
+      const v=(a.exchanges||{})[e];if(!v)return null;
+      return metric==='spot'?M((v.spot_usdt||0)+(v.spot_usdc||0)):metric==='perp'?M(v.perp_volume_usd||0):M(v.open_interest_usd||0);
+    }),
+    borderColor:EXCH_COLORS[e]||colorFor(e,i),backgroundColor:'transparent',tension:.25,pointRadius:3,spanGaps:true
+  }));
+  const metricName={spot:'Spot Volume',perp:'Perp Volume',oi:'Open Interest'}[metric];
+  $('aTitle').textContent=`${asset} — ${metricName} (borsa karşılaştırma)`;
+
+  // Kartlar: dun-bugun degisim (secili ilk borsa toplamlari yerine asset toplami)
+  if(gunler.length>=2){
+    const son=dayData[gunler[gunler.length-1]], onceki=dayData[gunler[gunler.length-2]];
+    const sumFor=(j)=>{const a=(j.assets||[]).find(x=>x.symbol===asset);if(!a)return 0;return exch.reduce((s,e)=>{const v=(a.exchanges||{})[e];if(!v)return s;return s+(metric==='spot'?(v.spot_usdt||0)+(v.spot_usdc||0):metric==='perp'?(v.perp_volume_usd||0):(v.open_interest_usd||0));},0);};
+    const b=sumFor(son),o=sumFor(onceki),deg=o?((b-o)/o*100):0;
+    $('aCards').innerHTML=`
+      <div class="card"><div class="l">dün (seçili borsalar)</div><div class="v">${f(o)}</div></div>
+      <div class="card"><div class="l">bugün</div><div class="v">${f(b)}</div></div>
+      <div class="card"><div class="l">değişim</div><div class="v ${deg>=0?'pos':'neg'}">${deg>=0?'▲':'▼'} ${Math.abs(deg).toFixed(1)}%</div></div>
+      <div class="card"><div class="l">gün sayısı</div><div class="v">${gunler.length}</div></div>`;
+  }else{
+    $('aCards').innerHTML=`<div class="card"><div class="l">gün sayısı</div><div class="v">${gunler.length}</div></div>
+      <div class="card"><div class="l">durum</div><div class="v" style="font-size:13px">Karşılaştırma için en az 2 gün gerekir</div></div>`;
+  }
+
+  if(aChart)aChart.destroy();
+  aChart=new Chart($('aChart'),{type:'line',data:{labels:gunler,datasets},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+(c.parsed.y==null?'—':f(c.parsed.y*1e6))}}},
+    scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim(),font:{size:10}},grid:{color:cs.getPropertyValue('--brd').trim()}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),font:{size:10},callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
+}
+
+document.documentElement.dataset.theme='light';
+loadAll();
+</script>
+</body>
+</html>
