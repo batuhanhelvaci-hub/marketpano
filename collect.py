@@ -42,9 +42,9 @@ OI_LIMIT = 60
 CMC_API_KEY = os.environ.get("CMC_API_KEY", "")
 
 # Hangi borsa hangi modda cekilir
-GITHUB_EXCHANGES = ["OKX", "MEXC", "Bitget", "Gate", "KuCoin", "Coinbase"]
+GITHUB_EXCHANGES = ["Hyperliquid", "OKX", "Bitget", "Gate"]
 LOCAL_EXCHANGES = ["Binance", "Bybit"]
-ALL_EXCHANGES = ["Binance", "OKX", "Bybit", "MEXC", "Bitget", "Gate", "KuCoin", "Coinbase"]
+ALL_EXCHANGES = ["Hyperliquid", "Binance", "OKX", "Bybit", "Bitget", "Gate"]
 
 HEADERS = {"User-Agent": USER_AGENT}
 
@@ -380,15 +380,50 @@ def perp_coinbase(top_bases):
     return {}
 
 
+def perp_hyperliquid(top_bases):
+    """Hyperliquid: POST /info ile metaAndAssetCtxs. Sadece USDC perp (DEX).
+    Donen: her coin icin perp 24s hacim (USDC) + open interest (USD)."""
+    out = {}
+    try:
+        r = requests.post(
+            "https://api.hyperliquid.xyz/info",
+            json={"type": "metaAndAssetCtxs"},
+            headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
+            timeout=REQUEST_TIMEOUT,
+        )
+        r.raise_for_status()
+        data = r.json()
+    except Exception as e:
+        print(f"  ! Hyperliquid hatasi: {e}")
+        return out
+    # data = [meta, assetCtxs]  -> meta.universe[i].name <-> assetCtxs[i]
+    if not (isinstance(data, list) and len(data) == 2):
+        return out
+    meta, ctxs = data[0], data[1]
+    universe = (meta or {}).get("universe", [])
+    for i, coin in enumerate(universe):
+        if i >= len(ctxs):
+            break
+        base = (coin.get("name") or "").upper()
+        c = ctxs[i] or {}
+        # dayNtlVlm = gunluk notional hacim (USDC); openInterest adet -> markPx ile carp
+        vol = to_float(c.get("dayNtlVlm"))
+        oi_coins = to_float(c.get("openInterest"))
+        mark = to_float(c.get("markPx"))
+        out[base] = {
+            "perp_volume_usd": vol,
+            "open_interest_usd": oi_coins * mark,
+        }
+    return out
+
+
 PERP_SOURCES = {
+    "Hyperliquid": perp_hyperliquid,
     "Binance": perp_binance,
     "OKX": perp_okx,
     "Bybit": perp_bybit,
-    "MEXC": perp_mexc,
     "Bitget": perp_bitget,
     "Gate": perp_gate,
-    "KuCoin": perp_kucoin,
-    "Coinbase": perp_coinbase,
 }
 
 
@@ -457,25 +492,9 @@ def collect_exchanges(which):
 
     def slot(base, exch):
         return by_symbol[base]["exchanges"].setdefault(
-            exch, {"spot_usdt": 0.0, "spot_usdc": 0.0,
-                   "perp_volume_usd": 0.0, "open_interest_usd": 0.0})
+            exch, {"perp_volume_usd": 0.0, "open_interest_usd": 0.0})
 
-    # SPOT
-    for exch in which:
-        fn = SPOT_SOURCES.get(exch)
-        if not fn:
-            continue
-        print(f"[SPOT] {exch}...")
-        for r in fn():
-            b = r["base"]
-            if b in wanted:
-                rec = slot(b, exch)
-                if r["quote"] == "USDT":
-                    rec["spot_usdt"] += r["volume_usd"]
-                elif r["quote"] == "USDC":
-                    rec["spot_usdc"] += r["volume_usd"]
-
-    # PERP + OI
+    # PERP + OI (spot kaldirildi - artik sadece perp)
     for exch in which:
         fn = PERP_SOURCES.get(exch)
         if not fn:
