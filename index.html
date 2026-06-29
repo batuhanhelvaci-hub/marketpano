@@ -124,7 +124,7 @@
     <div class="panel-view" id="view-borsa">
       <div class="filters">
         <div class="fl"><label>Sırala</label>
-          <select id="bSort"><option value="_perpTot">Perp Volume (24s)</option><option value="_oi">Open Interest</option><option value="_mcap">Market Cap</option></select></div>
+          <select id="bSort"><option value="rank">CMC Sırası (market cap)</option><option value="_perpTot">Perp Volume (24s)</option><option value="_oi">Open Interest</option><option value="_mcap">Market Cap</option></select></div>
         <div class="fl"><label>Ara</label><input type="text" id="bSearch" placeholder="örn: BTC" style="width:120px"></div>
         <div class="cnt" style="margin-left:auto"><b id="bCount">0</b> coin · 6 borsa</div>
       </div>
@@ -178,7 +178,7 @@ const M=v=>(v||0)/1e6;
 const colorFor=(e,i)=>EXCH_COLORS[e]||['#003aff','#00c2ff','#00d18f','#f5a623','#9b5cff','#ff5c8a','#ffd23f','#8a94a6'][i%8];
 
 let CMC=null, BORSA=null, ARSIV={cmc:null,borsa:null};
-let cmcSort='rank',cmcDir=1, bSort='_perpTot',bDir=-1, openSym=null, pieChart=null;
+let cmcSort='rank',cmcDir=1, bSort='rank',bDir=1, openSym=null, pieChart=null;
 let aChart=null, aSelectedExch=new Set(['Binance','OKX','Bybit']);
 let aMode='tekgun', aMetric='perp', aSelectedDays=new Set();
 
@@ -262,7 +262,7 @@ function borsaErr(){ $('bBody').innerHTML=`<tr><td colspan="4" class="err">Borsa
 function buildBorsaHead(){
   const cols=[["symbol","Asset","l"],["_mcap","Market Cap"],["_perpTot","Perp Volume (24s)","sep"],["_oi","Open Interest","sep"]];
   $('bColh').innerHTML=cols.map(c=>`<th class="${c[2]==='sep'?'sep':''} ${c[2]==='l'?'l':''}" data-k="${c[0]}">${c[1]}</th>`).join('');
-  document.querySelectorAll('#bColh th').forEach(th=>{th.onclick=()=>{const k=th.dataset.k;if(bSort===k)bDir*=-1;else{bSort=k;bDir=-1;}renderBorsa();};});
+  document.querySelectorAll('#bColh th').forEach(th=>{th.onclick=()=>{const k=th.dataset.k;if(bSort===k)bDir*=-1;else{bSort=k;bDir=(k==='rank'||k==='symbol')?1:-1;}renderBorsa();};});
 }
 function renderBorsa(){
   const q=$('bSearch').value.trim().toUpperCase();
@@ -310,7 +310,7 @@ function drawPie(a){
     data:{labels:ALL_EXCH,datasets:[{data:vals,backgroundColor:ALL_EXCH.map((e,i)=>colorFor(e,i)),borderWidth:1.5,borderColor:cs.getPropertyValue('--panel').trim()}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:10},boxWidth:10,padding:6}},tooltip:{callbacks:{label:c=>c.label+': $'+c.parsed.toFixed(1)+'M'}}}}});
 }
-$('bSort').onchange=e=>{bSort=e.target.value;bDir=-1;renderBorsa();};
+$('bSort').onchange=e=>{bSort=e.target.value;bDir=bSort==='rank'?1:-1;renderBorsa();};
 $('bSearch').oninput=renderBorsa;
 
 /* ---------- SEKME 3: ANALIZ ---------- */

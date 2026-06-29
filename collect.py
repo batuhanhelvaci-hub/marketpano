@@ -34,7 +34,7 @@ import requests
 # AYARLAR
 # ----------------------------------------------------------------------------
 
-TOP_N_ASSETS = 50
+TOP_N_ASSETS = 20
 REQUEST_TIMEOUT = 20
 USER_AGENT = "marketpano/2.0"
 OI_LIMIT = 60
@@ -279,21 +279,27 @@ def perp_binance(top_bases):
 
 def perp_okx(top_bases):
     out = {}
+    prices = {}  # base -> last price (USD'ye cevirmek icin)
     tickers = get_json("https://www.okx.com/api/v5/market/tickers", {"instType": "SWAP"})
     if tickers and "data" in tickers:
         for t in tickers["data"]:
             inst = t.get("instId", "")          # ornek: BTC-USDT-SWAP
             if inst.endswith("-USDT-SWAP"):
                 base = inst.replace("-USDT-SWAP", "")
-                out.setdefault(base, {})["perp_volume_usd"] = to_float(t.get("volCcy24h"))
-    # OKX open interest - tek cagri ile hepsi gelir
+                last = to_float(t.get("last"))
+                prices[base] = last
+                # volCcy24h = base-coin cinsinden 24s hacim -> USD icin fiyatla carp
+                vol_base = to_float(t.get("volCcy24h"))
+                out.setdefault(base, {})["perp_volume_usd"] = vol_base * last
+    # OKX open interest - oiCcy base-coin cinsinden -> fiyatla carp
     oi = get_json("https://www.okx.com/api/v5/public/open-interest", {"instType": "SWAP"})
     if oi and "data" in oi:
         for o in oi["data"]:
             inst = o.get("instId", "")
             if inst.endswith("-USDT-SWAP"):
                 base = inst.replace("-USDT-SWAP", "")
-                out.setdefault(base, {})["open_interest_usd"] = to_float(o.get("oiCcy"))
+                last = prices.get(base, 0)
+                out.setdefault(base, {})["open_interest_usd"] = to_float(o.get("oiCcy")) * last
     return out
 
 
@@ -342,19 +348,17 @@ def perp_bitget(top_bases):
 
 def perp_gate(top_bases):
     out = {}
-    data = get_json("https://api.gateio.ws/api/v4/futures/usdt/contracts")
+    # tickers endpoint'i hacmi net verir: volume_24h_quote = USDT hacim
+    data = get_json("https://api.gateio.ws/api/v4/futures/usdt/tickers")
     if data:
-        for c in data:
-            name = c.get("name", "")             # ornek: BTC_USDT
+        for t in data:
+            name = t.get("contract", "")          # ornek: BTC_USDT
             base, quote = base_from_symbol(name)
             if base and quote == "USDT":
-                vol = to_float(c.get("trade_size"))   # alternatif alanlar olabilir
-                price = to_float(c.get("last_price") or c.get("mark_price"))
-                # volume_24h_quote varsa onu kullan
-                qv = to_float(c.get("volume_24h_quote") or c.get("volume_24h_settle"))
-                out.setdefault(base, {})["perp_volume_usd"] = qv
-                # OI: position_size adet -> fiyatla carp
-                out[base]["open_interest_usd"] = to_float(c.get("position_size")) * price
+                out.setdefault(base, {})["perp_volume_usd"] = to_float(t.get("volume_24h_quote"))
+                # total_size = acik pozisyon (kontrat/coin adedi) -> mark_price ile USD
+                mark = to_float(t.get("mark_price"))
+                out[base]["open_interest_usd"] = to_float(t.get("total_size")) * mark
     return out
 
 
