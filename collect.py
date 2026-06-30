@@ -39,7 +39,14 @@ REQUEST_TIMEOUT = 20
 USER_AGENT = "marketpano/2.0"
 OI_LIMIT = 60
 
-CMC_API_KEY = os.environ.get("CMC_API_KEY", "")
+# CMC API KEY
+# - GitHub'da: Settings > Secrets'taki CMC_API_KEY otomatik okunur (asagidaki bos kalsa da olur).
+# - Kendi bilgisayarinda: asagidaki tirnaklarin arasina kendi key'ini YAPISTIR.
+#   Ornek:  CMC_API_KEY_YEDEK = "a1b2c3d4-5678-90ef-ghij-klmnopqrstuv"
+CMC_API_KEY_YEDEK = "fb77cbb63ef6425193c2ddbfddd20f13"
+
+# Once ortam degiskeni (GitHub secret), o yoksa yukariya yazdigin key kullanilir.
+CMC_API_KEY = os.environ.get("CMC_API_KEY", "") or CMC_API_KEY_YEDEK
 
 # Hangi borsa hangi modda cekilir
 GITHUB_EXCHANGES = ["Hyperliquid", "OKX", "Bitget", "Gate"]
@@ -348,17 +355,26 @@ def perp_bitget(top_bases):
 
 def perp_gate(top_bases):
     out = {}
-    # tickers endpoint'i hacmi net verir: volume_24h_quote = USDT hacim
+    # 1) Kontrat carpanlarini (quanto_multiplier) al: 1 kontrat = kac coin
+    mult = {}
+    contracts = get_json("https://api.gateio.ws/api/v4/futures/usdt/contracts")
+    if contracts:
+        for c in contracts:
+            name = c.get("name", "")
+            base, quote = base_from_symbol(name)
+            if base and quote == "USDT":
+                mult[base] = to_float(c.get("quanto_multiplier")) or 1.0
+    # 2) tickers: volume_24h_quote = USDT hacim (dogru). OI = total_size * carpan * mark_price
     data = get_json("https://api.gateio.ws/api/v4/futures/usdt/tickers")
     if data:
         for t in data:
-            name = t.get("contract", "")          # ornek: BTC_USDT
+            name = t.get("contract", "")
             base, quote = base_from_symbol(name)
             if base and quote == "USDT":
                 out.setdefault(base, {})["perp_volume_usd"] = to_float(t.get("volume_24h_quote"))
-                # total_size = acik pozisyon (kontrat/coin adedi) -> mark_price ile USD
                 mark = to_float(t.get("mark_price"))
-                out[base]["open_interest_usd"] = to_float(t.get("total_size")) * mark
+                m = mult.get(base, 1.0)
+                out[base]["open_interest_usd"] = to_float(t.get("total_size")) * m * mark
     return out
 
 
@@ -473,10 +489,20 @@ def fetch_cmc(n):
 # ----------------------------------------------------------------------------
 
 def fetch_coin_list(n):
-    """Borsa modlari icin sadece sembol+rank listesi lazim. Kaynak: CMC."""
-    coins = fetch_cmc(n)  # ayni veriyi kullanir, sadece sembol/rank'i alacagiz
-    return [{"symbol": c["symbol"], "name": c["name"], "rank": c["rank"],
-             "market_cap_usd": c["market_cap_usd"]} for c in coins if c["symbol"]]
+    """Borsa modlari icin sembol+rank listesi.
+    CMC key varsa CMC'den (guncel ilk n), yoksa sabit yedek listeden alir.
+    Boylece Binance/Bybit yerelde KEY OLMADAN da calisir."""
+    coins = fetch_cmc(n)
+    if coins:
+        return [{"symbol": c["symbol"], "name": c["name"], "rank": c["rank"],
+                 "market_cap_usd": c["market_cap_usd"]} for c in coins if c["symbol"]]
+    # CMC yoksa sabit yedek liste (market cap'e gore yaklasik ilk 20)
+    print("  ! CMC yok -> sabit yedek coin listesi kullaniliyor (key gerekmez).")
+    yedek = ["BTC", "ETH", "USDT", "BNB", "SOL", "XRP", "USDC", "DOGE", "ADA",
+             "TRX", "AVAX", "LINK", "TON", "SHIB", "DOT", "BCH", "LTC", "NEAR",
+             "SUI", "APT"]
+    return [{"symbol": s, "name": s, "rank": i + 1, "market_cap_usd": 0}
+            for i, s in enumerate(yedek[:n])]
 
 
 # ----------------------------------------------------------------------------
