@@ -641,13 +641,18 @@ def main():
     elif mode == "local":
         run_exchanges(LOCAL_EXCHANGES, "borsa_local.json", "Yerel Binance+Bybit")
         merge_and_archive_borsa()
+    elif mode == "arsivle":
+        # Veri CEKMEZ. Mevcut borsa_github.json + borsa_local.json'u
+        # birlestirip gunluk arsive 6 borsali tam kaydi yazar.
+        # (borsa_local.json GitHub'a yuklenince otomatik calisir.)
+        merge_and_archive_borsa()
     elif mode == "all":
         run_cmc()
         run_exchanges(GITHUB_EXCHANGES, "borsa_github.json", "GitHub 6 borsa")
         run_exchanges(LOCAL_EXCHANGES, "borsa_local.json", "Yerel Binance+Bybit")
         merge_and_archive_borsa()
     else:
-        print(f"Bilinmeyen mod: {mode}. Kullan: cmc | github | local | all")
+        print(f"Bilinmeyen mod: {mode}. Kullan: cmc | github | local | arsivle | all")
         sys.exit(1)
 
     print("=" * 56)
