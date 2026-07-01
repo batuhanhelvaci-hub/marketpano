@@ -1,0 +1,33 @@
+name: Arsive Ekle (Binance+Bybit yuklenince)
+
+on:
+  push:
+    paths:
+      - 'borsa_local.json'
+  workflow_dispatch:
+
+jobs:
+  arsivle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kodu indir
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Gerekli paketi yukle
+        run: pip install requests
+
+      - name: Arsive 6 borsali tam kaydi yaz
+        run: python collect.py arsivle
+
+      - name: Arsivi kaydet
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add arsiv
+          git commit -m "Arsiv guncellendi (6 borsa): $(date -u +%Y-%m-%d)" || echo "Degisiklik yok"
+          git push
