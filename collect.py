@@ -34,7 +34,7 @@ import requests
 # AYARLAR
 # ----------------------------------------------------------------------------
 
-TOP_N_ASSETS = 20
+TOP_N_ASSETS = 50
 REQUEST_TIMEOUT = 20
 USER_AGENT = "marketpano/2.0"
 OI_LIMIT = 60
@@ -496,11 +496,14 @@ def fetch_coin_list(n):
     if coins:
         return [{"symbol": c["symbol"], "name": c["name"], "rank": c["rank"],
                  "market_cap_usd": c["market_cap_usd"]} for c in coins if c["symbol"]]
-    # CMC yoksa sabit yedek liste (market cap'e gore yaklasik ilk 20)
+    # CMC yoksa sabit yedek liste (market cap'e gore yaklasik ilk 50)
     print("  ! CMC yok -> sabit yedek coin listesi kullaniliyor (key gerekmez).")
     yedek = ["BTC", "ETH", "USDT", "BNB", "SOL", "XRP", "USDC", "DOGE", "ADA",
              "TRX", "AVAX", "LINK", "TON", "SHIB", "DOT", "BCH", "LTC", "NEAR",
-             "SUI", "APT"]
+             "SUI", "APT", "HYPE", "ZEC", "XLM", "XMR", "LEO", "DAI", "CC",
+             "USD1", "USDE", "UNI", "AAVE", "PEPE", "ETC", "OP", "ARB", "FIL",
+             "ICP", "IMX", "INJ", "RENDER", "TAO", "FET", "ATOM", "STX", "GRT",
+             "WIF", "SEI", "LDO", "MKR", "ONDO"]
     return [{"symbol": s, "name": s, "rank": i + 1, "market_cap_usd": 0}
             for i, s in enumerate(yedek[:n])]
 
