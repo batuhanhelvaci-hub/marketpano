@@ -32,7 +32,9 @@
   .filters{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;background:var(--panel2);border:1px solid var(--brd);border-radius:10px;padding:14px 16px;margin-bottom:16px}
   .fl{display:flex;flex-direction:column;gap:5px}
   .fl label{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
-  select,input[type=text]{background:var(--panel);border:1px solid var(--brd);color:var(--ink);padding:8px 10px;border-radius:7px;font-size:13px}
+  select,input[type=text],input[type=date]{background:var(--panel);border:1px solid var(--brd);color:var(--ink);padding:8px 10px;border-radius:7px;font-size:13px}
+  input[type=date]{cursor:pointer}
+  [data-theme="dark"] input[type=date]::-webkit-calendar-picker-indicator{filter:invert(1)}
   .cnt{font-size:12px;color:var(--mut)}.cnt b{color:var(--brand2)}
   /* Kartlar */
   .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
@@ -334,22 +336,55 @@ function prepAnaliz(){
 }
 function buildDayBox(){
   const g=gunlerListesi();
+  if(!g.length){ $('aDayBox').innerHTML='<span style="font-size:12px;color:var(--mut)">Arşiv yok</span>'; return; }
+  const minD=g[0], maxD=g[g.length-1];
   if(aMode==='tekgun'){
-    $('aDayLabel').textContent='Gün';
-    // tek secim: dropdown
-    $('aDayBox').innerHTML=`<select id="aDaySel">${g.map(d=>`<option value="${d}">${d}</option>`).join('')}</select>`;
-    // secili gunu koru
-    const cur=[...aSelectedDays][0];
+    $('aDayLabel').textContent='Gün (takvimden seç)';
+    let cur=[...aSelectedDays][0];
+    if(!cur||!g.includes(cur)){cur=maxD;aSelectedDays=new Set([cur]);}
+    $('aDayBox').innerHTML=`<input type="date" id="aDaySel" value="${cur}" min="${minD}" max="${maxD}">`;
     const sel=$('aDaySel');
-    if(cur&&g.includes(cur))sel.value=cur; else if(g.length){aSelectedDays=new Set([g[g.length-1]]);sel.value=g[g.length-1];}
-    sel.onchange=()=>{aSelectedDays=new Set([sel.value]);renderAnaliz();};
+    sel.onchange=()=>{
+      const v=sel.value;
+      if(!g.includes(v)){ // arsivde olmayan gun secildi
+        alert('Bu tarihte arşiv kaydı yok. Kayıtlı en yakın güne dönülüyor.');
+        sel.value=cur; return;
+      }
+      aSelectedDays=new Set([v]); renderAnaliz();
+    };
   }else{
-    $('aDayLabel').textContent='Günler (çoklu seç)';
-    $('aDayBox').innerHTML=`<div class="checks" id="aDayChecks">${g.map(d=>`<span class="chk ${aSelectedDays.has(d)?'on':''}" data-d="${d}" onclick="toggleDay('${d}')">${d}</span>`).join('')}</div>`;
+    $('aDayLabel').textContent='Tarih aralığı (başlangıç → bitiş)';
+    // mevcut secim yoksa: son 2 gun (ya da tek gun)
+    if(aSelectedDays.size===0){ aSelectedDays=new Set(g.length>=2?[g[g.length-2],maxD]:[maxD]); }
+    const sorted=[...aSelectedDays].sort();
+    const bas=sorted[0]||maxD, bit=sorted[sorted.length-1]||maxD;
+    $('aDayBox').innerHTML=`
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <input type="date" id="aDayBas" value="${bas}" min="${minD}" max="${maxD}">
+        <span style="color:var(--mut)">→</span>
+        <input type="date" id="aDayBit" value="${bit}" min="${minD}" max="${maxD}">
+        <span id="aDayCount" style="font-size:12px;color:var(--mut)"></span>
+      </div>
+      <div class="checks" id="aDayChips" style="margin-top:8px"></div>`;
+    const applyRange=()=>{
+      let b=$('aDayBas').value, e=$('aDayBit').value;
+      if(b>e){ const t=b;b=e;e=t; } // ters girilirse duzelt
+      // aralıktaki SADECE arsivde olan gunleri sec
+      const inRange=g.filter(d=>d>=b && d<=e);
+      if(!inRange.length){ alert('Seçilen aralıkta arşiv kaydı yok.'); return; }
+      aSelectedDays=new Set(inRange);
+      buildDayBox(); renderAnaliz();
+    };
+    $('aDayBas').onchange=applyRange;
+    $('aDayBit').onchange=applyRange;
+    // secili gun cipleri (tek tek cikarilabilir)
+    const chips=[...aSelectedDays].sort();
+    $('aDayCount').textContent=`${chips.length} gün seçili`;
+    $('aDayChips').innerHTML=chips.map(d=>`<span class="chk on" data-d="${d}" onclick="toggleDay('${d}')">${d} ✕</span>`).join('');
   }
 }
 function toggleDay(d){ if(aSelectedDays.has(d))aSelectedDays.delete(d);else aSelectedDays.add(d);
-  document.querySelectorAll('#aDayChecks .chk').forEach(c=>c.classList.toggle('on',aSelectedDays.has(c.dataset.d)));
+  buildDayBox();
   renderAnaliz();
 }
 function toggleExch(e){ if(aSelectedExch.has(e))aSelectedExch.delete(e);else aSelectedExch.add(e);
