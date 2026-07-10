@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-07-10T08:56:21.540873+00:00",
-  "kapsam": "GitHub 6 borsa",
+  "generated_at": "2026-07-10T08:56:21.542846+00:00",
   "exchanges": [
     "Hyperliquid",
+    "Binance",
     "OKX",
+    "Bybit",
     "Bitget",
     "Gate"
   ],
@@ -29,6 +30,14 @@
         "Gate": {
           "perp_volume_usd": 4462415634.0,
           "open_interest_usd": 4374879050.76352
+        },
+        "Binance": {
+          "perp_volume_usd": 9044684612.49,
+          "open_interest_usd": 6262670926.705638
+        },
+        "Bybit": {
+          "perp_volume_usd": 4142914918.7199,
+          "open_interest_usd": 3535529713.13
         }
       }
     },
@@ -53,6 +62,14 @@
         "Gate": {
           "perp_volume_usd": 3589783598.0,
           "open_interest_usd": 2244216375.1800003
+        },
+        "Binance": {
+          "perp_volume_usd": 6074049842.12,
+          "open_interest_usd": 3935677094.501571
+        },
+        "Bybit": {
+          "perp_volume_usd": 1593391964.7217,
+          "open_interest_usd": 1209847860.36
         }
       }
     },
@@ -84,6 +101,14 @@
         "Gate": {
           "perp_volume_usd": 11761987.0,
           "open_interest_usd": 27361668.105000004
+        },
+        "Binance": {
+          "perp_volume_usd": 204916842.109,
+          "open_interest_usd": 323557077.75999993
+        },
+        "Bybit": {
+          "perp_volume_usd": 25717729.613,
+          "open_interest_usd": 83316387.58
         }
       }
     },
@@ -104,6 +129,14 @@
         "Gate": {
           "perp_volume_usd": 7028.0,
           "open_interest_usd": 235719.67440000002
+        },
+        "Binance": {
+          "perp_volume_usd": 6741872.35643,
+          "open_interest_usd": 8107600.6070968
+        },
+        "Bybit": {
+          "perp_volume_usd": 4757011.2078,
+          "open_interest_usd": 8837480.94
         }
       }
     },
@@ -128,6 +161,14 @@
         "Gate": {
           "perp_volume_usd": 57152582.0,
           "open_interest_usd": 222084347.68
+        },
+        "Binance": {
+          "perp_volume_usd": 409422223.2984,
+          "open_interest_usd": 352331092.96222997
+        },
+        "Bybit": {
+          "perp_volume_usd": 197310069.9991,
+          "open_interest_usd": 209856828.17
         }
       }
     },
@@ -152,6 +193,14 @@
         "Gate": {
           "perp_volume_usd": 323877729.0,
           "open_interest_usd": 694869246.5799999
+        },
+        "Binance": {
+          "perp_volume_usd": 1325419390.8067,
+          "open_interest_usd": 736352178.5962776
+        },
+        "Bybit": {
+          "perp_volume_usd": 548828953.298,
+          "open_interest_usd": 540652448.47
         }
       }
     },
@@ -176,6 +225,14 @@
         "Gate": {
           "perp_volume_usd": 1082427.0,
           "open_interest_usd": 5364495.576
+        },
+        "Binance": {
+          "perp_volume_usd": 39755096.9709,
+          "open_interest_usd": 99947861.97121875
+        },
+        "Bybit": {
+          "perp_volume_usd": 10879818.0104,
+          "open_interest_usd": 51957884.26
         }
       }
     },
@@ -200,6 +257,14 @@
         "Gate": {
           "perp_volume_usd": 26515893.0,
           "open_interest_usd": 34810506.8188
+        },
+        "Binance": {
+          "perp_volume_usd": 445377609.17065,
+          "open_interest_usd": 335224320.23943996
+        },
+        "Bybit": {
+          "perp_volume_usd": 202153905.3038,
+          "open_interest_usd": 235224346.1
         }
       }
     },
@@ -224,6 +289,14 @@
         "Gate": {
           "perp_volume_usd": 39585183.0,
           "open_interest_usd": 199686707.15039998
+        },
+        "Binance": {
+          "perp_volume_usd": 201065389.47532,
+          "open_interest_usd": 177053627.15031797
+        },
+        "Bybit": {
+          "perp_volume_usd": 61804603.7694,
+          "open_interest_usd": 86070641.45
         }
       }
     },
@@ -255,6 +328,14 @@
         "Gate": {
           "perp_volume_usd": 25298031.0,
           "open_interest_usd": 15524649.4658
+        },
+        "Binance": {
+          "perp_volume_usd": 483348129.41,
+          "open_interest_usd": 230377599.15680337
+        },
+        "Bybit": {
+          "perp_volume_usd": 93299401.7912,
+          "open_interest_usd": 63470415.05
         }
       }
     },
@@ -279,6 +360,14 @@
         "Gate": {
           "perp_volume_usd": 1664496.0,
           "open_interest_usd": 3197910.5676
+        },
+        "Binance": {
+          "perp_volume_usd": 50688380.91501,
+          "open_interest_usd": 40461832.4352
+        },
+        "Bybit": {
+          "perp_volume_usd": 18656344.392,
+          "open_interest_usd": 27451904.46
         }
       }
     },
@@ -303,6 +392,14 @@
         "Gate": {
           "perp_volume_usd": 22835172.0,
           "open_interest_usd": 60166035.972
+        },
+        "Binance": {
+          "perp_volume_usd": 121936200.2321,
+          "open_interest_usd": 82085855.66732158
+        },
+        "Bybit": {
+          "perp_volume_usd": 54378800.0875,
+          "open_interest_usd": 58109485.38
         }
       }
     },
@@ -323,6 +420,14 @@
         "Gate": {
           "perp_volume_usd": 563177.0,
           "open_interest_usd": 510341.416
+        },
+        "Binance": {
+          "perp_volume_usd": 26967306.88,
+          "open_interest_usd": 29899121.883415665
+        },
+        "Bybit": {
+          "perp_volume_usd": 10015098.5478,
+          "open_interest_usd": 20755335.31
         }
       }
     },
@@ -347,6 +452,14 @@
         "Gate": {
           "perp_volume_usd": 8197211.0,
           "open_interest_usd": 77849109.936
+        },
+        "Binance": {
+          "perp_volume_usd": 65210320.066,
+          "open_interest_usd": 66330787.76280001
+        },
+        "Bybit": {
+          "perp_volume_usd": 23660285.9754,
+          "open_interest_usd": 54341040.37
         }
       }
     },
@@ -371,6 +484,14 @@
         "Gate": {
           "perp_volume_usd": 208416.0,
           "open_interest_usd": 537307.0719999999
+        },
+        "Binance": {
+          "perp_volume_usd": 5375672.13762,
+          "open_interest_usd": 9055092.94910319
+        },
+        "Bybit": {
+          "perp_volume_usd": 2509830.6926,
+          "open_interest_usd": 9083466.29
         }
       }
     },
@@ -395,6 +516,14 @@
         "Gate": {
           "perp_volume_usd": 4421943.0,
           "open_interest_usd": 6318755.2308
+        },
+        "Binance": {
+          "perp_volume_usd": 66598074.31,
+          "open_interest_usd": 79356393.6991276
+        },
+        "Bybit": {
+          "perp_volume_usd": 15129932.296,
+          "open_interest_usd": 35250472.49
         }
       }
     },
@@ -426,6 +555,14 @@
         "Gate": {
           "perp_volume_usd": 2615650.0,
           "open_interest_usd": 2480707.8164
+        },
+        "Binance": {
+          "perp_volume_usd": 12112834.8441,
+          "open_interest_usd": 10495097.1231
+        },
+        "Bybit": {
+          "perp_volume_usd": 8345021.0235,
+          "open_interest_usd": 23576220.25
         }
       }
     },
@@ -438,6 +575,10 @@
         "Gate": {
           "perp_volume_usd": 785.0,
           "open_interest_usd": 68923.008
+        },
+        "Bybit": {
+          "perp_volume_usd": 2158333.9747,
+          "open_interest_usd": 838163.6
         }
       }
     },
@@ -446,7 +587,12 @@
       "name": "Ethena USDe",
       "rank": 22,
       "market_cap_usd": 4143850060.5409937,
-      "exchanges": {}
+      "exchanges": {
+        "Bybit": {
+          "perp_volume_usd": 67970.065,
+          "open_interest_usd": 1526710.55
+        }
+      }
     },
     {
       "symbol": "LTC",
@@ -469,6 +615,14 @@
         "Gate": {
           "perp_volume_usd": 5722563.0,
           "open_interest_usd": 6855019.2
+        },
+        "Binance": {
+          "perp_volume_usd": 39798922.33,
+          "open_interest_usd": 51006905.51141971
+        },
+        "Bybit": {
+          "perp_volume_usd": 16411493.039,
+          "open_interest_usd": 53629802.51
         }
       }
     },
@@ -500,6 +654,14 @@
         "Gate": {
           "perp_volume_usd": 277301.0,
           "open_interest_usd": 1288501.975
+        },
+        "Binance": {
+          "perp_volume_usd": 25163151.97976,
+          "open_interest_usd": 23301064.676400002
+        },
+        "Bybit": {
+          "perp_volume_usd": 9696145.8705,
+          "open_interest_usd": 14700973.31
         }
       }
     },
@@ -516,6 +678,14 @@
         "Gate": {
           "perp_volume_usd": 12221065.0,
           "open_interest_usd": 8209239.1046
+        },
+        "Binance": {
+          "perp_volume_usd": 42730776.67805,
+          "open_interest_usd": 70726741.1208
+        },
+        "Bybit": {
+          "perp_volume_usd": 7199212.7961,
+          "open_interest_usd": 11739691.65
         }
       }
     },
@@ -540,6 +710,14 @@
         "Gate": {
           "perp_volume_usd": 9216217.0,
           "open_interest_usd": 86356753.8336
+        },
+        "Binance": {
+          "perp_volume_usd": 94985361.39925,
+          "open_interest_usd": 71464836.35253257
+        },
+        "Bybit": {
+          "perp_volume_usd": 34403961.4,
+          "open_interest_usd": 53964744.93
         }
       }
     },
@@ -564,6 +742,14 @@
         "Gate": {
           "perp_volume_usd": 7836377.0,
           "open_interest_usd": 5635377.25
+        },
+        "Binance": {
+          "perp_volume_usd": 78147978.808,
+          "open_interest_usd": 51119140.576000005
+        },
+        "Bybit": {
+          "perp_volume_usd": 21627473.3251,
+          "open_interest_usd": 36959906.75
         }
       }
     },
@@ -591,6 +777,10 @@
         "Gate": {
           "perp_volume_usd": 14542.0,
           "open_interest_usd": 480058.63148
+        },
+        "Bybit": {
+          "perp_volume_usd": 475519.0863,
+          "open_interest_usd": 2109430.18
         }
       }
     },
@@ -635,6 +825,14 @@
         "Gate": {
           "perp_volume_usd": 1985321.0,
           "open_interest_usd": 9236157.0406
+        },
+        "Binance": {
+          "perp_volume_usd": 104597856.631,
+          "open_interest_usd": 74984561.551
+        },
+        "Bybit": {
+          "perp_volume_usd": 58109986.5261,
+          "open_interest_usd": 74665382.38
         }
       }
     },
@@ -651,6 +849,14 @@
         "Gate": {
           "perp_volume_usd": 10123819.0,
           "open_interest_usd": 106365268.3572
+        },
+        "Binance": {
+          "perp_volume_usd": 28358051.21,
+          "open_interest_usd": 21122015.946368933
+        },
+        "Bybit": {
+          "perp_volume_usd": 27912149.8449,
+          "open_interest_usd": 141031471.79
         }
       }
     },
@@ -675,6 +881,14 @@
         "Gate": {
           "perp_volume_usd": 3101269.0,
           "open_interest_usd": 3928414.356
+        },
+        "Binance": {
+          "perp_volume_usd": 63348343.21,
+          "open_interest_usd": 58085583.25262
+        },
+        "Bybit": {
+          "perp_volume_usd": 21164016.6927,
+          "open_interest_usd": 32045260.42
         }
       }
     },
@@ -699,6 +913,14 @@
         "Gate": {
           "perp_volume_usd": 7199077.0,
           "open_interest_usd": 6502003.872
+        },
+        "Binance": {
+          "perp_volume_usd": 119070997.556,
+          "open_interest_usd": 68105159.162
+        },
+        "Bybit": {
+          "perp_volume_usd": 36652022.2751,
+          "open_interest_usd": 31194754.2
         }
       }
     },
@@ -723,6 +945,14 @@
         "Gate": {
           "perp_volume_usd": 1261373.0,
           "open_interest_usd": 3584347.1094
+        },
+        "Binance": {
+          "perp_volume_usd": 21532142.68036,
+          "open_interest_usd": 100564230.98176
+        },
+        "Bybit": {
+          "perp_volume_usd": 6498989.0894,
+          "open_interest_usd": 20031237.47
         }
       }
     },
@@ -743,6 +973,14 @@
         "Gate": {
           "perp_volume_usd": 3028123.0,
           "open_interest_usd": 8554052.4002
+        },
+        "Binance": {
+          "perp_volume_usd": 81594560.9909,
+          "open_interest_usd": 87270953.01756
+        },
+        "Bybit": {
+          "perp_volume_usd": 3363499.1608,
+          "open_interest_usd": 20134597.11
         }
       }
     },
@@ -767,6 +1005,14 @@
         "Gate": {
           "perp_volume_usd": 422667.0,
           "open_interest_usd": 6378307.600000001
+        },
+        "Binance": {
+          "perp_volume_usd": 18319666.8936,
+          "open_interest_usd": 80253983.869
+        },
+        "Bybit": {
+          "perp_volume_usd": 3610288.2683,
+          "open_interest_usd": 46328441.93
         }
       }
     },
@@ -783,6 +1029,10 @@
         "Gate": {
           "perp_volume_usd": 215728.0,
           "open_interest_usd": 1088298.33
+        },
+        "Bybit": {
+          "perp_volume_usd": 155331.2513,
+          "open_interest_usd": 965151.91
         }
       }
     },
@@ -799,6 +1049,14 @@
         "Gate": {
           "perp_volume_usd": 966242.0,
           "open_interest_usd": 1189636.884
+        },
+        "Binance": {
+          "perp_volume_usd": 12939270.0841,
+          "open_interest_usd": 6128689.8726
+        },
+        "Bybit": {
+          "perp_volume_usd": 6138141.6858,
+          "open_interest_usd": 5362537.11
         }
       }
     },
@@ -823,6 +1081,14 @@
         "Gate": {
           "perp_volume_usd": 1352527.0,
           "open_interest_usd": 2591538.8928
+        },
+        "Binance": {
+          "perp_volume_usd": 35625447.30558,
+          "open_interest_usd": 25543338.219197698
+        },
+        "Bybit": {
+          "perp_volume_usd": 21592114.9668,
+          "open_interest_usd": 24963109.38
         }
       }
     },
@@ -831,7 +1097,12 @@
       "name": "Ripple USD",
       "rank": 42,
       "market_cap_usd": 1551177813.4626667,
-      "exchanges": {}
+      "exchanges": {
+        "Bybit": {
+          "perp_volume_usd": 24249.134,
+          "open_interest_usd": 316996.75
+        }
+      }
     },
     {
       "symbol": "USDD",
@@ -861,6 +1132,14 @@
         "Gate": {
           "perp_volume_usd": 3928922.0,
           "open_interest_usd": 5184976.421800001
+        },
+        "Binance": {
+          "perp_volume_usd": 61215765.715,
+          "open_interest_usd": 51589291.77599999
+        },
+        "Bybit": {
+          "perp_volume_usd": 27846905.4677,
+          "open_interest_usd": 43869319.88
         }
       }
     },
@@ -885,6 +1164,14 @@
         "Gate": {
           "perp_volume_usd": 1036600.0,
           "open_interest_usd": 3311109.516
+        },
+        "Binance": {
+          "perp_volume_usd": 34697171.289,
+          "open_interest_usd": 28371122.665
+        },
+        "Bybit": {
+          "perp_volume_usd": 10221889.1325,
+          "open_interest_usd": 15082129.2
         }
       }
     },
@@ -901,6 +1188,10 @@
         "Gate": {
           "perp_volume_usd": 73992.0,
           "open_interest_usd": 297790.731
+        },
+        "Bybit": {
+          "perp_volume_usd": 6250230.2507,
+          "open_interest_usd": 24564088.1
         }
       }
     },
@@ -925,6 +1216,14 @@
         "Gate": {
           "perp_volume_usd": 50547.0,
           "open_interest_usd": 704954.14
+        },
+        "Binance": {
+          "perp_volume_usd": 8488278.32812,
+          "open_interest_usd": 10869768.2457
+        },
+        "Bybit": {
+          "perp_volume_usd": 1549278.1897,
+          "open_interest_usd": 4833877.66
         }
       }
     },
@@ -949,6 +1248,14 @@
         "Gate": {
           "perp_volume_usd": 6399487.0,
           "open_interest_usd": 5713172.7784
+        },
+        "Binance": {
+          "perp_volume_usd": 140267574.5103,
+          "open_interest_usd": 68364750.307
+        },
+        "Bybit": {
+          "perp_volume_usd": 44551274.2554,
+          "open_interest_usd": 44425826.42
         }
       }
     },
@@ -973,6 +1280,14 @@
         "Gate": {
           "perp_volume_usd": 1392742.0,
           "open_interest_usd": 1387483.3499160002
+        },
+        "Binance": {
+          "perp_volume_usd": 18505323.429,
+          "open_interest_usd": 22190426.808000002
+        },
+        "Bybit": {
+          "perp_volume_usd": 8239335.0519,
+          "open_interest_usd": 12702331.65
         }
       }
     },
@@ -999,6 +1314,13 @@
           "open_interest_usd": 870193.8511999999
         }
       }
+    },
+    {
+      "symbol": "BGB",
+      "name": "Bitget Token",
+      "rank": 50,
+      "market_cap_usd": 1149649019.1956034,
+      "exchanges": {}
     }
   ]
 }
