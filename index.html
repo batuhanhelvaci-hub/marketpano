@@ -97,7 +97,7 @@
 
   <div class="tabs">
     <div class="tab active" data-tab="cmc" onclick="showTab('cmc')">CoinMarketCap</div>
-    <div class="tab" data-tab="borsa" onclick="showTab('borsa')">Borsalar</div>
+    <div class="tab" data-tab="borsa" onclick="showTab('borsa')">Varlıklar</div>
     <div class="tab" data-tab="analiz" onclick="showTab('analiz')">Analiz</div>
   </div>
 
@@ -126,12 +126,19 @@
     <div class="panel-view" id="view-borsa">
       <div class="filters">
         <div class="fl"><label>Sırala</label>
-          <select id="bSort"><option value="rank">CMC Sırası (market cap)</option><option value="_perpTot">Perp Volume (24s)</option><option value="_oi">Open Interest</option><option value="_mcap">Market Cap</option></select></div>
-        <div class="fl"><label>Ara</label><input type="text" id="bSearch" placeholder="örn: BTC" style="width:120px"></div>
-        <div class="cnt" style="margin-left:auto"><b id="bCount">0</b> coin · 6 borsa</div>
+          <select id="bSort"><option value="rank">CMC Sırası (market cap)</option><option value="_perpTot">Perp Volume (24s)</option><option value="_oi">Open Interest</option><option value="_yaygin">Yaygınlık (borsa sayısı)</option><option value="_buyume">Büyüme %</option><option value="_mcap">Market Cap</option></select></div>
+        <div class="fl"><label>Büyüme türü</label>
+          <div class="seg"><button id="bgPerp" class="on" onclick="setBGrowth('perp')">Hacim</button><button id="bgOi" onclick="setBGrowth('oi')">OI</button></div></div>
+        <div class="fl"><label>Büyüme dönemi</label>
+          <div style="display:flex;gap:6px;align-items:center">
+            <div class="seg"><button id="bp1" class="on" onclick="setBPeriod(1)">1g</button><button id="bp7" onclick="setBPeriod(7)">7g</button><button id="bp30" onclick="setBPeriod(30)">30g</button></div>
+            <input type="number" id="bpOzel" min="1" max="365" placeholder="özel" title="Kaç günlük büyüme? (örn. 12)" style="width:66px;background:var(--panel);border:1px solid var(--brd);color:var(--ink);padding:7px 8px;border-radius:7px;font-size:13px">
+          </div></div>
+        <div class="fl"><label>Ara</label><input type="text" id="bSearch" placeholder="örn: BTC" style="width:110px"></div>
+        <div class="cnt" style="margin-left:auto"><b id="bCount">0</b> varlık · 6 borsa</div>
       </div>
       <div class="cards" id="bCards"></div>
-      <div style="font-size:12px;color:var(--mut);margin-bottom:8px">İpucu: bir coine tıkla → borsa bazında perp hacmi ve dağılım pastası açılır.</div>
+      <div style="font-size:12px;color:var(--mut);margin-bottom:8px">İpucu: bir varlığa tıkla → borsa bazında perp hacmi ve dağılım pastası. Yaygınlık = kaç borsada perp piyasası var. Büyüme = seçili dönemdeki değişim (arşivden).</div>
       <div class="tbl-wrap"><table>
         <thead>
           <tr class="colh" id="bColh"></tr>
@@ -143,21 +150,25 @@
     <!-- ============ SEKME 3: ANALIZ ============ -->
     <div class="panel-view" id="view-analiz">
       <div class="filters">
-        <div class="fl"><label>Mod</label>
-          <div class="seg"><button id="aModeGun" class="on" onclick="setAMode('tekgun')">Tek gün</button><button id="aModeTrend" onclick="setAMode('gunler')">Günler arası</button></div></div>
-        <div class="fl"><label>Tür</label>
+        <div class="fl"><label>Grafik türü</label>
+          <div class="seg"><button id="agBorsa" class="on" onclick="setAGraph('borsa')">Borsa karşılaştırma</button><button id="agBuyume" onclick="setAGraph('buyume')">Büyüme</button><button id="agYaygin" onclick="setAGraph('yaygin')">Yaygınlık</button></div></div>
+        <div class="fl" id="aAssetWrap"><label>Varlık (ara)</label>
+          <input type="text" id="aAssetSearch" list="aAssetList" placeholder="örn: BTC" autocomplete="off" style="width:150px">
+          <datalist id="aAssetList"></datalist></div>
+        <div class="fl" id="aMetricWrap"><label>Tür</label>
           <div class="seg"><button id="aPerp" class="on" onclick="setAMetric('perp')">Perp</button><button id="aOi" onclick="setAMetric('oi')">OI</button></div></div>
-        <div class="fl"><label>Varlık</label><select id="aAsset"></select></div>
+        <div class="fl" id="aModeWrap"><label>Zaman</label>
+          <div class="seg"><button id="aModeGun" class="on" onclick="setAMode('tekgun')">Tek gün</button><button id="aModeTrend" onclick="setAMode('gunler')">Günler arası</button></div></div>
         <div class="fl" id="aDayWrap"><label id="aDayLabel">Gün</label><div id="aDayBox"></div></div>
       </div>
-      <div class="filters" style="margin-top:-6px">
+      <div class="filters" style="margin-top:-6px" id="aExchWrap">
         <div class="fl" style="flex:1"><label>Borsalar (karşılaştır)</label><div class="checks" id="aChecks"></div></div>
       </div>
       <div class="cards" id="aCards"></div>
       <div class="chart-box">
         <h3 id="aTitle">Karşılaştırma</h3>
         <div class="cs" id="aSub">Günlük arşivden</div>
-        <div style="position:relative;height:340px"><canvas id="aChart" role="img" aria-label="Analiz karşılaştırma grafiği">Karşılaştırma grafiği.</canvas></div>
+        <div style="position:relative;height:340px"><canvas id="aChart" role="img" aria-label="Analiz grafiği">Analiz grafiği.</canvas></div>
       </div>
     </div>
   </div>
@@ -181,8 +192,13 @@ const colorFor=(e,i)=>EXCH_COLORS[e]||['#003aff','#00c2ff','#00d18f','#f5a623','
 
 let CMC=null, BORSA=null, ARSIV={cmc:null,borsa:null};
 let cmcSort='rank',cmcDir=1, bSort='rank',bDir=1, openSym=null, pieChart=null;
+let bGrowthType='perp', bPeriod=1;   // buyume: perp/oi, 1/7/30 gun
+let GROWTH={};   // sembol -> {perp:%, oi:%} secili periyot icin hesaplanmis
+function setBGrowth(t){bGrowthType=t;$('bgPerp').classList.toggle('on',t==='perp');$('bgOi').classList.toggle('on',t==='oi');computeGrowth().then(renderBorsa);}
+function setBPeriod(p){bPeriod=p;$('bp1').classList.toggle('on',p===1);$('bp7').classList.toggle('on',p===7);$('bp30').classList.toggle('on',p===30);const oz=$('bpOzel');if(oz&&![1,7,30].includes(p))oz.value=p;else if(oz&&[1,7,30].includes(p))oz.value='';computeGrowth().then(renderBorsa);}
 let aChart=null, aSelectedExch=new Set(['Binance','OKX','Bybit']);
 let aMode='tekgun', aMetric='perp', aSelectedDays=new Set();
+let agMode='borsa';  // grafik turu: borsa | buyume | yaygin
 
 function setTheme(t){document.documentElement.dataset.theme=t;$('bLight').classList.toggle('on',t==='light');$('bDark').classList.toggle('on',t==='dark');redrawAll();}
 function showTab(t){
@@ -210,6 +226,8 @@ async function loadAll(){
   // Arsiv indeksleri
   try{ ARSIV.borsa=await getJSON('arsiv/borsa/index.json'); }catch(e){}
   try{ ARSIV.cmc=await getJSON('arsiv/cmc/index.json'); }catch(e){}
+  // Buyume (arsivden, secili periyoda gore)
+  await computeGrowth();
 
   // Zaman damgasi (en guncel hangisiyse)
   const t=(BORSA&&BORSA.generated_at)||(CMC&&CMC.generated_at);
@@ -232,12 +250,52 @@ function mergeBorsa(g,l){
   });
   // turetilmis toplamlar (sadece perp + oi)
   Object.values(merged).forEach(a=>{
-    a._perp=0;a._oi=0;
-    ALL_EXCH.forEach(e=>{const v=a.exchanges[e];if(v){a._perp+=+v.perp_volume_usd||0;a._oi+=+v.open_interest_usd||0;}});
+    a._perp=0;a._oi=0;a._yaygin=0;
+    ALL_EXCH.forEach(e=>{const v=a.exchanges[e];if(v){a._perp+=+v.perp_volume_usd||0;a._oi+=+v.open_interest_usd||0;if((+v.perp_volume_usd||0)>0)a._yaygin++;}});
     a._perpTot=a._perp;
   });
   return {generated_at:(g&&g.generated_at)||(l&&l.generated_at),
     assets:Object.values(merged).sort((x,y)=>(x.rank||9999)-(y.rank||9999))};
+}
+
+/* ---------- BUYUME HESABI (arsivden) ---------- */
+// Bir gunun arsivinden sembol -> {perp, oi} toplamlarini cikarir
+function _toplamlar(dayJson){
+  const out={};
+  (dayJson&&dayJson.assets||[]).forEach(a=>{
+    let p=0,o=0;
+    ALL_EXCH.forEach(e=>{const v=(a.exchanges||{})[e];if(v){p+=+v.perp_volume_usd||0;o+=+v.open_interest_usd||0;}});
+    out[a.symbol]={perp:p,oi:o};
+  });
+  return out;
+}
+// Secili periyoda gore her varligin buyume %'sini hesaplar -> GROWTH
+async function computeGrowth(){
+  GROWTH={};
+  const gunler=gunlerListesi();
+  if(gunler.length<2){ return; } // yeterli arsiv yok
+  const bugun=gunler[gunler.length-1];
+  // periyoda en yakin gecmis gunu bul: bugunden bPeriod gun oncesi ya da en eski
+  const hedefIdx=Math.max(0, gunler.length-1-bPeriod);
+  const gecmis=gunler[hedefIdx];
+  if(gecmis===bugun){ return; }
+  try{
+    const [dBugun,dGecmis]=await Promise.all([loadArsivGun(bugun),loadArsivGun(gecmis)]);
+    const tB=_toplamlar(dBugun), tG=_toplamlar(dGecmis);
+    Object.keys(tB).forEach(sym=>{
+      const b=tB[sym], gg=tG[sym];
+      const perpChg = (gg&&gg.perp>0)?((b.perp-gg.perp)/gg.perp*100):null;
+      const oiChg   = (gg&&gg.oi>0)?((b.oi-gg.oi)/gg.oi*100):null;
+      GROWTH[sym]={perp:perpChg, oi:oiChg, gecmisGun:gecmis};
+    });
+  }catch(e){}
+}
+// arsiv gun dosyasi cache
+let _arsivCache={};
+async function loadArsivGun(d){
+  if(_arsivCache[d])return _arsivCache[d];
+  const j=await getJSON('arsiv/borsa/'+d+'.json');
+  _arsivCache[d]=j; return j;
 }
 
 /* ---------- SEKME 1: CMC ---------- */
@@ -260,32 +318,49 @@ $('cmcSort').onchange=e=>{cmcSort=e.target.value;cmcDir=cmcSort==='rank'?1:-1;re
 $('cmcSearch').oninput=renderCmc;
 
 /* ---------- SEKME 2: BORSALAR ---------- */
-function borsaErr(){ $('bBody').innerHTML=`<tr><td colspan="4" class="err">Borsa verisi yok. GitHub (Hyperliquid, OKX, Bitget, Gate) ve/veya yerel (Binance/Bybit) çalışınca oluşur.</td></tr>`; }
+function borsaErr(){ $('bBody').innerHTML=`<tr><td colspan="6" class="err">Borsa verisi yok. GitHub (Hyperliquid, OKX, Bitget, Gate) ve/veya yerel (Binance/Bybit) çalışınca oluşur.</td></tr>`; }
 function buildBorsaHead(){
-  const cols=[["symbol","Asset","l"],["_mcap","Market Cap"],["_perpTot","Perp Volume (24s)","sep"],["_oi","Open Interest","sep"]];
+  const cols=[["symbol","Varlık","l"],["_mcap","Market Cap"],["_perpTot","Perp Volume (24s)","sep"],["_oi","Open Interest"],["_yaygin","Yaygınlık","sep"],["_buyume","Büyüme %","sep"]];
   $('bColh').innerHTML=cols.map(c=>`<th class="${c[2]==='sep'?'sep':''} ${c[2]==='l'?'l':''}" data-k="${c[0]}">${c[1]}</th>`).join('');
   document.querySelectorAll('#bColh th').forEach(th=>{th.onclick=()=>{const k=th.dataset.k;if(bSort===k)bDir*=-1;else{bSort=k;bDir=(k==='rank'||k==='symbol')?1:-1;}renderBorsa();};});
 }
+function _growthVal(sym){ const g=GROWTH[sym]; if(!g)return null; return bGrowthType==='perp'?g.perp:g.oi; }
 function renderBorsa(){
   const q=$('bSearch').value.trim().toUpperCase();
   let rows=(BORSA.assets||[]).filter(a=>!q||a.symbol.includes(q)||(a.name||'').toUpperCase().includes(q));
-  rows.sort((x,y)=>{const a=x[bSort],b=y[bSort];return typeof a==='string'?bDir*a.localeCompare(b):bDir*((a||0)-(b||0));});
+  // buyume degerini her satira ata (siralama icin)
+  rows.forEach(a=>{ a._buyume=_growthVal(a.symbol); });
+  rows.sort((x,y)=>{
+    let a=x[bSort],b=y[bSort];
+    if(bSort==='_buyume'){ a=(a==null?-1e9:a); b=(b==null?-1e9:b); }
+    return typeof a==='string'?bDir*a.localeCompare(b):bDir*((a||0)-(b||0));
+  });
   $('bCount').textContent=rows.length;
   const pT=rows.reduce((s,a)=>s+a._perpTot,0),oiT=rows.reduce((s,a)=>s+a._oi,0);
-  const enb=rows.length?rows.slice().sort((x,y)=>y._perpTot-x._perpTot)[0]:null;
+  const gunler=gunlerListesi();
+  const buyumeHazir=gunler.length>=2;
+  // en cok buyuyen (secili tur/periyot)
+  const artanlar=rows.filter(a=>a._buyume!=null).sort((x,y)=>y._buyume-x._buyume);
+  const enArtan=artanlar[0];
   $('bCards').innerHTML=`
     <div class="card"><div class="l">Toplam perp volume (24s)</div><div class="v">${f(pT)}</div></div>
     <div class="card"><div class="l">Toplam open interest</div><div class="v">${f(oiT)}</div></div>
-    <div class="card"><div class="l">En yüksek perp</div><div class="v">${enb?enb.symbol:'-'}</div></div>
-    <div class="card"><div class="l">coin sayısı</div><div class="v">${rows.length}</div></div>`;
+    <div class="card"><div class="l">En çok büyüyen (${bGrowthType==='perp'?'hacim':'OI'} ${bPeriod}g)</div><div class="v">${enArtan?enArtan.symbol+' '+fp(enArtan._buyume):(buyumeHazir?'-':'arşiv bekliyor')}</div></div>
+    <div class="card"><div class="l">varlık sayısı</div><div class="v">${rows.length}</div></div>`;
   let html='';
   rows.forEach(a=>{
     const op=openSym===a.symbol;
+    const bv=a._buyume;
+    const bvTxt = bv==null ? '<span class="nm">—</span>' : `<span class="${bv>=0?'pos':'neg'}">${bv>=0?'▲':'▼'} ${Math.abs(bv).toFixed(1)}%</span>`;
+    const yayTxt = `${a._yaygin}/6`;
+    const yayCls = a._yaygin<=2?'neg':(a._yaygin>=5?'pos':'');
     html+=`<tr class="arow ${op?'open':''}" onclick="toggleRow('${a.symbol}')">
       <td class="l"><span class="caret">▶</span><span class="rk">${a.rank||'-'}</span>${a.symbol} <span class="nm">· ${a.name||''}</span></td>
       <td>${f(a._mcap)}</td>
       <td class="tot tperp sep">${f(a._perpTot)}</td>
-      <td class="tot sep">${f(a._oi)}</td></tr>`;
+      <td class="tot">${f(a._oi)}</td>
+      <td class="sep ${yayCls}" style="font-weight:600">${yayTxt}</td>
+      <td class="sep">${bvTxt}</td></tr>`;
     if(op) html+=detailRow(a);
   });
   $('bBody').innerHTML=html;
@@ -296,7 +371,7 @@ function detailRow(a){
     <td class="l"><span class="dot" style="background:${colorFor(e,i)}"></span>${e}</td>
     <td class="tot tperp sep">${f(v.perp_volume_usd)}</td>
     <td class="sep">${f(v.open_interest_usd)}</td></tr>`;}).join('');
-  return `<tr class="detail"><td colspan="4"><div class="detail-inner">
+  return `<tr class="detail"><td colspan="6"><div class="detail-inner">
     <div class="bx"><h4>${a.symbol} — borsa bazında perp (24s)</h4><table class="brk">
       <tr><th class="l">Borsa</th><th class="gperp sep">Perp Volume</th><th class="sep">Open Interest</th></tr>${brk}</table></div>
     <div class="bx"><h4>${a.symbol} — perp hacminin borsalara dağılımı</h4>
@@ -312,80 +387,80 @@ function drawPie(a){
     data:{labels:ALL_EXCH,datasets:[{data:vals,backgroundColor:ALL_EXCH.map((e,i)=>colorFor(e,i)),borderWidth:1.5,borderColor:cs.getPropertyValue('--panel').trim()}]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:10},boxWidth:10,padding:6}},tooltip:{callbacks:{label:c=>c.label+': $'+c.parsed.toFixed(1)+'M'}}}}});
 }
-$('bSort').onchange=e=>{bSort=e.target.value;bDir=bSort==='rank'?1:-1;renderBorsa();};
+$('bSort').onchange=e=>{bSort=e.target.value;bDir=(bSort==='rank'||bSort==='symbol')?1:-1;renderBorsa();};
+$('bpOzel').oninput=e=>{const v=parseInt(e.target.value,10);if(v&&v>=1&&v<=365){bPeriod=v;$('bp1').classList.remove('on');$('bp7').classList.remove('on');$('bp30').classList.remove('on');computeGrowth().then(renderBorsa);}};
 $('bSearch').oninput=renderBorsa;
 
-/* ---------- SEKME 3: ANALIZ ---------- */
+/* ---------- SEKME 3: ANALIZ (3 grafik modu) ---------- */
+function setAGraph(m){
+  agMode=m;
+  $('agBorsa').classList.toggle('on',m==='borsa');
+  $('agBuyume').classList.toggle('on',m==='buyume');
+  $('agYaygin').classList.toggle('on',m==='yaygin');
+  // Kontrol gorunurlugu moda gore
+  const show=(id,on)=>{const el=$(id);if(el)el.style.display=on?'':'none';};
+  show('aMetricWrap', m!=='yaygin');          // yaygınlıkta perp/oi anlamsız
+  show('aExchWrap', m==='borsa');             // borsa secimi sadece karsilastirmada
+  show('aModeWrap', m==='borsa');             // tek gun/gunler sadece karsilastirmada
+  // buyume ve yaygin her zaman "gunler arasi" mantiginda calisir (zaman serisi)
+  if(m!=='borsa'){ aMode='gunler'; }
+  buildDayBox();
+  renderAnaliz();
+}
 function setAMode(m){aMode=m;$('aModeGun').classList.toggle('on',m==='tekgun');$('aModeTrend').classList.toggle('on',m==='gunler');buildDayBox();renderAnaliz();}
 function setAMetric(m){aMetric=m;$('aPerp').classList.toggle('on',m==='perp');$('aOi').classList.toggle('on',m==='oi');renderAnaliz();}
 
 function gunlerListesi(){ return (ARSIV.borsa&&ARSIV.borsa.gunler)||[]; }
+function aGetAsset(){
+  const v=($('aAssetSearch').value||'').trim().toUpperCase();
+  const syms=(BORSA&&BORSA.assets||[]).map(a=>a.symbol);
+  if(syms.includes(v))return v;
+  return syms[0]||null;   // gecersizse ilk varlik
+}
 
 function prepAnaliz(){
-  // Asset listesi
-  const sel=$('aAsset');sel.innerHTML='';
-  const syms=(BORSA&&BORSA.assets||[]).map(a=>a.symbol);
-  syms.forEach(s=>{const o=document.createElement('option');o.value=s;o.textContent=s;sel.appendChild(o);});
-  $('aAsset').onchange=renderAnaliz;
+  // Aranabilir varlik listesi (datalist)
+  const dl=$('aAssetList');dl.innerHTML='';
+  (BORSA&&BORSA.assets||[]).forEach(a=>{const o=document.createElement('option');o.value=a.symbol;o.label=a.name||'';dl.appendChild(o);});
+  const inp=$('aAssetSearch');
+  if(!inp.value && BORSA&&BORSA.assets[0]) inp.value=BORSA.assets[0].symbol;
+  inp.oninput=()=>{ const v=inp.value.trim().toUpperCase(); const syms=(BORSA&&BORSA.assets||[]).map(a=>a.symbol); if(syms.includes(v)) renderAnaliz(); };
   // Borsa secimleri
   $('aChecks').innerHTML=ALL_EXCH.map(e=>`<span class="chk ${aSelectedExch.has(e)?'on':''}" data-e="${e}" onclick="toggleExch('${e}')"><span class="dot" style="background:${EXCH_COLORS[e]}"></span>${e}</span>`).join('');
-  // Varsayilan secili gun: en son gun
   const g=gunlerListesi();
   if(g.length && aSelectedDays.size===0) aSelectedDays.add(g[g.length-1]);
-  buildDayBox();
+  setAGraph(agMode);
 }
 function buildDayBox(){
   const g=gunlerListesi();
   if(!g.length){ $('aDayBox').innerHTML='<span style="font-size:12px;color:var(--mut)">Arşiv yok</span>'; return; }
   const minD=g[0], maxD=g[g.length-1];
-  if(aMode==='tekgun'){
+  // Borsa modu + tek gun: tek takvim. Diger tum durumlar: tarih araligi.
+  if(agMode==='borsa' && aMode==='tekgun'){
     $('aDayLabel').textContent='Gün (takvimden seç)';
     let cur=[...aSelectedDays][0];
     if(!cur||!g.includes(cur)){cur=maxD;aSelectedDays=new Set([cur]);}
     $('aDayBox').innerHTML=`<input type="date" id="aDaySel" value="${cur}" min="${minD}" max="${maxD}">`;
-    const sel=$('aDaySel');
-    sel.onchange=()=>{
-      const v=sel.value;
-      if(!g.includes(v)){ // arsivde olmayan gun secildi
-        alert('Bu tarihte arşiv kaydı yok. Kayıtlı en yakın güne dönülüyor.');
-        sel.value=cur; return;
-      }
-      aSelectedDays=new Set([v]); renderAnaliz();
-    };
+    $('aDaySel').onchange=()=>{const v=$('aDaySel').value;if(!g.includes(v)){alert('Bu tarihte arşiv kaydı yok.');$('aDaySel').value=cur;return;}aSelectedDays=new Set([v]);renderAnaliz();};
   }else{
     $('aDayLabel').textContent='Tarih aralığı (başlangıç → bitiş)';
-    // mevcut secim yoksa: son 2 gun (ya da tek gun)
-    if(aSelectedDays.size===0){ aSelectedDays=new Set(g.length>=2?[g[g.length-2],maxD]:[maxD]); }
+    if(aSelectedDays.size<2){ aSelectedDays=new Set(g.length>=2?[g[0],maxD]:[maxD]); }
     const sorted=[...aSelectedDays].sort();
     const bas=sorted[0]||maxD, bit=sorted[sorted.length-1]||maxD;
-    $('aDayBox').innerHTML=`
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <input type="date" id="aDayBas" value="${bas}" min="${minD}" max="${maxD}">
-        <span style="color:var(--mut)">→</span>
-        <input type="date" id="aDayBit" value="${bit}" min="${minD}" max="${maxD}">
-        <span id="aDayCount" style="font-size:12px;color:var(--mut)"></span>
-      </div>
-      <div class="checks" id="aDayChips" style="margin-top:8px"></div>`;
+    $('aDayBox').innerHTML=`<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <input type="date" id="aDayBas" value="${bas}" min="${minD}" max="${maxD}">
+      <span style="color:var(--mut)">→</span>
+      <input type="date" id="aDayBit" value="${bit}" min="${minD}" max="${maxD}">
+      <span id="aDayCount" style="font-size:12px;color:var(--mut)"></span></div>`;
     const applyRange=()=>{
-      let b=$('aDayBas').value, e=$('aDayBit').value;
-      if(b>e){ const t=b;b=e;e=t; } // ters girilirse duzelt
-      // aralıktaki SADECE arsivde olan gunleri sec
-      const inRange=g.filter(d=>d>=b && d<=e);
-      if(!inRange.length){ alert('Seçilen aralıkta arşiv kaydı yok.'); return; }
-      aSelectedDays=new Set(inRange);
-      buildDayBox(); renderAnaliz();
+      let b=$('aDayBas').value,e=$('aDayBit').value; if(b>e){const t=b;b=e;e=t;}
+      const inRange=g.filter(d=>d>=b&&d<=e);
+      if(!inRange.length){alert('Seçilen aralıkta arşiv kaydı yok.');return;}
+      aSelectedDays=new Set(inRange); buildDayBox(); renderAnaliz();
     };
-    $('aDayBas').onchange=applyRange;
-    $('aDayBit').onchange=applyRange;
-    // secili gun cipleri (tek tek cikarilabilir)
-    const chips=[...aSelectedDays].sort();
-    $('aDayCount').textContent=`${chips.length} gün seçili`;
-    $('aDayChips').innerHTML=chips.map(d=>`<span class="chk on" data-d="${d}" onclick="toggleDay('${d}')">${d} ✕</span>`).join('');
+    $('aDayBas').onchange=applyRange; $('aDayBit').onchange=applyRange;
+    const cnt=$('aDayCount'); if(cnt)cnt.textContent=`${[...aSelectedDays].length} gün`;
   }
-}
-function toggleDay(d){ if(aSelectedDays.has(d))aSelectedDays.delete(d);else aSelectedDays.add(d);
-  buildDayBox();
-  renderAnaliz();
 }
 function toggleExch(e){ if(aSelectedExch.has(e))aSelectedExch.delete(e);else aSelectedExch.add(e);
   document.querySelectorAll('#aChecks .chk').forEach(c=>c.classList.toggle('on',aSelectedExch.has(c.dataset.e)));
@@ -406,63 +481,95 @@ function valFor(dayJson,asset,exch,metric){
   const v=(a.exchanges||{})[exch];if(!v)return null;
   return metric==='perp'?M(v.perp_volume_usd||0):M(v.open_interest_usd||0);
 }
+// Bir gunde varligin toplam degeri (tum borsalar) ve kac borsada oldugu
+function assetTotals(dayJson,asset,metric){
+  if(!dayJson)return {tot:null,yaygin:0};
+  const a=(dayJson.assets||[]).find(x=>x.symbol===asset);if(!a)return {tot:null,yaygin:0};
+  let tot=0,yay=0;
+  ALL_EXCH.forEach(e=>{const v=(a.exchanges||{})[e];if(v){const val=metric==='perp'?(+v.perp_volume_usd||0):(+v.open_interest_usd||0);tot+=val;if((+v.perp_volume_usd||0)>0)yay++;}});
+  return {tot:M(tot),yaygin:yay};
+}
 async function renderAnaliz(){
   const g=gunlerListesi();
-  const metricName={spot:'Spot Volume',perp:'Perp Volume',oi:'Open Interest'}[aMetric];
+  const cs=getComputedStyle(document.documentElement);
   if(!g.length){
     $('aCards').innerHTML='';$('aTitle').textContent='Henüz arşiv yok';
-    $('aSub').textContent='guncelle.bat / GitHub çalıştıkça günlük arşiv birikir';
+    $('aSub').textContent='GitHub/bat çalıştıkça günlük arşiv birikir';
     if(aChart){aChart.destroy();aChart=null;}return;
   }
-  const asset=$('aAsset').value||(BORSA&&BORSA.assets[0]&&BORSA.assets[0].symbol);
-  const exch=[...aSelectedExch];
-  const cs=getComputedStyle(document.documentElement);
+  const asset=aGetAsset();
+  const metricName={perp:'Perp Volume',oi:'Open Interest'}[aMetric];
 
-  if(aMode==='tekgun'){
-    const day=[...aSelectedDays][0]||g[g.length-1];
-    const dd=await loadDays([day]);
-    const labels=exch;
-    const vals=exch.map(e=>valFor(dd[day],asset,e,aMetric)||0);
-    $('aTitle').textContent=`${asset} — ${metricName} · ${day}`;
-    $('aSub').textContent='Seçili borsaların o günkü değerleri (yan yana)';
-    const toplam=vals.reduce((s,v)=>s+v,0);
-    const enbuyuk=Math.max(...vals,0);const enbIdx=vals.indexOf(enbuyuk);
-    $('aCards').innerHTML=`
-      <div class="card"><div class="l">gün</div><div class="v" style="font-size:15px">${day}</div></div>
-      <div class="card"><div class="l">seçili borsa toplam</div><div class="v">${f(toplam*1e6)}</div></div>
-      <div class="card"><div class="l">en yüksek</div><div class="v">${labels[enbIdx]||'-'}</div></div>
-      <div class="card"><div class="l">borsa sayısı</div><div class="v">${exch.length}</div></div>`;
-    if(aChart)aChart.destroy();
-    aChart=new Chart($('aChart'),{type:'bar',
-      data:{labels,datasets:[{label:metricName,data:vals,backgroundColor:exch.map((e,i)=>colorFor(e,i))}]},
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>metricName+': '+f(c.parsed.y*1e6)}}},
-        scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim()},grid:{display:false}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
-  }else{
-    // gunler arasi: secili gunler x ekseni, her borsa bir seri (gruplu cubuk)
-    const days=g.filter(d=>aSelectedDays.has(d));
-    const useDays=days.length?days:[g[g.length-1]];
-    const dd=await loadDays(useDays);
-    const datasets=exch.map((e,i)=>({label:e,data:useDays.map(d=>valFor(dd[d],asset,e,aMetric)||0),backgroundColor:colorFor(e,i)}));
-    $('aTitle').textContent=`${asset} — ${metricName} · günler arası`;
-    $('aSub').textContent='Seçili günlerde, seçili borsaların değişimi';
-    // degisim karti: ilk-son secili gun, secili borsa toplami
-    if(useDays.length>=2){
-      const sumDay=(d)=>exch.reduce((s,e)=>s+(valFor(dd[d],asset,e,aMetric)||0),0);
-      const ilk=sumDay(useDays[0]),son=sumDay(useDays[useDays.length-1]),deg=ilk?((son-ilk)/ilk*100):0;
+  // === MOD 1: BORSA KARSILASTIRMA (mevcut mantik) ===
+  if(agMode==='borsa'){
+    const exch=[...aSelectedExch];
+    if(aMode==='tekgun'){
+      const day=[...aSelectedDays][0]||g[g.length-1];
+      const dd=await loadDays([day]);
+      const vals=exch.map(e=>valFor(dd[day],asset,e,aMetric)||0);
+      $('aTitle').textContent=`${asset} — ${metricName} · ${day}`;
+      $('aSub').textContent='Seçili borsaların o günkü değerleri (yan yana)';
+      const toplam=vals.reduce((s,v)=>s+v,0),mx=Math.max(...vals,0),mi=vals.indexOf(mx);
       $('aCards').innerHTML=`
-        <div class="card"><div class="l">${useDays[0]}</div><div class="v">${f(ilk*1e6)}</div></div>
-        <div class="card"><div class="l">${useDays[useDays.length-1]}</div><div class="v">${f(son*1e6)}</div></div>
-        <div class="card"><div class="l">değişim</div><div class="v ${deg>=0?'pos':'neg'}">${deg>=0?'▲':'▼'} ${Math.abs(deg).toFixed(1)}%</div></div>
-        <div class="card"><div class="l">seçili gün</div><div class="v">${useDays.length}</div></div>`;
+        <div class="card"><div class="l">gün</div><div class="v" style="font-size:15px">${day}</div></div>
+        <div class="card"><div class="l">seçili borsa toplam</div><div class="v">${f(toplam*1e6)}</div></div>
+        <div class="card"><div class="l">en yüksek</div><div class="v">${exch[mi]||'-'}</div></div>
+        <div class="card"><div class="l">borsa sayısı</div><div class="v">${exch.length}</div></div>`;
+      if(aChart)aChart.destroy();
+      aChart=new Chart($('aChart'),{type:'bar',data:{labels:exch,datasets:[{label:metricName,data:vals,backgroundColor:exch.map((e,i)=>colorFor(e,i))}]},
+        options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>metricName+': '+f(c.parsed.y*1e6)}}},scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim()},grid:{display:false}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
     }else{
-      $('aCards').innerHTML=`<div class="card"><div class="l">seçili gün</div><div class="v">${useDays.length}</div></div>
-        <div class="card"><div class="l">ipucu</div><div class="v" style="font-size:13px">Değişim için 2+ gün seç</div></div>`;
+      const useDays=g.filter(d=>aSelectedDays.has(d)); const days=useDays.length?useDays:[g[g.length-1]];
+      const dd=await loadDays(days);
+      const datasets=exch.map((e,i)=>({label:e,data:days.map(d=>valFor(dd[d],asset,e,aMetric)||0),backgroundColor:colorFor(e,i)}));
+      $('aTitle').textContent=`${asset} — ${metricName} · günler arası`;
+      $('aSub').textContent='Seçili günlerde, seçili borsaların değişimi';
+      if(days.length>=2){const sumDay=d=>exch.reduce((s,e)=>s+(valFor(dd[d],asset,e,aMetric)||0),0);const ilk=sumDay(days[0]),son=sumDay(days[days.length-1]),deg=ilk?((son-ilk)/ilk*100):0;
+        $('aCards').innerHTML=`<div class="card"><div class="l">${days[0]}</div><div class="v">${f(ilk*1e6)}</div></div><div class="card"><div class="l">${days[days.length-1]}</div><div class="v">${f(son*1e6)}</div></div><div class="card"><div class="l">değişim</div><div class="v ${deg>=0?'pos':'neg'}">${deg>=0?'▲':'▼'} ${Math.abs(deg).toFixed(1)}%</div></div><div class="card"><div class="l">gün</div><div class="v">${days.length}</div></div>`;}
+      else $('aCards').innerHTML=`<div class="card"><div class="l">gün</div><div class="v">${days.length}</div></div><div class="card"><div class="l">ipucu</div><div class="v" style="font-size:13px">Değişim için 2+ gün seç</div></div>`;
+      if(aChart)aChart.destroy();
+      aChart=new Chart($('aChart'),{type:'bar',data:{labels:days,datasets},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+f(c.parsed.y*1e6)}}},scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim()},grid:{display:false}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
     }
+    return;
+  }
+
+  // MOD 2 ve 3 icin: secili gun araligindaki gunler (zaman serisi)
+  const days=g.filter(d=>aSelectedDays.has(d)); const useDays=(days.length?days:g).slice();
+  const dd=await loadDays(useDays);
+
+  // === MOD 2: BUYUME (secili varligin hacim/OI cizgisi zamanla) ===
+  if(agMode==='buyume'){
+    const series=useDays.map(d=>{const t=assetTotals(dd[d],asset,aMetric);return t.tot;});
+    $('aTitle').textContent=`${asset} — ${metricName} büyüme`;
+    $('aSub').textContent='Seçili tarih aralığında toplam (6 borsa) değişimi';
+    const ilk=series.find(v=>v!=null)||0, son=[...series].reverse().find(v=>v!=null)||0;
+    const deg=ilk?((son-ilk)/ilk*100):0;
+    $('aCards').innerHTML=`
+      <div class="card"><div class="l">başlangıç</div><div class="v">${f(ilk*1e6)}</div></div>
+      <div class="card"><div class="l">bitiş</div><div class="v">${f(son*1e6)}</div></div>
+      <div class="card"><div class="l">değişim</div><div class="v ${deg>=0?'pos':'neg'}">${deg>=0?'▲':'▼'} ${Math.abs(deg).toFixed(1)}%</div></div>
+      <div class="card"><div class="l">gün</div><div class="v">${useDays.length}</div></div>`;
     if(aChart)aChart.destroy();
-    aChart=new Chart($('aChart'),{type:'bar',
-      data:{labels:useDays,datasets},
-      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:cs.getPropertyValue('--mut').trim(),font:{size:11},boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': '+f(c.parsed.y*1e6)}}},
-        scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim()},grid:{display:false}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
+    aChart=new Chart($('aChart'),{type:'line',data:{labels:useDays,datasets:[{label:metricName,data:series,borderColor:cs.getPropertyValue('--brand2').trim(),backgroundColor:'rgba(0,103,255,.12)',fill:true,tension:.25,pointRadius:3,spanGaps:true}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>metricName+': '+(c.parsed.y==null?'—':f(c.parsed.y*1e6))}}},scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim(),font:{size:10}},grid:{display:false}},y:{ticks:{color:cs.getPropertyValue('--mut').trim(),callback:v=>f(v*1e6)},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
+    return;
+  }
+
+  // === MOD 3: YAYGINLIK (secili varlik kac borsada, zamanla) ===
+  if(agMode==='yaygin'){
+    const series=useDays.map(d=>{const t=assetTotals(dd[d],asset,'perp');return t.yaygin;});
+    $('aTitle').textContent=`${asset} — Yaygınlık (kaç borsada perp)`;
+    $('aSub').textContent='Seçili tarih aralığında kaç borsada perp piyasası olduğu (0-6)';
+    const sonY=[...series].reverse().find(v=>v!=null)||0, ilkY=series.find(v=>v!=null)||0;
+    $('aCards').innerHTML=`
+      <div class="card"><div class="l">şu an</div><div class="v">${sonY}/6 borsa</div></div>
+      <div class="card"><div class="l">başlangıç</div><div class="v">${ilkY}/6 borsa</div></div>
+      <div class="card"><div class="l">değişim</div><div class="v ${sonY-ilkY>=0?'pos':'neg'}">${sonY-ilkY>=0?'▲':'▼'} ${Math.abs(sonY-ilkY)} borsa</div></div>
+      <div class="card"><div class="l">gün</div><div class="v">${useDays.length}</div></div>`;
+    if(aChart)aChart.destroy();
+    aChart=new Chart($('aChart'),{type:'line',data:{labels:useDays,datasets:[{label:'Borsa sayısı',data:series,borderColor:cs.getPropertyValue('--oi').trim(),backgroundColor:'rgba(0,169,143,.15)',fill:true,stepped:true,pointRadius:3,spanGaps:true}]},
+      options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>(c.parsed.y==null?'—':c.parsed.y+'/6 borsa')}}},scales:{x:{ticks:{color:cs.getPropertyValue('--mut').trim(),font:{size:10}},grid:{display:false}},y:{min:0,max:6,ticks:{stepSize:1,color:cs.getPropertyValue('--mut').trim()},grid:{color:cs.getPropertyValue('--brd').trim()}}}}});
+    return;
   }
 }
 

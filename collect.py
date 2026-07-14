@@ -34,10 +34,10 @@ import requests
 # AYARLAR
 # ----------------------------------------------------------------------------
 
-TOP_N_ASSETS = 50
+TOP_N_ASSETS = 150
 REQUEST_TIMEOUT = 20
 USER_AGENT = "marketpano/2.0"
-OI_LIMIT = 60
+OI_LIMIT = 200
 
 # CMC API KEY
 # - GitHub'da: Settings > Secrets'taki CMC_API_KEY otomatik okunur (asagidaki bos kalsa da olur).
