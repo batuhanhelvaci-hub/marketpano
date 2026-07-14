@@ -263,22 +263,22 @@ SPOT_SOURCES = {
 
 def perp_binance(top_bases):
     out = {}
-    # Perp hacmi (tek cagri)
+    prices = {}  # base -> lastPrice (OI'yi USD'ye cevirmek icin)
+    # Perp hacmi + fiyat (tek cagri)
     tickers = get_json("https://fapi.binance.com/fapi/v1/ticker/24hr")
     if tickers:
         for t in tickers:
             base, quote = base_from_symbol(t.get("symbol", ""))
             if base and quote == "USDT":
                 out.setdefault(base, {})["perp_volume_usd"] = to_float(t.get("quoteVolume"))
-    # Open interest: Binance her sembol icin ayri cagri ister -> sadece buyukler
+                prices[base] = to_float(t.get("lastPrice"))
+    # Open interest: Binance her sembol icin ayri cagri ister -> sadece buyukler.
+    # Fiyat yukaridaki ticker'dan geldigi icin ayrica fiyat cagrisi YAPMIYORUZ (2 kat hizli).
     for base in top_bases:
         sym = f"{base}USDT"
         oi = get_json("https://fapi.binance.com/fapi/v1/openInterest", {"symbol": sym})
         if oi and "openInterest" in oi:
-            # OI adet cinsinden gelir; USD icin fiyatla carpmak gerekir.
-            # Yaklasik USD degeri icin premiumIndex'ten markPrice cekiyoruz.
-            mark = get_json("https://fapi.binance.com/fapi/v1/premiumIndex", {"symbol": sym})
-            price = to_float(mark.get("markPrice")) if mark else 0.0
+            price = prices.get(base, 0.0)
             out.setdefault(base, {})["open_interest_usd"] = to_float(oi["openInterest"]) * price
         time.sleep(0.03)
     return out
