@@ -598,15 +598,28 @@ def run_exchanges(which, outfile, etiket):
 
 
 def merge_and_archive_borsa():
-    """github + local borsa dosyalarini birlestirip gunluk borsa arsivi yazar."""
+    """github + local borsa dosyalarini birlestirip gunluk borsa arsivi yazar.
+    ONEMLI: local (Binance/Bybit) dosyasi SADECE bugune aitse arsive katilir.
+    Eski (bayat) local, arsive gecmis gunun verisi gibi yazilmasin diye atlanir."""
     def load(p):
         try:
             with open(p) as f:
                 return json.load(f)
         except Exception:
             return None
+    def gun_of(src):
+        # generated_at'tan YYYY-MM-DD kismini al
+        try:
+            return (src.get("generated_at") or "")[:10]
+        except Exception:
+            return ""
+    bugun = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     g = load("borsa_github.json")
     l = load("borsa_local.json")
+    # local bugune ait degilse arsive KATMA (bayat veri korumasi)
+    if l and gun_of(l) != bugun:
+        print(f"  ! borsa_local.json bayat ({gun_of(l)} != {bugun}) -> arsive katilmadi.")
+        l = None
     merged = {}
     for src in (g, l):
         if not src:
