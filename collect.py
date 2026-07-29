@@ -1263,6 +1263,95 @@ def run_kontrat(which_exchanges=None, outfile="kontrat.json"):
     return payload
 
 
+# ============================================================
+#  HACIM (yeni yapi): her borsanin KENDI perp hacmine gore ilk 150'si
+#  CMC listesine gore FILTRELENMEZ. Her borsa kendi siralamasini tasir.
+#  Excel'de borsa basina bir sheet olur.
+# ============================================================
+
+HACIM_TOP_N = 150
+
+def run_hacim(which_exchanges=None, outfile="hacim.json"):
+    """Her borsa icin: tum USDT perp'leri cek, 24s hacme gore sirala, ilk 150'yi al.
+    Open interest sembol basi cagri isteyen borsalar (Binance) icin ikinci gecis yapilir."""
+    if which_exchanges is None:
+        which_exchanges = ALL_EXCHANGES
+    sonuc = {}
+    for exch in which_exchanges:
+        fn = PERP_SOURCES.get(exch)
+        if not fn:
+            continue
+        print(f"[HACIM] {exch} - tum perp'ler cekiliyor...")
+        try:
+            tumu = fn([])          # bos liste: sadece hacim, OI yok (hizli)
+        except Exception as e:
+            print(f"    ! {exch} hatasi: {e}")
+            continue
+        if not tumu:
+            print(f"    ! {exch} veri gelmedi.")
+            continue
+        sirali = sorted(tumu.items(),
+                        key=lambda kv: -(kv[1].get("perp_volume_usd") or 0))
+        top = [b for b, v in sirali[:HACIM_TOP_N] if (v.get("perp_volume_usd") or 0) > 0]
+        print(f"    {len(tumu)} perp bulundu -> ilk {len(top)} aliniyor (open interest ile)")
+        try:
+            detay = fn(top)        # OI dahil ikinci gecis
+        except Exception as e:
+            print(f"    ! {exch} OI gecisi hatasi: {e}")
+            detay = {}
+        satirlar = []
+        for i, base in enumerate(top, 1):
+            v = detay.get(base) or tumu.get(base) or {}
+            satirlar.append({
+                "sira": i,
+                "symbol": base,
+                "perp_volume_usd": v.get("perp_volume_usd") or tumu.get(base, {}).get("perp_volume_usd"),
+                "open_interest_usd": v.get("open_interest_usd"),
+            })
+        sonuc[exch] = satirlar
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kapsam": f"Her borsanin kendi 24s perp hacminde ilk {HACIM_TOP_N}",
+        "borsalar": sonuc,
+    }
+    with open(outfile, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"[HACIM] {outfile} yazildi ({len(sonuc)} borsa).")
+    return payload
+
+
+def merge_and_archive_hacim():
+    """hacim_github.json + hacim_local.json birlestirip gunluk hacim arsivi yazar.
+    local (Binance/Bybit) SADECE bugune aitse katilir (bayat veri korumasi)."""
+    def load(p):
+        try:
+            with open(p, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return None
+    bugun = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    g = load("hacim_github.json")
+    l = load("hacim_local.json")
+    if l and (l.get("generated_at") or "")[:10] != bugun:
+        print(f"  ! hacim_local.json bayat -> arsive katilmadi.")
+        l = None
+    if not g and not l:
+        print("  ! hacim dosyasi bulunamadi, arsive yazilmadi.")
+        return None
+    borsalar = {}
+    for src in (g, l):
+        if src:
+            borsalar.update(src.get("borsalar", {}))
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kapsam": f"Her borsanin kendi 24s perp hacminde ilk {HACIM_TOP_N}",
+        "borsalar": borsalar,
+    }
+    archive_daily("hacim", payload)
+    print(f"  Hacim arsivi yazildi ({len(borsalar)} borsa).")
+    return payload
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "all"
     print("=" * 56)
@@ -1295,6 +1384,19 @@ def main():
         # Cografi engelli 2 borsa (senin bilgisayarindan). kontrat_local.json.
         run_kontrat(which_exchanges=["Binance", "Bybit"],
                     outfile="kontrat_local.json")
+    elif mode == "hacim":
+        # Tum borsalar, her biri kendi ilk 150'si (senin bilgisayarinda test icin).
+        run_hacim()
+    elif mode == "hacim_github":
+        run_hacim(which_exchanges=["OKX", "Bitget", "Gate", "Hyperliquid"],
+                  outfile="hacim_github.json")
+    elif mode == "hacim_local":
+        run_hacim(which_exchanges=["Binance", "Bybit"],
+                  outfile="hacim_local.json")
+    elif mode == "arsivle_yeni":
+        # Yeni Excel yapisi icin: hacim + kontrat arsivlerini yaz.
+        merge_and_archive_hacim()
+        merge_and_archive_kontrat()
     elif mode == "all":
         run_cmc()
         run_exchanges(GITHUB_EXCHANGES, "borsa_github.json", "GitHub 6 borsa")
