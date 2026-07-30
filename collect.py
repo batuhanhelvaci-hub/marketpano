@@ -584,6 +584,63 @@ def run_cmc():
     print(f"[OK] cmc.json yazildi + arsiv/cmc/{day}.json")
 
 
+# ============================================================
+#  GENIS KRIPTO LISTESI (hisse suzgeci)
+#  Borsalar tokenize hisse/emtia perp'leri de listeliyor
+#  (SNDK, SKHYNIX, SOXL, MU, XAU, KORU...). Bunlar kripto degil.
+#  CMC'de olup olmadigina bakarak ayikliyoruz.
+#  Ayrica bu liste hacim sheet'lerindeki Fiyat + Market Cap kaynagidir.
+# ============================================================
+
+WHITELIST_N = 1000       # CMC'den kac coin cekilecek (suzgec + fiyat/mcap icin)
+GENIS_DOSYA = "cmc_genis.json"
+
+
+def run_cmc_genis():
+    """CMC ilk WHITELIST_N coin -> cmc_genis.json (+ gunluk arsiv)."""
+    coins = fetch_cmc(WHITELIST_N)
+    if not coins:
+        print("  ! Genis CMC listesi cekilemedi.")
+        return None
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kaynak": "CoinMarketCap",
+        "kapsam": f"ilk {WHITELIST_N} (kripto suzgeci + fiyat/mcap)",
+        "coins": coins,
+    }
+    write_json(GENIS_DOSYA, payload)
+    day = archive_daily("cmc_genis", payload)
+    print(f"[OK] {GENIS_DOSYA} yazildi ({len(coins)} coin) + arsiv/cmc_genis/{day}.json")
+    return payload
+
+
+def kripto_semboller():
+    """Kripto sembol kumesi. Sirasiyla dener:
+       1) cmc_genis.json (bugune aitse)
+       2) CMC'den taze cek (dosya yok/bayatsa) -> yazar
+       3) cmc.json (son care, sadece ilk 150)
+    Boylece bat, repodaki dosyalara muhtac olmadan calisir."""
+    bugun = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    d = None
+    try:
+        with open(GENIS_DOSYA, encoding="utf-8") as f:
+            d = json.load(f)
+    except Exception:
+        d = None
+    if not d or (d.get("generated_at") or "")[:10] != bugun:
+        print(f"[SUZGEC] {GENIS_DOSYA} yok ya da bayat -> CMC'den cekiliyor...")
+        d = run_cmc_genis() or d
+    if not d:
+        try:
+            with open("cmc.json", encoding="utf-8") as f:
+                d = json.load(f)
+            print("[SUZGEC] cmc_genis alinamadi -> cmc.json kullaniliyor (sadece ilk 150).")
+        except Exception:
+            print("[SUZGEC] ! Kripto listesi bulunamadi. Hisse suzgeci UYGULANMAYACAK.")
+            return None
+    return {c["symbol"] for c in d.get("coins", [])}
+
+
 def run_exchanges(which, outfile, etiket):
     data = collect_exchanges(which)
     payload = {
@@ -708,7 +765,7 @@ def digits_from_tick(tick):
 def orderbook_depth_spread(bids, asks, mid, pct=0.01):
     """bids/asks: [[price, size], ...]. mid civari +-pct icindeki toplam USD derinlik + spread%."""
     try:
-        if not bids or not asks:
+        if not bids or not asks or not mid or mid <= 0:
             return None, None
         best_bid = float(bids[0][0]); best_ask = float(asks[0][0])
         spread = (best_ask - best_bid) / mid * 100 if mid else None
@@ -1036,7 +1093,7 @@ def kontrat_gate(top_bases):
     return out
 
 def kontrat_bitget(top_bases):
-    """Bitget: contracts (kurallar+kaldirac) + current-fund-rate + symbol-price + merge-depth."""
+    """Bitget: contracts (kurallar+kaldirac) + tickers (index+mark+funding) + merge-depth."""
     out = {}
     contracts = get_json("https://api.bitget.com/api/v2/mix/market/contracts",
                          {"productType": "usdt-futures"})
@@ -1060,40 +1117,45 @@ def kontrat_bitget(top_bases):
                 # Bitget fundInterval SAAT cinsinden ("8")
                 "funding_interval_h": to_float(c.get("fundInterval")) or None,
             }
-    # fiyatlar (tum semboller tek cagri)
-    sp = get_json("https://api.bitget.com/api/v2/mix/market/symbol-price",
-                  {"productType": "usdt-futures"})
+    # Fiyat + funding: tickers TEK cagrida tum semboller icin
+    # indexPrice, markPrice, lastPr, fundingRate verir.
+    # (Onceki symbol-price cagrisi sembol parametresi istiyordu, bos donuyordu.)
     pmap = {}
-    if sp and sp.get("data"):
-        for p in sp["data"]:
-            sym = p.get("symbol", "")
-            if sym.endswith("USDT"):
-                pmap[sym[:-4]] = to_float(p.get("indexPrice") or p.get("markPrice") or p.get("price"))
+    tk = get_json("https://api.bitget.com/api/v2/mix/market/tickers",
+                  {"productType": "usdt-futures"})
+    if tk and tk.get("data"):
+        for t in tk["data"]:
+            sym = t.get("symbol", "")
+            if not sym.endswith("USDT"):
+                continue
+            idx = to_float(t.get("indexPrice"))
+            mrk = to_float(t.get("markPrice"))
+            last = to_float(t.get("lastPr"))
+            pmap[sym[:-4]] = {
+                "index": idx or mrk or last or None,
+                "mid": mrk or idx or last or None,
+                "funding": to_float(t.get("fundingRate")),
+            }
     for base in top_bases:
         r = cmap.get(base)
         if not r:
             continue
         row = dict(r)
         sym = f"{base}USDT"
-        mark = pmap.get(base, 0.0)
-        row["index_price"] = mark
-        # funding
-        fr = get_json("https://api.bitget.com/api/v2/mix/market/current-fund-rate",
-                      {"symbol": sym, "productType": "usdt-futures"})
-        if fr and fr.get("data"):
-            d = fr["data"]
-            d0 = d[0] if isinstance(d, list) else d
-            row["funding"] = to_float(d0.get("fundingRate"))
-        time.sleep(0.03)
-        # orderbook (merge-depth)
-        ob = get_json("https://api.bitget.com/api/v2/mix/market/merge-depth",
-                      {"symbol": sym, "productType": "usdt-futures", "limit": "50"})
-        if ob and ob.get("data"):
-            d = ob["data"]
-            depth, spread = orderbook_depth_spread(d.get("bids", []), d.get("asks", []), mark)
-            row["depth_1pct_usd"] = depth
-            row["spread_pct"] = spread
-        time.sleep(0.03)
+        p = pmap.get(base) or {}
+        row["index_price"] = p.get("index")
+        row["funding"] = p.get("funding")
+        mid = p.get("mid") or 0.0
+        # orderbook (merge-depth) - fiyat yoksa derinlik/spread hesaplanmaz
+        if mid > 0:
+            ob = get_json("https://api.bitget.com/api/v2/mix/market/merge-depth",
+                          {"symbol": sym, "productType": "usdt-futures", "limit": "50"})
+            if ob and ob.get("data"):
+                d = ob["data"]
+                depth, spread = orderbook_depth_spread(d.get("bids", []), d.get("asks", []), mid)
+                row["depth_1pct_usd"] = depth
+                row["spread_pct"] = spread
+            time.sleep(0.03)
         out[base] = row
     return out
 
@@ -1211,21 +1273,27 @@ def run_kontrat(which_exchanges=None, outfile="kontrat.json"):
         return None
     print(f"[KONTRAT] calisma dizini: {os.getcwd()}")
 
-    # Pair listesi = CMC market cap ilk KONTRAT_TOP_N (cmc.json'dan)
+    # Pair listesi = CMC market cap ilk KONTRAT_TOP_N
+    # cmc.json varsa ondan; YOKSA dogrudan CMC'den cekilir.
+    # (Bat senin bilgisayarinda cmc.json olmadan da calisabilsin diye.)
     cmc = load("cmc.json")
     tops = []
     if cmc and cmc.get("coins"):
         coins = sorted(cmc["coins"], key=lambda c: c.get("rank") or 9999)[:KONTRAT_TOP_N]
         tops = [{"symbol": c["symbol"], "name": c.get("name", ""), "rank": c.get("rank")} for c in coins]
+    else:
+        print("[KONTRAT] cmc.json yok -> liste dogrudan CMC'den cekiliyor...")
+        coins = fetch_cmc(KONTRAT_TOP_N)
+        tops = [{"symbol": c["symbol"], "name": c.get("name", ""), "rank": c.get("rank")} for c in coins]
     top_bases = [t["symbol"] for t in tops]
 
     if not top_bases:
-        print("[KONTRAT] ! cmc.json bulunamadi ya da bos.")
-        print("[KONTRAT] ! Once CMC verisi cekilmeli (python collect.py cmc), sonra kontrat.")
+        print("[KONTRAT] ! Pair listesi olusturulamadi (cmc.json yok ve CMC'den de cekilemedi).")
+        print("[KONTRAT] ! Internet baglantisi ve CMC anahtarini kontrol et.")
         payload = {"generated_at": datetime.now(timezone.utc).isoformat(),
                    "kapsam": f"Kontrat ozellikleri (CMC market cap ilk {KONTRAT_TOP_N})",
                    "exchanges": list(KONTRAT_FN.keys()), "assets": [],
-                   "hata": "cmc.json bulunamadi - once CMC verisi cek"}
+                   "hata": "pair listesi olusturulamadi"}
         with open(outfile, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)
         return payload
@@ -1272,10 +1340,15 @@ def run_kontrat(which_exchanges=None, outfile="kontrat.json"):
 HACIM_TOP_N = 150
 
 def run_hacim(which_exchanges=None, outfile="hacim.json"):
-    """Her borsa icin: tum USDT perp'leri cek, 24s hacme gore sirala, ilk 150'yi al.
-    Open interest sembol basi cagri isteyen borsalar (Binance) icin ikinci gecis yapilir."""
+    """Her borsa icin: tum USDT perp'leri cek, TOKENIZE HISSE/EMTIA'yi ayikla,
+    kalan KRIPTO perp'leri o borsanin KENDI 24s hacmine gore sirala, ilk 150'yi al.
+    Siralama CMC sirasi DEGIL - her borsanin kendi hacim sirasidir.
+    CMC listesi sadece 'bu sembol kripto mu' suzgeci olarak kullanilir."""
     if which_exchanges is None:
         which_exchanges = ALL_EXCHANGES
+    kripto = kripto_semboller()
+    if kripto:
+        print(f"[HACIM] kripto suzgeci aktif ({len(kripto)} sembol).")
     sonuc = {}
     for exch in which_exchanges:
         fn = PERP_SOURCES.get(exch)
@@ -1290,10 +1363,18 @@ def run_hacim(which_exchanges=None, outfile="hacim.json"):
         if not tumu:
             print(f"    ! {exch} veri gelmedi.")
             continue
+        ham_adet = len(tumu)
+        # Hisse/emtia ayikla (CMC'de olmayan sembolleri dusur)
+        if kripto:
+            elenen = [b for b in tumu if b not in kripto]
+            tumu = {b: v for b, v in tumu.items() if b in kripto}
+            if elenen:
+                ornek = ", ".join(sorted(elenen)[:6])
+                print(f"    {len(elenen)} kripto-disi sembol elendi (orn: {ornek})")
         sirali = sorted(tumu.items(),
                         key=lambda kv: -(kv[1].get("perp_volume_usd") or 0))
         top = [b for b, v in sirali[:HACIM_TOP_N] if (v.get("perp_volume_usd") or 0) > 0]
-        print(f"    {len(tumu)} perp bulundu -> ilk {len(top)} aliniyor (open interest ile)")
+        print(f"    {ham_adet} perp -> {len(tumu)} kripto -> ilk {len(top)} aliniyor (open interest ile)")
         try:
             detay = fn(top)        # OI dahil ikinci gecis
         except Exception as e:
@@ -1311,7 +1392,7 @@ def run_hacim(which_exchanges=None, outfile="hacim.json"):
         sonuc[exch] = satirlar
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "kapsam": f"Her borsanin kendi 24s perp hacminde ilk {HACIM_TOP_N}",
+        "kapsam": f"Her borsanin kendi 24s perp hacminde ilk {HACIM_TOP_N} (sadece kripto)",
         "borsalar": sonuc,
     }
     with open(outfile, "w", encoding="utf-8") as f:
@@ -1360,6 +1441,9 @@ def main():
 
     if mode == "cmc":
         run_cmc()
+    elif mode == "cmc_genis":
+        # Genis kripto listesi (ilk 1000): hisse suzgeci + fiyat/mcap kaynagi
+        run_cmc_genis()
     elif mode == "github":
         run_exchanges(GITHUB_EXCHANGES, "borsa_github.json", "GitHub 6 borsa")
         merge_and_archive_borsa()

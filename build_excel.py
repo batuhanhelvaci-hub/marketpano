@@ -115,12 +115,20 @@ def gunluk(klasor, tek_gun_dosyalari, anahtar):
 
 
 def cmc_gunluk():
-    """{gun: {sembol: (fiyat, market_cap)}}"""
+    """{gun: {sembol: (fiyat, market_cap)}}
+    Once GENIS liste (ilk 1000) denenir - boylece kucuk kripto varliklarin da
+    fiyat/mcap'i dolu gelir. Yoksa 150'lik listeye duser."""
     gunler = {}
-    yollar = sorted(glob.glob("arsiv/cmc/*.json"))
+    yollar = sorted(glob.glob("arsiv/cmc_genis/*.json"))
     arsivden = bool(yollar)
-    if not yollar and os.path.exists("cmc.json"):
-        yollar = ["cmc.json"]
+    if not yollar:
+        yollar = sorted(glob.glob("arsiv/cmc/*.json"))
+        arsivden = bool(yollar)
+    if not yollar:
+        for aday in ("cmc_genis.json", "cmc.json"):
+            if os.path.exists(aday):
+                yollar = [aday]
+                break
     for p in yollar:
         d = load_json(p)
         if not d:
@@ -128,6 +136,16 @@ def cmc_gunluk():
         gun = os.path.basename(p)[:-5] if arsivden else (d.get("generated_at") or "")[:10]
         gunler[gun] = {c["symbol"]: (c.get("price_usd"), c.get("market_cap_usd"))
                        for c in d.get("coins", [])}
+    # Genis arsiv varsa, 150'lik arsivdeki gunleri de tamamla (eksik sembol icin)
+    if arsivden and glob.glob("arsiv/cmc_genis/*.json"):
+        for p in sorted(glob.glob("arsiv/cmc/*.json")):
+            d = load_json(p)
+            if not d:
+                continue
+            gun = os.path.basename(p)[:-5]
+            hedef = gunler.setdefault(gun, {})
+            for c in d.get("coins", []):
+                hedef.setdefault(c["symbol"], (c.get("price_usd"), c.get("market_cap_usd")))
     return gunler
 
 
