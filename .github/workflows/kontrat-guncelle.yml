@@ -1,0 +1,47 @@
+name: MarketPano kontrat guncelle
+
+# SADECE ELLE CALISIR. Kontrat verisi (fiyat adimi, min miktar, kaldirac,
+# funding, derinlik, index kirilimi) tek fotograftir; nadiren degistigi icin
+# her gun cekilmez. Guncellemek istedigin zaman bu akisi calistir.
+#
+# NOT: Binance ve Bybit cografi engel yuzunden burada cekilemez.
+# Onlar icin bilgisayarinda "kontrat-guncelle.bat" calistirip
+# kontrat_local.json dosyasini yukle.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  kontrat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Paketleri kur
+        run: pip install requests openpyxl
+
+      - name: Kontrat ozellikleri - GitHub borsalari (OKX, Bitget, Gate, Hyperliquid)
+        run: python collect.py kontrat_github
+
+      - name: Excel uret
+        run: python build_excel.py
+
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add kontrat_github.json marketpano.xlsx manuel-kaldirac.csv || true
+          if git diff --staged --quiet; then
+            echo "Degisiklik yok."
+          else
+            git commit -m "Kontrat verisi guncellendi: $(date -u +%Y-%m-%d)"
+            git push
+          fi
