@@ -38,7 +38,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add kontrat_github.json marketpano.xlsx manuel-kaldirac.csv || true
+          git add kontrat_github.json marketpano.xlsx manuel-kaldirac.csv manuel-btcturk.csv || true
           if git diff --staged --quiet; then
             echo "Degisiklik yok."
           else
