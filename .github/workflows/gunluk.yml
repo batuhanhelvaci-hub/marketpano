@@ -33,6 +33,9 @@ jobs:
       - name: CMC verisi (ilk 150)
         run: python collect.py cmc
 
+      - name: Genis kripto listesi (hisse suzgeci + fiyat/mcap)
+        run: python collect.py cmc_genis
+
       - name: Pano hacmi - GitHub borsalari
         run: python collect.py github
 
@@ -52,7 +55,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cmc.json borsa_github.json hacim_github.json \
+          git add cmc.json cmc_genis.json borsa_github.json hacim_github.json \
                   marketpano.xlsx manuel-kaldirac.csv arsiv/ || true
           if git diff --staged --quiet; then
             echo "Degisiklik yok."
