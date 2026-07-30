@@ -265,7 +265,30 @@ def sheet_hacim(wb, borsa, gunler, cmc_gunleri, ilk=False):
     return r - 2
 
 
-def sheet_kontrat(wb, gunler, manuel_kaldirac):
+def kontrat_snapshot():
+    """Kontrat verisi TEK FOTOGRAFTIR - arsivden okunmaz, her gun yenilenmez.
+    kontrat_github.json + kontrat_local.json dosyalari ne zaman cekildiyse
+    o hali gosterir. Yenilemek icin 'kontrat guncelle' akisi elle calistirilir.
+    Doner: (varlik listesi, {borsa: cekildigi_gun})"""
+    birlesik, tarihler = {}, {}
+    for p in ("kontrat_github.json", "kontrat_local.json", "kontrat.json"):
+        d = load_json(p)
+        if not d:
+            continue
+        gun = (d.get("generated_at") or "")[:10]
+        for a in d.get("assets", []):
+            rec = birlesik.setdefault(a["symbol"], {
+                "symbol": a["symbol"], "rank": a.get("rank"), "exchanges": {}})
+            if rec.get("rank") is None:
+                rec["rank"] = a.get("rank")
+            for borsa, v in (a.get("exchanges") or {}).items():
+                rec["exchanges"][borsa] = v
+                tarihler[borsa] = gun
+    varliklar = sorted(birlesik.values(), key=lambda a: a.get("rank") or 9999)
+    return varliklar, tarihler
+
+
+def sheet_kontrat(wb, varliklar, tarih, manuel_kaldirac):
     ws = wb.create_sheet(title="Kontrat")
     ws.sheet_properties.tabColor = "003AFF"
     n = len(KONTRAT_SUTUNLAR)
@@ -296,11 +319,9 @@ def sheet_kontrat(wb, gunler, manuel_kaldirac):
     ws.freeze_panes = "C3"
 
     r = 3
-    for gun in sorted(gunler):
-        assets = gunler[gun].get("assets") or []
-        for a in sorted(assets, key=lambda x: x.get("rank") or 9999):
+    for a in varliklar:
             sym = a["symbol"]
-            c1 = ws.cell(r, 1, gun); c1.font = FONT; c1.border = BORDER
+            c1 = ws.cell(r, 1, tarih); c1.font = FONT; c1.border = BORDER
             c2 = ws.cell(r, 2, sym); c2.font = FONT_B; c2.border = BORDER
             for bi, borsa in enumerate(BORSA_SIRASI):
                 c0 = 3 + bi * n
@@ -353,7 +374,7 @@ def sheet_kontrat(wb, gunler, manuel_kaldirac):
     return r - 3
 
 
-def sheet_notlar(wb, hacim_gun, kontrat_gun, manuel_kaldirac, manuel_funding):
+def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_funding):
     ws = wb.create_sheet(title="Notlar")
     ws.cell(1, 1, "MarketPano - notlar ve kaynaklar").font = Font(name="Arial", size=12, bold=True)
     satirlar = [
@@ -363,8 +384,13 @@ def sheet_notlar(wb, hacim_gun, kontrat_gun, manuel_kaldirac, manuel_funding):
         ("Sıra sütunu", "O borsa içindeki hacim sırası (1-150). Borsalar arasında farklı olabilir."),
         ("Fiyat ve Market Cap", "CMC ilk 150'den gelir. O listede olmayan varlıklarda boş kalır."),
         ("Kontrat sheet'i",
-         "Satırlar CMC market cap ilk 50. Her borsa 12 sütunluk blok halinde yan yana. Her güncellemede 50 satır alta eklenir."),
-        ("Arşivdeki gün sayısı", f"hacim: {hacim_gun} gün · kontrat: {kontrat_gun} gün"),
+         "Satırlar CMC market cap ilk 50. Her borsa 12 sütunluk blok halinde yan yana. "
+         "Tek fotoğraf - günlük birikmez."),
+        ("Hacim arşivi", f"{hacim_gun} gün biriktirildi"),
+        ("Kontrat verisi", "TEK FOTOĞRAF - her gün yenilenmez, dondurulmuştur. "
+                           "Yenilemek için 'Kontrat guncelle' akışı elle çalıştırılır."),
+        ("Kontrat verisinin çekildiği tarih",
+         " · ".join(f"{b}: {g}" for b, g in sorted(kontrat_tarihler.items())) or "veri yok"),
         ("", ""),
         ("Veri kaynakları", ""),
         ("Index, min miktar/tutar, adımlar, digit, funding, periyot, kaldıraç",
@@ -415,38 +441,37 @@ def sheet_notlar(wb, hacim_gun, kontrat_gun, manuel_kaldirac, manuel_funding):
 
 def main():
     hacim_gunler = gunluk("hacim", ["hacim_github.json", "hacim_local.json", "hacim.json"], "borsalar")
-    kontrat_gunler = gunluk("kontrat", ["kontrat_github.json", "kontrat_local.json", "kontrat.json"], "assets")
+    kontrat_varliklar, kontrat_tarihler = kontrat_snapshot()
     cmc_gunleri = cmc_gunluk()
     manuel_kaldirac = load_manuel_kaldirac()
     manuel_funding = load_manuel_funding()
 
-    if not hacim_gunler and not kontrat_gunler:
+    if not hacim_gunler and not kontrat_varliklar:
         print("! Ne hacim ne kontrat verisi bulundu. Once veri cekilmeli.")
         return 1
 
-    kontrat_semboller = []
-    for gun in sorted(kontrat_gunler):
-        for a in kontrat_gunler[gun].get("assets", []):
-            if a["symbol"] not in kontrat_semboller:
-                kontrat_semboller.append(a["symbol"])
-    if kontrat_semboller:
-        kaldirac_csv_tamamla(kontrat_semboller)
+    if kontrat_varliklar:
+        kaldirac_csv_tamamla([a["symbol"] for a in kontrat_varliklar])
         manuel_kaldirac = load_manuel_kaldirac()
+
+    # Kontrat fotografinin tarihi = kaynak dosyalarin en yeni tarihi
+    kontrat_tarih = max(kontrat_tarihler.values()) if kontrat_tarihler else ""
 
     wb = openpyxl.Workbook()
     ozet = []
     for i, borsa in enumerate(BORSA_SIRASI):
         adet = sheet_hacim(wb, borsa, hacim_gunler, cmc_gunleri, ilk=(i == 0))
         ozet.append(f"{borsa}:{adet}")
-    kontrat_satir = sheet_kontrat(wb, kontrat_gunler, manuel_kaldirac)
-    sheet_notlar(wb, len(hacim_gunler), len(kontrat_gunler), manuel_kaldirac, manuel_funding)
+    kontrat_satir = sheet_kontrat(wb, kontrat_varliklar, kontrat_tarih, manuel_kaldirac)
+    sheet_notlar(wb, len(hacim_gunler), kontrat_tarihler, manuel_kaldirac, manuel_funding)
 
     wb.save(OUT)
     print(f"[EXCEL] {OUT} yazildi.")
-    print(f"  Sheet'ler    : {', '.join(wb.sheetnames)}")
-    print(f"  Hacim satir  : {' | '.join(ozet)}")
-    print(f"  Kontrat satir: {kontrat_satir}")
-    print(f"  Arsiv gunu   : hacim {len(hacim_gunler)} | kontrat {len(kontrat_gunler)} | cmc {len(cmc_gunleri)}")
+    print(f"  Sheet'ler      : {', '.join(wb.sheetnames)}")
+    print(f"  Hacim satir    : {' | '.join(ozet)}")
+    print(f"  Kontrat satir  : {kontrat_satir}  (tek fotograf, tarih: {kontrat_tarih or '-'})")
+    print(f"  Kontrat tarihi : {kontrat_tarihler or '-'}")
+    print(f"  Hacim arsivi   : {len(hacim_gunler)} gun | cmc {len(cmc_gunleri)} gun")
     return 0
 
 

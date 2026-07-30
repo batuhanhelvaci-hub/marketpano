@@ -1371,8 +1371,6 @@ def main():
         # birlestirip gunluk arsive 6 borsali tam kaydi yazar.
         # (borsa_local.json GitHub'a yuklenince otomatik calisir.)
         merge_and_archive_borsa()
-        # Kontrat arsivi de ayni komutta yazilir (Excel bundan uretilir).
-        merge_and_archive_kontrat()
     elif mode == "kontrat":
         # Tum borsalar (senin bilgisayarinda calisir, hepsine erisim var). kontrat.json.
         run_kontrat()
@@ -1394,9 +1392,9 @@ def main():
         run_hacim(which_exchanges=["Binance", "Bybit"],
                   outfile="hacim_local.json")
     elif mode == "arsivle_yeni":
-        # Yeni Excel yapisi icin: hacim + kontrat arsivlerini yaz.
+        # SADECE hacim arsivlenir (gun gun birikir).
+        # Kontrat verisi TEK FOTOGRAFTIR, arsivlenmez ve her gun yenilenmez.
         merge_and_archive_hacim()
-        merge_and_archive_kontrat()
     elif mode == "all":
         run_cmc()
         run_exchanges(GITHUB_EXCHANGES, "borsa_github.json", "GitHub 6 borsa")
