@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T08:11:46.716993+00:00",
+  "generated_at": "2026-07-30T08:25:21.632112+00:00",
   "kapsam": "Kontrat ozellikleri (CMC market cap ilk 50)",
   "exchanges": [
     "OKX",
@@ -13,13 +13,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.0001,
-          "min_notional": 6.39998,
+          "min_notional": 6.40664,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.0001,
           "max_leverage": 100.0,
-          "index_price": 63999.8,
-          "funding": 9.47469091714e-05,
+          "index_price": 64066.4,
+          "funding": 9.59333578841e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -48,21 +48,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 2050142.7012700008,
-          "spread_pct": 0.00015625048828050213
+          "depth_1pct_usd": 2633873.09846,
+          "spread_pct": 0.00015608805863689048
         },
         "Gate": {
           "min_qty": 0.0001,
-          "min_notional": 6.399166000000001,
+          "min_notional": 6.4149780000000005,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.0001,
           "max_leverage": 200.0,
-          "funding": 0.0001,
+          "funding": 6.2e-05,
           "funding_interval_h": 8.0,
-          "index_price": 64020.0,
-          "depth_1pct_usd": 3309388.057199999,
-          "spread_pct": 0.00015627036397953233,
+          "index_price": 64175.52,
+          "depth_1pct_usd": 2579979.7012099987,
+          "spread_pct": 0.0001558851799624953,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -105,59 +105,59 @@
           "max_leverage": 150.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 7.5e-05,
-          "depth_1pct_usd": 1831838.6027799994,
+          "funding": 7.4e-05,
+          "depth_1pct_usd": 1683446.38004,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1e-05,
-          "min_notional": 0.6399400000000001,
+          "min_notional": 0.6417,
           "tick_size": null,
           "digit": null,
           "step_size": 1e-05,
           "max_leverage": 40.0,
-          "funding": 5.4888e-06,
+          "funding": 9.4944e-06,
           "funding_interval_h": 1.0,
-          "index_price": 64021.0,
+          "index_price": 64194.0,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 64021.0
+              "price": 64194.0
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 64021.0
+              "price": 64194.0
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 64021.0
+              "price": 64194.0
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 64021.0
+              "price": 64194.0
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 64021.0
+              "price": 64194.0
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 64021.0
+              "price": 64194.0
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 64021.0
+              "price": 64194.0
             }
           ],
-          "depth_1pct_usd": 12133433.43777,
-          "spread_pct": 0.0015626464981091976
+          "depth_1pct_usd": 9067990.14231,
+          "spread_pct": 0.0015583606046439145
         }
       },
       "name": "Bitcoin",
@@ -168,13 +168,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.001,
-          "min_notional": 1.90331,
+          "min_notional": 1.9057000000000002,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.001,
           "max_leverage": 100.0,
-          "index_price": 1903.31,
-          "funding": 2.32258734012e-05,
+          "index_price": 1905.7,
+          "funding": 2.28028757371e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -203,21 +203,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 5071143.135080002,
-          "spread_pct": 0.0005254004865203727
+          "depth_1pct_usd": 5684883.58086,
+          "spread_pct": 0.0005247415647788689
         },
         "Gate": {
           "min_qty": 0.01,
-          "min_notional": 19.0334,
+          "min_notional": 19.0866,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 200.0,
-          "funding": 7.8e-05,
+          "funding": -1.9e-05,
           "funding_interval_h": 8.0,
-          "index_price": 1904.26,
-          "depth_1pct_usd": 1744405.7663999998,
-          "spread_pct": 0.0005253922052807647,
+          "index_price": 1909.53,
+          "depth_1pct_usd": 1608011.2028000003,
+          "spread_pct": 0.000523927781794081,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -255,59 +255,59 @@
           "max_leverage": 150.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 4.7e-05,
-          "depth_1pct_usd": 4031491.5769999987,
+          "funding": 5.1e-05,
+          "depth_1pct_usd": 2890003.0525,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.0001,
-          "min_notional": 0.19035000000000002,
+          "min_notional": 0.19089000000000003,
           "tick_size": null,
           "digit": null,
           "step_size": 0.0001,
           "max_leverage": 25.0,
-          "funding": 6.7976e-06,
+          "funding": 1.21841e-05,
           "funding_interval_h": 1.0,
-          "index_price": 1904.3,
+          "index_price": 1909.6,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 1904.3
+              "price": 1909.6
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 1904.3
+              "price": 1909.6
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 1904.3
+              "price": 1909.6
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 1904.3
+              "price": 1909.6
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 1904.3
+              "price": 1909.6
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 1904.3
+              "price": 1909.6
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 1904.3
+              "price": 1909.6
             }
           ],
-          "depth_1pct_usd": 22308857.535919998,
-          "spread_pct": 0.005253480430780617
+          "depth_1pct_usd": 24119096.157409996,
+          "spread_pct": 0.005238619100000474
         }
       },
       "name": "Ethereum",
@@ -324,12 +324,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
-          "min_notional": 5.751,
+          "min_notional": 5.755,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.01,
           "max_leverage": 50.0,
-          "index_price": 575.1,
+          "index_price": 575.5,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -359,21 +359,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 9463709.178,
-          "spread_pct": 0.017388280299082376
+          "depth_1pct_usd": 9194319.189999998,
+          "spread_pct": 0.017376194613383623
         },
         "Gate": {
           "min_qty": 0.001,
-          "min_notional": 0.57505,
+          "min_notional": 0.5759,
           "tick_size": 0.05,
           "digit": 2,
           "step_size": 0.001,
           "max_leverage": 75.0,
-          "funding": -3e-05,
+          "funding": -3.8e-05,
           "funding_interval_h": 8.0,
-          "index_price": 575.4233,
-          "depth_1pct_usd": 1711757.6932,
-          "spread_pct": 0.008694896096003516,
+          "index_price": 576.115,
+          "depth_1pct_usd": 1975367.5566500004,
+          "spread_pct": 0.008682062858146938,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -417,58 +417,58 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 429133.9385999999,
+          "depth_1pct_usd": 732279.6496999998,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.001,
-          "min_notional": 0.57528,
+          "min_notional": 0.57621,
           "tick_size": null,
           "digit": null,
           "step_size": 0.001,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 575.45,
+          "index_price": 576.29,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 575.45
+              "price": 576.29
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 575.45
+              "price": 576.29
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 575.45
+              "price": 576.29
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 575.45
+              "price": 576.29
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 575.45
+              "price": 576.29
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 575.45
+              "price": 576.29
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 575.45
+              "price": 576.29
             }
           ],
-          "depth_1pct_usd": 172163.63775,
-          "spread_pct": 0.001738283966067116
+          "depth_1pct_usd": 209068.80273999998,
+          "spread_pct": 0.001735478384615141
         }
       },
       "name": "BNB",
@@ -479,12 +479,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 10.012039999999999,
+          "min_notional": 10.01206,
           "tick_size": 1e-06,
           "digit": 6,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 1.001204,
+          "index_price": 1.001206,
           "funding": 0.0,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -514,8 +514,8 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 179299.61715,
-          "spread_pct": 9.987974480123711e-05
+          "depth_1pct_usd": 179712.11745999998,
+          "spread_pct": 9.987954528236726e-05
         },
         "Gate": {
           "min_qty": 1.0,
@@ -524,11 +524,11 @@
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "funding": -0.000246,
+          "funding": 3.6e-05,
           "funding_interval_h": 8.0,
-          "index_price": 1.00117,
-          "depth_1pct_usd": 49702.96479999998,
-          "spread_pct": 0.08999999999999009,
+          "index_price": 1.00115,
+          "depth_1pct_usd": 62125.29829999998,
+          "spread_pct": 0.09999999999998899,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -566,7 +566,7 @@
           "max_leverage": 50.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": -1.1e-05,
+          "funding": -1.2e-05,
           "depth_1pct_usd": 1194750.5365699995,
           "spread_pct": null
         }
@@ -579,13 +579,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 1.076,
+          "min_notional": 1.0764,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 100.0,
-          "index_price": 1.076,
-          "funding": 6.11153411441e-05,
+          "index_price": 1.0764,
+          "funding": 6.02271308437e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -614,21 +614,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 9944412.371199997,
-          "spread_pct": 0.009293680297396745
+          "depth_1pct_usd": 9059653.606900001,
+          "spread_pct": 0.009290226681530006
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 10.759,
+          "min_notional": 10.778,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 10.0,
           "max_leverage": 100.0,
-          "funding": -2e-06,
+          "funding": 9e-06,
           "funding_interval_h": 8.0,
-          "index_price": 1.0765,
-          "depth_1pct_usd": 2091643.279,
-          "spread_pct": 0.009294544102610743,
+          "index_price": 1.0779,
+          "depth_1pct_usd": 1993353.9669999995,
+          "spread_pct": 0.009278159213231678,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -666,59 +666,59 @@
           "max_leverage": 125.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 8.1e-05,
-          "depth_1pct_usd": 7880837.1582,
+          "funding": 7.9e-05,
+          "depth_1pct_usd": 8029256.766200001,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 1.076,
+          "min_notional": 1.0778,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 20.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 1.07647,
+          "index_price": 1.078303,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 1.07647
+              "price": 1.078303
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 1.07647
+              "price": 1.078303
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 1.07647
+              "price": 1.078303
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 1.07647
+              "price": 1.078303
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 1.07647
+              "price": 1.078303
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 1.07647
+              "price": 1.078303
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 1.07647
+              "price": 1.078303
             }
           ],
-          "depth_1pct_usd": 3342428.0365,
-          "spread_pct": 0.009293680297396745
+          "depth_1pct_usd": 3889871.1826999993,
+          "spread_pct": 0.009278159213211077
         }
       },
       "name": "XRP",
@@ -729,13 +729,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
-          "min_notional": 0.7325,
+          "min_notional": 0.7332,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 100.0,
-          "index_price": 73.25,
-          "funding": 1.7384163275e-06,
+          "index_price": 73.32,
+          "funding": 3.1710995296e-06,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -764,21 +764,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 17542808.389200002,
-          "spread_pct": 0.013651877133112788
+          "depth_1pct_usd": 17897617.325700004,
+          "spread_pct": 0.013638843426084447
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 73.36,
+          "min_notional": 73.52,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 1.0,
           "max_leverage": 100.0,
-          "funding": 3.6e-05,
+          "funding": 2.9e-05,
           "funding_interval_h": 8.0,
-          "index_price": 73.4,
-          "depth_1pct_usd": 4717486.469999999,
-          "spread_pct": 0.013631406761184729,
+          "index_price": 73.534,
+          "depth_1pct_usd": 4686389.819999999,
+          "spread_pct": 0.013601741022857883,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -816,59 +816,59 @@
           "max_leverage": 100.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 2.5e-05,
-          "depth_1pct_usd": 3028288.3235,
+          "funding": 2.9e-05,
+          "depth_1pct_usd": 1705160.1390999998,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.01,
-          "min_notional": 0.7336900000000001,
+          "min_notional": 0.7354900000000001,
           "tick_size": null,
           "digit": null,
           "step_size": 0.01,
           "max_leverage": 20.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 73.3996,
+          "index_price": 73.585,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 73.3996
+              "price": 73.585
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 73.3996
+              "price": 73.585
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 73.3996
+              "price": 73.585
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 73.3996
+              "price": 73.585
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 73.3996
+              "price": 73.585
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 73.3996
+              "price": 73.585
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 73.3996
+              "price": 73.585
             }
           ],
-          "depth_1pct_usd": 1153206.3580600002,
-          "spread_pct": 0.0013629734629131852
+          "depth_1pct_usd": 1584659.26468,
+          "spread_pct": 0.001359637792498572
         }
       },
       "name": "Solana",
@@ -879,13 +879,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 3.2746999999999997,
+          "min_notional": 3.2779000000000003,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 0.32747,
-          "funding": -3.83408141865e-05,
+          "index_price": 0.32779,
+          "funding": -2.6051918292e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -914,21 +914,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 530187.3999999999,
-          "spread_pct": 0.0030537148441109113
+          "depth_1pct_usd": 561059.6984000002,
+          "spread_pct": 0.0030507337014582508
         },
         "Gate": {
           "min_qty": 100.0,
-          "min_notional": 32.744,
+          "min_notional": 32.774,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 100.0,
           "max_leverage": 75.0,
-          "funding": 2.8e-05,
+          "funding": 2.7e-05,
           "funding_interval_h": 8.0,
-          "index_price": 0.32769,
-          "depth_1pct_usd": 148176.12400000007,
-          "spread_pct": 0.009161983874917543,
+          "index_price": 0.327986,
+          "depth_1pct_usd": 147027.128,
+          "spread_pct": 0.003051199121240767,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -966,59 +966,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 7.2e-05,
-          "depth_1pct_usd": 137807.43543,
+          "funding": 7.4e-05,
+          "depth_1pct_usd": 313835.65166,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.327463,
+          "min_notional": 0.3278,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.32765,
+          "index_price": 0.327991,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.32765
+              "price": 0.327991
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.32765
+              "price": 0.327991
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.32765
+              "price": 0.327991
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.32765
+              "price": 0.327991
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.32765
+              "price": 0.327991
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.32765
+              "price": 0.327991
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.32765
+              "price": 0.327991
             }
           ],
-          "depth_1pct_usd": 156772.84595000002,
-          "spread_pct": 0.0030537801217267297
+          "depth_1pct_usd": 110282.49038000003,
+          "spread_pct": 0.006101281269055672
         }
       },
       "name": "TRON",
@@ -1029,13 +1029,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
-          "min_notional": 5.3664000000000005,
+          "min_notional": 5.3783,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 0.1,
           "max_leverage": 50.0,
-          "index_price": 53.664,
-          "funding": 1.25438306807e-05,
+          "index_price": 53.783,
+          "funding": 2.34479334389e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -1064,21 +1064,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 356975.26490000007,
-          "spread_pct": 0.0018634466308841482
+          "depth_1pct_usd": 389472.7661000001,
+          "spread_pct": 0.0018593235780779605
         },
         "Gate": {
           "min_qty": 0.1,
-          "min_notional": 5.377300000000001,
+          "min_notional": 5.3952,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 0.1,
           "max_leverage": 75.0,
-          "funding": 4e-05,
+          "funding": 4.2e-05,
           "funding_interval_h": 4.0,
-          "index_price": 53.792,
-          "depth_1pct_usd": 159385.17669999998,
-          "spread_pct": 0.0018596693507850954,
+          "index_price": 53.982,
+          "depth_1pct_usd": 159991.2424,
+          "spread_pct": 0.00185349940688904,
           "index_breakdown": [
             {
               "exchange": "Bitget",
@@ -1121,29 +1121,29 @@
           "max_leverage": 75.0,
           "funding_interval_h": 4.0,
           "index_price": 0.0,
-          "funding": -1.6e-05,
-          "depth_1pct_usd": 339752.22968,
+          "funding": -1.5e-05,
+          "depth_1pct_usd": 243786.30158000003,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.01,
-          "min_notional": 0.5373,
+          "min_notional": 0.539498,
           "tick_size": null,
           "digit": null,
           "step_size": 0.01,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 53.739,
+          "index_price": 53.9535,
           "index_breakdown": [
             {
               "exchange": "hyperliquid",
               "weight": 1.0,
-              "price": 53.739
+              "price": 53.9535
             }
           ],
-          "depth_1pct_usd": 246084.79923000006,
-          "spread_pct": 0.0018611576400477752
+          "depth_1pct_usd": 278135.69605,
+          "spread_pct": 0.0018535749900790537
         }
       },
       "name": "Hyperliquid",
@@ -1154,13 +1154,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 0.6968000000000001,
+          "min_notional": 0.6978,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 0.06968,
-          "funding": 5.37269802761e-05,
+          "index_price": 0.06978,
+          "funding": 5.56049996757e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -1189,21 +1189,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 14747163.8558,
-          "spread_pct": 0.01435132032146401
+          "depth_1pct_usd": 14891574.289899997,
+          "spread_pct": 0.01433075379766409
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 0.698,
+          "min_notional": 0.6997,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 75.0,
-          "funding": -9.5e-05,
+          "funding": -7.2e-05,
           "funding_interval_h": 8.0,
-          "index_price": 0.069832,
-          "depth_1pct_usd": 2395560.3478,
-          "spread_pct": 0.01432664756448424,
+          "index_price": 0.070008,
+          "depth_1pct_usd": 2310195.8010999993,
+          "spread_pct": 0.014291839359720056,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -1247,58 +1247,58 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 5525749.130249999,
+          "depth_1pct_usd": 5401632.101999999,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.069798,
+          "min_notional": 0.069982,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 10.0,
-          "funding": -9.1312e-06,
+          "funding": -7.7312e-06,
           "funding_interval_h": 1.0,
-          "index_price": 0.06984,
+          "index_price": 0.070025,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.06984
+              "price": 0.070025
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.06984
+              "price": 0.070025
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.06984
+              "price": 0.070025
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.06984
+              "price": 0.070025
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.06984
+              "price": 0.070025
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.06984
+              "price": 0.070025
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.06984
+              "price": 0.070025
             }
           ],
-          "depth_1pct_usd": 297293.0845819999,
-          "spread_pct": 0.001432705808190779
+          "depth_1pct_usd": 266442.4860070001,
+          "spread_pct": 0.0028578777399931414
         }
       },
       "name": "Dogecoin",
@@ -1315,13 +1315,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
-          "min_notional": 4.7479000000000005,
+          "min_notional": 4.7514,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 50.0,
-          "index_price": 474.79,
-          "funding": -0.0001031696955937,
+          "index_price": 475.14,
+          "funding": -0.0001016523048261,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -1345,21 +1345,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 329146.3269,
-          "spread_pct": 0.002106194317497788
+          "depth_1pct_usd": 334898.4801,
+          "spread_pct": 0.00210464284210778
         },
         "Gate": {
           "min_qty": 0.01,
-          "min_notional": 4.7492,
+          "min_notional": 4.7555000000000005,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 75.0,
-          "funding": -5e-06,
+          "funding": -7.6e-05,
           "funding_interval_h": 8.0,
-          "index_price": 475.287,
-          "depth_1pct_usd": 112456.2859,
-          "spread_pct": 0.01052808894129777,
+          "index_price": 475.883,
+          "depth_1pct_usd": 122255.32689999999,
+          "spread_pct": 0.0021028283040670603,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -1407,59 +1407,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": -0.000276,
-          "depth_1pct_usd": 295166.36168999993,
+          "funding": -0.000272,
+          "depth_1pct_usd": 129644.50743000003,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.01,
-          "min_notional": 4.751,
+          "min_notional": 4.7577,
           "tick_size": null,
           "digit": null,
           "step_size": 0.01,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 475.3,
+          "index_price": 475.9225,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 475.3
+              "price": 475.9225
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 475.3
+              "price": 475.9225
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 475.3
+              "price": 475.9225
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 475.3
+              "price": 475.9225
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 475.3
+              "price": 475.9225
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 475.3
+              "price": 475.9225
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 475.3
+              "price": 475.9225
             }
           ],
-          "depth_1pct_usd": 100815.57940000002,
-          "spread_pct": 0.004209640075769692
+          "depth_1pct_usd": 107827.00869999998,
+          "spread_pct": 0.006305567816388078
         }
       },
       "name": "Zcash",
@@ -1470,16 +1470,16 @@
       "exchanges": {
         "Gate": {
           "min_qty": 0.01,
-          "min_notional": 3.5514,
+          "min_notional": 3.5452,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 50.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 355.36,
-          "depth_1pct_usd": 146965.9919000001,
-          "spread_pct": 0.09573689249309428,
+          "index_price": 354.923,
+          "depth_1pct_usd": 146726.78610000006,
+          "spread_pct": 0.0028207153334059874,
           "index_breakdown": [
             {
               "exchange": "Huobi",
@@ -1508,58 +1508,58 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 163871.20950000003,
+          "depth_1pct_usd": 244995.9703,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.001,
-          "min_notional": 0.35534,
+          "min_notional": 0.35431,
           "tick_size": null,
           "digit": null,
           "step_size": 0.001,
           "max_leverage": 5.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 355.47,
+          "index_price": 354.42,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 355.47
+              "price": 354.42
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 355.47
+              "price": 354.42
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 355.47
+              "price": 354.42
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 355.47
+              "price": 354.42
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 355.47
+              "price": 354.42
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 355.47
+              "price": 354.42
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 355.47
+              "price": 354.42
             }
           ],
-          "depth_1pct_usd": 96406.93291999999,
-          "spread_pct": 0.05628412224912633
+          "depth_1pct_usd": 68512.58916,
+          "spread_pct": 0.008467161525210327
         }
       },
       "name": "Monero",
@@ -1570,13 +1570,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
-          "min_notional": 0.8283,
+          "min_notional": 0.8300000000000001,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 0.1,
           "max_leverage": 50.0,
-          "index_price": 8.283,
-          "funding": 7.25298892455e-05,
+          "index_price": 8.3,
+          "funding": 7.56200283755e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -1605,21 +1605,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 2834378.271399999,
-          "spread_pct": 0.01207292043946906
+          "depth_1pct_usd": 2660043.183899999,
+          "spread_pct": 0.01204819277109906
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 8.284,
+          "min_notional": 8.314,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 1.0,
           "max_leverage": 75.0,
-          "funding": 0.0001,
+          "funding": 8.5e-05,
           "funding_interval_h": 8.0,
-          "index_price": 8.2848,
-          "depth_1pct_usd": 1222111.6520000007,
-          "spread_pct": 0.012071463061337783,
+          "index_price": 8.3142,
+          "depth_1pct_usd": 1462301.135,
+          "spread_pct": 0.012027904739009167,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -1662,59 +1662,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 5.3e-05,
-          "depth_1pct_usd": 1916797.3080000007,
+          "funding": 6.6e-05,
+          "depth_1pct_usd": 1866421.1050000004,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.1,
-          "min_notional": 0.828525,
+          "min_notional": 0.8316000000000001,
           "tick_size": null,
           "digit": null,
           "step_size": 0.1,
           "max_leverage": 10.0,
-          "funding": 2.9111e-06,
+          "funding": 4.2423e-06,
           "funding_interval_h": 1.0,
-          "index_price": 8.2905,
+          "index_price": 8.3215,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 8.2905
+              "price": 8.3215
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 8.2905
+              "price": 8.3215
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 8.2905
+              "price": 8.3215
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 8.2905
+              "price": 8.3215
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 8.2905
+              "price": 8.3215
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 8.2905
+              "price": 8.3215
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 8.2905
+              "price": 8.3215
             }
           ],
-          "depth_1pct_usd": 154734.54302999997,
-          "spread_pct": 0.0012069641833350466
+          "depth_1pct_usd": 184254.39036000005,
+          "spread_pct": 0.0012025012024984
         }
       },
       "name": "Chainlink",
@@ -1725,12 +1725,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 1.633,
+          "min_notional": 1.636,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 0.1633,
+          "index_price": 0.1636,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -1760,21 +1760,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 2153175.61,
-          "spread_pct": 0.061236987140225956
+          "depth_1pct_usd": 1991932.1400000001,
+          "spread_pct": 0.06112469437653835
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 1.633,
+          "min_notional": 1.6389999999999998,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 10.0,
           "max_leverage": 75.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 0.16343,
-          "depth_1pct_usd": 1163005.9560000002,
-          "spread_pct": 0.061236987140225956,
+          "index_price": 0.1639,
+          "depth_1pct_usd": 1165898.641,
+          "spread_pct": 0.06101281269067526,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -1817,59 +1817,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 2.7e-05,
-          "depth_1pct_usd": 4686115.457800002,
+          "funding": 3.9e-05,
+          "depth_1pct_usd": 4732165.0821,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.163353,
+          "min_notional": 0.163955,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 10.0,
-          "funding": 1.1471e-06,
+          "funding": 2.6645e-06,
           "funding_interval_h": 1.0,
-          "index_price": 0.16345,
+          "index_price": 0.16405,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.16345
+              "price": 0.16405
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.16345
+              "price": 0.16405
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.16345
+              "price": 0.16405
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.16345
+              "price": 0.16405
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.16345
+              "price": 0.16405
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.16345
+              "price": 0.16405
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.16345
+              "price": 0.16405
             }
           ],
-          "depth_1pct_usd": 449346.36295999994,
-          "spread_pct": 0.00612171187551499
+          "depth_1pct_usd": 455250.00473999995,
+          "spread_pct": 0.01219846909212421
         }
       },
       "name": "Cardano",
@@ -1880,13 +1880,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 1.7181,
+          "min_notional": 1.7201,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 0.17181,
-          "funding": -9.89929984827e-05,
+          "index_price": 0.17201,
+          "funding": -9.18319218049e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -1910,21 +1910,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 548819.7174999998,
-          "spread_pct": 0.005820382981205984
+          "depth_1pct_usd": 567859.1377000001,
+          "spread_pct": 0.005813615487461337
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 1.7178,
+          "min_notional": 1.7216,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 75.0,
-          "funding": -6.9e-05,
+          "funding": -2.6e-05,
           "funding_interval_h": 8.0,
-          "index_price": 0.171932,
-          "depth_1pct_usd": 234061.68559999997,
-          "spread_pct": 0.005821399464420914,
+          "index_price": 0.172248,
+          "depth_1pct_usd": 230660.44219999996,
+          "spread_pct": 0.023234200743501538,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -1972,59 +1972,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": -6.8e-05,
-          "depth_1pct_usd": 497029.2161000001,
+          "funding": -7.4e-05,
+          "depth_1pct_usd": 133483.12347,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.17183,
+          "min_notional": 0.17234,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 5.0,
-          "funding": -6.9429e-06,
+          "funding": -5.9187e-06,
           "funding_interval_h": 1.0,
-          "index_price": 0.17195,
+          "index_price": 0.17245,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.17195
+              "price": 0.17245
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.17195
+              "price": 0.17245
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.17195
+              "price": 0.17245
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.17195
+              "price": 0.17245
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.17195
+              "price": 0.17245
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.17195
+              "price": 0.17245
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.17195
+              "price": 0.17245
             }
           ],
-          "depth_1pct_usd": 134984.01646,
-          "spread_pct": 0.005819705522906361
+          "depth_1pct_usd": 127250.41880000003,
+          "spread_pct": 0.017407450388767697
         }
       },
       "name": "Stellar",
@@ -2035,12 +2035,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 1.2113,
+          "min_notional": 1.2136,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 20.0,
-          "index_price": 0.12113,
+          "index_price": 0.12136,
           "funding": 5e-05,
           "funding_interval_h": 4.0,
           "index_breakdown": [
@@ -2070,21 +2070,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 76375.7295,
-          "spread_pct": 0.016511186328731317
+          "depth_1pct_usd": 80443.36729999997,
+          "spread_pct": 0.00823994726434575
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 1.2124,
+          "min_notional": 1.2132999999999998,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 50.0,
           "funding": 5e-05,
           "funding_interval_h": 4.0,
-          "index_price": 0.121243,
-          "depth_1pct_usd": 36155.977100000004,
-          "spread_pct": 0.17321016166281908,
+          "index_price": 0.121455,
+          "depth_1pct_usd": 37802.676400000004,
+          "spread_pct": 0.04120992334953803,
           "index_breakdown": [
             {
               "exchange": "Bitget",
@@ -2127,59 +2127,59 @@
           "max_leverage": 20.0,
           "funding_interval_h": 4.0,
           "index_price": 0.0,
-          "funding": -2e-05,
-          "depth_1pct_usd": 156673.33532999997,
+          "funding": -7e-06,
+          "depth_1pct_usd": 149758.31299,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.1212,
+          "min_notional": 0.12156,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 3.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.121255,
+          "index_price": 0.121583,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.121255
+              "price": 0.121583
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.121255
+              "price": 0.121583
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.121255
+              "price": 0.121583
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.121255
+              "price": 0.121583
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.121255
+              "price": 0.121583
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.121255
+              "price": 0.121583
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.121255
+              "price": 0.121583
             }
           ],
-          "depth_1pct_usd": 58604.07201,
-          "spread_pct": 0.008250825082505053
+          "depth_1pct_usd": 61257.0017,
+          "spread_pct": 0.008226390259950743
         }
       },
       "name": "Canton",
@@ -2196,13 +2196,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.010000000000000002,
-          "min_notional": 2.095,
+          "min_notional": 2.0960000000000005,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.010000000000000002,
           "max_leverage": 50.0,
-          "index_price": 209.5,
-          "funding": 8.88406291533e-05,
+          "index_price": 209.6,
+          "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -2231,21 +2231,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1027920.0860000002,
-          "spread_pct": 0.04773269689737199
+          "depth_1pct_usd": 983909.9890000002,
+          "spread_pct": 0.04770992366411943
         },
         "Gate": {
           "min_qty": 0.01,
-          "min_notional": 2.0966,
+          "min_notional": 2.0981,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 75.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 209.73,
-          "depth_1pct_usd": 586165.8862000002,
-          "spread_pct": 0.014308881045502783,
+          "index_price": 209.8,
+          "depth_1pct_usd": 536094.1097000001,
+          "spread_pct": 0.038129736428189356,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -2288,59 +2288,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 9.4e-05,
-          "depth_1pct_usd": 198487.47739999997,
+          "funding": 0.0001,
+          "depth_1pct_usd": 123694.39510000001,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.001,
-          "min_notional": 0.20958000000000002,
+          "min_notional": 0.20991,
           "tick_size": null,
           "digit": null,
           "step_size": 0.001,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 209.7,
+          "index_price": 210.04,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 209.7
+              "price": 210.04
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 209.7
+              "price": 210.04
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 209.7
+              "price": 210.04
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 209.7
+              "price": 210.04
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 209.7
+              "price": 210.04
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 209.7
+              "price": 210.04
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 209.7
+              "price": 210.04
             }
           ],
-          "depth_1pct_usd": 156223.85508999997,
-          "spread_pct": 0.004771447657228422
+          "depth_1pct_usd": 180544.1288,
+          "spread_pct": 0.01905578581297721
         }
       },
       "name": "Bitcoin Cash",
@@ -2351,16 +2351,16 @@
       "exchanges": {
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 0.9989,
+          "min_notional": 0.9988,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "funding": -9e-06,
+          "funding": -5e-06,
           "funding_interval_h": 4.0,
           "index_price": 1.0,
-          "depth_1pct_usd": 70894.6103,
-          "spread_pct": 0.10011012113324666,
+          "depth_1pct_usd": 70636.7602,
+          "spread_pct": 0.13015618742490667,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -2403,12 +2403,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 1.418,
+          "min_notional": 1.419,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "index_price": 1.418,
+          "index_price": 1.419,
           "funding": 5e-05,
           "funding_interval_h": 4.0,
           "index_breakdown": [
@@ -2438,21 +2438,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 563062.187,
-          "spread_pct": 0.07052186177715881
+          "depth_1pct_usd": 509579.2820000001,
+          "spread_pct": 0.07047216349541155
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 1.419,
+          "min_notional": 1.4214,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 75.0,
-          "funding": -0.000146,
+          "funding": -0.0002,
           "funding_interval_h": 4.0,
-          "index_price": 1.42059,
-          "depth_1pct_usd": 182489.0145,
-          "spread_pct": 0.0845665961945095,
+          "index_price": 1.42278,
+          "depth_1pct_usd": 215963.54359999995,
+          "spread_pct": 0.06331785563528218,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -2506,58 +2506,58 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 5e-05,
-          "depth_1pct_usd": 122439.40955,
+          "depth_1pct_usd": 117932.12599,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 1.4187,
+          "min_notional": 1.4225,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 5.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 1.4205,
+          "index_price": 1.423725,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 1.4205
+              "price": 1.423725
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 1.4205
+              "price": 1.423725
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 1.4205
+              "price": 1.423725
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 1.4205
+              "price": 1.423725
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 1.4205
+              "price": 1.423725
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 1.4205
+              "price": 1.423725
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 1.4205
+              "price": 1.423725
             }
           ],
-          "depth_1pct_usd": 86211.54990000003,
-          "spread_pct": 0.0422922393740702
+          "depth_1pct_usd": 105270.6151,
+          "spread_pct": 0.0281195079086085
         }
       },
       "name": "Gram (prev. Toncoin)",
@@ -2574,13 +2574,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
-          "min_notional": 4.53,
+          "min_notional": 4.5280000000000005,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.1,
           "max_leverage": 50.0,
-          "index_price": 45.3,
-          "funding": -3.78145267154e-05,
+          "index_price": 45.28,
+          "funding": -3.4551061859e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -2609,8 +2609,8 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 2546577.951,
-          "spread_pct": 0.02207505518763358
+          "depth_1pct_usd": 2701127.919999999,
+          "spread_pct": 0.022084805653705852
         },
         "Gate": {
           "min_qty": 0.1,
@@ -2622,7 +2622,7 @@
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_price": 45.34,
-          "depth_1pct_usd": 681608.7799999998,
+          "depth_1pct_usd": 659002.5119999999,
           "spread_pct": 0.022070183182531705,
           "index_breakdown": [
             {
@@ -2661,59 +2661,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 5.2e-05,
-          "depth_1pct_usd": 2487723.788,
+          "funding": 4.5e-05,
+          "depth_1pct_usd": 2394593.1919999993,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.01,
-          "min_notional": 0.45313000000000003,
+          "min_notional": 0.45317999999999997,
           "tick_size": null,
           "digit": null,
           "step_size": 0.01,
           "max_leverage": 10.0,
-          "funding": 4.5106e-06,
+          "funding": 7.0934e-06,
           "funding_interval_h": 1.0,
-          "index_price": 45.335,
+          "index_price": 45.345,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 45.335
+              "price": 45.345
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 45.335
+              "price": 45.345
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 45.335
+              "price": 45.345
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 45.335
+              "price": 45.345
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 45.335
+              "price": 45.345
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 45.335
+              "price": 45.345
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 45.335
+              "price": 45.345
             }
           ],
-          "depth_1pct_usd": 94909.06217,
-          "spread_pct": 0.002206872200025753
+          "depth_1pct_usd": 108206.18986000001,
+          "spread_pct": 0.006619886137958678
         }
       },
       "name": "Litecoin",
@@ -2730,12 +2730,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 0.6769999999999999,
+          "min_notional": 0.6789000000000001,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 0.0677,
+          "index_price": 0.06789,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -2765,21 +2765,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 998566.4602999998,
-          "spread_pct": 0.014771048744455131
+          "depth_1pct_usd": 974431.3771999999,
+          "spread_pct": 0.014729709824731183
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 0.6772,
+          "min_notional": 0.6795,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 75.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 0.067743,
-          "depth_1pct_usd": 225860.4016999999,
-          "spread_pct": 0.029533372711152167,
+          "index_price": 0.067947,
+          "depth_1pct_usd": 222445.49829999992,
+          "spread_pct": 0.02943340691685964,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -2822,59 +2822,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 5.9e-05,
-          "depth_1pct_usd": 887439.6529000001,
+          "funding": 7.6e-05,
+          "depth_1pct_usd": 722814.0282300003,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.067705,
+          "min_notional": 0.067945,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 5.0,
-          "funding": -3.6977e-06,
+          "funding": 5.2474e-06,
           "funding_interval_h": 1.0,
-          "index_price": 0.067745,
+          "index_price": 0.068,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.067745
+              "price": 0.068
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.067745
+              "price": 0.068
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.067745
+              "price": 0.068
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.067745
+              "price": 0.068
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.067745
+              "price": 0.068
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.067745
+              "price": 0.068
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.067745
+              "price": 0.068
             }
           ],
-          "depth_1pct_usd": 84860.795898,
-          "spread_pct": 0.0073849789528173705
+          "depth_1pct_usd": 92249.64912799999,
+          "spread_pct": 0.01766134373389966
         }
       },
       "name": "Hedera",
@@ -2885,12 +2885,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 0.6863,
+          "min_notional": 0.6867,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "index_price": 0.6863,
+          "index_price": 0.6867,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -2915,21 +2915,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 2234389.5479,
-          "spread_pct": 0.014570887367039046
+          "depth_1pct_usd": 2179461.3196000005,
+          "spread_pct": 0.014562399883499198
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 0.6862,
+          "min_notional": 0.6876,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "funding": 0.0001,
+          "funding": 9.4e-05,
           "funding_interval_h": 8.0,
-          "index_price": 0.68647,
-          "depth_1pct_usd": 734993.8139000001,
-          "spread_pct": 0.014573010784026374,
+          "index_price": 0.6876,
+          "depth_1pct_usd": 772328.0706000002,
+          "spread_pct": 0.01454333915066739,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -2973,58 +2973,58 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 1754752.0481900002,
+          "depth_1pct_usd": 1902642.54052,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.1,
-          "min_notional": 0.06865700000000001,
+          "min_notional": 0.06879,
           "tick_size": null,
           "digit": null,
           "step_size": 0.1,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.68685,
+          "index_price": 0.6883,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.68685
+              "price": 0.6883
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.68685
+              "price": 0.6883
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.68685
+              "price": 0.6883
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.68685
+              "price": 0.6883
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.68685
+              "price": 0.6883
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.68685
+              "price": 0.6883
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.68685
+              "price": 0.6883
             }
           ],
-          "depth_1pct_usd": 161242.22870900002,
-          "spread_pct": 0.0029130314461773745
+          "depth_1pct_usd": 152956.70700099997,
+          "spread_pct": 0.0014536996656586004
         }
       },
       "name": "Sui",
@@ -3035,13 +3035,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
-          "min_notional": 0.6418,
+          "min_notional": 0.6419,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 0.1,
           "max_leverage": 50.0,
-          "index_price": 6.418,
-          "funding": 5.10799217459e-05,
+          "index_price": 6.419,
+          "funding": 4.15040943632e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -3065,21 +3065,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1456622.0182999999,
-          "spread_pct": 0.015581177937057244
+          "depth_1pct_usd": 1401829.8908,
+          "spread_pct": 0.01557875058420835
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 6.418,
+          "min_notional": 6.426,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 1.0,
           "max_leverage": 75.0,
-          "funding": 7.4e-05,
+          "funding": 9.4e-05,
           "funding_interval_h": 8.0,
-          "index_price": 6.423,
-          "depth_1pct_usd": 878151.8920000001,
-          "spread_pct": 0.03116235587410065,
+          "index_price": 6.4277,
+          "depth_1pct_usd": 1007990.132,
+          "spread_pct": 0.031123560535321813,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -3122,59 +3122,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 3.6e-05,
-          "depth_1pct_usd": 1330525.9287999999,
+          "funding": 3.9e-05,
+          "depth_1pct_usd": 1054010.2601,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.01,
-          "min_notional": 0.064194,
+          "min_notional": 0.064291,
           "tick_size": null,
           "digit": null,
           "step_size": 0.01,
           "max_leverage": 10.0,
-          "funding": 1.00216e-05,
+          "funding": 1.14378e-05,
           "funding_interval_h": 1.0,
-          "index_price": 6.4225,
+          "index_price": 6.4325,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 6.4225
+              "price": 6.4325
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 6.4225
+              "price": 6.4325
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 6.4225
+              "price": 6.4325
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 6.4225
+              "price": 6.4325
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 6.4225
+              "price": 6.4325
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 6.4225
+              "price": 6.4325
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 6.4225
+              "price": 6.4325
             }
           ],
-          "depth_1pct_usd": 71748.30342100002,
-          "spread_pct": 0.0015577779854778788
+          "depth_1pct_usd": 80151.709754,
+          "spread_pct": 0.0077771383241779235
         }
       },
       "name": "Avalanche",
@@ -3185,13 +3185,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 100000.0,
-          "min_notional": 0.4585,
+          "min_notional": 0.4588,
           "tick_size": 1e-09,
           "digit": 9,
           "step_size": 100000.0,
           "max_leverage": 50.0,
-          "index_price": 4.585e-06,
-          "funding": 8.33655305463e-05,
+          "index_price": 4.588e-06,
+          "funding": 8.53882245563e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -3220,21 +3220,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1693137.8620000002,
-          "spread_pct": 0.02181025081789528
+          "depth_1pct_usd": 1622276.7063000002,
+          "spread_pct": 0.021795989537935892
         },
         "Gate": {
           "min_qty": 10000.0,
-          "min_notional": 0.04584,
+          "min_notional": 0.045970000000000004,
           "tick_size": 1e-09,
           "digit": 9,
           "step_size": 10000.0,
           "max_leverage": 75.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 4.588e-06,
-          "depth_1pct_usd": 989367.1512400005,
-          "spread_pct": 0.021815008725995892,
+          "index_price": 4.597e-06,
+          "depth_1pct_usd": 885753.9166499999,
+          "spread_pct": 0.04350663476180444,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -3283,7 +3283,7 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 1939930.9156200003,
+          "depth_1pct_usd": 2090162.11718,
           "spread_pct": null
         }
       },
@@ -3301,12 +3301,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 0.5467000000000001,
+          "min_notional": 0.5476000000000001,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 20.0,
-          "index_price": 0.05467,
+          "index_price": 0.05476,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -3331,21 +3331,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 104402.10919999995,
-          "spread_pct": 0.018291567587347835
+          "depth_1pct_usd": 111463.44240000001,
+          "spread_pct": 0.018261504747996826
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 0.05465,
+          "min_notional": 0.05471,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 1.0,
           "max_leverage": 25.0,
-          "funding": 0.0001,
+          "funding": -2.6e-05,
           "funding_interval_h": 8.0,
-          "index_price": 0.054729,
-          "depth_1pct_usd": 12286.636090000002,
-          "spread_pct": 0.036596523330282134,
+          "index_price": 0.054817,
+          "depth_1pct_usd": 12950.474640000002,
+          "spread_pct": 0.07311277645768299,
           "index_breakdown": [
             {
               "exchange": "Bitget",
@@ -3389,7 +3389,7 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 93382.50850000003,
+          "depth_1pct_usd": 99408.89286000002,
           "spread_pct": null
         }
       },
@@ -3401,13 +3401,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 4.001,
+          "min_notional": 4.051,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "index_price": 4.001,
-          "funding": 4.8500803613e-05,
+          "index_price": 4.051,
+          "funding": 5.63952083758e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -3436,21 +3436,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1178519.1890000007,
-          "spread_pct": 0.024993751562095618
+          "depth_1pct_usd": 1138133.4829999998,
+          "spread_pct": 0.02468526289803618
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 4.002,
+          "min_notional": 4.059,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 1.0,
           "max_leverage": 75.0,
-          "funding": 0.0001,
+          "funding": 4.1e-05,
           "funding_interval_h": 8.0,
-          "index_price": 4.0048,
-          "depth_1pct_usd": 428406.173,
-          "spread_pct": 0.049975012493769816,
+          "index_price": 4.0618,
+          "depth_1pct_usd": 463110.71300000005,
+          "spread_pct": 0.02463661000247189,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -3489,58 +3489,58 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 1057686.9170000001,
+          "depth_1pct_usd": 978269.3299999996,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.1,
-          "min_notional": 0.40109000000000006,
+          "min_notional": 0.40545000000000003,
           "tick_size": null,
           "digit": null,
           "step_size": 0.1,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 4.01211,
+          "index_price": 4.0555,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 4.01211
+              "price": 4.0555
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 4.01211
+              "price": 4.0555
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 4.01211
+              "price": 4.0555
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 4.01211
+              "price": 4.0555
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 4.01211
+              "price": 4.0555
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 4.01211
+              "price": 4.0555
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 4.01211
+              "price": 4.0555
             }
           ],
-          "depth_1pct_usd": 80859.17482,
-          "spread_pct": 0.02243885412253028
+          "depth_1pct_usd": 100534.00817,
+          "spread_pct": 0.002466395363170969
         }
       },
       "name": "Uniswap",
@@ -3551,16 +3551,16 @@
       "exchanges": {
         "Gate": {
           "min_qty": 0.001,
-          "min_notional": 4.0437,
+          "min_notional": 4.0538,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.001,
           "max_leverage": 100.0,
-          "funding": 3.2e-05,
+          "funding": 4.1e-05,
           "funding_interval_h": 8.0,
-          "index_price": 4045.04,
-          "depth_1pct_usd": 1005048.7769999999,
-          "spread_pct": 0.0024729826643892735,
+          "index_price": 4055.11,
+          "depth_1pct_usd": 690074.2868,
+          "spread_pct": 0.002466821254129682,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -3599,7 +3599,7 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 4.1e-05,
-          "depth_1pct_usd": 146410.59860000003,
+          "depth_1pct_usd": 274610.3951,
           "spread_pct": null
         }
       },
@@ -3611,12 +3611,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
-          "min_notional": 1.909,
+          "min_notional": 1.9100000000000001,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.01,
           "max_leverage": 50.0,
-          "index_price": 190.9,
+          "index_price": 191.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -3646,21 +3646,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1511001.3050000002,
-          "spread_pct": 0.052383446830798486
+          "depth_1pct_usd": 1328791.0289999999,
+          "spread_pct": 0.0523560209424054
         },
         "Gate": {
           "min_qty": 0.01,
-          "min_notional": 1.909,
+          "min_notional": 1.912,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.01,
           "max_leverage": 50.0,
-          "funding": -2.9e-05,
+          "funding": 1e-05,
           "funding_interval_h": 4.0,
-          "index_price": 191.12,
-          "depth_1pct_usd": 186543.89500000002,
-          "spread_pct": 0.052383446830798486,
+          "index_price": 191.28,
+          "depth_1pct_usd": 188466.95000000004,
+          "spread_pct": 0.05230125523012255,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -3704,58 +3704,58 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 5e-05,
-          "depth_1pct_usd": 640237.2667200001,
+          "depth_1pct_usd": 439756.42933,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.001,
-          "min_notional": 0.19100999999999999,
+          "min_notional": 0.19141999999999998,
           "tick_size": null,
           "digit": null,
           "step_size": 0.001,
           "max_leverage": 5.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 191.051,
+          "index_price": 191.464,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 191.051
+              "price": 191.464
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 191.051
+              "price": 191.464
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 191.051
+              "price": 191.464
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 191.051
+              "price": 191.464
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 191.051
+              "price": 191.464
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 191.051
+              "price": 191.464
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 191.051
+              "price": 191.464
             }
           ],
-          "depth_1pct_usd": 142438.01155999998,
-          "spread_pct": 0.005235327993294019
+          "depth_1pct_usd": 165691.57911000002,
+          "spread_pct": 0.036568801588142096
         }
       },
       "name": "Bittensor",
@@ -3766,13 +3766,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 1.622,
+          "min_notional": 1.623,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "index_price": 1.622,
-          "funding": -0.0001164548504382,
+          "index_price": 1.623,
+          "funding": -0.000117064710038,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -3801,21 +3801,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1316272.073,
-          "spread_pct": 0.06165228113439518
+          "depth_1pct_usd": 1215517.6039999996,
+          "spread_pct": 0.06161429451633468
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 1.6228,
+          "min_notional": 1.6249,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 75.0,
-          "funding": -0.00024,
+          "funding": -0.000262,
           "funding_interval_h": 8.0,
-          "index_price": 1.6243,
-          "depth_1pct_usd": 226015.07010000007,
-          "spread_pct": 0.02464875523785777,
+          "index_price": 1.626,
+          "depth_1pct_usd": 195695.1588000001,
+          "spread_pct": 0.030771124376881342,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -3863,59 +3863,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 3.2e-05,
-          "depth_1pct_usd": 1223329.477,
+          "funding": 2.7e-05,
+          "depth_1pct_usd": 659444.6461,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.1,
-          "min_notional": 0.16225,
+          "min_notional": 0.16248,
           "tick_size": null,
           "digit": null,
           "step_size": 0.1,
           "max_leverage": 10.0,
-          "funding": 5.447e-06,
+          "funding": 5.3608e-06,
           "funding_interval_h": 1.0,
-          "index_price": 1.62356,
+          "index_price": 1.6265,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 1.62356
+              "price": 1.6265
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 1.62356
+              "price": 1.6265
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 1.62356
+              "price": 1.6265
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 1.62356
+              "price": 1.6265
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 1.62356
+              "price": 1.6265
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 1.62356
+              "price": 1.6265
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 1.62356
+              "price": 1.6265
             }
           ],
-          "depth_1pct_usd": 252736.71035999997,
-          "spread_pct": 0.012326656394451647
+          "depth_1pct_usd": 260373.80320999993,
+          "spread_pct": 0.012309207287049357
         }
       },
       "name": "NEAR Protocol",
@@ -3926,13 +3926,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 4.099,
+          "min_notional": 4.114,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 0.4099,
-          "funding": 2.66385546376e-05,
+          "index_price": 0.4114,
+          "funding": 2.54656975289e-05,
           "funding_interval_h": 4.0,
           "index_breakdown": [
             {
@@ -3961,21 +3961,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1705750.819,
-          "spread_pct": 0.024396194193703095
+          "depth_1pct_usd": 1691251.6219999997,
+          "spread_pct": 0.02430724355857778
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 0.4099,
+          "min_notional": 0.4115,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "funding": 1e-06,
+          "funding": -1.7e-05,
           "funding_interval_h": 4.0,
-          "index_price": 0.410293,
-          "depth_1pct_usd": 734461.0485000001,
-          "spread_pct": 0.024396194193716636,
+          "index_price": 0.411718,
+          "depth_1pct_usd": 746807.0767000001,
+          "spread_pct": 0.048602673147031226,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -4024,58 +4024,58 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 5e-05,
-          "depth_1pct_usd": 1317525.2659299998,
+          "depth_1pct_usd": 1341747.58086,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.4107,
+          "min_notional": 0.41186,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.410769,
+          "index_price": 0.41191,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.410769
+              "price": 0.41191
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.410769
+              "price": 0.41191
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.410769
+              "price": 0.41191
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.410769
+              "price": 0.41191
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.410769
+              "price": 0.41191
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.410769
+              "price": 0.41191
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.410769
+              "price": 0.41191
             }
           ],
-          "depth_1pct_usd": 107504.93431000001,
-          "spread_pct": 0.02434867299733248
+          "depth_1pct_usd": 108394.54671,
+          "spread_pct": 0.050988199873740585
         }
       },
       "name": "Ondo",
@@ -4086,12 +4086,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
-          "min_notional": 0.8582,
+          "min_notional": 0.8595,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 20.0,
-          "index_price": 85.82,
+          "index_price": 85.95,
           "funding": 5e-05,
           "funding_interval_h": 4.0,
           "index_breakdown": [
@@ -4116,21 +4116,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 285446.8217,
-          "spread_pct": 0.011652295502219898
+          "depth_1pct_usd": 198654.53680000003,
+          "spread_pct": 0.011634671320541147
         },
         "Gate": {
           "min_qty": 0.1,
-          "min_notional": 8.587000000000002,
+          "min_notional": 8.594,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.1,
           "max_leverage": 25.0,
-          "funding": -8.9e-05,
+          "funding": 8.5e-05,
           "funding_interval_h": 8.0,
-          "index_price": 85.912,
-          "depth_1pct_usd": 102807.891,
-          "spread_pct": 0.09316408524513602,
+          "index_price": 86.0,
+          "depth_1pct_usd": 93287.274,
+          "spread_pct": 0.05818012566906813,
           "index_breakdown": [
             {
               "exchange": "Gate",
@@ -4158,16 +4158,16 @@
       "exchanges": {
         "Gate": {
           "min_qty": 0.001,
-          "min_notional": 4.0495,
+          "min_notional": 4.0600000000000005,
           "tick_size": 0.1,
           "digit": 1,
           "step_size": 0.001,
           "max_leverage": 100.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 4050.89,
-          "depth_1pct_usd": 866093.8088999998,
-          "spread_pct": 0.029633288060249858,
+          "index_price": 4061.31,
+          "depth_1pct_usd": 745658.5917000002,
+          "spread_pct": 0.019704433497541425,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -4200,59 +4200,59 @@
           "max_leverage": 50.0,
           "funding_interval_h": 4.0,
           "index_price": 0.0,
-          "funding": 4e-06,
-          "depth_1pct_usd": 125000.42445000002,
+          "funding": 5e-06,
+          "depth_1pct_usd": 135186.17811999997,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.001,
-          "min_notional": 4.0498,
+          "min_notional": 4.058,
           "tick_size": null,
           "digit": null,
           "step_size": 0.001,
           "max_leverage": 10.0,
-          "funding": 1.09925e-05,
+          "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 4051.8,
+          "index_price": 4059.45,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 4051.8
+              "price": 4059.45
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 4051.8
+              "price": 4059.45
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 4051.8
+              "price": 4059.45
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 4051.8
+              "price": 4059.45
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 4051.8
+              "price": 4059.45
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 4051.8
+              "price": 4059.45
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 4051.8
+              "price": 4059.45
             }
           ],
-          "depth_1pct_usd": 480818.69560000004,
-          "spread_pct": 0.0024692577411207723
+          "depth_1pct_usd": 549898.8718,
+          "spread_pct": 0.002464268112368385
         }
       },
       "name": "PAX Gold",
@@ -4263,12 +4263,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
-          "min_notional": 0.5529,
+          "min_notional": 0.553,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 50.0,
-          "index_price": 0.05529,
+          "index_price": 0.0553,
           "funding": 5e-05,
           "funding_interval_h": 4.0,
           "index_breakdown": [
@@ -4293,21 +4293,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 502507.47389999987,
-          "spread_pct": 0.018086453246523894
+          "depth_1pct_usd": 477053.4415000001,
+          "spread_pct": 0.018083182640137654
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 0.5529,
+          "min_notional": 0.5535,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 10.0,
           "max_leverage": 75.0,
-          "funding": -2.2e-05,
+          "funding": 2.4e-05,
           "funding_interval_h": 4.0,
-          "index_price": 0.05532,
-          "depth_1pct_usd": 285678.89110000007,
-          "spread_pct": 0.03617290649303524,
+          "index_price": 0.05537,
+          "depth_1pct_usd": 285406.5826999999,
+          "spread_pct": 0.018066847335133012,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -4346,58 +4346,58 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 3.5e-05,
-          "depth_1pct_usd": 345796.2377800001,
+          "depth_1pct_usd": 333763.14959999995,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.055323,
+          "min_notional": 0.055355,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 5.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.055345,
+          "index_price": 0.055375,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.055345
+              "price": 0.055375
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.055345
+              "price": 0.055375
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.055345
+              "price": 0.055375
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.055345
+              "price": 0.055375
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.055345
+              "price": 0.055375
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.055345
+              "price": 0.055375
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.055345
+              "price": 0.055375
             }
           ],
-          "depth_1pct_usd": 136746.34261800002,
-          "spread_pct": 0.010845398839540629
+          "depth_1pct_usd": 99678.01232899999,
+          "spread_pct": 0.02167825851322938
         }
       },
       "name": "World Liberty Financial",
@@ -4408,13 +4408,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 0.5994,
+          "min_notional": 0.5995,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "index_price": 0.5994,
-          "funding": 4.56853915449e-05,
+          "index_price": 0.5995,
+          "funding": 4.86943123392e-05,
           "funding_interval_h": 4.0,
           "index_breakdown": [
             {
@@ -4443,21 +4443,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 787831.1588000002,
-          "spread_pct": 0.01668335001668151
+          "depth_1pct_usd": 769130.588,
+          "spread_pct": 0.0166805671392809
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 5.996,
+          "min_notional": 6.0,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 10.0,
           "max_leverage": 75.0,
-          "funding": -3.5e-05,
+          "funding": 1.5e-05,
           "funding_interval_h": 4.0,
-          "index_price": 0.59993,
-          "depth_1pct_usd": 371057.56,
-          "spread_pct": 0.03335557038024983,
+          "index_price": 0.60039,
+          "depth_1pct_usd": 395011.23699999996,
+          "spread_pct": 0.03333333333332966,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -4501,58 +4501,58 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 5e-05,
-          "depth_1pct_usd": 658918.9702,
+          "depth_1pct_usd": 556291.3417,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.59961,
+          "min_notional": 0.6001,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 5.0,
-          "funding": 8.566e-06,
+          "funding": 2.7418e-06,
           "funding_interval_h": 1.0,
-          "index_price": 0.60005,
+          "index_price": 0.60055,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.60005
+              "price": 0.60055
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.60005
+              "price": 0.60055
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.60005
+              "price": 0.60055
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.60005
+              "price": 0.60055
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.60005
+              "price": 0.60055
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.60005
+              "price": 0.60055
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.60005
+              "price": 0.60055
             }
           ],
-          "depth_1pct_usd": 77043.04302,
-          "spread_pct": 0.0016677507046170827
+          "depth_1pct_usd": 76300.22444999998,
+          "spread_pct": 0.0016663889351698868
         }
       },
       "name": "Aster",
@@ -4575,13 +4575,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.010000000000000002,
-          "min_notional": 0.9683000000000002,
+          "min_notional": 0.9665000000000002,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.010000000000000002,
           "max_leverage": 50.0,
-          "index_price": 96.83,
-          "funding": -5.54118375672e-05,
+          "index_price": 96.65,
+          "funding": -5.15021418056e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -4605,21 +4605,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 1213072.2341,
-          "spread_pct": 0.010327377878761868
+          "depth_1pct_usd": 1040614.4964999994,
+          "spread_pct": 0.01034661148474404
         },
         "Gate": {
           "min_qty": 0.01,
-          "min_notional": 0.968,
+          "min_notional": 0.9673999999999999,
           "tick_size": 0.01,
           "digit": 2,
           "step_size": 0.01,
           "max_leverage": 75.0,
-          "funding": 0.0001,
+          "funding": -0.000128,
           "funding_interval_h": 8.0,
-          "index_price": 96.856,
-          "depth_1pct_usd": 341545.65630000015,
-          "spread_pct": 0.030991735537191256,
+          "index_price": 96.812,
+          "depth_1pct_usd": 319981.58340000006,
+          "spread_pct": 0.02067397146992995,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -4658,58 +4658,58 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 922040.431,
+          "depth_1pct_usd": 776237.9190000001,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.01,
-          "min_notional": 0.96942,
+          "min_notional": 0.9673999999999999,
           "tick_size": null,
           "digit": null,
           "step_size": 0.01,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 96.95,
+          "index_price": 96.785,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 96.95
+              "price": 96.785
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 96.95
+              "price": 96.785
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 96.95
+              "price": 96.785
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 96.95
+              "price": 96.785
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 96.95
+              "price": 96.785
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 96.95
+              "price": 96.785
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 96.95
+              "price": 96.785
             }
           ],
-          "depth_1pct_usd": 136479.36628999998,
-          "spread_pct": 0.013410080254177994
+          "depth_1pct_usd": 96705.40518,
+          "spread_pct": 0.0010336985734862147
         }
       },
       "name": "Aave",
@@ -4720,13 +4720,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 100.0,
-          "min_notional": 5.67,
+          "min_notional": 5.673,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 100.0,
           "max_leverage": 20.0,
-          "index_price": 0.0567,
-          "funding": -5.30566488881e-05,
+          "index_price": 0.05673,
+          "funding": -2.63352307575e-05,
           "funding_interval_h": 4.0,
           "index_breakdown": [
             {
@@ -4750,21 +4750,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 58085.16199999997,
-          "spread_pct": 0.0352733686067005
+          "depth_1pct_usd": 56164.754000000015,
+          "spread_pct": 0.017627357659080068
         },
         "Gate": {
           "min_qty": 100.0,
-          "min_notional": 5.655,
+          "min_notional": 5.657,
           "tick_size": 1e-05,
           "digit": 5,
           "step_size": 100.0,
           "max_leverage": 50.0,
-          "funding": -7.5e-05,
+          "funding": 3e-06,
           "funding_interval_h": 4.0,
-          "index_price": 0.056834,
-          "depth_1pct_usd": 11530.537000000002,
-          "spread_pct": 0.10610079575596384,
+          "index_price": 0.056869,
+          "depth_1pct_usd": 12780.065000000002,
+          "spread_pct": 0.12374049849743789,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -4813,58 +4813,58 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 5e-05,
-          "depth_1pct_usd": 136361.89261999997,
+          "depth_1pct_usd": 184670.78130000003,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 1.0,
-          "min_notional": 0.056796,
+          "min_notional": 0.056785,
           "tick_size": null,
           "digit": null,
           "step_size": 1.0,
           "max_leverage": 3.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.05681,
+          "index_price": 0.05682,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.05681
+              "price": 0.05682
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.05681
+              "price": 0.05682
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.05681
+              "price": 0.05682
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.05681
+              "price": 0.05682
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.05681
+              "price": 0.05682
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.05681
+              "price": 0.05682
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.05681
+              "price": 0.05682
             }
           ],
-          "depth_1pct_usd": 18261.273740999994,
-          "spread_pct": 0.0017606873723519261
+          "depth_1pct_usd": 26321.632766000002,
+          "spread_pct": 0.001761028440611077
         }
       },
       "name": "Sky",
@@ -4875,16 +4875,16 @@
       "exchanges": {
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 0.3951,
+          "min_notional": 0.3958,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 25.0,
-          "funding": 5e-05,
+          "funding": 0.000143,
           "funding_interval_h": 4.0,
-          "index_price": 0.3949,
-          "depth_1pct_usd": 39919.67380000001,
-          "spread_pct": 0.02531004808908858,
+          "index_price": 0.3958,
+          "depth_1pct_usd": 43473.63029999999,
+          "spread_pct": 0.10106114199090739,
           "index_breakdown": [
             {
               "exchange": "Bybit",
@@ -4915,53 +4915,53 @@
         },
         "Hyperliquid": {
           "min_qty": 0.1,
-          "min_notional": 0.039577,
+          "min_notional": 0.039731,
           "tick_size": null,
           "digit": null,
           "step_size": 0.1,
           "max_leverage": 5.0,
-          "funding": -2.51164e-05,
+          "funding": -2.89606e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.39622,
+          "index_price": 0.39775,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.39622
+              "price": 0.39775
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.39622
+              "price": 0.39775
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.39622
+              "price": 0.39775
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.39622
+              "price": 0.39775
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.39622
+              "price": 0.39775
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.39622
+              "price": 0.39775
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.39622
+              "price": 0.39775
             }
           ],
-          "depth_1pct_usd": 65518.074678000004,
-          "spread_pct": 0.04042752103494289
+          "depth_1pct_usd": 70574.935078,
+          "spread_pct": 0.03272004228436711
         }
       },
       "name": "Mantle",
@@ -4972,13 +4972,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 0.7656,
+          "min_notional": 0.7678,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 50.0,
-          "index_price": 0.7656,
-          "funding": -3.33376167036e-05,
+          "index_price": 0.7678,
+          "funding": -2.51254096445e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -5007,21 +5007,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 778126.0678000003,
-          "spread_pct": 0.013061650992684037
+          "depth_1pct_usd": 794633.4848000001,
+          "spread_pct": 0.013024225058607576
         },
         "Gate": {
           "min_qty": 1.0,
-          "min_notional": 0.766,
+          "min_notional": 0.768,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 1.0,
           "max_leverage": 75.0,
-          "funding": 6.7e-05,
+          "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 0.7666,
-          "depth_1pct_usd": 348919.096,
-          "spread_pct": 0.13054830287206276,
+          "index_price": 0.7685,
+          "depth_1pct_usd": 366657.245,
+          "spread_pct": 0.13020833333333345,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -5064,59 +5064,59 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": 1.8e-05,
-          "depth_1pct_usd": 3451134.4100000006,
+          "funding": 5e-06,
+          "depth_1pct_usd": 3505509.853,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.1,
-          "min_notional": 0.07661000000000001,
+          "min_notional": 0.076811,
           "tick_size": null,
           "digit": null,
           "step_size": 0.1,
           "max_leverage": 10.0,
           "funding": 1.25e-05,
           "funding_interval_h": 1.0,
-          "index_price": 0.76635,
+          "index_price": 0.7684,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 0.76635
+              "price": 0.7684
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 0.76635
+              "price": 0.7684
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 0.76635
+              "price": 0.7684
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 0.76635
+              "price": 0.7684
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 0.76635
+              "price": 0.7684
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 0.76635
+              "price": 0.7684
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 0.76635
+              "price": 0.7684
             }
           ],
-          "depth_1pct_usd": 48048.917636,
-          "spread_pct": 0.01044250097899491
+          "depth_1pct_usd": 50180.69881300001,
+          "spread_pct": 0.022132246683418195
         }
       },
       "name": "Polkadot",
@@ -5127,16 +5127,16 @@
       "exchanges": {
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 9.424,
+          "min_notional": 9.574,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 10.0,
           "max_leverage": 10.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 0.942378,
-          "depth_1pct_usd": 24376.936000000005,
-          "spread_pct": 0.15916808149406375,
+          "index_price": 0.958322,
+          "depth_1pct_usd": 26225.128999999997,
+          "spread_pct": 0.1253394610403153,
           "index_breakdown": [
             {
               "exchange": "BinanceIndex",
@@ -5175,7 +5175,7 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 5e-05,
-          "depth_1pct_usd": 13307.340200000002,
+          "depth_1pct_usd": 14381.903999999999,
           "spread_pct": null
         }
       },
@@ -5187,13 +5187,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
-          "min_notional": 3.8052,
+          "min_notional": 3.9258,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 1.0,
           "max_leverage": 10.0,
-          "index_price": 3.8052,
-          "funding": 0.0002381446646053,
+          "index_price": 3.9258,
+          "funding": 0.0002557360640851,
           "funding_interval_h": 4.0,
           "index_breakdown": [
             {
@@ -5217,21 +5217,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 22781.765299999992,
-          "spread_pct": 0.0026279827604386375
+          "depth_1pct_usd": 26619.803899999995,
+          "spread_pct": 0.007641754546848769
         },
         "Gate": {
           "min_qty": 10.0,
-          "min_notional": 37.887,
+          "min_notional": 39.274,
           "tick_size": 0.0001,
           "digit": 4,
           "step_size": 10.0,
           "max_leverage": 20.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 3.78759,
-          "depth_1pct_usd": 38528.865,
-          "spread_pct": 0.047509699897057084,
+          "index_price": 3.92705,
+          "depth_1pct_usd": 27767.56299999999,
+          "spread_pct": 0.07384019962315788,
           "index_breakdown": [
             {
               "exchange": "BinanceAlpha",
@@ -5270,7 +5270,7 @@
           "funding_interval_h": 4.0,
           "index_price": 0.0,
           "funding": 5e-05,
-          "depth_1pct_usd": 14046.7284,
+          "depth_1pct_usd": 12610.9005,
           "spread_pct": null
         }
       },
@@ -5282,12 +5282,12 @@
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
-          "min_notional": 0.020720000000000002,
+          "min_notional": 0.02073,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 0.01,
           "max_leverage": 50.0,
-          "index_price": 2.072,
+          "index_price": 2.073,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
           "index_breakdown": [
@@ -5312,21 +5312,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 370679.51305,
-          "spread_pct": 0.04826254826254295
+          "depth_1pct_usd": 363112.30986000004,
+          "spread_pct": 0.04823926676313989
         },
         "Gate": {
           "min_qty": 0.001,
-          "min_notional": 0.002074,
+          "min_notional": 0.002076,
           "tick_size": 0.001,
           "digit": 3,
           "step_size": 0.001,
           "max_leverage": 50.0,
           "funding": 0.0001,
           "funding_interval_h": 8.0,
-          "index_price": 2.0756,
-          "depth_1pct_usd": 246549.01728600005,
-          "spread_pct": 0.04821600771457734,
+          "index_price": 2.076,
+          "depth_1pct_usd": 249458.22776100005,
+          "spread_pct": 0.048169556840071764,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -5369,59 +5369,59 @@
           "max_leverage": 50.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": -0.000132,
-          "depth_1pct_usd": 544627.13506,
+          "funding": -0.000113,
+          "depth_1pct_usd": 499543.42976000026,
           "spread_pct": null
         },
         "Hyperliquid": {
           "min_qty": 0.1,
-          "min_notional": 0.20748000000000003,
+          "min_notional": 0.20765,
           "tick_size": null,
           "digit": null,
           "step_size": 0.1,
           "max_leverage": 5.0,
-          "funding": -1.14439e-05,
+          "funding": -1.76546e-05,
           "funding_interval_h": 1.0,
-          "index_price": 2.077,
+          "index_price": 2.079,
           "index_breakdown": [
             {
               "exchange": "binance",
               "weight": 0.2727272727272727,
-              "price": 2.077
+              "price": 2.079
             },
             {
               "exchange": "okx",
               "weight": 0.18181818181818182,
-              "price": 2.077
+              "price": 2.079
             },
             {
               "exchange": "bybit",
               "weight": 0.18181818181818182,
-              "price": 2.077
+              "price": 2.079
             },
             {
               "exchange": "kraken",
               "weight": 0.09090909090909091,
-              "price": 2.077
+              "price": 2.079
             },
             {
               "exchange": "kucoin",
               "weight": 0.09090909090909091,
-              "price": 2.077
+              "price": 2.079
             },
             {
               "exchange": "gateio",
               "weight": 0.09090909090909091,
-              "price": 2.077
+              "price": 2.079
             },
             {
               "exchange": "mexc",
               "weight": 0.09090909090909091,
-              "price": 2.077
+              "price": 2.079
             }
           ],
-          "depth_1pct_usd": 77763.44468999997,
-          "spread_pct": 0.004819741661857096
+          "depth_1pct_usd": 75033.83165,
+          "spread_pct": 0.019263183241049846
         }
       },
       "name": "Internet Computer",
@@ -5440,7 +5440,7 @@
           "funding_interval_h": 8.0,
           "index_price": 0.0,
           "funding": 0.0001,
-          "depth_1pct_usd": 12084.354000000003,
+          "depth_1pct_usd": 12007.3063,
           "spread_pct": null
         }
       },
@@ -5452,13 +5452,13 @@
       "exchanges": {
         "OKX": {
           "min_qty": 1000000.0,
-          "min_notional": 2.729,
+          "min_notional": 2.735,
           "tick_size": 1e-09,
           "digit": 9,
           "step_size": 1000000.0,
           "max_leverage": 50.0,
-          "index_price": 2.729e-06,
-          "funding": -2.81317068735e-05,
+          "index_price": 2.735e-06,
+          "funding": -2.71477962072e-05,
           "funding_interval_h": 8.0,
           "index_breakdown": [
             {
@@ -5487,21 +5487,21 @@
               "price": 0.0
             }
           ],
-          "depth_1pct_usd": 3235553.6770000006,
-          "spread_pct": 0.03664345914254581
+          "depth_1pct_usd": 3021766.826000001,
+          "spread_pct": 0.03656307129799177
         },
         "Gate": {
           "min_qty": 10000000.0,
-          "min_notional": 27.310000000000002,
+          "min_notional": 27.39,
           "tick_size": 1e-09,
           "digit": 9,
           "step_size": 10000000.0,
           "max_leverage": 75.0,
-          "funding": 0.0001,
+          "funding": -0.00011,
           "funding_interval_h": 8.0,
-          "index_price": 2.733e-06,
-          "depth_1pct_usd": 1476847.6599999997,
-          "spread_pct": 0.03661662394727481,
+          "index_price": 2.74083e-06,
+          "depth_1pct_usd": 1531155.1599999997,
+          "spread_pct": 0.03650967506389467,
           "index_breakdown": [
             {
               "exchange": "Binance",
@@ -5544,8 +5544,8 @@
           "max_leverage": 75.0,
           "funding_interval_h": 8.0,
           "index_price": 0.0,
-          "funding": -9.6e-05,
-          "depth_1pct_usd": 643752.1398501002,
+          "funding": -9.3e-05,
+          "depth_1pct_usd": 435420.6854149,
           "spread_pct": null
         }
       },

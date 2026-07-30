@@ -1,3613 +1,5417 @@
 {
-  "generated_at": "2026-07-30T08:11:47.011701+00:00",
+  "generated_at": "2026-07-30T08:25:21.836722+00:00",
   "kapsam": "Her borsanin kendi 24s perp hacminde ilk 150",
   "borsalar": {
     "OKX": [
       {
         "sira": 1,
         "symbol": "ETH",
-        "perp_volume_usd": 7050408785.54311,
-        "open_interest_usd": 1325500077.1242437
+        "perp_volume_usd": 7055334792.544499,
+        "open_interest_usd": 1326848341.8960032
       },
       {
         "sira": 2,
         "symbol": "BTC",
-        "perp_volume_usd": 6138204965.6695,
-        "open_interest_usd": 1941484687.2580094
+        "perp_volume_usd": 6116891014.658159,
+        "open_interest_usd": 1943812906.675179
       },
       {
         "sira": 3,
         "symbol": "SNDK",
-        "perp_volume_usd": 2684343293.13024,
-        "open_interest_usd": 112341361.64664002
+        "perp_volume_usd": 2698166189.17615,
+        "open_interest_usd": 114693057.04560001
       },
       {
         "sira": 4,
         "symbol": "SKHYNIX",
-        "perp_volume_usd": 1183739028.66444,
-        "open_interest_usd": 81330624.40164
+        "perp_volume_usd": 1203166830.3512,
+        "open_interest_usd": 82203633.0071
       },
       {
         "sira": 5,
         "symbol": "MU",
-        "perp_volume_usd": 938644221.1287999,
-        "open_interest_usd": 58372215.46800004
+        "perp_volume_usd": 944772373.6653,
+        "open_interest_usd": 58189277.60880003
       },
       {
         "sira": 6,
         "symbol": "SOXL",
-        "perp_volume_usd": 523131909.0312,
-        "open_interest_usd": 14269420.241999999
+        "perp_volume_usd": 532145220.7904,
+        "open_interest_usd": 14480814.768000003
       },
       {
         "sira": 7,
         "symbol": "SOL",
-        "perp_volume_usd": 485936443.37579995,
-        "open_interest_usd": 206776662.90019995
+        "perp_volume_usd": 487172533.3776001,
+        "open_interest_usd": 207325559.00699997
       },
       {
         "sira": 8,
         "symbol": "XAU",
-        "perp_volume_usd": 433757363.66099995,
-        "open_interest_usd": 104073890.5665
+        "perp_volume_usd": 435839182.4897,
+        "open_interest_usd": 104061025.4189
       },
       {
         "sira": 9,
         "symbol": "SKHY",
-        "perp_volume_usd": 391505316.57,
-        "open_interest_usd": 16598125.934999999
+        "perp_volume_usd": 395187382.30480003,
+        "open_interest_usd": 17001506.860400002
       },
       {
         "sira": 10,
         "symbol": "SPCX",
-        "perp_volume_usd": 292147206.372,
-        "open_interest_usd": 55312610.35999999
+        "perp_volume_usd": 292838224.6287,
+        "open_interest_usd": 55414198.84499999
       },
       {
         "sira": 11,
         "symbol": "BEAT",
-        "perp_volume_usd": 261703235.0432,
-        "open_interest_usd": 12944750.270399997
+        "perp_volume_usd": 269672607.5008,
+        "open_interest_usd": 13366648.738800004
       },
       {
         "sira": 12,
-        "symbol": "XRP",
-        "perp_volume_usd": 180220541.3743,
-        "open_interest_usd": 86655470.25309998
+        "symbol": "DOGE",
+        "perp_volume_usd": 178265587.7418,
+        "open_interest_usd": 85001191.53239995
       },
       {
         "sira": 13,
-        "symbol": "DOGE",
-        "perp_volume_usd": 178193058.51299998,
-        "open_interest_usd": 84740917.82939993
+        "symbol": "XRP",
+        "perp_volume_usd": 177352869.04500002,
+        "open_interest_usd": 86765719.14799997
       },
       {
         "sira": 14,
         "symbol": "KAITO",
-        "perp_volume_usd": 161713998.50530002,
-        "open_interest_usd": 11860233.835900001
+        "perp_volume_usd": 161553149.28480002,
+        "open_interest_usd": 11947207.658400001
       },
       {
         "sira": 15,
         "symbol": "ZEC",
-        "perp_volume_usd": 147577423.1649,
-        "open_interest_usd": 50216292.1095
+        "perp_volume_usd": 146828461.25579998,
+        "open_interest_usd": 50278939.4394
       },
       {
         "sira": 16,
         "symbol": "CL",
-        "perp_volume_usd": 144409290.12399998,
-        "open_interest_usd": 25678983.575999998
+        "perp_volume_usd": 146826099.102,
+        "open_interest_usd": 25937205.99
       },
       {
         "sira": 17,
         "symbol": "HYPE",
-        "perp_volume_usd": 143756245.6974,
-        "open_interest_usd": 80272041.19739999
+        "perp_volume_usd": 142326293.9934,
+        "open_interest_usd": 80542536.492
       },
       {
         "sira": 18,
         "symbol": "KORU",
-        "perp_volume_usd": 134655815.1692,
-        "open_interest_usd": 4358892.6152
+        "perp_volume_usd": 137108580.5174,
+        "open_interest_usd": 4325119.6986
       },
       {
         "sira": 19,
         "symbol": "XAG",
-        "perp_volume_usd": 108369987.5508,
-        "open_interest_usd": 21897431.926799998
+        "perp_volume_usd": 109215729.792,
+        "open_interest_usd": 21945755.52
       },
       {
         "sira": 20,
-        "symbol": "AEON",
-        "perp_volume_usd": 97932248.532,
-        "open_interest_usd": 3093748.952
+        "symbol": "SNXX",
+        "perp_volume_usd": 98248274.384,
+        "open_interest_usd": 2366538.096
       },
       {
         "sira": 21,
-        "symbol": "SNXX",
-        "perp_volume_usd": 97747162.28999999,
-        "open_interest_usd": 2321915.15
+        "symbol": "AEON",
+        "perp_volume_usd": 97604948.5625,
+        "open_interest_usd": 3140540.6875
       },
       {
         "sira": 22,
         "symbol": "RE",
-        "perp_volume_usd": 83972360.3236,
-        "open_interest_usd": 3869534.0712
+        "perp_volume_usd": 83690369.14,
+        "open_interest_usd": 3861646.5047999998
       },
       {
         "sira": 23,
         "symbol": "SAMSUNG",
-        "perp_volume_usd": 77269006.275,
-        "open_interest_usd": 5306928.863400001
+        "perp_volume_usd": 78000654.2651,
+        "open_interest_usd": 5352605.4155
       },
       {
         "sira": 24,
         "symbol": "UB",
-        "perp_volume_usd": 77164220.679,
-        "open_interest_usd": 3642908.673
+        "perp_volume_usd": 76388096.59200001,
+        "open_interest_usd": 3616594.392
       },
       {
         "sira": 25,
         "symbol": "DRAM",
-        "perp_volume_usd": 69753205.84,
-        "open_interest_usd": 8576286.69
+        "perp_volume_usd": 70113143.044,
+        "open_interest_usd": 8582037.002
       },
       {
         "sira": 26,
         "symbol": "ZAMA",
-        "perp_volume_usd": 66230784.165,
-        "open_interest_usd": 5561143.756
+        "perp_volume_usd": 65736770.844000004,
+        "open_interest_usd": 5515666.9368
       },
       {
         "sira": 27,
         "symbol": "PEPE",
-        "perp_volume_usd": 65780532.09,
-        "open_interest_usd": 22668134.580000006
+        "perp_volume_usd": 65680174.415,
+        "open_interest_usd": 22730664.315000005
       },
       {
         "sira": 28,
         "symbol": "INTC",
-        "perp_volume_usd": 62513898.731,
-        "open_interest_usd": 9167741.050999999
+        "perp_volume_usd": 62770313.74199999,
+        "open_interest_usd": 9223979.157999998
       },
       {
         "sira": 29,
         "symbol": "UNI",
-        "perp_volume_usd": 56168534.624000005,
-        "open_interest_usd": 20852959.937000003
+        "perp_volume_usd": 57786538.44500001,
+        "open_interest_usd": 21106849.895000003
       },
       {
         "sira": 30,
         "symbol": "WLD",
-        "perp_volume_usd": 55575536.8505,
-        "open_interest_usd": 23942998.0245
+        "perp_volume_usd": 55572509.300400004,
+        "open_interest_usd": 23913746.188
       },
       {
         "sira": 31,
         "symbol": "SHIB",
-        "perp_volume_usd": 54601610.497,
-        "open_interest_usd": 8754891.064499998
+        "perp_volume_usd": 54600703.9656,
+        "open_interest_usd": 8762942.3882
       },
       {
         "sira": 32,
         "symbol": "AAVE",
-        "perp_volume_usd": 49720705.986,
-        "open_interest_usd": 15179166.149699997
+        "perp_volume_usd": 49945161.620900005,
+        "open_interest_usd": 15177910.191499999
       },
       {
         "sira": 33,
         "symbol": "EWY",
-        "perp_volume_usd": 48852722.246800005,
-        "open_interest_usd": 6032617.9791
+        "perp_volume_usd": 48711739.245400004,
+        "open_interest_usd": 6067161.2001
       },
       {
         "sira": 34,
-        "symbol": "SOXS",
-        "perp_volume_usd": 48012226.300000004,
-        "open_interest_usd": 2242759.4400000004
+        "symbol": "ONDO",
+        "perp_volume_usd": 47916162.82,
+        "open_interest_usd": 12378714.194999998
       },
       {
         "sira": 35,
-        "symbol": "ONDO",
-        "perp_volume_usd": 47537816.304,
-        "open_interest_usd": 12344434.086
+        "symbol": "ESP",
+        "perp_volume_usd": 47338677.104,
+        "open_interest_usd": 2115272.0930000003
       },
       {
         "sira": 36,
-        "symbol": "ESP",
-        "perp_volume_usd": 44523812.434,
-        "open_interest_usd": 1989196.516
+        "symbol": "SOXS",
+        "perp_volume_usd": 46719651.0,
+        "open_interest_usd": 2207567.25
       },
       {
         "sira": 37,
         "symbol": "BNB",
-        "perp_volume_usd": 44184965.84,
-        "open_interest_usd": 38590679.928
+        "perp_volume_usd": 44439595.164000005,
+        "open_interest_usd": 38590359.476
       },
       {
         "sira": 38,
-        "symbol": "SOON",
-        "perp_volume_usd": 44102716.1637,
-        "open_interest_usd": 3051854.4306000005
+        "symbol": "PUMP",
+        "perp_volume_usd": 44042628.146,
+        "open_interest_usd": 9605260.871
       },
       {
         "sira": 39,
-        "symbol": "PUMP",
-        "perp_volume_usd": 43868057.051,
-        "open_interest_usd": 9583931.462
+        "symbol": "ADA",
+        "perp_volume_usd": 43400646.559,
+        "open_interest_usd": 20586358.694000002
       },
       {
         "sira": 40,
-        "symbol": "ADA",
-        "perp_volume_usd": 43494138.5,
-        "open_interest_usd": 20561024.616
+        "symbol": "SOON",
+        "perp_volume_usd": 42411597.4942,
+        "open_interest_usd": 3024892.3463000003
       },
       {
         "sira": 41,
         "symbol": "MRVL",
-        "perp_volume_usd": 39938951.3676,
-        "open_interest_usd": 5887834.997200001
+        "perp_volume_usd": 40403499.49,
+        "open_interest_usd": 5996926.4799999995
       },
       {
         "sira": 42,
         "symbol": "SUI",
-        "perp_volume_usd": 38505472.2945,
-        "open_interest_usd": 21609522.237
+        "perp_volume_usd": 38364994.4013,
+        "open_interest_usd": 21609863.2449
       },
       {
         "sira": 43,
         "symbol": "QQQ",
-        "perp_volume_usd": 36943951.655600004,
-        "open_interest_usd": 13504130.200000003
+        "perp_volume_usd": 36974736.535000004,
+        "open_interest_usd": 13514771.736400003
       },
       {
         "sira": 44,
         "symbol": "FIL",
-        "perp_volume_usd": 35821638.22464,
-        "open_interest_usd": 11980895.84064
+        "perp_volume_usd": 35932689.44704,
+        "open_interest_usd": 12015753.62875
       },
       {
         "sira": 45,
         "symbol": "LAB",
-        "perp_volume_usd": 28508601.002,
-        "open_interest_usd": 6514661.687799997
+        "perp_volume_usd": 28831957.695499998,
+        "open_interest_usd": 6513381.427999997
       },
       {
         "sira": 46,
-        "symbol": "CRCL",
-        "perp_volume_usd": 28446672.407999996,
-        "open_interest_usd": 19758333.0
+        "symbol": "BZ",
+        "perp_volume_usd": 28383395.228099998,
+        "open_interest_usd": 5340137.966999999
       },
       {
         "sira": 47,
-        "symbol": "NEAR",
-        "perp_volume_usd": 28173705.69,
-        "open_interest_usd": 20853829.62
+        "symbol": "CRCL",
+        "perp_volume_usd": 28355667.038,
+        "open_interest_usd": 19693754.246
       },
       {
         "sira": 48,
-        "symbol": "BZ",
-        "perp_volume_usd": 28064235.865599997,
-        "open_interest_usd": 5291834.3544
+        "symbol": "NEAR",
+        "perp_volume_usd": 28084245.93,
+        "open_interest_usd": 20864551.158000004
       },
       {
         "sira": 49,
         "symbol": "LINK",
-        "perp_volume_usd": 26855316.725,
-        "open_interest_usd": 16305033.454799999
+        "perp_volume_usd": 27018074.510000005,
+        "open_interest_usd": 16416938.520000001
       },
       {
         "sira": 50,
         "symbol": "TSLA",
-        "perp_volume_usd": 26658389.1596,
-        "open_interest_usd": 16522598.693400001
+        "perp_volume_usd": 26735832.5025,
+        "open_interest_usd": 16538263.0215
       },
       {
         "sira": 51,
         "symbol": "TRUMP",
-        "perp_volume_usd": 26005306.023900002,
-        "open_interest_usd": 10508564.4426
+        "perp_volume_usd": 26078698.775,
+        "open_interest_usd": 10503512.03
       },
       {
         "sira": 52,
         "symbol": "MSFT",
-        "perp_volume_usd": 25009492.5295,
-        "open_interest_usd": 3621953.8082
+        "perp_volume_usd": 25100708.208,
+        "open_interest_usd": 3613049.1647999994
       },
       {
         "sira": 53,
         "symbol": "MSTR",
-        "perp_volume_usd": 23977920.299999997,
-        "open_interest_usd": 5365583.5455
+        "perp_volume_usd": 24005854.864,
+        "open_interest_usd": 5376810.656
       },
       {
         "sira": 54,
         "symbol": "ALLO",
-        "perp_volume_usd": 23150053.2172,
-        "open_interest_usd": 4447920.7565
+        "perp_volume_usd": 23011089.712399997,
+        "open_interest_usd": 4460878.7088
       },
       {
         "sira": 55,
-        "symbol": "LA",
-        "perp_volume_usd": 22650428.4276,
-        "open_interest_usd": 1879829.6346
+        "symbol": "NVDA",
+        "perp_volume_usd": 22390249.494799998,
+        "open_interest_usd": 8132809.332200001
       },
       {
         "sira": 56,
-        "symbol": "NVDA",
-        "perp_volume_usd": 22559998.6998,
-        "open_interest_usd": 8131910.028300002
+        "symbol": "LA",
+        "perp_volume_usd": 22359640.6888,
+        "open_interest_usd": 1869208.3631999998
       },
       {
         "sira": 57,
         "symbol": "XPL",
-        "perp_volume_usd": 21665624.0971,
-        "open_interest_usd": 5424963.6598000005
+        "perp_volume_usd": 21573473.9418,
+        "open_interest_usd": 5430610.567799999
       },
       {
         "sira": 58,
         "symbol": "NBIS",
-        "perp_volume_usd": 21444206.9218,
-        "open_interest_usd": 1313367.2979000001
+        "perp_volume_usd": 21542455.0205,
+        "open_interest_usd": 1328812.7486
       },
       {
         "sira": 59,
         "symbol": "LTC",
-        "perp_volume_usd": 21396114.12,
-        "open_interest_usd": 20259727.37999999
+        "perp_volume_usd": 21207875.836,
+        "open_interest_usd": 20251065.708999995
       },
       {
         "sira": 60,
         "symbol": "BCH",
-        "perp_volume_usd": 19165220.351999998,
-        "open_interest_usd": 22351050.224000003
+        "perp_volume_usd": 19076809.527,
+        "open_interest_usd": 22361019.786000002
       },
       {
         "sira": 61,
         "symbol": "LIT",
-        "perp_volume_usd": 18563375.91,
-        "open_interest_usd": 12958472.51
+        "perp_volume_usd": 18517433.057,
+        "open_interest_usd": 12966660.8995
       },
       {
         "sira": 62,
         "symbol": "AMD",
-        "perp_volume_usd": 17999971.261299998,
-        "open_interest_usd": 2483412.0499999993
+        "perp_volume_usd": 18193697.008,
+        "open_interest_usd": 2551124.7681999994
       },
       {
         "sira": 63,
         "symbol": "ACH",
-        "perp_volume_usd": 15548389.8368,
-        "open_interest_usd": 436424.6016
+        "perp_volume_usd": 15460068.437800001,
+        "open_interest_usd": 429229.57420000003
       },
       {
         "sira": 64,
-        "symbol": "CAP",
-        "perp_volume_usd": 14822160.594,
-        "open_interest_usd": 1201461.334
+        "symbol": "META",
+        "perp_volume_usd": 14847324.36,
+        "open_interest_usd": 1532757.248
       },
       {
         "sira": 65,
-        "symbol": "META",
-        "perp_volume_usd": 14577021.3072,
-        "open_interest_usd": 1537382.3724000002
+        "symbol": "CAP",
+        "perp_volume_usd": 14546579.308,
+        "open_interest_usd": 1200640.406
       },
       {
         "sira": 66,
-        "symbol": "TAO",
-        "perp_volume_usd": 13221930.627,
-        "open_interest_usd": 10961458.91
+        "symbol": "MMT",
+        "perp_volume_usd": 13536210.8,
+        "open_interest_usd": 1740252.6400000001
       },
       {
         "sira": 67,
-        "symbol": "MMT",
-        "perp_volume_usd": 13183754.442000002,
-        "open_interest_usd": 1649284.2820000001
+        "symbol": "TAO",
+        "perp_volume_usd": 13192499.879999999,
+        "open_interest_usd": 10963220.459999999
       },
       {
         "sira": 68,
-        "symbol": "SLX",
-        "perp_volume_usd": 13032302.79,
-        "open_interest_usd": 3160485.965
+        "symbol": "LITE",
+        "perp_volume_usd": 13017151.42,
+        "open_interest_usd": 1436872.19
       },
       {
         "sira": 69,
         "symbol": "AVAX",
-        "perp_volume_usd": 12922544.332799999,
-        "open_interest_usd": 8940644.391600002
+        "perp_volume_usd": 12889489.212000001,
+        "open_interest_usd": 8942330.688000001
       },
       {
         "sira": 70,
-        "symbol": "LITE",
-        "perp_volume_usd": 12793577.9298,
-        "open_interest_usd": 1408780.3346999998
+        "symbol": "SLX",
+        "perp_volume_usd": 12864629.459999999,
+        "open_interest_usd": 3177472.835
       },
       {
         "sira": 71,
         "symbol": "ENA",
-        "perp_volume_usd": 12064074.4416,
-        "open_interest_usd": 3899600.0307000005
+        "perp_volume_usd": 12173782.633599998,
+        "open_interest_usd": 3973532.9814
       },
       {
         "sira": 72,
         "symbol": "BASED",
-        "perp_volume_usd": 11897917.499200001,
-        "open_interest_usd": 2907973.8176
+        "perp_volume_usd": 11847415.606,
+        "open_interest_usd": 2912352.3416000004
       },
       {
         "sira": 73,
         "symbol": "GOOGL",
-        "perp_volume_usd": 11239359.2085,
-        "open_interest_usd": 8599031.286
+        "perp_volume_usd": 11045408.400399998,
+        "open_interest_usd": 8595666.240699999
       },
       {
         "sira": 74,
         "symbol": "PENGU",
-        "perp_volume_usd": 10354036.7502,
-        "open_interest_usd": 3372598.377
+        "perp_volume_usd": 10390716.0441,
+        "open_interest_usd": 3390570.988
       },
       {
         "sira": 75,
         "symbol": "AAPL",
-        "perp_volume_usd": 10344630.523500001,
-        "open_interest_usd": 6790861.681500001
+        "perp_volume_usd": 10360668.843799999,
+        "open_interest_usd": 6792574.2324
       },
       {
         "sira": 76,
         "symbol": "ARM",
-        "perp_volume_usd": 10094677.802000001,
-        "open_interest_usd": 1100187.0121
+        "perp_volume_usd": 10257028.135,
+        "open_interest_usd": 1106248.1457999998
       },
       {
         "sira": 77,
         "symbol": "AAOI",
-        "perp_volume_usd": 10061312.219,
-        "open_interest_usd": 1512851.8159999999
+        "perp_volume_usd": 10136888.035199998,
+        "open_interest_usd": 1516966.8479999998
       },
       {
         "sira": 78,
         "symbol": "BOME",
-        "perp_volume_usd": 9613265.4605,
-        "open_interest_usd": 1555072.2473
+        "perp_volume_usd": 9636036.2196,
+        "open_interest_usd": 1554928.1622
       },
       {
         "sira": 79,
         "symbol": "XLM",
-        "perp_volume_usd": 9438213.0339,
-        "open_interest_usd": 8559371.469799997
+        "perp_volume_usd": 9419667.2628,
+        "open_interest_usd": 8564345.978399998
       },
       {
         "sira": 80,
-        "symbol": "PEOPLE",
-        "perp_volume_usd": 9354249.6888,
-        "open_interest_usd": 2571025.9104
+        "symbol": "DOT",
+        "perp_volume_usd": 9288257.800800001,
+        "open_interest_usd": 7978212.1034
       },
       {
         "sira": 81,
-        "symbol": "DOT",
-        "perp_volume_usd": 9314011.687199999,
-        "open_interest_usd": 7967137.543199999
+        "symbol": "PEOPLE",
+        "perp_volume_usd": 9280946.5155,
+        "open_interest_usd": 2558118.681
       },
       {
         "sira": 82,
         "symbol": "MUU",
-        "perp_volume_usd": 8991012.327000001,
-        "open_interest_usd": 713266.4658
+        "perp_volume_usd": 9137060.483000001,
+        "open_interest_usd": 716810.3940000001
       },
       {
         "sira": 83,
         "symbol": "OP",
-        "perp_volume_usd": 8643483.21386,
-        "open_interest_usd": 3250164.69575
+        "perp_volume_usd": 8760151.68764,
+        "open_interest_usd": 3249593.4532799996
       },
       {
         "sira": 84,
         "symbol": "WLFI",
-        "perp_volume_usd": 8371837.0836,
-        "open_interest_usd": 8097584.861099999
+        "perp_volume_usd": 8378408.0259,
+        "open_interest_usd": 8100877.9327
       },
       {
         "sira": 85,
         "symbol": "GLW",
-        "perp_volume_usd": 8273748.156,
-        "open_interest_usd": 2648722.0439999998
+        "perp_volume_usd": 8272624.065200001,
+        "open_interest_usd": 2666123.6652
       },
       {
         "sira": 86,
         "symbol": "APT",
-        "perp_volume_usd": 8212208.8384,
-        "open_interest_usd": 3710576.9455999997
+        "perp_volume_usd": 8216645.106799999,
+        "open_interest_usd": 3717955.2071999996
       },
       {
         "sira": 87,
         "symbol": "BE",
-        "perp_volume_usd": 8155962.1512,
-        "open_interest_usd": 867733.3264
+        "perp_volume_usd": 8182480.2976,
+        "open_interest_usd": 864286.5952
       },
       {
         "sira": 88,
         "symbol": "ORDI",
-        "perp_volume_usd": 8145150.356000001,
-        "open_interest_usd": 3946478.1448999997
+        "perp_volume_usd": 8162719.6947,
+        "open_interest_usd": 3960787.7114999997
       },
       {
         "sira": 89,
         "symbol": "TSM",
-        "perp_volume_usd": 7811229.075599999,
-        "open_interest_usd": 3943230.565499999
+        "perp_volume_usd": 7895773.0096,
+        "open_interest_usd": 3956720.0007999996
       },
       {
         "sira": 90,
         "symbol": "CBRS",
-        "perp_volume_usd": 7495201.204400001,
-        "open_interest_usd": 886466.1936
+        "perp_volume_usd": 7558485.4762,
+        "open_interest_usd": 914824.4176000002
       },
       {
         "sira": 91,
-        "symbol": "PI",
-        "perp_volume_usd": 7337062.17342,
-        "open_interest_usd": 2317794.80406
+        "symbol": "ROBO",
+        "perp_volume_usd": 7526450.64,
+        "open_interest_usd": 984118.6799999999
       },
       {
         "sira": 92,
-        "symbol": "ROBO",
-        "perp_volume_usd": 7201465.183999999,
-        "open_interest_usd": 974805.7919999999
+        "symbol": "PI",
+        "perp_volume_usd": 7381156.44528,
+        "open_interest_usd": 2320369.0313399998
       },
       {
         "sira": 93,
         "symbol": "ZIL",
-        "perp_volume_usd": 7093293.7501,
-        "open_interest_usd": 1076953.3907
+        "perp_volume_usd": 7086660.203000001,
+        "open_interest_usd": 1091154.3118
       },
       {
         "sira": 94,
         "symbol": "INJ",
-        "perp_volume_usd": 6964926.4229999995,
-        "open_interest_usd": 4800812.499
+        "perp_volume_usd": 6994754.0569,
+        "open_interest_usd": 4818072.356000001
       },
       {
         "sira": 95,
-        "symbol": "ASTER",
-        "perp_volume_usd": 6938464.324,
-        "open_interest_usd": 8682586.077
+        "symbol": "BONK",
+        "perp_volume_usd": 6951680.043,
+        "open_interest_usd": 2499315.4648
       },
       {
         "sira": 96,
-        "symbol": "BONK",
-        "perp_volume_usd": 6926629.236,
-        "open_interest_usd": 2487259.504
+        "symbol": "ASTER",
+        "perp_volume_usd": 6913242.2972,
+        "open_interest_usd": 8677146.7764
       },
       {
         "sira": 97,
         "symbol": "TRX",
-        "perp_volume_usd": 6584011.5984,
-        "open_interest_usd": 12642548.788800009
+        "perp_volume_usd": 6598347.142000001,
+        "open_interest_usd": 12662380.194500009
       },
       {
         "sira": 98,
         "symbol": "ICP",
-        "perp_volume_usd": 6564579.31989,
-        "open_interest_usd": 3706346.36463
+        "perp_volume_usd": 6502510.55326,
+        "open_interest_usd": 3708391.1853199997
       },
       {
         "sira": 99,
         "symbol": "JTO",
-        "perp_volume_usd": 6374706.062600001,
-        "open_interest_usd": 4623397.8035
+        "perp_volume_usd": 6404693.4456,
+        "open_interest_usd": 4644898.206
       },
       {
         "sira": 100,
         "symbol": "ETC",
-        "perp_volume_usd": 6209946.6496,
-        "open_interest_usd": 5456979.716800001
+        "perp_volume_usd": 6213480.756999999,
+        "open_interest_usd": 5460710.3100000005
       },
       {
         "sira": 101,
         "symbol": "ARB",
-        "perp_volume_usd": 6060849.755759999,
-        "open_interest_usd": 3874645.016999999
+        "perp_volume_usd": 6063913.91789,
+        "open_interest_usd": 3883941.4229299985
       },
       {
         "sira": 102,
         "symbol": "GRAM",
-        "perp_volume_usd": 5893091.867000001,
-        "open_interest_usd": 6904265.901000001
+        "perp_volume_usd": 5917517.193,
+        "open_interest_usd": 6923036.687
       },
       {
         "sira": 103,
         "symbol": "WDC",
-        "perp_volume_usd": 5863336.7233,
-        "open_interest_usd": 834255.8769999999
+        "perp_volume_usd": 5875637.7056,
+        "open_interest_usd": 845635.2059999999
       },
       {
         "sira": 104,
         "symbol": "OKB",
-        "perp_volume_usd": 5630305.5222,
-        "open_interest_usd": 17314113.3978
+        "perp_volume_usd": 5635455.2865,
+        "open_interest_usd": 17355660.03
       },
       {
         "sira": 105,
-        "symbol": "BILL",
-        "perp_volume_usd": 5615791.75,
-        "open_interest_usd": 1424870.7049999998
+        "symbol": "BSB",
+        "perp_volume_usd": 5557170.795,
+        "open_interest_usd": 2591502.36
       },
       {
         "sira": 106,
-        "symbol": "BSB",
-        "perp_volume_usd": 5538472.484999999,
-        "open_interest_usd": 2586951.465
+        "symbol": "RAVE",
+        "perp_volume_usd": 5469983.42128,
+        "open_interest_usd": 2071731.15488
       },
       {
         "sira": 107,
-        "symbol": "RAVE",
-        "perp_volume_usd": 5482086.09729,
-        "open_interest_usd": 2068057.2891
+        "symbol": "ORCL",
+        "perp_volume_usd": 5356636.147,
+        "open_interest_usd": 2514326.2564
       },
       {
         "sira": 108,
-        "symbol": "ORCL",
-        "perp_volume_usd": 5387289.3436,
-        "open_interest_usd": 2511795.1096000005
+        "symbol": "HOOD",
+        "perp_volume_usd": 5289821.8,
+        "open_interest_usd": 777023.4
       },
       {
         "sira": 109,
-        "symbol": "HOOD",
-        "perp_volume_usd": 5251114.888,
-        "open_interest_usd": 774054.319
+        "symbol": "BILL",
+        "perp_volume_usd": 5165435.572,
+        "open_interest_usd": 1429067.322
       },
       {
         "sira": 110,
         "symbol": "DASH",
-        "perp_volume_usd": 4923635.1263,
-        "open_interest_usd": 1644185.4549999998
+        "perp_volume_usd": 4949159.8440000005,
+        "open_interest_usd": 1650561.3618
       },
       {
         "sira": 111,
         "symbol": "LDO",
-        "perp_volume_usd": 4884468.0489,
-        "open_interest_usd": 3484964.9702
+        "perp_volume_usd": 4874692.5879999995,
+        "open_interest_usd": 3495284.6424999996
       },
       {
         "sira": 112,
         "symbol": "SPY",
-        "perp_volume_usd": 4473140.7948,
-        "open_interest_usd": 4267668.6482
+        "perp_volume_usd": 4488408.22,
+        "open_interest_usd": 4274386.879999999
       },
       {
         "sira": 113,
         "symbol": "PROS",
-        "perp_volume_usd": 4451385.6745,
-        "open_interest_usd": 780031.7005
+        "perp_volume_usd": 4424722.9776,
+        "open_interest_usd": 791764.0002
       },
       {
         "sira": 114,
         "symbol": "ETHFI",
-        "perp_volume_usd": 4423289.017,
-        "open_interest_usd": 1946847.089
+        "perp_volume_usd": 4418498.7697,
+        "open_interest_usd": 1947393.6218
       },
       {
         "sira": 115,
         "symbol": "HOME",
-        "perp_volume_usd": 4145265.8129999996,
-        "open_interest_usd": 1147874.6994
+        "perp_volume_usd": 4095170.7097,
+        "open_interest_usd": 1139234.8026
       },
       {
         "sira": 116,
         "symbol": "FLOW",
-        "perp_volume_usd": 3956648.031,
-        "open_interest_usd": 753231.4062
+        "perp_volume_usd": 3968403.2556000003,
+        "open_interest_usd": 757880.1994
       },
       {
         "sira": 117,
         "symbol": "H",
-        "perp_volume_usd": 3849462.4653000003,
-        "open_interest_usd": 2004763.7537999994
+        "perp_volume_usd": 3860539.5959999994,
+        "open_interest_usd": 2011154.6359999992
       },
       {
         "sira": 118,
         "symbol": "ZHIPU",
-        "perp_volume_usd": 3799144.3616,
-        "open_interest_usd": 246141.8764
+        "perp_volume_usd": 3832954.9764,
+        "open_interest_usd": 256150.9038
       },
       {
         "sira": 119,
-        "symbol": "EDGE",
-        "perp_volume_usd": 3751286.372,
-        "open_interest_usd": 2181714.15
+        "symbol": "AMZN",
+        "perp_volume_usd": 3757895.0623999997,
+        "open_interest_usd": 1953173.7455999998
       },
       {
         "sira": 120,
-        "symbol": "CHIP",
-        "perp_volume_usd": 3719546.532,
-        "open_interest_usd": 997519.302
+        "symbol": "EDGE",
+        "perp_volume_usd": 3727164.6500000004,
+        "open_interest_usd": 2182309.085
       },
       {
         "sira": 121,
         "symbol": "FARTCOIN",
-        "perp_volume_usd": 3692950.461,
-        "open_interest_usd": 2698853.742
+        "perp_volume_usd": 3684837.084,
+        "open_interest_usd": 2707873.4348
       },
       {
         "sira": 122,
         "symbol": "RIVER",
-        "perp_volume_usd": 3687612.063,
-        "open_interest_usd": 1686350.0100000002
+        "perp_volume_usd": 3670520.7552,
+        "open_interest_usd": 1687533.8688
       },
       {
         "sira": 123,
-        "symbol": "OPN",
-        "perp_volume_usd": 3682468.6875000005,
-        "open_interest_usd": 841418.023
+        "symbol": "CHIP",
+        "perp_volume_usd": 3665449.56,
+        "open_interest_usd": 1001181.186
       },
       {
         "sira": 124,
         "symbol": "COIN",
-        "perp_volume_usd": 3666765.821,
-        "open_interest_usd": 1365998.1664000002
+        "perp_volume_usd": 3650927.8065,
+        "open_interest_usd": 1365984.227
       },
       {
         "sira": 125,
-        "symbol": "AMZN",
-        "perp_volume_usd": 3654482.15,
-        "open_interest_usd": 1935353.89
+        "symbol": "OPN",
+        "perp_volume_usd": 3617743.7447,
+        "open_interest_usd": 834675.2247
       },
       {
         "sira": 126,
-        "symbol": "HBAR",
-        "perp_volume_usd": 3622508.525,
-        "open_interest_usd": 3473004.584
+        "symbol": "AGLD",
+        "perp_volume_usd": 3610853.034,
+        "open_interest_usd": 761028.826
       },
       {
         "sira": 127,
-        "symbol": "AGLD",
-        "perp_volume_usd": 3599285.0806,
-        "open_interest_usd": 756207.8396999999
+        "symbol": "HBAR",
+        "perp_volume_usd": 3598962.2763000005,
+        "open_interest_usd": 3482507.1648000004
       },
       {
         "sira": 128,
         "symbol": "AXTI",
-        "perp_volume_usd": 3555380.6456000004,
-        "open_interest_usd": 465353.6226
+        "perp_volume_usd": 3573580.3652,
+        "open_interest_usd": 466797.8111
       },
       {
         "sira": 129,
         "symbol": "SENT",
-        "perp_volume_usd": 3544803.9359999998,
-        "open_interest_usd": 847121.022
+        "perp_volume_usd": 3552959.2279999997,
+        "open_interest_usd": 841535.6039999999
       },
       {
         "sira": 130,
         "symbol": "CRV",
-        "perp_volume_usd": 3498649.2939999998,
-        "open_interest_usd": 4144749.0592
+        "perp_volume_usd": 3522340.7772,
+        "open_interest_usd": 4162665.1613999996
       },
       {
         "sira": 131,
         "symbol": "RKLB",
-        "perp_volume_usd": 3444086.096,
-        "open_interest_usd": 1448756.016
+        "perp_volume_usd": 3469035.7524,
+        "open_interest_usd": 1453086.1120000002
       },
       {
         "sira": 132,
         "symbol": "CHZ",
-        "perp_volume_usd": 3421344.7972,
-        "open_interest_usd": 1958129.6944000002
+        "perp_volume_usd": 3451112.3346,
+        "open_interest_usd": 1965343.3062
       },
       {
         "sira": 133,
-        "symbol": "NIGHT",
-        "perp_volume_usd": 3356232.4268000005,
-        "open_interest_usd": 1632852.945
+        "symbol": "O",
+        "perp_volume_usd": 3431313.4499999997,
+        "open_interest_usd": 1657400.04
       },
       {
         "sira": 134,
-        "symbol": "O",
-        "perp_volume_usd": 3350616.852,
-        "open_interest_usd": 1659109.872
+        "symbol": "CRWV",
+        "perp_volume_usd": 3362083.8048,
+        "open_interest_usd": 612775.6740000001
       },
       {
         "sira": 135,
-        "symbol": "CRWV",
-        "perp_volume_usd": 3350513.8342999998,
-        "open_interest_usd": 606960.1565
+        "symbol": "NIGHT",
+        "perp_volume_usd": 3347873.2821,
+        "open_interest_usd": 1630876.1349
       },
       {
         "sira": 136,
         "symbol": "TQQQ",
-        "perp_volume_usd": 3311746.284,
-        "open_interest_usd": 1725520.7200000002
+        "perp_volume_usd": 3332839.1530000004,
+        "open_interest_usd": 1733189.51
       },
       {
         "sira": 137,
         "symbol": "VVV",
-        "perp_volume_usd": 3237159.0076,
-        "open_interest_usd": 766807.2111000001
+        "perp_volume_usd": 3224240.96,
+        "open_interest_usd": 767488.6396
       },
       {
         "sira": 138,
-        "symbol": "IRYS",
-        "perp_volume_usd": 3185741.592,
-        "open_interest_usd": 485966.016
+        "symbol": "PIEVERSE",
+        "perp_volume_usd": 3131134.23,
+        "open_interest_usd": 2495647.56
       },
       {
         "sira": 139,
-        "symbol": "PIEVERSE",
-        "perp_volume_usd": 3148295.3699999996,
-        "open_interest_usd": 2491520.9699999997
+        "symbol": "ENSO",
+        "perp_volume_usd": 3129835.1615999998,
+        "open_interest_usd": 1097304.0511999999
       },
       {
         "sira": 140,
-        "symbol": "ENSO",
-        "perp_volume_usd": 3120597.0354,
-        "open_interest_usd": 1098388.6835999999
+        "symbol": "ARX",
+        "perp_volume_usd": 3109979.5599999996,
+        "open_interest_usd": 678309.144
       },
       {
         "sira": 141,
         "symbol": "SQQQ",
-        "perp_volume_usd": 3113053.5700000003,
-        "open_interest_usd": 401585.80000000005
+        "perp_volume_usd": 3069845.034,
+        "open_interest_usd": 400092.03800000006
       },
       {
         "sira": 142,
         "symbol": "EIGEN",
-        "perp_volume_usd": 3064537.855,
-        "open_interest_usd": 1029586.0874999999
+        "perp_volume_usd": 3069724.4965999997,
+        "open_interest_usd": 1030346.7149
       },
       {
         "sira": 143,
         "symbol": "ALGO",
-        "perp_volume_usd": 3053383.7088,
-        "open_interest_usd": 2232218.2348
+        "perp_volume_usd": 3063625.1076,
+        "open_interest_usd": 2240707.1088
       },
       {
         "sira": 144,
-        "symbol": "WIF",
-        "perp_volume_usd": 3022375.9132000003,
-        "open_interest_usd": 3135517.6052
+        "symbol": "AERO",
+        "perp_volume_usd": 3044246.785,
+        "open_interest_usd": 1351579.78
       },
       {
         "sira": 145,
-        "symbol": "AERO",
-        "perp_volume_usd": 3011657.116,
-        "open_interest_usd": 1344686.616
+        "symbol": "IRYS",
+        "perp_volume_usd": 3044028.275,
+        "open_interest_usd": 488535.015
       },
       {
         "sira": 146,
-        "symbol": "ARX",
-        "perp_volume_usd": 2986697.139,
-        "open_interest_usd": 692817.9149999999
+        "symbol": "WIF",
+        "perp_volume_usd": 3024839.8986,
+        "open_interest_usd": 3140071.964
       },
       {
         "sira": 147,
-        "symbol": "KIOXIA",
-        "perp_volume_usd": 2886360.4573999997,
-        "open_interest_usd": 560506.2040000001
+        "symbol": "ZRO",
+        "perp_volume_usd": 2913072.6473000003,
+        "open_interest_usd": 2611999.4369
       },
       {
         "sira": 148,
-        "symbol": "ZRO",
-        "perp_volume_usd": 2843477.4455999997,
-        "open_interest_usd": 2593765.5215999996
+        "symbol": "KIOXIA",
+        "perp_volume_usd": 2903622.336,
+        "open_interest_usd": 572291.856
       },
       {
         "sira": 149,
         "symbol": "TIA",
-        "perp_volume_usd": 2632692.4032,
-        "open_interest_usd": 1860346.0473000002
+        "perp_volume_usd": 2635860.0784,
+        "open_interest_usd": 1864037.9459999998
       },
       {
         "sira": 150,
-        "symbol": "0G",
-        "perp_volume_usd": 2623789.732,
-        "open_interest_usd": 653018.6364
+        "symbol": "GRASS",
+        "perp_volume_usd": 2594653.7416,
+        "open_interest_usd": 1502459.2516
       }
     ],
     "Bitget": [
       {
         "sira": 1,
         "symbol": "BTC",
-        "perp_volume_usd": 2575003870.61985,
-        "open_interest_usd": 2130830204.2551794
+        "perp_volume_usd": 2563281713.39907,
+        "open_interest_usd": 2142338895.2480993
       },
       {
         "sira": 2,
         "symbol": "ETH",
-        "perp_volume_usd": 1727708636.8451,
-        "open_interest_usd": 1461566436.5104008
+        "perp_volume_usd": 1726313435.1718,
+        "open_interest_usd": 1462009834.8405008
       },
       {
         "sira": 3,
         "symbol": "SNDK",
-        "perp_volume_usd": 605958860.33394,
-        "open_interest_usd": 48084730.88880005
+        "perp_volume_usd": 606099529.89476,
+        "open_interest_usd": 48460200.959440045
       },
       {
         "sira": 4,
         "symbol": "SOXL",
-        "perp_volume_usd": 486050356.4944,
-        "open_interest_usd": 38222316.5758999
+        "perp_volume_usd": 485663672.4171,
+        "open_interest_usd": 38108707.5374999
       },
       {
         "sira": 5,
         "symbol": "MU",
-        "perp_volume_usd": 373033945.1757,
-        "open_interest_usd": 23660637.553799994
+        "perp_volume_usd": 372146638.4411,
+        "open_interest_usd": 23866422.2576
       },
       {
         "sira": 6,
         "symbol": "SKHYNIX",
-        "perp_volume_usd": 326474002.9019,
-        "open_interest_usd": 30715631.603600025
+        "perp_volume_usd": 326341624.4458,
+        "open_interest_usd": 30790871.156100024
       },
       {
         "sira": 7,
         "symbol": "SKHY",
-        "perp_volume_usd": 309282297.9757,
-        "open_interest_usd": 20403732.3268
+        "perp_volume_usd": 308479706.2739,
+        "open_interest_usd": 20237622.059999987
       },
       {
         "sira": 8,
         "symbol": "KORU",
-        "perp_volume_usd": 273246639.33821,
-        "open_interest_usd": 39606006.49060001
+        "perp_volume_usd": 274065985.26602,
+        "open_interest_usd": 39972810.85666001
       },
       {
         "sira": 9,
         "symbol": "XAU",
-        "perp_volume_usd": 187026529.0158,
-        "open_interest_usd": 42395801.240100004
+        "perp_volume_usd": 187011608.2525,
+        "open_interest_usd": 42692173.904800005
       },
       {
         "sira": 10,
         "symbol": "SOL",
-        "perp_volume_usd": 178255892.7766,
-        "open_interest_usd": 336002283.0725
+        "perp_volume_usd": 177453037.6268,
+        "open_interest_usd": 336782554.43700004
       },
       {
         "sira": 11,
         "symbol": "DRAM",
-        "perp_volume_usd": 118011165.2115,
-        "open_interest_usd": 25871467.590999987
+        "perp_volume_usd": 117812336.2071,
+        "open_interest_usd": 26121168.672899988
       },
       {
         "sira": 12,
         "symbol": "SPCX",
-        "perp_volume_usd": 113369176.7107,
-        "open_interest_usd": 60598779.90320006
+        "perp_volume_usd": 113281115.0634,
+        "open_interest_usd": 60660320.25700005
       },
       {
         "sira": 13,
         "symbol": "CL",
-        "perp_volume_usd": 106945688.17681,
-        "open_interest_usd": 18896679.846639987
+        "perp_volume_usd": 107684332.86038,
+        "open_interest_usd": 19450484.71079999
       },
       {
         "sira": 14,
-        "symbol": "XRP",
-        "perp_volume_usd": 103495107.8809,
-        "open_interest_usd": 173854327.704
+        "symbol": "BANK",
+        "perp_volume_usd": 103727193.65917,
+        "open_interest_usd": 15369261.84762
       },
       {
         "sira": 15,
-        "symbol": "BANK",
-        "perp_volume_usd": 102939614.77085,
-        "open_interest_usd": 14695575.50484
+        "symbol": "XRP",
+        "perp_volume_usd": 100924218.5779,
+        "open_interest_usd": 173918378.6855
       },
       {
         "sira": 16,
         "symbol": "XAG",
-        "perp_volume_usd": 98626259.8546,
-        "open_interest_usd": 30111579.712800004
+        "perp_volume_usd": 98530896.7738,
+        "open_interest_usd": 30275684.210800007
       },
       {
         "sira": 17,
         "symbol": "COTI",
-        "perp_volume_usd": 93652721.95544,
-        "open_interest_usd": 5389082.7725
+        "perp_volume_usd": 93571674.64909,
+        "open_interest_usd": 5463336.3281
       },
       {
         "sira": 18,
         "symbol": "INTC",
-        "perp_volume_usd": 46965608.8873,
-        "open_interest_usd": 8381483.5578000005
+        "perp_volume_usd": 46895389.0923,
+        "open_interest_usd": 8356892.489600003
       },
       {
         "sira": 19,
         "symbol": "HYPE",
-        "perp_volume_usd": 46065859.53249,
-        "open_interest_usd": 142514561.37947005
+        "perp_volume_usd": 45436856.85122,
+        "open_interest_usd": 142898895.32237005
       },
       {
         "sira": 20,
         "symbol": "SAMSUNG",
-        "perp_volume_usd": 44023102.1025,
-        "open_interest_usd": 3602145.1440000096
+        "perp_volume_usd": 43912785.2047,
+        "open_interest_usd": 3628025.491400008
       },
       {
         "sira": 21,
         "symbol": "SNXX",
-        "perp_volume_usd": 34426110.85331,
-        "open_interest_usd": 2611243.0363600007
+        "perp_volume_usd": 34460461.87808,
+        "open_interest_usd": 2691190.623270001
       },
       {
         "sira": 22,
         "symbol": "ZEC",
-        "perp_volume_usd": 32402154.70624,
-        "open_interest_usd": 44374192.18439999
+        "perp_volume_usd": 32048436.81556,
+        "open_interest_usd": 44427390.63256999
       },
       {
         "sira": 23,
         "symbol": "UAI",
-        "perp_volume_usd": 31571547.25077,
-        "open_interest_usd": 4663225.28155
+        "perp_volume_usd": 31693222.24403,
+        "open_interest_usd": 4636963.025450001
       },
       {
         "sira": 24,
-        "symbol": "BZ",
-        "perp_volume_usd": 29714118.2909,
-        "open_interest_usd": 24604597.1752
+        "symbol": "EWY",
+        "perp_volume_usd": 29450256.159,
+        "open_interest_usd": 8206269.926400009
       },
       {
         "sira": 25,
-        "symbol": "EWY",
-        "perp_volume_usd": 29382323.4528,
-        "open_interest_usd": 8094545.786400009
+        "symbol": "BZ",
+        "perp_volume_usd": 29431966.0818,
+        "open_interest_usd": 24684184.675500005
       },
       {
         "sira": 26,
         "symbol": "DOGE",
-        "perp_volume_usd": 28439373.24535,
-        "open_interest_usd": 93610413.86532
+        "perp_volume_usd": 27827113.84683,
+        "open_interest_usd": 93810306.15359999
       },
       {
         "sira": 27,
         "symbol": "ADA",
-        "perp_volume_usd": 26503512.2229,
-        "open_interest_usd": 29894450.813
+        "perp_volume_usd": 26217793.7192,
+        "open_interest_usd": 29956143.8904
       },
       {
         "sira": 28,
         "symbol": "TSLA",
-        "perp_volume_usd": 22613675.2008,
-        "open_interest_usd": 13966438.668299992
+        "perp_volume_usd": 22699636.6596,
+        "open_interest_usd": 13973345.151999995
       },
       {
         "sira": 29,
         "symbol": "BEAT",
-        "perp_volume_usd": 22485069.9315,
-        "open_interest_usd": 6221852.706499999
+        "perp_volume_usd": 22474843.641,
+        "open_interest_usd": 6463860.972
       },
       {
         "sira": 30,
         "symbol": "QQQ",
-        "perp_volume_usd": 22340381.6251,
-        "open_interest_usd": 16783271.227500014
+        "perp_volume_usd": 22337670.4047,
+        "open_interest_usd": 16809603.427300014
       },
       {
         "sira": 31,
         "symbol": "XAUT",
-        "perp_volume_usd": 20658271.3431,
-        "open_interest_usd": 26758652.63599999
+        "perp_volume_usd": 20645478.2416,
+        "open_interest_usd": 26803644.79439999
       },
       {
         "sira": 32,
         "symbol": "SOXS",
-        "perp_volume_usd": 20118416.83688,
-        "open_interest_usd": 7503535.890599997
+        "perp_volume_usd": 20113056.42115,
+        "open_interest_usd": 7292700.895999995
       },
       {
         "sira": 33,
         "symbol": "NVDA",
-        "perp_volume_usd": 19551405.4354,
-        "open_interest_usd": 16982102.73
+        "perp_volume_usd": 19532671.1622,
+        "open_interest_usd": 17015425.966399997
       },
       {
         "sira": 34,
         "symbol": "ONDO",
-        "perp_volume_usd": 18454577.7488,
-        "open_interest_usd": 19396979.76015
+        "perp_volume_usd": 18844162.92267,
+        "open_interest_usd": 19444316.717749998
       },
       {
         "sira": 35,
         "symbol": "SHIB",
-        "perp_volume_usd": 18110299.84136,
-        "open_interest_usd": 9165905.39968971
+        "perp_volume_usd": 18162455.1592,
+        "open_interest_usd": 9165683.134256415
       },
       {
         "sira": 36,
         "symbol": "MSTR",
-        "perp_volume_usd": 17438853.6747,
-        "open_interest_usd": 5790896.990000001
+        "perp_volume_usd": 17420840.7729,
+        "open_interest_usd": 5809039.922400001
       },
       {
         "sira": 37,
         "symbol": "SKUU",
-        "perp_volume_usd": 17321790.95484,
-        "open_interest_usd": 1067752.4138400012
+        "perp_volume_usd": 17324262.74438,
+        "open_interest_usd": 1084303.8568600006
       },
       {
         "sira": 38,
         "symbol": "MSFT",
-        "perp_volume_usd": 16531399.478,
-        "open_interest_usd": 5430827.991900002
+        "perp_volume_usd": 16710477.5548,
+        "open_interest_usd": 5453394.6215
       },
       {
         "sira": 39,
         "symbol": "PEPE",
-        "perp_volume_usd": 16023833.0346885,
-        "open_interest_usd": 18756991.79104656
+        "perp_volume_usd": 15856783.3411309,
+        "open_interest_usd": 18836504.5011941
       },
       {
         "sira": 40,
         "symbol": "MRVL",
-        "perp_volume_usd": 15399134.4082,
-        "open_interest_usd": 3977037.4973999932
+        "perp_volume_usd": 15719753.3569,
+        "open_interest_usd": 4107401.500599994
       },
       {
         "sira": 41,
         "symbol": "AAVE",
-        "perp_volume_usd": 15291281.459,
-        "open_interest_usd": 20392978.344
+        "perp_volume_usd": 15321089.538,
+        "open_interest_usd": 20388178.693000004
       },
       {
         "sira": 42,
-        "symbol": "SUI",
-        "perp_volume_usd": 13887564.13438,
-        "open_interest_usd": 38491931.762200005
+        "symbol": "UNI",
+        "perp_volume_usd": 13838789.193,
+        "open_interest_usd": 13648609.216
       },
       {
         "sira": 43,
-        "symbol": "KAITO",
-        "perp_volume_usd": 13590927.84848,
-        "open_interest_usd": 10064418.693119997
+        "symbol": "SUI",
+        "perp_volume_usd": 13758064.6221,
+        "open_interest_usd": 38517539.550620005
       },
       {
         "sira": 44,
-        "symbol": "SKDD",
-        "perp_volume_usd": 13515322.19404,
-        "open_interest_usd": 1777169.765759999
+        "symbol": "KAITO",
+        "perp_volume_usd": 13401403.51141,
+        "open_interest_usd": 10077427.671749998
       },
       {
         "sira": 45,
-        "symbol": "UNI",
-        "perp_volume_usd": 13503563.647,
-        "open_interest_usd": 13401540.0
+        "symbol": "SKDD",
+        "perp_volume_usd": 13355218.71619,
+        "open_interest_usd": 1747346.2486599982
       },
       {
         "sira": 46,
         "symbol": "NEAR",
-        "perp_volume_usd": 13228716.9395,
-        "open_interest_usd": 27914475.7632
+        "perp_volume_usd": 13299974.8448,
+        "open_interest_usd": 27990798.9684
       },
       {
         "sira": 47,
         "symbol": "LINK",
-        "perp_volume_usd": 12409533.96,
-        "open_interest_usd": 32354729.392
+        "perp_volume_usd": 12459635.495,
+        "open_interest_usd": 32408714.394
       },
       {
         "sira": 48,
         "symbol": "CBRS",
-        "perp_volume_usd": 12281701.0301,
-        "open_interest_usd": 1143734.6303999987
+        "perp_volume_usd": 12222106.9292,
+        "open_interest_usd": 1131786.5910999987
       },
       {
         "sira": 49,
         "symbol": "UB",
-        "perp_volume_usd": 12052350.38942,
-        "open_interest_usd": 3157949.2260199995
+        "perp_volume_usd": 11939784.92831,
+        "open_interest_usd": 3144011.22
       },
       {
         "sira": 50,
         "symbol": "WLD",
-        "perp_volume_usd": 11564766.0525,
-        "open_interest_usd": 17969743.162800003
+        "perp_volume_usd": 11516302.762,
+        "open_interest_usd": 17964588.5072
       },
       {
         "sira": 51,
         "symbol": "ENA",
-        "perp_volume_usd": 10915139.77136,
-        "open_interest_usd": 13713459.454459999
+        "perp_volume_usd": 10867182.19466,
+        "open_interest_usd": 13785983.44235
       },
       {
         "sira": 52,
         "symbol": "GOOGL",
-        "perp_volume_usd": 10530521.3954,
-        "open_interest_usd": 11087480.792000007
+        "perp_volume_usd": 10370218.9192,
+        "open_interest_usd": 11104048.227500007
       },
       {
         "sira": 53,
         "symbol": "DEXE",
-        "perp_volume_usd": 10362399.7848,
-        "open_interest_usd": 5506893.3993
+        "perp_volume_usd": 10326187.6263,
+        "open_interest_usd": 5622275.624
       },
       {
         "sira": 54,
         "symbol": "AMD",
-        "perp_volume_usd": 10106775.9128,
-        "open_interest_usd": 2752590.9548000083
+        "perp_volume_usd": 10121783.9077,
+        "open_interest_usd": 2821459.2176000085
       },
       {
         "sira": 55,
         "symbol": "LITE",
-        "perp_volume_usd": 9427007.4284,
-        "open_interest_usd": 1968098.0032000009
+        "perp_volume_usd": 9460325.1931,
+        "open_interest_usd": 1962741.3050000004
       },
       {
         "sira": 56,
         "symbol": "TAO",
-        "perp_volume_usd": 9031415.0277,
-        "open_interest_usd": 18559470.319080003
+        "perp_volume_usd": 9006157.83888,
+        "open_interest_usd": 18571717.918
       },
       {
         "sira": 57,
         "symbol": "MUU",
-        "perp_volume_usd": 8815885.76588,
-        "open_interest_usd": 1446703.08048
+        "perp_volume_usd": 8826774.73134,
+        "open_interest_usd": 1476818.12544
       },
       {
         "sira": 58,
         "symbol": "NBIS",
-        "perp_volume_usd": 8638456.1345,
-        "open_interest_usd": 2096383.1867999989
+        "perp_volume_usd": 8618393.2508,
+        "open_interest_usd": 2112934.6391999987
       },
       {
         "sira": 59,
         "symbol": "ARM",
-        "perp_volume_usd": 8073117.3397,
-        "open_interest_usd": 1310269.097600004
+        "perp_volume_usd": 8109775.6789,
+        "open_interest_usd": 1357548.174000004
       },
       {
         "sira": 60,
         "symbol": "PAXG",
-        "perp_volume_usd": 7942560.87696,
-        "open_interest_usd": 7782591.2891999865
+        "perp_volume_usd": 7947935.79919,
+        "open_interest_usd": 7766024.693979986
       },
       {
         "sira": 61,
         "symbol": "META",
-        "perp_volume_usd": 7745793.3237,
-        "open_interest_usd": 3525047.876100002
+        "perp_volume_usd": 7781401.0817,
+        "open_interest_usd": 3520089.342000001
       },
       {
         "sira": 62,
         "symbol": "APT",
-        "perp_volume_usd": 7639745.4400181,
-        "open_interest_usd": 5729768.226722399
+        "perp_volume_usd": 7639589.6685325,
+        "open_interest_usd": 5747243.723738999
       },
       {
         "sira": 63,
-        "symbol": "CRCL",
-        "perp_volume_usd": 7195795.8576,
-        "open_interest_usd": 9905575.836000003
+        "symbol": "ESP",
+        "perp_volume_usd": 7380948.938928,
+        "open_interest_usd": 1174102.261472
       },
       {
         "sira": 64,
-        "symbol": "AAPL",
-        "perp_volume_usd": 7138877.5157,
-        "open_interest_usd": 8245377.364999999
+        "symbol": "CRCL",
+        "perp_volume_usd": 7210373.6147,
+        "open_interest_usd": 9902276.552000001
       },
       {
         "sira": 65,
-        "symbol": "ESP",
-        "perp_volume_usd": 7125248.588455,
-        "open_interest_usd": 1222699.678272
+        "symbol": "AAPL",
+        "perp_volume_usd": 7137571.2587,
+        "open_interest_usd": 8243716.637600001
       },
       {
         "sira": 66,
-        "symbol": "SOON",
-        "perp_volume_usd": 7121078.2444,
-        "open_interest_usd": 9850552.530000001
+        "symbol": "PUMP",
+        "perp_volume_usd": 6937281.427161,
+        "open_interest_usd": 6796461.149312
       },
       {
         "sira": 67,
-        "symbol": "PUMP",
-        "perp_volume_usd": 6935787.978006,
-        "open_interest_usd": 6747834.23447
+        "symbol": "SOON",
+        "perp_volume_usd": 6831911.9068,
+        "open_interest_usd": 9767852.6778
       },
       {
         "sira": 68,
         "symbol": "EUL",
-        "perp_volume_usd": 6818225.7089,
-        "open_interest_usd": 2811342.2646
+        "perp_volume_usd": 6615962.7113,
+        "open_interest_usd": 2850088.7736000004
       },
       {
         "sira": 69,
         "symbol": "BE",
-        "perp_volume_usd": 6553201.0509,
-        "open_interest_usd": 1150894.4184000008
+        "perp_volume_usd": 6527785.5665,
+        "open_interest_usd": 1173215.389600001
       },
       {
         "sira": 70,
         "symbol": "LA",
-        "perp_volume_usd": 6529388.0131,
-        "open_interest_usd": 1578411.64324
+        "perp_volume_usd": 6487843.67114,
+        "open_interest_usd": 1570205.5336
       },
       {
         "sira": 71,
-        "symbol": "BTW",
-        "perp_volume_usd": 6453223.422291,
-        "open_interest_usd": 3937416.678762
+        "symbol": "BNB",
+        "perp_volume_usd": 6280879.7859,
+        "open_interest_usd": 50298099.4494
       },
       {
         "sira": 72,
-        "symbol": "BNB",
-        "perp_volume_usd": 6255907.786,
-        "open_interest_usd": 50207719.67999999
+        "symbol": "BTW",
+        "perp_volume_usd": 6250220.26984,
+        "open_interest_usd": 3952297.53725
       },
       {
         "sira": 73,
         "symbol": "HOOD",
-        "perp_volume_usd": 5974998.9033,
-        "open_interest_usd": 2239227.6580000008
+        "perp_volume_usd": 5996815.5956,
+        "open_interest_usd": 2248279.9560000007
       },
       {
         "sira": 74,
-        "symbol": "ZAMA",
-        "perp_volume_usd": 5465287.078,
-        "open_interest_usd": 3531881.45681
+        "symbol": "GLW",
+        "perp_volume_usd": 5468808.3139,
+        "open_interest_usd": 3369937.2306000018
       },
       {
         "sira": 75,
         "symbol": "ACH",
-        "perp_volume_usd": 5463041.706104,
-        "open_interest_usd": 964953.420303
+        "perp_volume_usd": 5452180.210243,
+        "open_interest_usd": 966539.074241
       },
       {
         "sira": 76,
-        "symbol": "GLW",
-        "perp_volume_usd": 5424675.1449,
-        "open_interest_usd": 3348130.8700000024
+        "symbol": "ZAMA",
+        "perp_volume_usd": 5421810.8263,
+        "open_interest_usd": 3515286.12867
       },
       {
         "sira": 77,
         "symbol": "AMZN",
-        "perp_volume_usd": 5232553.5797,
-        "open_interest_usd": 5457248.4552000025
+        "perp_volume_usd": 5310234.7077,
+        "open_interest_usd": 5465179.628400004
       },
       {
         "sira": 78,
         "symbol": "XLM",
-        "perp_volume_usd": 5215403.48454,
-        "open_interest_usd": 19927509.2114
+        "perp_volume_usd": 5204859.38902,
+        "open_interest_usd": 19960011.711799998
       },
       {
         "sira": 79,
         "symbol": "AEON",
-        "perp_volume_usd": 5152321.71491,
-        "open_interest_usd": 1775463.94709
+        "perp_volume_usd": 5093746.8177,
+        "open_interest_usd": 1787819.3672999998
       },
       {
         "sira": 80,
         "symbol": "FIL",
-        "perp_volume_usd": 5009661.00441,
-        "open_interest_usd": 7412028.461379999
+        "perp_volume_usd": 5007138.25472,
+        "open_interest_usd": 7430038.03938
       },
       {
         "sira": 81,
         "symbol": "RE",
-        "perp_volume_usd": 4927202.25434,
-        "open_interest_usd": 2045794.97556
+        "perp_volume_usd": 4977539.2833,
+        "open_interest_usd": 2030525.6312
       },
       {
         "sira": 82,
-        "symbol": "LTC",
-        "perp_volume_usd": 4923128.478,
-        "open_interest_usd": 20462208.592
+        "symbol": "LAB",
+        "perp_volume_usd": 4927142.2333,
+        "open_interest_usd": 6576516.655800001
       },
       {
         "sira": 83,
-        "symbol": "LAB",
-        "perp_volume_usd": 4901306.5294,
-        "open_interest_usd": 6554808.6143
+        "symbol": "LTC",
+        "perp_volume_usd": 4876205.326,
+        "open_interest_usd": 20461836.285
       },
       {
         "sira": 84,
         "symbol": "AVAX",
-        "perp_volume_usd": 4736133.9506,
-        "open_interest_usd": 15814423.7775
+        "perp_volume_usd": 4866902.9425,
+        "open_interest_usd": 15919490.9113
       },
       {
         "sira": 85,
         "symbol": "INJ",
-        "perp_volume_usd": 4653312.0785,
-        "open_interest_usd": 9912727.475
+        "perp_volume_usd": 4621309.2816,
+        "open_interest_usd": 9927425.6884
       },
       {
         "sira": 86,
         "symbol": "AAOI",
-        "perp_volume_usd": 4593647.2348,
-        "open_interest_usd": 3024842.4840000006
+        "perp_volume_usd": 4610888.09,
+        "open_interest_usd": 3039291.4104000004
       },
       {
         "sira": 87,
         "symbol": "TSM",
-        "perp_volume_usd": 4496762.5431,
-        "open_interest_usd": 3940997.2560000033
+        "perp_volume_usd": 4499757.6533,
+        "open_interest_usd": 3965507.3200000036
       },
       {
         "sira": 88,
         "symbol": "ESPORTS",
-        "perp_volume_usd": 4397618.53887,
-        "open_interest_usd": 2616226.8846
+        "perp_volume_usd": 4422042.6417,
+        "open_interest_usd": 2603725.35894
       },
       {
         "sira": 89,
         "symbol": "EPIC",
-        "perp_volume_usd": 3948532.18834,
-        "open_interest_usd": 10175990.062
+        "perp_volume_usd": 3966144.01714,
+        "open_interest_usd": 10323388.62786
       },
       {
         "sira": 90,
         "symbol": "TRUMP",
-        "perp_volume_usd": 3887908.829,
-        "open_interest_usd": 5414282.8299
+        "perp_volume_usd": 3885384.352,
+        "open_interest_usd": 5413678.5969
       },
       {
         "sira": 91,
         "symbol": "FARTCOIN",
-        "perp_volume_usd": 3796388.8198,
-        "open_interest_usd": 6620948.199619999
+        "perp_volume_usd": 3793616.55832,
+        "open_interest_usd": 6634773.28773
       },
       {
         "sira": 92,
         "symbol": "QCOM",
-        "perp_volume_usd": 3477686.8578,
-        "open_interest_usd": 2756622.774399999
+        "perp_volume_usd": 3471546.4721,
+        "open_interest_usd": 2777613.4691999992
       },
       {
         "sira": 93,
         "symbol": "DOT",
-        "perp_volume_usd": 3377743.876,
-        "open_interest_usd": 15059194.83
+        "perp_volume_usd": 3376656.119,
+        "open_interest_usd": 15110975.334
       },
       {
         "sira": 94,
         "symbol": "PLTR",
-        "perp_volume_usd": 3354883.8697,
-        "open_interest_usd": 2482291.8623999986
+        "perp_volume_usd": 3337060.341,
+        "open_interest_usd": 2476201.3985999986
       },
       {
         "sira": 95,
         "symbol": "ORCL",
-        "perp_volume_usd": 3302976.2307,
-        "open_interest_usd": 4175587.4499000027
+        "perp_volume_usd": 3308145.3098,
+        "open_interest_usd": 4191772.2903000037
       },
       {
         "sira": 96,
         "symbol": "XPL",
-        "perp_volume_usd": 3263707.13806,
-        "open_interest_usd": 5262347.9865
+        "perp_volume_usd": 3247620.32125,
+        "open_interest_usd": 5258525.3536
       },
       {
         "sira": 97,
         "symbol": "RAM",
-        "perp_volume_usd": 3249103.60694,
-        "open_interest_usd": 674858.6255999999
+        "perp_volume_usd": 3242350.69729,
+        "open_interest_usd": 688509.78248
       },
       {
         "sira": 98,
         "symbol": "COIN",
-        "perp_volume_usd": 3159866.1712,
-        "open_interest_usd": 3900951.4895000006
+        "perp_volume_usd": 3135405.3949,
+        "open_interest_usd": 3903914.609
       },
       {
         "sira": 99,
         "symbol": "ZHIPU",
-        "perp_volume_usd": 3100640.1848,
-        "open_interest_usd": 753876.9917999984
+        "perp_volume_usd": 3106790.9648,
+        "open_interest_usd": 755861.5383999983
       },
       {
         "sira": 100,
         "symbol": "RKLB",
-        "perp_volume_usd": 3080010.078,
-        "open_interest_usd": 2902427.983600001
+        "perp_volume_usd": 3081234.0712,
+        "open_interest_usd": 2897372.666400001
       },
       {
         "sira": 101,
-        "symbol": "BCH",
-        "perp_volume_usd": 3016939.2955,
-        "open_interest_usd": 13008989.6262
+        "symbol": "PEOPLE",
+        "perp_volume_usd": 2998394.588078,
+        "open_interest_usd": 1572926.0531849999
       },
       {
         "sira": 102,
-        "symbol": "PEOPLE",
-        "perp_volume_usd": 3001274.121692,
-        "open_interest_usd": 1580735.045083
+        "symbol": "BCH",
+        "perp_volume_usd": 2977674.764,
+        "open_interest_usd": 13014717.952
       },
       {
         "sira": 103,
         "symbol": "FET",
-        "perp_volume_usd": 2920543.233,
-        "open_interest_usd": 10719236.034000002
+        "perp_volume_usd": 2866040.3478,
+        "open_interest_usd": 10747748.613
       },
       {
         "sira": 104,
         "symbol": "PENGU",
-        "perp_volume_usd": 2833176.090124,
-        "open_interest_usd": 4804076.654406
+        "perp_volume_usd": 2826661.138952,
+        "open_interest_usd": 4816102.71351
       },
       {
         "sira": 105,
         "symbol": "KIOXIA",
-        "perp_volume_usd": 2652424.8229,
-        "open_interest_usd": 660685.2460000002
+        "perp_volume_usd": 2648713.1148,
+        "open_interest_usd": 665990.432
       },
       {
         "sira": 106,
         "symbol": "OP",
-        "perp_volume_usd": 2570705.91899,
-        "open_interest_usd": 3779897.2442400004
+        "perp_volume_usd": 2592151.82163,
+        "open_interest_usd": 3747971.90157
       },
       {
         "sira": 107,
-        "symbol": "ZIL",
-        "perp_volume_usd": 2540778.671404,
-        "open_interest_usd": 1180974.55905
+        "symbol": "SPY",
+        "perp_volume_usd": 2514505.6684,
+        "open_interest_usd": 15733811.3628
       },
       {
         "sira": 108,
-        "symbol": "SPY",
-        "perp_volume_usd": 2524087.3113,
-        "open_interest_usd": 15730126.724000001
+        "symbol": "ZIL",
+        "perp_volume_usd": 2493204.988733,
+        "open_interest_usd": 1187831.300436
       },
       {
         "sira": 109,
-        "symbol": "US",
-        "perp_volume_usd": 2483850.559909,
-        "open_interest_usd": 16688741.270496
+        "symbol": "INTW",
+        "perp_volume_usd": 2474930.01067,
+        "open_interest_usd": 82965.77792
       },
       {
         "sira": 110,
         "symbol": "XPT",
-        "perp_volume_usd": 2449965.60168,
-        "open_interest_usd": 1042686.5733899999
+        "perp_volume_usd": 2461416.79085,
+        "open_interest_usd": 1045685.2702800002
       },
       {
         "sira": 111,
-        "symbol": "INTW",
-        "perp_volume_usd": 2428823.35235,
-        "open_interest_usd": 80996.36995999998
+        "symbol": "US",
+        "perp_volume_usd": 2456666.254163,
+        "open_interest_usd": 16334828.59411
       },
       {
         "sira": 112,
         "symbol": "1000BONK",
-        "perp_volume_usd": 2401834.89185,
-        "open_interest_usd": 4763821.8973590005
+        "perp_volume_usd": 2396830.451403,
+        "open_interest_usd": 4780008.26808
       },
       {
         "sira": 113,
         "symbol": "SEI",
-        "perp_volume_usd": 2254606.58547,
-        "open_interest_usd": 5577905.03004
+        "perp_volume_usd": 2251183.16899,
+        "open_interest_usd": 5583957.99584
       },
       {
         "sira": 114,
         "symbol": "TIA",
-        "perp_volume_usd": 2196819.7462,
-        "open_interest_usd": 2757274.10013
+        "perp_volume_usd": 2196128.57547,
+        "open_interest_usd": 2765000.3988599996
       },
       {
         "sira": 115,
         "symbol": "ORDI",
-        "perp_volume_usd": 2163237.84152,
-        "open_interest_usd": 1884322.721879999
+        "perp_volume_usd": 2156452.03941,
+        "open_interest_usd": 1880633.0408999992
       },
       {
         "sira": 116,
-        "symbol": "PRL",
-        "perp_volume_usd": 2113476.8257,
-        "open_interest_usd": 1835519.042
+        "symbol": "HOLO",
+        "perp_volume_usd": 2080459.23213,
+        "open_interest_usd": 921916.9349400001
       },
       {
         "sira": 117,
-        "symbol": "HOLO",
-        "perp_volume_usd": 2096514.47421,
-        "open_interest_usd": 941775.96039
+        "symbol": "PRL",
+        "perp_volume_usd": 2070445.8821,
+        "open_interest_usd": 1842678.7042
       },
       {
         "sira": 118,
-        "symbol": "PI",
-        "perp_volume_usd": 2079015.6478,
-        "open_interest_usd": 3918146.97
+        "symbol": "RENDER",
+        "perp_volume_usd": 2057238.28857,
+        "open_interest_usd": 6594853.800120001
       },
       {
         "sira": 119,
-        "symbol": "RENDER",
-        "perp_volume_usd": 2055830.80239,
-        "open_interest_usd": 6585466.0529000005
+        "symbol": "PI",
+        "perp_volume_usd": 2057107.1726,
+        "open_interest_usd": 3921285.056
       },
       {
         "sira": 120,
         "symbol": "VELVET",
-        "perp_volume_usd": 2030745.24955,
-        "open_interest_usd": 1733638.8228
+        "perp_volume_usd": 2037402.90855,
+        "open_interest_usd": 1722208.3975499999
       },
       {
         "sira": 121,
         "symbol": "TQQQ",
-        "perp_volume_usd": 2024284.3368,
-        "open_interest_usd": 3841233.5738999997
+        "perp_volume_usd": 2028794.9088,
+        "open_interest_usd": 3867179.109400001
       },
       {
         "sira": 122,
         "symbol": "ALLO",
-        "perp_volume_usd": 2007565.00334,
-        "open_interest_usd": 3338064.36124
+        "perp_volume_usd": 2007394.96386,
+        "open_interest_usd": 3325916.05662
       },
       {
         "sira": 123,
         "symbol": "WDC",
-        "perp_volume_usd": 1998519.4813,
-        "open_interest_usd": 1190875.683800001
+        "perp_volume_usd": 1982815.3123,
+        "open_interest_usd": 1190835.6800000009
       },
       {
         "sira": 124,
         "symbol": "ZHIPUHKD",
-        "perp_volume_usd": 1948468.2552,
-        "open_interest_usd": 13122.769600001111
+        "perp_volume_usd": 1948808.2953,
+        "open_interest_usd": 13121.70000000111
       },
       {
         "sira": 125,
-        "symbol": "EVAA",
-        "perp_volume_usd": 1938226.8263,
-        "open_interest_usd": 2219246.3279999997
+        "symbol": "VRT",
+        "perp_volume_usd": 1913187.0605,
+        "open_interest_usd": 117753.3284000009
       },
       {
         "sira": 126,
-        "symbol": "VRT",
-        "perp_volume_usd": 1903359.4704,
-        "open_interest_usd": 120262.21680000087
+        "symbol": "EVAA",
+        "perp_volume_usd": 1900022.3339,
+        "open_interest_usd": 2220252.9376
       },
       {
         "sira": 127,
         "symbol": "LDO",
-        "perp_volume_usd": 1885304.01198,
-        "open_interest_usd": 2593196.21568
+        "perp_volume_usd": 1874505.26822,
+        "open_interest_usd": 2601959.4288
       },
       {
         "sira": 128,
         "symbol": "STXSTOCK",
-        "perp_volume_usd": 1859921.5061,
-        "open_interest_usd": 433832.75520000013
+        "perp_volume_usd": 1844306.8243,
+        "open_interest_usd": 436251.75220000005
       },
       {
         "sira": 129,
-        "symbol": "TRX",
-        "perp_volume_usd": 1851598.82804,
-        "open_interest_usd": 8792974.580389999
+        "symbol": "GRAM",
+        "perp_volume_usd": 1837218.9646,
+        "open_interest_usd": 4623445.820249998
       },
       {
         "sira": 130,
-        "symbol": "GRAM",
-        "perp_volume_usd": 1845844.71075,
-        "open_interest_usd": 4615219.542749998
+        "symbol": "TRX",
+        "perp_volume_usd": 1816856.91547,
+        "open_interest_usd": 8796106.1916
       },
       {
         "sira": 131,
         "symbol": "SQQQ",
-        "perp_volume_usd": 1796828.4304,
-        "open_interest_usd": 3750650.7332
+        "perp_volume_usd": 1799748.1004,
+        "open_interest_usd": 3718560.3000000003
       },
       {
         "sira": 132,
-        "symbol": "ARB",
-        "perp_volume_usd": 1770425.373213,
-        "open_interest_usd": 7855998.310892999
+        "symbol": "MMT",
+        "perp_volume_usd": 1791171.2163,
+        "open_interest_usd": 1764598.6674000002
       },
       {
         "sira": 133,
-        "symbol": "MMT",
-        "perp_volume_usd": 1767893.7595,
-        "open_interest_usd": 1737537.7060999998
+        "symbol": "ARB",
+        "perp_volume_usd": 1770065.445214,
+        "open_interest_usd": 7863896.469909999
       },
       {
         "sira": 134,
         "symbol": "BGB",
-        "perp_volume_usd": 1727998.0555,
-        "open_interest_usd": 15274157.877600001
+        "perp_volume_usd": 1715017.4577,
+        "open_interest_usd": 15263114.4512
       },
       {
         "sira": 135,
         "symbol": "HBAR",
-        "perp_volume_usd": 1693304.99794,
-        "open_interest_usd": 9960008.06731
+        "perp_volume_usd": 1680534.72295,
+        "open_interest_usd": 9990903.7081
       },
       {
         "sira": 136,
         "symbol": "HYUNDAI",
-        "perp_volume_usd": 1690500.9554,
-        "open_interest_usd": 505476.75659999996
+        "perp_volume_usd": 1673291.7231,
+        "open_interest_usd": 506859.0767999999
       },
       {
         "sira": 137,
-        "symbol": "WLFI",
-        "perp_volume_usd": 1631619.70404,
-        "open_interest_usd": 8159992.159139999
+        "symbol": "MINIMAX",
+        "perp_volume_usd": 1629881.6662,
+        "open_interest_usd": 688422.1200000002
       },
       {
         "sira": 138,
-        "symbol": "MINIMAX",
-        "perp_volume_usd": 1629533.7003,
-        "open_interest_usd": 686256.8529000003
+        "symbol": "WLFI",
+        "perp_volume_usd": 1627482.01372,
+        "open_interest_usd": 8159840.39032
       },
       {
         "sira": 139,
-        "symbol": "VANRY",
-        "perp_volume_usd": 1604432.949405,
-        "open_interest_usd": 1136406.2076060001
+        "symbol": "ARX",
+        "perp_volume_usd": 1594885.07221,
+        "open_interest_usd": 1029649.7538899999
       },
       {
         "sira": 140,
-        "symbol": "ICP",
-        "perp_volume_usd": 1583378.45784,
-        "open_interest_usd": 4770388.07032
+        "symbol": "VANRY",
+        "perp_volume_usd": 1583383.329879,
+        "open_interest_usd": 1136171.102766
       },
       {
         "sira": 141,
-        "symbol": "ARX",
-        "perp_volume_usd": 1569775.21018,
-        "open_interest_usd": 1021192.4628
+        "symbol": "ICP",
+        "perp_volume_usd": 1577682.37476,
+        "open_interest_usd": 4769278.5218
       },
       {
         "sira": 142,
         "symbol": "EIGEN",
-        "perp_volume_usd": 1544483.0011,
-        "open_interest_usd": 1333104.7642
+        "perp_volume_usd": 1545771.4863,
+        "open_interest_usd": 1337939.7285
       },
       {
         "sira": 143,
         "symbol": "JUP",
-        "perp_volume_usd": 1503574.6936,
-        "open_interest_usd": 3669805.8372
+        "perp_volume_usd": 1500227.4409,
+        "open_interest_usd": 3678249.5379
       },
       {
         "sira": 144,
         "symbol": "DIA",
-        "perp_volume_usd": 1500877.0467,
-        "open_interest_usd": 733983.9612
+        "perp_volume_usd": 1496149.6549,
+        "open_interest_usd": 735309.8326999999
       },
       {
         "sira": 145,
-        "symbol": "BOT",
-        "perp_volume_usd": 1487653.1516,
-        "open_interest_usd": 100873.76079999996
+        "symbol": "ETC",
+        "perp_volume_usd": 1475906.099,
+        "open_interest_usd": 7344947.983999999
       },
       {
         "sira": 146,
-        "symbol": "ETC",
-        "perp_volume_usd": 1477230.932,
-        "open_interest_usd": 7337313.884000001
+        "symbol": "BOT",
+        "perp_volume_usd": 1474736.3332,
+        "open_interest_usd": 97719.65839999997
       },
       {
         "sira": 147,
         "symbol": "RIVER",
-        "perp_volume_usd": 1474787.811,
-        "open_interest_usd": 4112790.888
+        "perp_volume_usd": 1460772.411,
+        "open_interest_usd": 4115594.0100000002
       },
       {
         "sira": 148,
         "symbol": "ENSO",
-        "perp_volume_usd": 1439550.0535,
-        "open_interest_usd": 696633.2232
+        "perp_volume_usd": 1443741.3842,
+        "open_interest_usd": 693559.2301
       },
       {
         "sira": 149,
         "symbol": "MSFU",
-        "perp_volume_usd": 1435720.03312,
-        "open_interest_usd": 135959.49221999984
+        "perp_volume_usd": 1437142.34838,
+        "open_interest_usd": 133243.85159999985
       },
       {
         "sira": 150,
-        "symbol": "ANTHROPIC",
-        "perp_volume_usd": 1428568.5199,
-        "open_interest_usd": 3483926.6188000008
+        "symbol": "BOME",
+        "perp_volume_usd": 1428242.3301652,
+        "open_interest_usd": 1896093.872575
       }
     ],
     "Gate": [
       {
         "sira": 1,
         "symbol": "ETH",
-        "perp_volume_usd": 3944247232.0,
-        "open_interest_usd": 2484867447.2160006
+        "perp_volume_usd": 3960580773.0,
+        "open_interest_usd": 2489655596.7278
       },
       {
         "sira": 2,
         "symbol": "BTC",
-        "perp_volume_usd": 3564181463.0,
-        "open_interest_usd": 3997241924.3598404
+        "perp_volume_usd": 3575890264.0,
+        "open_interest_usd": 3994525229.5569763
       },
       {
         "sira": 3,
         "symbol": "SNDK",
-        "perp_volume_usd": 481574106.0,
-        "open_interest_usd": 145064962.1872
+        "perp_volume_usd": 485114708.0,
+        "open_interest_usd": 145414521.1914
       },
       {
         "sira": 4,
         "symbol": "SKHYNIX",
-        "perp_volume_usd": 462366377.0,
-        "open_interest_usd": 101154579.35620001
+        "perp_volume_usd": 469265238.0,
+        "open_interest_usd": 101939081.4736
       },
       {
         "sira": 5,
         "symbol": "SOL",
-        "perp_volume_usd": 271554228.0,
-        "open_interest_usd": 573703944.3
+        "perp_volume_usd": 272066033.0,
+        "open_interest_usd": 574368217.92
       },
       {
         "sira": 6,
         "symbol": "XAU",
-        "perp_volume_usd": 230164801.0,
-        "open_interest_usd": 198237551.80917603
+        "perp_volume_usd": 232532647.0,
+        "open_interest_usd": 192675093.6807
       },
       {
         "sira": 7,
         "symbol": "BANK",
-        "perp_volume_usd": 108542979.0,
-        "open_interest_usd": 4129526.72
+        "perp_volume_usd": 111914411.0,
+        "open_interest_usd": 3811091.02
       },
       {
         "sira": 8,
         "symbol": "MU",
-        "perp_volume_usd": 98386723.0,
-        "open_interest_usd": 47192122.475999996
+        "perp_volume_usd": 98790931.0,
+        "open_interest_usd": 46775857.986
       },
       {
         "sira": 9,
         "symbol": "XAG",
-        "perp_volume_usd": 95233737.0,
-        "open_interest_usd": 73544485.44352
+        "perp_volume_usd": 96208111.0,
+        "open_interest_usd": 71033583.5136
       },
       {
         "sira": 10,
         "symbol": "SOXL",
-        "perp_volume_usd": 77607655.0,
-        "open_interest_usd": 10309875.051
+        "perp_volume_usd": 77934248.0,
+        "open_interest_usd": 10233697.4856
       },
       {
         "sira": 11,
         "symbol": "XRP",
-        "perp_volume_usd": 62865295.0,
-        "open_interest_usd": 219383560.032
+        "perp_volume_usd": 62938041.0,
+        "open_interest_usd": 219472035.472
       },
       {
         "sira": 12,
         "symbol": "SKHY",
-        "perp_volume_usd": 58423359.0,
-        "open_interest_usd": 11858695.941
+        "perp_volume_usd": 58836676.0,
+        "open_interest_usd": 12126337.7048
       },
       {
         "sira": 13,
         "symbol": "CL",
-        "perp_volume_usd": 52392135.0,
-        "open_interest_usd": 8917420.839599999
+        "perp_volume_usd": 52864356.0,
+        "open_interest_usd": 8938841.516999999
       },
       {
         "sira": 14,
         "symbol": "AKE",
-        "perp_volume_usd": 44262063.0,
-        "open_interest_usd": 8255113.898399999
+        "perp_volume_usd": 44897347.0,
+        "open_interest_usd": 8294417.591
       },
       {
         "sira": 15,
         "symbol": "SPCX",
-        "perp_volume_usd": 36097036.0,
-        "open_interest_usd": 65262168.50400001
+        "perp_volume_usd": 36455751.0,
+        "open_interest_usd": 65324331.4136
       },
       {
         "sira": 16,
         "symbol": "DOGE",
-        "perp_volume_usd": 32017101.0,
-        "open_interest_usd": 206899413.7968
+        "perp_volume_usd": 32111760.0,
+        "open_interest_usd": 207336380.076
       },
       {
         "sira": 17,
         "symbol": "COTI",
-        "perp_volume_usd": 25408718.0,
-        "open_interest_usd": 1733111.2042399999
+        "perp_volume_usd": 25641624.0,
+        "open_interest_usd": 1842002.00368
       },
       {
         "sira": 18,
         "symbol": "CXMT",
-        "perp_volume_usd": 24662399.0,
-        "open_interest_usd": 13460457.584
+        "perp_volume_usd": 24853834.0,
+        "open_interest_usd": 13560664.5
       },
       {
         "sira": 19,
         "symbol": "BEAT",
-        "perp_volume_usd": 24501344.0,
-        "open_interest_usd": 3581127.5919999997
+        "perp_volume_usd": 24791042.0,
+        "open_interest_usd": 3747262.784
       },
       {
         "sira": 20,
         "symbol": "XAUT",
-        "perp_volume_usd": 21148874.0,
-        "open_interest_usd": 128460809.1648
+        "perp_volume_usd": 21196452.0,
+        "open_interest_usd": 128619236.04360001
       },
       {
         "sira": 21,
         "symbol": "HYPE",
-        "perp_volume_usd": 19425537.0,
-        "open_interest_usd": 26079007.011200003
+        "perp_volume_usd": 19473393.0,
+        "open_interest_usd": 26146005.4842
       },
       {
         "sira": 22,
         "symbol": "DRAM",
-        "perp_volume_usd": 19285297.0,
-        "open_interest_usd": 3784279.254
+        "perp_volume_usd": 19451065.0,
+        "open_interest_usd": 3803328.0000000005
       },
       {
         "sira": 23,
         "symbol": "UAI",
-        "perp_volume_usd": 19274691.0,
-        "open_interest_usd": 1514055.4494
+        "perp_volume_usd": 19415484.0,
+        "open_interest_usd": 1507467.3432
       },
       {
         "sira": 24,
         "symbol": "SAMSUNG",
-        "perp_volume_usd": 17120750.0,
-        "open_interest_usd": 7904484.9078
+        "perp_volume_usd": 17178333.0,
+        "open_interest_usd": 8012109.835
       },
       {
         "sira": 25,
         "symbol": "BNB",
-        "perp_volume_usd": 15130011.0,
-        "open_interest_usd": 27435712.1257
+        "perp_volume_usd": 15214416.0,
+        "open_interest_usd": 27444786.0821
       },
       {
         "sira": 26,
         "symbol": "ADA",
-        "perp_volume_usd": 14900011.0,
-        "open_interest_usd": 52341425.496
+        "perp_volume_usd": 14974422.0,
+        "open_interest_usd": 52782202.559999995
       },
       {
         "sira": 27,
         "symbol": "ZEC",
-        "perp_volume_usd": 14750432.0,
-        "open_interest_usd": 17897252.735999998
+        "perp_volume_usd": 14809273.0,
+        "open_interest_usd": 17900911.4744
       },
       {
         "sira": 28,
         "symbol": "EWY",
-        "perp_volume_usd": 14227611.0,
-        "open_interest_usd": 6379546.11
+        "perp_volume_usd": 14244349.0,
+        "open_interest_usd": 6457601.3734
       },
       {
         "sira": 29,
         "symbol": "UNI",
-        "perp_volume_usd": 13713206.0,
-        "open_interest_usd": 8089542.61
+        "perp_volume_usd": 14229483.0,
+        "open_interest_usd": 8253048.767999999
       },
       {
         "sira": 30,
         "symbol": "PEPE",
-        "perp_volume_usd": 13085333.0,
-        "open_interest_usd": 71205231.74
+        "perp_volume_usd": 13185245.0,
+        "open_interest_usd": 72214830.60000001
       },
       {
         "sira": 31,
-        "symbol": "SNXX",
-        "perp_volume_usd": 11653487.0,
-        "open_interest_usd": 1480525.0980000002
+        "symbol": "BZ",
+        "perp_volume_usd": 11738753.0,
+        "open_interest_usd": 3762117.3824000005
       },
       {
         "sira": 32,
-        "symbol": "BZ",
-        "perp_volume_usd": 11557489.0,
-        "open_interest_usd": 3740837.9652
+        "symbol": "SNXX",
+        "perp_volume_usd": 11675258.0,
+        "open_interest_usd": 1546879.1772
       },
       {
         "sira": 33,
         "symbol": "KAITO",
-        "perp_volume_usd": 10272538.0,
-        "open_interest_usd": 1656950.5788
+        "perp_volume_usd": 10304020.0,
+        "open_interest_usd": 1650839.8592
       },
       {
         "sira": 34,
         "symbol": "WLD",
-        "perp_volume_usd": 10181931.0,
-        "open_interest_usd": 4687937.1608
+        "perp_volume_usd": 10227426.0,
+        "open_interest_usd": 4689840.8784
       },
       {
         "sira": 35,
         "symbol": "ONDO",
-        "perp_volume_usd": 9469759.0,
-        "open_interest_usd": 4757416.96
+        "perp_volume_usd": 9621414.0,
+        "open_interest_usd": 4789883.867
       },
       {
         "sira": 36,
         "symbol": "AAVE",
-        "perp_volume_usd": 8838195.0,
-        "open_interest_usd": 6127208.1864
+        "perp_volume_usd": 8897473.0,
+        "open_interest_usd": 6104251.1184
       },
       {
         "sira": 37,
         "symbol": "SUI",
-        "perp_volume_usd": 8444598.0,
-        "open_interest_usd": 73012744.9824
+        "perp_volume_usd": 8479828.0,
+        "open_interest_usd": 72963385.74
       },
       {
         "sira": 38,
         "symbol": "UB",
-        "perp_volume_usd": 8347407.0,
-        "open_interest_usd": 3908514.36
+        "perp_volume_usd": 8367529.0,
+        "open_interest_usd": 3904334.9599999995
       },
       {
         "sira": 39,
         "symbol": "PAXG",
-        "perp_volume_usd": 7941084.0,
-        "open_interest_usd": 10460409.232
+        "perp_volume_usd": 7964325.0,
+        "open_interest_usd": 10475931.4352
       },
       {
         "sira": 40,
         "symbol": "DEXE",
-        "perp_volume_usd": 7802897.0,
-        "open_interest_usd": 1535742.4640000002
+        "perp_volume_usd": 7865312.0,
+        "open_interest_usd": 1550642.9
       },
       {
         "sira": 41,
         "symbol": "SHIB",
-        "perp_volume_usd": 7729616.0,
-        "open_interest_usd": 6464981.87424
+        "perp_volume_usd": 7755621.0,
+        "open_interest_usd": 6465057.3198
       },
       {
         "sira": 42,
         "symbol": "TSLAX",
-        "perp_volume_usd": 6898307.0,
-        "open_interest_usd": 12174592.563
+        "perp_volume_usd": 6968645.0,
+        "open_interest_usd": 12209441.9472
       },
       {
         "sira": 43,
-        "symbol": "BTW",
-        "perp_volume_usd": 6818205.0,
-        "open_interest_usd": 646002.242
+        "symbol": "ESP",
+        "perp_volume_usd": 6926608.0,
+        "open_interest_usd": 535821.2028000001
       },
       {
         "sira": 44,
-        "symbol": "ESP",
-        "perp_volume_usd": 6729153.0,
-        "open_interest_usd": 503944.22520000004
+        "symbol": "BTW",
+        "perp_volume_usd": 6859474.0,
+        "open_interest_usd": 661065.7892
       },
       {
         "sira": 45,
-        "symbol": "LAB",
-        "perp_volume_usd": 6343778.0,
-        "open_interest_usd": 5783290.387999999
+        "symbol": "MSFT",
+        "perp_volume_usd": 6462046.0,
+        "open_interest_usd": 2993334.742
       },
       {
         "sira": 46,
-        "symbol": "MSFT",
-        "perp_volume_usd": 6290124.0,
-        "open_interest_usd": 2935253.958
+        "symbol": "LAB",
+        "perp_volume_usd": 6423135.0,
+        "open_interest_usd": 5818786.652
       },
       {
         "sira": 47,
         "symbol": "EUL",
-        "perp_volume_usd": 6130242.0,
-        "open_interest_usd": 668354.9004
+        "perp_volume_usd": 6165556.0,
+        "open_interest_usd": 673615.278
       },
       {
         "sira": 48,
         "symbol": "LTC",
-        "perp_volume_usd": 5813071.0,
-        "open_interest_usd": 8257818.54
+        "perp_volume_usd": 5827052.0,
+        "open_interest_usd": 8256466.638
       },
       {
         "sira": 49,
         "symbol": "KORU",
-        "perp_volume_usd": 5696767.0,
-        "open_interest_usd": 4316265.1584
+        "perp_volume_usd": 5725905.0,
+        "open_interest_usd": 4387618.377600001
       },
       {
         "sira": 50,
         "symbol": "LINK",
-        "perp_volume_usd": 5332178.0,
-        "open_interest_usd": 94565719.08
+        "perp_volume_usd": 5378040.0,
+        "open_interest_usd": 94494802.80000001
       },
       {
         "sira": 51,
         "symbol": "QQQX",
-        "perp_volume_usd": 5317654.0,
-        "open_interest_usd": 6064601.132200001
+        "perp_volume_usd": 5326985.0,
+        "open_interest_usd": 6082717.8392
       },
       {
         "sira": 52,
         "symbol": "CRCLX",
-        "perp_volume_usd": 5183441.0,
-        "open_interest_usd": 14367280.878
+        "perp_volume_usd": 5217046.0,
+        "open_interest_usd": 14332227.9288
       },
       {
         "sira": 53,
         "symbol": "ZAMA",
-        "perp_volume_usd": 5173115.0,
-        "open_interest_usd": 657863.31
+        "perp_volume_usd": 5195825.0,
+        "open_interest_usd": 657634.8752
       },
       {
         "sira": 54,
         "symbol": "LA",
-        "perp_volume_usd": 5127719.0,
-        "open_interest_usd": 510753.31
+        "perp_volume_usd": 5160418.0,
+        "open_interest_usd": 503901.188
       },
       {
         "sira": 55,
         "symbol": "TAO",
-        "perp_volume_usd": 5057983.0,
-        "open_interest_usd": 4030647.3280000007
+        "perp_volume_usd": 5076775.0,
+        "open_interest_usd": 4036716.2399999998
       },
       {
         "sira": 56,
         "symbol": "SOXS",
-        "perp_volume_usd": 4958213.0,
-        "open_interest_usd": 3894293.2
+        "perp_volume_usd": 4988333.0,
+        "open_interest_usd": 3827280.5
       },
       {
         "sira": 57,
-        "symbol": "RIF",
-        "perp_volume_usd": 4891670.0,
-        "open_interest_usd": 596103.6328
+        "symbol": "INTC",
+        "perp_volume_usd": 4962719.0,
+        "open_interest_usd": 4743164.16
       },
       {
         "sira": 58,
-        "symbol": "INTC",
-        "perp_volume_usd": 4889861.0,
-        "open_interest_usd": 4712183.7
+        "symbol": "RIF",
+        "perp_volume_usd": 4919918.0,
+        "open_interest_usd": 607353.6768
       },
       {
         "sira": 59,
-        "symbol": "NEAR",
-        "perp_volume_usd": 4643790.0,
-        "open_interest_usd": 7747893.9503999995
+        "symbol": "MSTRX",
+        "perp_volume_usd": 4699486.0,
+        "open_interest_usd": 4554516.488
       },
       {
         "sira": 60,
-        "symbol": "LIT",
-        "perp_volume_usd": 4632963.0,
-        "open_interest_usd": 2492109.984
+        "symbol": "NEAR",
+        "perp_volume_usd": 4671081.0,
+        "open_interest_usd": 7747981.6992
       },
       {
         "sira": 61,
-        "symbol": "MSTRX",
-        "perp_volume_usd": 4604278.0,
-        "open_interest_usd": 4431195.2872
+        "symbol": "LIT",
+        "perp_volume_usd": 4648075.0,
+        "open_interest_usd": 2485620.9359999998
       },
       {
         "sira": 62,
         "symbol": "ON",
-        "perp_volume_usd": 4531610.0,
-        "open_interest_usd": 366218.1094
+        "perp_volume_usd": 4538644.0,
+        "open_interest_usd": 365113.0516
       },
       {
         "sira": 63,
         "symbol": "EPIC",
-        "perp_volume_usd": 4477739.0,
-        "open_interest_usd": 7674387.408
+        "perp_volume_usd": 4509376.0,
+        "open_interest_usd": 7770332.663
       },
       {
         "sira": 64,
         "symbol": "ENA",
-        "perp_volume_usd": 4449857.0,
-        "open_interest_usd": 3966514.8336
+        "perp_volume_usd": 4476759.0,
+        "open_interest_usd": 3969141.1265999996
       },
       {
         "sira": 65,
         "symbol": "BCH",
-        "perp_volume_usd": 4445285.0,
-        "open_interest_usd": 5957501.0176
+        "perp_volume_usd": 4454000.0,
+        "open_interest_usd": 5958538.4586000005
       },
       {
         "sira": 66,
         "symbol": "AVAX",
-        "perp_volume_usd": 4333355.0,
-        "open_interest_usd": 4659430.56
+        "perp_volume_usd": 4353609.0,
+        "open_interest_usd": 4663893.350000001
       },
       {
         "sira": 67,
         "symbol": "FARTCOIN",
-        "perp_volume_usd": 4290133.0,
-        "open_interest_usd": 7543701.72864
+        "perp_volume_usd": 4299609.0,
+        "open_interest_usd": 7559547.1382
       },
       {
         "sira": 68,
         "symbol": "PUMP",
-        "perp_volume_usd": 4245516.0,
-        "open_interest_usd": 2642570.19
+        "perp_volume_usd": 4271565.0,
+        "open_interest_usd": 2639579.038
       },
       {
         "sira": 69,
         "symbol": "LITE",
-        "perp_volume_usd": 4039972.0,
-        "open_interest_usd": 1741764.5344
+        "perp_volume_usd": 4168488.0,
+        "open_interest_usd": 1673607.0272000001
       },
       {
         "sira": 70,
         "symbol": "ESPORTS",
-        "perp_volume_usd": 3991259.0,
-        "open_interest_usd": 793760.704
+        "perp_volume_usd": 4028748.0,
+        "open_interest_usd": 785203.44
       },
       {
         "sira": 71,
         "symbol": "TRUMP",
-        "perp_volume_usd": 3934902.0,
-        "open_interest_usd": 2359431.333
+        "perp_volume_usd": 3952763.0,
+        "open_interest_usd": 2366482.36
       },
       {
         "sira": 72,
         "symbol": "FIL",
-        "perp_volume_usd": 3738592.0,
-        "open_interest_usd": 3056236.695744
+        "perp_volume_usd": 3752155.0,
+        "open_interest_usd": 3060791.91691
       },
       {
         "sira": 73,
         "symbol": "SOON",
-        "perp_volume_usd": 3703952.0,
-        "open_interest_usd": 2478911.792
+        "perp_volume_usd": 3743757.0,
+        "open_interest_usd": 2479538.304
       },
       {
         "sira": 74,
         "symbol": "AAPLX",
-        "perp_volume_usd": 3468152.0,
-        "open_interest_usd": 3188855.9744
+        "perp_volume_usd": 3490610.0,
+        "open_interest_usd": 3189426.8406
       },
       {
         "sira": 75,
         "symbol": "MRVL",
-        "perp_volume_usd": 3369033.0,
-        "open_interest_usd": 2339481.342
+        "perp_volume_usd": 3387361.0,
+        "open_interest_usd": 2358288.004
       },
       {
         "sira": 76,
         "symbol": "NVDAX",
-        "perp_volume_usd": 3203026.0,
-        "open_interest_usd": 6071150.364000001
+        "perp_volume_usd": 3208917.0,
+        "open_interest_usd": 6083201.222
       },
       {
         "sira": 77,
-        "symbol": "RE",
-        "perp_volume_usd": 3121172.0,
-        "open_interest_usd": 700671.499
+        "symbol": "ORDI",
+        "perp_volume_usd": 3198692.0,
+        "open_interest_usd": 1554014.2436000002
       },
       {
         "sira": 78,
-        "symbol": "ORDI",
-        "perp_volume_usd": 3107064.0,
-        "open_interest_usd": 1616741.4426000002
+        "symbol": "RE",
+        "perp_volume_usd": 3147567.0,
+        "open_interest_usd": 696082.0176
       },
       {
         "sira": 79,
         "symbol": "FET",
-        "perp_volume_usd": 3105992.0,
-        "open_interest_usd": 1253888.5736
+        "perp_volume_usd": 3125066.0,
+        "open_interest_usd": 1254398.4276
       },
       {
         "sira": 80,
         "symbol": "PI",
-        "perp_volume_usd": 3043708.0,
-        "open_interest_usd": 2340845.0927999998
+        "perp_volume_usd": 3066863.0,
+        "open_interest_usd": 2359569.6278
       },
       {
         "sira": 81,
         "symbol": "DOT",
-        "perp_volume_usd": 2999809.0,
-        "open_interest_usd": 3718937.66
+        "perp_volume_usd": 3006638.0,
+        "open_interest_usd": 3726868.992
       },
       {
         "sira": 82,
         "symbol": "HOME",
-        "perp_volume_usd": 2919035.0,
-        "open_interest_usd": 695509.668
+        "perp_volume_usd": 2943087.0,
+        "open_interest_usd": 689408.272
       },
       {
         "sira": 83,
         "symbol": "APT",
-        "perp_volume_usd": 2782503.0,
-        "open_interest_usd": 1536266.95198
+        "perp_volume_usd": 2790170.0,
+        "open_interest_usd": 1537578.53808
       },
       {
         "sira": 84,
         "symbol": "WLFI",
-        "perp_volume_usd": 2746902.0,
-        "open_interest_usd": 5806454.0664
+        "perp_volume_usd": 2774351.0,
+        "open_interest_usd": 5806246.6872000005
       },
       {
         "sira": 85,
         "symbol": "INJ",
-        "perp_volume_usd": 2723675.0,
-        "open_interest_usd": 1522788.4619999998
+        "perp_volume_usd": 2753219.0,
+        "open_interest_usd": 1525728.4948000002
       },
       {
         "sira": 86,
         "symbol": "US",
-        "perp_volume_usd": 2703855.0,
-        "open_interest_usd": 14715013.2896
+        "perp_volume_usd": 2732002.0,
+        "open_interest_usd": 14423363.315000001
       },
       {
         "sira": 87,
         "symbol": "ICP",
-        "perp_volume_usd": 2654382.0,
-        "open_interest_usd": 1580373.220676
+        "perp_volume_usd": 2660924.0,
+        "open_interest_usd": 1578671.2050199998
       },
       {
         "sira": 88,
         "symbol": "ASML",
-        "perp_volume_usd": 2527523.0,
-        "open_interest_usd": 1191519.0608
+        "perp_volume_usd": 2570866.0,
+        "open_interest_usd": 1190045.10528
       },
       {
         "sira": 89,
         "symbol": "PLTRX",
-        "perp_volume_usd": 2521912.0,
-        "open_interest_usd": 1545916.4252000002
+        "perp_volume_usd": 2528020.0,
+        "open_interest_usd": 1549294.1112000002
       },
       {
         "sira": 90,
         "symbol": "XLM",
-        "perp_volume_usd": 2502001.0,
-        "open_interest_usd": 2326958.673
+        "perp_volume_usd": 2514030.0,
+        "open_interest_usd": 2329689.9824
       },
       {
         "sira": 91,
         "symbol": "AMD",
-        "perp_volume_usd": 2477302.0,
-        "open_interest_usd": 2276525.1024
+        "perp_volume_usd": 2496515.0,
+        "open_interest_usd": 2296689.2018
       },
       {
         "sira": 92,
         "symbol": "GLW",
-        "perp_volume_usd": 2430377.0,
-        "open_interest_usd": 1289883.5511999999
+        "perp_volume_usd": 2437154.0,
+        "open_interest_usd": 1302133.76
       },
       {
         "sira": 93,
         "symbol": "GOOGLX",
-        "perp_volume_usd": 2419506.0,
-        "open_interest_usd": 6356061.415200001
+        "perp_volume_usd": 2429560.0,
+        "open_interest_usd": 6374488.456000001
       },
       {
         "sira": 94,
         "symbol": "GRAM",
-        "perp_volume_usd": 2366262.0,
-        "open_interest_usd": 1985788.1195999999
+        "perp_volume_usd": 2380459.0,
+        "open_interest_usd": 1990481.5568000001
       },
       {
         "sira": 95,
         "symbol": "XIAOMI",
-        "perp_volume_usd": 2325892.0,
-        "open_interest_usd": 715017.976
+        "perp_volume_usd": 2326413.0,
+        "open_interest_usd": 716027.3720000001
       },
       {
         "sira": 96,
         "symbol": "METAX",
-        "perp_volume_usd": 2280031.0,
-        "open_interest_usd": 1589028.57
+        "perp_volume_usd": 2294100.0,
+        "open_interest_usd": 1583777.5804
       },
       {
         "sira": 97,
         "symbol": "PENGU",
-        "perp_volume_usd": 2205403.0,
-        "open_interest_usd": 1659642.3512
+        "perp_volume_usd": 2216689.0,
+        "open_interest_usd": 1663902.3791999999
       },
       {
         "sira": 98,
         "symbol": "SLX",
-        "perp_volume_usd": 2127385.0,
-        "open_interest_usd": 669414.0064
+        "perp_volume_usd": 2153215.0,
+        "open_interest_usd": 666849.5472
       },
       {
         "sira": 99,
         "symbol": "SPYX",
-        "perp_volume_usd": 2125693.0,
-        "open_interest_usd": 5181502.752
+        "perp_volume_usd": 2130850.0,
+        "open_interest_usd": 5189909.4399999995
       },
       {
         "sira": 100,
-        "symbol": "ARB",
-        "perp_volume_usd": 2095245.0,
-        "open_interest_usd": 1598140.4844
+        "symbol": "NBIS",
+        "perp_volume_usd": 2108191.0,
+        "open_interest_usd": 1797959.5039999997
       },
       {
         "sira": 101,
-        "symbol": "VELVET",
-        "perp_volume_usd": 2086290.0,
-        "open_interest_usd": 670387.04
+        "symbol": "ARB",
+        "perp_volume_usd": 2103952.0,
+        "open_interest_usd": 1601958.2176
       },
       {
         "sira": 102,
-        "symbol": "NBIS",
-        "perp_volume_usd": 2068099.0,
-        "open_interest_usd": 1833394.5432000002
+        "symbol": "VELVET",
+        "perp_volume_usd": 2096541.0,
+        "open_interest_usd": 666139.152
       },
       {
         "sira": 103,
         "symbol": "BOME",
-        "perp_volume_usd": 1974377.0,
-        "open_interest_usd": 1437373.6139999998
+        "perp_volume_usd": 2014724.0,
+        "open_interest_usd": 1434868.2648
       },
       {
         "sira": 104,
         "symbol": "WIF",
-        "perp_volume_usd": 1958038.0,
-        "open_interest_usd": 1118440.3608
+        "perp_volume_usd": 1969112.0,
+        "open_interest_usd": 1119735.6408000002
       },
       {
         "sira": 105,
         "symbol": "TRX",
-        "perp_volume_usd": 1928228.0,
-        "open_interest_usd": 5039629.04
+        "perp_volume_usd": 1940494.0,
+        "open_interest_usd": 5045360.6559999995
       },
       {
         "sira": 106,
         "symbol": "BE",
-        "perp_volume_usd": 1873180.0,
-        "open_interest_usd": 776011.2359999999
+        "perp_volume_usd": 1900615.0,
+        "open_interest_usd": 784571.636
       },
       {
         "sira": 107,
         "symbol": "VANRY",
-        "perp_volume_usd": 1840062.0,
-        "open_interest_usd": 781022.4966
+        "perp_volume_usd": 1870518.0,
+        "open_interest_usd": 776762.2007999999
       },
       {
         "sira": 108,
         "symbol": "CRWV",
-        "perp_volume_usd": 1799768.0,
-        "open_interest_usd": 899448.615
+        "perp_volume_usd": 1807587.0,
+        "open_interest_usd": 901264.173
       },
       {
         "sira": 109,
         "symbol": "QCOM",
-        "perp_volume_usd": 1750188.0,
-        "open_interest_usd": 985693.8
+        "perp_volume_usd": 1758827.0,
+        "open_interest_usd": 992923.008
       },
       {
         "sira": 110,
-        "symbol": "XIAOMIHKD",
-        "perp_volume_usd": 1733954.0,
-        "open_interest_usd": 202731.40200000003
+        "symbol": "ERA",
+        "perp_volume_usd": 1739573.0,
+        "open_interest_usd": 413116.584
       },
       {
         "sira": 111,
-        "symbol": "ERA",
-        "perp_volume_usd": 1717400.0,
-        "open_interest_usd": 410345.72
+        "symbol": "XIAOMIHKD",
+        "perp_volume_usd": 1734330.0,
+        "open_interest_usd": 203060.32
       },
       {
         "sira": 112,
         "symbol": "ARM",
-        "perp_volume_usd": 1702073.0,
-        "open_interest_usd": 919135.2124000001
+        "perp_volume_usd": 1703202.0,
+        "open_interest_usd": 929073.239
       },
       {
         "sira": 113,
         "symbol": "TIA",
-        "perp_volume_usd": 1663902.0,
-        "open_interest_usd": 914976.2268
+        "perp_volume_usd": 1672717.0,
+        "open_interest_usd": 924981.332
       },
       {
         "sira": 114,
         "symbol": "AEON",
-        "perp_volume_usd": 1660090.0,
-        "open_interest_usd": 394895.214
+        "perp_volume_usd": 1671998.0,
+        "open_interest_usd": 382320.148
       },
       {
         "sira": 115,
         "symbol": "COINX",
-        "perp_volume_usd": 1617299.0,
-        "open_interest_usd": 4026368.784
+        "perp_volume_usd": 1621534.0,
+        "open_interest_usd": 4040791.0436
       },
       {
         "sira": 116,
         "symbol": "ACH",
-        "perp_volume_usd": 1591280.0,
-        "open_interest_usd": 213500.39018000002
+        "perp_volume_usd": 1593901.0,
+        "open_interest_usd": 216155.240268
       },
       {
         "sira": 117,
         "symbol": "PEOPLE",
-        "perp_volume_usd": 1563958.0,
-        "open_interest_usd": 513429.69263999996
+        "perp_volume_usd": 1571708.0,
+        "open_interest_usd": 512245.39968000003
       },
       {
         "sira": 118,
         "symbol": "MUU",
-        "perp_volume_usd": 1485832.0,
-        "open_interest_usd": 438293.3898
+        "perp_volume_usd": 1498554.0,
+        "open_interest_usd": 453529.00236
       },
       {
         "sira": 119,
         "symbol": "VIRTUAL",
-        "perp_volume_usd": 1478009.0,
-        "open_interest_usd": 747116.332
+        "perp_volume_usd": 1485199.0,
+        "open_interest_usd": 747162.2400000001
       },
       {
         "sira": 120,
         "symbol": "EVAA",
-        "perp_volume_usd": 1458654.0,
-        "open_interest_usd": 1831695.574
+        "perp_volume_usd": 1463919.0,
+        "open_interest_usd": 1832880.93
       },
       {
         "sira": 121,
         "symbol": "DIA",
-        "perp_volume_usd": 1439608.0,
-        "open_interest_usd": 126270.272
+        "perp_volume_usd": 1443651.0,
+        "open_interest_usd": 125581.176
       },
       {
         "sira": 122,
         "symbol": "BASED",
-        "perp_volume_usd": 1397218.0,
-        "open_interest_usd": 1162498.5736
+        "perp_volume_usd": 1403519.0,
+        "open_interest_usd": 1158918.5511999999
       },
       {
         "sira": 123,
         "symbol": "ALLO",
-        "perp_volume_usd": 1382456.0,
-        "open_interest_usd": 924930.28224
+        "perp_volume_usd": 1390276.0,
+        "open_interest_usd": 924036.3653999999
       },
       {
         "sira": 124,
         "symbol": "VVV",
-        "perp_volume_usd": 1378074.0,
-        "open_interest_usd": 1019530.6752
+        "perp_volume_usd": 1387989.0,
+        "open_interest_usd": 1020574.1684000001
       },
       {
         "sira": 125,
         "symbol": "CAP",
-        "perp_volume_usd": 1346632.0,
-        "open_interest_usd": 138050.052
+        "perp_volume_usd": 1367293.0,
+        "open_interest_usd": 139649.378
       },
       {
         "sira": 126,
         "symbol": "AMAT",
-        "perp_volume_usd": 1343851.0,
-        "open_interest_usd": 301057.08999999997
+        "perp_volume_usd": 1349000.0,
+        "open_interest_usd": 303232.32
       },
       {
         "sira": 127,
         "symbol": "AXTI",
-        "perp_volume_usd": 1335446.0,
-        "open_interest_usd": 253792.8216
+        "perp_volume_usd": 1343796.0,
+        "open_interest_usd": 256038.71039999998
       },
       {
         "sira": 128,
         "symbol": "CBRS",
-        "perp_volume_usd": 1285488.0,
-        "open_interest_usd": 790045.524
+        "perp_volume_usd": 1293004.0,
+        "open_interest_usd": 790546.092
       },
       {
         "sira": 129,
-        "symbol": "TSM",
-        "perp_volume_usd": 1266850.0,
-        "open_interest_usd": 1260138.9424
+        "symbol": "GWEI",
+        "perp_volume_usd": 1273321.0,
+        "open_interest_usd": 650728.0188000001
       },
       {
         "sira": 130,
-        "symbol": "TQQQX",
-        "perp_volume_usd": 1262792.0,
-        "open_interest_usd": 1994754.6246
+        "symbol": "TSM",
+        "perp_volume_usd": 1268534.0,
+        "open_interest_usd": 1267541.1760000002
       },
       {
         "sira": 131,
-        "symbol": "GWEI",
-        "perp_volume_usd": 1244332.0,
-        "open_interest_usd": 654262.5059999999
+        "symbol": "TQQQX",
+        "perp_volume_usd": 1267195.0,
+        "open_interest_usd": 2005764.9120000002
       },
       {
         "sira": 132,
         "symbol": "AAOI",
-        "perp_volume_usd": 1243129.0,
-        "open_interest_usd": 1031078.4872000001
+        "perp_volume_usd": 1248061.0,
+        "open_interest_usd": 1035360.1728
       },
       {
         "sira": 133,
         "symbol": "ETC",
-        "perp_volume_usd": 1238275.0,
-        "open_interest_usd": 3162679.958
+        "perp_volume_usd": 1241907.0,
+        "open_interest_usd": 3166607.4968
       },
       {
         "sira": 134,
         "symbol": "CLO",
-        "perp_volume_usd": 1221406.0,
-        "open_interest_usd": 368891.3844
+        "perp_volume_usd": 1237776.0,
+        "open_interest_usd": 367731.18299999996
       },
       {
         "sira": 135,
         "symbol": "ETHFI",
-        "perp_volume_usd": 1200988.0,
-        "open_interest_usd": 1435337.86314
+        "perp_volume_usd": 1208969.0,
+        "open_interest_usd": 1437835.88072
       },
       {
         "sira": 136,
         "symbol": "WDC",
-        "perp_volume_usd": 1160867.0,
-        "open_interest_usd": 849447.816
+        "perp_volume_usd": 1161858.0,
+        "open_interest_usd": 856857.8200000001
       },
       {
         "sira": 137,
         "symbol": "B",
-        "perp_volume_usd": 1147202.0,
-        "open_interest_usd": 2681705.936
+        "perp_volume_usd": 1153367.0,
+        "open_interest_usd": 2684255.904
       },
       {
         "sira": 138,
         "symbol": "BONK",
-        "perp_volume_usd": 1110212.0,
-        "open_interest_usd": 1121646.474
+        "perp_volume_usd": 1116457.0,
+        "open_interest_usd": 1129043.916
       },
       {
         "sira": 139,
         "symbol": "TLM",
-        "perp_volume_usd": 1091585.0,
-        "open_interest_usd": 501548.837598
+        "perp_volume_usd": 1104730.0,
+        "open_interest_usd": 498217.59940999997
       },
       {
         "sira": 140,
         "symbol": "ZHIPU",
-        "perp_volume_usd": 1085203.0,
-        "open_interest_usd": 439091.24
+        "perp_volume_usd": 1103560.0,
+        "open_interest_usd": 455514.308
       },
       {
         "sira": 141,
         "symbol": "RATS",
-        "perp_volume_usd": 1063792.0,
-        "open_interest_usd": 3287292.2783999997
+        "perp_volume_usd": 1065231.0,
+        "open_interest_usd": 3288746.033
       },
       {
         "sira": 142,
         "symbol": "ASTER",
-        "perp_volume_usd": 1016667.0,
-        "open_interest_usd": 6231007.224
+        "perp_volume_usd": 1017578.0,
+        "open_interest_usd": 6228440.998000001
       },
       {
         "sira": 143,
         "symbol": "LRCX",
-        "perp_volume_usd": 1005997.0,
-        "open_interest_usd": 190705.736
+        "perp_volume_usd": 1009519.0,
+        "open_interest_usd": 193519.77
       },
       {
         "sira": 144,
         "symbol": "HOLO",
-        "perp_volume_usd": 935236.0,
-        "open_interest_usd": 295930.467
+        "perp_volume_usd": 941129.0,
+        "open_interest_usd": 296505.9328
       },
       {
         "sira": 145,
         "symbol": "HIMS",
-        "perp_volume_usd": 922008.0,
-        "open_interest_usd": 226085.275
+        "perp_volume_usd": 926917.0,
+        "open_interest_usd": 226180.9524
       },
       {
         "sira": 146,
         "symbol": "XPL",
-        "perp_volume_usd": 912844.0,
-        "open_interest_usd": 1278227.9135999999
+        "perp_volume_usd": 915356.0,
+        "open_interest_usd": 1277929.332
       },
       {
         "sira": 147,
         "symbol": "MMT",
-        "perp_volume_usd": 853672.0,
-        "open_interest_usd": 289294.404
+        "perp_volume_usd": 878540.0,
+        "open_interest_usd": 294819.044
       },
       {
         "sira": 148,
         "symbol": "H",
-        "perp_volume_usd": 839632.0,
-        "open_interest_usd": 1810048.149
+        "perp_volume_usd": 846264.0,
+        "open_interest_usd": 1817688.3480000002
       },
       {
         "sira": 149,
         "symbol": "AVGO",
-        "perp_volume_usd": 833822.0,
-        "open_interest_usd": 520138.61520000006
+        "perp_volume_usd": 834757.0,
+        "open_interest_usd": 522759.05000000005
       },
       {
         "sira": 150,
         "symbol": "MVLL",
-        "perp_volume_usd": 818389.0,
-        "open_interest_usd": 223607.80800000002
+        "perp_volume_usd": 824037.0,
+        "open_interest_usd": 227197.94000000003
       }
     ],
     "Hyperliquid": [
       {
         "sira": 1,
         "symbol": "BTC",
-        "perp_volume_usd": 2289739514.81947,
-        "open_interest_usd": 2184044594.0247
+        "perp_volume_usd": 2276946041.54561,
+        "open_interest_usd": 2188883887.8006797
       },
       {
         "sira": 2,
         "symbol": "ETH",
-        "perp_volume_usd": 1017671362.21234,
-        "open_interest_usd": 1815221991.9843798
+        "perp_volume_usd": 1023753118.0404807,
+        "open_interest_usd": 1824925191.967259
       },
       {
         "sira": 3,
         "symbol": "HYPE",
-        "perp_volume_usd": 267023364.1464901,
-        "open_interest_usd": 1197613225.1664002
+        "perp_volume_usd": 264546179.59497982,
+        "open_interest_usd": 1200499863.7325406
       },
       {
         "sira": 4,
         "symbol": "SOL",
-        "perp_volume_usd": 182451073.57505003,
-        "open_interest_usd": 320981346.96401995
+        "perp_volume_usd": 181608962.95384973,
+        "open_interest_usd": 320560629.80120003
       },
       {
         "sira": 5,
         "symbol": "ZEC",
-        "perp_volume_usd": 62286885.686000004,
-        "open_interest_usd": 188523189.55439997
+        "perp_volume_usd": 61715454.36700002,
+        "open_interest_usd": 188646993.23999992
       },
       {
         "sira": 6,
         "symbol": "XRP",
-        "perp_volume_usd": 37733314.325800024,
-        "open_interest_usd": 74606529.528
+        "perp_volume_usd": 37288934.756300025,
+        "open_interest_usd": 74625453.58320001
       },
       {
         "sira": 7,
         "symbol": "CASHCAT",
-        "perp_volume_usd": 19858591.542549,
-        "open_interest_usd": 7269639.247464
+        "perp_volume_usd": 19872505.170769006,
+        "open_interest_usd": 7215334.22518
       },
       {
         "sira": 8,
         "symbol": "LIT",
-        "perp_volume_usd": 18999209.8088,
-        "open_interest_usd": 83760446.65200001
+        "perp_volume_usd": 18946856.213300016,
+        "open_interest_usd": 83679546.12120001
       },
       {
         "sira": 9,
         "symbol": "AAVE",
-        "perp_volume_usd": 18541773.498190004,
-        "open_interest_usd": 75319062.39144
+        "perp_volume_usd": 18460433.168950003,
+        "open_interest_usd": 75056650.59856004
       },
       {
         "sira": 10,
         "symbol": "PUMP",
-        "perp_volume_usd": 17000803.744228996,
-        "open_interest_usd": 44257859.022168
+        "perp_volume_usd": 16995867.351071004,
+        "open_interest_usd": 44370728.703342
       },
       {
         "sira": 11,
         "symbol": "UNI",
-        "perp_volume_usd": 16120240.676210003,
-        "open_interest_usd": 20244736.67952
+        "perp_volume_usd": 16240904.712199999,
+        "open_interest_usd": 20690088.3672
       },
       {
         "sira": 12,
         "symbol": "NEAR",
-        "perp_volume_usd": 16007307.053630006,
-        "open_interest_usd": 46067815.823
+        "perp_volume_usd": 15510992.594210008,
+        "open_interest_usd": 46059812.27772
       },
       {
         "sira": 13,
         "symbol": "ONDO",
-        "perp_volume_usd": 14391679.27512,
-        "open_interest_usd": 16114638.12816
+        "perp_volume_usd": 14437019.819680005,
+        "open_interest_usd": 16176872.11212
       },
       {
         "sira": 14,
         "symbol": "KAITO",
-        "perp_volume_usd": 14337728.075400006,
-        "open_interest_usd": 10815110.368800001
+        "perp_volume_usd": 14343192.152600005,
+        "open_interest_usd": 10834438.101
       },
       {
         "sira": 15,
         "symbol": "WLD",
-        "perp_volume_usd": 11391511.439840999,
-        "open_interest_usd": 20425552.35663
+        "perp_volume_usd": 11329782.217212,
+        "open_interest_usd": 20429276.604072
       },
       {
         "sira": 16,
         "symbol": "DOGE",
-        "perp_volume_usd": 11287246.842662,
-        "open_interest_usd": 24048454.524384
+        "perp_volume_usd": 11262384.614203993,
+        "open_interest_usd": 24074101.527502004
       },
       {
         "sira": 17,
         "symbol": "XPL",
-        "perp_volume_usd": 9095214.711477,
-        "open_interest_usd": 21952457.563904002
+        "perp_volume_usd": 9054223.053256992,
+        "open_interest_usd": 21934180.646196
       },
       {
         "sira": 18,
         "symbol": "ENA",
-        "perp_volume_usd": 7520498.235865003,
-        "open_interest_usd": 22146132.419452
+        "perp_volume_usd": 7507755.066307004,
+        "open_interest_usd": 22164811.455484
       },
       {
         "sira": 19,
         "symbol": "TAO",
-        "perp_volume_usd": 5705939.24963,
-        "open_interest_usd": 23379583.22128
+        "perp_volume_usd": 5705671.044640001,
+        "open_interest_usd": 23376287.6256
       },
       {
         "sira": 20,
-        "symbol": "ADA",
-        "perp_volume_usd": 5277562.861200002,
-        "open_interest_usd": 25223658.8868
+        "symbol": "PAXG",
+        "perp_volume_usd": 5331507.1039,
+        "open_interest_usd": 25532161.669498004
       },
       {
         "sira": 21,
-        "symbol": "FARTCOIN",
-        "perp_volume_usd": 5073952.746071999,
-        "open_interest_usd": 15354712.852984
+        "symbol": "ADA",
+        "perp_volume_usd": 5252412.756730002,
+        "open_interest_usd": 25271023.1613
       },
       {
         "sira": 22,
         "symbol": "XMR",
-        "perp_volume_usd": 5013498.085480001,
-        "open_interest_usd": 46454037.119200006
+        "perp_volume_usd": 5022290.123750001,
+        "open_interest_usd": 46386477.85004
       },
       {
         "sira": 23,
-        "symbol": "KPEPE",
-        "perp_volume_usd": 4918457.666655999,
-        "open_interest_usd": 14532270.19608
+        "symbol": "FARTCOIN",
+        "perp_volume_usd": 4931046.474088998,
+        "open_interest_usd": 15402826.333050001
       },
       {
         "sira": 24,
-        "symbol": "PAXG",
-        "perp_volume_usd": 4771735.572399998,
-        "open_interest_usd": 24730906.404000003
+        "symbol": "KPEPE",
+        "perp_volume_usd": 4917879.451388999,
+        "open_interest_usd": 14565197.47824
       },
       {
         "sira": 25,
         "symbol": "BNB",
-        "perp_volume_usd": 4243853.236629998,
-        "open_interest_usd": 22489054.7505
+        "perp_volume_usd": 4245191.759859998,
+        "open_interest_usd": 22539015.158359997
       },
       {
         "sira": 26,
         "symbol": "SUI",
-        "perp_volume_usd": 2872277.9814229994,
-        "open_interest_usd": 21355265.92128
+        "perp_volume_usd": 2863237.9816050003,
+        "open_interest_usd": 21367237.19265
       },
       {
         "sira": 27,
         "symbol": "VVV",
-        "perp_volume_usd": 2860290.76969,
-        "open_interest_usd": 15625569.733145999
+        "perp_volume_usd": 2859075.95035,
+        "open_interest_usd": 15660847.09306
       },
       {
         "sira": 28,
         "symbol": "GRAM",
-        "perp_volume_usd": 2711847.2114000004,
-        "open_interest_usd": 12189061.8144
+        "perp_volume_usd": 2712161.666900001,
+        "open_interest_usd": 12201023.943
       },
       {
         "sira": 29,
         "symbol": "LINK",
-        "perp_volume_usd": 2711435.2106099995,
-        "open_interest_usd": 37862595.46716
+        "perp_volume_usd": 2689019.7358500008,
+        "open_interest_usd": 37955829.413640015
       },
       {
         "sira": 30,
         "symbol": "KSHIB",
-        "perp_volume_usd": 2605997.9181179996,
-        "open_interest_usd": 2853843.186216
+        "perp_volume_usd": 2606634.9882429997,
+        "open_interest_usd": 2853629.631808
       },
       {
         "sira": 31,
-        "symbol": "ASTER",
-        "perp_volume_usd": 2538453.0103799994,
-        "open_interest_usd": 15530852.33138
+        "symbol": "TRX",
+        "perp_volume_usd": 2487489.8528899997,
+        "open_interest_usd": 14278563.783
       },
       {
         "sira": 32,
-        "symbol": "TRX",
-        "perp_volume_usd": 2490741.2050900008,
-        "open_interest_usd": 14254633.52742
+        "symbol": "ASTER",
+        "perp_volume_usd": 2471027.9179500006,
+        "open_interest_usd": 15558438.1056
       },
       {
         "sira": 33,
         "symbol": "AVAX",
-        "perp_volume_usd": 2440497.2823330006,
-        "open_interest_usd": 12216303.275034
+        "perp_volume_usd": 2444638.059913001,
+        "open_interest_usd": 12220213.724736001
       },
       {
         "sira": 34,
         "symbol": "JUP",
-        "perp_volume_usd": 2371671.9941800004,
-        "open_interest_usd": 6493410.92096
+        "perp_volume_usd": 2372385.0574700083,
+        "open_interest_usd": 6537916.10232
       },
       {
         "sira": 35,
         "symbol": "LTC",
-        "perp_volume_usd": 2330465.2618600004,
-        "open_interest_usd": 10927539.21176
+        "perp_volume_usd": 2332060.623780001,
+        "open_interest_usd": 10917404.500799999
       },
       {
         "sira": 36,
         "symbol": "JTO",
-        "perp_volume_usd": 2073027.2287700002,
-        "open_interest_usd": 9831130.8486
+        "perp_volume_usd": 2072637.0766500002,
+        "open_interest_usd": 9870246.657
       },
       {
         "sira": 37,
         "symbol": "ARB",
-        "perp_volume_usd": 2005901.8652219998,
-        "open_interest_usd": 4785075.811104001
+        "perp_volume_usd": 2001126.97086,
+        "open_interest_usd": 4793268.142872
       },
       {
         "sira": 38,
-        "symbol": "TRUMP",
-        "perp_volume_usd": 1741329.1980900003,
-        "open_interest_usd": 8077402.425035999
+        "symbol": "ZRO",
+        "perp_volume_usd": 1722134.9576709997,
+        "open_interest_usd": 27938834.326860003
       },
       {
         "sira": 39,
-        "symbol": "ZRO",
-        "perp_volume_usd": 1720575.338381999,
-        "open_interest_usd": 27625297.538992003
+        "symbol": "TRUMP",
+        "perp_volume_usd": 1717267.2839200003,
+        "open_interest_usd": 8093330.839279999
       },
       {
         "sira": 40,
         "symbol": "CRV",
-        "perp_volume_usd": 1561090.8778330006,
-        "open_interest_usd": 6140577.477829999
+        "perp_volume_usd": 1553752.8786690002,
+        "open_interest_usd": 6169021.155954001
       },
       {
         "sira": 41,
         "symbol": "EIGEN",
-        "perp_volume_usd": 1499324.7920450002,
-        "open_interest_usd": 4052481.904046
+        "perp_volume_usd": 1490872.1426610001,
+        "open_interest_usd": 4058052.445866
       },
       {
         "sira": 42,
         "symbol": "APT",
-        "perp_volume_usd": 1387002.008853,
-        "open_interest_usd": 3788074.18828
+        "perp_volume_usd": 1385101.7786279998,
+        "open_interest_usd": 3794521.9548599995
       },
       {
         "sira": 43,
         "symbol": "KBONK",
-        "perp_volume_usd": 1346715.5419030003,
-        "open_interest_usd": 4616520.207378
+        "perp_volume_usd": 1345862.7911530007,
+        "open_interest_usd": 4625397.988904
       },
       {
         "sira": 44,
         "symbol": "PENGU",
-        "perp_volume_usd": 1165207.9227690003,
-        "open_interest_usd": 3896580.8881679997
+        "perp_volume_usd": 1160667.1074120004,
+        "open_interest_usd": 3903464.075418
       },
       {
         "sira": 45,
         "symbol": "INJ",
-        "perp_volume_usd": 1138174.2926799995,
-        "open_interest_usd": 3425586.08392
+        "perp_volume_usd": 1145045.5087099993,
+        "open_interest_usd": 3423712.30832
       },
       {
         "sira": 46,
         "symbol": "SPX",
-        "perp_volume_usd": 1131101.9619860002,
-        "open_interest_usd": 2267372.5646639997
+        "perp_volume_usd": 1128944.2665610001,
+        "open_interest_usd": 2272994.57517
       },
       {
         "sira": 47,
         "symbol": "FET",
-        "perp_volume_usd": 1120935.4685000004,
-        "open_interest_usd": 4561596.432
+        "perp_volume_usd": 1105897.1684500005,
+        "open_interest_usd": 4572671.53728
       },
       {
         "sira": 48,
         "symbol": "DOT",
-        "perp_volume_usd": 1114362.4009570004,
-        "open_interest_usd": 4807664.440824
+        "perp_volume_usd": 1102495.0583060002,
+        "open_interest_usd": 4820616.936895999
       },
       {
         "sira": 49,
         "symbol": "VINE",
-        "perp_volume_usd": 1087570.4956180002,
-        "open_interest_usd": 365200.90653599997
+        "perp_volume_usd": 1096406.468965,
+        "open_interest_usd": 348890.774164
       },
       {
         "sira": 50,
         "symbol": "XLM",
-        "perp_volume_usd": 1066127.3928600003,
-        "open_interest_usd": 6661087.51968
+        "perp_volume_usd": 1067026.6969200002,
+        "open_interest_usd": 6667066.3176
       },
       {
         "sira": 51,
         "symbol": "ETHFI",
-        "perp_volume_usd": 988314.3229599999,
-        "open_interest_usd": 7733152.595869999
+        "perp_volume_usd": 988057.672254,
+        "open_interest_usd": 7730006.0798
       },
       {
         "sira": 52,
         "symbol": "MON",
-        "perp_volume_usd": 985233.3813380001,
-        "open_interest_usd": 23390485.566896003
+        "perp_volume_usd": 983732.42246,
+        "open_interest_usd": 23407522.730063997
       },
       {
         "sira": 53,
         "symbol": "BCH",
-        "perp_volume_usd": 981875.8170600003,
-        "open_interest_usd": 4574423.43608
+        "perp_volume_usd": 981816.1777500004,
+        "open_interest_usd": 4576177.305000001
       },
       {
         "sira": 54,
         "symbol": "LDO",
-        "perp_volume_usd": 970800.0253370005,
-        "open_interest_usd": 13543613.6332
+        "perp_volume_usd": 966439.3296600003,
+        "open_interest_usd": 13567305.047058
       },
       {
         "sira": 55,
         "symbol": "VIRTUAL",
-        "perp_volume_usd": 965078.296636,
-        "open_interest_usd": 6188642.765623999
+        "perp_volume_usd": 964532.0806539999,
+        "open_interest_usd": 6197363.772215999
       },
       {
         "sira": 56,
         "symbol": "STRK",
-        "perp_volume_usd": 866819.5648810001,
-        "open_interest_usd": 2181566.2305900003
+        "perp_volume_usd": 868251.548584,
+        "open_interest_usd": 2185522.95104
       },
       {
         "sira": 57,
         "symbol": "MORPHO",
-        "perp_volume_usd": 856891.2558399995,
-        "open_interest_usd": 3876564.7682999996
+        "perp_volume_usd": 846125.2920199997,
+        "open_interest_usd": 3880494.2752799997
       },
       {
         "sira": 58,
         "symbol": "AERO",
-        "perp_volume_usd": 747963.8301500003,
-        "open_interest_usd": 7564821.692360001
+        "perp_volume_usd": 751793.4099099999,
+        "open_interest_usd": 7569460.78464
       },
       {
         "sira": 59,
         "symbol": "GRASS",
-        "perp_volume_usd": 679356.7205779996,
-        "open_interest_usd": 7002215.725288
+        "perp_volume_usd": 678762.9514429999,
+        "open_interest_usd": 7002414.524658
       },
       {
         "sira": 60,
         "symbol": "ALGO",
-        "perp_volume_usd": 670409.2995759997,
-        "open_interest_usd": 1861955.39556
+        "perp_volume_usd": 670504.0928359999,
+        "open_interest_usd": 1865083.225
       },
       {
         "sira": 61,
         "symbol": "PEOPLE",
-        "perp_volume_usd": 655704.281819,
-        "open_interest_usd": 1374248.84244
+        "perp_volume_usd": 654865.764969,
+        "open_interest_usd": 1373597.148082
       },
       {
         "sira": 62,
         "symbol": "PENDLE",
-        "perp_volume_usd": 654369.8298999998,
-        "open_interest_usd": 6567198.0288
+        "perp_volume_usd": 653143.4536999997,
+        "open_interest_usd": 6564865.923584
       },
       {
         "sira": 63,
         "symbol": "DASH",
-        "perp_volume_usd": 633763.37032,
-        "open_interest_usd": 734744.0407199999
+        "perp_volume_usd": 633152.7642399999,
+        "open_interest_usd": 737892.8084
       },
       {
         "sira": 64,
         "symbol": "ICP",
-        "perp_volume_usd": 626153.71745,
-        "open_interest_usd": 1332643.0168799998
+        "perp_volume_usd": 628735.0886200002,
+        "open_interest_usd": 1333217.8022399999
       },
       {
         "sira": 65,
         "symbol": "CHIP",
-        "perp_volume_usd": 621927.4429010001,
-        "open_interest_usd": 1582359.029088
+        "perp_volume_usd": 610871.1254450001,
+        "open_interest_usd": 1586147.792056
       },
       {
         "sira": 66,
         "symbol": "AR",
-        "perp_volume_usd": 585689.2856209999,
-        "open_interest_usd": 742226.293392
+        "perp_volume_usd": 585297.9183759998,
+        "open_interest_usd": 742571.57038
       },
       {
         "sira": 67,
-        "symbol": "CC",
-        "perp_volume_usd": 580003.28424,
-        "open_interest_usd": 3340343.7305400004
+        "symbol": "WLFI",
+        "perp_volume_usd": 583078.9409379999,
+        "open_interest_usd": 12472832.267070001
       },
       {
         "sira": 68,
         "symbol": "OP",
-        "perp_volume_usd": 569266.8300549999,
-        "open_interest_usd": 3351392.9239120004
+        "perp_volume_usd": 568380.9608169998,
+        "open_interest_usd": 3350384.98686
       },
       {
         "sira": 69,
-        "symbol": "WLFI",
-        "perp_volume_usd": 567240.7833399997,
-        "open_interest_usd": 12487239.32544
+        "symbol": "CC",
+        "perp_volume_usd": 558553.0746900002,
+        "open_interest_usd": 3345884.03424
       },
       {
         "sira": 70,
         "symbol": "W",
-        "perp_volume_usd": 545585.9508440001,
-        "open_interest_usd": 1541767.52121
+        "perp_volume_usd": 537061.8728020001,
+        "open_interest_usd": 1541831.189106
       },
       {
         "sira": 71,
         "symbol": "FIL",
-        "perp_volume_usd": 476010.806567,
-        "open_interest_usd": 2102365.4239899996
+        "perp_volume_usd": 476209.0551690001,
+        "open_interest_usd": 2106724.99895
       },
       {
         "sira": 72,
         "symbol": "MET",
-        "perp_volume_usd": 473126.17109,
-        "open_interest_usd": 2044042.8624
+        "perp_volume_usd": 473521.0084400001,
+        "open_interest_usd": 2047232.939862
       },
       {
         "sira": 73,
         "symbol": "WIF",
-        "perp_volume_usd": 452644.6428799999,
-        "open_interest_usd": 1959683.1903
+        "perp_volume_usd": 452809.91307,
+        "open_interest_usd": 1959987.9050399999
       },
       {
         "sira": 74,
         "symbol": "POL",
-        "perp_volume_usd": 448869.6247289999,
-        "open_interest_usd": 2680596.505726
+        "perp_volume_usd": 448132.1099409999,
+        "open_interest_usd": 2687276.281568
       },
       {
         "sira": 75,
         "symbol": "ACE",
-        "perp_volume_usd": 432115.4613080001,
-        "open_interest_usd": 381872.69048000005
+        "perp_volume_usd": 430471.9606100002,
+        "open_interest_usd": 383916.61815999995
       },
       {
         "sira": 76,
         "symbol": "STABLE",
-        "perp_volume_usd": 430111.9761919999,
-        "open_interest_usd": 2154521.3443919998
+        "perp_volume_usd": 429756.8135779999,
+        "open_interest_usd": 2157859.41329
       },
       {
         "sira": 77,
         "symbol": "BERA",
-        "perp_volume_usd": 423600.2414910001,
-        "open_interest_usd": 1317789.0402
+        "perp_volume_usd": 422789.8695090001,
+        "open_interest_usd": 1316474.52464
       },
       {
         "sira": 78,
         "symbol": "SEI",
-        "perp_volume_usd": 414572.8891120001,
-        "open_interest_usd": 1427024.478446
+        "perp_volume_usd": 414926.4755700001,
+        "open_interest_usd": 1429168.393728
       },
       {
         "sira": 79,
         "symbol": "0G",
-        "perp_volume_usd": 402684.9177700002,
-        "open_interest_usd": 164823.624144
+        "perp_volume_usd": 393402.4161900002,
+        "open_interest_usd": 166915.2159
       },
       {
         "sira": 80,
         "symbol": "HBAR",
-        "perp_volume_usd": 373759.4912149999,
-        "open_interest_usd": 4260388.71621
+        "perp_volume_usd": 358597.8544150001,
+        "open_interest_usd": 4272099.379912
       },
       {
         "sira": 81,
         "symbol": "SNX",
-        "perp_volume_usd": 345038.3486770001,
-        "open_interest_usd": 723874.696818
+        "perp_volume_usd": 351083.1101640001,
+        "open_interest_usd": 722622.2276
       },
       {
         "sira": 82,
         "symbol": "PNUT",
-        "perp_volume_usd": 343341.9020169999,
-        "open_interest_usd": 550038.071884
+        "perp_volume_usd": 342381.933523,
+        "open_interest_usd": 550454.941
       },
       {
         "sira": 83,
         "symbol": "MEGA",
-        "perp_volume_usd": 341176.5896700002,
-        "open_interest_usd": 4214063.752495999
+        "perp_volume_usd": 335009.5155870001,
+        "open_interest_usd": 4232303.199146
       },
       {
         "sira": 84,
-        "symbol": "ETC",
-        "perp_volume_usd": 333380.3059300001,
-        "open_interest_usd": 985300.3240200001
+        "symbol": "CELO",
+        "perp_volume_usd": 331538.7536140002,
+        "open_interest_usd": 143051.24448000002
       },
       {
         "sira": 85,
-        "symbol": "CELO",
-        "perp_volume_usd": 328654.8987390001,
-        "open_interest_usd": 140269.377096
+        "symbol": "ETC",
+        "perp_volume_usd": 330390.3592960002,
+        "open_interest_usd": 984721.6214139999
       },
       {
         "sira": 86,
         "symbol": "SYRUP",
-        "perp_volume_usd": 326787.4946499998,
-        "open_interest_usd": 1961199.4627800002
+        "perp_volume_usd": 326018.8735199997,
+        "open_interest_usd": 1964640.75684
       },
       {
         "sira": 87,
         "symbol": "NIL",
-        "perp_volume_usd": 321350.690045,
-        "open_interest_usd": 225935.167992
+        "perp_volume_usd": 319912.536048,
+        "open_interest_usd": 227502.10110400003
       },
       {
         "sira": 88,
-        "symbol": "APE",
-        "perp_volume_usd": 311289.004697,
-        "open_interest_usd": 879476.0354159999
+        "symbol": "BOME",
+        "perp_volume_usd": 310938.5535210001,
+        "open_interest_usd": 1287101.4153
       },
       {
         "sira": 89,
-        "symbol": "BOME",
-        "perp_volume_usd": 300895.6831010001,
-        "open_interest_usd": 1280443.550976
+        "symbol": "APE",
+        "perp_volume_usd": 307944.4518449999,
+        "open_interest_usd": 884738.088144
       },
       {
         "sira": 90,
         "symbol": "TIA",
-        "perp_volume_usd": 298608.5627469999,
-        "open_interest_usd": 1744927.1298739999
+        "perp_volume_usd": 298351.217937,
+        "open_interest_usd": 1746923.08464
       },
       {
         "sira": 91,
         "symbol": "CFX",
-        "perp_volume_usd": 292852.5780459999,
-        "open_interest_usd": 1587612.6916999999
+        "perp_volume_usd": 293609.962056,
+        "open_interest_usd": 1588844.1825040001
       },
       {
         "sira": 92,
-        "symbol": "ZORA",
-        "perp_volume_usd": 291608.688935,
-        "open_interest_usd": 808560.148188
+        "symbol": "KAS",
+        "perp_volume_usd": 287137.6661590001,
+        "open_interest_usd": 1240411.988574
       },
       {
         "sira": 93,
-        "symbol": "KAS",
-        "perp_volume_usd": 288512.8603640001,
-        "open_interest_usd": 1238133.122544
+        "symbol": "AZTEC",
+        "perp_volume_usd": 286163.3628719999,
+        "open_interest_usd": 666078.4205979999
       },
       {
         "sira": 94,
-        "symbol": "AZTEC",
-        "perp_volume_usd": 286072.4277609998,
-        "open_interest_usd": 665331.229584
+        "symbol": "ATOM",
+        "perp_volume_usd": 274247.140862,
+        "open_interest_usd": 2119937.884416
       },
       {
         "sira": 95,
-        "symbol": "SKY",
-        "perp_volume_usd": 283773.2638660001,
-        "open_interest_usd": 2020335.5255
+        "symbol": "RUNE",
+        "perp_volume_usd": 268143.645194,
+        "open_interest_usd": 1645095.0147519999
       },
       {
         "sira": 96,
-        "symbol": "ATOM",
-        "perp_volume_usd": 272636.3135780001,
-        "open_interest_usd": 2116282.408686
+        "symbol": "ZORA",
+        "perp_volume_usd": 268128.685912,
+        "open_interest_usd": 810717.9522960001
       },
       {
         "sira": 97,
-        "symbol": "RUNE",
-        "perp_volume_usd": 268744.9197979999,
-        "open_interest_usd": 1645589.278916
+        "symbol": "SKY",
+        "perp_volume_usd": 265825.036047,
+        "open_interest_usd": 2023138.3256080002
       },
       {
         "sira": 98,
         "symbol": "POPCAT",
-        "perp_volume_usd": 263730.92225,
-        "open_interest_usd": 969071.62352
+        "perp_volume_usd": 264382.637901,
+        "open_interest_usd": 974018.2877100001
       },
       {
         "sira": 99,
         "symbol": "PYTH",
-        "perp_volume_usd": 260334.590132,
-        "open_interest_usd": 1507476.297648
+        "perp_volume_usd": 261689.690714,
+        "open_interest_usd": 1515438.884328
       },
       {
         "sira": 100,
-        "symbol": "RENDER",
-        "perp_volume_usd": 257490.4502399999,
-        "open_interest_usd": 1235155.91004
+        "symbol": "IMX",
+        "perp_volume_usd": 258273.7115560001,
+        "open_interest_usd": 980278.954576
       },
       {
         "sira": 101,
-        "symbol": "IMX",
-        "perp_volume_usd": 256801.2105680001,
-        "open_interest_usd": 976541.87456
+        "symbol": "RENDER",
+        "perp_volume_usd": 256625.911,
+        "open_interest_usd": 1235685.9015000002
       },
       {
         "sira": 102,
-        "symbol": "GMX",
-        "perp_volume_usd": 253203.3940550001,
-        "open_interest_usd": 588092.494464
-      },
-      {
-        "sira": 103,
-        "symbol": "MNT",
-        "perp_volume_usd": 253001.2292360001,
-        "open_interest_usd": 1666546.4499839998
-      },
-      {
-        "sira": 104,
         "symbol": "XAI",
         "perp_volume_usd": 252944.4511900001,
         "open_interest_usd": 298208.926132
       },
       {
-        "sira": 105,
+        "sira": 103,
         "symbol": "DYDX",
-        "perp_volume_usd": 249647.571568,
-        "open_interest_usd": 2117792.51424
+        "perp_volume_usd": 248158.1689719999,
+        "open_interest_usd": 2128173.41887
+      },
+      {
+        "sira": 104,
+        "symbol": "GMX",
+        "perp_volume_usd": 243164.7680429999,
+        "open_interest_usd": 587139.43992
+      },
+      {
+        "sira": 105,
+        "symbol": "MNT",
+        "perp_volume_usd": 242743.341657,
+        "open_interest_usd": 1668699.95025
       },
       {
         "sira": 106,
         "symbol": "STBL",
-        "perp_volume_usd": 241120.1025350001,
-        "open_interest_usd": 2273681.7499100002
+        "perp_volume_usd": 240905.3083630001,
+        "open_interest_usd": 2278720.523642
       },
       {
         "sira": 107,
         "symbol": "BRETT",
-        "perp_volume_usd": 236890.266707,
-        "open_interest_usd": 436531.11118
+        "perp_volume_usd": 236171.302969,
+        "open_interest_usd": 436542.57946
       },
       {
         "sira": 108,
         "symbol": "HEMI",
-        "perp_volume_usd": 232966.908312,
-        "open_interest_usd": 798881.46548
+        "perp_volume_usd": 233468.808346,
+        "open_interest_usd": 801336.425752
       },
       {
         "sira": 109,
         "symbol": "HMSTR",
-        "perp_volume_usd": 225948.9119169999,
-        "open_interest_usd": 359771.724636
+        "perp_volume_usd": 225161.0895159999,
+        "open_interest_usd": 359711.18543199997
       },
       {
         "sira": 110,
         "symbol": "LINEA",
-        "perp_volume_usd": 224813.6731450001,
-        "open_interest_usd": 1077186.34492
+        "perp_volume_usd": 225027.886125,
+        "open_interest_usd": 1079118.517736
       },
       {
         "sira": 111,
         "symbol": "UMA",
-        "perp_volume_usd": 216773.39117,
-        "open_interest_usd": 347834.38164800004
+        "perp_volume_usd": 216316.694503,
+        "open_interest_usd": 347569.26081
       },
       {
         "sira": 112,
         "symbol": "2Z",
-        "perp_volume_usd": 206119.4150709999,
-        "open_interest_usd": 562648.565336
+        "perp_volume_usd": 205863.1195539999,
+        "open_interest_usd": 563623.739252
       },
       {
         "sira": 113,
-        "symbol": "MELANIA",
-        "perp_volume_usd": 197929.0513309999,
-        "open_interest_usd": 821361.297088
+        "symbol": "DYM",
+        "perp_volume_usd": 198369.7764980001,
+        "open_interest_usd": 106089.144288
       },
       {
         "sira": 114,
-        "symbol": "DYM",
-        "perp_volume_usd": 197028.610407,
-        "open_interest_usd": 106341.979664
+        "symbol": "STX",
+        "perp_volume_usd": 194469.145024,
+        "open_interest_usd": 429102.502896
       },
       {
         "sira": 115,
-        "symbol": "STX",
-        "perp_volume_usd": 195050.930066,
-        "open_interest_usd": 428960.10929200007
+        "symbol": "MELANIA",
+        "perp_volume_usd": 192521.901972,
+        "open_interest_usd": 822110.3085420001
       },
       {
         "sira": 116,
         "symbol": "AIXBT",
-        "perp_volume_usd": 192572.1327930001,
-        "open_interest_usd": 453287.631762
+        "perp_volume_usd": 191843.039544,
+        "open_interest_usd": 453494.83448
       },
       {
         "sira": 117,
         "symbol": "REZ",
-        "perp_volume_usd": 190941.210998,
-        "open_interest_usd": 354417.459054
+        "perp_volume_usd": 190267.6321320001,
+        "open_interest_usd": 354374.817804
       },
       {
         "sira": 118,
         "symbol": "ZK",
-        "perp_volume_usd": 186636.703159,
-        "open_interest_usd": 533783.044796
+        "perp_volume_usd": 186937.9318100001,
+        "open_interest_usd": 535439.743722
       },
       {
         "sira": 119,
-        "symbol": "IO",
-        "perp_volume_usd": 179167.4981280001,
-        "open_interest_usd": 461067.64678999997
+        "symbol": "ZETA",
+        "perp_volume_usd": 182637.4789960001,
+        "open_interest_usd": 658110.9125999999
       },
       {
         "sira": 120,
-        "symbol": "KNEIRO",
-        "perp_volume_usd": 178199.4803399999,
-        "open_interest_usd": 210418.927744
+        "symbol": "IO",
+        "perp_volume_usd": 180226.8967630001,
+        "open_interest_usd": 462993.615084
       },
       {
         "sira": 121,
-        "symbol": "ZETA",
-        "perp_volume_usd": 177912.0270160001,
-        "open_interest_usd": 649726.4342
+        "symbol": "KNEIRO",
+        "perp_volume_usd": 177551.9106909999,
+        "open_interest_usd": 210954.20696
       },
       {
         "sira": 122,
-        "symbol": "MOVE",
-        "perp_volume_usd": 176674.243695,
-        "open_interest_usd": 418579.954972
+        "symbol": "LAYER",
+        "perp_volume_usd": 177129.857591,
+        "open_interest_usd": 647366.0142600001
       },
       {
         "sira": 123,
-        "symbol": "ENS",
-        "perp_volume_usd": 176156.983836,
-        "open_interest_usd": 1315994.44625
+        "symbol": "SUSHI",
+        "perp_volume_usd": 174187.552247,
+        "open_interest_usd": 325527.08843
       },
       {
         "sira": 124,
-        "symbol": "SUSHI",
-        "perp_volume_usd": 174891.767739,
-        "open_interest_usd": 325254.29105
+        "symbol": "ENS",
+        "perp_volume_usd": 173395.260956,
+        "open_interest_usd": 1317475.98354
       },
       {
         "sira": 125,
-        "symbol": "LAYER",
-        "perp_volume_usd": 174402.134065,
-        "open_interest_usd": 646818.018096
+        "symbol": "MOVE",
+        "perp_volume_usd": 170088.539838,
+        "open_interest_usd": 419685.21348
       },
       {
         "sira": 126,
         "symbol": "NEO",
-        "perp_volume_usd": 167799.446429,
-        "open_interest_usd": 229015.451642
+        "perp_volume_usd": 168047.204151,
+        "open_interest_usd": 229656.78459000002
       },
       {
         "sira": 127,
         "symbol": "AVNT",
-        "perp_volume_usd": 165698.964288,
-        "open_interest_usd": 614901.28455
+        "perp_volume_usd": 164390.064979,
+        "open_interest_usd": 616626.687376
       },
       {
         "sira": 128,
         "symbol": "YGG",
-        "perp_volume_usd": 162781.590293,
-        "open_interest_usd": 213010.59029000002
+        "perp_volume_usd": 162679.352369,
+        "open_interest_usd": 213251.649912
       },
       {
         "sira": 129,
         "symbol": "RESOLV",
-        "perp_volume_usd": 156495.331955,
-        "open_interest_usd": 410063.790752
+        "perp_volume_usd": 156224.9732249999,
+        "open_interest_usd": 410891.044584
       },
       {
         "sira": 130,
         "symbol": "ZEN",
-        "perp_volume_usd": 152134.1989100001,
-        "open_interest_usd": 271447.058196
+        "perp_volume_usd": 152096.9963830001,
+        "open_interest_usd": 271513.546752
       },
       {
         "sira": 131,
         "symbol": "TURBO",
-        "perp_volume_usd": 150613.5047730001,
-        "open_interest_usd": 268331.067828
+        "perp_volume_usd": 149464.978946,
+        "open_interest_usd": 268428.584568
       },
       {
         "sira": 132,
         "symbol": "MINA",
-        "perp_volume_usd": 149164.921772,
-        "open_interest_usd": 805986.239806
+        "perp_volume_usd": 145471.849014,
+        "open_interest_usd": 809499.463104
       },
       {
         "sira": 133,
-        "symbol": "MANTA",
-        "perp_volume_usd": 147864.8402180001,
-        "open_interest_usd": 463426.42155400006
+        "symbol": "BANANA",
+        "perp_volume_usd": 141057.91191,
+        "open_interest_usd": 169765.72116
       },
       {
         "sira": 134,
-        "symbol": "BSV",
-        "perp_volume_usd": 146607.74152,
-        "open_interest_usd": 421858.239
+        "symbol": "BIGTIME",
+        "perp_volume_usd": 139679.559776,
+        "open_interest_usd": 130518.8043
       },
       {
         "sira": 135,
-        "symbol": "CAKE",
-        "perp_volume_usd": 146381.69719,
-        "open_interest_usd": 496100.86878
+        "symbol": "MANTA",
+        "perp_volume_usd": 138880.261473,
+        "open_interest_usd": 464380.872192
       },
       {
         "sira": 136,
-        "symbol": "PURR",
-        "perp_volume_usd": 141643.9004660001,
-        "open_interest_usd": 5508366.77904
+        "symbol": "BSV",
+        "perp_volume_usd": 137675.27836,
+        "open_interest_usd": 422299.38374399993
       },
       {
         "sira": 137,
-        "symbol": "BANANA",
-        "perp_volume_usd": 140570.27467,
-        "open_interest_usd": 169819.20508
+        "symbol": "MOODENG",
+        "perp_volume_usd": 137125.4294829999,
+        "open_interest_usd": 212422.64601599998
       },
       {
         "sira": 138,
-        "symbol": "BIGTIME",
-        "perp_volume_usd": 139973.6341279999,
-        "open_interest_usd": 130387.68388
+        "symbol": "BLUR",
+        "perp_volume_usd": 136455.861521,
+        "open_interest_usd": 834555.130362
       },
       {
         "sira": 139,
-        "symbol": "MOODENG",
-        "perp_volume_usd": 137947.612749,
-        "open_interest_usd": 212304.48308
+        "symbol": "KLUNC",
+        "perp_volume_usd": 136354.025401,
+        "open_interest_usd": 243062.40336000003
       },
       {
         "sira": 140,
-        "symbol": "BLUR",
-        "perp_volume_usd": 136770.564006,
-        "open_interest_usd": 828240.3573400001
+        "symbol": "BIO",
+        "perp_volume_usd": 135190.68036,
+        "open_interest_usd": 689373.53056
       },
       {
         "sira": 141,
-        "symbol": "KLUNC",
-        "perp_volume_usd": 136524.802028,
-        "open_interest_usd": 243072.70484000002
+        "symbol": "GMT",
+        "perp_volume_usd": 134390.919877,
+        "open_interest_usd": 134948.657972
       },
       {
         "sira": 142,
-        "symbol": "BIO",
-        "perp_volume_usd": 135597.865148,
-        "open_interest_usd": 688782.271636
+        "symbol": "GRIFFAIN",
+        "perp_volume_usd": 134155.18244,
+        "open_interest_usd": 542175.5592
       },
       {
         "sira": 143,
-        "symbol": "GMT",
-        "perp_volume_usd": 134929.428641,
-        "open_interest_usd": 135189.43464
+        "symbol": "AXS",
+        "perp_volume_usd": 133050.663044,
+        "open_interest_usd": 323765.621592
       },
       {
         "sira": 144,
-        "symbol": "GRIFFAIN",
-        "perp_volume_usd": 134235.024987,
-        "open_interest_usd": 540904.643968
+        "symbol": "PURR",
+        "perp_volume_usd": 131970.155689,
+        "open_interest_usd": 5519648.063016
       },
       {
         "sira": 145,
-        "symbol": "AXS",
-        "perp_volume_usd": 133602.805723,
-        "open_interest_usd": 323608.14094199997
+        "symbol": "HYPER",
+        "perp_volume_usd": 129695.599134,
+        "open_interest_usd": 298701.807852
       },
       {
         "sira": 146,
-        "symbol": "HYPER",
-        "perp_volume_usd": 132809.102683,
-        "open_interest_usd": 298035.89045999997
+        "symbol": "S",
+        "perp_volume_usd": 128896.449323,
+        "open_interest_usd": 675042.666144
       },
       {
         "sira": 147,
-        "symbol": "S",
-        "perp_volume_usd": 128759.629991,
-        "open_interest_usd": 674700.0583680001
+        "symbol": "SAND",
+        "perp_volume_usd": 126861.9610279999,
+        "open_interest_usd": 295573.146254
       },
       {
         "sira": 148,
-        "symbol": "SAND",
-        "perp_volume_usd": 126913.583227,
-        "open_interest_usd": 295051.28417999996
+        "symbol": "CAKE",
+        "perp_volume_usd": 125286.00869,
+        "open_interest_usd": 497614.04084
       },
       {
         "sira": 149,
         "symbol": "GOAT",
-        "perp_volume_usd": 122969.1099279999,
-        "open_interest_usd": 154627.485324
+        "perp_volume_usd": 122424.7543479999,
+        "open_interest_usd": 155067.64526
       },
       {
         "sira": 150,
         "symbol": "COMP",
-        "perp_volume_usd": 119088.61272,
-        "open_interest_usd": 689213.1966
+        "perp_volume_usd": 119315.38872,
+        "open_interest_usd": 690402.8064599999
+      }
+    ],
+    "Binance": [
+      {
+        "sira": 1,
+        "symbol": "BTC",
+        "perp_volume_usd": 10534057989.81,
+        "open_interest_usd": 6705114498.1018
+      },
+      {
+        "sira": 2,
+        "symbol": "ETH",
+        "perp_volume_usd": 8243334739.73,
+        "open_interest_usd": 4357915712.54625
+      },
+      {
+        "sira": 3,
+        "symbol": "SNDK",
+        "perp_volume_usd": 5471116355.7129,
+        "open_interest_usd": 380736337.472
+      },
+      {
+        "sira": 4,
+        "symbol": "SKHYNIX",
+        "perp_volume_usd": 4254565945.5696,
+        "open_interest_usd": 481480714.36319995
+      },
+      {
+        "sira": 5,
+        "symbol": "SOXL",
+        "perp_volume_usd": 3161516268.0273,
+        "open_interest_usd": 100565818.02620001
+      },
+      {
+        "sira": 6,
+        "symbol": "MU",
+        "perp_volume_usd": 2936905734.9149,
+        "open_interest_usd": 202898039.3528
+      },
+      {
+        "sira": 7,
+        "symbol": "XAU",
+        "perp_volume_usd": 2455939844.47,
+        "open_interest_usd": 313185961.06399995
+      },
+      {
+        "sira": 8,
+        "symbol": "KORU",
+        "perp_volume_usd": 2226346299.8865,
+        "open_interest_usd": 164100998.8332
+      },
+      {
+        "sira": 9,
+        "symbol": "SKHY",
+        "perp_volume_usd": 1664559652.231,
+        "open_interest_usd": 111217287.32399999
+      },
+      {
+        "sira": 10,
+        "symbol": "SOL",
+        "perp_volume_usd": 1191439915.1927,
+        "open_interest_usd": 615818919.102
+      },
+      {
+        "sira": 11,
+        "symbol": "XAG",
+        "perp_volume_usd": 1086837094.8044,
+        "open_interest_usd": 169156409.0454
+      },
+      {
+        "sira": 12,
+        "symbol": "CL",
+        "perp_volume_usd": 991480980.6357,
+        "open_interest_usd": 196518389.724
+      },
+      {
+        "sira": 13,
+        "symbol": "COTI",
+        "perp_volume_usd": 874161638.960159,
+        "open_interest_usd": 14151413.580038
+      },
+      {
+        "sira": 14,
+        "symbol": "SPCX",
+        "perp_volume_usd": 793012094.6899,
+        "open_interest_usd": 184895558.2551
+      },
+      {
+        "sira": 15,
+        "symbol": "EWY",
+        "perp_volume_usd": 672675268.8438,
+        "open_interest_usd": 63809719.085200004
+      },
+      {
+        "sira": 16,
+        "symbol": "DRAM",
+        "perp_volume_usd": 663202867.6488,
+        "open_interest_usd": 57406159.019999996
+      },
+      {
+        "sira": 17,
+        "symbol": "BANK",
+        "perp_volume_usd": 639709571.12962,
+        "open_interest_usd": 19854903.19044
+      },
+      {
+        "sira": 18,
+        "symbol": "SOXS",
+        "perp_volume_usd": 623880274.8266,
+        "open_interest_usd": 10198600.5032
+      },
+      {
+        "sira": 19,
+        "symbol": "SNXX",
+        "perp_volume_usd": 605116215.6822,
+        "open_interest_usd": 11996107.9506
+      },
+      {
+        "sira": 20,
+        "symbol": "XRP",
+        "perp_volume_usd": 470224401.8445,
+        "open_interest_usd": 320914088.6369
+      },
+      {
+        "sira": 21,
+        "symbol": "SAMSUNG",
+        "perp_volume_usd": 423423944.2699,
+        "open_interest_usd": 38280470.322299995
+      },
+      {
+        "sira": 22,
+        "symbol": "BZ",
+        "perp_volume_usd": 411648626.1251,
+        "open_interest_usd": 121535732.7766
+      },
+      {
+        "sira": 23,
+        "symbol": "QQQ",
+        "perp_volume_usd": 371951229.0111,
+        "open_interest_usd": 59107998.147199996
+      },
+      {
+        "sira": 24,
+        "symbol": "HYPE",
+        "perp_volume_usd": 362807528.49596,
+        "open_interest_usd": 241853069.1521
+      },
+      {
+        "sira": 25,
+        "symbol": "ZEC",
+        "perp_volume_usd": 343329285.83,
+        "open_interest_usd": 236276010.72136003
+      },
+      {
+        "sira": 26,
+        "symbol": "ON",
+        "perp_volume_usd": 299183012.92921,
+        "open_interest_usd": 13413007.042499999
+      },
+      {
+        "sira": 27,
+        "symbol": "MUU",
+        "perp_volume_usd": 279970583.6397,
+        "open_interest_usd": 4966642.8132
+      },
+      {
+        "sira": 28,
+        "symbol": "DOGE",
+        "perp_volume_usd": 242246310.14687,
+        "open_interest_usd": 187409767.04658
+      },
+      {
+        "sira": 29,
+        "symbol": "INTC",
+        "perp_volume_usd": 238559667.41,
+        "open_interest_usd": 33269566.575000003
+      },
+      {
+        "sira": 30,
+        "symbol": "AKE",
+        "perp_volume_usd": 220977480.5028256,
+        "open_interest_usd": 33027861.218362503
+      },
+      {
+        "sira": 31,
+        "symbol": "UAI",
+        "perp_volume_usd": 209722060.0756,
+        "open_interest_usd": 8730833.888
+      },
+      {
+        "sira": 32,
+        "symbol": "BNB",
+        "perp_volume_usd": 197282794.025,
+        "open_interest_usd": 332002978.32
+      },
+      {
+        "sira": 33,
+        "symbol": "NVDA",
+        "perp_volume_usd": 161557281.8887,
+        "open_interest_usd": 29351503.708499998
+      },
+      {
+        "sira": 34,
+        "symbol": "MRVL",
+        "perp_volume_usd": 148947089.6028,
+        "open_interest_usd": 33940230.7008
+      },
+      {
+        "sira": 35,
+        "symbol": "PAXG",
+        "perp_volume_usd": 132909265.824,
+        "open_interest_usd": 66697205.59075
+      },
+      {
+        "sira": 36,
+        "symbol": "BEAT",
+        "perp_volume_usd": 132007382.4168,
+        "open_interest_usd": 17924964.371999998
+      },
+      {
+        "sira": 37,
+        "symbol": "1000PEPE",
+        "perp_volume_usd": 125551704.6453705,
+        "open_interest_usd": 52874865.8675718
+      },
+      {
+        "sira": 38,
+        "symbol": "MSTR",
+        "perp_volume_usd": 124862531.6196,
+        "open_interest_usd": 23675394.9952
+      },
+      {
+        "sira": 39,
+        "symbol": "ADA",
+        "perp_volume_usd": 124632968.2158,
+        "open_interest_usd": 76733187.22659999
+      },
+      {
+        "sira": 40,
+        "symbol": "KAITO",
+        "perp_volume_usd": 123582385.37797,
+        "open_interest_usd": 60542569.48376
+      },
+      {
+        "sira": 41,
+        "symbol": "META",
+        "perp_volume_usd": 116884753.5769,
+        "open_interest_usd": 9051633.316499999
+      },
+      {
+        "sira": 42,
+        "symbol": "AAVE",
+        "perp_volume_usd": 110449696.784,
+        "open_interest_usd": 51326163.445
+      },
+      {
+        "sira": 43,
+        "symbol": "UNI",
+        "perp_volume_usd": 108853070.719,
+        "open_interest_usd": 77007170.592
+      },
+      {
+        "sira": 44,
+        "symbol": "RIF",
+        "perp_volume_usd": 108326131.95129,
+        "open_interest_usd": 4799107.298160001
+      },
+      {
+        "sira": 45,
+        "symbol": "TSLA",
+        "perp_volume_usd": 106862712.8744,
+        "open_interest_usd": 45765199.8027
+      },
+      {
+        "sira": 46,
+        "symbol": "CRCL",
+        "perp_volume_usd": 103190875.1622,
+        "open_interest_usd": 62626141.9017
+      },
+      {
+        "sira": 47,
+        "symbol": "WLD",
+        "perp_volume_usd": 99331551.7161,
+        "open_interest_usd": 59965210.414500006
+      },
+      {
+        "sira": 48,
+        "symbol": "MSFT",
+        "perp_volume_usd": 96749528.6935,
+        "open_interest_usd": 13159010.862
+      },
+      {
+        "sira": 49,
+        "symbol": "NEAR",
+        "perp_volume_usd": 94883429.683,
+        "open_interest_usd": 74383370.43200001
+      },
+      {
+        "sira": 50,
+        "symbol": "ONDO",
+        "perp_volume_usd": 94483382.96139,
+        "open_interest_usd": 39664479.779079996
+      },
+      {
+        "sira": 51,
+        "symbol": "DEXE",
+        "perp_volume_usd": 88704400.53285,
+        "open_interest_usd": 15853718.565510001
+      },
+      {
+        "sira": 52,
+        "symbol": "AMD",
+        "perp_volume_usd": 85134874.473,
+        "open_interest_usd": 8037493.135799999
+      },
+      {
+        "sira": 53,
+        "symbol": "NBIS",
+        "perp_volume_usd": 84651460.8492,
+        "open_interest_usd": 11693866.191300001
+      },
+      {
+        "sira": 54,
+        "symbol": "EUL",
+        "perp_volume_usd": 83662589.23618,
+        "open_interest_usd": 7336070.874159999
+      },
+      {
+        "sira": 55,
+        "symbol": "1000SHIB",
+        "perp_volume_usd": 81582004.679266,
+        "open_interest_usd": 25775121.063104
+      },
+      {
+        "sira": 56,
+        "symbol": "GOOGL",
+        "perp_volume_usd": 79225464.2326,
+        "open_interest_usd": 37997965.507199995
+      },
+      {
+        "sira": 57,
+        "symbol": "RE",
+        "perp_volume_usd": 77668066.058,
+        "open_interest_usd": 12519214.2072
+      },
+      {
+        "sira": 58,
+        "symbol": "SUI",
+        "perp_volume_usd": 77012638.70109,
+        "open_interest_usd": 72073560.70616
+      },
+      {
+        "sira": 59,
+        "symbol": "LINK",
+        "perp_volume_usd": 76760786.228,
+        "open_interest_usd": 72762015.5844
+      },
+      {
+        "sira": 60,
+        "symbol": "ENA",
+        "perp_volume_usd": 71280925.27396,
+        "open_interest_usd": 43420526.405939996
+      },
+      {
+        "sira": 61,
+        "symbol": "UB",
+        "perp_volume_usd": 68954805.90822,
+        "open_interest_usd": 8928571.07462
+      },
+      {
+        "sira": 62,
+        "symbol": "LA",
+        "perp_volume_usd": 66755330.235459,
+        "open_interest_usd": 5619802.724864
+      },
+      {
+        "sira": 63,
+        "symbol": "SPY",
+        "perp_volume_usd": 65482351.7194,
+        "open_interest_usd": 25135188.1111
+      },
+      {
+        "sira": 64,
+        "symbol": "ESP",
+        "perp_volume_usd": 61559478.56641,
+        "open_interest_usd": 5646011.872930001
+      },
+      {
+        "sira": 65,
+        "symbol": "PUMP",
+        "perp_volume_usd": 59779373.313015,
+        "open_interest_usd": 42794556.650105
+      },
+      {
+        "sira": 66,
+        "symbol": "ZAMA",
+        "perp_volume_usd": 58919368.11288,
+        "open_interest_usd": 11547847.11648
+      },
+      {
+        "sira": 67,
+        "symbol": "ACH",
+        "perp_volume_usd": 57219745.241396,
+        "open_interest_usd": 2408576.74758
+      },
+      {
+        "sira": 68,
+        "symbol": "XAUT",
+        "perp_volume_usd": 56937019.18,
+        "open_interest_usd": 36442138.8688
+      },
+      {
+        "sira": 69,
+        "symbol": "BTW",
+        "perp_volume_usd": 54977516.6495,
+        "open_interest_usd": 12118007.921759998
+      },
+      {
+        "sira": 70,
+        "symbol": "AAPL",
+        "perp_volume_usd": 54651179.2238,
+        "open_interest_usd": 31439415.2345
+      },
+      {
+        "sira": 71,
+        "symbol": "TAO",
+        "perp_volume_usd": 53565539.02,
+        "open_interest_usd": 52457382.92584
+      },
+      {
+        "sira": 72,
+        "symbol": "TQQQ",
+        "perp_volume_usd": 49796234.0692,
+        "open_interest_usd": 6827551.8116
+      },
+      {
+        "sira": 73,
+        "symbol": "BCH",
+        "perp_volume_usd": 49449708.46,
+        "open_interest_usd": 59035349.889
+      },
+      {
+        "sira": 74,
+        "symbol": "LITE",
+        "perp_volume_usd": 49449048.6618,
+        "open_interest_usd": 7197341.751
+      },
+      {
+        "sira": 75,
+        "symbol": "AVAX",
+        "perp_volume_usd": 49301259.665,
+        "open_interest_usd": 46402700.658999994
+      },
+      {
+        "sira": 76,
+        "symbol": "SOON",
+        "perp_volume_usd": 48551803.1848,
+        "open_interest_usd": 10052711.0
+      },
+      {
+        "sira": 77,
+        "symbol": "FIL",
+        "perp_volume_usd": 47658456.947053,
+        "open_interest_usd": 31647663.981119998
+      },
+      {
+        "sira": 78,
+        "symbol": "WDC",
+        "perp_volume_usd": 45924718.9514,
+        "open_interest_usd": 4368706.491
+      },
+      {
+        "sira": 79,
+        "symbol": "MVLL",
+        "perp_volume_usd": 43956334.3505,
+        "open_interest_usd": 1396616.298
+      },
+      {
+        "sira": 80,
+        "symbol": "LTC",
+        "perp_volume_usd": 42510015.71,
+        "open_interest_usd": 53925685.81648
+      },
+      {
+        "sira": 81,
+        "symbol": "HOOD",
+        "perp_volume_usd": 42072163.842,
+        "open_interest_usd": 6535083.4653
+      },
+      {
+        "sira": 82,
+        "symbol": "CBRS",
+        "perp_volume_usd": 41573721.3998,
+        "open_interest_usd": 7001856.5729
+      },
+      {
+        "sira": 83,
+        "symbol": "ARM",
+        "perp_volume_usd": 40492146.1771,
+        "open_interest_usd": 6108839.6115999995
+      },
+      {
+        "sira": 84,
+        "symbol": "BE",
+        "perp_volume_usd": 39627260.3658,
+        "open_interest_usd": 3261906.4408000004
+      },
+      {
+        "sira": 85,
+        "symbol": "EPIC",
+        "perp_volume_usd": 38426088.03997,
+        "open_interest_usd": 7539949.4137699995
+      },
+      {
+        "sira": 86,
+        "symbol": "LAB",
+        "perp_volume_usd": 38050487.7329,
+        "open_interest_usd": 15509772.0923
+      },
+      {
+        "sira": 87,
+        "symbol": "XLM",
+        "perp_volume_usd": 37277187.17201,
+        "open_interest_usd": 36065703.51201
+      },
+      {
+        "sira": 88,
+        "symbol": "INJ",
+        "perp_volume_usd": 35367259.3774,
+        "open_interest_usd": 21882039.5724
+      },
+      {
+        "sira": 89,
+        "symbol": "KOMA",
+        "perp_volume_usd": 34282171.587048,
+        "open_interest_usd": 4366086.898593
+      },
+      {
+        "sira": 90,
+        "symbol": "TSM",
+        "perp_volume_usd": 34186862.4985,
+        "open_interest_usd": 11331271.3836
+      },
+      {
+        "sira": 91,
+        "symbol": "DOT",
+        "perp_volume_usd": 33379562.14828,
+        "open_interest_usd": 30002729.106110003
+      },
+      {
+        "sira": 92,
+        "symbol": "ESPORTS",
+        "perp_volume_usd": 32135031.66279,
+        "open_interest_usd": 8587809.6876
+      },
+      {
+        "sira": 93,
+        "symbol": "GLW",
+        "perp_volume_usd": 32019602.1967,
+        "open_interest_usd": 10596852.6484
+      },
+      {
+        "sira": 94,
+        "symbol": "LIT",
+        "perp_volume_usd": 31992602.48243,
+        "open_interest_usd": 35689563.61106
+      },
+      {
+        "sira": 95,
+        "symbol": "ZHIPU",
+        "perp_volume_usd": 30699614.9938,
+        "open_interest_usd": 3600783.0179999997
+      },
+      {
+        "sira": 96,
+        "symbol": "TRX",
+        "perp_volume_usd": 30283376.287,
+        "open_interest_usd": 88829553.77555
+      },
+      {
+        "sira": 97,
+        "symbol": "TRUMP",
+        "perp_volume_usd": 29844677.12216,
+        "open_interest_usd": 24678914.5805
+      },
+      {
+        "sira": 98,
+        "symbol": "ASTER",
+        "perp_volume_usd": 29806287.8062,
+        "open_interest_usd": 72243038.14559999
+      },
+      {
+        "sira": 99,
+        "symbol": "COIN",
+        "perp_volume_usd": 28424782.1624,
+        "open_interest_usd": 8380767.835200001
+      },
+      {
+        "sira": 100,
+        "symbol": "FET",
+        "perp_volume_usd": 27022128.0205,
+        "open_interest_usd": 21667166.405
+      },
+      {
+        "sira": 101,
+        "symbol": "APT",
+        "perp_volume_usd": 26759271.05343,
+        "open_interest_usd": 15454745.222700002
+      },
+      {
+        "sira": 102,
+        "symbol": "QCOM",
+        "perp_volume_usd": 26359585.849,
+        "open_interest_usd": 7671190.899599999
+      },
+      {
+        "sira": 103,
+        "symbol": "PENGU",
+        "perp_volume_usd": 25815571.198588,
+        "open_interest_usd": 16210314.42099
+      },
+      {
+        "sira": 104,
+        "symbol": "HOLO",
+        "perp_volume_usd": 24899323.49943,
+        "open_interest_usd": 3427612.72294
+      },
+      {
+        "sira": 105,
+        "symbol": "XPL",
+        "perp_volume_usd": 24131352.89161,
+        "open_interest_usd": 27742713.15654
+      },
+      {
+        "sira": 106,
+        "symbol": "AAOI",
+        "perp_volume_usd": 23906227.6905,
+        "open_interest_usd": 3900610.9272000003
+      },
+      {
+        "sira": 107,
+        "symbol": "XMR",
+        "perp_volume_usd": 23742282.16,
+        "open_interest_usd": 34557495.93492
+      },
+      {
+        "sira": 108,
+        "symbol": "ZIL",
+        "perp_volume_usd": 23277968.692172,
+        "open_interest_usd": 4730112.89607
+      },
+      {
+        "sira": 109,
+        "symbol": "US",
+        "perp_volume_usd": 22016556.127479,
+        "open_interest_usd": 23805938.695952
+      },
+      {
+        "sira": 110,
+        "symbol": "OP",
+        "perp_volume_usd": 21752383.83106,
+        "open_interest_usd": 10882933.27825
+      },
+      {
+        "sira": 111,
+        "symbol": "ARB",
+        "perp_volume_usd": 20073325.58122,
+        "open_interest_usd": 17420339.890722003
+      },
+      {
+        "sira": 112,
+        "symbol": "PRL",
+        "perp_volume_usd": 19883910.2964,
+        "open_interest_usd": 4180676.6843000003
+      },
+      {
+        "sira": 113,
+        "symbol": "ALLO",
+        "perp_volume_usd": 19604598.77869,
+        "open_interest_usd": 15298337.7288
+      },
+      {
+        "sira": 114,
+        "symbol": "DIA",
+        "perp_volume_usd": 19583947.5503,
+        "open_interest_usd": 2107542.9952000002
+      },
+      {
+        "sira": 115,
+        "symbol": "ORCL",
+        "perp_volume_usd": 18634380.3709,
+        "open_interest_usd": 8879881.5625
+      },
+      {
+        "sira": 116,
+        "symbol": "RKLB",
+        "perp_volume_usd": 18312929.406,
+        "open_interest_usd": 6437329.106000001
+      },
+      {
+        "sira": 117,
+        "symbol": "DASH",
+        "perp_volume_usd": 17891995.67,
+        "open_interest_usd": 11048809.59637
+      },
+      {
+        "sira": 118,
+        "symbol": "1000BONK",
+        "perp_volume_usd": 17377978.17164,
+        "open_interest_usd": 13008262.309222
+      },
+      {
+        "sira": 119,
+        "symbol": "NATGAS",
+        "perp_volume_usd": 16246795.5601,
+        "open_interest_usd": 11131738.526999999
+      },
+      {
+        "sira": 120,
+        "symbol": "AMZN",
+        "perp_volume_usd": 16005428.4907,
+        "open_interest_usd": 6584683.7469999995
+      },
+      {
+        "sira": 121,
+        "symbol": "ICP",
+        "perp_volume_usd": 15869829.374,
+        "open_interest_usd": 20677030.864
+      },
+      {
+        "sira": 122,
+        "symbol": "VELVET",
+        "perp_volume_usd": 15243454.3457,
+        "open_interest_usd": 4414491.7870000005
+      },
+      {
+        "sira": 123,
+        "symbol": "BABA",
+        "perp_volume_usd": 15098765.2894,
+        "open_interest_usd": 7264380.143999999
+      },
+      {
+        "sira": 124,
+        "symbol": "FARTCOIN",
+        "perp_volume_usd": 15078196.89204,
+        "open_interest_usd": 9224794.23552
+      },
+      {
+        "sira": 125,
+        "symbol": "HBAR",
+        "perp_volume_usd": 14985771.9662,
+        "open_interest_usd": 20339517.5352
+      },
+      {
+        "sira": 126,
+        "symbol": "WLFI",
+        "perp_volume_usd": 14839200.81385,
+        "open_interest_usd": 114834149.09142
+      },
+      {
+        "sira": 127,
+        "symbol": "OPEN",
+        "perp_volume_usd": 14549522.6059,
+        "open_interest_usd": 8303128.6965
+      },
+      {
+        "sira": 128,
+        "symbol": "BULLA",
+        "perp_volume_usd": 14357693.778295,
+        "open_interest_usd": 12873201.725968001
+      },
+      {
+        "sira": 129,
+        "symbol": "VVV",
+        "perp_volume_usd": 14247158.03993,
+        "open_interest_usd": 8660139.25542
+      },
+      {
+        "sira": 130,
+        "symbol": "JTO",
+        "perp_volume_usd": 14107566.4693,
+        "open_interest_usd": 11895942.7775
+      },
+      {
+        "sira": 131,
+        "symbol": "AERO",
+        "perp_volume_usd": 13730596.73124,
+        "open_interest_usd": 13227944.3373
+      },
+      {
+        "sira": 132,
+        "symbol": "SLX",
+        "perp_volume_usd": 13709502.75491,
+        "open_interest_usd": 4363374.13611
+      },
+      {
+        "sira": 133,
+        "symbol": "SQQQ",
+        "perp_volume_usd": 13373080.4541,
+        "open_interest_usd": 2853729.1212
+      },
+      {
+        "sira": 134,
+        "symbol": "DELL",
+        "perp_volume_usd": 13362083.4011,
+        "open_interest_usd": 3035770.65
+      },
+      {
+        "sira": 135,
+        "symbol": "BOME",
+        "perp_volume_usd": 13101037.0693963,
+        "open_interest_usd": 5300641.1577562
+      },
+      {
+        "sira": 136,
+        "symbol": "HOME",
+        "perp_volume_usd": 12874580.32685,
+        "open_interest_usd": 6320840.491253
+      },
+      {
+        "sira": 137,
+        "symbol": "LDO",
+        "perp_volume_usd": 12752142.063,
+        "open_interest_usd": 17624848.0
+      },
+      {
+        "sira": 138,
+        "symbol": "WIF",
+        "perp_volume_usd": 12746842.3537,
+        "open_interest_usd": 10968485.15028
+      },
+      {
+        "sira": 139,
+        "symbol": "ETC",
+        "perp_volume_usd": 12733510.016,
+        "open_interest_usd": 15142584.31257
+      },
+      {
+        "sira": 140,
+        "symbol": "FLOW",
+        "perp_volume_usd": 12693652.451666,
+        "open_interest_usd": 2822054.138548
+      },
+      {
+        "sira": 141,
+        "symbol": "IBM",
+        "perp_volume_usd": 12685591.6886,
+        "open_interest_usd": 8528874.109000001
+      },
+      {
+        "sira": 142,
+        "symbol": "GWEI",
+        "perp_volume_usd": 12521458.77601,
+        "open_interest_usd": 4922562.85107
+      },
+      {
+        "sira": 143,
+        "symbol": "AXTI",
+        "perp_volume_usd": 12254793.7393,
+        "open_interest_usd": 2181036.9514
+      },
+      {
+        "sira": 144,
+        "symbol": "ERA",
+        "perp_volume_usd": 12208559.13754,
+        "open_interest_usd": 4098763.27168
+      },
+      {
+        "sira": 145,
+        "symbol": "JUP",
+        "perp_volume_usd": 12123733.0297,
+        "open_interest_usd": 9739890.105600001
+      },
+      {
+        "sira": 146,
+        "symbol": "TIA",
+        "perp_volume_usd": 12121972.1919,
+        "open_interest_usd": 11385731.5088
+      },
+      {
+        "sira": 147,
+        "symbol": "VANRY",
+        "perp_volume_usd": 12016729.020603,
+        "open_interest_usd": 3511802.622447
+      },
+      {
+        "sira": 148,
+        "symbol": "RENDER",
+        "perp_volume_usd": 11950814.6889,
+        "open_interest_usd": 9417738.029
+      },
+      {
+        "sira": 149,
+        "symbol": "MMT",
+        "perp_volume_usd": 11946450.8662,
+        "open_interest_usd": 7802575.7985000005
+      },
+      {
+        "sira": 150,
+        "symbol": "EIGEN",
+        "perp_volume_usd": 11943769.4972,
+        "open_interest_usd": 6070577.0705
+      }
+    ],
+    "Bybit": [
+      {
+        "sira": 1,
+        "symbol": "BTC",
+        "perp_volume_usd": 4802437095.1463,
+        "open_interest_usd": 3500676259.91
+      },
+      {
+        "sira": 2,
+        "symbol": "ETH",
+        "perp_volume_usd": 2886552077.7622,
+        "open_interest_usd": 1375345875.98
+      },
+      {
+        "sira": 3,
+        "symbol": "SOXL",
+        "perp_volume_usd": 631205250.9745,
+        "open_interest_usd": 27096165.79
+      },
+      {
+        "sira": 4,
+        "symbol": "SOL",
+        "perp_volume_usd": 473961693.133,
+        "open_interest_usd": 445452151.25
+      },
+      {
+        "sira": 5,
+        "symbol": "SNDK",
+        "perp_volume_usd": 251913410.8649,
+        "open_interest_usd": 42021687.79
+      },
+      {
+        "sira": 6,
+        "symbol": "XRP",
+        "perp_volume_usd": 205850080.8422,
+        "open_interest_usd": 229791500.31
+      },
+      {
+        "sira": 7,
+        "symbol": "XAU",
+        "perp_volume_usd": 198701051.8102,
+        "open_interest_usd": 49783541.3
+      },
+      {
+        "sira": 8,
+        "symbol": "MU",
+        "perp_volume_usd": 172023196.5188,
+        "open_interest_usd": 24618448.64
+      },
+      {
+        "sira": 9,
+        "symbol": "COTI",
+        "perp_volume_usd": 159116064.3831,
+        "open_interest_usd": 8906106.42
+      },
+      {
+        "sira": 10,
+        "symbol": "SKHYNIX",
+        "perp_volume_usd": 157729742.4932,
+        "open_interest_usd": 31562067.96
+      },
+      {
+        "sira": 11,
+        "symbol": "HYPE",
+        "perp_volume_usd": 134950025.8914,
+        "open_interest_usd": 198462325.78
+      },
+      {
+        "sira": 12,
+        "symbol": "BANK",
+        "perp_volume_usd": 127866465.3425,
+        "open_interest_usd": 9104808.78
+      },
+      {
+        "sira": 13,
+        "symbol": "CL",
+        "perp_volume_usd": 81003965.5393,
+        "open_interest_usd": 24325637.27
+      },
+      {
+        "sira": 14,
+        "symbol": "DOGE",
+        "perp_volume_usd": 77595363.528,
+        "open_interest_usd": 100460005.04
+      },
+      {
+        "sira": 15,
+        "symbol": "SKHY",
+        "perp_volume_usd": 76455693.525,
+        "open_interest_usd": 11214020.0
+      },
+      {
+        "sira": 16,
+        "symbol": "AKE",
+        "perp_volume_usd": 75233013.7658,
+        "open_interest_usd": 22182568.87
+      },
+      {
+        "sira": 17,
+        "symbol": "XAG",
+        "perp_volume_usd": 69741604.4422,
+        "open_interest_usd": 34500336.01
+      },
+      {
+        "sira": 18,
+        "symbol": "ZEC",
+        "perp_volume_usd": 66182216.0632,
+        "open_interest_usd": 71297229.45
+      },
+      {
+        "sira": 19,
+        "symbol": "KORU",
+        "perp_volume_usd": 62324100.948,
+        "open_interest_usd": 5013902.94
+      },
+      {
+        "sira": 20,
+        "symbol": "SPCX",
+        "perp_volume_usd": 59960465.8097,
+        "open_interest_usd": 29703055.83
+      },
+      {
+        "sira": 21,
+        "symbol": "UAI",
+        "perp_volume_usd": 55746507.0645,
+        "open_interest_usd": 3479428.1
+      },
+      {
+        "sira": 22,
+        "symbol": "EWY",
+        "perp_volume_usd": 55676423.6078,
+        "open_interest_usd": 10177895.97
+      },
+      {
+        "sira": 23,
+        "symbol": "XAUT",
+        "perp_volume_usd": 52766924.3588,
+        "open_interest_usd": 144315957.22
+      },
+      {
+        "sira": 24,
+        "symbol": "DRAM",
+        "perp_volume_usd": 52236173.149,
+        "open_interest_usd": 10323056.46
+      },
+      {
+        "sira": 25,
+        "symbol": "BEAT",
+        "perp_volume_usd": 50977993.2276,
+        "open_interest_usd": 11155353.71
+      },
+      {
+        "sira": 26,
+        "symbol": "NEAR",
+        "perp_volume_usd": 50656906.6337,
+        "open_interest_usd": 67765012.86
+      },
+      {
+        "sira": 27,
+        "symbol": "AAVE",
+        "perp_volume_usd": 47022421.7589,
+        "open_interest_usd": 47140760.7
+      },
+      {
+        "sira": 28,
+        "symbol": "ADA",
+        "perp_volume_usd": 45570829.0208,
+        "open_interest_usd": 49515197.77
+      },
+      {
+        "sira": 29,
+        "symbol": "ONDO",
+        "perp_volume_usd": 43906450.1313,
+        "open_interest_usd": 34677219.81
+      },
+      {
+        "sira": 30,
+        "symbol": "KAITO",
+        "perp_volume_usd": 43036771.5914,
+        "open_interest_usd": 12637769.29
+      },
+      {
+        "sira": 31,
+        "symbol": "1000PEPE",
+        "perp_volume_usd": 41191053.6028,
+        "open_interest_usd": 36039831.13
+      },
+      {
+        "sira": 32,
+        "symbol": "UNI",
+        "perp_volume_usd": 39015319.5932,
+        "open_interest_usd": 38444683.12
+      },
+      {
+        "sira": 33,
+        "symbol": "SNXX",
+        "perp_volume_usd": 35794209.9078,
+        "open_interest_usd": 2486934.14
+      },
+      {
+        "sira": 34,
+        "symbol": "ENA",
+        "perp_volume_usd": 34457759.2954,
+        "open_interest_usd": 41879315.52
+      },
+      {
+        "sira": 35,
+        "symbol": "SUI",
+        "perp_volume_usd": 30146318.954,
+        "open_interest_usd": 46499764.86
+      },
+      {
+        "sira": 36,
+        "symbol": "LINK",
+        "perp_volume_usd": 29421130.1358,
+        "open_interest_usd": 56369516.03
+      },
+      {
+        "sira": 37,
+        "symbol": "BNB",
+        "perp_volume_usd": 26326196.753,
+        "open_interest_usd": 81425633.76
+      },
+      {
+        "sira": 38,
+        "symbol": "SOXS",
+        "perp_volume_usd": 26022403.6834,
+        "open_interest_usd": 2280616.11
+      },
+      {
+        "sira": 39,
+        "symbol": "WLD",
+        "perp_volume_usd": 24666032.661,
+        "open_interest_usd": 38985644.82
+      },
+      {
+        "sira": 40,
+        "symbol": "SHIB1000",
+        "perp_volume_usd": 24033364.4309,
+        "open_interest_usd": 9868361.89
+      },
+      {
+        "sira": 41,
+        "symbol": "PUMPFUN",
+        "perp_volume_usd": 23132048.2894,
+        "open_interest_usd": 24515421.72
+      },
+      {
+        "sira": 42,
+        "symbol": "TAO",
+        "perp_volume_usd": 22109734.1735,
+        "open_interest_usd": 29059236.6
+      },
+      {
+        "sira": 43,
+        "symbol": "DEXE",
+        "perp_volume_usd": 21456299.1166,
+        "open_interest_usd": 6447602.53
+      },
+      {
+        "sira": 44,
+        "symbol": "EUL",
+        "perp_volume_usd": 19906131.7049,
+        "open_interest_usd": 3223975.13
+      },
+      {
+        "sira": 45,
+        "symbol": "SOON",
+        "perp_volume_usd": 18042269.5154,
+        "open_interest_usd": 3971031.01
+      },
+      {
+        "sira": 46,
+        "symbol": "AVAX",
+        "perp_volume_usd": 17384244.0785,
+        "open_interest_usd": 30995611.08
+      },
+      {
+        "sira": 47,
+        "symbol": "FARTCOIN",
+        "perp_volume_usd": 17251562.0823,
+        "open_interest_usd": 18583466.72
+      },
+      {
+        "sira": 48,
+        "symbol": "LA",
+        "perp_volume_usd": 16935360.7824,
+        "open_interest_usd": 3824412.46
+      },
+      {
+        "sira": 49,
+        "symbol": "ESP",
+        "perp_volume_usd": 16718830.4683,
+        "open_interest_usd": 2314662.85
+      },
+      {
+        "sira": 50,
+        "symbol": "INTC",
+        "perp_volume_usd": 16252014.3487,
+        "open_interest_usd": 5151773.07
+      },
+      {
+        "sira": 51,
+        "symbol": "LTC",
+        "perp_volume_usd": 16073848.18,
+        "open_interest_usd": 56922910.92
+      },
+      {
+        "sira": 52,
+        "symbol": "NBIS",
+        "perp_volume_usd": 15971491.2303,
+        "open_interest_usd": 2932524.76
+      },
+      {
+        "sira": 53,
+        "symbol": "UB",
+        "perp_volume_usd": 14974199.1895,
+        "open_interest_usd": 2663035.77
+      },
+      {
+        "sira": 54,
+        "symbol": "RE",
+        "perp_volume_usd": 14616899.2441,
+        "open_interest_usd": 3203696.32
+      },
+      {
+        "sira": 55,
+        "symbol": "SSPC",
+        "perp_volume_usd": 14084392.3802,
+        "open_interest_usd": 52997.54
+      },
+      {
+        "sira": 56,
+        "symbol": "XPL",
+        "perp_volume_usd": 13497614.2849,
+        "open_interest_usd": 17857127.33
+      },
+      {
+        "sira": 57,
+        "symbol": "BTW",
+        "perp_volume_usd": 13264577.4612,
+        "open_interest_usd": 3782088.83
+      },
+      {
+        "sira": 58,
+        "symbol": "SAMSUNG",
+        "perp_volume_usd": 12874272.375,
+        "open_interest_usd": 3210791.19
+      },
+      {
+        "sira": 59,
+        "symbol": "ZAMA",
+        "perp_volume_usd": 12496240.626,
+        "open_interest_usd": 4080237.25
+      },
+      {
+        "sira": 60,
+        "symbol": "XLM",
+        "perp_volume_usd": 12436871.9726,
+        "open_interest_usd": 28513486.52
+      },
+      {
+        "sira": 61,
+        "symbol": "TSLA",
+        "perp_volume_usd": 12346366.2523,
+        "open_interest_usd": 12067260.39
+      },
+      {
+        "sira": 62,
+        "symbol": "OP",
+        "perp_volume_usd": 12060085.826,
+        "open_interest_usd": 8869569.27
+      },
+      {
+        "sira": 63,
+        "symbol": "APT",
+        "perp_volume_usd": 11814965.7767,
+        "open_interest_usd": 15985079.01
+      },
+      {
+        "sira": 64,
+        "symbol": "INJ",
+        "perp_volume_usd": 11806578.7623,
+        "open_interest_usd": 12551441.11
+      },
+      {
+        "sira": 65,
+        "symbol": "ESPORTS",
+        "perp_volume_usd": 11705448.3729,
+        "open_interest_usd": 3512540.08
+      },
+      {
+        "sira": 66,
+        "symbol": "NVDA",
+        "perp_volume_usd": 10797488.972,
+        "open_interest_usd": 6896352.94
+      },
+      {
+        "sira": 67,
+        "symbol": "GRAM",
+        "perp_volume_usd": 10326284.4231,
+        "open_interest_usd": 24234589.89
+      },
+      {
+        "sira": 68,
+        "symbol": "MSFT",
+        "perp_volume_usd": 10146310.7373,
+        "open_interest_usd": 2758181.75
+      },
+      {
+        "sira": 69,
+        "symbol": "BCH",
+        "perp_volume_usd": 9719992.826,
+        "open_interest_usd": 25804254.63
+      },
+      {
+        "sira": 70,
+        "symbol": "XMR",
+        "perp_volume_usd": 9474079.7867,
+        "open_interest_usd": 21430812.84
+      },
+      {
+        "sira": 71,
+        "symbol": "LIT",
+        "perp_volume_usd": 9313411.0055,
+        "open_interest_usd": 29389710.85
+      },
+      {
+        "sira": 72,
+        "symbol": "PENGU",
+        "perp_volume_usd": 9239587.8714,
+        "open_interest_usd": 11448743.86
+      },
+      {
+        "sira": 73,
+        "symbol": "WIF",
+        "perp_volume_usd": 9177725.0255,
+        "open_interest_usd": 9957274.0
+      },
+      {
+        "sira": 74,
+        "symbol": "DOT",
+        "perp_volume_usd": 8902052.265,
+        "open_interest_usd": 15003439.6
+      },
+      {
+        "sira": 75,
+        "symbol": "TRUMP",
+        "perp_volume_usd": 8863138.0481,
+        "open_interest_usd": 16619739.34
+      },
+      {
+        "sira": 76,
+        "symbol": "EPIC",
+        "perp_volume_usd": 8716473.8103,
+        "open_interest_usd": 2942599.5
+      },
+      {
+        "sira": 77,
+        "symbol": "PAXG",
+        "perp_volume_usd": 8627782.3741,
+        "open_interest_usd": 18932030.83
+      },
+      {
+        "sira": 78,
+        "symbol": "CBRS",
+        "perp_volume_usd": 8613410.7527,
+        "open_interest_usd": 2771305.38
+      },
+      {
+        "sira": 79,
+        "symbol": "RDW",
+        "perp_volume_usd": 8576290.2521,
+        "open_interest_usd": 306885.55
+      },
+      {
+        "sira": 80,
+        "symbol": "ACH",
+        "perp_volume_usd": 8571167.2964,
+        "open_interest_usd": 1393431.8
+      },
+      {
+        "sira": 81,
+        "symbol": "WENSTOCK",
+        "perp_volume_usd": 8386544.8896,
+        "open_interest_usd": 104858.94
+      },
+      {
+        "sira": 82,
+        "symbol": "ARB",
+        "perp_volume_usd": 8033197.1318,
+        "open_interest_usd": 17895109.67
+      },
+      {
+        "sira": 83,
+        "symbol": "LAB",
+        "perp_volume_usd": 7554976.5859,
+        "open_interest_usd": 6667580.97
+      },
+      {
+        "sira": 84,
+        "symbol": "QQQ",
+        "perp_volume_usd": 7486640.3203,
+        "open_interest_usd": 5993854.89
+      },
+      {
+        "sira": 85,
+        "symbol": "MRVL",
+        "perp_volume_usd": 7198255.783,
+        "open_interest_usd": 6277366.03
+      },
+      {
+        "sira": 86,
+        "symbol": "TRX",
+        "perp_volume_usd": 6879982.5225,
+        "open_interest_usd": 47714563.04
+      },
+      {
+        "sira": 87,
+        "symbol": "ICP",
+        "perp_volume_usd": 6709977.2552,
+        "open_interest_usd": 11463109.17
+      },
+      {
+        "sira": 88,
+        "symbol": "VVV",
+        "perp_volume_usd": 6632032.6004,
+        "open_interest_usd": 9606745.86
+      },
+      {
+        "sira": 89,
+        "symbol": "PRL",
+        "perp_volume_usd": 6550995.3239,
+        "open_interest_usd": 2046573.26
+      },
+      {
+        "sira": 90,
+        "symbol": "US",
+        "perp_volume_usd": 6520498.8632,
+        "open_interest_usd": 10351887.12
+      },
+      {
+        "sira": 91,
+        "symbol": "FIL",
+        "perp_volume_usd": 6481672.8165,
+        "open_interest_usd": 8458003.56
+      },
+      {
+        "sira": 92,
+        "symbol": "GOOGL",
+        "perp_volume_usd": 6340845.4568,
+        "open_interest_usd": 5565809.95
+      },
+      {
+        "sira": 93,
+        "symbol": "AERO",
+        "perp_volume_usd": 6264759.6365,
+        "open_interest_usd": 8449953.65
+      },
+      {
+        "sira": 94,
+        "symbol": "MSTR",
+        "perp_volume_usd": 6251654.6729,
+        "open_interest_usd": 2620747.09
+      },
+      {
+        "sira": 95,
+        "symbol": "ZIL",
+        "perp_volume_usd": 6148141.2429,
+        "open_interest_usd": 2980163.95
+      },
+      {
+        "sira": 96,
+        "symbol": "MUU",
+        "perp_volume_usd": 6120598.8067,
+        "open_interest_usd": 782965.3
+      },
+      {
+        "sira": 97,
+        "symbol": "TIA",
+        "perp_volume_usd": 6079652.0388,
+        "open_interest_usd": 7025235.34
+      },
+      {
+        "sira": 98,
+        "symbol": "HOLO",
+        "perp_volume_usd": 6073458.8647,
+        "open_interest_usd": 2505058.64
+      },
+      {
+        "sira": 99,
+        "symbol": "ASTER",
+        "perp_volume_usd": 5932704.3007,
+        "open_interest_usd": 40363842.21
+      },
+      {
+        "sira": 100,
+        "symbol": "STRK",
+        "perp_volume_usd": 5919060.7143,
+        "open_interest_usd": 5831532.88
+      },
+      {
+        "sira": 101,
+        "symbol": "JUP",
+        "perp_volume_usd": 5817749.2485,
+        "open_interest_usd": 10140043.18
+      },
+      {
+        "sira": 102,
+        "symbol": "HBAR",
+        "perp_volume_usd": 5761194.7018,
+        "open_interest_usd": 13270868.15
+      },
+      {
+        "sira": 103,
+        "symbol": "LDO",
+        "perp_volume_usd": 5640389.5233,
+        "open_interest_usd": 12436939.0
+      },
+      {
+        "sira": 104,
+        "symbol": "MNT",
+        "perp_volume_usd": 5620150.7156,
+        "open_interest_usd": 26136217.87
+      },
+      {
+        "sira": 105,
+        "symbol": "WLFI",
+        "perp_volume_usd": 5389653.02,
+        "open_interest_usd": 22185574.7
+      },
+      {
+        "sira": 106,
+        "symbol": "VIRTUAL",
+        "perp_volume_usd": 5177880.8978,
+        "open_interest_usd": 8946703.46
+      },
+      {
+        "sira": 107,
+        "symbol": "META",
+        "perp_volume_usd": 5175575.1836,
+        "open_interest_usd": 3136206.13
+      },
+      {
+        "sira": 108,
+        "symbol": "1000BONK",
+        "perp_volume_usd": 5062703.3082,
+        "open_interest_usd": 10419308.02
+      },
+      {
+        "sira": 109,
+        "symbol": "SLX",
+        "perp_volume_usd": 4999995.3786,
+        "open_interest_usd": 1700792.1
+      },
+      {
+        "sira": 110,
+        "symbol": "FLOW",
+        "perp_volume_usd": 4916147.2566,
+        "open_interest_usd": 2605542.53
+      },
+      {
+        "sira": 111,
+        "symbol": "SOXX",
+        "perp_volume_usd": 4894084.6202,
+        "open_interest_usd": 233560.08
+      },
+      {
+        "sira": 112,
+        "symbol": "ATOM",
+        "perp_volume_usd": 4762488.502,
+        "open_interest_usd": 14581050.38
+      },
+      {
+        "sira": 113,
+        "symbol": "BOME",
+        "perp_volume_usd": 4590126.2532,
+        "open_interest_usd": 1784313.51
+      },
+      {
+        "sira": 114,
+        "symbol": "JTO",
+        "perp_volume_usd": 4540839.7011,
+        "open_interest_usd": 4548531.68
+      },
+      {
+        "sira": 115,
+        "symbol": "SEI",
+        "perp_volume_usd": 4303003.4842,
+        "open_interest_usd": 7662554.78
+      },
+      {
+        "sira": 116,
+        "symbol": "BZ",
+        "perp_volume_usd": 4297631.9777,
+        "open_interest_usd": 3522431.51
+      },
+      {
+        "sira": 117,
+        "symbol": "DASH",
+        "perp_volume_usd": 4272939.6898,
+        "open_interest_usd": 3896483.4
+      },
+      {
+        "sira": 118,
+        "symbol": "AAOI",
+        "perp_volume_usd": 4089090.0122,
+        "open_interest_usd": 785072.37
+      },
+      {
+        "sira": 119,
+        "symbol": "ALLO",
+        "perp_volume_usd": 4063357.2852,
+        "open_interest_usd": 5052392.02
+      },
+      {
+        "sira": 120,
+        "symbol": "ZRO",
+        "perp_volume_usd": 3971097.4927,
+        "open_interest_usd": 11407551.5
+      },
+      {
+        "sira": 121,
+        "symbol": "VANRY",
+        "perp_volume_usd": 3947922.5432,
+        "open_interest_usd": 2282856.67
+      },
+      {
+        "sira": 122,
+        "symbol": "CRV",
+        "perp_volume_usd": 3931345.9286,
+        "open_interest_usd": 13926375.85
+      },
+      {
+        "sira": 123,
+        "symbol": "ALGO",
+        "perp_volume_usd": 3886726.7016,
+        "open_interest_usd": 5999733.18
+      },
+      {
+        "sira": 124,
+        "symbol": "CXMT",
+        "perp_volume_usd": 3862942.1619,
+        "open_interest_usd": 944695.34
+      },
+      {
+        "sira": 125,
+        "symbol": "CRCL",
+        "perp_volume_usd": 3858077.5713,
+        "open_interest_usd": 6748214.5
+      },
+      {
+        "sira": 126,
+        "symbol": "ORDI",
+        "perp_volume_usd": 3739921.423,
+        "open_interest_usd": 3094028.09
+      },
+      {
+        "sira": 127,
+        "symbol": "ERA",
+        "perp_volume_usd": 3728319.4055,
+        "open_interest_usd": 2676648.93
+      },
+      {
+        "sira": 128,
+        "symbol": "OPEN",
+        "perp_volume_usd": 3583860.074,
+        "open_interest_usd": 2205833.42
+      },
+      {
+        "sira": 129,
+        "symbol": "CAP",
+        "perp_volume_usd": 3583133.5864,
+        "open_interest_usd": 1153409.57
+      },
+      {
+        "sira": 130,
+        "symbol": "BE",
+        "perp_volume_usd": 3520677.7393,
+        "open_interest_usd": 728258.0
+      },
+      {
+        "sira": 131,
+        "symbol": "LITE",
+        "perp_volume_usd": 3475267.3184,
+        "open_interest_usd": 782285.04
+      },
+      {
+        "sira": 132,
+        "symbol": "VELVET",
+        "perp_volume_usd": 3414397.0638,
+        "open_interest_usd": 1844764.95
+      },
+      {
+        "sira": 133,
+        "symbol": "EIGEN",
+        "perp_volume_usd": 3359619.9927,
+        "open_interest_usd": 4948849.02
+      },
+      {
+        "sira": 134,
+        "symbol": "HOME",
+        "perp_volume_usd": 3345267.6745,
+        "open_interest_usd": 2669952.26
+      },
+      {
+        "sira": 135,
+        "symbol": "SAFE",
+        "perp_volume_usd": 3108026.631,
+        "open_interest_usd": 1374056.96
+      },
+      {
+        "sira": 136,
+        "symbol": "VANA",
+        "perp_volume_usd": 3041785.9148,
+        "open_interest_usd": 1977299.92
+      },
+      {
+        "sira": 137,
+        "symbol": "GALA",
+        "perp_volume_usd": 2841722.6489,
+        "open_interest_usd": 4130549.03
+      },
+      {
+        "sira": 138,
+        "symbol": "DIA",
+        "perp_volume_usd": 2828895.1696,
+        "open_interest_usd": 365703.69
+      },
+      {
+        "sira": 139,
+        "symbol": "MMT",
+        "perp_volume_usd": 2820831.2373,
+        "open_interest_usd": 2317637.14
+      },
+      {
+        "sira": 140,
+        "symbol": "ONDS",
+        "perp_volume_usd": 2813306.0495,
+        "open_interest_usd": 219410.5
+      },
+      {
+        "sira": 141,
+        "symbol": "HOOD",
+        "perp_volume_usd": 2793668.4155,
+        "open_interest_usd": 1256114.15
+      },
+      {
+        "sira": 142,
+        "symbol": "0G",
+        "perp_volume_usd": 2774755.7095,
+        "open_interest_usd": 1588446.51
+      },
+      {
+        "sira": 143,
+        "symbol": "AAPL",
+        "perp_volume_usd": 2726775.8562,
+        "open_interest_usd": 3202105.81
+      },
+      {
+        "sira": 144,
+        "symbol": "BOT",
+        "perp_volume_usd": 2665388.9195,
+        "open_interest_usd": 294320.6
+      },
+      {
+        "sira": 145,
+        "symbol": "IREN",
+        "perp_volume_usd": 2598393.744,
+        "open_interest_usd": 663716.07
+      },
+      {
+        "sira": 146,
+        "symbol": "GWEI",
+        "perp_volume_usd": 2555289.0813,
+        "open_interest_usd": 1158749.75
+      },
+      {
+        "sira": 147,
+        "symbol": "H",
+        "perp_volume_usd": 2551135.5147,
+        "open_interest_usd": 9994992.06
+      },
+      {
+        "sira": 148,
+        "symbol": "POL",
+        "perp_volume_usd": 2514843.4462,
+        "open_interest_usd": 10593488.18
+      },
+      {
+        "sira": 149,
+        "symbol": "EGLD",
+        "perp_volume_usd": 2513036.3798,
+        "open_interest_usd": 1158093.67
+      },
+      {
+        "sira": 150,
+        "symbol": "ZK",
+        "perp_volume_usd": 2489071.6008,
+        "open_interest_usd": 2915575.53
       }
     ]
   }
