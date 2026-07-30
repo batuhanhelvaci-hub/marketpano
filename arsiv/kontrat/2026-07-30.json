@@ -1,15 +1,19 @@
 {
-  "generated_at": "2026-07-30T08:11:46.716993+00:00",
+  "generated_at": "2026-07-30T08:11:47.016820+00:00",
   "kapsam": "Kontrat ozellikleri (CMC market cap ilk 50)",
   "exchanges": [
+    "Hyperliquid",
+    "Binance",
     "OKX",
-    "Gate",
+    "Bybit",
     "Bitget",
-    "Hyperliquid"
+    "Gate"
   ],
   "assets": [
     {
       "symbol": "BTC",
+      "name": "Bitcoin",
+      "rank": 1,
       "exchanges": {
         "OKX": {
           "min_qty": 0.0001,
@@ -159,12 +163,12 @@
           "depth_1pct_usd": 12133433.43777,
           "spread_pct": 0.0015626464981091976
         }
-      },
-      "name": "Bitcoin",
-      "rank": 1
+      }
     },
     {
       "symbol": "ETH",
+      "name": "Ethereum",
+      "rank": 2,
       "exchanges": {
         "OKX": {
           "min_qty": 0.001,
@@ -309,18 +313,18 @@
           "depth_1pct_usd": 22308857.535919998,
           "spread_pct": 0.005253480430780617
         }
-      },
-      "name": "Ethereum",
-      "rank": 2
+      }
     },
     {
       "symbol": "USDT",
-      "exchanges": {},
       "name": "Tether USDt",
-      "rank": 3
+      "rank": 3,
+      "exchanges": {}
     },
     {
       "symbol": "BNB",
+      "name": "BNB",
+      "rank": 4,
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
@@ -470,12 +474,12 @@
           "depth_1pct_usd": 172163.63775,
           "spread_pct": 0.001738283966067116
         }
-      },
-      "name": "BNB",
-      "rank": 4
+      }
     },
     {
       "symbol": "USDC",
+      "name": "USDC",
+      "rank": 5,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -570,12 +574,12 @@
           "depth_1pct_usd": 1194750.5365699995,
           "spread_pct": null
         }
-      },
-      "name": "USDC",
-      "rank": 5
+      }
     },
     {
       "symbol": "XRP",
+      "name": "XRP",
+      "rank": 6,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -720,12 +724,12 @@
           "depth_1pct_usd": 3342428.0365,
           "spread_pct": 0.009293680297396745
         }
-      },
-      "name": "XRP",
-      "rank": 6
+      }
     },
     {
       "symbol": "SOL",
+      "name": "Solana",
+      "rank": 7,
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
@@ -870,12 +874,12 @@
           "depth_1pct_usd": 1153206.3580600002,
           "spread_pct": 0.0013629734629131852
         }
-      },
-      "name": "Solana",
-      "rank": 7
+      }
     },
     {
       "symbol": "TRX",
+      "name": "TRON",
+      "rank": 8,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -1020,12 +1024,12 @@
           "depth_1pct_usd": 156772.84595000002,
           "spread_pct": 0.0030537801217267297
         }
-      },
-      "name": "TRON",
-      "rank": 8
+      }
     },
     {
       "symbol": "HYPE",
+      "name": "Hyperliquid",
+      "rank": 9,
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
@@ -1145,12 +1149,12 @@
           "depth_1pct_usd": 246084.79923000006,
           "spread_pct": 0.0018611576400477752
         }
-      },
-      "name": "Hyperliquid",
-      "rank": 9
+      }
     },
     {
       "symbol": "DOGE",
+      "name": "Dogecoin",
+      "rank": 10,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -1300,18 +1304,18 @@
           "depth_1pct_usd": 297293.0845819999,
           "spread_pct": 0.001432705808190779
         }
-      },
-      "name": "Dogecoin",
-      "rank": 10
+      }
     },
     {
       "symbol": "LEO",
-      "exchanges": {},
       "name": "UNUS SED LEO",
-      "rank": 11
+      "rank": 11,
+      "exchanges": {}
     },
     {
       "symbol": "ZEC",
+      "name": "Zcash",
+      "rank": 12,
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
@@ -1461,12 +1465,12 @@
           "depth_1pct_usd": 100815.57940000002,
           "spread_pct": 0.004209640075769692
         }
-      },
-      "name": "Zcash",
-      "rank": 12
+      }
     },
     {
       "symbol": "XMR",
+      "name": "Monero",
+      "rank": 13,
       "exchanges": {
         "Gate": {
           "min_qty": 0.01,
@@ -1561,12 +1565,12 @@
           "depth_1pct_usd": 96406.93291999999,
           "spread_pct": 0.05628412224912633
         }
-      },
-      "name": "Monero",
-      "rank": 13
+      }
     },
     {
       "symbol": "LINK",
+      "name": "Chainlink",
+      "rank": 14,
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
@@ -1716,12 +1720,12 @@
           "depth_1pct_usd": 154734.54302999997,
           "spread_pct": 0.0012069641833350466
         }
-      },
-      "name": "Chainlink",
-      "rank": 14
+      }
     },
     {
       "symbol": "ADA",
+      "name": "Cardano",
+      "rank": 15,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -1871,12 +1875,12 @@
           "depth_1pct_usd": 449346.36295999994,
           "spread_pct": 0.00612171187551499
         }
-      },
-      "name": "Cardano",
-      "rank": 15
+      }
     },
     {
       "symbol": "XLM",
+      "name": "Stellar",
+      "rank": 16,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -2026,12 +2030,12 @@
           "depth_1pct_usd": 134984.01646,
           "spread_pct": 0.005819705522906361
         }
-      },
-      "name": "Stellar",
-      "rank": 16
+      }
     },
     {
       "symbol": "CC",
+      "name": "Canton",
+      "rank": 17,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -2181,18 +2185,18 @@
           "depth_1pct_usd": 58604.07201,
           "spread_pct": 0.008250825082505053
         }
-      },
-      "name": "Canton",
-      "rank": 17
+      }
     },
     {
       "symbol": "DAI",
-      "exchanges": {},
       "name": "Dai",
-      "rank": 18
+      "rank": 18,
+      "exchanges": {}
     },
     {
       "symbol": "BCH",
+      "name": "Bitcoin Cash",
+      "rank": 19,
       "exchanges": {
         "OKX": {
           "min_qty": 0.010000000000000002,
@@ -2342,12 +2346,12 @@
           "depth_1pct_usd": 156223.85508999997,
           "spread_pct": 0.004771447657228422
         }
-      },
-      "name": "Bitcoin Cash",
-      "rank": 19
+      }
     },
     {
       "symbol": "USD1",
+      "name": "World Liberty Financial USD",
+      "rank": 20,
       "exchanges": {
         "Gate": {
           "min_qty": 1.0,
@@ -2394,12 +2398,12 @@
             }
           ]
         }
-      },
-      "name": "World Liberty Financial USD",
-      "rank": 20
+      }
     },
     {
       "symbol": "GRAM",
+      "name": "Gram (prev. Toncoin)",
+      "rank": 21,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -2559,18 +2563,18 @@
           "depth_1pct_usd": 86211.54990000003,
           "spread_pct": 0.0422922393740702
         }
-      },
-      "name": "Gram (prev. Toncoin)",
-      "rank": 21
+      }
     },
     {
       "symbol": "USDE",
-      "exchanges": {},
       "name": "Ethena USDe",
-      "rank": 22
+      "rank": 22,
+      "exchanges": {}
     },
     {
       "symbol": "LTC",
+      "name": "Litecoin",
+      "rank": 23,
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
@@ -2715,18 +2719,18 @@
           "depth_1pct_usd": 94909.06217,
           "spread_pct": 0.002206872200025753
         }
-      },
-      "name": "Litecoin",
-      "rank": 23
+      }
     },
     {
       "symbol": "USDG",
-      "exchanges": {},
       "name": "Global Dollar",
-      "rank": 24
+      "rank": 24,
+      "exchanges": {}
     },
     {
       "symbol": "HBAR",
+      "name": "Hedera",
+      "rank": 25,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -2876,12 +2880,12 @@
           "depth_1pct_usd": 84860.795898,
           "spread_pct": 0.0073849789528173705
         }
-      },
-      "name": "Hedera",
-      "rank": 25
+      }
     },
     {
       "symbol": "SUI",
+      "name": "Sui",
+      "rank": 26,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -3026,12 +3030,12 @@
           "depth_1pct_usd": 161242.22870900002,
           "spread_pct": 0.0029130314461773745
         }
-      },
-      "name": "Sui",
-      "rank": 26
+      }
     },
     {
       "symbol": "AVAX",
+      "name": "Avalanche",
+      "rank": 27,
       "exchanges": {
         "OKX": {
           "min_qty": 0.1,
@@ -3176,12 +3180,12 @@
           "depth_1pct_usd": 71748.30342100002,
           "spread_pct": 0.0015577779854778788
         }
-      },
-      "name": "Avalanche",
-      "rank": 27
+      }
     },
     {
       "symbol": "SHIB",
+      "name": "Shiba Inu",
+      "rank": 28,
       "exchanges": {
         "OKX": {
           "min_qty": 100000.0,
@@ -3286,18 +3290,18 @@
           "depth_1pct_usd": 1939930.9156200003,
           "spread_pct": null
         }
-      },
-      "name": "Shiba Inu",
-      "rank": 28
+      }
     },
     {
       "symbol": "PYUSD",
-      "exchanges": {},
       "name": "PayPal USD",
-      "rank": 29
+      "rank": 29,
+      "exchanges": {}
     },
     {
       "symbol": "CRO",
+      "name": "Cronos",
+      "rank": 30,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -3392,12 +3396,12 @@
           "depth_1pct_usd": 93382.50850000003,
           "spread_pct": null
         }
-      },
-      "name": "Cronos",
-      "rank": 30
+      }
     },
     {
       "symbol": "UNI",
+      "name": "Uniswap",
+      "rank": 31,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -3542,12 +3546,12 @@
           "depth_1pct_usd": 80859.17482,
           "spread_pct": 0.02243885412253028
         }
-      },
-      "name": "Uniswap",
-      "rank": 31
+      }
     },
     {
       "symbol": "XAUT",
+      "name": "Tether Gold",
+      "rank": 32,
       "exchanges": {
         "Gate": {
           "min_qty": 0.001,
@@ -3602,12 +3606,12 @@
           "depth_1pct_usd": 146410.59860000003,
           "spread_pct": null
         }
-      },
-      "name": "Tether Gold",
-      "rank": 32
+      }
     },
     {
       "symbol": "TAO",
+      "name": "Bittensor",
+      "rank": 33,
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
@@ -3757,12 +3761,12 @@
           "depth_1pct_usd": 142438.01155999998,
           "spread_pct": 0.005235327993294019
         }
-      },
-      "name": "Bittensor",
-      "rank": 33
+      }
     },
     {
       "symbol": "NEAR",
+      "name": "NEAR Protocol",
+      "rank": 34,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -3917,12 +3921,12 @@
           "depth_1pct_usd": 252736.71035999997,
           "spread_pct": 0.012326656394451647
         }
-      },
-      "name": "NEAR Protocol",
-      "rank": 34
+      }
     },
     {
       "symbol": "ONDO",
+      "name": "Ondo",
+      "rank": 35,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -4077,12 +4081,12 @@
           "depth_1pct_usd": 107504.93431000001,
           "spread_pct": 0.02434867299733248
         }
-      },
-      "name": "Ondo",
-      "rank": 35
+      }
     },
     {
       "symbol": "OKB",
+      "name": "OKB",
+      "rank": 36,
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
@@ -4149,12 +4153,12 @@
             }
           ]
         }
-      },
-      "name": "OKB",
-      "rank": 36
+      }
     },
     {
       "symbol": "PAXG",
+      "name": "PAX Gold",
+      "rank": 37,
       "exchanges": {
         "Gate": {
           "min_qty": 0.001,
@@ -4254,12 +4258,12 @@
           "depth_1pct_usd": 480818.69560000004,
           "spread_pct": 0.0024692577411207723
         }
-      },
-      "name": "PAX Gold",
-      "rank": 37
+      }
     },
     {
       "symbol": "WLFI",
+      "name": "World Liberty Financial",
+      "rank": 38,
       "exchanges": {
         "OKX": {
           "min_qty": 10.0,
@@ -4399,12 +4403,12 @@
           "depth_1pct_usd": 136746.34261800002,
           "spread_pct": 0.010845398839540629
         }
-      },
-      "name": "World Liberty Financial",
-      "rank": 38
+      }
     },
     {
       "symbol": "ASTER",
+      "name": "Aster",
+      "rank": 39,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -4554,24 +4558,24 @@
           "depth_1pct_usd": 77043.04302,
           "spread_pct": 0.0016677507046170827
         }
-      },
-      "name": "Aster",
-      "rank": 39
+      }
     },
     {
       "symbol": "USDD",
-      "exchanges": {},
       "name": "USDD",
-      "rank": 40
+      "rank": 40,
+      "exchanges": {}
     },
     {
       "symbol": "RLUSD",
-      "exchanges": {},
       "name": "Ripple USD",
-      "rank": 41
+      "rank": 41,
+      "exchanges": {}
     },
     {
       "symbol": "AAVE",
+      "name": "Aave",
+      "rank": 42,
       "exchanges": {
         "OKX": {
           "min_qty": 0.010000000000000002,
@@ -4711,12 +4715,12 @@
           "depth_1pct_usd": 136479.36628999998,
           "spread_pct": 0.013410080254177994
         }
-      },
-      "name": "Aave",
-      "rank": 42
+      }
     },
     {
       "symbol": "SKY",
+      "name": "Sky",
+      "rank": 43,
       "exchanges": {
         "OKX": {
           "min_qty": 100.0,
@@ -4866,12 +4870,12 @@
           "depth_1pct_usd": 18261.273740999994,
           "spread_pct": 0.0017606873723519261
         }
-      },
-      "name": "Sky",
-      "rank": 43
+      }
     },
     {
       "symbol": "MNT",
+      "name": "Mantle",
+      "rank": 44,
       "exchanges": {
         "Gate": {
           "min_qty": 1.0,
@@ -4963,12 +4967,12 @@
           "depth_1pct_usd": 65518.074678000004,
           "spread_pct": 0.04042752103494289
         }
-      },
-      "name": "Mantle",
-      "rank": 44
+      }
     },
     {
       "symbol": "DOT",
+      "name": "Polkadot",
+      "rank": 45,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -5118,12 +5122,12 @@
           "depth_1pct_usd": 48048.917636,
           "spread_pct": 0.01044250097899491
         }
-      },
-      "name": "Polkadot",
-      "rank": 45
+      }
     },
     {
       "symbol": "M",
+      "name": "MemeCore",
+      "rank": 46,
       "exchanges": {
         "Gate": {
           "min_qty": 10.0,
@@ -5178,12 +5182,12 @@
           "depth_1pct_usd": 13307.340200000002,
           "spread_pct": null
         }
-      },
-      "name": "MemeCore",
-      "rank": 46
+      }
     },
     {
       "symbol": "BEAT",
+      "name": "Audiera",
+      "rank": 47,
       "exchanges": {
         "OKX": {
           "min_qty": 1.0,
@@ -5273,12 +5277,12 @@
           "depth_1pct_usd": 14046.7284,
           "spread_pct": null
         }
-      },
-      "name": "Audiera",
-      "rank": 47
+      }
     },
     {
       "symbol": "ICP",
+      "name": "Internet Computer",
+      "rank": 48,
       "exchanges": {
         "OKX": {
           "min_qty": 0.01,
@@ -5423,12 +5427,12 @@
           "depth_1pct_usd": 77763.44468999997,
           "spread_pct": 0.004819741661857096
         }
-      },
-      "name": "Internet Computer",
-      "rank": 48
+      }
     },
     {
       "symbol": "BGB",
+      "name": "Bitget Token",
+      "rank": 49,
       "exchanges": {
         "Bitget": {
           "min_qty": 1.0,
@@ -5443,12 +5447,12 @@
           "depth_1pct_usd": 12084.354000000003,
           "spread_pct": null
         }
-      },
-      "name": "Bitget Token",
-      "rank": 49
+      }
     },
     {
       "symbol": "PEPE",
+      "name": "Pepe",
+      "rank": 50,
       "exchanges": {
         "OKX": {
           "min_qty": 1000000.0,
@@ -5548,9 +5552,7 @@
           "depth_1pct_usd": 643752.1398501002,
           "spread_pct": null
         }
-      },
-      "name": "Pepe",
-      "rank": 50
+      }
     }
   ]
 }
