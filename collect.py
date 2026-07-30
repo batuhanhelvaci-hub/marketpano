@@ -1436,6 +1436,188 @@ def run_hacim(which_exchanges=None, outfile="hacim.json"):
     return payload
 
 
+# ============================================================
+#  GERIYE DONUK HACIM (hafta sonu bosluklarini doldurmak icin)
+#  Binance ve Bybit'in KENDI API'lerinden gunluk mum + OI gecmisi.
+#  Kaynak karismaz: ayni borsa, sadece farkli endpoint.
+#  Pencere farki: normal kayit "o andaki son 24 saat",
+#  buradaki "UTC gunu kapanisi". Excel'de Kaynak sutunuyla isaretlenir.
+# ============================================================
+
+GECMIS_GUN = 7        # kac gun geriye bakilacak
+GECMIS_ADAY = 250     # siralamayi kurmak icin kac sembolun gecmisi cekilecek
+
+
+def _gun_str(ms):
+    try:
+        return datetime.fromtimestamp(int(ms) / 1000, timezone.utc).strftime("%Y-%m-%d")
+    except Exception:
+        return None
+
+
+def gecmis_binance(bases, gun_sayisi):
+    """{gun: {base: {perp_volume_usd, open_interest_usd}}}
+    klines[7] = quote asset volume (USDT). openInterestHist son 30 gunle sinirli."""
+    out = {}
+    n = len(bases)
+    for i, base in enumerate(bases, 1):
+        sym = f"{base}USDT"
+        if i % 50 == 0:
+            print(f"      Binance gecmis: {i}/{n}")
+        kl = get_json("https://fapi.binance.com/fapi/v1/klines",
+                      {"symbol": sym, "interval": "1d", "limit": gun_sayisi + 1})
+        if isinstance(kl, list):
+            for row in kl:
+                gun = _gun_str(row[0])
+                if gun:
+                    out.setdefault(gun, {}).setdefault(base, {})["perp_volume_usd"] = to_float(row[7])
+        time.sleep(0.02)
+        oi = get_json("https://fapi.binance.com/futures/data/openInterestHist",
+                      {"symbol": sym, "period": "1d", "limit": gun_sayisi + 1})
+        if isinstance(oi, list):
+            for row in oi:
+                gun = _gun_str(row.get("timestamp"))
+                if gun:
+                    out.setdefault(gun, {}).setdefault(base, {})["open_interest_usd"] = \
+                        to_float(row.get("sumOpenInterestValue"))
+        time.sleep(0.02)
+    return out
+
+
+def gecmis_bybit(bases, gun_sayisi):
+    """{gun: {base: {...}}}  kline[6] = turnover (USDT).
+    open-interest KONTRAT cinsinden gelir -> o gunun kapanis fiyatiyla USD'ye cevrilir."""
+    out = {}
+    n = len(bases)
+    for i, base in enumerate(bases, 1):
+        sym = f"{base}USDT"
+        if i % 50 == 0:
+            print(f"      Bybit gecmis: {i}/{n}")
+        kapanis = {}
+        kl = get_json("https://api.bybit.com/v5/market/kline",
+                      {"category": "linear", "symbol": sym, "interval": "D",
+                       "limit": gun_sayisi + 1})
+        if kl and kl.get("result"):
+            for row in kl["result"].get("list", []):
+                gun = _gun_str(row[0])
+                if gun:
+                    out.setdefault(gun, {}).setdefault(base, {})["perp_volume_usd"] = to_float(row[6])
+                    kapanis[gun] = to_float(row[4])
+        time.sleep(0.02)
+        oi = get_json("https://api.bybit.com/v5/market/open-interest",
+                      {"category": "linear", "symbol": sym, "intervalTime": "1d",
+                       "limit": gun_sayisi + 1})
+        if oi and oi.get("result"):
+            for row in oi["result"].get("list", []):
+                gun = _gun_str(row.get("timestamp"))
+                px = kapanis.get(gun)
+                miktar = to_float(row.get("openInterest"))
+                if gun and px and miktar:
+                    out.setdefault(gun, {}).setdefault(base, {})["open_interest_usd"] = miktar * px
+        time.sleep(0.02)
+    return out
+
+
+GECMIS_FN = {"Binance": gecmis_binance, "Bybit": gecmis_bybit}
+
+
+def run_hacim_gecmis(which_exchanges=None, gun_sayisi=GECMIS_GUN,
+                     outfile="hacim_gecmis_local.json"):
+    """Son gun_sayisi gunun gunluk hacim/OI kaydini cikarir.
+    Siralama o gunun hacmine gore yapilir; aday sembol kumesi bugunun
+    en yuksek hacimli GECMIS_ADAY sembolunden alinir."""
+    if which_exchanges is None:
+        which_exchanges = ["Binance", "Bybit"]
+    kripto = kripto_semboller()
+    gunler = {}
+    for exch in which_exchanges:
+        fn = PERP_SOURCES.get(exch)
+        gfn = GECMIS_FN.get(exch)
+        if not fn or not gfn:
+            continue
+        print(f"[GECMIS] {exch} - aday sembol kumesi belirleniyor...")
+        try:
+            tumu = fn([])
+        except Exception as e:
+            print(f"    ! {exch} hatasi: {e}")
+            continue
+        if kripto:
+            tumu = {b: v for b, v in tumu.items() if kripto_mu(b, kripto)}
+        adaylar = [b for b, v in sorted(tumu.items(),
+                                        key=lambda kv: -(kv[1].get("perp_volume_usd") or 0))
+                   ][:GECMIS_ADAY]
+        print(f"    {len(adaylar)} sembolun son {gun_sayisi} gunu cekiliyor (biraz surer)...")
+        try:
+            tarihli = gfn(adaylar, gun_sayisi)
+        except Exception as e:
+            print(f"    ! {exch} gecmis hatasi: {e}")
+            continue
+        for gun, semboller in tarihli.items():
+            sirali = sorted(semboller.items(),
+                            key=lambda kv: -(kv[1].get("perp_volume_usd") or 0))
+            satirlar = []
+            for i, (base, v) in enumerate(sirali[:HACIM_TOP_N], 1):
+                if not (v.get("perp_volume_usd") or 0) > 0:
+                    continue
+                satirlar.append({
+                    "sira": i,
+                    "symbol": base,
+                    "perp_volume_usd": v.get("perp_volume_usd"),
+                    "open_interest_usd": v.get("open_interest_usd"),
+                    "geriye_donuk": True,
+                })
+            if satirlar:
+                gunler.setdefault(gun, {})[exch] = satirlar
+        print(f"    {len(tarihli)} gun hazirlandi.")
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kapsam": f"Geriye donuk gunluk hacim (son {gun_sayisi} gun, gunluk mum)",
+        "gunler": gunler,
+    }
+    with open(outfile, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"[GECMIS] {outfile} yazildi ({len(gunler)} gun).")
+    return payload
+
+
+def arsivle_gecmis():
+    """hacim_gecmis_local.json'daki gunleri arsive isler.
+    SADECE EKSIK olani doldurur - mevcut kaydin uzerine YAZMAZ.
+    Bu sayede her calistirmada guvenle tekrarlanabilir."""
+    try:
+        with open("hacim_gecmis_local.json", encoding="utf-8") as f:
+            d = json.load(f)
+    except Exception:
+        print("  ! hacim_gecmis_local.json bulunamadi.")
+        return None
+    eklendi, atlandi = 0, 0
+    for gun, borsalar in (d.get("gunler") or {}).items():
+        yol = os.path.join("arsiv", "hacim", f"{gun}.json")
+        mevcut = None
+        if os.path.exists(yol):
+            try:
+                with open(yol, encoding="utf-8") as f:
+                    mevcut = json.load(f)
+            except Exception:
+                mevcut = None
+        if not mevcut:
+            mevcut = {"generated_at": f"{gun}T00:00:00+00:00",
+                      "kapsam": f"Her borsanin kendi 24s perp hacminde ilk {HACIM_TOP_N} (sadece kripto)",
+                      "borsalar": {}}
+        hedef = mevcut.setdefault("borsalar", {})
+        for exch, satirlar in borsalar.items():
+            if hedef.get(exch):
+                atlandi += 1
+                continue
+            hedef[exch] = satirlar
+            eklendi += 1
+        os.makedirs(os.path.dirname(yol), exist_ok=True)
+        with open(yol, "w", encoding="utf-8") as f:
+            json.dump(mevcut, f, ensure_ascii=False, indent=2)
+    print(f"  Geriye donuk isleme: {eklendi} borsa-gun eklendi, {atlandi} mevcut kayit korundu.")
+    return True
+
+
 def merge_and_archive_hacim():
     """hacim_github.json + hacim_local.json birlestirip gunluk hacim arsivi yazar.
     local (Binance/Bybit) SADECE bugune aitse katilir (bayat veri korumasi)."""
@@ -1514,6 +1696,13 @@ def main():
         # SADECE hacim arsivlenir (gun gun birikir).
         # Kontrat verisi TEK FOTOGRAFTIR, arsivlenmez ve her gun yenilenmez.
         merge_and_archive_hacim()
+    elif mode == "hacim_gecmis_local":
+        # Hafta sonu bosluklarini doldurmak icin: Binance+Bybit son 7 gun
+        # gunluk mum + OI gecmisi (kendi API'lerinden).
+        run_hacim_gecmis()
+    elif mode == "arsivle_gecmis":
+        # Geriye donuk kayitlari arsive isler (sadece eksik gunleri doldurur).
+        arsivle_gecmis()
     elif mode == "all":
         run_cmc()
         run_exchanges(GITHUB_EXCHANGES, "borsa_github.json", "GitHub 6 borsa")
