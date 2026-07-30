@@ -25,6 +25,7 @@ Excel her calistirmada SIFIRDAN uretilir. Dosyaya elle yazilanlar korunmaz;
 elle girilecek veriler manuel-*.csv dosyalarinda tutulur.
 """
 import csv
+import re
 import glob
 import json
 import os
@@ -149,15 +150,42 @@ def cmc_gunluk():
     return gunler
 
 
+_CARPAN_RE = re.compile(r"^(?:1000000|100000|10000|1000|100|10|1M|1B)([A-Z0-9]{2,})$")
+_K_RE = re.compile(r"^k([A-Z]{2,})$")
+
+
+def temel_sembol(sym):
+    """Carpanli sembolun temel hali: 1000PEPE -> PEPE, kPEPE -> PEPE. Yoksa None."""
+    if not sym:
+        return None
+    m = _CARPAN_RE.match(sym) or _K_RE.match(sym)
+    return m.group(1) if m else None
+
+
 def cmc_bak(cmc_gunleri, gun, sembol):
-    """O gunun CMC verisinden fiyat+mcap. O gun yoksa en yakin onceki gune bakar."""
+    """O gunun CMC verisinden fiyat+mcap. O gun yoksa en yakin onceki gune bakar.
+    Carpanli sembollerde (1000PEPE, kPEPE) temel token'in fiyat/mcap'i kullanilir -
+    boylece ayni coin farkli borsalarda ayni degerle karsilastirilabilir."""
+    def bak(tablo):
+        if sembol in tablo:
+            return tablo[sembol]
+        t = temel_sembol(sembol)
+        if t and t in tablo:
+            return tablo[t]
+        return None
+
     if gun in cmc_gunleri:
-        return cmc_gunleri[gun].get(sembol, (None, None))
-    oncekiler = [g for g in sorted(cmc_gunleri) if g <= gun]
-    if oncekiler:
-        return cmc_gunleri[oncekiler[-1]].get(sembol, (None, None))
-    if cmc_gunleri:
-        return cmc_gunleri[sorted(cmc_gunleri)[0]].get(sembol, (None, None))
+        r = bak(cmc_gunleri[gun])
+        if r:
+            return r
+    for g in sorted((g for g in cmc_gunleri if g <= gun), reverse=True):
+        r = bak(cmc_gunleri[g])
+        if r:
+            return r
+    for g in sorted(cmc_gunleri):
+        r = bak(cmc_gunleri[g])
+        if r:
+            return r
     return (None, None)
 
 
@@ -400,7 +428,14 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
         ("Borsa sheet'leri (6 adet)",
          "O borsanın KENDİ 24 saatlik perp hacmine göre ilk 150 varlığı. Her gün 150 satır alta eklenir."),
         ("Sıra sütunu", "O borsa içindeki hacim sırası (1-150). Borsalar arasında farklı olabilir."),
-        ("Fiyat ve Market Cap", "CMC ilk 150'den gelir. O listede olmayan varlıklarda boş kalır."),
+        ("Fiyat ve Market Cap", "CMC ilk 1000'den gelir. O listede olmayan varlıklarda boş kalır."),
+        ("Hisse/emtia süzgeci",
+         "Borsalar tokenize hisse ve emtia perp'leri de listeliyor (SNDK, SOXL, XAU, MU, SKHYNIX...). "
+         "Bunlar CMC'de olmadığı için listeden çıkarılır; sadece kripto kalır."),
+        ("Çarpanlı semboller",
+         "Binance/Bybit 1000PEPE, 1000SHIB gibi; Hyperliquid kPEPE gibi listeler (1 kontrat = 1000 token). "
+         "Bunlar kripto sayılır ve elenmez. Fiyat/Market Cap temel token'dan alınır, "
+         "böylece aynı coin farklı borsalarda aynı değerle karşılaştırılabilir."),
         ("Kontrat sheet'i",
          "Satırlar CMC market cap ilk 50. Her borsa 12 sütunluk blok halinde yan yana. "
          "Tek fotoğraf - günlük birikmez."),

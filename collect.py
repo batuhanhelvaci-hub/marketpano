@@ -24,6 +24,7 @@ API key:
 
 import json
 import os
+import re
 import sys
 import time
 from datetime import datetime, timezone
@@ -594,6 +595,39 @@ def run_cmc():
 
 WHITELIST_N = 1000       # CMC'den kac coin cekilecek (suzgec + fiyat/mcap icin)
 GENIS_DOSYA = "cmc_genis.json"
+
+# Borsalar dusuk fiyatli coinleri carpanli listeler:
+#   Binance/Bybit : 1000PEPE, 1000SHIB, 1000BONK, 10000SATS, 1MBABYDOGE
+#   Hyperliquid   : kPEPE, kSHIB, kBONK   (k = 1000)
+# Bunlar GERCEK kriptodur; CMC'de sembol "PEPE" oldugu icin
+# suzgecin bunlari hisse sanip atmasini engellemek gerekir.
+_CARPAN_RE = re.compile(r"^(?:1000000|100000|10000|1000|100|10|1M|1B)([A-Z0-9]{2,})$")
+_K_RE = re.compile(r"^k([A-Z]{2,})$")
+
+
+def temel_sembol(sym):
+    """Carpanli sembolun temel halini dondurur. Carpan yoksa None.
+    1000PEPE -> PEPE | kPEPE -> PEPE | 1MBABYDOGE -> BABYDOGE
+    1INCH, 0G, 2Z gibi gercek tickerlar etkilenmez (once tam eslesme denenir)."""
+    if not sym:
+        return None
+    m = _CARPAN_RE.match(sym)
+    if m:
+        return m.group(1)
+    m = _K_RE.match(sym)
+    if m:
+        return m.group(1)
+    return None
+
+
+def kripto_mu(sym, whitelist):
+    """Sembol kripto mu? Once tam eslesme, sonra carpansiz hali denenir."""
+    if not whitelist:
+        return True          # suzgec yoksa hepsi gecer
+    if sym in whitelist:
+        return True
+    t = temel_sembol(sym)
+    return bool(t and t in whitelist)
 
 
 def run_cmc_genis():
@@ -1364,10 +1398,11 @@ def run_hacim(which_exchanges=None, outfile="hacim.json"):
             print(f"    ! {exch} veri gelmedi.")
             continue
         ham_adet = len(tumu)
-        # Hisse/emtia ayikla (CMC'de olmayan sembolleri dusur)
+        # Hisse/emtia ayikla (CMC'de olmayan sembolleri dusur).
+        # Carpanli semboller (1000PEPE, kPEPE) kripto sayilir, elenmez.
         if kripto:
-            elenen = [b for b in tumu if b not in kripto]
-            tumu = {b: v for b, v in tumu.items() if b in kripto}
+            elenen = [b for b in tumu if not kripto_mu(b, kripto)]
+            tumu = {b: v for b, v in tumu.items() if kripto_mu(b, kripto)}
             if elenen:
                 ornek = ", ".join(sorted(elenen)[:6])
                 print(f"    {len(elenen)} kripto-disi sembol elendi (orn: {ornek})")
