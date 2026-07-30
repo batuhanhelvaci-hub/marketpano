@@ -1,14 +1,2358 @@
 {
-  "generated_at": "2026-07-30T08:21:55.341727+00:00",
+  "generated_at": "2026-07-30T10:08:44.568886+00:00",
   "kapsam": "Kontrat ozellikleri (CMC market cap ilk 50)",
   "exchanges": [
     "Bybit",
-    "Binance",
-    "OKX",
-    "Gate",
-    "Bitget",
-    "Hyperliquid"
+    "Binance"
   ],
-  "assets": [],
-  "hata": "cmc.json bulunamadi - once CMC verisi cek"
+  "assets": [
+    {
+      "symbol": "BTC",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.001,
+          "min_notional": 5.0,
+          "tick_size": 0.1,
+          "digit": 1,
+          "step_size": 0.001,
+          "max_leverage": 100.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.005,
+          "funding": 8.611e-05,
+          "index_price": 64602.89,
+          "depth_1pct_usd": 2278607.4326000004,
+          "spread_pct": 0.00015484694153838083
+        },
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 50.0,
+          "tick_size": 0.1,
+          "digit": 1,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": 9.38e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.003,
+          "index_price": 64610.68413043,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.43478261,
+              "price": 64602.0
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13043478,
+              "price": 64602.0
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.13043478,
+              "price": 64607.81
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.04347826,
+              "price": 64606.2
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.06521739,
+              "price": 64598.8
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.06521739,
+              "price": 64596.5
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.06521739,
+              "price": 64600.4
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06521739,
+              "price": 64603.0
+            }
+          ],
+          "depth_1pct_usd": 4942257.9489,
+          "spread_pct": 0.00015481098352740667
+        }
+      },
+      "name": "Bitcoin",
+      "rank": 1
+    },
+    {
+      "symbol": "ETH",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.01,
+          "max_leverage": 100.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.005,
+          "funding": 0.0001,
+          "index_price": 1919.55,
+          "depth_1pct_usd": 2373955.2679,
+          "spread_pct": 0.0005211454777596428
+        },
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 20.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": 6.643e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.003,
+          "index_price": 1919.81325581,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.46511628,
+              "price": 1919.58
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13953488,
+              "price": 1919.61
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.13953488,
+              "price": 1919.31
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.04651163,
+              "price": 1919.64
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.06976744,
+              "price": 1919.41
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.06976744,
+              "price": 1919.64
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06976744,
+              "price": 1919.77
+            }
+          ],
+          "depth_1pct_usd": 3384605.3744900003,
+          "spread_pct": 0.0005210422930024491
+        }
+      },
+      "name": "Ethereum",
+      "rank": 2
+    },
+    {
+      "symbol": "USDT",
+      "exchanges": {},
+      "name": "Tether USDt",
+      "rank": 3
+    },
+    {
+      "symbol": "BNB",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.1,
+          "digit": 1,
+          "step_size": 0.01,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": 0.0001,
+          "index_price": 581.05,
+          "depth_1pct_usd": 4842054.247999999,
+          "spread_pct": 0.017211703958695822
+        },
+        "Binance": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.01,
+          "max_leverage": null,
+          "funding": 8.448e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 581.22754889,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.54794521,
+              "price": 581.2
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.16438356,
+              "price": 581.4
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05479452,
+              "price": 581.2
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.02739726,
+              "price": 581.185
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.08219178,
+              "price": 581.1
+            },
+            {
+              "exchange": "binance_cross2",
+              "weight": 0.04109589,
+              "price": 581.147023
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.08219178,
+              "price": 581.4
+            }
+          ],
+          "depth_1pct_usd": 1123746.8517999998,
+          "spread_pct": 0.0017193959459584458
+        }
+      },
+      "name": "BNB",
+      "rank": 4
+    },
+    {
+      "symbol": "USDC",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-06,
+          "digit": 6,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": -4.703e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0045,
+          "index_price": 1.0011278,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.44444444,
+              "price": 1.00117
+            },
+            {
+              "exchange": "binance_cross",
+              "weight": 0.13333333,
+              "price": 1.0010845
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13333333,
+              "price": 1.0011
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.06666667,
+              "price": 1.00120144
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.04444444,
+              "price": 1.0011
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.06666667,
+              "price": 1.00116
+            },
+            {
+              "exchange": "binance_cross2",
+              "weight": 0.03333333,
+              "price": 1.00101617
+            },
+            {
+              "exchange": "binance_cross3",
+              "weight": 0.01111111,
+              "price": 1.00118896
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06666667,
+              "price": 1.0011
+            }
+          ],
+          "depth_1pct_usd": 2309559.989796,
+          "spread_pct": 9.99312472936353e-05
+        }
+      },
+      "name": "USDC",
+      "rank": 5
+    },
+    {
+      "symbol": "XRP",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": null,
+          "funding": 8.355e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 1.08220892,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.45454545,
+              "price": 1.0821
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13636364,
+              "price": 1.0824
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.13636364,
+              "price": 1.08242887
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.06818182,
+              "price": 1.0822
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.06818182,
+              "price": 1.0822
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.06818182,
+              "price": 1.0822
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06818182,
+              "price": 1.0822
+            }
+          ],
+          "depth_1pct_usd": 7915089.827670001,
+          "spread_pct": 0.00924299842868925
+        }
+      },
+      "name": "XRP",
+      "rank": 6
+    },
+    {
+      "symbol": "SOL",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.01,
+          "max_leverage": null,
+          "funding": 6.706e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 74.17832508,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.45454545,
+              "price": 74.18
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13636364,
+              "price": 74.2
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.13636364,
+              "price": 74.1847818
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.06818182,
+              "price": 74.17
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.06818182,
+              "price": 74.15
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.06818182,
+              "price": 74.17
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06818182,
+              "price": 74.19
+            }
+          ],
+          "depth_1pct_usd": 27571553.836699992,
+          "spread_pct": 0.013487995683848281
+        }
+      },
+      "name": "Solana",
+      "rank": 7
+    },
+    {
+      "symbol": "TRX",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": -3.819e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.004875,
+          "index_price": 0.3286,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.58823529,
+              "price": 0.3286
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.17647059,
+              "price": 0.32865
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05882353,
+              "price": 0.3286
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.08823529,
+              "price": 0.3284
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.08823529,
+              "price": 0.3287
+            }
+          ],
+          "depth_1pct_usd": 648418.8551799997,
+          "spread_pct": 0.0030446061285942377
+        }
+      },
+      "name": "TRON",
+      "rank": 8
+    },
+    {
+      "symbol": "HYPE",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 0.01,
+          "max_leverage": 75.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0063,
+          "funding": 5.087e-05,
+          "index_price": 54.129,
+          "depth_1pct_usd": 596905.4561500001,
+          "spread_pct": 0.001848394669225466
+        },
+        "Binance": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 0.01,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 54.10842857,
+          "index_breakdown": [
+            {
+              "exchange": "gateio",
+              "weight": 0.14285714,
+              "price": 54.12
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.21428571,
+              "price": 54.114
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.21428571,
+              "price": 54.08
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.21428571,
+              "price": 54.108
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.21428571,
+              "price": 54.12
+            }
+          ],
+          "depth_1pct_usd": 544312.5810499999,
+          "spread_pct": 0.0018486005807436304
+        }
+      },
+      "name": "Hyperliquid",
+      "rank": 9
+    },
+    {
+      "symbol": "DOGE",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": 75.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0058,
+          "funding": 5.67e-06,
+          "index_price": 0.07032,
+          "depth_1pct_usd": 15411069.586790005,
+          "spread_pct": 0.014228799089351343
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 1.35e-06,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.004875,
+          "index_price": 0.0703322,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.48780488,
+              "price": 0.07034
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.14634146,
+              "price": 0.07034
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.07317073,
+              "price": 0.07033
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.07317073,
+              "price": 0.07035
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.07317073,
+              "price": 0.07031
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07317073,
+              "price": 0.07034
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.07317073,
+              "price": 0.07035
+            }
+          ],
+          "depth_1pct_usd": 8299452.37974,
+          "spread_pct": 0.014224751066850816
+        }
+      },
+      "name": "Dogecoin",
+      "rank": 10
+    },
+    {
+      "symbol": "LEO",
+      "exchanges": {},
+      "name": "UNUS SED LEO",
+      "rank": 11
+    },
+    {
+      "symbol": "ZEC",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": -9.4e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.02,
+          "index_price": 477.9466814,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.53333333,
+              "price": 478.04
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.16,
+              "price": 478.18
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.08,
+              "price": 478.84634329
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.08,
+              "price": 478.55
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.06666667,
+              "price": 478.677
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.08,
+              "price": 477.84
+            }
+          ],
+          "depth_1pct_usd": 318492.18239,
+          "spread_pct": 0.002093276396213452
+        }
+      },
+      "name": "Zcash",
+      "rank": 12
+    },
+    {
+      "symbol": "XMR",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": 0.0001,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0075,
+          "index_price": 358.04285714,
+          "index_breakdown": [
+            {
+              "exchange": "bitfinex",
+              "weight": 0.14285714,
+              "price": 357.44
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.42857143,
+              "price": 358.19
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.42857143,
+              "price": 358.04
+            }
+          ],
+          "depth_1pct_usd": 92781.23378999997,
+          "spread_pct": 0.0027950918187637044
+        }
+      },
+      "name": "Monero",
+      "rank": 13
+    },
+    {
+      "symbol": "LINK",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 0.1,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": 3.77e-05,
+          "index_price": 8.374,
+          "depth_1pct_usd": 2355845.7280999995,
+          "spread_pct": 0.011948858883969958
+        },
+        "Binance": {
+          "min_qty": 0.01,
+          "min_notional": 20.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 0.01,
+          "max_leverage": null,
+          "funding": 3.6e-07,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 8.37566505,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.48780488,
+              "price": 8.378
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.14634146,
+              "price": 8.381
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.14634146,
+              "price": 8.37382756
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.07317073,
+              "price": 8.379
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.07317073,
+              "price": 8.381
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07317073,
+              "price": 8.373
+            }
+          ],
+          "depth_1pct_usd": 2168357.8728700005,
+          "spread_pct": 0.011943150603122487
+        }
+      },
+      "name": "Chainlink",
+      "rank": 14
+    },
+    {
+      "symbol": "ADA",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": 75.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0058,
+          "funding": 0.0001,
+          "index_price": 0.1646,
+          "depth_1pct_usd": 4300804.0103,
+          "spread_pct": 0.06075334143377216
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 9.803e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 0.16471194,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.43478261,
+              "price": 0.1648
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13043478,
+              "price": 0.1647
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.13043478,
+              "price": 0.16483282
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.04347826,
+              "price": 0.16473
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.06521739,
+              "price": 0.1647
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.06521739,
+              "price": 0.1646
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.06521739,
+              "price": 0.1647
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06521739,
+              "price": 0.1647
+            }
+          ],
+          "depth_1pct_usd": 4224552.8609,
+          "spread_pct": 0.06071645415907041
+        }
+      },
+      "name": "Cardano",
+      "rank": 15
+    },
+    {
+      "symbol": "XLM",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": -4.176e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0075,
+          "index_price": 0.17282141,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.48780488,
+              "price": 0.1728
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.14634146,
+              "price": 0.17287
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.14634146,
+              "price": 0.17283111
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.07317073,
+              "price": 0.1729
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07317073,
+              "price": 0.1728
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.07317073,
+              "price": 0.1728
+            }
+          ],
+          "depth_1pct_usd": 676933.7297,
+          "spread_pct": 0.005788712011567147
+        }
+      },
+      "name": "Stellar",
+      "rank": 16
+    },
+    {
+      "symbol": "CC",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": 25.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "funding": 5e-05,
+          "index_price": 0.12178,
+          "depth_1pct_usd": 57499.40929000002,
+          "spread_pct": 0.008218952905408071
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 7.32e-06,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 0.1217525,
+          "index_breakdown": [
+            {
+              "exchange": "gateio",
+              "weight": 0.25,
+              "price": 0.1217
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.25,
+              "price": 0.12181
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.25,
+              "price": 0.12176
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.25,
+              "price": 0.12174
+            }
+          ],
+          "depth_1pct_usd": 76476.22674999999,
+          "spread_pct": 0.024689037458362654
+        }
+      },
+      "name": "Canton",
+      "rank": 17
+    },
+    {
+      "symbol": "DAI",
+      "exchanges": {},
+      "name": "Dai",
+      "rank": 18
+    },
+    {
+      "symbol": "BCH",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.1,
+          "digit": 1,
+          "step_size": 0.01,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": 0.0001,
+          "index_price": 211.0,
+          "depth_1pct_usd": 1450256.3319999997,
+          "spread_pct": 0.0474158368895184
+        },
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 20.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": 2.389e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 210.99408715,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.5,
+              "price": 211.0
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.15,
+              "price": 211.0
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.15,
+              "price": 211.06812175
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05,
+              "price": 210.8
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.075,
+              "price": 210.83
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.075,
+              "price": 211.1
+            }
+          ],
+          "depth_1pct_usd": 256822.14265,
+          "spread_pct": 0.004742708086312973
+        }
+      },
+      "name": "Bitcoin Cash",
+      "rank": 19
+    },
+    {
+      "symbol": "USD1",
+      "exchanges": {},
+      "name": "World Liberty Financial USD",
+      "rank": 20
+    },
+    {
+      "symbol": "GRAM",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": 50.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.008,
+          "funding": 2.634e-05,
+          "index_price": 1.4233,
+          "depth_1pct_usd": 121891.41092999997,
+          "spread_pct": 0.007029876977152125
+        },
+        "Binance": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 0.1,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 1.423145,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.5,
+              "price": 1.423
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.15,
+              "price": 1.423
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05,
+              "price": 1.4229
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.075,
+              "price": 1.423
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.075,
+              "price": 1.423
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.075,
+              "price": 1.425
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.075,
+              "price": 1.423
+            }
+          ],
+          "depth_1pct_usd": 461189.3144,
+          "spread_pct": 0.0703234880449993
+        }
+      },
+      "name": "Gram (prev. Toncoin)",
+      "rank": 21
+    },
+    {
+      "symbol": "USDE",
+      "exchanges": {},
+      "name": "Ethena USDe",
+      "rank": 22
+    },
+    {
+      "symbol": "LTC",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.1,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": -2.485e-05,
+          "index_price": 45.28,
+          "depth_1pct_usd": 3176600.19,
+          "spread_pct": 0.022104332449155637
+        },
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 20.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": 4.507e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 45.28941176,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.58823529,
+              "price": 45.29
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.17647059,
+              "price": 45.3
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05882353,
+              "price": 45.29
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.08823529,
+              "price": 45.28
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.08823529,
+              "price": 45.28
+            }
+          ],
+          "depth_1pct_usd": 3045093.1304900004,
+          "spread_pct": 0.022094564737070284
+        }
+      },
+      "name": "Litecoin",
+      "rank": 23
+    },
+    {
+      "symbol": "USDG",
+      "exchanges": {},
+      "name": "Global Dollar",
+      "rank": 24
+    },
+    {
+      "symbol": "HBAR",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": 2.505e-05,
+          "index_price": 0.06784,
+          "depth_1pct_usd": 1119410.72923,
+          "spread_pct": 0.01474708745024333
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": -1.79e-06,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.02,
+          "index_price": 0.06784912,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.58823529,
+              "price": 0.06786
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.17647059,
+              "price": 0.06785
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05882353,
+              "price": 0.06785
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.08823529,
+              "price": 0.06784
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.08823529,
+              "price": 0.06785
+            }
+          ],
+          "depth_1pct_usd": 1152457.16485,
+          "spread_pct": 0.014744913005007552
+        }
+      },
+      "name": "Hedera",
+      "rank": 25
+    },
+    {
+      "symbol": "SUI",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": null,
+          "funding": 3.91e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0075,
+          "index_price": 0.69163396,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.42105263,
+              "price": 0.6915
+            },
+            {
+              "exchange": "binance_cross",
+              "weight": 0.12631579,
+              "price": 0.69267998
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.12631579,
+              "price": 0.6915
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.12631579,
+              "price": 0.69157681
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.04210526,
+              "price": 0.6914
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.06315789,
+              "price": 0.6914
+            },
+            {
+              "exchange": "binance_cross2",
+              "weight": 0.03157895,
+              "price": 0.6910468
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.06315789,
+              "price": 0.6916
+            }
+          ],
+          "depth_1pct_usd": 3039509.0011200015,
+          "spread_pct": 0.014467592592590998
+        }
+      },
+      "name": "Sui",
+      "rank": 26
+    },
+    {
+      "symbol": "AVAX",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 0.1,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": -2.943e-05,
+          "index_price": 6.454,
+          "depth_1pct_usd": 3543053.7677,
+          "spread_pct": 0.01550628004340899
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 4.678e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.00375,
+          "index_price": 6.45458823,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.51948052,
+              "price": 6.455
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.15584416,
+              "price": 6.455
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05194805,
+              "price": 6.455
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.07792208,
+              "price": 6.454
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.07792208,
+              "price": 6.453
+            },
+            {
+              "exchange": "binance_cross2",
+              "weight": 0.03896104,
+              "price": 6.45243129
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.07792208,
+              "price": 6.454
+            }
+          ],
+          "depth_1pct_usd": 1386336.732,
+          "spread_pct": 0.01550628004340899
+        }
+      },
+      "name": "Avalanche",
+      "rank": 27
+    },
+    {
+      "symbol": "SHIB",
+      "exchanges": {},
+      "name": "Shiba Inu",
+      "rank": 28
+    },
+    {
+      "symbol": "PYUSD",
+      "exchanges": {},
+      "name": "PayPal USD",
+      "rank": 29
+    },
+    {
+      "symbol": "CRO",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": 25.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.02,
+          "funding": 0.0001,
+          "index_price": 0.05516,
+          "depth_1pct_usd": 116314.42305999997,
+          "spread_pct": 0.018122508155134217
+        }
+      },
+      "name": "Cronos",
+      "rank": 30
+    },
+    {
+      "symbol": "UNI",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 5.474e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0045,
+          "index_price": 4.03222079,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.46511628,
+              "price": 4.032
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13953488,
+              "price": 4.032
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.13953488,
+              "price": 4.03169454
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.04651163,
+              "price": 4.032
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.06976744,
+              "price": 4.034
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.06976744,
+              "price": 4.034
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06976744,
+              "price": 4.032
+            }
+          ],
+          "depth_1pct_usd": 1643022.234,
+          "spread_pct": 0.02482621648461604
+        }
+      },
+      "name": "Uniswap",
+      "rank": 31
+    },
+    {
+      "symbol": "XAUT",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": 2.041e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 4060.20450753,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.51948052,
+              "price": 4061.19
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.15584416,
+              "price": 4062.3
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05194805,
+              "price": 4060.9
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.07792208,
+              "price": 4059.4
+            },
+            {
+              "exchange": "binance_cross2",
+              "weight": 0.03896104,
+              "price": 4060.49568264
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07792208,
+              "price": 4059.19
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.07792208,
+              "price": 4062.3
+            }
+          ],
+          "depth_1pct_usd": 312544.13269000006,
+          "spread_pct": 0.00024636610003001425
+        }
+      },
+      "name": "Tether Gold",
+      "rank": 32
+    },
+    {
+      "symbol": "NEAR",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": 4.028e-05,
+          "index_price": 1.6701,
+          "depth_1pct_usd": 684761.0835299997,
+          "spread_pct": 0.005991611743558357
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": -9.618e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.02,
+          "index_price": 1.67065676,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.54054054,
+              "price": 1.671
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.16216216,
+              "price": 1.67
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05405405,
+              "price": 1.672
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.08108108,
+              "price": 1.6706
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.08108108,
+              "price": 1.6698
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.08108108,
+              "price": 1.67
+            }
+          ],
+          "depth_1pct_usd": 2069300.265,
+          "spread_pct": 0.05988023952096479
+        }
+      },
+      "name": "NEAR Protocol",
+      "rank": 33
+    },
+    {
+      "symbol": "TAO",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 193.56743598,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.51948052,
+              "price": 193.6
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.15584416,
+              "price": 193.52334074
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05194805,
+              "price": 193.55
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.07792208,
+              "price": 193.59
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.07792208,
+              "price": 193.49
+            },
+            {
+              "exchange": "binance_cross2",
+              "weight": 0.03896104,
+              "price": 193.48837209
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07792208,
+              "price": 193.6
+            }
+          ],
+          "depth_1pct_usd": 652586.9190799999,
+          "spread_pct": 0.005167799179660471
+        }
+      },
+      "name": "Bittensor",
+      "rank": 34
+    },
+    {
+      "symbol": "ONDO",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": 50.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.008,
+          "funding": 1.177e-05,
+          "index_price": 0.4192,
+          "depth_1pct_usd": 2310426.4872000003,
+          "spread_pct": 0.02387204583432537
+        },
+        "Binance": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 0.41925525,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.5,
+              "price": 0.4198
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.15,
+              "price": 0.4194
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05,
+              "price": 0.4197
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.075,
+              "price": 0.41915
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.075,
+              "price": 0.41932
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.075,
+              "price": 0.4192
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.075,
+              "price": 0.4194
+            }
+          ],
+          "depth_1pct_usd": 2048584.0879200003,
+          "spread_pct": 0.02385496183205844
+        }
+      },
+      "name": "Ondo",
+      "rank": 35
+    },
+    {
+      "symbol": "OKB",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.01,
+          "max_leverage": 25.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "funding": 5e-05,
+          "index_price": 86.22,
+          "depth_1pct_usd": 100691.16439999997,
+          "spread_pct": 0.03478260869565349
+        }
+      },
+      "name": "OKB",
+      "rank": 36
+    },
+    {
+      "symbol": "PAXG",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.001,
+          "min_notional": 5.0,
+          "tick_size": 0.1,
+          "digit": 1,
+          "step_size": 0.001,
+          "max_leverage": 75.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.0058,
+          "funding": 5e-05,
+          "index_price": 4066.04,
+          "depth_1pct_usd": 732290.4412000004,
+          "spread_pct": 0.0024605754301678614
+        },
+        "Binance": {
+          "min_qty": 0.001,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.001,
+          "max_leverage": null,
+          "funding": -1.063e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 4067.16379167,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.67164179,
+              "price": 4068.6
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.08955224,
+              "price": 4067.77550209
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05970149,
+              "price": 4068.67
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.08955224,
+              "price": 4066.09
+            },
+            {
+              "exchange": "binance_cross2",
+              "weight": 0.04477612,
+              "price": 4067.3131952
+            },
+            {
+              "exchange": "uniswapV2",
+              "weight": 0.04477612,
+              "price": 4069.02213641
+            }
+          ],
+          "depth_1pct_usd": 535333.12556,
+          "spread_pct": 0.00024597843959997436
+        }
+      },
+      "name": "PAX Gold",
+      "rank": 37
+    },
+    {
+      "symbol": "WLFI",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 0.05533581,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.5,
+              "price": 0.0553
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.05,
+              "price": 0.05536
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.15,
+              "price": 0.05533816
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.05,
+              "price": 0.05537
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.05,
+              "price": 0.05533
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.075,
+              "price": 0.0554
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.075,
+              "price": 0.05536
+            },
+            {
+              "exchange": "uniswapV3",
+              "weight": 0.05,
+              "price": 0.05550632
+            }
+          ],
+          "depth_1pct_usd": 368271.82469,
+          "spread_pct": 0.018055446470559462
+        }
+      },
+      "name": "World Liberty Financial",
+      "rank": 38
+    },
+    {
+      "symbol": "ASTER",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": 75.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.0033,
+          "funding": 5e-05,
+          "index_price": 0.5999,
+          "depth_1pct_usd": 305137.08450000006,
+          "spread_pct": 0.016680567139299416
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 0.59985,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.25,
+              "price": 0.6
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.16666667,
+              "price": 0.5997
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.08333333,
+              "price": 0.5995
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.08333333,
+              "price": 0.6
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.08333333,
+              "price": 0.5999
+            },
+            {
+              "exchange": "aster",
+              "weight": 0.33333333,
+              "price": 0.59985
+            }
+          ],
+          "depth_1pct_usd": 652274.383,
+          "spread_pct": 0.01668335001668151
+        }
+      },
+      "name": "Aster",
+      "rank": 39
+    },
+    {
+      "symbol": "RLUSD",
+      "exchanges": {},
+      "name": "Ripple USD",
+      "rank": 40
+    },
+    {
+      "symbol": "USDD",
+      "exchanges": {},
+      "name": "USDD",
+      "rank": 41
+    },
+    {
+      "symbol": "AAVE",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.01,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.01,
+          "max_leverage": 75.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0058,
+          "funding": 6.345e-05,
+          "index_price": 97.44,
+          "depth_1pct_usd": 992569.7041,
+          "spread_pct": 0.010270103728038311
+        },
+        "Binance": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.01,
+          "digit": 2,
+          "step_size": 0.1,
+          "max_leverage": null,
+          "funding": 2.605e-05,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.0075,
+          "index_price": 97.4352473,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.52631579,
+              "price": 97.44
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.15789474,
+              "price": 97.39
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.15789474,
+              "price": 97.43762512
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07894737,
+              "price": 97.51
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.07894737,
+              "price": 97.44
+            }
+          ],
+          "depth_1pct_usd": 1075682.9910000002,
+          "spread_pct": 0.010267994660633438
+        }
+      },
+      "name": "Aave",
+      "rank": 42
+    },
+    {
+      "symbol": "SKY",
+      "exchanges": {
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 1e-05,
+          "digit": 5,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 0.05715541,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.51282051,
+              "price": 0.05717
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.15384615,
+              "price": 0.05719
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.15384615,
+              "price": 0.05709064
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07692308,
+              "price": 0.05717
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.07692308,
+              "price": 0.05714
+            },
+            {
+              "exchange": "uniswapV2",
+              "weight": 0.02564103,
+              "price": 0.05705691
+            }
+          ],
+          "depth_1pct_usd": 162314.46266999992,
+          "spread_pct": 0.017525411847183776
+        }
+      },
+      "name": "Sky",
+      "rank": 43
+    },
+    {
+      "symbol": "MNT",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": 25.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.02,
+          "funding": 0.0001,
+          "index_price": 0.39787,
+          "depth_1pct_usd": 334610.3221299999,
+          "spread_pct": 0.025148375414945426
+        }
+      },
+      "name": "Mantle",
+      "rank": 44
+    },
+    {
+      "symbol": "DOT",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": 0.0001,
+          "index_price": 0.7701,
+          "depth_1pct_usd": 498192.13131,
+          "spread_pct": 0.01298869983114547
+        },
+        "Binance": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 0.1,
+          "max_leverage": null,
+          "funding": 0.0001,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.004875,
+          "index_price": 0.76989099,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.48780488,
+              "price": 0.77
+            },
+            {
+              "exchange": "binance_cross",
+              "weight": 0.14634146,
+              "price": 0.76957263
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.14634146,
+              "price": 0.7703
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.07317073,
+              "price": 0.7706
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.07317073,
+              "price": 0.768
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.07317073,
+              "price": 0.7707
+            }
+          ],
+          "depth_1pct_usd": 865254.5802800006,
+          "spread_pct": 0.01298869983114547
+        }
+      },
+      "name": "Polkadot",
+      "rank": 45
+    },
+    {
+      "symbol": "M",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": 20.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.025,
+          "funding": 5e-05,
+          "index_price": 0.9539,
+          "depth_1pct_usd": 8489.2702,
+          "spread_pct": 0.12572027239393294
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 0.96017002,
+          "index_breakdown": [
+            {
+              "exchange": "gateio",
+              "weight": 0.2,
+              "price": 0.9645
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.3,
+              "price": 0.95731
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.3,
+              "price": 0.963039
+            },
+            {
+              "exchange": "binance_future",
+              "weight": 0.1,
+              "price": 0.9609
+            },
+            {
+              "exchange": "binance_alpha",
+              "weight": 0.1,
+              "price": 0.95055321
+            }
+          ],
+          "depth_1pct_usd": 9836.710400000004,
+          "spread_pct": 0.0624609235353525
+        }
+      },
+      "name": "MemeCore",
+      "rank": 46
+    },
+    {
+      "symbol": "BEAT",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.0001,
+          "digit": 4,
+          "step_size": 1.0,
+          "max_leverage": 25.0,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "funding": 5e-05,
+          "index_price": 3.8192,
+          "depth_1pct_usd": 6416.963399999998,
+          "spread_pct": 0.010474796330677692
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 5e-05,
+          "funding_interval_h": 4.0,
+          "funding_cap": 0.02,
+          "index_price": 3.81998978,
+          "index_breakdown": [
+            {
+              "exchange": "gateio",
+              "weight": 0.2,
+              "price": 3.8221
+            },
+            {
+              "exchange": "mexc",
+              "weight": 0.25,
+              "price": 3.82357
+            },
+            {
+              "exchange": "binance_future",
+              "weight": 0.2,
+              "price": 3.826
+            },
+            {
+              "exchange": "binance_alpha",
+              "weight": 0.35,
+              "price": 3.81279224
+            }
+          ],
+          "depth_1pct_usd": 102008.6094,
+          "spread_pct": 0.052287929602035654
+        }
+      },
+      "name": "Audiera",
+      "rank": 47
+    },
+    {
+      "symbol": "ICP",
+      "exchanges": {
+        "Bybit": {
+          "min_qty": 0.1,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 0.1,
+          "max_leverage": 50.0,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.01,
+          "funding": 4.93e-06,
+          "index_price": 2.081,
+          "depth_1pct_usd": 502724.45129999996,
+          "spread_pct": 0.04810004810006416
+        },
+        "Binance": {
+          "min_qty": 1.0,
+          "min_notional": 5.0,
+          "tick_size": 0.001,
+          "digit": 3,
+          "step_size": 1.0,
+          "max_leverage": null,
+          "funding": 2.34e-06,
+          "funding_interval_h": 8.0,
+          "funding_cap": 0.02,
+          "index_price": 2.08128557,
+          "index_breakdown": [
+            {
+              "exchange": "binance",
+              "weight": 0.46511628,
+              "price": 2.082
+            },
+            {
+              "exchange": "okex",
+              "weight": 0.13953488,
+              "price": 2.082
+            },
+            {
+              "exchange": "coinbase",
+              "weight": 0.13953488,
+              "price": 2.07993779
+            },
+            {
+              "exchange": "gateio",
+              "weight": 0.04651163,
+              "price": 2.079
+            },
+            {
+              "exchange": "kucoin",
+              "weight": 0.06976744,
+              "price": 2.082
+            },
+            {
+              "exchange": "bitget",
+              "weight": 0.06976744,
+              "price": 2.08
+            },
+            {
+              "exchange": "bybit",
+              "weight": 0.06976744,
+              "price": 2.08
+            }
+          ],
+          "depth_1pct_usd": 493810.37599999993,
+          "spread_pct": 0.04810004810006416
+        }
+      },
+      "name": "Internet Computer",
+      "rank": 48
+    },
+    {
+      "symbol": "BGB",
+      "exchanges": {},
+      "name": "Bitget Token",
+      "rank": 49
+    },
+    {
+      "symbol": "PEPE",
+      "exchanges": {},
+      "name": "Pepe",
+      "rank": 50
+    }
+  ]
 }
