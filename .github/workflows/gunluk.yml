@@ -1,5 +1,8 @@
 name: MarketPano gunluk
 
+# GUNLUK AKIS: sadece HACIM verisi (gun gun birikir) + Excel yeniden uretimi.
+# Kontrat verisi BURADA CEKILMEZ - o tek fotograftir, "MarketPano kontrat guncelle"
+# akisiyla sadece istendiginde yenilenir.
 on:
   schedule:
     - cron: "0 9 * * *"        # her gun TR 12:00
@@ -7,7 +10,6 @@ on:
     paths:
       - "borsa_local.json"
       - "hacim_local.json"
-      - "kontrat_local.json"
   workflow_dispatch:
 
 permissions:
@@ -16,7 +18,7 @@ permissions:
 jobs:
   topla:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v4
@@ -37,13 +39,10 @@ jobs:
       - name: Excel hacmi - her borsanin kendi ilk 150'si
         run: python collect.py hacim_github
 
-      - name: Kontrat ozellikleri - GitHub borsalari
-        run: python collect.py kontrat_github
-
       - name: Pano arsivi
         run: python collect.py arsivle
 
-      - name: Excel arsivi (hacim + kontrat)
+      - name: Hacim arsivi
         run: python collect.py arsivle_yeni
 
       - name: Excel uret
@@ -53,11 +52,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cmc.json borsa_github.json hacim_github.json kontrat_github.json \
+          git add cmc.json borsa_github.json hacim_github.json \
                   marketpano.xlsx manuel-kaldirac.csv arsiv/ || true
           if git diff --staged --quiet; then
             echo "Degisiklik yok."
           else
-            git commit -m "Gunluk veri: $(date -u +%Y-%m-%d)"
+            git commit -m "Gunluk hacim: $(date -u +%Y-%m-%d)"
             git push
           fi
