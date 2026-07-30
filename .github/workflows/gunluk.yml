@@ -10,6 +10,7 @@ on:
     paths:
       - "borsa_local.json"
       - "hacim_local.json"
+      - "hacim_gecmis_local.json"
   workflow_dispatch:
 
 permissions:
@@ -48,6 +49,9 @@ jobs:
       - name: Hacim arsivi
         run: python collect.py arsivle_yeni
 
+      - name: Geriye donuk gunleri isle (hafta sonu bosluklari)
+        run: python collect.py arsivle_gecmis || true
+
       - name: Excel uret
         run: python build_excel.py
 
@@ -56,7 +60,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add cmc.json cmc_genis.json borsa_github.json hacim_github.json \
-                  marketpano.xlsx manuel-kaldirac.csv arsiv/ || true
+                  marketpano.xlsx manuel-kaldirac.csv manuel-btcturk.csv arsiv/ || true
           if git diff --staged --quiet; then
             echo "Degisiklik yok."
           else
