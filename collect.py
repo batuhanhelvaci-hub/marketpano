@@ -620,6 +620,23 @@ def temel_sembol(sym):
     return None
 
 
+# Kontrat aramasinda carpanli sembolleri de dene:
+# CMC "PEPE" der ama borsa "1000PEPE" / "kPEPE" olarak listeler.
+CARPAN_ONEKLERI = ["1000", "10000", "100000", "1000000", "1M", "k"]
+
+
+def carpanli_ara(tablo, base):
+    """tablo (borsanin sembol->veri sozlugu) icinde base'i, yoksa carpanli halini bulur.
+    Doner: (bulunan_anahtar, deger) ya da (None, None)."""
+    if base in tablo:
+        return base, tablo[base]
+    for on in CARPAN_ONEKLERI:
+        aday = f"{on}{base}"
+        if aday in tablo:
+            return aday, tablo[aday]
+    return None, None
+
+
 def kripto_mu(sym, whitelist):
     """Sembol kripto mu? Once tam eslesme, sonra carpansiz hali denenir."""
     if not whitelist:
@@ -820,11 +837,28 @@ def orderbook_depth_spread(bids, asks, mid, pct=0.01):
 def kontrat_bybit(top_bases):
     """Bybit: instruments (kurallar+kaldirac) + ticker (funding+fiyat) + orderbook (derinlik+spread)."""
     out = {}
-    # 1) Instruments: kurallar + kaldirac (tek cagri, tum linear)
-    inst = get_json("https://api.bybit.com/v5/market/instruments-info", {"category": "linear"})
+    # 1) Instruments: kurallar + kaldirac
+    #    ONEMLI: Bybit bu endpoint'te SAYFALAMA yapar (varsayilan 500 kayit).
+    #    Bybit'te 700+ linear perp var; sayfalamazsak XRP, SOL, SUI gibi
+    #    varliklar listenin disinda kalir. nextPageCursor ile tum sayfalar cekilir.
+    kalemler = []
+    imlec = None
+    for _ in range(10):                       # guvenlik siniri
+        par = {"category": "linear", "limit": 1000}
+        if imlec:
+            par["cursor"] = imlec
+        inst = get_json("https://api.bybit.com/v5/market/instruments-info", par)
+        if not inst or "result" not in inst:
+            break
+        kalemler.extend(inst["result"].get("list", []))
+        imlec = inst["result"].get("nextPageCursor")
+        if not imlec:
+            break
+        time.sleep(0.05)
+    print(f"    Bybit instruments: {len(kalemler)} kayit")
     rules = {}
-    if inst and "result" in inst:
-        for it in inst["result"].get("list", []):
+    if kalemler:
+        for it in kalemler:
             base, quote = base_from_symbol(it.get("symbol", ""))
             if not base or quote != "USDT":
                 continue
@@ -858,17 +892,18 @@ def kontrat_bybit(top_bases):
                 }
     # 3) Sadece top_bases icin birlestir + orderbook (pair basi ayri cagri = yavas)
     for base in top_bases:
-        r = rules.get(base)
+        gercek, r = carpanli_ara(rules, base)   # 1000PEPE / kPEPE gibi
         if not r:
             continue
         row = dict(r)
-        td = tick_data.get(base, {})
+        row["borsa_sembolu"] = gercek
+        td = tick_data.get(gercek, {})
         row["funding"] = td.get("funding")
         row["index_price"] = td.get("index_price")
         mid = td.get("mark_price") or td.get("last") or 0.0
         # orderbook derinlik + spread
         ob = get_json("https://api.bybit.com/v5/market/orderbook",
-                      {"category": "linear", "symbol": f"{base}USDT", "limit": 50})
+                      {"category": "linear", "symbol": f"{gercek}USDT", "limit": 50})
         if ob and "result" in ob:
             depth, spread = orderbook_depth_spread(
                 ob["result"].get("b", []), ob["result"].get("a", []), mid)
@@ -934,18 +969,19 @@ def kontrat_binance(top_bases):
                 }
     # 3) top_bases icin birlestir + constituents (index agirlik) + orderbook
     for base in top_bases:
-        r = rules.get(base)
+        gercek, r = carpanli_ara(rules, base)
         if not r:
             continue
         row = dict(r)
-        pm = pmap.get(base, {})
+        row["borsa_sembolu"] = gercek
+        pm = pmap.get(gercek, {})
         row["funding"] = pm.get("funding")
         fi = fmap.get(base, {})
         row["funding_interval_h"] = fi.get("funding_interval_h") or 8.0  # varsayilan 8 saat
         row["funding_cap"] = fi.get("funding_cap")
         row["index_price"] = pm.get("index_price")
         mid = pm.get("mark_price") or pm.get("index_price") or 0.0
-        sym = f"{base}USDT"
+        sym = f"{gercek}USDT"
         # index agirlik kirilimi (Binance constituents)
         cons = get_json("https://fapi.binance.com/fapi/v1/constituents", {"symbol": sym})
         if cons and "constituents" in cons:
@@ -1008,12 +1044,13 @@ def kontrat_okx(top_bases):
                 markmap[parts[0]] = to_float(m.get("markPx"))
     # 3) top_bases icin: funding + index-components + orderbook
     for base in top_bases:
-        r = rules.get(base)
+        gercek, r = carpanli_ara(rules, base)
         if not r:
             continue
         row = dict(r); row.pop("instId", None); row.pop("ctval", None)
+        row["borsa_sembolu"] = gercek
         instId = r["instId"]
-        mark = markmap.get(base, 0.0)
+        mark = markmap.get(gercek, 0.0)
         row["index_price"] = mark
         if r.get("min_notional") is None and mark:
             row["min_notional"] = r["min_qty"] * mark   # min coin * fiyat = min $
@@ -1087,9 +1124,10 @@ def kontrat_gate(top_bases):
                 "index_price": to_float(c.get("index_price")) or mark,
             }
     for base in top_bases:
-        r = cmap.get(base)
+        gercek, r = carpanli_ara(cmap, base)
         if not r:
             continue
+        r = dict(r); r["borsa_sembolu"] = gercek
         name = r["name"]; mult = r["mult"]; mark = r["mark"] or r["index_price"]
         row = {k: r[k] for k in ("min_qty","min_notional","tick_size","digit","step_size",
                                  "max_leverage","funding","funding_interval_h","index_price")}
@@ -1171,12 +1209,13 @@ def kontrat_bitget(top_bases):
                 "funding": to_float(t.get("fundingRate")),
             }
     for base in top_bases:
-        r = cmap.get(base)
+        gercek, r = carpanli_ara(cmap, base)
         if not r:
             continue
         row = dict(r)
-        sym = f"{base}USDT"
-        p = pmap.get(base) or {}
+        row["borsa_sembolu"] = gercek
+        sym = f"{gercek}USDT"
+        p = pmap.get(gercek) or {}
         row["index_price"] = p.get("index")
         row["funding"] = p.get("funding")
         mid = p.get("mid") or 0.0
@@ -1234,9 +1273,14 @@ def kontrat_hyperliquid(top_bases):
         return out
     universe = data[0].get("universe", [])
     ctxs = data[1]
+    istenen = set(top_bases)
     for i, u in enumerate(universe):
-        base = u.get("name")
-        if base not in top_bases or i >= len(ctxs):
+        hl_ad = u.get("name")          # HL "kPEPE" gibi yazar
+        if not hl_ad or i >= len(ctxs):
+            continue
+        # kPEPE -> PEPE; carpan yoksa kendisi
+        base = hl_ad if hl_ad in istenen else (temel_sembol(hl_ad) or hl_ad)
+        if base not in istenen:
             continue
         c = ctxs[i]
         mark = to_float(c.get("markPx"))
@@ -1254,13 +1298,14 @@ def kontrat_hyperliquid(top_bases):
             "funding_interval_h": 1.0,   # HL: saatlik, dokumanli sabit
             "index_price": oracle,
             "index_breakdown": bd,
+            "borsa_sembolu": hl_ad,
         }
         if row["min_qty"] and mark:
             row["min_notional"] = row["min_qty"] * mark
         # orderbook (l2Book)
         try:
             rb = requests.post("https://api.hyperliquid.xyz/info",
-                               json={"type": "l2Book", "coin": base},
+                               json={"type": "l2Book", "coin": hl_ad},
                                headers=HEADERS, timeout=REQUEST_TIMEOUT)
             lv = rb.json().get("levels", [])
             if len(lv) == 2:
@@ -1371,7 +1416,12 @@ def run_kontrat(which_exchanges=None, outfile="kontrat.json"):
 #  Excel'de borsa basina bir sheet olur.
 # ============================================================
 
-HACIM_TOP_N = 150
+HACIM_TOP_N = 150      # Excel'de gosterilecek varlik sayisi (en guncel gunun ilk 150'si)
+HACIM_KAYIT_N = 300    # ARSIVE kaydedilecek varlik sayisi.
+                       # Neden daha genis: ilk 150'nin bilesimi her gun degisiyor.
+                       # Sadece 150 saklarsak, bugun 150'de olan bir varlik dun
+                       # 151. sirada oldugu icin gecmisi bos gorunur. 300 saklayip
+                       # 150 gostererek bu delikleri kapatiyoruz.
 
 def run_hacim(which_exchanges=None, outfile="hacim.json"):
     """Her borsa icin: tum USDT perp'leri cek, TOKENIZE HISSE/EMTIA'yi ayikla,
@@ -1408,10 +1458,14 @@ def run_hacim(which_exchanges=None, outfile="hacim.json"):
                 print(f"    {len(elenen)} kripto-disi sembol elendi (orn: {ornek})")
         sirali = sorted(tumu.items(),
                         key=lambda kv: -(kv[1].get("perp_volume_usd") or 0))
-        top = [b for b, v in sirali[:HACIM_TOP_N] if (v.get("perp_volume_usd") or 0) > 0]
-        print(f"    {ham_adet} perp -> {len(tumu)} kripto -> ilk {len(top)} aliniyor (open interest ile)")
+        top = [b for b, v in sirali[:HACIM_KAYIT_N] if (v.get("perp_volume_usd") or 0) > 0]
+        # Open interest sadece ilk 150 icin cekilir (Excel'de yalnizca guncel gun
+        # OI gosteriyor); kalan 150 sembol icin hacim yeterli, gereksiz cagri yapilmaz.
+        oi_liste = top[:HACIM_TOP_N]
+        print(f"    {ham_adet} perp -> {len(tumu)} kripto -> {len(top)} kaydediliyor "
+              f"(ilk {len(oi_liste)} icin open interest de)")
         try:
-            detay = fn(top)        # OI dahil ikinci gecis
+            detay = fn(oi_liste)   # OI dahil ikinci gecis
         except Exception as e:
             print(f"    ! {exch} OI gecisi hatasi: {e}")
             detay = {}
@@ -1445,7 +1499,7 @@ def run_hacim(which_exchanges=None, outfile="hacim.json"):
 # ============================================================
 
 GECMIS_GUN = 7        # kac gun geriye bakilacak
-GECMIS_ADAY = 250     # siralamayi kurmak icin kac sembolun gecmisi cekilecek
+GECMIS_ADAY = 400     # siralamayi kurmak icin kac sembolun gecmisi cekilecek
 
 
 def _gun_str(ms):
@@ -1556,7 +1610,7 @@ def run_hacim_gecmis(which_exchanges=None, gun_sayisi=GECMIS_GUN,
             sirali = sorted(semboller.items(),
                             key=lambda kv: -(kv[1].get("perp_volume_usd") or 0))
             satirlar = []
-            for i, (base, v) in enumerate(sirali[:HACIM_TOP_N], 1):
+            for i, (base, v) in enumerate(sirali[:HACIM_KAYIT_N], 1):
                 if not (v.get("perp_volume_usd") or 0) > 0:
                     continue
                 satirlar.append({

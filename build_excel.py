@@ -376,14 +376,28 @@ def sheet_hacim(wb, borsa, gunler, cmc, ilk=False):
         for s in satirlar:
             veri.setdefault(s["symbol"], {})[g] = s
 
-    # Siralama: en guncel gunun hacmi, azalan
-    def anahtar(sym):
-        for g in gun_listesi:
-            s = veri[sym].get(g)
-            if s and (s.get("perp_volume_usd") or 0) > 0:
-                return -(s["perp_volume_usd"])
-        return 0
-    varliklar = sorted(veri.keys(), key=anahtar)
+    # Gosterilecek varliklar = EN GUNCEL gunun ilk GOSTER_N'i.
+    # Arsivde 300 varlik saklaniyor; boylece bu 150'nin gecmis gunlerdeki
+    # hacimleri de dolu geliyor (o gun 150'nin disinda kalmis olsalar bile).
+    GOSTER_N = 150
+    if gun_listesi:
+        guncel = gun_listesi[0]
+        aday = [(sym, (veri[sym].get(guncel) or {}).get("perp_volume_usd") or 0)
+                for sym in veri]
+        aday = [a for a in aday if a[1] > 0]
+        aday.sort(key=lambda x: -x[1])
+        varliklar = [a[0] for a in aday[:GOSTER_N]]
+        # Guncel gunde hic verisi olmayan ama gecmiste olanlari en alta ekle
+        kalan = [s for s in veri if s not in set(varliklar)]
+        def son_hacim(sym):
+            for g in gun_listesi:
+                v = (veri[sym].get(g) or {}).get("perp_volume_usd") or 0
+                if v:
+                    return -v
+            return 0
+        varliklar += sorted(kalan, key=son_hacim)[:0]   # simdilik eklenmiyor
+    else:
+        varliklar = []
 
     # Baslik
     ws.merge_cells(start_row=1, start_column=1, end_row=2, end_column=1)
