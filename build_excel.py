@@ -302,8 +302,9 @@ YONTEM_METNI = {
               "Havuz: Binance, OKX, Bybit, Coinbase (1. grup) + Bitget, Gate, MEXC (2. grup)."),
     "Bitget": ("Yayinlanmiyor. Yontem: en fazla 6 borsa, 24s hacim agirlikli "
                "(agirlik = borsanin hacmi / kullanilan borsalarin toplam hacmi), "
-               "4 saatte bir guncellenir. "
-               "Havuz: Bitget, Binance, Coinbase, OKX, Bybit, Gate, MEXC, Bitfinex, Kraken."),
+               "agirliklar 4 saatte bir guncellenir. "
+               "Havuz: Bitget, Binance, Coinbase, OKX, Bybit, Gate, MEXC, Bitfinex, Kraken. "
+               "Olaganustu durumda Bitget sabit agirlik atayabilir."),
 }
 
 
@@ -446,7 +447,7 @@ def sheet_total(wb, gunler, cmc):
     """A: Varlik, B+: tarihler. Deger = 6 borsanin TOPLAM perp hacmi."""
     ws = wb.create_sheet(title="Total")
     ws.sheet_properties.tabColor = "0A9D57"
-    gun_listesi = sorted(gunler)
+    gun_listesi = sorted(gunler, reverse=True)   # en guncel gun EN SOLDA
     toplam = {}   # sym -> {gun: toplam}
     for g in gun_listesi:
         for borsa in BORSA_SIRASI:
@@ -457,7 +458,7 @@ def sheet_total(wb, gunler, cmc):
                     d[g] = d.get(g, 0) + v
 
     def anahtar(sym):
-        for g in reversed(gun_listesi):
+        for g in gun_listesi:                     # en guncel gunden geriye
             if toplam[sym].get(g):
                 return -toplam[sym][g]
         return 0
@@ -695,15 +696,30 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
         ("Formül",
          "Index = Σ (spot fiyat × ağırlık). Ağırlık = o borsanın 24s hacmi ÷ kullanılan borsaların toplam 24s hacmi."),
         ("Kaç kaynak", "En fazla 6 borsa"),
-        ("Ağırlık güncelleme", "4 saatte bir (index fiyatı saniyede en az bir kez)"),
+        ("Ağırlık güncelleme", "4 saatte bir. Index fiyatının kendisi en az 200 ms'de bir güncellenir."),
         ("Kaynak havuzu",
-         "Bitget, Binance, Coinbase, OKX, Bybit, Gate, MEXC, Bitfinex, Kraken"),
-        ("Koruma",
+         "Bitget, Binance, Coinbase, OKX, Bybit, Gate, MEXC, Bitfinex, Kraken. "
+         "NOT: Bu liste Bitget destek makalesinin bölgesel bir sürümünden alındı; "
+         "ana sayfada yalnızca 'başlıca borsalar' deniyor, isim listesi verilmiyor."),
+        ("Koruma - sapma",
          "Medyandan %5 sapan bileşen dışlanır; medyanın %2'sine dönene kadar geri alınmaz."),
+        ("Koruma - durgunluk",
+         "15 dakika fiyat güncellemeyen borsa otomatik çıkarılır; medyanın %2'si içinde "
+         "güncellemeye başlayınca geri alınır."),
+        ("Olağanüstü durum",
+         "Bitget sistemik riski önlemek için bir borsayı tamamen çıkarabilir YA DA SABİT AĞIRLIK "
+         "atayabilir. Normal işleyişte ağırlık tabanı yoktur, ancak bu yetki saklıdır."),
         ("Kaynak değişimi",
          "Kaynak listesi değişimi index'i %0,1'den fazla oynatacaksa geçiş kademeli yapılır."),
         ("Çapraz kur",
          "Bir borsada istenen kotasyon yoksa çevrim yapılır (örn. Coinbase BTC/USD → BTC/USDC)."),
+        ("Dış kaynak yoksa",
+         "Vadeli emir defterinden derinlik ağırlıklı orta fiyat türetilir; "
+         "Index(Tn) = a x orta fiyat + (1-a) x Index(Tn-1), a varsayilan 0,1818."),
+        ("Doğrulama",
+         "Bitget metodolojisi 6 Ağustos 2026'da resmi destek sayfasından doğrudan okundu "
+         "(sayfa tarihi 13 Mart 2025). Bybit metodolojisi resmi yardım merkezinden okundu "
+         "(sayfa 19 Haziran 2026'da güncellenmiş)."),
         ("Index kırılımı - Hyperliquid", "Sabit formül, aşağıda"),
         ("Hyperliquid yöntemi", "AĞIRLIKLI MEDYAN (ortalama DEĞİL) - ağırlıklar medyan oyudur"),
         ("Hyperliquid - normal varlıklar (örn. BTC)",
