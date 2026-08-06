@@ -48,7 +48,10 @@ BORSA_SIRASI = ["Binance", "OKX", "Bybit", "Bitget", "Gate", "Hyperliquid"]
 KENDI_BORSA = "BTCTURK"
 
 # Hacim sheet'lerinde her gun icin tekrarlanan sutunlar
-GUN_METRIK = ["Fiyat ($)", "Market Cap ($)", "Perp Hacim ($)", "Open Interest ($)"]
+# En guncel gun icin 4 sutun, gecmis gunler icin sadece perp hacim
+GUNCEL_METRIK = ["Fiyat ($)", "Market Cap ($)", "Open Interest ($)", "Perp Hacim ($)"]
+ESKI_METRIK = ["Perp Hacim ($)"]
+GUN_DESEN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 KONTRAT_SUTUNLAR = ["Index Price", "Min Miktar", "Min Tutar ($)", "Fiyat Adimi",
                     "Digit", "Miktar Adimi", "Max Kaldirac", "Funding %",
@@ -110,9 +113,12 @@ def hacim_gunleri():
     """{gun: {borsa: [satirlar]}}  - arsiv yoksa eldeki dosyalardan tek gun."""
     gunler = {}
     for p in sorted(glob.glob("arsiv/hacim/*.json")):
+        ad = os.path.basename(p)[:-5]
+        if not GUN_DESEN.match(ad):      # index.json gibi dosyalari atla
+            continue
         d = load_json(p)
         if d:
-            gunler[os.path.basename(p)[:-5]] = d.get("borsalar") or {}
+            gunler[ad] = d.get("borsalar") or {}
     if gunler:
         return gunler
     birlesik, gun = {}, None
@@ -133,10 +139,12 @@ def cmc_gunleri():
     gunler = {}
     for klasor in ("arsiv/cmc_genis", "arsiv/cmc"):
         for p in sorted(glob.glob(f"{klasor}/*.json")):
+            gun = os.path.basename(p)[:-5]
+            if not GUN_DESEN.match(gun):
+                continue
             d = load_json(p)
             if not d:
                 continue
-            gun = os.path.basename(p)[:-5]
             hedef = gunler.setdefault(gun, {})
             for c in d.get("coins", []):
                 hedef.setdefault(c["symbol"], (c.get("price_usd"), c.get("market_cap_usd")))
@@ -338,12 +346,16 @@ def kontrat_bicim(ws, r, c0):
 # ---------------- hacim sheet'leri (genis) ----------------
 
 def sheet_hacim(wb, borsa, gunler, cmc, ilk=False):
+    """EN GUNCEL gun EN SOLDA.
+    Guncel gun: Fiyat | Market Cap | Open Interest | Perp Hacim (4 sutun)
+    Gecmis gunler: sadece Perp Hacim (1 sutun)
+    Tum veriler arsivde saklanmaya devam eder; burada sadece gosterim sadelestirilir."""
     ws = wb.active if ilk else wb.create_sheet()
     ws.title = borsa
     ws.sheet_properties.tabColor = BORSA_RENK.get(borsa, "003AFF")
 
-    gun_listesi = [g for g in sorted(gunler) if gunler[g].get(borsa)]
-    # varlik -> {gun: satir}
+    # En yeni gun basta
+    gun_listesi = sorted([g for g in gunler if gunler[g].get(borsa)], reverse=True)
     veri, geriye = {}, {}
     for g in gun_listesi:
         satirlar = gunler[g].get(borsa) or []
@@ -351,57 +363,70 @@ def sheet_hacim(wb, borsa, gunler, cmc, ilk=False):
         for s in satirlar:
             veri.setdefault(s["symbol"], {})[g] = s
 
-    # Siralama: en son gunun hacmi (yoksa bilinen son hacim), azalan
+    # Siralama: en guncel gunun hacmi, azalan
     def anahtar(sym):
-        for g in reversed(gun_listesi):
+        for g in gun_listesi:
             s = veri[sym].get(g)
             if s and (s.get("perp_volume_usd") or 0) > 0:
                 return -(s["perp_volume_usd"])
         return 0
     varliklar = sorted(veri.keys(), key=anahtar)
 
-    # Baslik: A1:A2 Varlik, her gun 4 sutun birlesik
+    # Baslik
     ws.merge_cells(start_row=1, start_column=1, end_row=2, end_column=1)
     c = ws.cell(1, 1, "Varlik")
     c.fill = HEAD_FILL; c.font = HEAD_FONT; c.border = BORDER
     c.alignment = Alignment(horizontal="center", vertical="center")
-    n = len(GUN_METRIK)
+
+    blok = []            # (gun, ilk_sutun, metrik_listesi)
+    col = 2
     for i, g in enumerate(gun_listesi):
-        c0 = 2 + i * n
-        ws.merge_cells(start_row=1, start_column=c0, end_row=1, end_column=c0 + n - 1)
+        metrik = GUNCEL_METRIK if i == 0 else ESKI_METRIK
+        blok.append((g, col, metrik))
+        if len(metrik) > 1:
+            ws.merge_cells(start_row=1, start_column=col,
+                           end_row=1, end_column=col + len(metrik) - 1)
         etiket = gun_bicim(g) + (" (mum)" if geriye.get(g) else "")
-        hc = ws.cell(1, c0, etiket)
+        hc = ws.cell(1, col, etiket)
         hc.fill = HEAD_FILL; hc.font = HEAD_FONT; hc.border = BORDER
         hc.alignment = Alignment(horizontal="center", vertical="center")
-        for j, m in enumerate(GUN_METRIK):
-            sc = ws.cell(2, c0 + j, m)
+        for j, m in enumerate(metrik):
+            sc = ws.cell(2, col + j, m)
             sc.fill = ALT_FILL; sc.font = ALT_FONT; sc.border = BORDER
             sc.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        col += len(metrik)
+    son_sutun = col - 1
     ws.freeze_panes = "B3"
 
     dolgu = PatternFill("solid", fgColor=BORSA_DOLGU.get(borsa, "FFFFFF"))
     r = 3
     for sym in varliklar:
         vc = ws.cell(r, 1, sym); vc.font = FONT_B; vc.border = BORDER
-        for i, g in enumerate(gun_listesi):
-            c0 = 2 + i * n
+        for g, c0, metrik in blok:
             s = veri[sym].get(g) or {}
-            fiyat, mcap = cmc_bak(cmc, g, sym) if s else (None, None)
-            vals = [fiyat, mcap, s.get("perp_volume_usd"), s.get("open_interest_usd")]
+            if len(metrik) > 1:
+                fiyat, mcap = cmc_bak(cmc, g, sym) if s else (None, None)
+                vals = [fiyat, mcap, s.get("open_interest_usd"), s.get("perp_volume_usd")]
+            else:
+                vals = [s.get("perp_volume_usd")]
             for j, v in enumerate(vals):
                 cell = ws.cell(r, c0 + j, v)
                 cell.font = FONT; cell.border = BORDER; cell.fill = dolgu
-            ws.cell(r, c0 + 0).number_format = '#,##0.########'
-            for j in (1, 2, 3):
-                ws.cell(r, c0 + j).number_format = '#,##0'
+            if len(metrik) > 1:
+                ws.cell(r, c0).number_format = '#,##0.########'
+                for j in (1, 2, 3):
+                    ws.cell(r, c0 + j).number_format = '#,##0'
+            else:
+                ws.cell(r, c0).number_format = '#,##0'
         r += 1
 
     ws.column_dimensions["A"].width = 13
-    for i in range(len(gun_listesi)):
-        for j, w in enumerate([14, 18, 18, 18]):
-            ws.column_dimensions[get_column_letter(2 + i * n + j)].width = w
+    for g, c0, metrik in blok:
+        genislik = [14, 18, 18, 18] if len(metrik) > 1 else [18]
+        for j, w in enumerate(genislik):
+            ws.column_dimensions[get_column_letter(c0 + j)].width = w
     if r > 3:
-        ws.auto_filter.ref = f"A2:{get_column_letter(1 + len(gun_listesi) * n)}{r - 1}"
+        ws.auto_filter.ref = f"A2:{get_column_letter(son_sutun)}{r - 1}"
     return len(varliklar), len(gun_listesi)
 
 
@@ -451,6 +476,44 @@ def sheet_total(wb, gunler, cmc):
 
 # ---------------- kontrat sheet'leri ----------------
 
+
+# Varlik sheet'lerinin altina konan alan aciklamalari
+ALAN_ACIKLAMA = [
+    ("Index Price",
+     "Borsanin dis spot piyasalardan derledigi referans fiyat. Funding ve likidasyon buna gore isler. "
+     "Borsanin kendi order book fiyati degildir."),
+    ("Min Miktar",
+     "Acabilecegin en kucuk pozisyon miktari (coin cinsinden). Ornek: 0,001 ise en az 0,001 BTC."),
+    ("Min Tutar ($)",
+     "Pozisyonun en az kac dolar degerinde olmasi gerektigi. Min Miktar ile birlikte gecerlidir; "
+     "hangisi daha kisitlayiciysa o baglar."),
+    ("Fiyat Adimi",
+     "Emir fiyatinin hangi araliklarla girilebilecegi (tick size). 0,1 ise 66420,1 girilir ama "
+     "66420,15 girilemez. Emir defterinin cozunurlugunu belirler."),
+    ("Digit",
+     "Fiyat adiminin kac ondalik haneye denk geldigi. Adim 0,1 ise 1 digit; 0,01 ise 2 digit."),
+    ("Miktar Adimi",
+     "Pozisyon miktarinin hangi araliklarla girilebilecegi (step size). 0,001 ise 0,0015 girilemez. "
+     "Min Miktar alt siniri, bu ise basamak yuksekligini belirler."),
+    ("Max Kaldirac",
+     "O varlikta izin verilen en yuksek kaldirac. Dusuk kaldirac genelde borsanin o varligi "
+     "riskli gordugunu gosterir."),
+    ("Funding %",
+     "En son funding orani. Pozitifse long pozisyonlar short'lara oder, negatifse tersi. "
+     "Talep yonunun gostergesidir."),
+    ("Funding Periyot (saat)",
+     "Funding'in kac saatte bir odendigi. Cogu borsada 8 saat, Hyperliquid'de 1 saat."),
+    ("Derinlik +-1% ($)",
+     "Fiyatin %1 alti ve ustundeki emirlerin toplam dolar degeri. Likidite gostergesi: "
+     "yuksekse buyuk emir fiyati az kaydirir, dusukse piyasa sigdir."),
+    ("Spread %",
+     "En iyi alis ile en iyi satis arasindaki fark, yuzde olarak. Dar spread likit piyasa demektir."),
+    ("Index Kirilimi",
+     "Index fiyatinin hangi borsalardan hangi agirlikla hesaplandigi. "
+     "Bybit ve Bitget bu bilgiyi yayinlamadigi icin bos kalabilir."),
+]
+
+
 def sheet_kontrat_varlik(wb, kayit, tarihler, manuel_kaldirac, btcturk):
     """Bir varlik icin: satirlar borsalar (+BTCTURK), sutunlar 12 kontrat alani."""
     sym = kayit["symbol"]
@@ -491,7 +554,21 @@ def sheet_kontrat_varlik(wb, kayit, tarihler, manuel_kaldirac, btcturk):
         ws.cell(r, c).fill = dolgu
     kontrat_bicim(ws, r, 3)
 
-    for c, w in zip("AB", [13, 12]):
+    # ---- alan aciklamalari ----
+    ar = r + 3
+    bas = ws.cell(ar, 1, "Sutunlar ne anlama geliyor?")
+    bas.font = Font(name="Arial", size=11, bold=True, color="003AFF")
+    ar += 1
+    for ad, metin in ALAN_ACIKLAMA:
+        ws.cell(ar, 1, ad).font = FONT_B
+        c = ws.cell(ar, 3, metin)
+        c.font = FONT
+        c.alignment = Alignment(wrap_text=True, vertical="top")
+        ws.merge_cells(start_row=ar, start_column=3, end_row=ar, end_column=10)
+        ws.row_dimensions[ar].height = 28
+        ar += 1
+
+    for c, w in zip("AB", [16, 12]):
         ws.column_dimensions[c].width = w
     for j, w in enumerate([13, 11, 11, 11, 6, 11, 9, 10, 9, 15, 9, 34]):
         ws.column_dimensions[get_column_letter(3 + j)].width = w
@@ -591,6 +668,30 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
          "Kucoin 1 (%9,1) · Gate 1 (%9,1) · MEXC 1 (%9,1) — Hyperliquid hariç"),
         ("Hyperliquid - ana likiditesi kendisinde olanlar (örn. HYPE)",
          "Sadece Hyperliquid; dış kaynaklar yeterli likiditeye kadar dahil edilmez"),
+        ("", ""),
+        ("Index koruma kuralları (borsa dokümanlarından)", ""),
+        ("Binance",
+         "Bir kaynağın fiyatı medyandan %5'ten fazla saparsa, o fiyat medyanın 1,05 / 0,95 katına "
+         "KISILIR (dışlanmaz). 10 saniye veri gelmezse o kaynağın ağırlığı sıfırlanır."),
+        ("OKX",
+         "3'ten fazla geçerli kaynak varsa EŞİT ağırlıklı ortalama; medyandan %3'ten fazla sapan "
+         "kaynak medyanın 0,97-1,03 bandına kısılır (bazı endekslerde eşik %2). "
+         "2 kaynak kalırsa eşit ağırlık, 1 kaynak kalırsa o fiyat doğrudan kullanılır."),
+        ("Bybit",
+         "Medyandan %5'ten fazla sapan bileşen geçici olarak DIŞLANIR; ağırlığı yumuşatma "
+         "algoritmasıyla azaltılıp diğerlerine dağıtılır. BTC ve ETH'te eşik %1, XAU/XAG'de %3. "
+         "15 dakika işlem görmeyen çift dışlanır. Yeniden dahil olmak için hacim ağırlıklı "
+         "toplamın >=%55 olması gibi şartlar aranır."),
+        ("Gate",
+         "Medyandan %8'ten fazla sapan bileşen dışlanır. %2-%8 arası sapmada fiyat medyanın "
+         "%98 / %102'sine kısılır. 2 kaynak kalırsa anormal olan elenir, 1 kaynak kalırsa "
+         "o fiyat doğrudan kullanılır."),
+        ("Bitget", "Public dokümanda net kural bulunamadı."),
+        ("Hyperliquid", "Ağırlıklı medyan kullanır; sapma kısıtlaması yerine medyanın kendisi koruma sağlar."),
+        ("ÖNEMLİ AYRIM",
+         "Bu kuralların hepsi FİYAT SAPMASI ile ilgilidir. Hiçbir borsada 'bir kaynağın ağırlığı "
+         "şu yüzdenin altına düşemez' şeklinde bir AĞIRLIK TABANI kuralı bulunmadı. Ağırlıklar "
+         "hacme göre serbestçe değişir; kurallar sadece sapan fiyatı kısar ya da kaynağı dışlar."),
         ("", ""),
         ("Default funding (faiz bileşeni, borsa başına sabit)", ""),
     ]
