@@ -295,6 +295,18 @@ def breakdown_text(bd):
     return ", ".join(parts)
 
 
+# Kirilim yayinlamayan borsalar: hucre bos kalmasin, yontem yazilsin
+YONTEM_METNI = {
+    "Bybit": ("Yayinlanmiyor. Yontem: hacimce ilk 6 spot cift, 24s hacim agirlikli "
+              "(agirlik = borsanin hacmi / 6 borsanin toplam hacmi), saatlik guncellenir. "
+              "Havuz: Binance, OKX, Bybit, Coinbase (1. grup) + Bitget, Gate, MEXC (2. grup)."),
+    "Bitget": ("Yayinlanmiyor. Yontem: en fazla 6 borsa, 24s hacim agirlikli "
+               "(agirlik = borsanin hacmi / kullanilan borsalarin toplam hacmi), "
+               "4 saatte bir guncellenir. "
+               "Havuz: Bitget, Binance, Coinbase, OKX, Bybit, Gate, MEXC, Bitfinex, Kraken."),
+}
+
+
 def kontrat_degerler(k, sym, manuel_kaldirac, borsa):
     """Bir borsanin kontrat satirindaki 12 deger."""
     kaldirac = k.get("max_leverage")
@@ -307,7 +319,7 @@ def kontrat_degerler(k, sym, manuel_kaldirac, borsa):
         (fund * 100) if fund is not None else None,
         k.get("funding_interval_h"), k.get("depth_1pct_usd"),
         k.get("spread_pct"),          # collect.py bunu ZATEN yuzde verir
-        breakdown_text(k.get("index_breakdown")),
+        breakdown_text(k.get("index_breakdown")) or YONTEM_METNI.get(borsa, ""),
     ]
 
 
@@ -659,8 +671,39 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
         ("Çekildiği tarih",
          " · ".join(f"{b}: {g}" for b, g in sorted(kontrat_tarihler.items())) or "veri yok"),
         ("Index kırılımı - Binance, OKX, Gate", "API'den (kaynak borsa + ağırlık)"),
-        ("Index kırılımı - Bitget", "Net public endpoint bulunamadı, boş kalabilir"),
-        ("Index kırılımı - Bybit", "Bybit yayınlamıyor (dinamik hesaplıyor), boş"),
+        ("Index kırılımı - Bitget", "Bitget canlı ağırlıkları yayınlamıyor. Yöntemi aşağıda."),
+        ("Index kırılımı - Bybit", "Bybit canlı ağırlıkları yayınlamıyor. Yöntemi aşağıda."),
+        ("", ""),
+        ("BYBIT index hesaplama yöntemi", ""),
+        ("Formül",
+         "Index = Σ (spot fiyat × ağırlık). Ağırlık = o borsanın 24s hacmi ÷ altı borsanın toplam 24s hacmi."),
+        ("Kaç kaynak", "Hacimce ilk 6 spot çift"),
+        ("Ağırlık güncelleme", "Saatlik"),
+        ("Kaynak havuzu",
+         "1. grup: Binance, OKX, Bybit, Coinbase — 2. grup: Bitget, Gate, MEXC"),
+        ("Fiyat kaynağı",
+         "Normalde son işlem fiyatı. İşlem az ya da fiyat anormalse emir defterinden hesaplanır: "
+         "(Ask1 × BidHacim1 + Bid1 × AskHacim1) ÷ (BidHacim1 + AskHacim1)"),
+        ("Koruma",
+         "Medyandan %5 sapan bileşen dışlanır, ağırlığı yumuşatma algoritmasıyla azaltılıp "
+         "diğerlerine dağıtılır. BTC ve ETH'te eşik %1, XAU/XAG'de %3. 15 dakika işlem görmeyen çift dışlanır."),
+        ("Geri dönüş şartı",
+         "Binance/OKX/Bybit/Coinbase'ten en az biri, ya da Bitget/Gate/MEXC'ten en az ikisi bulunmalı "
+         "ve hacim ağırlıklı toplam >= %55 olmalı."),
+        ("", ""),
+        ("BITGET index hesaplama yöntemi", ""),
+        ("Formül",
+         "Index = Σ (spot fiyat × ağırlık). Ağırlık = o borsanın 24s hacmi ÷ kullanılan borsaların toplam 24s hacmi."),
+        ("Kaç kaynak", "En fazla 6 borsa"),
+        ("Ağırlık güncelleme", "4 saatte bir (index fiyatı saniyede en az bir kez)"),
+        ("Kaynak havuzu",
+         "Bitget, Binance, Coinbase, OKX, Bybit, Gate, MEXC, Bitfinex, Kraken"),
+        ("Koruma",
+         "Medyandan %5 sapan bileşen dışlanır; medyanın %2'sine dönene kadar geri alınmaz."),
+        ("Kaynak değişimi",
+         "Kaynak listesi değişimi index'i %0,1'den fazla oynatacaksa geçiş kademeli yapılır."),
+        ("Çapraz kur",
+         "Bir borsada istenen kotasyon yoksa çevrim yapılır (örn. Coinbase BTC/USD → BTC/USDC)."),
         ("Index kırılımı - Hyperliquid", "Sabit formül, aşağıda"),
         ("Hyperliquid yöntemi", "AĞIRLIKLI MEDYAN (ortalama DEĞİL) - ağırlıklar medyan oyudur"),
         ("Hyperliquid - normal varlıklar (örn. BTC)",
