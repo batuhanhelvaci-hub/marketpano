@@ -1,0 +1,21 @@
+name: MEXC testi
+
+# SADECE ELLE CALISIR. Mevcut sisteme dokunmaz, hicbir dosya yazmaz.
+# Amac: MEXC'e GitHub sunucusundan erisilebiliyor mu ve
+# Binance icin aldigimiz verilerin aynisini veriyor mu, gormek.
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Paket kur
+        run: pip install requests
+      - name: MEXC testi
+        run: python mexc-test.py
