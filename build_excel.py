@@ -44,7 +44,7 @@ from openpyxl.utils import get_column_letter
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 OUT = "marketpano.xlsx"
-BORSA_SIRASI = ["Binance", "OKX", "Bybit", "Bitget", "Gate", "Hyperliquid"]
+BORSA_SIRASI = ["Binance", "OKX", "Bybit", "Bitget", "Gate", "Hyperliquid", "MEXC"]
 KENDI_BORSA = "BTCTURK"
 
 # Hacim sheet'lerinde her gun icin tekrarlanan sutunlar
@@ -61,12 +61,12 @@ KONTRAT_SUTUNLAR = ["Index Price", "Min Miktar", "Min Tutar ($)", "Fiyat Adimi",
 BORSA_RENK = {
     "Binance": "F0B90B", "OKX": "2B3139", "Bybit": "FF7A00",
     "Bitget": "7B61FF", "Gate": "E5402B", "Hyperliquid": "50D2C2",
-    KENDI_BORSA: "003AFF",
+    "MEXC": "1972F5", KENDI_BORSA: "003AFF",
 }
 BORSA_DOLGU = {
     "Binance": "FFFBF0", "OKX": "F2F3F5", "Bybit": "FFF6EE",
     "Bitget": "F6F3FF", "Gate": "FFF1EF", "Hyperliquid": "EFFBF9",
-    KENDI_BORSA: "E6EDFF",
+    "MEXC": "EEF4FE", KENDI_BORSA: "E6EDFF",
 }
 
 FONT = Font(name="Arial", size=10)
@@ -182,6 +182,15 @@ def cmc_bak(cmc, gun, sembol):
         if r:
             return r
     return (None, None)
+
+
+def btcturk_spot_seti():
+    """btcturk_spot.json -> BtcTurk spot'ta listeli varlik kumesi."""
+    d = load_json("btcturk_spot.json")
+    if not d:
+        print("  ! btcturk_spot.json yok -> BtcTurk Spot sutunu bos kalacak.")
+        return None
+    return set(d.get("varliklar") or [])
 
 
 def kontrat_snapshot():
@@ -308,6 +317,41 @@ YONTEM_METNI = {
 }
 
 
+
+# Index kirilimindaki kaynak borsa adlarini teklestir
+KAYNAK_ESLEME = {
+    "binance": "Binance", "okex": "OKX", "okx": "OKX", "coinbase": "Coinbase",
+    "bybit": "Bybit", "bitget": "Bitget", "gateio": "Gate", "gate": "Gate",
+    "gate.io": "Gate", "kucoin": "Kucoin", "mexc": "MEXC", "kraken": "Kraken",
+    "bitfinex": "Bitfinex", "huobi": "HTX", "htx": "HTX",
+    "hyperliquid": "Hyperliquid", "mexc_future": "MEXC", "bitstamp": "Bitstamp",
+    "upbit": "Upbit", "crypto.com": "Crypto.com", "cryptocom": "Crypto.com",
+}
+
+
+def kaynak_adi(x):
+    if not x:
+        return None
+    t = str(x).strip().lower().replace("_", "").replace(" ", "")
+    return KAYNAK_ESLEME.get(t, str(x).strip().title())
+
+
+def kirilim_agirliklari(bd):
+    """index_breakdown -> {kaynak_borsa: yuzde}. Agirlik yoksa {kaynak: None}."""
+    out = {}
+    for c in (bd or []):
+        if isinstance(c, dict):
+            ex, w = c.get("exchange"), c.get("weight")
+        else:
+            ex = c[0]
+            w = c[1] if len(c) > 1 else None
+        ad = kaynak_adi(ex)
+        if not ad:
+            continue
+        out[ad] = None if w is None else (w * 100 if w <= 1 else w)
+    return out
+
+
 def kontrat_degerler(k, sym, manuel_kaldirac, borsa):
     """Bir borsanin kontrat satirindaki 12 deger."""
     kaldirac = k.get("max_leverage")
@@ -358,7 +402,7 @@ def kontrat_bicim(ws, r, c0):
 
 # ---------------- hacim sheet'leri (genis) ----------------
 
-def sheet_hacim(wb, borsa, gunler, cmc, ilk=False):
+def sheet_hacim(wb, borsa, gunler, cmc, btcturk_spot=None, ilk=False):
     """EN GUNCEL gun EN SOLDA.
     Guncel gun: Fiyat | Market Cap | Open Interest | Perp Hacim (4 sutun)
     Gecmis gunler: sadece Perp Hacim (1 sutun)
@@ -399,21 +443,22 @@ def sheet_hacim(wb, borsa, gunler, cmc, ilk=False):
     else:
         varliklar = []
 
-    # Baslik
-    ws.merge_cells(start_row=1, start_column=1, end_row=2, end_column=1)
-    c = ws.cell(1, 1, "Varlik")
-    c.fill = HEAD_FILL; c.font = HEAD_FONT; c.border = BORDER
-    c.alignment = Alignment(horizontal="center", vertical="center")
+    # Baslik: A=Varlik, B=BtcTurk Spot, sonra tarih bloklari
+    for sc_, ad_ in ((1, "Varlik"), (2, "BtcTurk Spot")):
+        ws.merge_cells(start_row=1, start_column=sc_, end_row=2, end_column=sc_)
+        c = ws.cell(1, sc_, ad_)
+        c.fill = HEAD_FILL; c.font = HEAD_FONT; c.border = BORDER
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
 
     blok = []            # (gun, ilk_sutun, metrik_listesi)
-    col = 2
+    col = 3
     for i, g in enumerate(gun_listesi):
         metrik = GUNCEL_METRIK if i == 0 else ESKI_METRIK
         blok.append((g, col, metrik))
         if len(metrik) > 1:
             ws.merge_cells(start_row=1, start_column=col,
                            end_row=1, end_column=col + len(metrik) - 1)
-        etiket = gun_bicim(g) + (" (mum)" if geriye.get(g) else "")
+        etiket = gun_bicim(g)      # geriye donuk gunlere ek isaret konmuyor
         hc = ws.cell(1, col, etiket)
         hc.fill = HEAD_FILL; hc.font = HEAD_FONT; hc.border = BORDER
         hc.alignment = Alignment(horizontal="center", vertical="center")
@@ -423,12 +468,26 @@ def sheet_hacim(wb, borsa, gunler, cmc, ilk=False):
             sc.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
         col += len(metrik)
     son_sutun = col - 1
-    ws.freeze_panes = "B3"
+    ws.freeze_panes = "C3"
 
     dolgu = PatternFill("solid", fgColor=BORSA_DOLGU.get(borsa, "FFFFFF"))
+    ES_FILL = PatternFill("solid", fgColor="E8F6EE")
+    HAYIR_FILL = PatternFill("solid", fgColor="FBEFEF")
     r = 3
     for sym in varliklar:
         vc = ws.cell(r, 1, sym); vc.font = FONT_B; vc.border = BORDER
+        # BtcTurk spot'ta listeli mi? (temel token uzerinden bakilir: 1000PEPE -> PEPE)
+        if btcturk_spot is None:
+            bt = ""
+        else:
+            temel = temel_sembol(sym)
+            bt = "Y" if (sym in btcturk_spot or (temel and temel in btcturk_spot)) else "N"
+        bc = ws.cell(r, 2, bt)
+        bc.font = FONT_B
+        bc.border = BORDER
+        bc.alignment = Alignment(horizontal="center")
+        if bt == "Y": bc.fill = ES_FILL
+        elif bt == "N": bc.fill = HAYIR_FILL
         for g, c0, metrik in blok:
             s = veri[sym].get(g) or {}
             if len(metrik) > 1:
@@ -448,6 +507,7 @@ def sheet_hacim(wb, borsa, gunler, cmc, ilk=False):
         r += 1
 
     ws.column_dimensions["A"].width = 13
+    ws.column_dimensions["B"].width = 13
     for g, c0, metrik in blok:
         genislik = [14, 18, 18, 18] if len(metrik) > 1 else [18]
         for j, w in enumerate(genislik):
@@ -545,7 +605,7 @@ def sheet_kontrat_varlik(wb, kayit, tarihler, manuel_kaldirac, btcturk):
     """Bir varlik icin: satirlar borsalar (+BTCTURK), sutunlar 12 kontrat alani."""
     sym = kayit["symbol"]
     ws = wb.create_sheet(title=sym[:31])
-    basliklar = ["Borsa", "Veri Tarihi"] + KONTRAT_SUTUNLAR
+    basliklar = ["Borsa", "Borsa Sembolu", "Veri Tarihi"] + KONTRAT_SUTUNLAR
     for c, h in enumerate(basliklar, 1):
         cell = ws.cell(1, c, h)
         cell.fill = HEAD_FILL; cell.font = HEAD_FONT; cell.border = BORDER
@@ -556,23 +616,25 @@ def sheet_kontrat_varlik(wb, kayit, tarihler, manuel_kaldirac, btcturk):
     for borsa in BORSA_SIRASI:
         k = (kayit.get("exchanges") or {}).get(borsa) or {}
         bc = ws.cell(r, 1, borsa); bc.font = FONT_B
-        ws.cell(r, 2, tarihler.get(borsa) or "").font = FONT
+        ws.cell(r, 2, k.get("borsa_sembolu") or "").font = FONT
+        ws.cell(r, 3, tarihler.get(borsa) or "").font = FONT
         vals = kontrat_degerler(k, sym, manuel_kaldirac, borsa)
         for j, v in enumerate(vals):
-            cell = ws.cell(r, 3 + j, v)
+            cell = ws.cell(r, 4 + j, v)
             cell.font = FONT
         dolgu = PatternFill("solid", fgColor=BORSA_DOLGU.get(borsa, "FFFFFF"))
         for c in range(1, len(basliklar) + 1):
             ws.cell(r, c).border = BORDER
             ws.cell(r, c).fill = dolgu
-        kontrat_bicim(ws, r, 3)
+        kontrat_bicim(ws, r, 4)
         r += 1
 
     # Kendi borsan
     bc = ws.cell(r, 1, KENDI_BORSA); bc.font = FONT_B
-    ws.cell(r, 2, "elle girilen").font = FONT
+    ws.cell(r, 2, "").font = FONT
+    ws.cell(r, 3, "elle girilen").font = FONT
     for j, v in enumerate(btcturk_degerler(btcturk.get(sym))):
-        ws.cell(r, 3 + j, v).font = FONT
+        ws.cell(r, 4 + j, v).font = FONT
     dolgu = PatternFill("solid", fgColor=BORSA_DOLGU[KENDI_BORSA])
     for c in range(1, len(basliklar) + 1):
         ws.cell(r, c).border = Border(left=THIN, right=THIN,
@@ -581,8 +643,59 @@ def sheet_kontrat_varlik(wb, kayit, tarihler, manuel_kaldirac, btcturk):
         ws.cell(r, c).fill = dolgu
     kontrat_bicim(ws, r, 3)
 
+    # ---- INDEX KIRILIMI MATRISI (formulde kullanilabilir) ----
+    kayitlar = {}
+    kaynaklar = []
+    for borsa in BORSA_SIRASI:
+        k = (kayit.get("exchanges") or {}).get(borsa) or {}
+        ag = kirilim_agirliklari(k.get("index_breakdown"))
+        kayitlar[borsa] = ag
+        for ad in ag:
+            if ad not in kaynaklar:
+                kaynaklar.append(ad)
+    mr = r + 2
+    if kaynaklar:
+        bas = ws.cell(mr, 1, "Index kirilimi - agirlik matrisi (%)")
+        bas.font = Font(name="Arial", size=11, bold=True, color="003AFF")
+        mr += 1
+        ws.cell(mr, 1, "Index sahibi").font = FONT_B
+        ws.cell(mr, 1).fill = ALT_FILL; ws.cell(mr, 1).border = BORDER
+        for j, ad in enumerate(kaynaklar):
+            hc = ws.cell(mr, 2 + j, ad)
+            hc.font = ALT_FONT; hc.fill = ALT_FILL; hc.border = BORDER
+            hc.alignment = Alignment(horizontal="center", wrap_text=True)
+        tc = ws.cell(mr, 2 + len(kaynaklar), "TOPLAM")
+        tc.font = Font(name="Arial", size=9, bold=True, color="FFFFFF")
+        tc.fill = HEAD_FILL; tc.border = BORDER
+        tc.alignment = Alignment(horizontal="center")
+        mr += 1
+        for borsa in BORSA_SIRASI:
+            ag = kayitlar.get(borsa) or {}
+            ws.cell(mr, 1, borsa).font = FONT_B
+            ws.cell(mr, 1).border = BORDER
+            ws.cell(mr, 1).fill = PatternFill("solid", fgColor=BORSA_DOLGU.get(borsa, "FFFFFF"))
+            for j, ad in enumerate(kaynaklar):
+                deger = ag.get(ad)
+                c_ = ws.cell(mr, 2 + j, deger)
+                c_.font = FONT; c_.border = BORDER
+                c_.number_format = '0.00'
+            # Toplam: yalnizca sayisal agirliklar toplanir
+            sayisal = [v for v in ag.values() if isinstance(v, (int, float))]
+            tt = ws.cell(mr, 2 + len(kaynaklar), sum(sayisal) if sayisal else None)
+            tt.font = FONT_B; tt.border = BORDER
+            tt.number_format = '0.00'
+            if sayisal and abs(sum(sayisal) - 100) > 1:
+                tt.fill = PatternFill("solid", fgColor="FBEFEF")
+            elif sayisal:
+                tt.fill = PatternFill("solid", fgColor="E8F6EE")
+            mr += 1
+        ws.cell(mr, 1, "Bos hucre: o borsa agirlik yayinlamiyor "
+                       "(Bybit, Bitget) ya da yalnizca kaynak adi veriyor (Gate, MEXC).").font = \
+            Font(name="Arial", size=9, italic=True, color="5B6B85")
+        mr += 1
+
     # ---- alan aciklamalari ----
-    ar = r + 3
+    ar = mr + 2
     bas = ws.cell(ar, 1, "Sutunlar ne anlama geliyor?")
     bas.font = Font(name="Arial", size=11, bold=True, color="003AFF")
     ar += 1
@@ -606,7 +719,7 @@ def sheet_analiz(wb, varliklar, tarihler, manuel_kaldirac, btcturk):
     """Tek tablo: Varlik | Borsa | 12 alan. Filtreden varlik secilir."""
     ws = wb.create_sheet(title="Analiz")
     ws.sheet_properties.tabColor = "E6A100"
-    basliklar = ["Varlik", "Borsa", "Veri Tarihi"] + KONTRAT_SUTUNLAR
+    basliklar = ["Varlik", "Borsa", "Borsa Sembolu", "Veri Tarihi"] + KONTRAT_SUTUNLAR
     for c, h in enumerate(basliklar, 1):
         cell = ws.cell(1, c, h)
         cell.fill = HEAD_FILL; cell.font = HEAD_FONT; cell.border = BORDER
@@ -620,25 +733,27 @@ def sheet_analiz(wb, varliklar, tarihler, manuel_kaldirac, btcturk):
             ws.cell(r, 1, sym).font = FONT_B
             ws.cell(r, 2, borsa).font = FONT_B
             if borsa == KENDI_BORSA:
-                ws.cell(r, 3, "elle girilen").font = FONT
+                ws.cell(r, 3, "").font = FONT
+                ws.cell(r, 4, "elle girilen").font = FONT
                 vals = btcturk_degerler(btcturk.get(sym))
             else:
-                ws.cell(r, 3, tarihler.get(borsa) or "").font = FONT
                 k = (a.get("exchanges") or {}).get(borsa) or {}
+                ws.cell(r, 3, k.get("borsa_sembolu") or "").font = FONT
+                ws.cell(r, 4, tarihler.get(borsa) or "").font = FONT
                 vals = kontrat_degerler(k, sym, manuel_kaldirac, borsa)
             for j, v in enumerate(vals):
-                ws.cell(r, 4 + j, v).font = FONT
+                ws.cell(r, 5 + j, v).font = FONT
             dolgu = PatternFill("solid", fgColor=BORSA_DOLGU.get(borsa, "FFFFFF"))
             for c in range(1, len(basliklar) + 1):
                 ws.cell(r, c).border = BORDER
                 ws.cell(r, c).fill = dolgu
-            kontrat_bicim(ws, r, 4)
+            kontrat_bicim(ws, r, 5)
             r += 1
 
-    for c, w in zip("ABC", [13, 13, 12]):
+    for c, w in zip("ABCD", [13, 13, 14, 12]):
         ws.column_dimensions[c].width = w
     for j, w in enumerate([13, 11, 11, 11, 6, 11, 9, 10, 9, 15, 9, 34]):
-        ws.column_dimensions[get_column_letter(4 + j)].width = w
+        ws.column_dimensions[get_column_letter(5 + j)].width = w
     if r > 2:
         ws.auto_filter.ref = f"A1:{get_column_letter(len(basliklar))}{r - 1}"
     return r - 2
@@ -800,6 +915,7 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
 def main():
     gunler = hacim_gunleri()
     cmc = cmc_gunleri()
+    btcturk_spot = btcturk_spot_seti()
     kontrat_varliklar, kontrat_tarihler = kontrat_snapshot()
 
     if not gunler and not kontrat_varliklar:
@@ -817,7 +933,7 @@ def main():
     wb = openpyxl.Workbook()
     ozet = []
     for i, borsa in enumerate(BORSA_SIRASI):
-        adet, gun_adet = sheet_hacim(wb, borsa, gunler, cmc, ilk=(i == 0))
+        adet, gun_adet = sheet_hacim(wb, borsa, gunler, cmc, btcturk_spot, ilk=(i == 0))
         ozet.append(f"{borsa}:{adet}v/{gun_adet}g")
     total_adet = sheet_total(wb, gunler, cmc)
     for a in kontrat_varliklar:

@@ -50,9 +50,9 @@ CMC_API_KEY_YEDEK = "fb77cbb63ef6425193c2ddbfddd20f13"
 CMC_API_KEY = os.environ.get("CMC_API_KEY", "") or CMC_API_KEY_YEDEK
 
 # Hangi borsa hangi modda cekilir
-GITHUB_EXCHANGES = ["Hyperliquid", "OKX", "Bitget", "Gate"]
+GITHUB_EXCHANGES = ["Hyperliquid", "OKX", "Bitget", "Gate", "MEXC"]
 LOCAL_EXCHANGES = ["Binance", "Bybit"]
-ALL_EXCHANGES = ["Hyperliquid", "Binance", "OKX", "Bybit", "Bitget", "Gate"]
+ALL_EXCHANGES = ["Hyperliquid", "Binance", "OKX", "Bybit", "Bitget", "Gate", "MEXC"]
 
 HEADERS = {"User-Agent": USER_AGENT}
 
@@ -326,15 +326,29 @@ def perp_bybit(top_bases):
 
 
 def perp_mexc(top_bases):
+    """MEXC: contract/ticker hacim + OI verir.
+    DIKKAT: holdVol KONTRAT cinsindedir. USD karsiligi icin
+    contractSize (contract/detail'den) ve fiyatla carpilmalidir."""
     out = {}
+    # kontrat carpanlari (tek cagri)
+    carpan = {}
+    det = get_json("https://contract.mexc.com/api/v1/contract/detail")
+    if det and det.get("data"):
+        for d in det["data"]:
+            sym = d.get("symbol", "")
+            if sym.endswith("_USDT"):
+                carpan[sym[:-5]] = to_float(d.get("contractSize")) or 1.0
     data = get_json("https://contract.mexc.com/api/v1/contract/ticker")
     if data and "data" in data:
         for t in data["data"]:
             sym = t.get("symbol", "")            # ornek: BTC_USDT
             base, quote = base_from_symbol(sym)
             if base and quote == "USDT":
+                fiyat = to_float(t.get("fairPrice")) or to_float(t.get("lastPrice"))
+                cs = carpan.get(base, 1.0)
+                oi_kontrat = to_float(t.get("holdVol"))
                 out.setdefault(base, {})["perp_volume_usd"] = to_float(t.get("amount24"))
-                out[base]["open_interest_usd"] = to_float(t.get("holdVol"))
+                out[base]["open_interest_usd"] = oi_kontrat * cs * fiyat if fiyat else None
     return out
 
 
@@ -445,6 +459,7 @@ PERP_SOURCES = {
     "Bybit": perp_bybit,
     "Bitget": perp_bitget,
     "Gate": perp_gate,
+    "MEXC": perp_mexc,
 }
 
 
@@ -572,6 +587,40 @@ def archive_daily(kind, payload):
 # ----------------------------------------------------------------------------
 # MODLAR
 # ----------------------------------------------------------------------------
+
+# ============================================================
+#  BTCTURK SPOT LISTESI
+#  Hangi varliklarin BtcTurk spot'ta listeli oldugunu ceker.
+#  Excel'de borsa sayfalarina "BtcTurk Spot" (E/H) sutunu olarak yansir.
+#  Kaynak: BtcTurk public API (kimlik dogrulama gerekmez).
+# ============================================================
+
+def run_btcturk_spot():
+    """api.btcturk.com/api/v2/server/exchangeinfo -> btcturk_spot.json"""
+    d = get_json("https://api.btcturk.com/api/v2/server/exchangeinfo")
+    semboller = set()
+    ciftler = 0
+    if d and d.get("data"):
+        for s_ in d["data"].get("symbols", []):
+            if (s_.get("status") or "").upper() != "TRADING":
+                continue
+            base = s_.get("numerator")
+            if base:
+                semboller.add(str(base).upper())
+                ciftler += 1
+    if not semboller:
+        print("  ! BtcTurk spot listesi cekilemedi.")
+        return None
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kaynak": "BtcTurk public API - exchangeinfo",
+        "cift_sayisi": ciftler,
+        "varliklar": sorted(semboller),
+    }
+    write_json("btcturk_spot.json", payload)
+    print(f"[OK] btcturk_spot.json yazildi ({len(semboller)} varlik, {ciftler} cift).")
+    return payload
+
 
 def run_cmc():
     coins = fetch_cmc(TOP_N_ASSETS)
@@ -1320,6 +1369,86 @@ def kontrat_hyperliquid(top_bases):
         out[base] = row
     return out
 
+def kontrat_mexc(top_bases):
+    """MEXC: contract/detail (kurallar+kaldirac+indexOrigin) + contract/ticker
+    (index+funding) + contract/depth (derinlik+spread).
+    NOT: minVol, volUnit ve depth KONTRAT cinsindedir; contractSize ile carpilir."""
+    out = {}
+    det = get_json("https://contract.mexc.com/api/v1/contract/detail")
+    rules = {}
+    if det and det.get("data"):
+        for d in det["data"]:
+            sym = d.get("symbol", "")
+            if not sym.endswith("_USDT"):
+                continue
+            base = sym[:-5]
+            cs = to_float(d.get("contractSize")) or 1.0
+            tick = d.get("priceUnit")
+            rules[base] = {
+                "sym": sym,
+                "cs": cs,
+                "min_qty": (to_float(d.get("minVol")) or 0) * cs,
+                "min_notional": None,          # MEXC ayri vermiyor, fiyatla hesaplanir
+                "tick_size": to_float(tick),
+                "digit": int(to_float(d.get("priceScale")) or digits_from_tick(tick)),
+                "step_size": (to_float(d.get("volUnit")) or 1) * cs,
+                "max_leverage": to_float(d.get("maxLeverage")),
+                # MEXC index kaynak listesini veriyor (agirliksiz)
+                "index_origin": d.get("indexOrigin") or [],
+            }
+    tk = get_json("https://contract.mexc.com/api/v1/contract/ticker")
+    tmap = {}
+    if tk and tk.get("data"):
+        for t in tk["data"]:
+            sym = t.get("symbol", "")
+            if sym.endswith("_USDT"):
+                tmap[sym[:-5]] = {
+                    "index": to_float(t.get("indexPrice")),
+                    "mid": to_float(t.get("fairPrice")) or to_float(t.get("lastPrice")),
+                    "funding": to_float(t.get("fundingRate")),
+                }
+    for base in top_bases:
+        gercek, r = carpanli_ara(rules, base)
+        if not r:
+            continue
+        cs = r["cs"]; sym = r["sym"]
+        row = {k: r[k] for k in ("min_qty", "min_notional", "tick_size", "digit",
+                                 "step_size", "max_leverage")}
+        row["borsa_sembolu"] = gercek
+        t = tmap.get(gercek) or {}
+        row["index_price"] = t.get("index")
+        row["funding"] = t.get("funding")
+        mid = t.get("mid") or t.get("index") or 0.0
+        if row["min_qty"] and mid:
+            row["min_notional"] = row["min_qty"] * mid
+        # index kaynak listesi (agirliksiz) -> kirilim alanina isim olarak yaz
+        kaynaklar = r.get("index_origin") or []
+        if kaynaklar:
+            row["index_breakdown"] = [{"exchange": str(k).title(), "weight": None,
+                                       "price": None} for k in kaynaklar]
+        # funding periyodu
+        fr = get_json(f"https://contract.mexc.com/api/v1/contract/funding_rate/{sym}")
+        if fr and fr.get("data"):
+            row["funding_interval_h"] = to_float(fr["data"].get("collectCycle")) or 8.0
+        time.sleep(0.03)
+        # derinlik (kontrat cinsinden -> coin'e cevir)
+        if mid > 0:
+            # DIKKAT: MEXC varsayilan olarak 1500 seviye dondurur.
+            # Diger borsalarla ayni olcu icin ilk 50 seviye kullanilir.
+            ob = get_json(f"https://contract.mexc.com/api/v1/contract/depth/{sym}",
+                          {"limit": 50})
+            if ob and ob.get("data"):
+                d0 = ob["data"]
+                bids = [[x[0], to_float(x[1]) * cs] for x in (d0.get("bids") or [])[:50]]
+                asks = [[x[0], to_float(x[1]) * cs] for x in (d0.get("asks") or [])[:50]]
+                depth, spread = orderbook_depth_spread(bids, asks, mid)
+                row["depth_1pct_usd"] = depth
+                row["spread_pct"] = spread
+            time.sleep(0.03)
+        out[base] = row
+    return out
+
+
 # Hangi borsa hangi kontrat fonksiyonunu kullanacak
 KONTRAT_FN = {
     "Bybit": kontrat_bybit,
@@ -1328,6 +1457,7 @@ KONTRAT_FN = {
     "Gate": kontrat_gate,
     "Bitget": kontrat_bitget,
     "Hyperliquid": kontrat_hyperliquid,
+    "MEXC": kontrat_mexc,
 }
 
 def run_kontrat(which_exchanges=None, outfile="kontrat.json"):
@@ -1572,7 +1702,28 @@ def gecmis_bybit(bases, gun_sayisi):
     return out
 
 
-GECMIS_FN = {"Binance": gecmis_binance, "Bybit": gecmis_bybit}
+def gecmis_mexc(bases, gun_sayisi):
+    """MEXC gunluk mum: amount = USDT tutari.
+    NOT: MEXC public API'de OPEN INTEREST GECMISI YOK (403). Sadece hacim doldurulur."""
+    out = {}
+    n = len(bases)
+    for i, base in enumerate(bases, 1):
+        if i % 50 == 0:
+            print(f"      MEXC gecmis: {i}/{n}")
+        d = get_json(f"https://contract.mexc.com/api/v1/contract/kline/{base}_USDT",
+                     {"interval": "Day1"})
+        veri = (d or {}).get("data") if isinstance(d, dict) else None
+        if isinstance(veri, dict) and veri.get("time"):
+            zaman = veri["time"]; tutar = veri.get("amount") or []
+            for j in range(len(zaman)):
+                gun = _gun_str(int(zaman[j]) * 1000)
+                if gun and j < len(tutar):
+                    out.setdefault(gun, {}).setdefault(base, {})["perp_volume_usd"] = to_float(tutar[j])
+        time.sleep(0.03)
+    return out
+
+
+GECMIS_FN = {"Binance": gecmis_binance, "Bybit": gecmis_bybit, "MEXC": gecmis_mexc}
 
 
 def run_hacim_gecmis(which_exchanges=None, gun_sayisi=GECMIS_GUN,
@@ -1638,14 +1789,20 @@ def arsivle_gecmis():
     """hacim_gecmis_local.json'daki gunleri arsive isler.
     SADECE EKSIK olani doldurur - mevcut kaydin uzerine YAZMAZ.
     Bu sayede her calistirmada guvenle tekrarlanabilir."""
-    try:
-        with open("hacim_gecmis_local.json", encoding="utf-8") as f:
-            d = json.load(f)
-    except Exception:
-        print("  ! hacim_gecmis_local.json bulunamadi.")
+    gunler_hepsi = {}
+    for dosya in ("hacim_gecmis_local.json", "hacim_gecmis_github.json"):
+        try:
+            with open(dosya, encoding="utf-8") as f:
+                d = json.load(f)
+        except Exception:
+            continue
+        for gun, borsalar in (d.get("gunler") or {}).items():
+            gunler_hepsi.setdefault(gun, {}).update(borsalar)
+    if not gunler_hepsi:
+        print("  ! Geriye donuk dosya bulunamadi.")
         return None
     eklendi, atlandi = 0, 0
-    for gun, borsalar in (d.get("gunler") or {}).items():
+    for gun, borsalar in gunler_hepsi.items():
         yol = os.path.join("arsiv", "hacim", f"{gun}.json")
         mevcut = None
         if os.path.exists(yol):
@@ -1712,6 +1869,8 @@ def main():
 
     if mode == "cmc":
         run_cmc()
+    elif mode == "btcturk_spot":
+        run_btcturk_spot()
     elif mode == "cmc_genis":
         # Genis kripto listesi (ilk 1000): hisse suzgeci + fiyat/mcap kaynagi
         run_cmc_genis()
@@ -1731,7 +1890,7 @@ def main():
         run_kontrat()
     elif mode == "kontrat_github":
         # GitHub'da erisilebilen 4 borsa. kontrat_github.json.
-        run_kontrat(which_exchanges=["OKX", "Gate", "Bitget", "Hyperliquid"],
+        run_kontrat(which_exchanges=["OKX", "Gate", "Bitget", "Hyperliquid", "MEXC"],
                     outfile="kontrat_github.json")
     elif mode == "kontrat_local":
         # Cografi engelli 2 borsa (senin bilgisayarindan). kontrat_local.json.
@@ -1750,6 +1909,9 @@ def main():
         # SADECE hacim arsivlenir (gun gun birikir).
         # Kontrat verisi TEK FOTOGRAFTIR, arsivlenmez ve her gun yenilenmez.
         merge_and_archive_hacim()
+    elif mode == "hacim_gecmis_github":
+        # MEXC GitHub'dan erisilebiliyor; gecmis hacmi burada doldurulur.
+        run_hacim_gecmis(which_exchanges=["MEXC"], outfile="hacim_gecmis_github.json")
     elif mode == "hacim_gecmis_local":
         # Hafta sonu bosluklarini doldurmak icin: Binance+Bybit son 7 gun
         # gunluk mum + OI gecmisi (kendi API'lerinden).
