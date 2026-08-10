@@ -49,11 +49,19 @@ def baslik(n, ad):
 
 
 def f(x, ondalik=8):
+    """Kucuk sayilari sifira yuvarlamaz; gerektiginde bilimsel gosterim kullanir."""
     if x is None:
         return "YOK"
-    if isinstance(x, (int, float)):
-        return f"{x:,.{ondalik}f}".rstrip("0").rstrip(".") if ondalik else f"{x:,.0f}"
-    return str(x)
+    if not isinstance(x, (int, float)):
+        return str(x)
+    if x == 0:
+        return "0"
+    if abs(x) < 1e-6:                      # cok kucuk -> bilimsel gosterim
+        return f"{x:.3e}"
+    if ondalik == 0:
+        return f"{x:,.0f}"
+    s_ = f"{x:,.{max(ondalik, 12)}f}".rstrip("0").rstrip(".")
+    return s_
 
 
 def main():
@@ -142,12 +150,12 @@ def main():
     # ---------- 5) ORDER BOOK ----------
     baslik(5, "ORDER BOOK (derinlik + spread)")
     for v in ["BTC", "ETH"]:
-        d, hata = cek(f"depth/{v}_USDT")
+        d, hata = cek(f"depth/{v}_USDT", {"limit": 50})
         if hata:
             print(f"  {v}: {hata}")
             continue
-        bids = d.get("bids") or []
-        asks = d.get("asks") or []
+        bids = (d.get("bids") or [])[:50]     # diger borsalarla ayni: ilk 50 seviye
+        asks = (d.get("asks") or [])[:50]
         if not bids or not asks:
             print(f"  {v}: bos order book")
             continue
@@ -157,10 +165,16 @@ def main():
         lo, hi = mid * 0.99, mid * 1.01
         derin = sum(float(p) * float(q) * cs for p, q, *_ in bids if float(p) >= lo)
         derin += sum(float(p) * float(q) * cs for p, q, *_ in asks if float(p) <= hi)
-        print(f"  {v}_USDT -> seviye: {len(bids)} alis / {len(asks)} satis")
+        print(f"  {v}_USDT -> KULLANILAN seviye: {len(bids)} alis / {len(asks)} satis "
+              f"(diger borsalarla ayni olcu)")
         print(f"     en iyi alis/satis : {bb} / {ba}")
         print(f"     spread            : {(ba - bb) / mid * 100:.6f} %")
-        print(f"     derinlik +-1%     : {derin:,.0f} USD")
+        print(f"     derinlik (50 seviye, +-1%) : {derin:,.0f} USD   <-- kullanilacak deger")
+        tb = (d.get("bids") or []); ta = (d.get("asks") or [])
+        tam = sum(float(p) * float(q) * cs for p, q, *_ in tb if float(p) >= lo)
+        tam += sum(float(p) * float(q) * cs for p, q, *_ in ta if float(p) <= hi)
+        print(f"     derinlik (tam defter)      : {tam:,.0f} USD   "
+              f"(sadece bilgi; {len(tb)} alis / {len(ta)} satis seviye)")
 
     # ---------- 6) GERIYE DONUK VERI ----------
     baslik(6, "GERIYE DONUK GUNLUK VERI (hafta sonu doldurma icin)")
