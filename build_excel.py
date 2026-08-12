@@ -780,7 +780,7 @@ def sheet_analiz(wb, varliklar, tarihler, manuel_kaldirac, btcturk):
 # ---------------- notlar ----------------
 
 
-IDX_SUTUNLAR = ["Tarih", "Saat (UTC)", "Borsa", "Varlik", "Yayinlanan Index",
+IDX_SUTUNLAR = ["Tarih", "Saat (UTC)", "Bilesen Saati", "Borsa", "Varlik", "Yayinlanan Index",
                 "Hesaplanan Index", "Fark", "Fark %", "Kaynak", "Agirlik Toplami",
                 "Degerlendirme", "Kirilim (kaynak: agirlik @ fiyat)"]
 
@@ -835,24 +835,25 @@ def sheet_index_dogrula(wb, fotolar):
                 for c in (k.get("kirilim") or [])
             )
 
-            vals = [tarih, saat, k.get("borsa"), k.get("symbol"), yay, hes, fark, fy,
-                    k.get("kaynak_sayisi"), k.get("agirlik_toplami"), deg, kir]
+            bz = str(k.get("bilesen_zamani") or "")
+            vals = [tarih, saat, bz[11:19], k.get("borsa"), k.get("symbol"), yay, hes,
+                    fark, fy, k.get("kaynak_sayisi"), k.get("agirlik_toplami"), deg, kir]
             for i, v in enumerate(vals, 1):
                 cell = ws.cell(r, i, v)
                 cell.font = FONT
                 cell.border = BORDER
-            ws.cell(r, 3).font = FONT_B
             ws.cell(r, 4).font = FONT_B
-            for col in (5, 6, 7):
+            ws.cell(r, 5).font = FONT_B
+            for col in (6, 7, 8):
                 ws.cell(r, col).number_format = '#,##0.########'
-            ws.cell(r, 8).number_format = '0.00000"%"'
-            ws.cell(r, 10).number_format = '0.0000'
+            ws.cell(r, 9).number_format = '0.00000"%"'
+            ws.cell(r, 11).number_format = '0.0000'
             dolgu = PatternFill("solid", fgColor=renk)
-            for col in (7, 8, 11):
+            for col in (8, 9, 12):
                 ws.cell(r, col).fill = dolgu
             r += 1
 
-    genislik = [11, 10, 12, 10, 17, 17, 13, 12, 8, 14, 15, 70]
+    genislik = [11, 10, 12, 12, 10, 17, 17, 13, 12, 8, 14, 15, 70]
     for c, w in enumerate(genislik, 1):
         ws.column_dimensions[get_column_letter(c)].width = w
     if r > 2:
@@ -997,6 +998,10 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
          "yayınladığı için tam doğrulama mümkün. Gate ve MEXC yalnızca kaynak adı verir; "
          "Bybit ve Bitget hiçbirini vermez."),
         ("Hesaplama", "hesaplanan = toplam(ağırlık × bileşen fiyatı)"),
+        ("Bileşen Saati sütunu",
+         "OKX, bileşen yanıtının içinde index fiyatını ve zaman damgasını birlikte verir. "
+         "Yayınlanan ve hesaplanan index aynı andan geldiği için aradaki zaman farkı sıfırdır; "
+         "kalan fark saf formül farkıdır."),
         ("Değerlendirme eşikleri",
          "fark < %0,01 → tutuyor · %0,01–%0,05 → küçük sapma · > %0,05 → sapma var"),
         ("Kalan farkın kaynağı",

@@ -2261,6 +2261,7 @@ def merge_impact():
 
 IDX_TOP_N = 50          # kac pair (cmc.json'dan)
 IDX_TESHIS = {"Binance": False, "OKX": False}   # ilk kaydin ham alanlari bir kez basilir
+_IDX_TS = {}    # borsanin kendi yanitindaki zaman damgasi (ms)
 
 
 def _sayi(x):
@@ -2307,15 +2308,20 @@ def _idx_binance(base):
 
 
 def _idx_okx(base):
+    """OKX index-components yaniti index fiyatini ve zaman damgasini KENDI ICINDE verir.
+    Bu yuzden ayri bir index-tickers cagrisina gerek yok; ayni yanittan okuyunca
+    iki cagri arasindaki gecikme farki tamamen ortadan kalkar."""
     idxId = f"{base}-USDT"
-    tk = get_json("https://www.okx.com/api/v5/market/index-tickers", {"instId": idxId})
-    yayin = None
-    if tk and tk.get("data"):
-        yayin = _alan(tk["data"][0], ["idxPx", "px", "last"])
     ic = get_json("https://www.okx.com/api/v5/market/index-components", {"index": idxId})
     if not ic or not ic.get("data"):
-        return yayin, []
+        return None, []
     d = ic["data"]
+    yayin = _alan(d, ["index", "idxPx"]) if isinstance(d, dict) else None
+    if isinstance(d, dict) and d.get("ts"):
+        try:
+            _IDX_TS["OKX"] = int(d["ts"])
+        except Exception:
+            pass
     liste = d.get("components") if isinstance(d, dict) else None
     if not liste:
         return yayin, []
@@ -2331,7 +2337,9 @@ def _idx_okx(base):
             continue
         ad = c.get("exch") or c.get("exchange")
         w = _alan(c, ["wgt", "weight", "w"])
-        p = _alan(c, ["prpx", "px", "cnvPx", "prePx", "price"])
+        # cnvPx = index kotasyonuna CEVRILMIS fiyat (dogru olan bu)
+        # symPx = o borsadaki ham fiyat (orn. Coinbase BTC/USD) - kullanilmaz
+        p = _alan(c, ["cnvPx", "prpx", "px", "prePx", "price"])
         if ad and w is not None and p is not None:
             parcalar.append((str(ad), w, p))
     return yayin, parcalar
@@ -2398,8 +2406,11 @@ def run_index_dogrula(which_exchanges=None, outfile=None):
             fark = (hesap - yayin) if (hesap is not None and yayin is not None) else None
             fark_yuzde = (fark / yayin * 100) if (fark is not None and yayin) else None
 
+            bts = _IDX_TS.get(exch)
             kayitlar.append({
                 "zaman_utc": an.isoformat(),
+                "bilesen_zamani": (datetime.fromtimestamp(bts / 1000, timezone.utc).isoformat()
+                                   if bts else None),
                 "borsa": exch,
                 "symbol": base,
                 "rank": c.get("rank"),
@@ -2502,8 +2513,13 @@ def main():
         # gunluk mum + OI gecmisi (kendi API'lerinden).
         run_hacim_gecmis()
     elif mode == "index_dogrula":
-        # Yayinlanan index ile hesaplanan index'i karsilastirir (Binance + OKX)
+        # Tum borsalar (senin bilgisayarinda, hepsine erisim var)
         run_index_dogrula()
+    elif mode == "index_dogrula_github":
+        # Binance GitHub'dan erisilemez (451). Burada yalnizca OKX calisir.
+        run_index_dogrula(which_exchanges=["OKX"])
+    elif mode == "index_dogrula_local":
+        run_index_dogrula(which_exchanges=["Binance"])
     elif mode == "impact":
         # Tum borsalar (senin bilgisayarinda, hepsine erisim var)
         run_impact()
