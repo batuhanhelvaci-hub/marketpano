@@ -1,0 +1,1533 @@
+{
+  "generated_at": "2026-08-12T07:46:41.461136+00:00",
+  "kapsam": "CMC ilk 50 pair",
+  "yontem": "hesaplanan = toplam(agirlik x bilesen fiyati); yayinlanan = borsanin index endpoint'i",
+  "exchanges": [
+    "Binance",
+    "OKX"
+  ],
+  "kayitlar": [
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "BTC",
+      "rank": 1,
+      "yayinlanan": 63669.2,
+      "hesaplanan": 63643.370461827595,
+      "fark": -25.829538172401953,
+      "fark_yuzde": -0.04056834100695777,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.1875,
+          "fiyat": 63641.96912974715
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.125,
+          "fiyat": 63643.19
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.25,
+          "fiyat": 63644.11
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.25,
+          "fiyat": 63644.5
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.1875,
+          "fiyat": 63642.4
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "ETH",
+      "rank": 2,
+      "yayinlanan": 1887.01,
+      "hesaplanan": 1887.242638888889,
+      "fark": 0.23263888888891415,
+      "fark_yuzde": 0.012328439642021724,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.25,
+          "fiyat": 1887.14
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.25,
+          "fiyat": 1887.26
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.1875,
+          "fiyat": 1887.34
+        },
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.1875,
+          "fiyat": 1887.4074074074074
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.125,
+          "fiyat": 1887.02
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "BNB",
+      "rank": 4,
+      "yayinlanan": 611.3,
+      "hesaplanan": 611.1310800000001,
+      "fark": -0.16891999999984364,
+      "fark_yuzde": -0.027632913463085825,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1333,
+          "fiyat": 611.3
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 611.2
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 611.4
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 611.15
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 611.2
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "USDC",
+      "rank": 5,
+      "yayinlanan": 1.000799,
+      "hesaplanan": 1.0007945151797242,
+      "fark": -4.484820275818535e-06,
+      "fark_yuzde": -0.00044812397652461034,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.1875,
+          "fiyat": 1.0008
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.125,
+          "fiyat": 1.0008
+        },
+        {
+          "kaynak": "Kraken",
+          "agirlik": 0.1875,
+          "fiyat": 1.0007707476251964
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.25,
+          "fiyat": 1.0008
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.25,
+          "fiyat": 1.0008
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "XRP",
+      "rank": 6,
+      "yayinlanan": 1.0182,
+      "hesaplanan": 1.0184746490310503,
+      "fark": 0.00027464903105034466,
+      "fark_yuzde": 0.026973976728574413,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.25,
+          "fiyat": 1.0184
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.1875,
+          "fiyat": 1.0185
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.25,
+          "fiyat": 1.0185
+        },
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.1875,
+          "fiyat": 1.0184981281656023
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.125,
+          "fiyat": 1.0185
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "SOL",
+      "rank": 7,
+      "yayinlanan": 75.96,
+      "hesaplanan": 75.95549174174174,
+      "fark": -0.004508258258255182,
+      "fark_yuzde": -0.005935042467423884,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.25,
+          "fiyat": 75.96
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.25,
+          "fiyat": 75.95
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.1875,
+          "fiyat": 75.96
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.125,
+          "fiyat": 75.95
+        },
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.1875,
+          "fiyat": 75.95595595595596
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "TRX",
+      "rank": 8,
+      "yayinlanan": 0.33621,
+      "hesaplanan": 0.336163424,
+      "fark": -4.657600000002038e-05,
+      "fark_yuzde": -0.01385324648285904,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 0.3363
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 0.3362
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 0.33624
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 0.3362
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 0.3362
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "HYPE",
+      "rank": 9,
+      "yayinlanan": 55.031,
+      "hesaplanan": 55.0209655093406,
+      "fark": -0.01003449065940032,
+      "fark_yuzde": -0.018234250984718287,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9997999999999999,
+      "kirilim": [
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1666,
+          "fiyat": 55.029
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1666,
+          "fiyat": 55.03
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3334,
+          "fiyat": 55.027
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1666,
+          "fiyat": 55.032
+        },
+        {
+          "kaynak": "Hyperliquid",
+          "agirlik": 0.1666,
+          "fiyat": 55.046837391
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "DOGE",
+      "rank": 10,
+      "yayinlanan": 0.07153,
+      "hesaplanan": 0.07152113440662441,
+      "fark": -8.86559337558157e-06,
+      "fark_yuzde": -0.012394230917910767,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.25,
+          "fiyat": 0.07152
+        },
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.1875,
+          "fiyat": 0.0715293835019969
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.25,
+          "fiyat": 0.07153
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.125,
+          "fiyat": 0.07151
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.1875,
+          "fiyat": 0.07151
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "LEO",
+      "rank": 11,
+      "yayinlanan": 9.1,
+      "hesaplanan": 9.100674999999999,
+      "fark": 0.000674999999999315,
+      "fark_yuzde": 0.00741758241757489,
+      "kaynak_sayisi": 3,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "Bitfinex",
+          "agirlik": 0.25,
+          "fiyat": 9.0887
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.25,
+          "fiyat": 9.096
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.5,
+          "fiyat": 9.109
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "ZEC",
+      "rank": 12,
+      "yayinlanan": 478.56,
+      "hesaplanan": 478.48677399999997,
+      "fark": -0.07322600000003376,
+      "fark_yuzde": -0.01530132062855938,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9997999999999999,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3333,
+          "fiyat": 478.55
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3333,
+          "fiyat": 478.52
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1666,
+          "fiyat": 478.505
+        },
+        {
+          "kaynak": "Mxc",
+          "agirlik": 0.1666,
+          "fiyat": 478.85
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "ADA",
+      "rank": 14,
+      "yayinlanan": 0.185,
+      "hesaplanan": 0.18497366399999998,
+      "fark": -2.633600000001568e-05,
+      "fark_yuzde": -0.014235675675684152,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 0.185
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 0.185
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 0.185
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 0.185
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 0.18508
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "LINK",
+      "rank": 15,
+      "yayinlanan": 8.726,
+      "hesaplanan": 8.72720093,
+      "fark": 0.0012009299999995449,
+      "fark_yuzde": 0.013762663305060105,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 8.73
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 8.73
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 8.7291
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 8.725
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 8.729
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "XLM",
+      "rank": 16,
+      "yayinlanan": 0.16066,
+      "hesaplanan": 0.160630258,
+      "fark": -2.974199999999927e-05,
+      "fark_yuzde": -0.018512386406074485,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9996999999999999,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2307,
+          "fiyat": 0.1607
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3076,
+          "fiyat": 0.16068
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1538,
+          "fiyat": 0.1606
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 0.1607
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "DAI",
+      "rank": 17,
+      "yayinlanan": 1.0005,
+      "hesaplanan": 1.00052,
+      "fark": 2.0000000000131024e-05,
+      "fark_yuzde": 0.0019990004997632207,
+      "kaynak_sayisi": 1,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "Kraken",
+          "agirlik": 1.0,
+          "fiyat": 1.00052
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "BCH",
+      "rank": 18,
+      "yayinlanan": 213.0,
+      "hesaplanan": 213.008049,
+      "fark": 0.00804899999999975,
+      "fark_yuzde": 0.003778873239436503,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 212.9
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 213.1
+        },
+        {
+          "kaynak": "Mxc",
+          "agirlik": 0.1333,
+          "fiyat": 213.1
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 213.1
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 213.03
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "USD1",
+      "rank": 19,
+      "yayinlanan": 1.0001,
+      "hesaplanan": 1.000071094,
+      "fark": -2.8906000000050724e-05,
+      "fark_yuzde": -0.0028903109689081817,
+      "kaynak_sayisi": 3,
+      "agirlik_toplami": 0.9999,
+      "kirilim": [
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.4444,
+          "fiyat": 1.00016
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.2222,
+          "fiyat": 1.0003
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.3333,
+          "fiyat": 1.0001
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "CC",
+      "rank": 22,
+      "yayinlanan": 0.09809,
+      "hesaplanan": 0.09806462774650171,
+      "fark": -2.5372253498287534e-05,
+      "fark_yuzde": -0.025866299824943966,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9997,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2142,
+          "fiyat": 0.09803
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2857,
+          "fiyat": 0.09811
+        },
+        {
+          "kaynak": "Kraken",
+          "agirlik": 0.2142,
+          "fiyat": 0.0981422537184953
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1428,
+          "fiyat": 0.09807
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1428,
+          "fiyat": 0.09811
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "GRAM",
+      "rank": 22,
+      "yayinlanan": 1.364,
+      "hesaplanan": 1.36419388,
+      "fark": 0.0001938799999998686,
+      "fark_yuzde": 0.014214076246324677,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9997999999999999,
+      "kirilim": [
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1666,
+          "fiyat": 1.3638
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3334,
+          "fiyat": 1.365
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1666,
+          "fiyat": 1.364
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1666,
+          "fiyat": 1.364
+        },
+        {
+          "kaynak": "Mxc",
+          "agirlik": 0.1666,
+          "fiyat": 1.365
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "LTC",
+      "rank": 23,
+      "yayinlanan": 45.21,
+      "hesaplanan": 45.208957000000005,
+      "fark": -0.0010429999999956863,
+      "fark_yuzde": -0.0023070117230605757,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 45.22
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 45.23
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 45.22
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 45.21
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 45.21
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "USDG",
+      "rank": 24,
+      "yayinlanan": 1.0008,
+      "hesaplanan": 1.0009354709067795,
+      "fark": 0.00013547090677956675,
+      "fark_yuzde": 0.013536261668621779,
+      "kaynak_sayisi": 2,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "Kraken",
+          "agirlik": 0.5,
+          "fiyat": 1.000970941813559
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.5,
+          "fiyat": 1.0009
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "HBAR",
+      "rank": 25,
+      "yayinlanan": 0.06669,
+      "hesaplanan": 0.06668466,
+      "fark": -5.339999999992573e-06,
+      "fark_yuzde": -0.008007197480870554,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 0.06669
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 0.06671
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 0.0667
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 0.06671
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 0.06669
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "SUI",
+      "rank": 26,
+      "yayinlanan": 0.6887,
+      "hesaplanan": 0.6886241200000001,
+      "fark": -7.587999999991712e-05,
+      "fark_yuzde": -0.011017859735721959,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9997,
+      "kirilim": [
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 0.6889
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3076,
+          "fiyat": 0.6888
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2307,
+          "fiyat": 0.6888
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1538,
+          "fiyat": 0.6888
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "AVAX",
+      "rank": 27,
+      "yayinlanan": 6.216,
+      "hesaplanan": 6.2122127,
+      "fark": -0.003787299999999938,
+      "fark_yuzde": -0.06092824967824867,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9996999999999999,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3076,
+          "fiyat": 6.213
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 6.214
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1538,
+          "fiyat": 6.215
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2307,
+          "fiyat": 6.215
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "PYUSD",
+      "rank": 28,
+      "yayinlanan": 1.0005,
+      "hesaplanan": 1.00055,
+      "fark": 5.0000000000105516e-05,
+      "fark_yuzde": 0.004997501249385859,
+      "kaynak_sayisi": 2,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.5,
+          "fiyat": 1.0006
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.5,
+          "fiyat": 1.0005
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "XAUT",
+      "rank": 29,
+      "yayinlanan": 4388.3,
+      "hesaplanan": 4387.897529999999,
+      "fark": -0.4024700000009034,
+      "fark_yuzde": -0.009171433129022705,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9999,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3636,
+          "fiyat": 4388.4
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1818,
+          "fiyat": 4388.2
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1818,
+          "fiyat": 4388.4
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2727,
+          "fiyat": 4388.3
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "SHIB",
+      "rank": 30,
+      "yayinlanan": 4.458e-06,
+      "hesaplanan": 4.4581751e-06,
+      "fark": 1.7509999999947592e-10,
+      "fark_yuzde": 0.003927770300571465,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 4.461e-06
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 4.45e-06
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 4.462e-06
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 4.464e-06
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 4.462e-06
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "UNI",
+      "rank": 31,
+      "yayinlanan": 3.506,
+      "hesaplanan": 3.5038857699999997,
+      "fark": -0.0021142300000001057,
+      "fark_yuzde": -0.06030319452367672,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 3.504
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 3.505
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 3.506
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 3.505
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 3.5009
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "TAO",
+      "rank": 32,
+      "yayinlanan": 202.4,
+      "hesaplanan": 202.35029631623937,
+      "fark": -0.04970368376064016,
+      "fark_yuzde": -0.02455715600822142,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9996999999999998,
+      "kirilim": [
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 202.5
+        },
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.2307,
+          "fiyat": 202.39441836254616
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1538,
+          "fiyat": 202.3
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1538,
+          "fiyat": 202.39
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1538,
+          "fiyat": 202.39
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "CRO",
+      "rank": 33,
+      "yayinlanan": 0.04684,
+      "hesaplanan": 0.046843497,
+      "fark": 3.4969999999981405e-06,
+      "fark_yuzde": 0.007465841161396542,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9999,
+      "kirilim": [
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1818,
+          "fiyat": 0.04687
+        },
+        {
+          "kaynak": "Crypto",
+          "agirlik": 0.2727,
+          "fiyat": 0.04687
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3636,
+          "fiyat": 0.04684
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1818,
+          "fiyat": 0.04681
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "NEAR",
+      "rank": 34,
+      "yayinlanan": 1.6439,
+      "hesaplanan": 1.64345792,
+      "fark": -0.00044208000000001135,
+      "fark_yuzde": -0.026892146724253996,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 1.644
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 1.643
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 1.6434
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 1.644
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 1.644
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "OKB",
+      "rank": 35,
+      "yayinlanan": 95.55,
+      "hesaplanan": 95.65380000000002,
+      "fark": 0.10380000000002099,
+      "fark_yuzde": 0.10863422291995917,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "Mxc",
+          "agirlik": 0.2,
+          "fiyat": 95.699
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.4,
+          "fiyat": 95.63
+        },
+        {
+          "kaynak": "BingX",
+          "agirlik": 0.2,
+          "fiyat": 95.69
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.2,
+          "fiyat": 95.62
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "PAXG",
+      "rank": 36,
+      "yayinlanan": 4406.6,
+      "hesaplanan": 4405.747832411637,
+      "fark": -0.8521675883630451,
+      "fark_yuzde": -0.019338437533768554,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Kraken",
+          "agirlik": 0.2142,
+          "fiyat": 4408.894805857799
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2857,
+          "fiyat": 4406.15
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2857,
+          "fiyat": 4406.0
+        },
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.2142,
+          "fiyat": 4405.841783365532
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "WLFI",
+      "rank": 37,
+      "yayinlanan": 0.05498,
+      "hesaplanan": 0.05499195899999999,
+      "fark": 1.1958999999991948e-05,
+      "fark_yuzde": 0.021751546016718713,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9996999999999999,
+      "kirilim": [
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 0.055
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3076,
+          "fiyat": 0.05503
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1538,
+          "fiyat": 0.05495
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2307,
+          "fiyat": 0.05503
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "ONDO",
+      "rank": 38,
+      "yayinlanan": 0.3321,
+      "hesaplanan": 0.33210822300000004,
+      "fark": 8.223000000029401e-06,
+      "fark_yuzde": 0.0024760614272897924,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 0.3322
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 0.3322
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 0.33231
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 0.3322
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 0.332
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "ASTER",
+      "rank": 39,
+      "yayinlanan": 0.6035,
+      "hesaplanan": 0.60379921,
+      "fark": 0.0002992099999999942,
+      "fark_yuzde": 0.049579121789559935,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 0.604
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 0.6039
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1333,
+          "fiyat": 0.6036
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 0.6038
+        },
+        {
+          "kaynak": "Mxc",
+          "agirlik": 0.1333,
+          "fiyat": 0.6043
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "RLUSD",
+      "rank": 40,
+      "yayinlanan": 1.0009,
+      "hesaplanan": 1.0009909810712605,
+      "fark": 9.098107126059851e-05,
+      "fark_yuzde": 0.009089926192486613,
+      "kaynak_sayisi": 1,
+      "agirlik_toplami": 1.0,
+      "kirilim": [
+        {
+          "kaynak": "OKX_INDEX",
+          "agirlik": 1.0,
+          "fiyat": 1.0009909810712605
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "AAVE",
+      "rank": 44,
+      "yayinlanan": 88.96,
+      "hesaplanan": 88.964072,
+      "fark": 0.004072000000007847,
+      "fark_yuzde": 0.0045773381295052245,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9996999999999999,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2307,
+          "fiyat": 88.97
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1538,
+          "fiyat": 89.005
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3076,
+          "fiyat": 89.01
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 88.98
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "DOT",
+      "rank": 45,
+      "yayinlanan": 0.7863,
+      "hesaplanan": 0.7867759500000001,
+      "fark": 0.0004759500000001138,
+      "fark_yuzde": 0.06053033193439066,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 0.7869
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 0.7869
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 0.787
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 0.787
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 0.7868
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "ICP",
+      "rank": 46,
+      "yayinlanan": 2.216,
+      "hesaplanan": 2.2167963,
+      "fark": 0.00079629999999975,
+      "fark_yuzde": 0.03593411552345442,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9996999999999999,
+      "kirilim": [
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1538,
+          "fiyat": 2.216
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2307,
+          "fiyat": 2.217
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3076,
+          "fiyat": 2.219
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 2.217
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "SKY",
+      "rank": 47,
+      "yayinlanan": 0.05301,
+      "hesaplanan": 0.0530186491119308,
+      "fark": 8.649111930797426e-06,
+      "fark_yuzde": 0.016316000624028347,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9998999999999999,
+      "kirilim": [
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3333,
+          "fiyat": 0.05303
+        },
+        {
+          "kaynak": "Coinbase",
+          "agirlik": 0.25,
+          "fiyat": 0.0530024724477232
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.25,
+          "fiyat": 0.05304
+        },
+        {
+          "kaynak": "Bitget",
+          "agirlik": 0.1666,
+          "fiyat": 0.05302
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "WLD",
+      "rank": 49,
+      "yayinlanan": 0.3362,
+      "hesaplanan": 0.33606069000000005,
+      "fark": -0.0001393099999999481,
+      "fark_yuzde": -0.04143664485423798,
+      "kaynak_sayisi": 4,
+      "agirlik_toplami": 0.9996999999999999,
+      "kirilim": [
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1538,
+          "fiyat": 0.3361
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.3076,
+          "fiyat": 0.3362
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.3076,
+          "fiyat": 0.3362
+        },
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2307,
+          "fiyat": 0.3361
+        }
+      ]
+    },
+    {
+      "zaman_utc": "2026-08-12T07:46:41.461136+00:00",
+      "borsa": "OKX",
+      "symbol": "PEPE",
+      "rank": 50,
+      "yayinlanan": 2.824e-06,
+      "hesaplanan": 2.8265679e-06,
+      "fark": 2.56790000000022e-09,
+      "fark_yuzde": 0.09093130311615509,
+      "kaynak_sayisi": 5,
+      "agirlik_toplami": 0.9998,
+      "kirilim": [
+        {
+          "kaynak": "Bybit",
+          "agirlik": 0.2,
+          "fiyat": 2.827e-06
+        },
+        {
+          "kaynak": "Gate",
+          "agirlik": 0.1333,
+          "fiyat": 2.825e-06
+        },
+        {
+          "kaynak": "OKX",
+          "agirlik": 0.2666,
+          "fiyat": 2.826e-06
+        },
+        {
+          "kaynak": "Binance",
+          "agirlik": 0.2666,
+          "fiyat": 2.83e-06
+        },
+        {
+          "kaynak": "Kucoin",
+          "agirlik": 0.1333,
+          "fiyat": 2.826e-06
+        }
+      ]
+    }
+  ]
+}
