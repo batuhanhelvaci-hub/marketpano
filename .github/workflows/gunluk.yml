@@ -59,7 +59,7 @@ jobs:
         run: python collect.py arsivle_gecmis || true
 
       - name: Index dogrulama (Binance + OKX)
-        run: python collect.py index_dogrula || true
+        run: python collect.py index_dogrula_github || true
 
       - name: Excel uret
         run: python build_excel.py
