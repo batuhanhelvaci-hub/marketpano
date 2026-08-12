@@ -1861,6 +1861,591 @@ def merge_and_archive_hacim():
     return payload
 
 
+# ============================================================
+#  IMPACT BID / ASK  (prim endeksi icin)
+#  Emir defterini KADEME KADEME cekip belirlenen tutari sureriz,
+#  ulasilan ortalama fiyati hesaplariz. Defterin ilk 50 kademesi de
+#  saklanir; boylece tutar sonradan degistirilip yeniden hesaplanabilir.
+#
+#  Tutar tanimi: 200 USDT x max kaldirac  (OKX'in yayinladigi tanim)
+#  Kaynak: OKX "Impact value = 200 x Max leverage allowed for this perpetual"
+#
+#  Excel akisina DOKUNMAZ. Ayri dosyaya yazar: impact*.json
+# ============================================================
+
+IMPACT_TOP_N = 50          # kac pair (cmc.json'dan, kontrat listesiyle ayni)
+IMPACT_KADEME = 50         # kac kademe saklanacak
+IMPACT_TABAN_USDT = 200.0  # tutar carpani
+
+
+def impact_fiyat(kademeler, notional):
+    """Belirlenen tutari deftere surup ulasilan ORTALAMA fiyati dondurur.
+
+    kademeler : [[fiyat, miktar], ...]  miktar COIN cinsinden olmali
+                bid tarafi azalan, ask tarafi artan fiyat sirasinda
+    notional  : surulecek tutar (USDT)
+
+    Doner: (impact_fiyat, kullanilan_kademe, yetersiz_mi)
+    OKX tanimi: impact fiyat = tutar / tutari karsilamak icin gereken toplam coin
+    """
+    kalan = float(notional)
+    baz = 0.0
+    for i, kd in enumerate(kademeler):
+        try:
+            p = float(kd[0]); q = float(kd[1])
+        except Exception:
+            continue
+        if p <= 0 or q <= 0:
+            continue
+        deger = p * q
+        if deger >= kalan:
+            baz += kalan / p
+            return (notional / baz if baz else None), i + 1, False
+        kalan -= deger
+        baz += q
+    # Defter tutari karsilamaya yetmedi: elde olanin ortalamasi verilir
+    dolan = notional - kalan
+    return ((dolan / baz) if baz else None), len(kademeler), True
+
+
+def _kirp(kademeler, n=IMPACT_KADEME):
+    """Kademeleri [[fiyat, miktar], ...] bicimine getirir ve ilk n tanesini alir."""
+    out = []
+    for kd in (kademeler or [])[:n]:
+        try:
+            if isinstance(kd, dict):
+                p, q = kd.get("p") or kd.get("px"), kd.get("s") or kd.get("sz")
+            else:
+                p, q = kd[0], kd[1]
+            p = float(p); q = float(q)
+            if p > 0 and q > 0:
+                out.append([p, q])
+        except Exception:
+            continue
+    return out
+
+
+# ---------- borsa basina defter cekiciler ----------
+# Hepsi ayni bicimde doner:
+#   {"bids": [[fiyat, coin_miktar], ...], "asks": [...],
+#    "mark": fiyat, "max_leverage": x, "borsa_sembolu": "..."}
+
+def _book_binance(base, kaldirac_yedek):
+    sym = f"{base}USDT"
+    ob = get_json("https://fapi.binance.com/fapi/v1/depth", {"symbol": sym, "limit": IMPACT_KADEME})
+    if not ob or "bids" not in ob:
+        return None
+    pm = get_json("https://fapi.binance.com/fapi/v1/premiumIndex", {"symbol": sym})
+    mark = to_float((pm or {}).get("markPrice"))
+    return {"bids": _kirp(ob.get("bids")), "asks": _kirp(ob.get("asks")),
+            "mark": mark, "max_leverage": kaldirac_yedek.get(base),
+            "borsa_sembolu": base}
+
+
+def _book_bybit(base, _):
+    sym = f"{base}USDT"
+    ob = get_json("https://api.bybit.com/v5/market/orderbook",
+                  {"category": "linear", "symbol": sym, "limit": IMPACT_KADEME})
+    if not ob or "result" not in ob:
+        return None
+    tk = get_json("https://api.bybit.com/v5/market/tickers",
+                  {"category": "linear", "symbol": sym})
+    mark = lev = None
+    if tk and tk.get("result", {}).get("list"):
+        mark = to_float(tk["result"]["list"][0].get("markPrice"))
+    inst = get_json("https://api.bybit.com/v5/market/instruments-info",
+                    {"category": "linear", "symbol": sym})
+    if inst and inst.get("result", {}).get("list"):
+        lev = to_float((inst["result"]["list"][0].get("leverageFilter") or {}).get("maxLeverage"))
+    return {"bids": _kirp(ob["result"].get("b")), "asks": _kirp(ob["result"].get("a")),
+            "mark": mark, "max_leverage": lev, "borsa_sembolu": base}
+
+
+def _book_okx(base, _):
+    instId = f"{base}-USDT-SWAP"
+    inst = get_json("https://www.okx.com/api/v5/public/instruments",
+                    {"instType": "SWAP", "instId": instId})
+    ctval = lev = None
+    if inst and inst.get("data"):
+        ctval = to_float(inst["data"][0].get("ctVal")) or 1.0
+        lev = to_float(inst["data"][0].get("lever"))
+    if not ctval:
+        return None
+    ob = get_json("https://www.okx.com/api/v5/market/books",
+                  {"instId": instId, "sz": IMPACT_KADEME})
+    if not ob or not ob.get("data"):
+        return None
+    d0 = ob["data"][0]
+    mp = get_json("https://www.okx.com/api/v5/public/mark-price",
+                  {"instType": "SWAP", "instId": instId})
+    mark = to_float((mp or {}).get("data", [{}])[0].get("markPx")) if mp and mp.get("data") else None
+    # OKX miktarlari KONTRAT cinsinden -> coin'e cevrilir
+    bids = [[float(x[0]), to_float(x[1]) * ctval] for x in (d0.get("bids") or [])[:IMPACT_KADEME]]
+    asks = [[float(x[0]), to_float(x[1]) * ctval] for x in (d0.get("asks") or [])[:IMPACT_KADEME]]
+    return {"bids": bids, "asks": asks, "mark": mark, "max_leverage": lev,
+            "borsa_sembolu": base}
+
+
+def _book_bitget(base, _):
+    sym = f"{base}USDT"
+    ob = get_json("https://api.bitget.com/api/v2/mix/market/merge-depth",
+                  {"symbol": sym, "productType": "usdt-futures", "limit": str(IMPACT_KADEME)})
+    if not ob or not ob.get("data"):
+        return None
+    tk = get_json("https://api.bitget.com/api/v2/mix/market/tickers",
+                  {"productType": "usdt-futures", "symbol": sym})
+    mark = None
+    if tk and tk.get("data"):
+        mark = to_float(tk["data"][0].get("markPrice")) or to_float(tk["data"][0].get("indexPrice"))
+    ct = get_json("https://api.bitget.com/api/v2/mix/market/contracts",
+                  {"productType": "usdt-futures", "symbol": sym})
+    lev = to_float((ct or {}).get("data", [{}])[0].get("maxLever")) if ct and ct.get("data") else None
+    d = ob["data"]
+    return {"bids": _kirp(d.get("bids")), "asks": _kirp(d.get("asks")),
+            "mark": mark, "max_leverage": lev, "borsa_sembolu": base}
+
+
+def _book_gate(base, _):
+    name = f"{base}_USDT"
+    ct = get_json("https://api.gateio.ws/api/v4/futures/usdt/contracts/" + name)
+    if not ct:
+        return None
+    mult = to_float(ct.get("quanto_multiplier")) or 1.0
+    lev = to_float(ct.get("leverage_max"))
+    mark = to_float(ct.get("mark_price"))
+    ob = get_json("https://api.gateio.ws/api/v4/futures/usdt/order_book",
+                  {"contract": name, "limit": IMPACT_KADEME})
+    if not ob:
+        return None
+    def cev(side):
+        out = []
+        for it in (ob.get(side) or [])[:IMPACT_KADEME]:
+            try:
+                p = float(it.get("p") if isinstance(it, dict) else it[0])
+                s = to_float(it.get("s") if isinstance(it, dict) else it[1])
+                if p > 0 and s > 0:
+                    out.append([p, s * mult])   # kontrat -> coin
+            except Exception:
+                continue
+        return out
+    return {"bids": cev("bids"), "asks": cev("asks"), "mark": mark,
+            "max_leverage": lev, "borsa_sembolu": base}
+
+
+def _book_hyperliquid(base, _):
+    # HL carpanli sembol kullanir (kPEPE). Once universe'den gercek adi bul.
+    try:
+        r = requests.post("https://api.hyperliquid.xyz/info",
+                          json={"type": "metaAndAssetCtxs"}, headers=HEADERS,
+                          timeout=REQUEST_TIMEOUT)
+        data = r.json()
+    except Exception:
+        return None
+    if not (isinstance(data, list) and len(data) >= 2):
+        return None
+    universe, ctxs = data[0].get("universe", []), data[1]
+    hl_ad = lev = mark = None
+    for i, u in enumerate(universe):
+        ad = u.get("name")
+        if ad == base or temel_sembol(ad) == base:
+            hl_ad = ad
+            lev = to_float(u.get("maxLeverage"))
+            if i < len(ctxs):
+                mark = to_float(ctxs[i].get("markPx")) or to_float(ctxs[i].get("oraclePx"))
+            break
+    if not hl_ad:
+        return None
+    try:
+        rb = requests.post("https://api.hyperliquid.xyz/info",
+                           json={"type": "l2Book", "coin": hl_ad}, headers=HEADERS,
+                           timeout=REQUEST_TIMEOUT)
+        lv = rb.json().get("levels", [])
+    except Exception:
+        return None
+    if len(lv) != 2:
+        return None
+    return {"bids": _kirp(lv[0]), "asks": _kirp(lv[1]), "mark": mark,
+            "max_leverage": lev, "borsa_sembolu": hl_ad}
+
+
+def _book_mexc(base, _):
+    sym = f"{base}_USDT"
+    det = get_json(f"https://contract.mexc.com/api/v1/contract/detail?symbol={sym}")
+    cs = lev = None
+    d = (det or {}).get("data")
+    if isinstance(d, list) and d:
+        d = d[0]
+    if isinstance(d, dict):
+        cs = to_float(d.get("contractSize")) or 1.0
+        lev = to_float(d.get("maxLeverage"))
+    if not cs:
+        return None
+    ob = get_json(f"https://contract.mexc.com/api/v1/contract/depth/{sym}",
+                  {"limit": IMPACT_KADEME})
+    if not ob or not ob.get("data"):
+        return None
+    d0 = ob["data"]
+    tk = get_json(f"https://contract.mexc.com/api/v1/contract/ticker?symbol={sym}")
+    td = (tk or {}).get("data")
+    if isinstance(td, list) and td:
+        td = td[0]
+    mark = to_float((td or {}).get("fairPrice")) if isinstance(td, dict) else None
+    bids = [[float(x[0]), to_float(x[1]) * cs] for x in (d0.get("bids") or [])[:IMPACT_KADEME]]
+    asks = [[float(x[0]), to_float(x[1]) * cs] for x in (d0.get("asks") or [])[:IMPACT_KADEME]]
+    return {"bids": bids, "asks": asks, "mark": mark, "max_leverage": lev,
+            "borsa_sembolu": base}
+
+
+IMPACT_FN = {
+    "Binance": _book_binance, "Bybit": _book_bybit, "OKX": _book_okx,
+    "Bitget": _book_bitget, "Gate": _book_gate,
+    "Hyperliquid": _book_hyperliquid, "MEXC": _book_mexc,
+}
+
+
+def _manuel_kaldirac():
+    """manuel-kaldirac.csv -> {VARLIK: kaldirac}. Binance API'de vermedigi icin."""
+    out = {}
+    try:
+        import csv as _csv
+        with open("manuel-kaldirac.csv", encoding="utf-8-sig") as f:
+            for row in _csv.DictReader(f):
+                v = (row.get("varlik") or "").strip().upper()
+                k = (row.get("max_kaldirac") or "").strip()
+                if v and k:
+                    try:
+                        out[v] = float(k)
+                    except ValueError:
+                        pass
+    except Exception:
+        pass
+    return out
+
+
+def run_impact(which_exchanges=None, outfile="impact.json"):
+    """CMC ilk IMPACT_TOP_N pair icin impact bid/ask hesaplar ve defteri saklar."""
+    if which_exchanges is None:
+        which_exchanges = ALL_EXCHANGES
+
+    def load(p):
+        import os as _os
+        for yol in (p, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), p)):
+            try:
+                with open(yol, encoding="utf-8") as f:
+                    return json.load(f)
+            except FileNotFoundError:
+                continue
+            except Exception:
+                return None
+        return None
+
+    cmc = load("cmc.json")
+    if cmc and cmc.get("coins"):
+        coins = sorted(cmc["coins"], key=lambda c: c.get("rank") or 9999)[:IMPACT_TOP_N]
+    else:
+        print("[IMPACT] cmc.json yok -> liste dogrudan CMC'den cekiliyor...")
+        coins = fetch_cmc(IMPACT_TOP_N)
+    if not coins:
+        print("[IMPACT] ! Pair listesi olusturulamadi.")
+        return None
+
+    kaldirac_yedek = _manuel_kaldirac()
+    if kaldirac_yedek:
+        print(f"[IMPACT] manuel-kaldirac.csv'den {len(kaldirac_yedek)} kaldirac okundu (Binance icin).")
+
+    varliklar = []
+    for c in coins:
+        base = c["symbol"]
+        kayit = {"symbol": base, "name": c.get("name", ""), "rank": c.get("rank"),
+                 "exchanges": {}}
+        for exch in which_exchanges:
+            fn = IMPACT_FN.get(exch)
+            if not fn:
+                continue
+            try:
+                b = fn(base, kaldirac_yedek)
+            except Exception as e:
+                print(f"    ! {exch} {base}: {e}")
+                b = None
+            if not b or not b.get("bids") or not b.get("asks"):
+                continue
+            lev = b.get("max_leverage")
+            notional = IMPACT_TABAN_USDT * lev if lev else None
+            kayit_ex = {
+                "borsa_sembolu": b.get("borsa_sembolu"),
+                "mark": b.get("mark"),
+                "max_leverage": lev,
+                "impact_notional": notional,
+                "kademe_bid": b["bids"],
+                "kademe_ask": b["asks"],
+            }
+            if notional:
+                pib, kb, yb = impact_fiyat(b["bids"], notional)
+                pia, ka, ya = impact_fiyat(b["asks"], notional)
+                kayit_ex.update({
+                    "impact_bid": pib, "impact_ask": pia,
+                    "kullanilan_kademe_bid": kb, "kullanilan_kademe_ask": ka,
+                    "defter_yetersiz": bool(yb or ya),
+                })
+                mark = b.get("mark")
+                if mark and pib and pia:
+                    ip = (max(0.0, pib - mark) - max(0.0, mark - pia)) / mark
+                    kayit_ex["premium_index"] = ip
+            kayit["exchanges"][exch] = kayit_ex
+        if kayit["exchanges"]:
+            varliklar.append(kayit)
+        print(f"  {base}: {len(kayit['exchanges'])} borsa")
+        time.sleep(0.05)
+
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kapsam": f"CMC ilk {IMPACT_TOP_N} pair · ilk {IMPACT_KADEME} kademe",
+        "impact_kural": f"tutar = {IMPACT_TABAN_USDT:.0f} USDT x max kaldirac (OKX tanimi)",
+        "exchanges": list(which_exchanges),
+        "assets": varliklar,
+    }
+    with open(outfile, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"[IMPACT] {outfile} yazildi ({len(varliklar)} varlik).")
+    return payload
+
+
+def merge_impact():
+    """impact_github.json + impact_local.json -> impact.json (hesaplayicinin okudugu dosya)."""
+    def load(p):
+        try:
+            with open(p, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return None
+    g, l = load("impact_github.json"), load("impact_local.json")
+    if not g and not l:
+        print("  ! impact dosyasi bulunamadi.")
+        return None
+    birlesik, tarihler = {}, {}
+    for src in (g, l):
+        if not src:
+            continue
+        gun = (src.get("generated_at") or "")[:19]
+        for a in src.get("assets", []):
+            rec = birlesik.setdefault(a["symbol"], {
+                "symbol": a["symbol"], "name": a.get("name", ""),
+                "rank": a.get("rank"), "exchanges": {}})
+            for borsa, v in (a.get("exchanges") or {}).items():
+                rec["exchanges"][borsa] = v
+                tarihler[borsa] = gun
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "kapsam": f"CMC ilk {IMPACT_TOP_N} pair · ilk {IMPACT_KADEME} kademe",
+        "impact_kural": f"tutar = {IMPACT_TABAN_USDT:.0f} USDT x max kaldirac (OKX tanimi)",
+        "borsa_tarihleri": tarihler,
+        "assets": sorted(birlesik.values(), key=lambda a: a.get("rank") or 9999),
+    }
+    with open("impact.json", "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"[IMPACT] impact.json yazildi ({len(birlesik)} varlik, {len(tarihler)} borsa).")
+    return payload
+
+
+# ============================================================
+#  INDEX DOGRULAMA
+#  Borsanin YAYINLADIGI index fiyati ile, ayni anda cektigimiz
+#  bilesen fiyat ve agirliklarindan HESAPLADIGIMIZ index'i karsilastirir.
+#  Aradaki fark formulu dogru anlayip anlamadigimizi gosterir.
+#
+#  Sadece Binance ve OKX: ikisi de bilesen agirligini VE fiyatini
+#  ayni endpoint'te yayinliyor, bu yuzden tam dogrulama mumkun.
+#
+#  Excel akisina dokunmaz; kendi arsivine yazar.
+# ============================================================
+
+IDX_TOP_N = 50          # kac pair (cmc.json'dan)
+IDX_TESHIS = {"Binance": False, "OKX": False}   # ilk kaydin ham alanlari bir kez basilir
+
+
+def _sayi(x):
+    try:
+        v = float(x)
+        return v if v == v else None      # NaN eleme
+    except Exception:
+        return None
+
+
+def _alan(d, adlar):
+    """Sozlukten verilen aday alan adlarindan ilk dolu olani doner."""
+    for a in adlar:
+        if a in d:
+            v = _sayi(d[a])
+            if v is not None:
+                return v
+    return None
+
+
+def _idx_binance(base):
+    """Doner: (yayinlanan_index, [(kaynak, agirlik, fiyat), ...]) ya da None."""
+    sym = f"{base}USDT"
+    pm = get_json("https://fapi.binance.com/fapi/v1/premiumIndex", {"symbol": sym})
+    yayin = _sayi((pm or {}).get("indexPrice"))
+    cons = get_json("https://fapi.binance.com/fapi/v1/constituents", {"symbol": sym})
+    if not cons or "constituents" not in cons:
+        return yayin, []
+    liste = cons["constituents"]
+    if liste and not IDX_TESHIS["Binance"]:
+        print(f"    [TESHIS] Binance bilesen alanlari: {list(liste[0].keys())}")
+        print(f"    [TESHIS] ornek kayit: {liste[0]}")
+        IDX_TESHIS["Binance"] = True
+    parcalar = []
+    for c in liste:
+        if not isinstance(c, dict):
+            continue
+        ad = c.get("exchange") or c.get("exch")
+        w = _alan(c, ["weight", "wgt", "w"])
+        p = _alan(c, ["price", "px", "prpx", "cnvPx", "prePx"])
+        if ad and w is not None and p is not None:
+            parcalar.append((str(ad), w, p))
+    return yayin, parcalar
+
+
+def _idx_okx(base):
+    idxId = f"{base}-USDT"
+    tk = get_json("https://www.okx.com/api/v5/market/index-tickers", {"instId": idxId})
+    yayin = None
+    if tk and tk.get("data"):
+        yayin = _alan(tk["data"][0], ["idxPx", "px", "last"])
+    ic = get_json("https://www.okx.com/api/v5/market/index-components", {"index": idxId})
+    if not ic or not ic.get("data"):
+        return yayin, []
+    d = ic["data"]
+    liste = d.get("components") if isinstance(d, dict) else None
+    if not liste:
+        return yayin, []
+    if liste and not IDX_TESHIS["OKX"]:
+        print(f"    [TESHIS] OKX bilesen alanlari: {list(liste[0].keys())}")
+        print(f"    [TESHIS] ornek kayit: {liste[0]}")
+        if isinstance(d, dict):
+            print(f"    [TESHIS] OKX ust alanlar: {[k for k in d.keys() if k != 'components']}")
+        IDX_TESHIS["OKX"] = True
+    parcalar = []
+    for c in liste:
+        if not isinstance(c, dict):
+            continue
+        ad = c.get("exch") or c.get("exchange")
+        w = _alan(c, ["wgt", "weight", "w"])
+        p = _alan(c, ["prpx", "px", "cnvPx", "prePx", "price"])
+        if ad and w is not None and p is not None:
+            parcalar.append((str(ad), w, p))
+    return yayin, parcalar
+
+
+IDX_FN = {"Binance": _idx_binance, "OKX": _idx_okx}
+
+
+def run_index_dogrula(which_exchanges=None, outfile=None):
+    """Yayinlanan ve hesaplanan index'i karsilastirir, sonucu arsive yazar."""
+    if which_exchanges is None:
+        which_exchanges = ["Binance", "OKX"]
+
+    def load(p):
+        import os as _os
+        for yol in (p, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), p)):
+            try:
+                with open(yol, encoding="utf-8") as f:
+                    return json.load(f)
+            except FileNotFoundError:
+                continue
+            except Exception:
+                return None
+        return None
+
+    cmc = load("cmc.json")
+    if cmc and cmc.get("coins"):
+        coins = sorted(cmc["coins"], key=lambda c: c.get("rank") or 9999)[:IDX_TOP_N]
+    else:
+        print("[INDEX] cmc.json yok -> CMC'den cekiliyor...")
+        coins = fetch_cmc(IDX_TOP_N)
+    if not coins:
+        print("[INDEX] ! Pair listesi olusturulamadi.")
+        return None
+
+    an = datetime.now(timezone.utc)
+    kayitlar = []
+    for c in coins:
+        base = c["symbol"]
+        for exch in which_exchanges:
+            fn = IDX_FN.get(exch)
+            if not fn:
+                continue
+            try:
+                yayin, parcalar = fn(base)
+            except Exception as e:
+                print(f"    ! {exch} {base}: {e}")
+                continue
+            if yayin is None and not parcalar:
+                continue
+
+            # Agirliklar yuzde mi orana mi? Toplam 1 civariysa oran, 100 civariysa yuzde.
+            top_w = sum(w for _, w, _ in parcalar)
+            if top_w <= 0:
+                hesap = None
+            elif abs(top_w - 1.0) < 0.05:
+                hesap = sum(w * p for _, w, p in parcalar)
+            elif abs(top_w - 100.0) < 5:
+                hesap = sum((w / 100.0) * p for _, w, p in parcalar)
+            else:
+                # normalize et
+                hesap = sum(w * p for _, w, p in parcalar) / top_w
+
+            fark = (hesap - yayin) if (hesap is not None and yayin is not None) else None
+            fark_yuzde = (fark / yayin * 100) if (fark is not None and yayin) else None
+
+            kayitlar.append({
+                "zaman_utc": an.isoformat(),
+                "borsa": exch,
+                "symbol": base,
+                "rank": c.get("rank"),
+                "yayinlanan": yayin,
+                "hesaplanan": hesap,
+                "fark": fark,
+                "fark_yuzde": fark_yuzde,
+                "kaynak_sayisi": len(parcalar),
+                "agirlik_toplami": top_w,
+                "kirilim": [{"kaynak": k, "agirlik": w, "fiyat": p} for k, w, p in parcalar],
+            })
+        time.sleep(0.05)
+
+    payload = {
+        "generated_at": an.isoformat(),
+        "kapsam": f"CMC ilk {IDX_TOP_N} pair",
+        "yontem": "hesaplanan = toplam(agirlik x bilesen fiyati); yayinlanan = borsanin index endpoint'i",
+        "exchanges": list(which_exchanges),
+        "kayitlar": kayitlar,
+    }
+
+    # arsive zaman damgali yaz (gunde birden fazla foto cekilebilir)
+    ad = an.strftime("%Y-%m-%d_%H%M")
+    yol = os.path.join("arsiv", "index_dogrula", f"{ad}.json")
+    os.makedirs(os.path.dirname(yol), exist_ok=True)
+    with open(yol, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    if outfile:
+        with open(outfile, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    # ozet
+    ok = [k for k in kayitlar if k["fark_yuzde"] is not None and abs(k["fark_yuzde"]) < 0.01]
+    sapan = [k for k in kayitlar if k["fark_yuzde"] is not None and abs(k["fark_yuzde"]) >= 0.01]
+    bos = [k for k in kayitlar if k["fark_yuzde"] is None]
+    print(f"[INDEX] {yol} yazildi.")
+    print(f"  toplam kayit : {len(kayitlar)}")
+    print(f"  tutuyor      : {len(ok)}  (fark < %0,01)")
+    print(f"  sapiyor      : {len(sapan)}")
+    print(f"  hesaplanamadi: {len(bos)}")
+    for k in sapan[:5]:
+        print(f"    ! {k['borsa']} {k['symbol']}: yayin={k['yayinlanan']} "
+              f"hesap={k['hesaplanan']} fark=%{k['fark_yuzde']:.4f}")
+    return payload
+
+
 def main():
     mode = sys.argv[1] if len(sys.argv) > 1 else "all"
     print("=" * 56)
@@ -1916,6 +2501,19 @@ def main():
         # Hafta sonu bosluklarini doldurmak icin: Binance+Bybit son 7 gun
         # gunluk mum + OI gecmisi (kendi API'lerinden).
         run_hacim_gecmis()
+    elif mode == "index_dogrula":
+        # Yayinlanan index ile hesaplanan index'i karsilastirir (Binance + OKX)
+        run_index_dogrula()
+    elif mode == "impact":
+        # Tum borsalar (senin bilgisayarinda, hepsine erisim var)
+        run_impact()
+    elif mode == "impact_github":
+        run_impact(which_exchanges=["OKX", "Bitget", "Gate", "Hyperliquid", "MEXC"],
+                   outfile="impact_github.json")
+    elif mode == "impact_local":
+        run_impact(which_exchanges=["Binance", "Bybit"], outfile="impact_local.json")
+    elif mode == "impact_birlestir":
+        merge_impact()
     elif mode == "arsivle_gecmis":
         # Geriye donuk kayitlari arsive isler (sadece eksik gunleri doldurur).
         arsivle_gecmis()

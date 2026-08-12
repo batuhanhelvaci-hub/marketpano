@@ -675,22 +675,40 @@ def sheet_kontrat_varlik(wb, kayit, tarihler, manuel_kaldirac, btcturk):
             ws.cell(mr, 1).border = BORDER
             ws.cell(mr, 1).fill = PatternFill("solid", fgColor=BORSA_DOLGU.get(borsa, "FFFFFF"))
             for j, ad in enumerate(kaynaklar):
+                if ad not in ag:
+                    # o borsa bu kaynagi HIC kullanmiyor -> bos
+                    c_ = ws.cell(mr, 2 + j)
+                    c_.border = BORDER
+                    continue
                 deger = ag.get(ad)
-                c_ = ws.cell(mr, 2 + j, deger)
-                c_.font = FONT; c_.border = BORDER
-                c_.number_format = '0.00'
-            # Toplam: yalnizca sayisal agirliklar toplanir
+                if deger is None:
+                    # kaynak olarak kullaniyor AMA agirligi yayinlamiyor
+                    c_ = ws.cell(mr, 2 + j, "K")
+                    c_.font = Font(name="Arial", size=9, bold=True, color="35496B")
+                    c_.alignment = Alignment(horizontal="center")
+                    c_.fill = PatternFill("solid", fgColor="EEF3FB")
+                else:
+                    c_ = ws.cell(mr, 2 + j, deger)
+                    c_.font = FONT
+                    c_.number_format = '0.00'
+                c_.border = BORDER
             sayisal = [v for v in ag.values() if isinstance(v, (int, float))]
-            tt = ws.cell(mr, 2 + len(kaynaklar), sum(sayisal) if sayisal else None)
+            if sayisal:
+                tt = ws.cell(mr, 2 + len(kaynaklar), sum(sayisal))
+                tt.number_format = '0.00'
+                tt.fill = PatternFill("solid",
+                                      fgColor="FBEFEF" if abs(sum(sayisal) - 100) > 1 else "E8F6EE")
+            elif ag:
+                tt = ws.cell(mr, 2 + len(kaynaklar), f"{len(ag)} kaynak")
+                tt.fill = PatternFill("solid", fgColor="EEF3FB")
+            else:
+                tt = ws.cell(mr, 2 + len(kaynaklar))
             tt.font = FONT_B; tt.border = BORDER
-            tt.number_format = '0.00'
-            if sayisal and abs(sum(sayisal) - 100) > 1:
-                tt.fill = PatternFill("solid", fgColor="FBEFEF")
-            elif sayisal:
-                tt.fill = PatternFill("solid", fgColor="E8F6EE")
             mr += 1
-        ws.cell(mr, 1, "Bos hucre: o borsa agirlik yayinlamiyor "
-                       "(Bybit, Bitget) ya da yalnizca kaynak adi veriyor (Gate, MEXC).").font = \
+        ws.cell(mr, 1, "Sayi = yayinlanan agirlik %.   K = o borsa bu kaynagi kullaniyor "
+                       "ama agirligini yayinlamiyor (Gate, MEXC).   "
+                       "Bos = o kaynak hic kullanilmiyor.   "
+                       "Bybit ve Bitget kaynak listesini de yayinlamaz.").font = \
             Font(name="Arial", size=9, italic=True, color="5B6B85")
         mr += 1
 
@@ -760,6 +778,87 @@ def sheet_analiz(wb, varliklar, tarihler, manuel_kaldirac, btcturk):
 
 
 # ---------------- notlar ----------------
+
+
+IDX_SUTUNLAR = ["Tarih", "Saat (UTC)", "Borsa", "Varlik", "Yayinlanan Index",
+                "Hesaplanan Index", "Fark", "Fark %", "Kaynak", "Agirlik Toplami",
+                "Degerlendirme", "Kirilim (kaynak: agirlik @ fiyat)"]
+
+
+def index_dogrula_oku():
+    """arsiv/index_dogrula/*.json -> tum kayitlar, en yeni fotograf once."""
+    fotolar = []
+    for p_ in sorted(glob.glob("arsiv/index_dogrula/*.json"), reverse=True):
+        d = load_json(p_)
+        if d and d.get("kayitlar"):
+            fotolar.append(d)
+    if fotolar:
+        return fotolar
+    d = load_json("index_dogrula.json")
+    return [d] if d and d.get("kayitlar") else []
+
+
+def sheet_index_dogrula(wb, fotolar):
+    """Borsanin yayinladigi index ile bizim hesapladigimizi karsilastiran sayfa."""
+    ws = wb.create_sheet(title="Index Dogrulama")
+    ws.sheet_properties.tabColor = "0A9D57"
+    for c, h in enumerate(IDX_SUTUNLAR, 1):
+        cell = ws.cell(1, c, h)
+        cell.fill = HEAD_FILL
+        cell.font = HEAD_FONT
+        cell.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        cell.border = BORDER
+    ws.freeze_panes = "A2"
+
+    r = 2
+    for foto in fotolar:
+        for k in foto.get("kayitlar", []):
+            z = str(k.get("zaman_utc") or "")
+            tarih = z[:10]
+            saat = z[11:16]
+            yay = k.get("yayinlanan")
+            hes = k.get("hesaplanan")
+            fark = k.get("fark")
+            fy = k.get("fark_yuzde")
+
+            if fy is None:
+                deg, renk = "hesaplanamadi", "F2F4F8"
+            elif abs(fy) < 0.01:
+                deg, renk = "tutuyor", "E8F6EE"
+            elif abs(fy) < 0.05:
+                deg, renk = "kucuk sapma", "FDF4E3"
+            else:
+                deg, renk = "SAPMA VAR", "FBEFEF"
+
+            kir = " · ".join(
+                f"{c.get('kaynak')}: {c.get('agirlik')} @ {c.get('fiyat')}"
+                for c in (k.get("kirilim") or [])
+            )
+
+            vals = [tarih, saat, k.get("borsa"), k.get("symbol"), yay, hes, fark, fy,
+                    k.get("kaynak_sayisi"), k.get("agirlik_toplami"), deg, kir]
+            for i, v in enumerate(vals, 1):
+                cell = ws.cell(r, i, v)
+                cell.font = FONT
+                cell.border = BORDER
+            ws.cell(r, 3).font = FONT_B
+            ws.cell(r, 4).font = FONT_B
+            for col in (5, 6, 7):
+                ws.cell(r, col).number_format = '#,##0.########'
+            ws.cell(r, 8).number_format = '0.00000"%"'
+            ws.cell(r, 10).number_format = '0.0000'
+            dolgu = PatternFill("solid", fgColor=renk)
+            for col in (7, 8, 11):
+                ws.cell(r, col).fill = dolgu
+            r += 1
+
+    genislik = [11, 10, 12, 10, 17, 17, 13, 12, 8, 14, 15, 70]
+    for c, w in enumerate(genislik, 1):
+        ws.column_dimensions[get_column_letter(c)].width = w
+    if r > 2:
+        ws.auto_filter.ref = f"A1:{get_column_letter(len(IDX_SUTUNLAR))}{r - 1}"
+    return r - 2
+
 
 def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_funding, btcturk):
     ws = wb.create_sheet(title="Notlar")
@@ -875,11 +974,34 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
          "%98 / %102'sine kısılır. 2 kaynak kalırsa anormal olan elenir, 1 kaynak kalırsa "
          "o fiyat doğrudan kullanılır."),
         ("Bitget", "Public dokümanda net kural bulunamadı."),
+        ("MEXC",
+         "Formül: Index = Σ(Ağırlık% × Spot Fiyat). Ağırlık% = o borsanın ağırlığı ÷ toplam ağırlık. "
+         "Bileşenler ve ağırlıklar periyodik güncellenir; MEXC ağırlık DEĞERLERİNİ yayınlamaz, "
+         "yalnızca kaynak borsa listesini API'de verir (indexOrigin). "
+         "Koruma: medyandan %1 sapan kaynak dışlanır (üç kaynaktan az kalırsa uygulanmaz); "
+         "verisi geciken ya da sapan borsa çıkarılır, düzelince geri alınır. "
+         "Bu %1 eşiği yedi borsa içindeki en sıkı eşiktir."),
         ("Hyperliquid", "Ağırlıklı medyan kullanır; sapma kısıtlaması yerine medyanın kendisi koruma sağlar."),
         ("ÖNEMLİ AYRIM",
          "Bu kuralların hepsi FİYAT SAPMASI ile ilgilidir. Hiçbir borsada 'bir kaynağın ağırlığı "
          "şu yüzdenin altına düşemez' şeklinde bir AĞIRLIK TABANI kuralı bulunmadı. Ağırlıklar "
          "hacme göre serbestçe değişir; kurallar sadece sapan fiyatı kısar ya da kaynağı dışlar."),
+        ("", ""),
+        ("Index Doğrulama sayfası", ""),
+        ("Amaç",
+         "Borsanın yayınladığı index fiyatı ile, aynı anda çekilen bileşen ağırlık ve "
+         "fiyatlarından hesapladığımız index'i karşılaştırır. Fark, formülü doğru anlayıp "
+         "anlamadığımızı gösterir."),
+        ("Kapsam",
+         "Sadece Binance ve OKX. Bu ikisi bileşen ağırlığını VE fiyatını aynı endpoint'te "
+         "yayınladığı için tam doğrulama mümkün. Gate ve MEXC yalnızca kaynak adı verir; "
+         "Bybit ve Bitget hiçbirini vermez."),
+        ("Hesaplama", "hesaplanan = toplam(ağırlık × bileşen fiyatı)"),
+        ("Değerlendirme eşikleri",
+         "fark < %0,01 → tutuyor · %0,01–%0,05 → küçük sapma · > %0,05 → sapma var"),
+        ("Kalan farkın kaynağı",
+         "Yayınlanan index ile bileşen fiyatları iki ayrı çağrıdan gelir; aradaki milisaniyelik "
+         "gecikme birkaç dolarlık fark üretebilir. Binlerce dolarlık fark formül hatasına işaret eder."),
         ("", ""),
         ("Default funding (faiz bileşeni, borsa başına sabit)", ""),
     ]
@@ -940,6 +1062,8 @@ def main():
         sheet_kontrat_varlik(wb, a, kontrat_tarihler, manuel_kaldirac, btcturk)
     analiz_satir = sheet_analiz(wb, kontrat_varliklar, kontrat_tarihler,
                                 manuel_kaldirac, btcturk)
+    idx_fotolar = index_dogrula_oku()
+    idx_satir = sheet_index_dogrula(wb, idx_fotolar) if idx_fotolar else 0
     sheet_notlar(wb, len(gunler), kontrat_tarihler, manuel_kaldirac,
                  manuel_funding, btcturk)
 
@@ -950,6 +1074,7 @@ def main():
     print(f"  Total          : {total_adet} varlik")
     print(f"  Varlik sheet'i : {len(kontrat_varliklar)}")
     print(f"  Analiz satir   : {analiz_satir}")
+    print(f"  Index dogrulama: {idx_satir} satir ({len(idx_fotolar)} fotograf)")
     print(f"  Hacim arsivi   : {len(gunler)} gun | cmc {len(cmc)} gun")
     print(f"  Kontrat tarihi : {kontrat_tarihler or '-'}")
     return 0
