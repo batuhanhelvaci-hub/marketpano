@@ -26,7 +26,7 @@ jobs:
       - name: Paketleri kur
         run: pip install requests openpyxl
       - name: Index dogrulama
-        run: python collect.py index_dogrula
+        run: python collect.py index_dogrula_github
       - name: Excel uret
         run: python build_excel.py
       - name: Kaydet
