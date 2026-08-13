@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T09:58:47.053565+00:00",
+  "generated_at": "2026-08-13T09:47:13.625138+00:00",
   "kapsam": "Yerel Binance+Bybit",
   "exchanges": [
     "Binance",
@@ -10,15 +10,15 @@
       "symbol": "BTC",
       "name": "Bitcoin",
       "rank": 1,
-      "market_cap_usd": 1284524335628.3445,
+      "market_cap_usd": 1277129381470.5837,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 7121866385.71,
-          "open_interest_usd": 6927692330.963901
+          "perp_volume_usd": 7685518995.82,
+          "open_interest_usd": 7023939583.6868
         },
         "Bybit": {
-          "perp_volume_usd": 3411881328.3205,
-          "open_interest_usd": 3771289059.91
+          "perp_volume_usd": 3437323715.4405,
+          "open_interest_usd": 3844112272.29
         }
       }
     },
@@ -26,15 +26,15 @@
       "symbol": "ETH",
       "name": "Ethereum",
       "rank": 2,
-      "market_cap_usd": 229528754206.6153,
+      "market_cap_usd": 227596759160.56223,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 5315457960.03,
-          "open_interest_usd": 4395167142.0525
+          "perp_volume_usd": 5835378374.77,
+          "open_interest_usd": 4451986120.689899
         },
         "Bybit": {
-          "perp_volume_usd": 1801511886.2589,
-          "open_interest_usd": 1421937167.55
+          "perp_volume_usd": 1883590531.8757,
+          "open_interest_usd": 1385809290.47
         }
       }
     },
@@ -42,22 +42,22 @@
       "symbol": "USDT",
       "name": "Tether USDt",
       "rank": 3,
-      "market_cap_usd": 183001443710.73148,
+      "market_cap_usd": 182995522058.03586,
       "exchanges": {}
     },
     {
       "symbol": "BNB",
       "name": "BNB",
       "rank": 4,
-      "market_cap_usd": 81573180686.67119,
+      "market_cap_usd": 81371951040.79411,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 341777383.882,
-          "open_interest_usd": 379862078.52119994
+          "perp_volume_usd": 182282832.184,
+          "open_interest_usd": 377806535.8788
         },
         "Bybit": {
-          "perp_volume_usd": 41476910.25,
-          "open_interest_usd": 101822358.94
+          "perp_volume_usd": 21199693.537,
+          "open_interest_usd": 99261074.51
         }
       }
     },
@@ -65,15 +65,15 @@
       "symbol": "USDC",
       "name": "USDC",
       "rank": 5,
-      "market_cap_usd": 72110160412.68689,
+      "market_cap_usd": 72028727731.72672,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 2328814.004914,
-          "open_interest_usd": 5659143.765478
+          "perp_volume_usd": 1657618.161031,
+          "open_interest_usd": 5917826.687264
         },
         "Bybit": {
-          "perp_volume_usd": 381151.0218,
-          "open_interest_usd": 10277440.33
+          "perp_volume_usd": 481552.1249,
+          "open_interest_usd": 10200775.11
         }
       }
     },
@@ -81,15 +81,15 @@
       "symbol": "XRP",
       "name": "XRP",
       "rank": 6,
-      "market_cap_usd": 64125446295.519646,
+      "market_cap_usd": 63305269476.00566,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 592919791.4003,
-          "open_interest_usd": 387647153.3157601
+          "perp_volume_usd": 357089702.5893,
+          "open_interest_usd": 381900347.14293
         },
         "Bybit": {
-          "perp_volume_usd": 280154958.86,
-          "open_interest_usd": 240991916.1
+          "perp_volume_usd": 180365395.713,
+          "open_interest_usd": 241363786.08
         }
       }
     },
@@ -97,15 +97,15 @@
       "symbol": "SOL",
       "name": "Solana",
       "rank": 7,
-      "market_cap_usd": 44651931180.631294,
+      "market_cap_usd": 44224746219.598274,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1132753537.4792,
-          "open_interest_usd": 663408588.1637
+          "perp_volume_usd": 992275128.5951,
+          "open_interest_usd": 644084753.8414
         },
         "Bybit": {
-          "perp_volume_usd": 429103943.251,
-          "open_interest_usd": 499870666.68
+          "perp_volume_usd": 398401050.834,
+          "open_interest_usd": 484311325.2
         }
       }
     },
@@ -113,15 +113,15 @@
       "symbol": "TRX",
       "name": "TRON",
       "rank": 8,
-      "market_cap_usd": 31879170125.309498,
+      "market_cap_usd": 31806200364.411568,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 56072009.20656,
-          "open_interest_usd": 93676338.64995001
+          "perp_volume_usd": 35968344.81748,
+          "open_interest_usd": 93903860.25384
         },
         "Bybit": {
-          "perp_volume_usd": 10819588.5005,
-          "open_interest_usd": 48006103.83
+          "perp_volume_usd": 7743104.7448,
+          "open_interest_usd": 47699510.59
         }
       }
     },
@@ -129,15 +129,15 @@
       "symbol": "HYPE",
       "name": "Hyperliquid",
       "rank": 9,
-      "market_cap_usd": 13974429523.54459,
+      "market_cap_usd": 14459599170.734335,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 217088009.91614,
-          "open_interest_usd": 261636577.97784
+          "perp_volume_usd": 352299708.76361,
+          "open_interest_usd": 279915768.39681
         },
         "Bybit": {
-          "perp_volume_usd": 97764619.9917,
-          "open_interest_usd": 214234578.1
+          "perp_volume_usd": 134770913.9959,
+          "open_interest_usd": 229685304.96
         }
       }
     },
@@ -145,15 +145,15 @@
       "symbol": "DOGE",
       "name": "Dogecoin",
       "rank": 10,
-      "market_cap_usd": 12306767839.399912,
+      "market_cap_usd": 12042990395.427904,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 362385130.74065,
-          "open_interest_usd": 223919012.58378002
+          "perp_volume_usd": 348560601.3446,
+          "open_interest_usd": 208908116.7131
         },
         "Bybit": {
-          "perp_volume_usd": 100094914.4303,
-          "open_interest_usd": 102271133.91
+          "perp_volume_usd": 122193104.2323,
+          "open_interest_usd": 99400403.79
         }
       }
     },
@@ -161,22 +161,22 @@
       "symbol": "LEO",
       "name": "UNUS SED LEO",
       "rank": 11,
-      "market_cap_usd": 8419245119.676347,
+      "market_cap_usd": 8643801584.564034,
       "exchanges": {}
     },
     {
       "symbol": "ZEC",
       "name": "Zcash",
       "rank": 12,
-      "market_cap_usd": 8051731101.360687,
+      "market_cap_usd": 8328280052.136729,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 414043902.2,
-          "open_interest_usd": 229624852.0601
+          "perp_volume_usd": 443149204.51,
+          "open_interest_usd": 238186839.3705
         },
         "Bybit": {
-          "perp_volume_usd": 95484730.3042,
-          "open_interest_usd": 68642765.29
+          "perp_volume_usd": 99756376.4928,
+          "open_interest_usd": 67335777.85
         }
       }
     },
@@ -184,15 +184,15 @@
       "symbol": "XMR",
       "name": "Monero",
       "rank": 13,
-      "market_cap_usd": 7498086252.175329,
+      "market_cap_usd": 7621380366.360391,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 35202158.12,
-          "open_interest_usd": 40268455.56437
+          "perp_volume_usd": 24553376.74,
+          "open_interest_usd": 40810484.286400005
         },
         "Bybit": {
-          "perp_volume_usd": 14852236.9306,
-          "open_interest_usd": 21587681.17
+          "perp_volume_usd": 10366176.7979,
+          "open_interest_usd": 21310025.56
         }
       }
     },
@@ -200,15 +200,15 @@
       "symbol": "ADA",
       "name": "Cardano",
       "rank": 14,
-      "market_cap_usd": 6832901795.658856,
+      "market_cap_usd": 6772809377.012991,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 106447810.2035,
-          "open_interest_usd": 94165628.3568
+          "perp_volume_usd": 101890405.4447,
+          "open_interest_usd": 91690984.602
         },
         "Bybit": {
-          "perp_volume_usd": 54542724.0017,
-          "open_interest_usd": 63572749.16
+          "perp_volume_usd": 47881398.9997,
+          "open_interest_usd": 57774327.32
         }
       }
     },
@@ -216,15 +216,15 @@
       "symbol": "LINK",
       "name": "Chainlink",
       "rank": 15,
-      "market_cap_usd": 6570418138.172271,
+      "market_cap_usd": 6510014460.520178,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 149546439.977,
-          "open_interest_usd": 96729931.61445001
+          "perp_volume_usd": 125641473.148,
+          "open_interest_usd": 95173761.73018
         },
         "Bybit": {
-          "perp_volume_usd": 44279249.316,
-          "open_interest_usd": 61932261.82
+          "perp_volume_usd": 34707766.6283,
+          "open_interest_usd": 61311638.48
         }
       }
     },
@@ -232,15 +232,15 @@
       "symbol": "XLM",
       "name": "Stellar",
       "rank": 16,
-      "market_cap_usd": 5565087513.433644,
+      "market_cap_usd": 5536935266.028808,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 32464478.51056,
-          "open_interest_usd": 33532840.5984
+          "perp_volume_usd": 32291250.55614,
+          "open_interest_usd": 33369407.5026
         },
         "Bybit": {
-          "perp_volume_usd": 8626209.2302,
-          "open_interest_usd": 29977667.41
+          "perp_volume_usd": 10598659.9846,
+          "open_interest_usd": 29621175.02
         }
       }
     },
@@ -248,22 +248,22 @@
       "symbol": "DAI",
       "name": "Dai",
       "rank": 17,
-      "market_cap_usd": 4568044943.863444,
+      "market_cap_usd": 4585895895.148228,
       "exchanges": {}
     },
     {
       "symbol": "BCH",
       "name": "Bitcoin Cash",
       "rank": 18,
-      "market_cap_usd": 4290899223.82679,
+      "market_cap_usd": 4313571909.689442,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 21865542.88,
-          "open_interest_usd": 60094056.472559996
+          "perp_volume_usd": 29814156.5,
+          "open_interest_usd": 62275723.9179
         },
         "Bybit": {
-          "perp_volume_usd": 3779066.345,
-          "open_interest_usd": 27184516.06
+          "perp_volume_usd": 4423611.814,
+          "open_interest_usd": 27602353.42
         }
       }
     },
@@ -271,11 +271,11 @@
       "symbol": "USD1",
       "name": "World Liberty Financial USD",
       "rank": 19,
-      "market_cap_usd": 4001873920.8116,
+      "market_cap_usd": 4001716235.2873516,
       "exchanges": {
         "Bybit": {
-          "perp_volume_usd": 731985.0682,
-          "open_interest_usd": 793201.97
+          "perp_volume_usd": 672272.7168,
+          "open_interest_usd": 750914.9
         }
       }
     },
@@ -283,11 +283,11 @@
       "symbol": "USDE",
       "name": "Ethena USDe",
       "rank": 20,
-      "market_cap_usd": 3948492845.7929235,
+      "market_cap_usd": 3960239453.8886466,
       "exchanges": {
         "Bybit": {
-          "perp_volume_usd": 20011.4572,
-          "open_interest_usd": 972059.73
+          "perp_volume_usd": 9269.0571,
+          "open_interest_usd": 968094.9
         }
       }
     },
@@ -295,15 +295,15 @@
       "symbol": "CC",
       "name": "Canton",
       "rank": 21,
-      "market_cap_usd": 3841471156.4819384,
+      "market_cap_usd": 3930965354.830391,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 7233468.52037,
-          "open_interest_usd": 7731805.967189999
+          "perp_volume_usd": 3519936.75402,
+          "open_interest_usd": 7834403.06656
         },
         "Bybit": {
-          "perp_volume_usd": 2499580.7426,
-          "open_interest_usd": 4932209.06
+          "perp_volume_usd": 1291834.7913,
+          "open_interest_usd": 4957080.07
         }
       }
     },
@@ -311,15 +311,15 @@
       "symbol": "GRAM",
       "name": "Gram (prev. Toncoin)",
       "rank": 22,
-      "market_cap_usd": 3708411712.095327,
+      "market_cap_usd": 3684543189.6020975,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 12642458.1876,
-          "open_interest_usd": 13441616.1507
+          "perp_volume_usd": 7048415.1642,
+          "open_interest_usd": 13369397.5478
         },
         "Bybit": {
-          "perp_volume_usd": 5705088.4913,
-          "open_interest_usd": 22482920.85
+          "perp_volume_usd": 3411444.0293,
+          "open_interest_usd": 22211132.07
         }
       }
     },
@@ -327,15 +327,15 @@
       "symbol": "LTC",
       "name": "Litecoin",
       "rank": 23,
-      "market_cap_usd": 3518411210.3138294,
+      "market_cap_usd": 3478403437.7449665,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 29757056.41,
-          "open_interest_usd": 49080201.62535
+          "perp_volume_usd": 32557941.35,
+          "open_interest_usd": 48236781.363479994
         },
         "Bybit": {
-          "perp_volume_usd": 7373402.358,
-          "open_interest_usd": 55157889.28
+          "perp_volume_usd": 10348243.528,
+          "open_interest_usd": 55369769.57
         }
       }
     },
@@ -343,22 +343,22 @@
       "symbol": "USDG",
       "name": "Global Dollar",
       "rank": 24,
-      "market_cap_usd": 3488780241.003662,
+      "market_cap_usd": 3470160006.4623914,
       "exchanges": {}
     },
     {
       "symbol": "HBAR",
       "name": "Hedera",
       "rank": 25,
-      "market_cap_usd": 2920108107.7778726,
+      "market_cap_usd": 2912549336.8724103,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 15656065.7358,
-          "open_interest_usd": 20838263.4581
+          "perp_volume_usd": 13012310.76014,
+          "open_interest_usd": 20614980.24102
         },
         "Bybit": {
-          "perp_volume_usd": 7583597.7475,
-          "open_interest_usd": 14240288.72
+          "perp_volume_usd": 4592776.3919,
+          "open_interest_usd": 14639277.77
         }
       }
     },
@@ -366,15 +366,15 @@
       "symbol": "SUI",
       "name": "Sui",
       "rank": 26,
-      "market_cap_usd": 2814867545.7072554,
+      "market_cap_usd": 2804606990.4774632,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 91864723.68968,
-          "open_interest_usd": 78295878.60296999
+          "perp_volume_usd": 88581051.20923,
+          "open_interest_usd": 78077734.93664001
         },
         "Bybit": {
-          "perp_volume_usd": 28981159.908,
-          "open_interest_usd": 46632374.3
+          "perp_volume_usd": 23522175.176,
+          "open_interest_usd": 47469472.63
         }
       }
     },
@@ -382,22 +382,22 @@
       "symbol": "PYUSD",
       "name": "PayPal USD",
       "rank": 27,
-      "market_cap_usd": 2802357919.2850223,
+      "market_cap_usd": 2799190135.759745,
       "exchanges": {}
     },
     {
       "symbol": "AVAX",
       "name": "Avalanche",
       "rank": 28,
-      "market_cap_usd": 2695786320.7936306,
+      "market_cap_usd": 2797762667.7710214,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 81791057.845,
-          "open_interest_usd": 47642286.905
+          "perp_volume_usd": 94194569.3,
+          "open_interest_usd": 49311344.682
         },
         "Bybit": {
-          "perp_volume_usd": 25841482.474,
-          "open_interest_usd": 32223167.7
+          "perp_volume_usd": 31166416.5767,
+          "open_interest_usd": 30873663.26
         }
       }
     },
@@ -405,15 +405,15 @@
       "symbol": "XAUT",
       "name": "Tether Gold",
       "rank": 29,
-      "market_cap_usd": 2690522888.507167,
+      "market_cap_usd": 2672523815.8328867,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 35103082.83,
-          "open_interest_usd": 40696394.631400004
+          "perp_volume_usd": 50637457.77,
+          "open_interest_usd": 36048981.89568
         },
         "Bybit": {
-          "perp_volume_usd": 32184488.5611,
-          "open_interest_usd": 151510634.28
+          "perp_volume_usd": 46980804.2045,
+          "open_interest_usd": 146904116.47
         }
       }
     },
@@ -421,50 +421,50 @@
       "symbol": "SHIB",
       "name": "Shiba Inu",
       "rank": 30,
-      "market_cap_usd": 2647633944.3429914,
+      "market_cap_usd": 2651964988.9765778,
       "exchanges": {}
     },
     {
       "symbol": "TAO",
       "name": "Bittensor",
       "rank": 31,
-      "market_cap_usd": 2290818962.899245,
+      "market_cap_usd": 2243067140.3198237,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 67923104.87,
-          "open_interest_usd": 60080228.01561
+          "perp_volume_usd": 57830858.61,
+          "open_interest_usd": 59754214.16132999
         },
         "Bybit": {
-          "perp_volume_usd": 25061887.4997,
-          "open_interest_usd": 34515168.25
-        }
-      }
-    },
-    {
-      "symbol": "CRO",
-      "name": "Cronos",
-      "rank": 32,
-      "market_cap_usd": 2222657649.164213,
-      "exchanges": {
-        "Bybit": {
-          "perp_volume_usd": 667479.7279,
-          "open_interest_usd": 2443228.02
+          "perp_volume_usd": 18770408.5287,
+          "open_interest_usd": 32822783.93
         }
       }
     },
     {
       "symbol": "UNI",
       "name": "Uniswap",
-      "rank": 33,
-      "market_cap_usd": 2205813317.39311,
+      "rank": 32,
+      "market_cap_usd": 2241623789.1359715,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 139734011.287,
-          "open_interest_usd": 65178219.531
+          "perp_volume_usd": 58862977.646,
+          "open_interest_usd": 66009611.712
         },
         "Bybit": {
-          "perp_volume_usd": 40322949.0175,
-          "open_interest_usd": 35793337.86
+          "perp_volume_usd": 17579976.4136,
+          "open_interest_usd": 37386333.06
+        }
+      }
+    },
+    {
+      "symbol": "CRO",
+      "name": "Cronos",
+      "rank": 33,
+      "market_cap_usd": 2219248998.0615807,
+      "exchanges": {
+        "Bybit": {
+          "perp_volume_usd": 386084.3065,
+          "open_interest_usd": 2397456.68
         }
       }
     },
@@ -472,15 +472,15 @@
       "symbol": "NEAR",
       "name": "NEAR Protocol",
       "rank": 34,
-      "market_cap_usd": 2158035478.551048,
+      "market_cap_usd": 2159822087.6118603,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 128071761.196,
-          "open_interest_usd": 72593791.375
+          "perp_volume_usd": 71678800.414,
+          "open_interest_usd": 72317994.064
         },
         "Bybit": {
-          "perp_volume_usd": 45495715.1789,
-          "open_interest_usd": 71940600.16
+          "perp_volume_usd": 28286579.094,
+          "open_interest_usd": 72141905.13
         }
       }
     },
@@ -488,11 +488,11 @@
       "symbol": "OKB",
       "name": "OKB",
       "rank": 35,
-      "market_cap_usd": 2007427309.1222293,
+      "market_cap_usd": 2133397451.3297684,
       "exchanges": {
         "Bybit": {
-          "perp_volume_usd": 393024.4233,
-          "open_interest_usd": 1654693.01
+          "perp_volume_usd": 937383.0817,
+          "open_interest_usd": 1756166.39
         }
       }
     },
@@ -500,15 +500,15 @@
       "symbol": "PAXG",
       "name": "PAX Gold",
       "rank": 36,
-      "market_cap_usd": 1923624288.179713,
+      "market_cap_usd": 1909943502.6623187,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 96898580.5604,
-          "open_interest_usd": 68924122.86572
+          "perp_volume_usd": 128997361.0418,
+          "open_interest_usd": 68867177.19523999
         },
         "Bybit": {
-          "perp_volume_usd": 4737767.7459,
-          "open_interest_usd": 21279829.28
+          "perp_volume_usd": 9187622.9017,
+          "open_interest_usd": 20803805.84
         }
       }
     },
@@ -516,47 +516,47 @@
       "symbol": "WLFI",
       "name": "World Liberty Financial",
       "rank": 37,
-      "market_cap_usd": 1744533904.5414157,
+      "market_cap_usd": 1745554157.6030953,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 19791647.02537,
-          "open_interest_usd": 122348984.56
+          "perp_volume_usd": 9140599.7135,
+          "open_interest_usd": 122238498.8962
         },
         "Bybit": {
-          "perp_volume_usd": 5328993.7284,
-          "open_interest_usd": 24668729.99
-        }
-      }
-    },
-    {
-      "symbol": "ONDO",
-      "name": "Ondo",
-      "rank": 38,
-      "market_cap_usd": 1637912375.5626419,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 39450634.48436,
-          "open_interest_usd": 36156551.0139
-        },
-        "Bybit": {
-          "perp_volume_usd": 20895623.7211,
-          "open_interest_usd": 33888246.81
+          "perp_volume_usd": 2178507.3508,
+          "open_interest_usd": 24669948.23
         }
       }
     },
     {
       "symbol": "ASTER",
       "name": "Aster",
-      "rank": 39,
-      "market_cap_usd": 1632078447.9815824,
+      "rank": 38,
+      "market_cap_usd": 1630364544.5973368,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 13084925.7065,
-          "open_interest_usd": 71080704.2901
+          "perp_volume_usd": 9112726.936,
+          "open_interest_usd": 70568917.424
         },
         "Bybit": {
-          "perp_volume_usd": 3235583.5936,
-          "open_interest_usd": 40547622.93
+          "perp_volume_usd": 1380427.9275,
+          "open_interest_usd": 40446116.86
+        }
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "rank": 39,
+      "market_cap_usd": 1625357459.5046902,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 42916174.70025,
+          "open_interest_usd": 36455116.85805
+        },
+        "Bybit": {
+          "perp_volume_usd": 20716566.0428,
+          "open_interest_usd": 31534102.22
         }
       }
     },
@@ -564,11 +564,11 @@
       "symbol": "RLUSD",
       "name": "Ripple USD",
       "rank": 40,
-      "market_cap_usd": 1574177147.6067755,
+      "market_cap_usd": 1575878133.0546668,
       "exchanges": {
         "Bybit": {
-          "perp_volume_usd": 27951.9612,
-          "open_interest_usd": 301058.38
+          "perp_volume_usd": 22741.3679,
+          "open_interest_usd": 298671.26
         }
       }
     },
@@ -576,34 +576,34 @@
       "symbol": "USDD",
       "name": "USDD",
       "rank": 41,
-      "market_cap_usd": 1544703489.5819077,
+      "market_cap_usd": 1554466714.4138327,
       "exchanges": {}
-    },
-    {
-      "symbol": "M",
-      "name": "MemeCore",
-      "rank": 42,
-      "market_cap_usd": 1490578582.3066812,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 2238411.9968,
-          "open_interest_usd": 5409522.974400001
-        },
-        "Bybit": {
-          "perp_volume_usd": 514311.4214,
-          "open_interest_usd": 3804912.38
-        }
-      }
     },
     {
       "symbol": "MNT",
       "name": "Mantle",
-      "rank": 43,
-      "market_cap_usd": 1426095051.1234095,
+      "rank": 42,
+      "market_cap_usd": 1520124781.73071,
       "exchanges": {
         "Bybit": {
-          "perp_volume_usd": 6310388.2945,
-          "open_interest_usd": 26839611.85
+          "perp_volume_usd": 7976799.1659,
+          "open_interest_usd": 30157358.98
+        }
+      }
+    },
+    {
+      "symbol": "M",
+      "name": "MemeCore",
+      "rank": 43,
+      "market_cap_usd": 1456005894.5079484,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 5791247.2588,
+          "open_interest_usd": 5259027.4059
+        },
+        "Bybit": {
+          "perp_volume_usd": 457778.2397,
+          "open_interest_usd": 3792710.57
         }
       }
     },
@@ -611,15 +611,15 @@
       "symbol": "AAVE",
       "name": "Aave",
       "rank": 44,
-      "market_cap_usd": 1382233667.1262596,
+      "market_cap_usd": 1371229939.743245,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 47981077.549,
-          "open_interest_usd": 47033507.752000004
+          "perp_volume_usd": 38698453.91,
+          "open_interest_usd": 45941420.80500001
         },
         "Bybit": {
-          "perp_volume_usd": 17640736.9624,
-          "open_interest_usd": 40463323.64
+          "perp_volume_usd": 12426496.4604,
+          "open_interest_usd": 39723255.52
         }
       }
     },
@@ -627,15 +627,15 @@
       "symbol": "DOT",
       "name": "Polkadot",
       "rank": 45,
-      "market_cap_usd": 1340276923.2501812,
+      "market_cap_usd": 1311128897.7541397,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 25385101.446416,
-          "open_interest_usd": 29449734.869939994
+          "perp_volume_usd": 20852333.863712,
+          "open_interest_usd": 29057173.2594
         },
         "Bybit": {
-          "perp_volume_usd": 7800577.6226,
-          "open_interest_usd": 17754896.95
+          "perp_volume_usd": 7912866.0764,
+          "open_interest_usd": 17493556.38
         }
       }
     },
@@ -643,54 +643,54 @@
       "symbol": "SKY",
       "name": "Sky",
       "rank": 46,
-      "market_cap_usd": 1245948496.7784915,
+      "market_cap_usd": 1235749904.0985289,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 4234554.86934,
-          "open_interest_usd": 10722224.821490001
+          "perp_volume_usd": 1821512.94661,
+          "open_interest_usd": 10256952.604079999
         },
         "Bybit": {
-          "perp_volume_usd": 1186981.3439,
-          "open_interest_usd": 4566090.23
-        }
-      }
-    },
-    {
-      "symbol": "ICP",
-      "name": "Internet Computer",
-      "rank": 47,
-      "market_cap_usd": 1242919349.7982807,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 23016058.926,
-          "open_interest_usd": 22349578.866
-        },
-        "Bybit": {
-          "perp_volume_usd": 5929998.8531,
-          "open_interest_usd": 13003900.22
+          "perp_volume_usd": 767978.0023,
+          "open_interest_usd": 4658011.92
         }
       }
     },
     {
       "symbol": "U",
       "name": "United Stables",
-      "rank": 48,
-      "market_cap_usd": 1221594291.3114715,
+      "rank": 47,
+      "market_cap_usd": 1230295012.5028,
       "exchanges": {}
     },
     {
       "symbol": "WLD",
       "name": "Worldcoin",
-      "rank": 49,
-      "market_cap_usd": 1203998885.7504256,
+      "rank": 48,
+      "market_cap_usd": 1227287739.8905559,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 99228367.886,
-          "open_interest_usd": 60595739.2575
+          "perp_volume_usd": 79879666.1471,
+          "open_interest_usd": 62813780.5509
         },
         "Bybit": {
-          "perp_volume_usd": 28874919.2589,
-          "open_interest_usd": 46023074.05
+          "perp_volume_usd": 25201579.4421,
+          "open_interest_usd": 47809221.17
+        }
+      }
+    },
+    {
+      "symbol": "ICP",
+      "name": "Internet Computer",
+      "rank": 49,
+      "market_cap_usd": 1206894050.3477788,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 13656757.855,
+          "open_interest_usd": 21519082.424999997
+        },
+        "Bybit": {
+          "perp_volume_usd": 4378367.2344,
+          "open_interest_usd": 12762818.32
         }
       }
     },
@@ -698,25 +698,25 @@
       "symbol": "BGB",
       "name": "Bitget Token",
       "rank": 50,
-      "market_cap_usd": 1188343414.6362283,
+      "market_cap_usd": 1145589101.6491864,
       "exchanges": {}
     },
     {
       "symbol": "PEPE",
       "name": "Pepe",
       "rank": 51,
-      "market_cap_usd": 1175703756.0087538,
+      "market_cap_usd": 1118199260.341422,
       "exchanges": {}
     },
     {
       "symbol": "PUMP",
       "name": "Pump.fun",
       "rank": 52,
-      "market_cap_usd": 1060844402.862945,
+      "market_cap_usd": 1092356716.6877644,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 106044254.307174,
-          "open_interest_usd": 58317255.459093004
+          "perp_volume_usd": 77166879.190056,
+          "open_interest_usd": 60393204.230294004
         }
       }
     },
@@ -724,15 +724,15 @@
       "symbol": "MORPHO",
       "name": "Morpho",
       "rank": 53,
-      "market_cap_usd": 1017390500.1388154,
+      "market_cap_usd": 1010649063.3106574,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 4476441.73607,
-          "open_interest_usd": 8906754.108
+          "perp_volume_usd": 3590594.80423,
+          "open_interest_usd": 8720720.104519999
         },
         "Bybit": {
-          "perp_volume_usd": 1451014.114,
-          "open_interest_usd": 6479887.48
+          "perp_volume_usd": 1296033.0099,
+          "open_interest_usd": 6281871.35
         }
       }
     },
@@ -740,15 +740,15 @@
       "symbol": "ETC",
       "name": "Ethereum Classic",
       "rank": 54,
-      "market_cap_usd": 1004240244.6792042,
+      "market_cap_usd": 990634376.9875745,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 15682453.92,
-          "open_interest_usd": 17179887.871799998
+          "perp_volume_usd": 23036684.98,
+          "open_interest_usd": 17639705.543739997
         },
         "Bybit": {
-          "perp_volume_usd": 3411853.6555,
-          "open_interest_usd": 9260546.21
+          "perp_volume_usd": 3863308.7881,
+          "open_interest_usd": 9114537.03
         }
       }
     },
@@ -756,61 +756,61 @@
       "symbol": "PI",
       "name": "Pi",
       "rank": 55,
-      "market_cap_usd": 977546408.1887279,
+      "market_cap_usd": 989882979.4024943,
       "exchanges": {}
     },
     {
       "symbol": "KCS",
       "name": "KuCoin Token",
       "rank": 56,
-      "market_cap_usd": 912750108.0599546,
+      "market_cap_usd": 914051367.0518007,
       "exchanges": {}
+    },
+    {
+      "symbol": "STABLE",
+      "name": "Stable",
+      "rank": 57,
+      "market_cap_usd": 850040216.1549971,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 2076131.469128,
+          "open_interest_usd": 4318136.0537
+        },
+        "Bybit": {
+          "perp_volume_usd": 669308.4375,
+          "open_interest_usd": 3549239.87
+        }
+      }
     },
     {
       "symbol": "ENA",
       "name": "Ethena",
-      "rank": 57,
-      "market_cap_usd": 880336429.3103024,
+      "rank": 58,
+      "market_cap_usd": 849140653.7918649,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 49049126.51557,
-          "open_interest_usd": 46119918.8697
+          "perp_volume_usd": 51748805.32564,
+          "open_interest_usd": 45737942.81075
         },
         "Bybit": {
-          "perp_volume_usd": 32717206.0603,
-          "open_interest_usd": 40265395.68
+          "perp_volume_usd": 26497416.0228,
+          "open_interest_usd": 40737651.39
         }
       }
     },
     {
       "symbol": "JST",
       "name": "JUST",
-      "rank": 58,
-      "market_cap_usd": 839564728.1489642,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 3043016.65977,
-          "open_interest_usd": 5939449.5637799995
-        },
-        "Bybit": {
-          "perp_volume_usd": 419658.5805,
-          "open_interest_usd": 1592434.33
-        }
-      }
-    },
-    {
-      "symbol": "STABLE",
-      "name": "Stable",
       "rank": 59,
-      "market_cap_usd": 813216113.5746728,
+      "market_cap_usd": 845677902.5507268,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 979306.983664,
-          "open_interest_usd": 4092082.9127
+          "perp_volume_usd": 2615571.88925,
+          "open_interest_usd": 5916738.1325
         },
         "Bybit": {
-          "perp_volume_usd": 310383.0777,
-          "open_interest_usd": 3292880.69
+          "perp_volume_usd": 561468.9184,
+          "open_interest_usd": 1541511.95
         }
       }
     },
@@ -818,15 +818,15 @@
       "symbol": "POL",
       "name": "Polygon (prev. MATIC)",
       "rank": 60,
-      "market_cap_usd": 805597377.6142788,
+      "market_cap_usd": 796554595.0977771,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 5807438.31918,
-          "open_interest_usd": 11354141.42702
+          "perp_volume_usd": 5785596.6857,
+          "open_interest_usd": 11746351.079
         },
         "Bybit": {
-          "perp_volume_usd": 3173997.1962,
-          "open_interest_usd": 11464673.8
+          "perp_volume_usd": 2450386.6481,
+          "open_interest_usd": 11756806.94
         }
       }
     },
@@ -834,54 +834,54 @@
       "symbol": "ATOM",
       "name": "Cosmos",
       "rank": 61,
-      "market_cap_usd": 742801301.870603,
+      "market_cap_usd": 742077942.0228652,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 12416474.326,
-          "open_interest_usd": 14591023.574879998
+          "perp_volume_usd": 7919126.982,
+          "open_interest_usd": 14634174.164159998
         },
         "Bybit": {
-          "perp_volume_usd": 4341267.8407,
-          "open_interest_usd": 14240484.27
-        }
-      }
-    },
-    {
-      "symbol": "ALGO",
-      "name": "Algorand",
-      "rank": 62,
-      "market_cap_usd": 731507278.2844976,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 9364156.876075,
-          "open_interest_usd": 8141070.291769
-        },
-        "Bybit": {
-          "perp_volume_usd": 5284915.5711,
-          "open_interest_usd": 7565570.14
+          "perp_volume_usd": 2866244.6879,
+          "open_interest_usd": 13811618.53
         }
       }
     },
     {
       "symbol": "GT",
       "name": "GateToken",
-      "rank": 63,
-      "market_cap_usd": 717090258.9972461,
+      "rank": 62,
+      "market_cap_usd": 719886269.549964,
       "exchanges": {}
+    },
+    {
+      "symbol": "ALGO",
+      "name": "Algorand",
+      "rank": 63,
+      "market_cap_usd": 715753134.6071883,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 7283848.385325,
+          "open_interest_usd": 7883323.3856
+        },
+        "Bybit": {
+          "perp_volume_usd": 4681162.8667,
+          "open_interest_usd": 6221621.85
+        }
+      }
     },
     {
       "symbol": "KAS",
       "name": "Kaspa",
       "rank": 64,
-      "market_cap_usd": 714856657.2544458,
+      "market_cap_usd": 704026967.8357663,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1234372.87293,
-          "open_interest_usd": 2041066.2619800002
+          "perp_volume_usd": 2090920.73034,
+          "open_interest_usd": 2056388.0339999998
         },
         "Bybit": {
-          "perp_volume_usd": 575634.6511,
-          "open_interest_usd": 5003820.36
+          "perp_volume_usd": 826441.0391,
+          "open_interest_usd": 5000618.85
         }
       }
     },
@@ -889,15 +889,15 @@
       "symbol": "QNT",
       "name": "Quant",
       "rank": 65,
-      "market_cap_usd": 695325935.4152998,
+      "market_cap_usd": 702543850.0040045,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1865259.232,
-          "open_interest_usd": 2646791.3759999997
+          "perp_volume_usd": 3506324.402,
+          "open_interest_usd": 2705317.1089999997
         },
         "Bybit": {
-          "perp_volume_usd": 573728.3626,
-          "open_interest_usd": 2160693.04
+          "perp_volume_usd": 731758.603,
+          "open_interest_usd": 2111035.13
         }
       }
     },
@@ -905,91 +905,91 @@
       "symbol": "RENDER",
       "name": "Render",
       "rank": 66,
-      "market_cap_usd": 654487473.3531691,
+      "market_cap_usd": 654812704.7633407,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 11549192.6523,
-          "open_interest_usd": 9570629.6524
+          "perp_volume_usd": 8697918.5558,
+          "open_interest_usd": 9463345.0304
         },
         "Bybit": {
-          "perp_volume_usd": 4086228.1046,
-          "open_interest_usd": 6953571.79
-        }
-      }
-    },
-    {
-      "symbol": "LIT",
-      "name": "Lighter",
-      "rank": 67,
-      "market_cap_usd": 576028219.1969591,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 36592950.61654,
-          "open_interest_usd": 38808933.15292
-        },
-        "Bybit": {
-          "perp_volume_usd": 11068164.1742,
-          "open_interest_usd": 30242838.73
-        }
-      }
-    },
-    {
-      "symbol": "JUP",
-      "name": "Jupiter",
-      "rank": 68,
-      "market_cap_usd": 575605362.7141768,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 9488515.8182,
-          "open_interest_usd": 9098285.371199999
-        },
-        "Bybit": {
-          "perp_volume_usd": 3632633.7855,
-          "open_interest_usd": 8623983.81
+          "perp_volume_usd": 2542988.4294,
+          "open_interest_usd": 6940185.45
         }
       }
     },
     {
       "symbol": "VVV",
       "name": "Venice Token",
-      "rank": 69,
-      "market_cap_usd": 575080191.8156807,
+      "rank": 67,
+      "market_cap_usd": 599712995.5666599,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 8647544.34191,
-          "open_interest_usd": 9227181.49524
+          "perp_volume_usd": 9796883.84305,
+          "open_interest_usd": 9807555.96544
         },
         "Bybit": {
-          "perp_volume_usd": 2848600.1867,
-          "open_interest_usd": 8273460.15
+          "perp_volume_usd": 5180073.8728,
+          "open_interest_usd": 10501448.52
         }
       }
     },
     {
-      "symbol": "FIL",
-      "name": "Filecoin",
-      "rank": 70,
-      "market_cap_usd": 573670828.8112494,
+      "symbol": "LIT",
+      "name": "Lighter",
+      "rank": 68,
+      "market_cap_usd": 590287927.2239923,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 31847357.37963,
-          "open_interest_usd": 30853737.693600003
+          "perp_volume_usd": 33034531.38456,
+          "open_interest_usd": 40541717.70506
         },
         "Bybit": {
-          "perp_volume_usd": 3293385.0571,
-          "open_interest_usd": 8204553.41
+          "perp_volume_usd": 11380355.4974,
+          "open_interest_usd": 30337496.21
+        }
+      }
+    },
+    {
+      "symbol": "JUP",
+      "name": "Jupiter",
+      "rank": 69,
+      "market_cap_usd": 563684532.9176255,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 6095143.7217,
+          "open_interest_usd": 9366324.8443
+        },
+        "Bybit": {
+          "perp_volume_usd": 2184631.2542,
+          "open_interest_usd": 8523648.92
         }
       }
     },
     {
       "symbol": "XDC",
       "name": "XDC Network",
-      "rank": 71,
-      "market_cap_usd": 563878948.4593744,
+      "rank": 70,
+      "market_cap_usd": 559957281.0639375,
       "exchanges": {
         "Bybit": {
-          "perp_volume_usd": 137342.0848,
-          "open_interest_usd": 1711024.71
+          "perp_volume_usd": 115617.749,
+          "open_interest_usd": 1728577.31
+        }
+      }
+    },
+    {
+      "symbol": "FIL",
+      "name": "Filecoin",
+      "rank": 71,
+      "market_cap_usd": 550500318.7593678,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 49786526.486219,
+          "open_interest_usd": 32618689.45168
+        },
+        "Bybit": {
+          "perp_volume_usd": 4249082.4463,
+          "open_interest_usd": 8124701.85
         }
       }
     },
@@ -997,11 +997,11 @@
       "symbol": "FLR",
       "name": "Flare",
       "rank": 72,
-      "market_cap_usd": 525458711.5802368,
+      "market_cap_usd": 518029700.6459572,
       "exchanges": {
         "Bybit": {
-          "perp_volume_usd": 170839.0659,
-          "open_interest_usd": 1465311.52
+          "perp_volume_usd": 298235.8611,
+          "open_interest_usd": 1484171.9
         }
       }
     },
@@ -1009,15 +1009,15 @@
       "symbol": "ARB",
       "name": "Arbitrum",
       "rank": 73,
-      "market_cap_usd": 520960000.8906893,
+      "market_cap_usd": 493803983.7067815,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 22222652.550066,
-          "open_interest_usd": 17327185.50304
+          "perp_volume_usd": 26164628.605989,
+          "open_interest_usd": 17611363.791329
         },
         "Bybit": {
-          "perp_volume_usd": 8557692.2127,
-          "open_interest_usd": 13727952.47
+          "perp_volume_usd": 17511816.885,
+          "open_interest_usd": 16102533.91
         }
       }
     },
@@ -1025,18 +1025,18 @@
       "symbol": "TUSD",
       "name": "TrueUSD",
       "rank": 74,
-      "market_cap_usd": 492684246.5397386,
+      "market_cap_usd": 492401679.56642,
       "exchanges": {}
     },
     {
       "symbol": "币安人生",
       "name": "币安人生",
       "rank": 75,
-      "market_cap_usd": 482963974.4660273,
+      "market_cap_usd": 484564986.72252387,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 5886934.85318,
-          "open_interest_usd": 38518906.0248
+          "perp_volume_usd": 6395420.34797,
+          "open_interest_usd": 38576896.3488
         }
       }
     },
@@ -1044,15 +1044,15 @@
       "symbol": "APT",
       "name": "Aptos",
       "rank": 76,
-      "market_cap_usd": 481570021.40875816,
+      "market_cap_usd": 482916184.381703,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 12386269.44981,
-          "open_interest_usd": 14660110.3389
+          "perp_volume_usd": 10855926.03281,
+          "open_interest_usd": 14319567.06524
         },
         "Bybit": {
-          "perp_volume_usd": 7058990.4,
-          "open_interest_usd": 16095388.61
+          "perp_volume_usd": 5088602.0023,
+          "open_interest_usd": 16200476.53
         }
       }
     },
@@ -1060,141 +1060,141 @@
       "symbol": "CAKE",
       "name": "PancakeSwap",
       "rank": 77,
-      "market_cap_usd": 467496038.40920764,
+      "market_cap_usd": 466737541.18099344,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 5956099.3851,
-          "open_interest_usd": 7449090.845
+          "perp_volume_usd": 4081801.6493,
+          "open_interest_usd": 7567364.1061
         },
         "Bybit": {
-          "perp_volume_usd": 719618.9833,
-          "open_interest_usd": 2432353.47
-        }
-      }
-    },
-    {
-      "symbol": "NEXO",
-      "name": "Nexo",
-      "rank": 78,
-      "market_cap_usd": 465589245.9566389,
-      "exchanges": {}
-    },
-    {
-      "symbol": "INJ",
-      "name": "Injective",
-      "rank": 79,
-      "market_cap_usd": 463042095.54023266,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 31280632.3726,
-          "open_interest_usd": 20271353.832
-        },
-        "Bybit": {
-          "perp_volume_usd": 13631112.8898,
-          "open_interest_usd": 13565491.5
+          "perp_volume_usd": 291681.6244,
+          "open_interest_usd": 2339820.02
         }
       }
     },
     {
       "symbol": "EURC",
       "name": "EURC",
-      "rank": 80,
-      "market_cap_usd": 457392872.97309303,
+      "rank": 78,
+      "market_cap_usd": 466437279.7361566,
       "exchanges": {}
     },
     {
-      "symbol": "CRV",
-      "name": "Curve DAO Token",
-      "rank": 81,
-      "market_cap_usd": 426869114.49963146,
+      "symbol": "NEXO",
+      "name": "Nexo",
+      "rank": 79,
+      "market_cap_usd": 462853713.1392066,
+      "exchanges": {}
+    },
+    {
+      "symbol": "INJ",
+      "name": "Injective",
+      "rank": 80,
+      "market_cap_usd": 455164768.39360356,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 65066931.11452,
-          "open_interest_usd": 21860350.08696
+          "perp_volume_usd": 18208149.7066,
+          "open_interest_usd": 19210387.9182
         },
         "Bybit": {
-          "perp_volume_usd": 32760264.6124,
-          "open_interest_usd": 19579698.56
+          "perp_volume_usd": 5478024.2542,
+          "open_interest_usd": 12594381.27
         }
       }
     },
     {
       "symbol": "AERO",
       "name": "Aerodrome Finance",
-      "rank": 82,
-      "market_cap_usd": 408242570.5616237,
+      "rank": 81,
+      "market_cap_usd": 401675344.653028,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 6751758.45729,
-          "open_interest_usd": 12216790.7515
+          "perp_volume_usd": 5607691.08669,
+          "open_interest_usd": 11694435.48252
         },
         "Bybit": {
-          "perp_volume_usd": 2058002.8909,
-          "open_interest_usd": 7180589.62
+          "perp_volume_usd": 2033380.4577,
+          "open_interest_usd": 6632172.42
         }
       }
     },
     {
       "symbol": "PENGU",
       "name": "Pudgy Penguins",
+      "rank": 82,
+      "market_cap_usd": 398504676.4270116,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 25814918.887205,
+          "open_interest_usd": 17095861.213488
+        },
+        "Bybit": {
+          "perp_volume_usd": 10595485.6317,
+          "open_interest_usd": 15905321.7
+        }
+      }
+    },
+    {
+      "symbol": "CRV",
+      "name": "Curve DAO Token",
       "rank": 83,
-      "market_cap_usd": 402834276.01062095,
+      "market_cap_usd": 392605052.2829694,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 24296607.163239,
-          "open_interest_usd": 17149727.419248
+          "perp_volume_usd": 34281835.89957,
+          "open_interest_usd": 20145937.15359
         },
         "Bybit": {
-          "perp_volume_usd": 10648125.4284,
-          "open_interest_usd": 16483834.05
-        }
-      }
-    },
-    {
-      "symbol": "VET",
-      "name": "VeChain",
-      "rank": 84,
-      "market_cap_usd": 398360495.2649765,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 1899764.127727,
-          "open_interest_usd": 3055665.679808
-        },
-        "Bybit": {
-          "perp_volume_usd": 434238.4345,
-          "open_interest_usd": 2474001.25
-        }
-      }
-    },
-    {
-      "symbol": "BEAT",
-      "name": "Audiera",
-      "rank": 85,
-      "market_cap_usd": 391116945.86502117,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 380852190.8778,
-          "open_interest_usd": 13670102.163
-        },
-        "Bybit": {
-          "perp_volume_usd": 131203432.4413,
-          "open_interest_usd": 6657534.85
+          "perp_volume_usd": 16780561.6374,
+          "open_interest_usd": 17445433.74
         }
       }
     },
     {
       "symbol": "DASH",
       "name": "Dash",
-      "rank": 86,
-      "market_cap_usd": 390192320.2945135,
+      "rank": 84,
+      "market_cap_usd": 388753885.2009347,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 8150137.94,
-          "open_interest_usd": 11208316.95054
+          "perp_volume_usd": 7106706.1,
+          "open_interest_usd": 11202047.816
         },
         "Bybit": {
-          "perp_volume_usd": 1961000.1759,
-          "open_interest_usd": 3455334.62
+          "perp_volume_usd": 1895841.229,
+          "open_interest_usd": 3583858.12
+        }
+      }
+    },
+    {
+      "symbol": "VET",
+      "name": "VeChain",
+      "rank": 85,
+      "market_cap_usd": 385448290.7435207,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 3871421.862548,
+          "open_interest_usd": 3168705.37123
+        },
+        "Bybit": {
+          "perp_volume_usd": 1074757.0323,
+          "open_interest_usd": 2441527.39
+        }
+      }
+    },
+    {
+      "symbol": "VIRTUAL",
+      "name": "Virtuals Protocol",
+      "rank": 86,
+      "market_cap_usd": 378876857.11083066,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 56579199.50432,
+          "open_interest_usd": 14630033.5457
+        },
+        "Bybit": {
+          "perp_volume_usd": 27450073.387,
+          "open_interest_usd": 14341732.25
         }
       }
     },
@@ -1202,70 +1202,70 @@
       "symbol": "ETHFI",
       "name": "ether.fi",
       "rank": 87,
-      "market_cap_usd": 368738388.4481767,
+      "market_cap_usd": 371334005.9217755,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 8813586.95733,
-          "open_interest_usd": 16937845.156260002
+          "perp_volume_usd": 6544456.45904,
+          "open_interest_usd": 16676852.19821
         },
         "Bybit": {
-          "perp_volume_usd": 3473290.2968,
-          "open_interest_usd": 9779629.07
-        }
-      }
-    },
-    {
-      "symbol": "TRUMP",
-      "name": "OFFICIAL TRUMP",
-      "rank": 88,
-      "market_cap_usd": 367197901.1207375,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 26575097.14088,
-          "open_interest_usd": 25712189.319390003
-        },
-        "Bybit": {
-          "perp_volume_usd": 7369584.0891,
-          "open_interest_usd": 15607705.36
-        }
-      }
-    },
-    {
-      "symbol": "VIRTUAL",
-      "name": "Virtuals Protocol",
-      "rank": 89,
-      "market_cap_usd": 356059748.47297126,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 15447894.30374,
-          "open_interest_usd": 11636902.295110002
-        },
-        "Bybit": {
-          "perp_volume_usd": 7775639.5676,
-          "open_interest_usd": 9566434.46
+          "perp_volume_usd": 2322794.3536,
+          "open_interest_usd": 9674562.05
         }
       }
     },
     {
       "symbol": "FDUSD",
       "name": "First Digital USD",
-      "rank": 90,
-      "market_cap_usd": 350736328.9793417,
+      "rank": 88,
+      "market_cap_usd": 350696998.55518675,
       "exchanges": {}
     },
     {
       "symbol": "SUN",
       "name": "Sun [New]",
-      "rank": 91,
-      "market_cap_usd": 350286042.6483879,
+      "rank": 89,
+      "market_cap_usd": 350664744.9619578,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 660982.241527,
-          "open_interest_usd": 4276220.382586
+          "perp_volume_usd": 580227.553987,
+          "open_interest_usd": 4290448.9924490005
         },
         "Bybit": {
-          "perp_volume_usd": 127674.0806,
-          "open_interest_usd": 612138.78
+          "perp_volume_usd": 115099.4705,
+          "open_interest_usd": 604494.24
+        }
+      }
+    },
+    {
+      "symbol": "TRUMP",
+      "name": "OFFICIAL TRUMP",
+      "rank": 90,
+      "market_cap_usd": 347288004.8689227,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 39480349.78119,
+          "open_interest_usd": 24859967.775999997
+        },
+        "Bybit": {
+          "perp_volume_usd": 8306167.285,
+          "open_interest_usd": 15352359.21
+        }
+      }
+    },
+    {
+      "symbol": "BEAT",
+      "name": "Audiera",
+      "rank": 91,
+      "market_cap_usd": 315250819.9043562,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 238056041.2313,
+          "open_interest_usd": 11544104.388
+        },
+        "Bybit": {
+          "perp_volume_usd": 94080436.059,
+          "open_interest_usd": 5876393.63
         }
       }
     },
@@ -1273,215 +1273,215 @@
       "symbol": "PYTH",
       "name": "Pyth Network",
       "rank": 92,
-      "market_cap_usd": 318915039.2302446,
+      "market_cap_usd": 315223939.2080496,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 4509396.33719,
-          "open_interest_usd": 7093457.86216
+          "perp_volume_usd": 4274431.73961,
+          "open_interest_usd": 6807296.77628
         },
         "Bybit": {
-          "perp_volume_usd": 2625431.7378,
-          "open_interest_usd": 4716716.8
-        }
-      }
-    },
-    {
-      "symbol": "ZRO",
-      "name": "LayerZero",
-      "rank": 93,
-      "market_cap_usd": 307089492.21103275,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 5875089.80858,
-          "open_interest_usd": 15202836.75131
-        },
-        "Bybit": {
-          "perp_volume_usd": 3154096.3898,
-          "open_interest_usd": 12301324.07
-        }
-      }
-    },
-    {
-      "symbol": "FET",
-      "name": "Artificial Superintelligence Alliance",
-      "rank": 94,
-      "market_cap_usd": 302133537.88747466,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 18150885.113,
-          "open_interest_usd": 20939828.133500002
-        }
-      }
-    },
-    {
-      "symbol": "SPX",
-      "name": "SPX6900",
-      "rank": 95,
-      "market_cap_usd": 294523602.07389855,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 2451807.6713,
-          "open_interest_usd": 2971764.6336
-        },
-        "Bybit": {
-          "perp_volume_usd": 1626562.3612,
-          "open_interest_usd": 6025772.81
+          "perp_volume_usd": 2083109.1037,
+          "open_interest_usd": 5825563.99
         }
       }
     },
     {
       "symbol": "SEI",
       "name": "Sei",
-      "rank": 96,
-      "market_cap_usd": 293384364.5983618,
+      "rank": 93,
+      "market_cap_usd": 303451331.7710037,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 7896894.44841,
-          "open_interest_usd": 7903703.41138
+          "perp_volume_usd": 11578823.97304,
+          "open_interest_usd": 7409529.569499999
         },
         "Bybit": {
-          "perp_volume_usd": 3830045.6755,
-          "open_interest_usd": 7649460.24
+          "perp_volume_usd": 5204706.32,
+          "open_interest_usd": 7689796.94
+        }
+      }
+    },
+    {
+      "symbol": "ZRO",
+      "name": "LayerZero",
+      "rank": 94,
+      "market_cap_usd": 301500728.157735,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 5328453.33179,
+          "open_interest_usd": 15039679.01625
+        },
+        "Bybit": {
+          "perp_volume_usd": 3126690.553,
+          "open_interest_usd": 11959376.11
         }
       }
     },
     {
       "symbol": "BSV",
       "name": "Bitcoin SV",
-      "rank": 97,
-      "market_cap_usd": 290999200.3076924,
+      "rank": 95,
+      "market_cap_usd": 300684543.7298839,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1178490.343,
-          "open_interest_usd": 1514409.592
+          "perp_volume_usd": 1109923.078,
+          "open_interest_usd": 1568282.281
         },
         "Bybit": {
-          "perp_volume_usd": 379085.7125,
-          "open_interest_usd": 1371161.68
+          "perp_volume_usd": 500986.8477,
+          "open_interest_usd": 1392491.33
+        }
+      }
+    },
+    {
+      "symbol": "FET",
+      "name": "Artificial Superintelligence Alliance",
+      "rank": 96,
+      "market_cap_usd": 300625229.10068685,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 14375695.9164,
+          "open_interest_usd": 20516360.3904
         }
       }
     },
     {
       "symbol": "NIGHT",
       "name": "Midnight",
-      "rank": 98,
-      "market_cap_usd": 289977336.8604946,
+      "rank": 97,
+      "market_cap_usd": 297410069.8113283,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 2446261.89938,
-          "open_interest_usd": 4501385.36496
+          "perp_volume_usd": 2718475.35459,
+          "open_interest_usd": 4568037.26929
         },
         "Bybit": {
-          "perp_volume_usd": 411931.1632,
-          "open_interest_usd": 1110660.99
+          "perp_volume_usd": 418771.6159,
+          "open_interest_usd": 1125028.43
         }
       }
     },
     {
-      "symbol": "TIA",
-      "name": "Celestia",
-      "rank": 99,
-      "market_cap_usd": 282997290.97019964,
+      "symbol": "SPX",
+      "name": "SPX6900",
+      "rank": 98,
+      "market_cap_usd": 296599746.7909918,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 13962510.9154,
-          "open_interest_usd": 11839600.007900001
+          "perp_volume_usd": 1817997.9086,
+          "open_interest_usd": 2962841.376
         },
         "Bybit": {
-          "perp_volume_usd": 5478034.6007,
-          "open_interest_usd": 6878349.31
+          "perp_volume_usd": 1498012.0226,
+          "open_interest_usd": 6165161.34
         }
       }
     },
     {
       "symbol": "JTO",
       "name": "Jito",
-      "rank": 100,
-      "market_cap_usd": 282082621.56110877,
+      "rank": 99,
+      "market_cap_usd": 291087682.3921996,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 16390794.6023,
-          "open_interest_usd": 10124250.340200001
+          "perp_volume_usd": 16282532.753,
+          "open_interest_usd": 9887923.4058
         },
         "Bybit": {
-          "perp_volume_usd": 5278426.9887,
-          "open_interest_usd": 6052435.63
-        }
-      }
-    },
-    {
-      "symbol": "LUNC",
-      "name": "Terra Classic",
-      "rank": 101,
-      "market_cap_usd": 280666960.5805776,
-      "exchanges": {}
-    },
-    {
-      "symbol": "NFT",
-      "name": "AINFT",
-      "rank": 102,
-      "market_cap_usd": 277026380.54762244,
-      "exchanges": {}
-    },
-    {
-      "symbol": "GNO",
-      "name": "Gnosis",
-      "rank": 103,
-      "market_cap_usd": 276609946.7109292,
-      "exchanges": {}
-    },
-    {
-      "symbol": "BTT",
-      "name": "BitTorrent [New]",
-      "rank": 104,
-      "market_cap_usd": 259055673.7297659,
-      "exchanges": {}
-    },
-    {
-      "symbol": "MON",
-      "name": "Monad",
-      "rank": 105,
-      "market_cap_usd": 256339678.36851412,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 3117536.56306,
-          "open_interest_usd": 17071679.41548
-        },
-        "Bybit": {
-          "perp_volume_usd": 2025772.7642,
-          "open_interest_usd": 12184476.11
-        }
-      }
-    },
-    {
-      "symbol": "LDO",
-      "name": "Lido DAO",
-      "rank": 106,
-      "market_cap_usd": 241471190.34589466,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 11076667.0587,
-          "open_interest_usd": 13965066.554100001
-        },
-        "Bybit": {
-          "perp_volume_usd": 3526839.7223,
-          "open_interest_usd": 11455597.33
+          "perp_volume_usd": 6073758.6245,
+          "open_interest_usd": 6273618.0
         }
       }
     },
     {
       "symbol": "VELVET",
       "name": "Velvet",
-      "rank": 107,
-      "market_cap_usd": 232959230.4206666,
+      "rank": 100,
+      "market_cap_usd": 286798397.1567829,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 360679560.70783,
-          "open_interest_usd": 8088370.195499999
+          "perp_volume_usd": 81311220.9316,
+          "open_interest_usd": 8371706.688
         },
         "Bybit": {
-          "perp_volume_usd": 53223328.048,
-          "open_interest_usd": 3296687.99
+          "perp_volume_usd": 17544576.795,
+          "open_interest_usd": 3250814.28
+        }
+      }
+    },
+    {
+      "symbol": "TIA",
+      "name": "Celestia",
+      "rank": 101,
+      "market_cap_usd": 284852897.6565773,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 11843095.8209,
+          "open_interest_usd": 11687700.033
+        },
+        "Bybit": {
+          "perp_volume_usd": 4510763.3328,
+          "open_interest_usd": 6911114.3
+        }
+      }
+    },
+    {
+      "symbol": "NFT",
+      "name": "AINFT",
+      "rank": 102,
+      "market_cap_usd": 279720571.35505605,
+      "exchanges": {}
+    },
+    {
+      "symbol": "GNO",
+      "name": "Gnosis",
+      "rank": 103,
+      "market_cap_usd": 275014010.71064323,
+      "exchanges": {}
+    },
+    {
+      "symbol": "LUNC",
+      "name": "Terra Classic",
+      "rank": 104,
+      "market_cap_usd": 270692596.3412437,
+      "exchanges": {}
+    },
+    {
+      "symbol": "BTT",
+      "name": "BitTorrent [New]",
+      "rank": 105,
+      "market_cap_usd": 257373882.46657577,
+      "exchanges": {}
+    },
+    {
+      "symbol": "MON",
+      "name": "Monad",
+      "rank": 106,
+      "market_cap_usd": 256208465.98185483,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 3100194.36656,
+          "open_interest_usd": 16979336.9796
+        },
+        "Bybit": {
+          "perp_volume_usd": 1927250.922,
+          "open_interest_usd": 12073071.67
+        }
+      }
+    },
+    {
+      "symbol": "LDO",
+      "name": "Lido DAO",
+      "rank": 107,
+      "market_cap_usd": 244745251.22503588,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 10337262.1596,
+          "open_interest_usd": 14068730.242200002
+        },
+        "Bybit": {
+          "perp_volume_usd": 3659668.3381,
+          "open_interest_usd": 11197759.35
         }
       }
     },
@@ -1489,15 +1489,15 @@
       "symbol": "PENDLE",
       "name": "Pendle",
       "rank": 108,
-      "market_cap_usd": 230762117.40323073,
+      "market_cap_usd": 231702079.96516085,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 7708218.1497,
-          "open_interest_usd": 12444336.431100002
+          "perp_volume_usd": 7058097.6911,
+          "open_interest_usd": 12270520.5168
         },
         "Bybit": {
-          "perp_volume_usd": 1698240.3522,
-          "open_interest_usd": 5567510.21
+          "perp_volume_usd": 1186733.8269,
+          "open_interest_usd": 5640357.1
         }
       }
     },
@@ -1505,15 +1505,15 @@
       "symbol": "STX",
       "name": "Stacks",
       "rank": 109,
-      "market_cap_usd": 228206480.08497557,
+      "market_cap_usd": 222747343.64577535,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 3820661.8076,
-          "open_interest_usd": 3724941.5223999997
+          "perp_volume_usd": 3625299.7435,
+          "open_interest_usd": 3816230.7944
         },
         "Bybit": {
-          "perp_volume_usd": 1071436.2739,
-          "open_interest_usd": 2598555.39
+          "perp_volume_usd": 1199304.9005,
+          "open_interest_usd": 2586695.5
         }
       }
     },
@@ -1521,141 +1521,141 @@
       "symbol": "IMX",
       "name": "Immutable",
       "rank": 110,
-      "market_cap_usd": 227953561.22565037,
+      "market_cap_usd": 219219996.31465402,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1826233.1058,
-          "open_interest_usd": 2456181.6237
+          "perp_volume_usd": 1575432.1724,
+          "open_interest_usd": 2389518.9682
         },
         "Bybit": {
-          "perp_volume_usd": 639351.7097,
-          "open_interest_usd": 2506847.32
+          "perp_volume_usd": 663048.284,
+          "open_interest_usd": 2427698.48
         }
       }
     },
     {
-      "symbol": "DCR",
-      "name": "Decred",
-      "rank": 111,
-      "market_cap_usd": 227020959.01443863,
-      "exchanges": {}
-    },
-    {
       "symbol": "CFX",
       "name": "Conflux",
-      "rank": 112,
-      "market_cap_usd": 219088481.7759534,
+      "rank": 111,
+      "market_cap_usd": 216597293.51081082,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 3075237.60973,
-          "open_interest_usd": 4454098.65319
+          "perp_volume_usd": 2111957.47635,
+          "open_interest_usd": 4334312.63709
         },
         "Bybit": {
-          "perp_volume_usd": 580514.3918,
-          "open_interest_usd": 1894489.0
+          "perp_volume_usd": 385149.0794,
+          "open_interest_usd": 1926711.74
         }
       }
     },
     {
       "symbol": "XTZ",
       "name": "Tezos",
+      "rank": 112,
+      "market_cap_usd": 215059981.80513534,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 1387361.67104,
+          "open_interest_usd": 2119117.56514
+        },
+        "Bybit": {
+          "perp_volume_usd": 348705.048,
+          "open_interest_usd": 1865660.03
+        }
+      }
+    },
+    {
+      "symbol": "DCR",
+      "name": "Decred",
       "rank": 113,
-      "market_cap_usd": 213849247.64899355,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 1612670.29444,
-          "open_interest_usd": 2085942.16032
-        },
-        "Bybit": {
-          "perp_volume_usd": 403211.3569,
-          "open_interest_usd": 1892263.49
-        }
-      }
-    },
-    {
-      "symbol": "OP",
-      "name": "Optimism",
-      "rank": 114,
-      "market_cap_usd": 206217962.48252887,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 18584410.77936,
-          "open_interest_usd": 11163748.4926
-        },
-        "Bybit": {
-          "perp_volume_usd": 8783487.9855,
-          "open_interest_usd": 9640696.84
-        }
-      }
-    },
-    {
-      "symbol": "XPL",
-      "name": "Plasma",
-      "rank": 115,
-      "market_cap_usd": 204883614.62826723,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 16363870.99219,
-          "open_interest_usd": 26442007.8126
-        },
-        "Bybit": {
-          "perp_volume_usd": 8094174.5447,
-          "open_interest_usd": 19355994.3
-        }
-      }
-    },
-    {
-      "symbol": "BONK",
-      "name": "Bonk",
-      "rank": 116,
-      "market_cap_usd": 201755494.1275149,
+      "market_cap_usd": 212686049.35874805,
       "exchanges": {}
-    },
-    {
-      "symbol": "FF",
-      "name": "Falcon Finance",
-      "rank": 117,
-      "market_cap_usd": 199707285.24863014,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 5860267.62607,
-          "open_interest_usd": 29208440.348500002
-        },
-        "Bybit": {
-          "perp_volume_usd": 1558198.1058,
-          "open_interest_usd": 8642750.49
-        }
-      }
     },
     {
       "symbol": "PIEVERSE",
       "name": "Pieverse",
-      "rank": 118,
-      "market_cap_usd": 198760939.7473632,
+      "rank": 114,
+      "market_cap_usd": 206149575.6076356,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 2338159.8647,
-          "open_interest_usd": 9419877.9852
+          "perp_volume_usd": 2942424.5284,
+          "open_interest_usd": 9698317.5756
         },
         "Bybit": {
-          "perp_volume_usd": 943876.3047,
-          "open_interest_usd": 5127239.11
+          "perp_volume_usd": 845370.5327,
+          "open_interest_usd": 5345480.16
         }
       }
     },
     {
       "symbol": "JASMY",
       "name": "JasmyCoin",
-      "rank": 119,
-      "market_cap_usd": 198295282.77949253,
+      "rank": 115,
+      "market_cap_usd": 201820458.01477498,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1945471.264262,
-          "open_interest_usd": 1993743.223695
+          "perp_volume_usd": 1872708.18326,
+          "open_interest_usd": 2093111.5738829998
         },
         "Bybit": {
-          "perp_volume_usd": 1249727.7152,
-          "open_interest_usd": 2620200.76
+          "perp_volume_usd": 1227696.8892,
+          "open_interest_usd": 2507145.48
+        }
+      }
+    },
+    {
+      "symbol": "XPL",
+      "name": "Plasma",
+      "rank": 116,
+      "market_cap_usd": 201598516.84533262,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 13694626.55871,
+          "open_interest_usd": 25637750.46168
+        },
+        "Bybit": {
+          "perp_volume_usd": 8076325.4803,
+          "open_interest_usd": 19505679.79
+        }
+      }
+    },
+    {
+      "symbol": "BONK",
+      "name": "Bonk",
+      "rank": 117,
+      "market_cap_usd": 200734094.533535,
+      "exchanges": {}
+    },
+    {
+      "symbol": "FF",
+      "name": "Falcon Finance",
+      "rank": 118,
+      "market_cap_usd": 200335046.711059,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 3229739.87563,
+          "open_interest_usd": 29374553.787609998
+        },
+        "Bybit": {
+          "perp_volume_usd": 695031.8837,
+          "open_interest_usd": 8754310.92
+        }
+      }
+    },
+    {
+      "symbol": "OP",
+      "name": "Optimism",
+      "rank": 119,
+      "market_cap_usd": 197664443.1465914,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 18370183.25197,
+          "open_interest_usd": 10303880.42592
+        },
+        "Bybit": {
+          "perp_volume_usd": 9219677.2683,
+          "open_interest_usd": 9066633.99
         }
       }
     },
@@ -1663,70 +1663,70 @@
       "symbol": "FLOKI",
       "name": "FLOKI",
       "rank": 120,
-      "market_cap_usd": 196096312.39773822,
+      "market_cap_usd": 195250479.57382348,
       "exchanges": {}
     },
     {
       "symbol": "KITE",
       "name": "Kite",
       "rank": 121,
-      "market_cap_usd": 188175461.66727203,
+      "market_cap_usd": 184268733.78218964,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 3965200.699,
-          "open_interest_usd": 17627093.28252
+          "perp_volume_usd": 4010484.87542,
+          "open_interest_usd": 17123957.3908
         },
         "Bybit": {
-          "perp_volume_usd": 575314.2601,
-          "open_interest_usd": 1137633.1
-        }
-      }
-    },
-    {
-      "symbol": "2Z",
-      "name": "DoubleZero",
-      "rank": 122,
-      "market_cap_usd": 180467072.37704912,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 1082635.91876,
-          "open_interest_usd": 1508513.06672
-        },
-        "Bybit": {
-          "perp_volume_usd": 257376.6725,
-          "open_interest_usd": 911714.29
+          "perp_volume_usd": 578295.545,
+          "open_interest_usd": 1075519.34
         }
       }
     },
     {
       "symbol": "SYRUP",
       "name": "Maple Finance",
-      "rank": 123,
-      "market_cap_usd": 176146822.49519637,
+      "rank": 122,
+      "market_cap_usd": 179222534.78319192,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 2382284.05035,
-          "open_interest_usd": 5069601.90044
+          "perp_volume_usd": 1511076.37,
+          "open_interest_usd": 5152804.96875
         },
         "Bybit": {
-          "perp_volume_usd": 367937.0152,
-          "open_interest_usd": 1131182.5
+          "perp_volume_usd": 241776.3546,
+          "open_interest_usd": 1156021.76
         }
       }
     },
     {
-      "symbol": "CVX",
-      "name": "Convex Finance",
-      "rank": 124,
-      "market_cap_usd": 175621320.63945788,
+      "symbol": "TWT",
+      "name": "Trust Wallet Token",
+      "rank": 123,
+      "market_cap_usd": 176199441.6198336,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 2893045.3548,
-          "open_interest_usd": 1855516.9815
+          "perp_volume_usd": 1802853.2476,
+          "open_interest_usd": 2525163.3264
         },
         "Bybit": {
-          "perp_volume_usd": 819132.828,
-          "open_interest_usd": 2027442.7
+          "perp_volume_usd": 708105.5577,
+          "open_interest_usd": 3601530.48
+        }
+      }
+    },
+    {
+      "symbol": "H",
+      "name": "Humanity",
+      "rank": 124,
+      "market_cap_usd": 175658679.1635111,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 3845308.02725,
+          "open_interest_usd": 22667969.26345
+        },
+        "Bybit": {
+          "perp_volume_usd": 1840697.3941,
+          "open_interest_usd": 10530757.27
         }
       }
     },
@@ -1734,114 +1734,118 @@
       "symbol": "ENS",
       "name": "Ethereum Name Service",
       "rank": 125,
-      "market_cap_usd": 174541519.00876138,
+      "market_cap_usd": 170828355.3168065,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 3137208.513,
-          "open_interest_usd": 3518257.301
+          "perp_volume_usd": 2728671.093,
+          "open_interest_usd": 3517408.728
         },
         "Bybit": {
-          "perp_volume_usd": 898055.9301,
-          "open_interest_usd": 3230176.26
-        }
-      }
-    },
-    {
-      "symbol": "H",
-      "name": "Humanity",
-      "rank": 126,
-      "market_cap_usd": 173901792.81256637,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 8077098.24612,
-          "open_interest_usd": 22451058.40072
-        },
-        "Bybit": {
-          "perp_volume_usd": 4105879.2363,
-          "open_interest_usd": 10469691.02
+          "perp_volume_usd": 843750.281,
+          "open_interest_usd": 3252079.67
         }
       }
     },
     {
       "symbol": "RAY",
       "name": "Raydium",
-      "rank": 127,
-      "market_cap_usd": 171824713.85368672,
+      "rank": 126,
+      "market_cap_usd": 170031160.40693682,
       "exchanges": {}
+    },
+    {
+      "symbol": "CVX",
+      "name": "Convex Finance",
+      "rank": 127,
+      "market_cap_usd": 169160266.66437176,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 2711937.3951,
+          "open_interest_usd": 1742588.5699999998
+        },
+        "Bybit": {
+          "perp_volume_usd": 1542212.0498,
+          "open_interest_usd": 1650450.64
+        }
+      }
     },
     {
       "symbol": "KAIA",
       "name": "Kaia",
       "rank": 128,
-      "market_cap_usd": 170604122.3070522,
+      "market_cap_usd": 167603683.16969213,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1105266.6359,
-          "open_interest_usd": 1507860.91755
+          "perp_volume_usd": 1025139.48689,
+          "open_interest_usd": 1511239.64013
         },
         "Bybit": {
-          "perp_volume_usd": 419804.3027,
-          "open_interest_usd": 1961347.68
-        }
-      }
-    },
-    {
-      "symbol": "TWT",
-      "name": "Trust Wallet Token",
-      "rank": 129,
-      "market_cap_usd": 170601835.16625682,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 2388901.6839,
-          "open_interest_usd": 2446627.4365000003
-        },
-        "Bybit": {
-          "perp_volume_usd": 705520.411,
-          "open_interest_usd": 3413335.82
-        }
-      }
-    },
-    {
-      "symbol": "COMP",
-      "name": "Compound",
-      "rank": 130,
-      "market_cap_usd": 162495597.6531308,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 1280618.9,
-          "open_interest_usd": 3508849.8356799996
-        },
-        "Bybit": {
-          "perp_volume_usd": 413384.595,
-          "open_interest_usd": 1655909.99
+          "perp_volume_usd": 583618.5238,
+          "open_interest_usd": 1819458.14
         }
       }
     },
     {
       "symbol": "DEXE",
       "name": "DeXe",
-      "rank": 131,
-      "market_cap_usd": 162469163.4427928,
+      "rank": 129,
+      "market_cap_usd": 167525672.32024315,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 15157643.21417,
-          "open_interest_usd": 11047993.26771
+          "perp_volume_usd": 19124057.37817,
+          "open_interest_usd": 10795041.45984
         },
         "Bybit": {
-          "perp_volume_usd": 3590912.6227,
-          "open_interest_usd": 4106963.83
+          "perp_volume_usd": 3995572.9858,
+          "open_interest_usd": 4202308.74
         }
       }
     },
     {
-      "symbol": "ZBCN",
-      "name": "Zebec Network",
-      "rank": 132,
-      "market_cap_usd": 162406585.01663548,
+      "symbol": "2Z",
+      "name": "DoubleZero",
+      "rank": 130,
+      "market_cap_usd": 166525608.01961032,
       "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 18898220.71059,
+          "open_interest_usd": 1987712.03342
+        },
         "Bybit": {
-          "perp_volume_usd": 475402.6313,
-          "open_interest_usd": 377972.39
+          "perp_volume_usd": 4915821.354,
+          "open_interest_usd": 945548.59
+        }
+      }
+    },
+    {
+      "symbol": "COMP",
+      "name": "Compound",
+      "rank": 131,
+      "market_cap_usd": 162468654.04548556,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 2028356.11,
+          "open_interest_usd": 3635431.0437000003
+        },
+        "Bybit": {
+          "perp_volume_usd": 605951.9165,
+          "open_interest_usd": 1650483.9
+        }
+      }
+    },
+    {
+      "symbol": "AKT",
+      "name": "Akash Network",
+      "rank": 132,
+      "market_cap_usd": 161163334.11185455,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 2170485.17228,
+          "open_interest_usd": 1793780.14368
+        },
+        "Bybit": {
+          "perp_volume_usd": 601174.5732,
+          "open_interest_usd": 771628.2
         }
       }
     },
@@ -1849,15 +1853,15 @@
       "symbol": "STRK",
       "name": "Starknet",
       "rank": 133,
-      "market_cap_usd": 157772803.67962623,
+      "market_cap_usd": 159790583.70806274,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 8318806.617419,
-          "open_interest_usd": 4358012.248262
+          "perp_volume_usd": 5297241.629809,
+          "open_interest_usd": 4334884.19788
         },
         "Bybit": {
-          "perp_volume_usd": 5220590.8141,
-          "open_interest_usd": 5663036.29
+          "perp_volume_usd": 3228218.7616,
+          "open_interest_usd": 5586809.78
         }
       }
     },
@@ -1865,31 +1869,27 @@
       "symbol": "IOTA",
       "name": "IOTA",
       "rank": 134,
-      "market_cap_usd": 157765901.93162307,
+      "market_cap_usd": 157496269.25525087,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1318113.595004,
-          "open_interest_usd": 2287532.252814
+          "perp_volume_usd": 2466488.139963,
+          "open_interest_usd": 2230930.783444
         },
         "Bybit": {
-          "perp_volume_usd": 365347.1974,
-          "open_interest_usd": 2221753.83
+          "perp_volume_usd": 562332.3247,
+          "open_interest_usd": 2267655.94
         }
       }
     },
     {
-      "symbol": "AKT",
-      "name": "Akash Network",
+      "symbol": "ZBCN",
+      "name": "Zebec Network",
       "rank": 135,
-      "market_cap_usd": 156097886.72587216,
+      "market_cap_usd": 157151892.44150323,
       "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 2097952.71235,
-          "open_interest_usd": 1666784.9668300003
-        },
         "Bybit": {
-          "perp_volume_usd": 735238.1319,
-          "open_interest_usd": 741917.26
+          "perp_volume_usd": 500980.0521,
+          "open_interest_usd": 332414.82
         }
       }
     },
@@ -1897,121 +1897,125 @@
       "symbol": "AXS",
       "name": "Axie Infinity",
       "rank": 136,
-      "market_cap_usd": 154460858.56605285,
+      "market_cap_usd": 151066193.7683274,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 8797553.3402,
-          "open_interest_usd": 5279908.348
+          "perp_volume_usd": 5119161.9881,
+          "open_interest_usd": 5242008.0232
         },
         "Bybit": {
-          "perp_volume_usd": 2049220.0922,
-          "open_interest_usd": 2594513.08
-        }
-      }
-    },
-    {
-      "symbol": "TEL",
-      "name": "Telcoin",
-      "rank": 137,
-      "market_cap_usd": 152351655.3736671,
-      "exchanges": {}
-    },
-    {
-      "symbol": "EIGEN",
-      "name": "EigenCloud",
-      "rank": 138,
-      "market_cap_usd": 152066064.99110812,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 4910760.60606,
-          "open_interest_usd": 5488588.7175
-        },
-        "Bybit": {
-          "perp_volume_usd": 1616482.1787,
-          "open_interest_usd": 4590402.41
-        }
-      }
-    },
-    {
-      "symbol": "MX",
-      "name": "MX Token",
-      "rank": 139,
-      "market_cap_usd": 151172388.52027795,
-      "exchanges": {}
-    },
-    {
-      "symbol": "GRT",
-      "name": "The Graph",
-      "rank": 140,
-      "market_cap_usd": 150277098.24307716,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 3224982.51923,
-          "open_interest_usd": 3257419.1650199997
-        },
-        "Bybit": {
-          "perp_volume_usd": 942253.0532,
-          "open_interest_usd": 1879055.84
+          "perp_volume_usd": 1918720.116,
+          "open_interest_usd": 2817398.45
         }
       }
     },
     {
       "symbol": "B",
       "name": "BUILDon",
-      "rank": 141,
-      "market_cap_usd": 149532569.87840936,
+      "rank": 137,
+      "market_cap_usd": 149611100.29689935,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1579657.8817,
-          "open_interest_usd": 8582306.4
+          "perp_volume_usd": 948796.2212,
+          "open_interest_usd": 8612180.795400001
         },
         "Bybit": {
-          "perp_volume_usd": 373678.4385,
-          "open_interest_usd": 1183710.34
+          "perp_volume_usd": 193319.0263,
+          "open_interest_usd": 1211879.52
         }
       }
+    },
+    {
+      "symbol": "MX",
+      "name": "MX Token",
+      "rank": 138,
+      "market_cap_usd": 148828394.8278924,
+      "exchanges": {}
+    },
+    {
+      "symbol": "EIGEN",
+      "name": "EigenCloud",
+      "rank": 139,
+      "market_cap_usd": 148035515.9026179,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 6287864.31056,
+          "open_interest_usd": 5306134.02088
+        },
+        "Bybit": {
+          "perp_volume_usd": 2266371.0801,
+          "open_interest_usd": 4536827.0
+        }
+      }
+    },
+    {
+      "symbol": "GRT",
+      "name": "The Graph",
+      "rank": 140,
+      "market_cap_usd": 147157355.40768027,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 3586011.44713,
+          "open_interest_usd": 3392760.2205
+        },
+        "Bybit": {
+          "perp_volume_usd": 906510.2095,
+          "open_interest_usd": 1862904.27
+        }
+      }
+    },
+    {
+      "symbol": "TEL",
+      "name": "Telcoin",
+      "rank": 141,
+      "market_cap_usd": 146212169.01762518,
+      "exchanges": {}
     },
     {
       "symbol": "RUNE",
       "name": "THORChain",
       "rank": 142,
-      "market_cap_usd": 144299531.01456794,
+      "market_cap_usd": 143190297.4553614,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1977065.8759,
-          "open_interest_usd": 3245091.0008
+          "perp_volume_usd": 1675553.8698,
+          "open_interest_usd": 3173556.373
         },
         "Bybit": {
-          "perp_volume_usd": 417514.5444,
-          "open_interest_usd": 2176827.7
-        }
-      }
-    },
-    {
-      "symbol": "TAG",
-      "name": "Tagger",
-      "rank": 143,
-      "market_cap_usd": 139596879.98674676,
-      "exchanges": {
-        "Binance": {
-          "perp_volume_usd": 1866813.685566,
-          "open_interest_usd": 10633286.165592
+          "perp_volume_usd": 217717.6408,
+          "open_interest_usd": 2190302.58
         }
       }
     },
     {
       "symbol": "WIF",
       "name": "dogwifhat",
-      "rank": 144,
-      "market_cap_usd": 139379275.61183992,
+      "rank": 143,
+      "market_cap_usd": 138281508.06826726,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 10334107.73933,
-          "open_interest_usd": 11228324.06368
+          "perp_volume_usd": 14877623.99557,
+          "open_interest_usd": 11121308.60148
         },
         "Bybit": {
-          "perp_volume_usd": 4948784.9294,
-          "open_interest_usd": 10455761.47
+          "perp_volume_usd": 7966394.7728,
+          "open_interest_usd": 9971341.49
+        }
+      }
+    },
+    {
+      "symbol": "THETA",
+      "name": "Theta Network",
+      "rank": 144,
+      "market_cap_usd": 134075056.40917622,
+      "exchanges": {
+        "Binance": {
+          "perp_volume_usd": 1957564.5438,
+          "open_interest_usd": 1991709.31762
+        },
+        "Bybit": {
+          "perp_volume_usd": 378221.9497,
+          "open_interest_usd": 1238837.01
         }
       }
     },
@@ -2019,31 +2023,27 @@
       "symbol": "FARTCOIN",
       "name": "Fartcoin",
       "rank": 145,
-      "market_cap_usd": 135545166.53348565,
+      "market_cap_usd": 133928342.01781812,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 18827582.02267,
-          "open_interest_usd": 10459046.356849998
+          "perp_volume_usd": 13644181.49035,
+          "open_interest_usd": 10389493.15756
         },
         "Bybit": {
-          "perp_volume_usd": 17793382.5214,
-          "open_interest_usd": 20540052.34
+          "perp_volume_usd": 13873690.1206,
+          "open_interest_usd": 20215152.51
         }
       }
     },
     {
-      "symbol": "THETA",
-      "name": "Theta Network",
+      "symbol": "TAG",
+      "name": "Tagger",
       "rank": 146,
-      "market_cap_usd": 134122384.1860337,
+      "market_cap_usd": 133952062.26485778,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 1999955.6147,
-          "open_interest_usd": 2061024.88671
-        },
-        "Bybit": {
-          "perp_volume_usd": 550726.9666,
-          "open_interest_usd": 1204822.56
+          "perp_volume_usd": 1745743.247332,
+          "open_interest_usd": 10134468.09132
         }
       }
     },
@@ -2051,37 +2051,37 @@
       "symbol": "TRAC",
       "name": "OriginTrail",
       "rank": 147,
-      "market_cap_usd": 133660842.2232084,
-      "exchanges": {}
-    },
-    {
-      "symbol": "VSN",
-      "name": "Vision",
-      "rank": 148,
-      "market_cap_usd": 133445655.57866268,
+      "market_cap_usd": 132542451.09161396,
       "exchanges": {}
     },
     {
       "symbol": "CHZ",
       "name": "Chiliz",
-      "rank": 149,
-      "market_cap_usd": 133245610.62559669,
+      "rank": 148,
+      "market_cap_usd": 131747579.5700185,
       "exchanges": {
         "Binance": {
-          "perp_volume_usd": 5901700.3868,
-          "open_interest_usd": 6478107.293310001
+          "perp_volume_usd": 6447306.03942,
+          "open_interest_usd": 6393272.989709999
         },
         "Bybit": {
-          "perp_volume_usd": 743088.8024,
-          "open_interest_usd": 2557468.58
+          "perp_volume_usd": 928844.1434,
+          "open_interest_usd": 2465253.39
         }
       }
     },
     {
       "symbol": "XEC",
       "name": "eCash",
+      "rank": 149,
+      "market_cap_usd": 131608338.29406755,
+      "exchanges": {}
+    },
+    {
+      "symbol": "VSN",
+      "name": "Vision",
       "rank": 150,
-      "market_cap_usd": 131614028.97120653,
+      "market_cap_usd": 131332529.76928377,
       "exchanges": {}
     }
   ]
