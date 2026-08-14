@@ -908,6 +908,46 @@ def sheet_notlar(wb, hacim_gun, kontrat_tarihler, manuel_kaldirac, manuel_fundin
          "hacme göre serbestçe değişir; kurallar sadece sapan fiyatı kısar ya da kaynağı dışlar."),
         ("", ""),
         ("", ""),
+        ("FUNDING FORMÜLLERİ (borsa dokümanlarından, 13.08.2026)", ""),
+        ("Ortak prim endeksi",
+         "ip = [max(0; Pib − Pi) − max(0; Pi − Pia)] / Pi   ·   altı borsada aynı, MEXC'te bulunamadı"),
+        ("Binance", "rf = ip_ort + clamp(ri − ip_ort; ±%0,05).  Dış cap ayrı adımda: ≤25x sabit ±%3, "
+                    "≥30x max kaldıraçtaki MMR bazlı.  ri = %0,01/8sa.  Örnekleme 5 sn."),
+        ("OKX", "rf = clamp[(ip_ort + clamp(ri − ip_ort; ±%0,05)) ÷ (8/N); cap; floor].  "
+                "ri = %0,01 sabit.  N ∈ {1,2,4,8} saat."),
+        ("Bybit", "rf = clamp[ip_ort + clamp(ri − ip_ort; ±%0,05); üst; alt].  "
+                  "ri = %0,03 ÷ (24/T).  üst = min((IMR−MMR)×0,75; MMR), katsayı 0,5–1 ayarlanabilir."),
+        ("Bitget", "rf = clamp[(ip_ort + clamp(ri − ip_ort; ±%0,05)) ÷ (8/N); min; maks].  "
+                   "ri = %0,01, tokenize hissede %0.  Tavan katsayısı 0,75 (aralık 0,01–2)."),
+        ("Gate", "rf = clamp[(ip_ort + clamp(ri − ip_ANLIK; ±%0,05)) ÷ (8/N); ±fmax].  "
+                 "fmax = (IM−MM)×%75.  TEK FARK: iç clamp'te ortalama değil anlık prim kullanır."),
+        ("Hyperliquid", "rf(8sa) = ip_ort + clamp(ri − ip_ort; ±%0,05), saatlik ödeme = rf ÷ 8.  "
+                        "ri = %0,01/8sa.  Tavan saatte %4."),
+        ("MEXC", "Funding formülü, faizi ve ortalama yöntemi resmi kaynakta bulunamadı. "
+                 "Yalnızca tavan biliniyor: ±%0,18 (API'den)."),
+        ("Ortalama prim yöntemi",
+         "Doğrusal ağırlıklı (son örnek en ağır): Binance, OKX, Bybit, Bitget.  "
+         "Zaman ağırlıklı: Gate, Hyperliquid.  Formül: (1×ip₁ + 2×ip₂ + ... + n×ipₙ) / (1+2+...+n)"),
+        ("Impact tutarı",
+         "Binance 200 USDT ÷ max kaldıraçtaki IMR (125x → 25.000$) · OKX 200 × max kaldıraç "
+         "(100x → 20.000$) · Bitget 200 ÷ min MMR (%0,5 → 40.000$) · Bybit sözleşme detayında"),
+        ("", ""),
+        ("MARK PRICE (Pm)", ""),
+        ("Ortak kalıp",
+         "Beş borsa üç fiyatın MEDYANINI alır: funding bazlı fiyat, basis hareketli ortalaması, "
+         "son işlem fiyatı. Binance, Bybit, Bitget, Gate, Hyperliquid."),
+        ("Binance", "medyan(Pi×(1+rf×t/T); Pi+MA(2,5dk basis); son işlem).  "
+                    "basis = (Bid1+Ask1)/2 − Pi, 5 sn'de bir 30 nokta."),
+        ("Bybit", "medyan(Pi×(1+rf×t/8); Pi+MA(2,5dk basis); son işlem).  "
+                  "Kasım 2025'ten beri ince sembollerde harman: Fiyat3×C + Index×(1−C)."),
+        ("Bitget", "medyan(son fiyat; Pi×(1+rf×t/T); Pi+MA(2,5dk basis)).  Saniyede bir güncellenir."),
+        ("Gate", "medyan(Pi×(1+rf×t/T); Pi+MA(5dk basis); son gerçekleşme)."),
+        ("OKX", "Pm = Pi + EMA(basis), basis = (best bid + best ask)/2 − Pi.  "
+                "OKX mark price'ı funding'e HİÇ bağlamaz — yedi borsa içinde tek."),
+        ("Hyperliquid", "medyan(oracle + 150sn EMA(HL mid − oracle); HL bid/ask/son medyanı; "
+                        "beş CEX perp mid'inin [3,2,2,1,1] ağırlıklı medyanı)."),
+        ("MEXC", "Pm = Pi + MA(baz farkı).  Pencere doğrulanmadı."),
+        ("", ""),
         ("Default funding (faiz bileşeni, borsa başına sabit)", ""),
     ]
     for b in BORSA_SIRASI:
