@@ -9,6 +9,7 @@
     --bg:#f5f8fd; --card:#fff; --alt:#eef3fb; --line:#dce5f2;
     --ink:#0e1726; --mut:#5b6b85; --dim:#8a97ad;
     --brand:#003aff; --brand-bg:#e8eeff;
+    --sc:#7b3ff2; --sc-bg:#f1ebff;
     --pos:#0a9d57; --neg:#e5484d;
     --warn:#b47600; --warn-bg:#fdf4e3;
     --mono:'Consolas','SF Mono',Menlo,monospace;
@@ -16,10 +17,11 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;line-height:1.55}
-  .wrap{max-width:1240px;margin:0 auto;padding:24px 20px 60px}
+  .wrap{max-width:1280px;margin:0 auto;padding:24px 20px 60px}
   h1{font-size:21px;font-weight:600;margin:0 0 4px}
   .sub{font-size:13px;color:var(--mut);margin-bottom:22px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+  .card.sc{border-color:#d9c9ff;background:#fdfbff}
   .lbl{font-size:12px;color:var(--mut);margin-bottom:10px;font-weight:500}
   label{font-size:11.5px;color:var(--mut);display:block}
   input{font-family:inherit;font-size:13px;padding:6px 8px;border:1px solid var(--line);
@@ -28,6 +30,7 @@
   button{font-family:inherit;font-size:13px;padding:7px 14px;border:1px solid var(--line);
     border-radius:7px;background:#fff;color:var(--ink);cursor:pointer}
   button.on{background:var(--brand-bg);color:var(--brand);border-color:var(--brand);font-weight:600}
+  button.on.scb{background:var(--sc-bg);color:var(--sc);border-color:var(--sc)}
   table{width:100%;border-collapse:collapse;font-size:13px}
   th{text-align:left;font-weight:500;color:var(--mut);font-size:11.5px;padding:7px 8px;border-bottom:1px solid var(--line)}
   td{padding:7px 8px;border-top:1px solid var(--line)}
@@ -53,13 +56,15 @@
     text-transform:uppercase;margin:16px 0 8px}
   .sec.f1{margin-top:0}
   .btns{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .rozet{display:inline-block;font-size:10.5px;padding:1px 7px;border-radius:20px;
+    background:var(--sc-bg);color:var(--sc);font-weight:600;margin-left:6px;vertical-align:middle}
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <h1>Funding ve Mark Price Calculator</h1>
-<div class="sub">Yedi borsanın kendi formülü · tüm değişkenler elle girilir</div>
+<div class="sub">Sekiz platformun kendi formülü · tüm değişkenler elle girilir</div>
 
 <div class="card">
   <div class="sec f1">Fiyatlar</div>
@@ -81,6 +86,13 @@
     <div><label>t — kalan süre (saat)<input id="t" type="number" step="any" value="8"></label></div>
   </div>
 
+  <div class="sec">Scalable faizi — iki bacaklı</div>
+  <div class="grid g5">
+    <div><label>r_Q — kotasyon para faizi % (yıllık)<input id="rQ" type="number" step="any" value="39.9"></label></div>
+    <div><label>r_B — temel varlık faizi % (yıllık)<input id="rB" type="number" step="any" value="0"></label></div>
+    <div><label>N — günlük clearing sayısı<input id="N" type="number" step="any" value="3"></label></div>
+  </div>
+
   <div class="sec">Teminat ve tavan parametreleri</div>
   <div class="grid g5">
     <div><label>Max kaldıraç<input id="lev" type="number" step="any" value="125"></label></div>
@@ -94,18 +106,18 @@
 </div>
 
 <div class="card scroll">
-  <div class="lbl">Yedi borsa yan yana — aynı girdilerle</div>
-  <table style="min-width:880px">
+  <div class="lbl">Sekiz platform yan yana — aynı girdilerle</div>
+  <table style="min-width:900px">
     <thead><tr>
-      <th style="width:13%">Borsa</th>
+      <th style="width:13%">Platform</th>
       <th class="r">rf</th><th class="r">Tavan</th>
       <th class="r">Fiyat 1</th><th class="r">Fiyat 2</th><th class="r">Fiyat 3</th>
       <th class="r">Pm</th><th class="r">Pm − Pi</th><th style="width:22%">Mark price yöntemi</th>
     </tr></thead>
     <tbody id="tumu"></tbody>
   </table>
-  <div class="note">Borsa adına tıklayınca aşağıdaki adım adım hesap o borsaya geçer.
-    Tavan sütunu her borsanın kendi kuralıyla, girdiğin teminat oranlarından hesaplanır.</div>
+  <div class="note">Platform adına tıklayınca aşağıdaki adım adım hesap oraya geçer.
+    Tavan sütunu her platformun kendi kuralıyla, girdiğin teminat oranlarından hesaplanır.</div>
 </div>
 
 <div class="btns" id="btns"></div>
@@ -127,24 +139,42 @@
   <div id="ozet" style="font-family:var(--mono);font-size:12.5px;line-height:2"></div>
 </div>
 
+<div class="card sc">
+  <div class="lbl">Scalable — likidasyon eşikleri <span class="rozet">Scalable dokümanı</span></div>
+  <div class="grid g5">
+    <div><label>EV — giriş değeri<input id="EV" type="number" step="any" value="500000"></label></div>
+    <div><label>MV — mark değeri<input id="MV" type="number" step="any" value="500000"></label></div>
+    <div><label>UPnL — gerçekleşmemiş K/Z<input id="UPnL" type="number" step="any" value="0"></label></div>
+    <div><label>Q — pozisyon miktarı<input id="Q" type="number" step="any" value="7.5757"></label></div>
+    <div><label>M — pozisyon teminatı<input id="Mrg" type="number" step="any" value="50000"></label></div>
+    <div><label>L_user — kullanıcı kaldıracı<input id="Luser" type="number" step="any" value="10"></label></div>
+    <div><label>L_mc — margin call kaldıracı<input id="Lmc" type="number" step="any" value="20"></label></div>
+    <div><label>L_liq — likidasyon kaldıracı<input id="Lliq" type="number" step="any" value="25"></label></div>
+    <div><label>close_fee — kapanış ücreti %<input id="cfee" type="number" step="any" value="0.05"></label></div>
+    <div><label>Yön (1 long, −1 short)<input id="yon" type="number" step="any" value="1"></label></div>
+  </div>
+  <div id="likid" style="margin-top:14px"></div>
+</div>
+
 <div class="card">
   <div class="lbl">Bilinmesi gerekenler</div>
   <div style="font-size:12.5px;color:var(--mut);line-height:1.85">
-    <b style="color:var(--ink)">Tüm girdiler elle.</b> Bu bir senaryo aracıdır, canlı veri çekmez.
-    Impact fiyatlarını, defter orta fiyatını ve son işlem fiyatını sen girersin.<br>
+    <b style="color:var(--ink)">Tüm girdiler elle.</b> Bu bir senaryo aracıdır, canlı veri çekmez.<br>
+    <b style="color:var(--ink)">Scalable'ın faizi iki bacaklıdır:</b> r_I = (r_Q − r_B) / N.
+    Kotasyon para faizinden temel varlık faizi düşülür, günlük clearing sayısına bölünür.
+    Diğer yedi platform tek bacak kullanır ve faizi sabit tutar.<br>
+    <b style="color:var(--ink)">Scalable mark price'ı tek bileşenlidir:</b> Pm = Pi + Bfair.
+    Medyan almaz. Beş borsa üçlü medyan kullanır; OKX ve Scalable bu kalıbın dışındadır.<br>
+    <b style="color:var(--ink)">Scalable dokümanında funding tavanı yok.</b> Yalnızca clamp ±%0,05
+    tanımlı. Tavan uydurulmadı, tabloda boş bırakıldı.<br>
+    <b style="color:var(--ink)">Scalable index'i medyan bandıyla süzer:</b>
+    P_I = Σ(p_i × w_i) / Σ(w_i), yalnızca medyanın (1±ε) bandındaki fiyatlar alınır.
+    Verisi bayatlayan sağlayıcının ağırlığı r_p katsayısıyla düşürülür. Index 3 saniyede bir yayınlanır.<br>
     <b style="color:var(--ink)">Mark price beş borsada üç fiyatın medyanıdır.</b>
-    Fiyat 1 funding bazlı, Fiyat 2 basis hareketli ortalaması, Fiyat 3 son işlem fiyatı.
-    OKX funding'i mark price'a hiç katmaz, sadece basis'in üstel hareketli ortalamasını kullanır.<br>
+    Fiyat 1 funding bazlı, Fiyat 2 basis hareketli ortalaması, Fiyat 3 son işlem fiyatı.<br>
     <b style="color:var(--ink)">Hyperliquid sadeleştirildi.</b> Gerçekte üçüncü bileşeni beş CEX perp
     mid fiyatının [3,2,2,1,1] ağırlıklı medyanıdır; burada tek girdi olarak alınıyor.<br>
-    <b style="color:var(--ink)">MEXC funding formülü bilinmiyor.</b> Resmi kaynakta bulunamadı,
-    tahmin yazılmadı. Yalnızca mark price tanımı ve tavanı (±%0,18) biliniyor.<br>
-    <b style="color:var(--ink)">Doğrulanmayan tavanlar girdi bırakıldı.</b>
-    Binance'in 30x üstü tavanı max kaldıraçtaki MMR üzerinden hesaplanıyor ama kesin katsayı
-    yayınlanmamış; OKX de tavanını yayınlamıyor. İkisini elle girersin.<br>
-    <b style="color:var(--ink)">Basis hareketli ortalaması tek değer olarak alınıyor.</b>
-    Gerçekte Binance 2,5 dakikalık, Gate 5 dakikalık pencere kullanıyor. Burada girdiğin
-    defter orta fiyatı ile Pi arasındaki fark doğrudan basis sayılıyor.
+    <b style="color:var(--ink)">MEXC funding formülü bilinmiyor.</b> Resmi kaynakta bulunamadı.
   </div>
 </div>
 
@@ -166,8 +196,8 @@ function med3(a,b,c){
   if(v.length===2)return (v[0]+v[1])/2;
   return v[1]; }
 
-var BORSA=['Binance','OKX','Bybit','Bitget','Gate','Hyperliquid','MEXC'];
-var secili='Binance';
+var BORSA=['Scalable','Binance','OKX','Bybit','Bitget','Gate','Hyperliquid','MEXC'];
+var secili='Scalable';
 
 BORSA.forEach(function(b){
   var e=document.createElement('button');
@@ -181,14 +211,17 @@ function girdiler(){
   var Pi=g('Pi');
   var ipRaw=(Math.max(0,g('Pib')-Pi)-Math.max(0,Pi-g('Pia')))/Pi;
   var s=$('ipo').value.trim();
+  var rQ=g('rQ')/100, rB=g('rB')/100, N=g('N');
   return { Pi:Pi, Pib:g('Pib'), Pia:g('Pia'), mid:g('mid'), last:g('last'), dis:g('dis'),
     ip:ipRaw, ipo:(s===''?ipRaw:parseFloat(s)/100), ipoElle:(s!==''),
     ri:g('ri')/100, L:g('L')/100, T:g('T'), t:g('t'),
+    rQ:rQ, rB:rB, N:N, riSc:((rQ/365)-(rB/365))/N,
     lev:g('lev'), IMR:g('IMR')/100, MMR:g('MMR')/100,
     kBy:g('kBy'), kBi:g('kBi'), capBn:g('capBn')/100, capOk:g('capOk')/100 };
 }
 
 function tavan(b,d){
+  if(b==='Scalable') return { v:null, n:'dokümanda tanımlı değil' };
   if(b==='Binance') return { v:(d.lev<=25?0.03:d.capBn),
     n:(d.lev<=25?'≤25x sabit ±%3':'≥30x MMR bazlı — elle girilen') };
   if(b==='OKX') return { v:d.capOk, n:'yayınlanmıyor — elle girilen' };
@@ -201,8 +234,12 @@ function tavan(b,d){
 }
 
 function fundingHesap(b,d){
-  var cap=tavan(b,d).v, bol=8/d.T;
+  var tv=tavan(b,d), cap=tv.v, bol=8/d.T;
   var ic=cl(d.ri-d.ipo,-d.L,d.L), cek=d.ipo+ic;
+  if(b==='Scalable'){
+    var icS=cl(d.riSc-d.ipo,-d.L,d.L);
+    return { rf:d.ipo+icS, ic:icS, cek:d.ipo+icS, bol:1, riOzel:d.riSc, tavansiz:true };
+  }
   if(b==='Binance') return { rf:cl(cek,-cap,cap), ic:ic, cek:cek, bol:1 };
   if(b==='OKX'||b==='Bitget') return { rf:cl(cek/bol,-cap,cap), ic:ic, cek:cek, bol:bol };
   if(b==='Bybit'){ var rb=0.0003/(24/d.T), i2=cl(rb-d.ipo,-d.L,d.L);
@@ -217,6 +254,7 @@ function markHesap(b,d,rf){
   var basis=d.mid-d.Pi;
   var P1=(rf===null?null:d.Pi*(1+rf*d.t/d.T));
   var P2=d.Pi+basis, P3=d.last;
+  if(b==='Scalable') return { Pm:P1, P1:P1, P2:null, P3:null, y:'Pi + Bfair · tek bileşen' };
   if(b==='OKX') return { Pm:P2, P1:null, P2:P2, P3:null, y:'Pi + EMA(basis)' };
   if(b==='MEXC') return { Pm:P2, P1:null, P2:P2, P3:null, y:'Pi + MA(baz farkı)' };
   if(b==='Hyperliquid') return { Pm:med3(P2,P3,d.dis), P1:P2, P2:P3, P3:d.dis,
@@ -230,6 +268,11 @@ function step(t,f,s,e,son){
 }
 
 var OZ={
+ Scalable:['rf = ip_ort + clamp(r_I − ip_ort, ±%0,05)',
+  'r_I = (r_Q − r_B) / N   ·   iki bacaklı faiz, N = günlük clearing sayısı',
+  'Pm = Pi + Bfair   ·   Bfair = Pi × rf × t/T   ·   medyan yok, tek bileşen',
+  'index: P_I = Σ(p_i×w_i)/Σ(w_i), medyanın (1±ε) bandı dışı elenir, 3 sn’de bir',
+  'funding tavanı dokümanda tanımlı değil'],
  Binance:['rf = ip_ort + clamp(ri − ip_ort, ±%0,05)',
   'dış cap: ≤25x sabit ±%3 · ≥30x max kaldıraçtaki MMR bazlı',
   'ortalama prim doğrusal ağırlıklı · örnekleme 5 saniye · 5.760 nokta',
@@ -260,17 +303,67 @@ var OZ={
   'Pm = Pi + MA(baz farkı)'],
 };
 
+function likidasyon(d){
+  var EV=parseFloat($('EV').value), MV=parseFloat($('MV').value);
+  var U=parseFloat($('UPnL').value), Q=parseFloat($('Q').value);
+  var M=parseFloat($('Mrg').value), Lu=parseFloat($('Luser').value);
+  var Lmc=parseFloat($('Lmc').value), Ll=parseFloat($('Lliq').value);
+  var C=parseFloat($('cfee').value)/100, yon=parseFloat($('yon').value);
+
+  var V=(U>0?EV:MV), UL=(U>0?0:U);
+  var req = V*((1+C)/Lu + C) - UL;
+  var mc  = MV*(1/Lmc + C) - U;
+  var liq = MV*(1/Ll + C) - U;
+  var bnk = MV*C - U;
+  // Formuldeki L, kullanici kaldiraci degil LIKIDASYON kaldiracidir (L_liq).
+  // Bagimsiz turetmeyle dogrulandi: Q*P*(1 - 1/L_liq - C) = E - M
+  // Bastaki eksi, Scalable'in ic isaret kuralindan; mutlak deger alinir.
+  var E=EV;
+  var lpHam = (yon>0)
+    ? -(E-M)/(Math.abs(Q)*(1-(C+1/Ll)))
+    : -(E+M)/(Math.abs(Q)*(1+(C+1/Ll)));
+  var lp = Math.abs(lpHam);
+
+  var h='';
+  h+=step('Gerekli teminat',
+    'required = V × ( (1+close_fee)/L_user + close_fee ) − UL',
+    'V = '+(U>0?'EV':'MV')+' = '+fx(V)+'   ·   UL = '+fx(UL)+
+    '<br>required = '+fx(V)+' × ( (1+'+pc(C,3)+')/'+Lu+' + '+pc(C,3)+' ) − '+fx(UL), fx(req));
+  h+=step('Margin call eşiği',
+    'margin_call = MV × ( 1/L_mc + close_fee ) − UPnL',
+    'margin_call = '+fx(MV)+' × ( 1/'+Lmc+' + '+pc(C,3)+' ) − '+fx(U), fx(mc));
+  h+=step('Likidasyon eşiği',
+    'liquidation = MV × ( 1/L_liq + close_fee ) − UPnL',
+    'liquidation = '+fx(MV)+' × ( 1/'+Ll+' + '+pc(C,3)+' ) − '+fx(U), fx(liq));
+  h+=step('İflas eşiği',
+    'bankruptcy = MV × close_fee − UPnL',
+    'bankruptcy = '+fx(MV)+' × '+pc(C,3)+' − '+fx(U), fx(bnk));
+  h+=step('Likidasyon fiyatı',
+    (yon>0? 'long:  price = −(E − M) / ( |Q| × (1 − (C + 1/L_liq)) )'
+          : 'short: price = −(E + M) / ( |Q| × (1 + (C + 1/L_liq)) )'),
+    'price = −('+fx(E)+(yon>0?' − ':' + ')+fx(M)+') / ( '+fx(Math.abs(Q))+
+    ' × (1'+(yon>0?' − ':' + ')+'('+pc(C,3)+' + 1/'+Ll+')) )'+
+    '<br>ham = '+fx(lpHam)+'  →  mutlak değer', fx(lp), true);
+  h+='<div class="note">Formüldeki L, likidasyon kaldıracıdır (L_liq). '+
+     'Baştaki eksi işareti Scalable’ın iç işaret kuralından gelir, mutlak değer alınır. '+
+     'Funding oranı likidasyon fiyatı hesabına dahil edilmez.</div>';
+  $('likid').innerHTML=h;
+}
+
 function hesapla(){
   var d=girdiler();
-  BORSA.forEach(function(b){ $('b_'+b).className=(b===secili?'on':''); });
+  BORSA.forEach(function(b){
+    $('b_'+b).className=(b===secili?(b==='Scalable'?'on scb':'on'):''); });
 
   $('tumu').innerHTML=BORSA.map(function(b){
     var f=fundingHesap(b,d), tv=tavan(b,d), mk=markHesap(b,d,f.rf);
     var sec=(b===secili), fark=mk.Pm-d.Pi;
-    return '<tr'+(sec?' style="background:var(--brand-bg)"':'')+'>'+
-      '<td style="cursor:pointer'+(sec?';color:var(--brand);font-weight:600':'')+'" data-b="'+b+'">'+b+'</td>'+
+    var vurgu=sec?(b==='Scalable'?'background:var(--sc-bg)':'background:var(--brand-bg)'):'';
+    var renk=sec?(b==='Scalable'?'var(--sc)':'var(--brand)'):'';
+    return '<tr'+(sec?' style="'+vurgu+'"':'')+'>'+
+      '<td style="cursor:pointer'+(sec?';color:'+renk+';font-weight:600':'')+'" data-b="'+b+'">'+b+'</td>'+
       '<td class="r m">'+(f.yok?'<span style="color:var(--dim)">bilinmiyor</span>':pc(f.rf))+'</td>'+
-      '<td class="r m" style="color:var(--mut)">±'+pc(tv.v,3)+'</td>'+
+      '<td class="r m" style="color:var(--mut)">'+(tv.v===null?'<span style="color:var(--dim)">yok</span>':'±'+pc(tv.v,3))+'</td>'+
       '<td class="r m">'+fx(mk.P1)+'</td><td class="r m">'+fx(mk.P2)+'</td><td class="r m">'+fx(mk.P3)+'</td>'+
       '<td class="r m" style="font-weight:600">'+fx(mk.Pm)+'</td>'+
       '<td class="r m" style="color:'+(fark>=0?'var(--pos)':'var(--neg)')+'">'+(fark>=0?'+':'')+fx(fark)+'</td>'+
@@ -290,7 +383,7 @@ function hesapla(){
   $('oip').textContent=pc(d.ip);
   $('oipn').textContent=(d.ipoElle?'ip_ort elle: '+pc(d.ipo)
     :(d.ip>0?'defter Pi üstünde':(d.ip<0?'defter Pi altında':'ölü bantta')));
-  $('ocap').textContent='±'+pc(tv.v,3);
+  $('ocap').textContent=(tv.v===null?'yok':'±'+pc(tv.v,3));
   $('ocapn').textContent=tv.n;
 
   $('adimBaslik').textContent='Adım adım hesap — '+secili;
@@ -308,19 +401,29 @@ function hesapla(){
   }else{
     var riKul=(f.riOzel!==undefined?f.riOzel:d.ri);
     var n=2;
-    if(f.riOzel!==undefined){
+    if(secili==='Scalable'){
+      a+=step('2 · Faiz — iki bacaklı',
+        'r_I = ( r_Q − r_B ) / N     ·     yıllık oranlar günlüğe çevrilir',
+        'r_I = ( '+pc(d.rQ/365,5)+' − '+pc(d.rB/365,5)+' ) / '+d.N,
+        pc(riKul,5));
+      n=3;
+    }else if(f.riOzel!==undefined){
       a+=step('2 · Faiz — Bybit kendi türetir','ri = %0,03 ÷ (24 / T)',
         'ri = %0,03 ÷ '+(24/d.T).toFixed(2), pc(riKul));
       n=3;
     }
     var primKul=(f.anlik?d.ip:d.ipo);
     a+=step(n+' · İç clamp',
-      'clamp( ri − '+(f.anlik?'ip (ANLIK)':'ip_ort')+' , ±'+pc(d.L,3)+' )',
-      'clamp( '+pc(riKul)+' − '+pc(primKul)+' ) = clamp( '+pc(riKul-primKul)+' )', pc(f.ic));
+      'clamp( '+(secili==='Scalable'?'r_I':'ri')+' − '+(f.anlik?'ip (ANLIK)':'ip_ort')+
+      ' , ±'+pc(d.L,3)+' )',
+      'clamp( '+pc(riKul,5)+' − '+pc(primKul)+' ) = clamp( '+pc(riKul-primKul,5)+' )', pc(f.ic));
     n++;
 
     var fr,sr;
-    if(secili==='Binance'||secili==='Bybit'){
+    if(secili==='Scalable'){
+      fr='rf = ip_ort + clamp terimi   ·   funding tavanı yok';
+      sr='rf = '+pc(d.ipo)+' + ('+pc(f.ic)+')'; }
+    else if(secili==='Binance'||secili==='Bybit'){
       fr='rf = ip_ort + clamp terimi'; sr='rf = '+pc(d.ipo)+' + ('+pc(f.ic)+')'; }
     else if(secili==='OKX'||secili==='Bitget'){
       fr='rf = [ ip_ort + clamp terimi ] ÷ (8/T)';
@@ -333,17 +436,25 @@ function hesapla(){
     a+=step(n+' · Funding rate',fr,sr,pc(f.rf));
     no=n+1;
 
-    var ham=(f.bol===1?f.cek:f.cek/f.bol);
-    if(Math.abs(ham)>tv.v+1e-12){
-      a+='<div class="flag">Tavan bağladı: ham değer '+pc(ham)+' iken ±'+pc(tv.v,3)+
-         ' sınırında kesildi. Kural: '+tv.n+'</div>'; }
+    if(tv.v!==null){
+      var ham=(f.bol===1?f.cek:f.cek/f.bol);
+      if(Math.abs(ham)>tv.v+1e-12){
+        a+='<div class="flag">Tavan bağladı: ham değer '+pc(ham)+' iken ±'+pc(tv.v,3)+
+           ' sınırında kesildi. Kural: '+tv.n+'</div>'; }
+    }
     if(Math.abs(riKul-primKul)>d.L+1e-12){
       a+='<div class="flag">İç clamp sınıra dayandı, faiz bileşeni bastırıldı; '+
-         'funding’i prim belirliyor. Clamp kalksa rf = ri olurdu ve prim tamamen sadeleşirdi.</div>'; }
+         'funding’i prim belirliyor. Clamp kalksa rf = faiz oranına eşit olurdu.</div>'; }
   }
 
   var basis=d.mid-d.Pi;
-  if(secili==='OKX'){
+  if(secili==='Scalable'){
+    var bf=d.Pi*f.rf*d.t/d.T;
+    a+=step(no+' · Adil baz','Bfair = Pi × rf × t / T',
+      'Bfair = '+fx(d.Pi)+' × '+pc(f.rf)+' × '+d.t+'/'+d.T, fx(bf));
+    a+=step((no+1)+' · Mark price','Pm = Pi + Bfair',
+      'Pm = '+fx(d.Pi)+' + '+fx(bf), fx(mk.Pm), true);
+  }else if(secili==='OKX'){
     a+=step(no+' · Mark price','Pm = Pi + EMA(basis)   ·   basis = defter ortası − Pi',
       'Pm = '+fx(d.Pi)+' + ('+fx(basis)+')',fx(mk.Pm),true);
   }else if(secili==='MEXC'){
@@ -364,10 +475,15 @@ function hesapla(){
 
   $('ozetBaslik').textContent='Formül özeti — '+secili;
   $('ozet').innerHTML=OZ[secili].map(function(x,i){
-    return '<div'+(i===0?' style="color:var(--brand)"':'')+'>'+x+'</div>'; }).join('');
+    return '<div'+(i===0?' style="color:'+(secili==='Scalable'?'var(--sc)':'var(--brand)')+'"':'')+
+      '>'+x+'</div>'; }).join('');
+
+  likidasyon(d);
 }
 
-['Pi','Pib','Pia','mid','last','dis','ipo','ri','L','T','t','lev','IMR','MMR','kBy','kBi','capBn','capOk']
+['Pi','Pib','Pia','mid','last','dis','ipo','ri','L','T','t','rQ','rB','N',
+ 'lev','IMR','MMR','kBy','kBi','capBn','capOk',
+ 'EV','MV','UPnL','Q','Mrg','Luser','Lmc','Lliq','cfee','yon']
   .forEach(function(i){ $(i).addEventListener('input',hesapla); });
 hesapla();
 </script>
