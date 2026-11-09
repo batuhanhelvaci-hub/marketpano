@@ -1,0 +1,4303 @@
+{
+  "generated_at": "2026-11-09T06:40:45.591795+00:00",
+  "exchanges": [
+    "Hyperliquid",
+    "Binance",
+    "OKX",
+    "Bybit",
+    "Bitget",
+    "Gate",
+    "MEXC"
+  ],
+  "assets": [
+    {
+      "symbol": "BTC",
+      "name": "Bitcoin",
+      "rank": 1,
+      "market_cap_usd": 1490359808050.6875,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 2404266483.7747397,
+          "open_interest_usd": 3083769784.1158605
+        },
+        "OKX": {
+          "perp_volume_usd": 5022865516.0494,
+          "open_interest_usd": 2578622933.821531
+        },
+        "Bitget": {
+          "perp_volume_usd": 2431297088.75764,
+          "open_interest_usd": 2764793023.940882
+        },
+        "Gate": {
+          "perp_volume_usd": 4706104684.0,
+          "open_interest_usd": 4569163497.99504
+        },
+        "MEXC": {
+          "perp_volume_usd": 2110696200.85637,
+          "open_interest_usd": 4701471067.46368
+        },
+        "Binance": {
+          "perp_volume_usd": 9599042693.76,
+          "open_interest_usd": 7188713210.916999
+        },
+        "Bybit": {
+          "perp_volume_usd": 4289340812.1602,
+          "open_interest_usd": 5204251031.09
+        }
+      }
+    },
+    {
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "rank": 2,
+      "market_cap_usd": 258431600801.87024,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1433362704.4289174,
+          "open_interest_usd": 1907055543.5344803
+        },
+        "OKX": {
+          "perp_volume_usd": 5357684384.671599,
+          "open_interest_usd": 1423683482.1522236
+        },
+        "Bitget": {
+          "perp_volume_usd": 1574442216.3672,
+          "open_interest_usd": 1618358070.534401
+        },
+        "Gate": {
+          "perp_volume_usd": 4571236218.0,
+          "open_interest_usd": 1693226299.9259999
+        },
+        "MEXC": {
+          "perp_volume_usd": 1287972288.9675,
+          "open_interest_usd": 2271198709.9560003
+        },
+        "Binance": {
+          "perp_volume_usd": 7769377546.61,
+          "open_interest_usd": 4838033687.6757
+        },
+        "Bybit": {
+          "perp_volume_usd": 2385960040.4266,
+          "open_interest_usd": 1571627323.93
+        }
+      }
+    },
+    {
+      "symbol": "USDT",
+      "name": "Tether USDt",
+      "rank": 3,
+      "market_cap_usd": 176816493312.36188,
+      "exchanges": {}
+    },
+    {
+      "symbol": "BNB",
+      "name": "BNB",
+      "rank": 4,
+      "market_cap_usd": 89526905073.32356,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 7217120.9238399975,
+          "open_interest_usd": 38816024.76255
+        },
+        "OKX": {
+          "perp_volume_usd": 43730167.556,
+          "open_interest_usd": 42278926.9736
+        },
+        "Bitget": {
+          "perp_volume_usd": 6285139.1461,
+          "open_interest_usd": 63099036.09030006
+        },
+        "Gate": {
+          "perp_volume_usd": 29099169.0,
+          "open_interest_usd": 151538295.98700002
+        },
+        "MEXC": {
+          "perp_volume_usd": 4912228.768,
+          "open_interest_usd": 51481104.29
+        },
+        "Binance": {
+          "perp_volume_usd": 299776389.61,
+          "open_interest_usd": 361687235.9444
+        },
+        "Bybit": {
+          "perp_volume_usd": 28547709.3683,
+          "open_interest_usd": 90432651.37
+        }
+      }
+    },
+    {
+      "symbol": "USDC",
+      "name": "USDC",
+      "rank": 5,
+      "market_cap_usd": 70314828224.64172,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 86603.0592,
+          "open_interest_usd": 773071.4368
+        },
+        "Bitget": {
+          "perp_volume_usd": 22571.9968,
+          "open_interest_usd": 3351315.69028
+        },
+        "Gate": {
+          "perp_volume_usd": 9135.0,
+          "open_interest_usd": 244100.8104
+        },
+        "MEXC": {
+          "perp_volume_usd": 1690726.9494,
+          "open_interest_usd": 7732649.8912
+        },
+        "Binance": {
+          "perp_volume_usd": 5120746.748226,
+          "open_interest_usd": 4791594.565648
+        },
+        "Bybit": {
+          "perp_volume_usd": 225196.5448,
+          "open_interest_usd": 7838245.36
+        }
+      }
+    },
+    {
+      "symbol": "XRP",
+      "name": "XRP",
+      "rank": 6,
+      "market_cap_usd": 69188074744.20045,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 102680938.17860004,
+          "open_interest_usd": 171233601.8416
+        },
+        "OKX": {
+          "perp_volume_usd": 316640395.0934,
+          "open_interest_usd": 88691041.87919994
+        },
+        "Bitget": {
+          "perp_volume_usd": 178472203.4637,
+          "open_interest_usd": 203757680.20479998
+        },
+        "Gate": {
+          "perp_volume_usd": 96481628.0,
+          "open_interest_usd": 256583844.398
+        },
+        "MEXC": {
+          "perp_volume_usd": 247696486.2502,
+          "open_interest_usd": 220033398.068
+        },
+        "Binance": {
+          "perp_volume_usd": 817113970.8831,
+          "open_interest_usd": 348813751.46937
+        },
+        "Bybit": {
+          "perp_volume_usd": 443132483.4197,
+          "open_interest_usd": 268469146.28
+        }
+      }
+    },
+    {
+      "symbol": "SOL",
+      "name": "Solana",
+      "rank": 7,
+      "market_cap_usd": 50917922554.20157,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 318164015.22525996,
+          "open_interest_usd": 463066520.80299985
+        },
+        "OKX": {
+          "perp_volume_usd": 751193705.577,
+          "open_interest_usd": 297569607.3000001
+        },
+        "Bitget": {
+          "perp_volume_usd": 202034452.5417,
+          "open_interest_usd": 360052984.9027967
+        },
+        "Gate": {
+          "perp_volume_usd": 467042533.0,
+          "open_interest_usd": 674547204.66
+        },
+        "MEXC": {
+          "perp_volume_usd": 583145342.392,
+          "open_interest_usd": 302613388.209
+        },
+        "Binance": {
+          "perp_volume_usd": 1459581264.0808,
+          "open_interest_usd": 793570216.125
+        },
+        "Bybit": {
+          "perp_volume_usd": 581990953.067,
+          "open_interest_usd": 507818048.03
+        }
+      }
+    },
+    {
+      "symbol": "TRX",
+      "name": "TRON",
+      "rank": 8,
+      "market_cap_usd": 30078756643.620697,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 2345455.7023399994,
+          "open_interest_usd": 12378227.157119999
+        },
+        "OKX": {
+          "perp_volume_usd": 6868426.4157,
+          "open_interest_usd": 22959217.8386
+        },
+        "Bitget": {
+          "perp_volume_usd": 1161312.54749,
+          "open_interest_usd": 9614981.50818
+        },
+        "Gate": {
+          "perp_volume_usd": 2870760.0,
+          "open_interest_usd": 71982924.3
+        },
+        "MEXC": {
+          "perp_volume_usd": 1950469.5673,
+          "open_interest_usd": 6146130.563999999
+        },
+        "Binance": {
+          "perp_volume_usd": 27722775.24763,
+          "open_interest_usd": 65507039.2056
+        },
+        "Bybit": {
+          "perp_volume_usd": 6419854.7596,
+          "open_interest_usd": 59622820.08
+        }
+      }
+    },
+    {
+      "symbol": "ZEC",
+      "name": "Zcash",
+      "rank": 9,
+      "market_cap_usd": 20707943918.204742,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 379114098.47200006,
+          "open_interest_usd": 551831740.9440002
+        },
+        "OKX": {
+          "perp_volume_usd": 1148058431.379,
+          "open_interest_usd": 157887697.707
+        },
+        "Bitget": {
+          "perp_volume_usd": 142687527.22561,
+          "open_interest_usd": 137386766.6804902
+        },
+        "Gate": {
+          "perp_volume_usd": 218110441.0,
+          "open_interest_usd": 462236333.3676001
+        },
+        "MEXC": {
+          "perp_volume_usd": 2099246600.523,
+          "open_interest_usd": 124945875.95749998
+        },
+        "Binance": {
+          "perp_volume_usd": 1597315347.18,
+          "open_interest_usd": 517098632.3734
+        },
+        "Bybit": {
+          "perp_volume_usd": 355127117.6222,
+          "open_interest_usd": 193489336.89
+        }
+      }
+    },
+    {
+      "symbol": "HYPE",
+      "name": "Hyperliquid",
+      "rank": 10,
+      "market_cap_usd": 18752528533.118378,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 372188029.94601995,
+          "open_interest_usd": 1676953471.6729803
+        },
+        "OKX": {
+          "perp_volume_usd": 160300501.732,
+          "open_interest_usd": 115784914.81549999
+        },
+        "Bitget": {
+          "perp_volume_usd": 53700801.33671,
+          "open_interest_usd": 190878674.15595007
+        },
+        "Gate": {
+          "perp_volume_usd": 37036571.0,
+          "open_interest_usd": 412799106.0144
+        },
+        "MEXC": {
+          "perp_volume_usd": 40726802.7216,
+          "open_interest_usd": 99518604.61199999
+        },
+        "Binance": {
+          "perp_volume_usd": 461152505.30268,
+          "open_interest_usd": 389834414.06630003
+        },
+        "Bybit": {
+          "perp_volume_usd": 143131190.3321,
+          "open_interest_usd": 248679682.12
+        }
+      }
+    },
+    {
+      "symbol": "XMR",
+      "name": "Monero",
+      "rank": 11,
+      "market_cap_usd": 11173861711.625792,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 28835260.036280002,
+          "open_interest_usd": 151280555.64234
+        },
+        "Bitget": {
+          "perp_volume_usd": 2063754.6636,
+          "open_interest_usd": 9440897.997700002
+        },
+        "Gate": {
+          "perp_volume_usd": 860043.0,
+          "open_interest_usd": 33023534.376000002
+        },
+        "MEXC": {
+          "perp_volume_usd": 3730226.3796,
+          "open_interest_usd": 13130794.096
+        },
+        "Binance": {
+          "perp_volume_usd": 37694474.41,
+          "open_interest_usd": 54337098.0936
+        },
+        "Bybit": {
+          "perp_volume_usd": 19284978.2197,
+          "open_interest_usd": 44535600.08
+        }
+      }
+    },
+    {
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "rank": 12,
+      "market_cap_usd": 10755685742.066965,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 17226256.931933004,
+          "open_interest_usd": 60943373.426592
+        },
+        "OKX": {
+          "perp_volume_usd": 192174731.112,
+          "open_interest_usd": 86694038.89999995
+        },
+        "Bitget": {
+          "perp_volume_usd": 34333944.29588,
+          "open_interest_usd": 83052413.39192
+        },
+        "Gate": {
+          "perp_volume_usd": 140568650.0,
+          "open_interest_usd": 174717906.31440002
+        },
+        "MEXC": {
+          "perp_volume_usd": 65666156.292,
+          "open_interest_usd": 49889992.588
+        },
+        "Binance": {
+          "perp_volume_usd": 342849131.81642,
+          "open_interest_usd": 169680820.49452
+        },
+        "Bybit": {
+          "perp_volume_usd": 101950880.802,
+          "open_interest_usd": 94383017.71
+        }
+      }
+    },
+    {
+      "symbol": "LEO",
+      "name": "UNUS SED LEO",
+      "rank": 13,
+      "market_cap_usd": 8356873265.1492195,
+      "exchanges": {}
+    },
+    {
+      "symbol": "LINK",
+      "name": "Chainlink",
+      "rank": 14,
+      "market_cap_usd": 7740705674.429966,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 6789127.104499999,
+          "open_interest_usd": 49636183.0104
+        },
+        "OKX": {
+          "perp_volume_usd": 41564664.36,
+          "open_interest_usd": 23544755.46
+        },
+        "Bitget": {
+          "perp_volume_usd": 20930174.939,
+          "open_interest_usd": 42194534.608
+        },
+        "Gate": {
+          "perp_volume_usd": 6798718.0,
+          "open_interest_usd": 92542283.712
+        },
+        "MEXC": {
+          "perp_volume_usd": 80110952.231,
+          "open_interest_usd": 25107766.7892
+        },
+        "Binance": {
+          "perp_volume_usd": 105523735.785,
+          "open_interest_usd": 79536682.94687
+        },
+        "Bybit": {
+          "perp_volume_usd": 30250839.6204,
+          "open_interest_usd": 58165879.09
+        }
+      }
+    },
+    {
+      "symbol": "ADA",
+      "name": "Cardano",
+      "rank": 15,
+      "market_cap_usd": 6385053387.255896,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 8689740.63139,
+          "open_interest_usd": 24523103.364
+        },
+        "OKX": {
+          "perp_volume_usd": 31263675.265,
+          "open_interest_usd": 22666399.17200001
+        },
+        "Bitget": {
+          "perp_volume_usd": 19237844.0409,
+          "open_interest_usd": 31842310.2138
+        },
+        "Gate": {
+          "perp_volume_usd": 17183699.0,
+          "open_interest_usd": 58702926.168
+        },
+        "MEXC": {
+          "perp_volume_usd": 18920319.2661,
+          "open_interest_usd": 38050993.7976
+        },
+        "Binance": {
+          "perp_volume_usd": 108007837.0589,
+          "open_interest_usd": 56505038.271000005
+        },
+        "Bybit": {
+          "perp_volume_usd": 45431136.6633,
+          "open_interest_usd": 41438573.79
+        }
+      }
+    },
+    {
+      "symbol": "XLM",
+      "name": "Stellar",
+      "rank": 16,
+      "market_cap_usd": 5132246952.352186,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1985198.81306,
+          "open_interest_usd": 7959491.25824
+        },
+        "OKX": {
+          "perp_volume_usd": 9735328.322999999,
+          "open_interest_usd": 9807667.109099997
+        },
+        "Bitget": {
+          "perp_volume_usd": 7496142.32536,
+          "open_interest_usd": 17566501.26348
+        },
+        "Gate": {
+          "perp_volume_usd": 3578427.0,
+          "open_interest_usd": 32618856.4896
+        },
+        "MEXC": {
+          "perp_volume_usd": 25794588.5767,
+          "open_interest_usd": 18517151.3334
+        },
+        "Binance": {
+          "perp_volume_usd": 36662899.56683,
+          "open_interest_usd": 30604361.21012
+        },
+        "Bybit": {
+          "perp_volume_usd": 15563768.0192,
+          "open_interest_usd": 27767953.87
+        }
+      }
+    },
+    {
+      "symbol": "USDE",
+      "name": "Ethena USDe",
+      "rank": 17,
+      "market_cap_usd": 4978750003.98009,
+      "exchanges": {
+        "MEXC": {
+          "perp_volume_usd": 0.0,
+          "open_interest_usd": 0.0
+        },
+        "Bybit": {
+          "perp_volume_usd": 29399.178,
+          "open_interest_usd": 826455.08
+        }
+      }
+    },
+    {
+      "symbol": "BCH",
+      "name": "Bitcoin Cash",
+      "rank": 18,
+      "market_cap_usd": 4782349349.964262,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 2680720.7331600003,
+          "open_interest_usd": 6264314.99584
+        },
+        "OKX": {
+          "perp_volume_usd": 47911373.5905,
+          "open_interest_usd": 22634028.402999993
+        },
+        "Bitget": {
+          "perp_volume_usd": 8706708.9942,
+          "open_interest_usd": 15197653.334499983
+        },
+        "Gate": {
+          "perp_volume_usd": 9613617.0,
+          "open_interest_usd": 47682341.8752
+        },
+        "MEXC": {
+          "perp_volume_usd": 2373536.3211,
+          "open_interest_usd": 22114435.2957
+        },
+        "Binance": {
+          "perp_volume_usd": 75605174.64,
+          "open_interest_usd": 66364242.15906
+        },
+        "Bybit": {
+          "perp_volume_usd": 20646969.787,
+          "open_interest_usd": 31279942.55
+        }
+      }
+    },
+    {
+      "symbol": "NEAR",
+      "name": "NEAR Protocol",
+      "rank": 19,
+      "market_cap_usd": 4655478549.719904,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 50448493.85791998,
+          "open_interest_usd": 146527695.50135803
+        },
+        "OKX": {
+          "perp_volume_usd": 100926119.385,
+          "open_interest_usd": 43468662.95999999
+        },
+        "Bitget": {
+          "perp_volume_usd": 48997652.7162,
+          "open_interest_usd": 57848524.368200004
+        },
+        "Gate": {
+          "perp_volume_usd": 20525125.0,
+          "open_interest_usd": 98545993.7184
+        },
+        "MEXC": {
+          "perp_volume_usd": 40461113.058,
+          "open_interest_usd": 47642635.85
+        },
+        "Binance": {
+          "perp_volume_usd": 346738063.02,
+          "open_interest_usd": 156327796.456
+        },
+        "Bybit": {
+          "perp_volume_usd": 161712831.4511,
+          "open_interest_usd": 100092079.96
+        }
+      }
+    },
+    {
+      "symbol": "DAI",
+      "name": "Dai",
+      "rank": 20,
+      "market_cap_usd": 4480629243.883248,
+      "exchanges": {}
+    },
+    {
+      "symbol": "UNI",
+      "name": "Uniswap",
+      "rank": 21,
+      "market_cap_usd": 4228322484.648426,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 14845299.020719994,
+          "open_interest_usd": 67904975.78774
+        },
+        "OKX": {
+          "perp_volume_usd": 69124438.308,
+          "open_interest_usd": 41289087.160000004
+        },
+        "Bitget": {
+          "perp_volume_usd": 11770662.798,
+          "open_interest_usd": 26272549.62
+        },
+        "Gate": {
+          "perp_volume_usd": 16239974.0,
+          "open_interest_usd": 87107715.552
+        },
+        "MEXC": {
+          "perp_volume_usd": 29141982.4181,
+          "open_interest_usd": 24761260.3392
+        },
+        "Binance": {
+          "perp_volume_usd": 138672062.108,
+          "open_interest_usd": 132714302.92500001
+        },
+        "Bybit": {
+          "perp_volume_usd": 28615075.1357,
+          "open_interest_usd": 51287871.96
+        }
+      }
+    },
+    {
+      "symbol": "LTC",
+      "name": "Litecoin",
+      "rank": 22,
+      "market_cap_usd": 3917437752.401091,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 4024601.714779999,
+          "open_interest_usd": 18232111.5369
+        },
+        "OKX": {
+          "perp_volume_usd": 25230908.924000002,
+          "open_interest_usd": 25322352.611999992
+        },
+        "Bitget": {
+          "perp_volume_usd": 6549900.999,
+          "open_interest_usd": 25786979.008
+        },
+        "Gate": {
+          "perp_volume_usd": 27000735.0,
+          "open_interest_usd": 61907631.312
+        },
+        "MEXC": {
+          "perp_volume_usd": 5251361.26,
+          "open_interest_usd": 33519133.0599
+        },
+        "Binance": {
+          "perp_volume_usd": 62528606.27,
+          "open_interest_usd": 60556647.02274001
+        },
+        "Bybit": {
+          "perp_volume_usd": 21435954.498,
+          "open_interest_usd": 53518629.56
+        }
+      }
+    },
+    {
+      "symbol": "CC",
+      "name": "Canton",
+      "rank": 23,
+      "market_cap_usd": 3592018182.8471193,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 753035.555662,
+          "open_interest_usd": 5387360.053338001
+        },
+        "OKX": {
+          "perp_volume_usd": 1737159.9467999998,
+          "open_interest_usd": 2639890.6487999996
+        },
+        "Bitget": {
+          "perp_volume_usd": 367303.86187,
+          "open_interest_usd": 970479.87428
+        },
+        "Gate": {
+          "perp_volume_usd": 82477.0,
+          "open_interest_usd": 216374.92200000002
+        },
+        "MEXC": {
+          "perp_volume_usd": 1121469.8691,
+          "open_interest_usd": 1421319.7492
+        },
+        "Binance": {
+          "perp_volume_usd": 4929651.5077,
+          "open_interest_usd": 11200328.822900001
+        },
+        "Bybit": {
+          "perp_volume_usd": 2766179.671,
+          "open_interest_usd": 13360533.85
+        }
+      }
+    },
+    {
+      "symbol": "AVAX",
+      "name": "Avalanche",
+      "rank": 24,
+      "market_cap_usd": 3517626186.4808226,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 5333525.864111001,
+          "open_interest_usd": 14015134.523999996
+        },
+        "OKX": {
+          "perp_volume_usd": 19898054.299,
+          "open_interest_usd": 11149437.425000003
+        },
+        "Bitget": {
+          "perp_volume_usd": 8261339.4767,
+          "open_interest_usd": 20905519.459
+        },
+        "Gate": {
+          "perp_volume_usd": 6745397.0,
+          "open_interest_usd": 44009761.68
+        },
+        "MEXC": {
+          "perp_volume_usd": 16680649.6716,
+          "open_interest_usd": 24345576.5112
+        },
+        "Binance": {
+          "perp_volume_usd": 80985066.888,
+          "open_interest_usd": 63054836.107999995
+        },
+        "Bybit": {
+          "perp_volume_usd": 21360346.0091,
+          "open_interest_usd": 54579610.37
+        }
+      }
+    },
+    {
+      "symbol": "SUI",
+      "name": "Sui",
+      "rank": 25,
+      "market_cap_usd": 3392238383.84212,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 19492898.151363004,
+          "open_interest_usd": 26250300.92032
+        },
+        "OKX": {
+          "perp_volume_usd": 53376814.020600006,
+          "open_interest_usd": 25109238.6312
+        },
+        "Bitget": {
+          "perp_volume_usd": 26303000.23954,
+          "open_interest_usd": 44366215.968230024
+        },
+        "Gate": {
+          "perp_volume_usd": 10055695.0,
+          "open_interest_usd": 102204089.91360001
+        },
+        "MEXC": {
+          "perp_volume_usd": 48876559.1602,
+          "open_interest_usd": 59757771.9018
+        },
+        "Binance": {
+          "perp_volume_usd": 146852902.83627,
+          "open_interest_usd": 77645777.66216
+        },
+        "Bybit": {
+          "perp_volume_usd": 51446308.235,
+          "open_interest_usd": 62735326.27
+        }
+      }
+    },
+    {
+      "symbol": "USD1",
+      "name": "World Liberty Financial USD",
+      "rank": 26,
+      "market_cap_usd": 3367256696.8250666,
+      "exchanges": {
+        "Gate": {
+          "perp_volume_usd": 2989.0,
+          "open_interest_usd": 52593.7152
+        },
+        "MEXC": {
+          "perp_volume_usd": 0.0,
+          "open_interest_usd": 0.0
+        },
+        "Bybit": {
+          "perp_volume_usd": 45885.6702,
+          "open_interest_usd": 588305.03
+        }
+      }
+    },
+    {
+      "symbol": "XAUT",
+      "name": "Tether Gold",
+      "rank": 27,
+      "market_cap_usd": 3066909785.791027,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 10612837.7289,
+          "open_interest_usd": 42034229.89199998
+        },
+        "Gate": {
+          "perp_volume_usd": 10750255.0,
+          "open_interest_usd": 169391867.57944
+        },
+        "MEXC": {
+          "perp_volume_usd": 66734851.95245,
+          "open_interest_usd": 343753933.87566
+        },
+        "Binance": {
+          "perp_volume_usd": 31576723.72,
+          "open_interest_usd": 49225448.174200006
+        },
+        "Bybit": {
+          "perp_volume_usd": 25490250.1746,
+          "open_interest_usd": 151617796.39
+        }
+      }
+    },
+    {
+      "symbol": "HBAR",
+      "name": "Hedera",
+      "rank": 28,
+      "market_cap_usd": 2922741704.3969293,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1187336.8070799995,
+          "open_interest_usd": 8298634.88244
+        },
+        "OKX": {
+          "perp_volume_usd": 6553237.8484,
+          "open_interest_usd": 6026984.6674
+        },
+        "Bitget": {
+          "perp_volume_usd": 4258204.14829,
+          "open_interest_usd": 14374131.690080002
+        },
+        "Gate": {
+          "perp_volume_usd": 913658.0,
+          "open_interest_usd": 17373652.4528
+        },
+        "MEXC": {
+          "perp_volume_usd": 10072194.79889,
+          "open_interest_usd": 20558243.051429998
+        },
+        "Binance": {
+          "perp_volume_usd": 23029287.05808,
+          "open_interest_usd": 26340851.80398
+        },
+        "Bybit": {
+          "perp_volume_usd": 12828643.2057,
+          "open_interest_usd": 23597818.66
+        }
+      }
+    },
+    {
+      "symbol": "GRAM",
+      "name": "Gram (prev. Toncoin)",
+      "rank": 29,
+      "market_cap_usd": 2894365777.5082955,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 5599505.76314,
+          "open_interest_usd": 19358033.928999998
+        },
+        "OKX": {
+          "perp_volume_usd": 6566505.704,
+          "open_interest_usd": 6112472.916
+        },
+        "Bitget": {
+          "perp_volume_usd": 1395582.58513,
+          "open_interest_usd": 4575827.305179996
+        },
+        "Gate": {
+          "perp_volume_usd": 3166470.0,
+          "open_interest_usd": 17140892.4384
+        },
+        "MEXC": {
+          "perp_volume_usd": 1031364.461,
+          "open_interest_usd": 5495967.681
+        },
+        "Binance": {
+          "perp_volume_usd": 15020207.8653,
+          "open_interest_usd": 14532280.4308
+        },
+        "Bybit": {
+          "perp_volume_usd": 11055640.3835,
+          "open_interest_usd": 20982552.27
+        }
+      }
+    },
+    {
+      "symbol": "PYUSD",
+      "name": "PayPal USD",
+      "rank": 30,
+      "market_cap_usd": 2777523062.079664,
+      "exchanges": {}
+    },
+    {
+      "symbol": "USDG",
+      "name": "Global Dollar",
+      "rank": 31,
+      "market_cap_usd": 2712173043.5828147,
+      "exchanges": {}
+    },
+    {
+      "symbol": "RLUSD",
+      "name": "Ripple USD",
+      "rank": 32,
+      "market_cap_usd": 2687115137.7515907,
+      "exchanges": {
+        "Bybit": {
+          "perp_volume_usd": 30037.1389,
+          "open_interest_usd": 349972.9
+        }
+      }
+    },
+    {
+      "symbol": "SHIB",
+      "name": "Shiba Inu",
+      "rank": 33,
+      "market_cap_usd": 2565259526.952332,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 8216668.387499999,
+          "open_interest_usd": 6128956.963799999
+        },
+        "Bitget": {
+          "perp_volume_usd": 3879629.45874,
+          "open_interest_usd": 7853711.650954975
+        },
+        "Gate": {
+          "perp_volume_usd": 1772760.0,
+          "open_interest_usd": 2961907.50996
+        },
+        "MEXC": {
+          "perp_volume_usd": 2924341.31687,
+          "open_interest_usd": 4789504.857382
+        }
+      }
+    },
+    {
+      "symbol": "TAO",
+      "name": "Bittensor",
+      "rank": 34,
+      "market_cap_usd": 2511856388.241192,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 6764510.812290001,
+          "open_interest_usd": 26375181.4278
+        },
+        "OKX": {
+          "perp_volume_usd": 13986753.207,
+          "open_interest_usd": 14355126.975
+        },
+        "Bitget": {
+          "perp_volume_usd": 6526546.27847,
+          "open_interest_usd": 21351436.220599983
+        },
+        "Gate": {
+          "perp_volume_usd": 7931728.0,
+          "open_interest_usd": 22976464.02
+        },
+        "MEXC": {
+          "perp_volume_usd": 34427904.9267,
+          "open_interest_usd": 64369023.4859
+        },
+        "Binance": {
+          "perp_volume_usd": 80445555.23,
+          "open_interest_usd": 50930068.88515
+        },
+        "Bybit": {
+          "perp_volume_usd": 17141805.7812,
+          "open_interest_usd": 30038259.39
+        }
+      }
+    },
+    {
+      "symbol": "CRO",
+      "name": "Cronos",
+      "rank": 35,
+      "market_cap_usd": 2405933903.8586125,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 702670.486,
+          "open_interest_usd": 858793.9976
+        },
+        "Bitget": {
+          "perp_volume_usd": 300983.22819,
+          "open_interest_usd": 1773345.51936
+        },
+        "Gate": {
+          "perp_volume_usd": 77280.0,
+          "open_interest_usd": 532466.29116
+        },
+        "MEXC": {
+          "perp_volume_usd": 456189.8938,
+          "open_interest_usd": 6364915.9618
+        },
+        "Bybit": {
+          "perp_volume_usd": 742945.2679,
+          "open_interest_usd": 2571259.32
+        }
+      }
+    },
+    {
+      "symbol": "QNT",
+      "name": "Quant",
+      "rank": 36,
+      "market_cap_usd": 2388922129.318449,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 299120.0,
+          "open_interest_usd": 303599.322
+        },
+        "Bitget": {
+          "perp_volume_usd": 4388020.5323,
+          "open_interest_usd": 7084375.456499997
+        },
+        "Gate": {
+          "perp_volume_usd": 2085586.0,
+          "open_interest_usd": 2052275.6352
+        },
+        "MEXC": {
+          "perp_volume_usd": 41722789.307,
+          "open_interest_usd": 16283610.9546
+        },
+        "Binance": {
+          "perp_volume_usd": 51167148.025,
+          "open_interest_usd": 20831351.424
+        },
+        "Bybit": {
+          "perp_volume_usd": 10751332.218,
+          "open_interest_usd": 15976217.84
+        }
+      }
+    },
+    {
+      "symbol": "PEPE",
+      "name": "Pepe",
+      "rank": 37,
+      "market_cap_usd": 2086155867.3337624,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 273658402.519,
+          "open_interest_usd": 40430983.492
+        },
+        "Bitget": {
+          "perp_volume_usd": 29431548.1513271,
+          "open_interest_usd": 37765762.34963109
+        },
+        "Gate": {
+          "perp_volume_usd": 22144946.0,
+          "open_interest_usd": 75330951.0
+        },
+        "MEXC": {
+          "perp_volume_usd": 75533050.723,
+          "open_interest_usd": 130899668.976
+        }
+      }
+    },
+    {
+      "symbol": "OKB",
+      "name": "OKB",
+      "rank": 38,
+      "market_cap_usd": 2040124206.105027,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 17958071.3477,
+          "open_interest_usd": 18909951.1796
+        },
+        "Gate": {
+          "perp_volume_usd": 288506.0,
+          "open_interest_usd": 1237963.0200000003
+        },
+        "MEXC": {
+          "perp_volume_usd": 342931.322,
+          "open_interest_usd": 601344.588
+        },
+        "Bybit": {
+          "perp_volume_usd": 439445.2287,
+          "open_interest_usd": 925507.99
+        }
+      }
+    },
+    {
+      "symbol": "ENA",
+      "name": "Ethena",
+      "rank": 39,
+      "market_cap_usd": 2016978487.9172304,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 17948284.51221999,
+          "open_interest_usd": 58954795.9164
+        },
+        "OKX": {
+          "perp_volume_usd": 42561379.495400004,
+          "open_interest_usd": 13113453.8772
+        },
+        "Bitget": {
+          "perp_volume_usd": 30724806.05169,
+          "open_interest_usd": 30642923.03058
+        },
+        "Gate": {
+          "perp_volume_usd": 9439280.0,
+          "open_interest_usd": 64049101.7984
+        },
+        "MEXC": {
+          "perp_volume_usd": 34316328.671,
+          "open_interest_usd": 41607559.940000005
+        },
+        "Binance": {
+          "perp_volume_usd": 180097174.43065,
+          "open_interest_usd": 73623488.19518
+        },
+        "Bybit": {
+          "perp_volume_usd": 72253811.3567,
+          "open_interest_usd": 46201983.17
+        }
+      }
+    },
+    {
+      "symbol": "AAVE",
+      "name": "Aave",
+      "rank": 40,
+      "market_cap_usd": 1995782632.3806257,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 6671431.128799996,
+          "open_interest_usd": 51052032.747
+        },
+        "OKX": {
+          "perp_volume_usd": 32663787.990399998,
+          "open_interest_usd": 14336690.7323
+        },
+        "Bitget": {
+          "perp_volume_usd": 5994858.033,
+          "open_interest_usd": 23088788.678
+        },
+        "Gate": {
+          "perp_volume_usd": 6046846.0,
+          "open_interest_usd": 60584357.8384
+        },
+        "MEXC": {
+          "perp_volume_usd": 10294050.0243,
+          "open_interest_usd": 14310632.697600001
+        },
+        "Binance": {
+          "perp_volume_usd": 80612122.389,
+          "open_interest_usd": 49886406.839999996
+        },
+        "Bybit": {
+          "perp_volume_usd": 32832666.5668,
+          "open_interest_usd": 47408037.82
+        }
+      }
+    },
+    {
+      "symbol": "PAXG",
+      "name": "PAX Gold",
+      "rank": 41,
+      "market_cap_usd": 1833705502.6718466,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 3345155.4138,
+          "open_interest_usd": 26313064.215096
+        },
+        "Bitget": {
+          "perp_volume_usd": 7476782.05503,
+          "open_interest_usd": 9501105.40466998
+        },
+        "Gate": {
+          "perp_volume_usd": 6570720.0,
+          "open_interest_usd": 24370776.584340002
+        },
+        "MEXC": {
+          "perp_volume_usd": 715487.96868,
+          "open_interest_usd": 16120080.573090002
+        },
+        "Binance": {
+          "perp_volume_usd": 46648944.3814,
+          "open_interest_usd": 101374673.9967
+        },
+        "Bybit": {
+          "perp_volume_usd": 5165213.2031,
+          "open_interest_usd": 23736812.53
+        }
+      }
+    },
+    {
+      "symbol": "M",
+      "name": "MemeCore",
+      "rank": 42,
+      "market_cap_usd": 1796047288.7426004,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 279533.7283,
+          "open_interest_usd": 1348604.6127
+        },
+        "Gate": {
+          "perp_volume_usd": 574471.0,
+          "open_interest_usd": 1427565.658
+        },
+        "MEXC": {
+          "perp_volume_usd": 118434.0992,
+          "open_interest_usd": 86112.82160000001
+        },
+        "Binance": {
+          "perp_volume_usd": 1088194.1225,
+          "open_interest_usd": 3058470.3424
+        },
+        "Bybit": {
+          "perp_volume_usd": 648046.997,
+          "open_interest_usd": 2495749.64
+        }
+      }
+    },
+    {
+      "symbol": "ASTER",
+      "name": "Aster",
+      "rank": 43,
+      "market_cap_usd": 1748395236.626125,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1990155.4758500005,
+          "open_interest_usd": 19208515.17024
+        },
+        "OKX": {
+          "perp_volume_usd": 12471512.106,
+          "open_interest_usd": 10277631.969600001
+        },
+        "Bitget": {
+          "perp_volume_usd": 2948391.9327,
+          "open_interest_usd": 14012677.576
+        },
+        "Gate": {
+          "perp_volume_usd": 2260431.0,
+          "open_interest_usd": 35440670.28
+        },
+        "MEXC": {
+          "perp_volume_usd": 5301724.7125,
+          "open_interest_usd": 12802763.3687
+        },
+        "Binance": {
+          "perp_volume_usd": 48508192.207,
+          "open_interest_usd": 85238126.648
+        },
+        "Bybit": {
+          "perp_volume_usd": 12311198.0922,
+          "open_interest_usd": 43928710.86
+        }
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "rank": 44,
+      "market_cap_usd": 1706474336.297031,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 4080821.5136300004,
+          "open_interest_usd": 15655285.51184
+        },
+        "OKX": {
+          "perp_volume_usd": 22258861.246000003,
+          "open_interest_usd": 10178738.404000001
+        },
+        "Bitget": {
+          "perp_volume_usd": 8850432.0876,
+          "open_interest_usd": 19447056.01258
+        },
+        "Gate": {
+          "perp_volume_usd": 7740102.0,
+          "open_interest_usd": 30448852.3872
+        },
+        "MEXC": {
+          "perp_volume_usd": 11805560.538,
+          "open_interest_usd": 26444263.461
+        },
+        "Binance": {
+          "perp_volume_usd": 43989820.79321,
+          "open_interest_usd": 32489948.715
+        },
+        "Bybit": {
+          "perp_volume_usd": 29595642.6274,
+          "open_interest_usd": 41829033.64
+        }
+      }
+    },
+    {
+      "symbol": "PUMP",
+      "name": "Pump.fun",
+      "rank": 45,
+      "market_cap_usd": 1625148589.5968492,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 47811005.91288001,
+          "open_interest_usd": 55471848.228984
+        },
+        "OKX": {
+          "perp_volume_usd": 87383248.236,
+          "open_interest_usd": 20245223.898000002
+        },
+        "Bitget": {
+          "perp_volume_usd": 11291551.182511,
+          "open_interest_usd": 13321489.919776
+        },
+        "Gate": {
+          "perp_volume_usd": 6397077.0,
+          "open_interest_usd": 3171777.0579999997
+        },
+        "Binance": {
+          "perp_volume_usd": 121802508.602626,
+          "open_interest_usd": 57136498.509215996
+        }
+      }
+    },
+    {
+      "symbol": "U",
+      "name": "United Stables",
+      "rank": 46,
+      "market_cap_usd": 1614053602.1360357,
+      "exchanges": {}
+    },
+    {
+      "symbol": "USDD",
+      "name": "USDD",
+      "rank": 47,
+      "market_cap_usd": 1517312211.6208017,
+      "exchanges": {}
+    },
+    {
+      "symbol": "MNT",
+      "name": "Mantle",
+      "rank": 48,
+      "market_cap_usd": 1480584500.6974669,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 619670.1214740002,
+          "open_interest_usd": 3489184.7785980003
+        },
+        "Gate": {
+          "perp_volume_usd": 68730.0,
+          "open_interest_usd": 169497.50160000002
+        },
+        "MEXC": {
+          "perp_volume_usd": 192141.554,
+          "open_interest_usd": 1478291.507
+        },
+        "Bybit": {
+          "perp_volume_usd": 5328464.5488,
+          "open_interest_usd": 31266327.62
+        }
+      }
+    },
+    {
+      "symbol": "DOT",
+      "name": "Polkadot",
+      "rank": 49,
+      "market_cap_usd": 1477216181.1958542,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 2604011.832546,
+          "open_interest_usd": 5617671.158520001
+        },
+        "OKX": {
+          "perp_volume_usd": 13746681.7362,
+          "open_interest_usd": 9101517.2388
+        },
+        "Bitget": {
+          "perp_volume_usd": 4873635.274,
+          "open_interest_usd": 15726740.694
+        },
+        "Gate": {
+          "perp_volume_usd": 5718973.0,
+          "open_interest_usd": 26189640.504
+        },
+        "MEXC": {
+          "perp_volume_usd": 8666087.5453,
+          "open_interest_usd": 20838142.783700004
+        },
+        "Binance": {
+          "perp_volume_usd": 34323645.71465,
+          "open_interest_usd": 26956350.333989996
+        },
+        "Bybit": {
+          "perp_volume_usd": 12590580.3553,
+          "open_interest_usd": 16889467.63
+        }
+      }
+    },
+    {
+      "symbol": "WLFI",
+      "name": "World Liberty Financial",
+      "rank": 50,
+      "market_cap_usd": 1457946155.1312435,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 3123651.9980250015,
+          "open_interest_usd": 17755600.73403
+        },
+        "OKX": {
+          "perp_volume_usd": 7352703.5907,
+          "open_interest_usd": 7198679.1729
+        },
+        "Bitget": {
+          "perp_volume_usd": 1791809.73717,
+          "open_interest_usd": 7032485.85757
+        },
+        "Gate": {
+          "perp_volume_usd": 1860150.0,
+          "open_interest_usd": 21480170.7744
+        },
+        "MEXC": {
+          "perp_volume_usd": 969230.61699,
+          "open_interest_usd": 5566159.482
+        },
+        "Binance": {
+          "perp_volume_usd": 16751861.58539,
+          "open_interest_usd": 161125562.52
+        },
+        "Bybit": {
+          "perp_volume_usd": 5839892.8287,
+          "open_interest_usd": 22762185.99
+        }
+      }
+    },
+    {
+      "symbol": "SKY",
+      "name": "Sky",
+      "rank": 51,
+      "market_cap_usd": 1449053870.9002361,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 239621.4004960001,
+          "open_interest_usd": 2997027.65936
+        },
+        "OKX": {
+          "perp_volume_usd": 417285.07200000004,
+          "open_interest_usd": 802724.6880000001
+        },
+        "Bitget": {
+          "perp_volume_usd": 277481.31979,
+          "open_interest_usd": 2728655.8709
+        },
+        "Gate": {
+          "perp_volume_usd": 63793.0,
+          "open_interest_usd": 331429.202
+        },
+        "MEXC": {
+          "perp_volume_usd": 134595.2141,
+          "open_interest_usd": 278852.6412
+        },
+        "Binance": {
+          "perp_volume_usd": 4416106.02591,
+          "open_interest_usd": 14633334.106560001
+        },
+        "Bybit": {
+          "perp_volume_usd": 492896.3969,
+          "open_interest_usd": 6195551.62
+        }
+      }
+    },
+    {
+      "symbol": "ICP",
+      "name": "Internet Computer",
+      "rank": 52,
+      "market_cap_usd": 1301997084.0034363,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 763228.2691200002,
+          "open_interest_usd": 2166792.2025
+        },
+        "OKX": {
+          "perp_volume_usd": 4343148.85032,
+          "open_interest_usd": 5325447.84471
+        },
+        "Bitget": {
+          "perp_volume_usd": 1608570.51329,
+          "open_interest_usd": 6074222.153330001
+        },
+        "Gate": {
+          "perp_volume_usd": 2866063.0,
+          "open_interest_usd": 8960067.690112
+        },
+        "MEXC": {
+          "perp_volume_usd": 2839242.43423,
+          "open_interest_usd": 9591913.697500002
+        },
+        "Binance": {
+          "perp_volume_usd": 16440757.337,
+          "open_interest_usd": 19409222.007999998
+        },
+        "Bybit": {
+          "perp_volume_usd": 4475015.5973,
+          "open_interest_usd": 11548979.13
+        }
+      }
+    },
+    {
+      "symbol": "BGB",
+      "name": "Bitget Token",
+      "rank": 53,
+      "market_cap_usd": 1210819607.292736,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 719316.0069,
+          "open_interest_usd": 16106532.567
+        }
+      }
+    },
+    {
+      "symbol": "WLD",
+      "name": "Worldcoin",
+      "rank": 54,
+      "market_cap_usd": 1190156409.889915,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 17715528.688510004,
+          "open_interest_usd": 35780470.704096004
+        },
+        "OKX": {
+          "perp_volume_usd": 87636527.08919999,
+          "open_interest_usd": 29148464.773799997
+        },
+        "Bitget": {
+          "perp_volume_usd": 15358209.7633,
+          "open_interest_usd": 18747964.277000003
+        },
+        "Gate": {
+          "perp_volume_usd": 18058894.0,
+          "open_interest_usd": 37703217.7872
+        },
+        "MEXC": {
+          "perp_volume_usd": 34188426.9309,
+          "open_interest_usd": 35223616.6044
+        },
+        "Binance": {
+          "perp_volume_usd": 125200907.4406,
+          "open_interest_usd": 59480299.504
+        },
+        "Bybit": {
+          "perp_volume_usd": 48721514.1436,
+          "open_interest_usd": 39245403.45
+        }
+      }
+    },
+    {
+      "symbol": "ARB",
+      "name": "Arbitrum",
+      "rank": 55,
+      "market_cap_usd": 1185014523.761395,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 7765902.496700999,
+          "open_interest_usd": 14568275.163503999
+        },
+        "OKX": {
+          "perp_volume_usd": 40455689.35659,
+          "open_interest_usd": 16013241.933510002
+        },
+        "Bitget": {
+          "perp_volume_usd": 8526362.2222726,
+          "open_interest_usd": 14797993.284414003
+        },
+        "Gate": {
+          "perp_volume_usd": 8587022.0,
+          "open_interest_usd": 29337032.915200002
+        },
+        "MEXC": {
+          "perp_volume_usd": 20242655.5893,
+          "open_interest_usd": 15636032.02686
+        },
+        "Binance": {
+          "perp_volume_usd": 73674719.798674,
+          "open_interest_usd": 43930542.51956
+        },
+        "Bybit": {
+          "perp_volume_usd": 26077232.5128,
+          "open_interest_usd": 24727628.75
+        }
+      }
+    },
+    {
+      "symbol": "JST",
+      "name": "JUST",
+      "rank": 56,
+      "market_cap_usd": 1127415170.0181184,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 192397.2903,
+          "open_interest_usd": 2385451.42302
+        },
+        "Gate": {
+          "perp_volume_usd": 49968.0,
+          "open_interest_usd": 207867.348
+        },
+        "MEXC": {
+          "perp_volume_usd": 352911.115,
+          "open_interest_usd": 2978025.144
+        },
+        "Binance": {
+          "perp_volume_usd": 3982450.03654,
+          "open_interest_usd": 5823370.5188
+        },
+        "Bybit": {
+          "perp_volume_usd": 728707.1467,
+          "open_interest_usd": 1606831.72
+        }
+      }
+    },
+    {
+      "symbol": "MORPHO",
+      "name": "Morpho",
+      "rank": 57,
+      "market_cap_usd": 1092552203.5223372,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 826619.3042800002,
+          "open_interest_usd": 4919515.0232
+        },
+        "OKX": {
+          "perp_volume_usd": 1682562.4625,
+          "open_interest_usd": 3132903.4187999996
+        },
+        "Bitget": {
+          "perp_volume_usd": 349941.2665,
+          "open_interest_usd": 2377551.095
+        },
+        "Gate": {
+          "perp_volume_usd": 259018.0,
+          "open_interest_usd": 889678.0428
+        },
+        "MEXC": {
+          "perp_volume_usd": 226150.6487,
+          "open_interest_usd": 12406569.141599998
+        },
+        "Binance": {
+          "perp_volume_usd": 5267220.38557,
+          "open_interest_usd": 10399522.499979999
+        },
+        "Bybit": {
+          "perp_volume_usd": 922836.9059,
+          "open_interest_usd": 5820652.03
+        }
+      }
+    },
+    {
+      "symbol": "ETC",
+      "name": "Ethereum Classic",
+      "rank": 58,
+      "market_cap_usd": 1058658136.7424366,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 244362.1475090001,
+          "open_interest_usd": 2145145.921964
+        },
+        "OKX": {
+          "perp_volume_usd": 6084005.285,
+          "open_interest_usd": 5393276.677
+        },
+        "Bitget": {
+          "perp_volume_usd": 2117305.241,
+          "open_interest_usd": 6589166.27
+        },
+        "Gate": {
+          "perp_volume_usd": 2053445.0,
+          "open_interest_usd": 16055178.393600002
+        },
+        "MEXC": {
+          "perp_volume_usd": 1689935.0974,
+          "open_interest_usd": 3613683.2588
+        },
+        "Binance": {
+          "perp_volume_usd": 19005108.177,
+          "open_interest_usd": 15438053.224609997
+        },
+        "Bybit": {
+          "perp_volume_usd": 3768485.6098,
+          "open_interest_usd": 7131561.74
+        }
+      }
+    },
+    {
+      "symbol": "GT",
+      "name": "GateToken",
+      "rank": 59,
+      "market_cap_usd": 1007996683.8277415,
+      "exchanges": {
+        "Gate": {
+          "perp_volume_usd": 1767063.0,
+          "open_interest_usd": 1334619.69
+        }
+      }
+    },
+    {
+      "symbol": "VVV",
+      "name": "Venice Token",
+      "rank": 60,
+      "market_cap_usd": 998700053.4219501,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 4152561.0897699995,
+          "open_interest_usd": 58609532.729159996
+        },
+        "OKX": {
+          "perp_volume_usd": 5574204.0232,
+          "open_interest_usd": 3752437.4508999996
+        },
+        "Bitget": {
+          "perp_volume_usd": 944735.63654,
+          "open_interest_usd": 3048458.452679999
+        },
+        "Gate": {
+          "perp_volume_usd": 1147221.0,
+          "open_interest_usd": 19851880.95
+        },
+        "MEXC": {
+          "perp_volume_usd": 2152359.2166,
+          "open_interest_usd": 1525071.7350000003
+        },
+        "Binance": {
+          "perp_volume_usd": 16613798.51013,
+          "open_interest_usd": 20723492.8354
+        },
+        "Bybit": {
+          "perp_volume_usd": 5340043.4743,
+          "open_interest_usd": 17886581.65
+        }
+      }
+    },
+    {
+      "symbol": "KCS",
+      "name": "KuCoin Token",
+      "rank": 61,
+      "market_cap_usd": 956766578.6533799,
+      "exchanges": {}
+    },
+    {
+      "symbol": "POL",
+      "name": "Polygon (prev. MATIC)",
+      "rank": 62,
+      "market_cap_usd": 931756079.1179867,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 590933.0679409996,
+          "open_interest_usd": 4754342.632986
+        },
+        "OKX": {
+          "perp_volume_usd": 2670086.43,
+          "open_interest_usd": 4789411.902
+        },
+        "Bitget": {
+          "perp_volume_usd": 497879.2924,
+          "open_interest_usd": 3150541.0242
+        },
+        "Gate": {
+          "perp_volume_usd": 401421.0,
+          "open_interest_usd": 8803599.3424
+        },
+        "MEXC": {
+          "perp_volume_usd": 618066.7507,
+          "open_interest_usd": 12836162.8224
+        },
+        "Binance": {
+          "perp_volume_usd": 7009160.50734,
+          "open_interest_usd": 10977922.79422
+        },
+        "Bybit": {
+          "perp_volume_usd": 3519074.8947,
+          "open_interest_usd": 10785907.4
+        }
+      }
+    },
+    {
+      "symbol": "ALGO",
+      "name": "Algorand",
+      "rank": 63,
+      "market_cap_usd": 820726167.6111498,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 636668.362016,
+          "open_interest_usd": 2561610.5232720003
+        },
+        "OKX": {
+          "perp_volume_usd": 2269995.5631999997,
+          "open_interest_usd": 2731713.0571999997
+        },
+        "Bitget": {
+          "perp_volume_usd": 1305121.333651,
+          "open_interest_usd": 4418241.5157860005
+        },
+        "Gate": {
+          "perp_volume_usd": 116970.0,
+          "open_interest_usd": 290560.06399999995
+        },
+        "MEXC": {
+          "perp_volume_usd": 1289315.65333,
+          "open_interest_usd": 5095697.9452
+        },
+        "Binance": {
+          "perp_volume_usd": 9898412.802592,
+          "open_interest_usd": 6002156.814458999
+        },
+        "Bybit": {
+          "perp_volume_usd": 3082334.1448,
+          "open_interest_usd": 6141492.8
+        }
+      }
+    },
+    {
+      "symbol": "INJ",
+      "name": "Injective",
+      "rank": 64,
+      "market_cap_usd": 809764762.8008956,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 5340505.770609999,
+          "open_interest_usd": 6679726.833799999
+        },
+        "OKX": {
+          "perp_volume_usd": 17878119.3909,
+          "open_interest_usd": 5076962.840500001
+        },
+        "Bitget": {
+          "perp_volume_usd": 6275592.5188,
+          "open_interest_usd": 14939008.867200004
+        },
+        "Gate": {
+          "perp_volume_usd": 3954794.0,
+          "open_interest_usd": 28212509.6624
+        },
+        "MEXC": {
+          "perp_volume_usd": 19779176.541,
+          "open_interest_usd": 18968316.799999997
+        },
+        "Binance": {
+          "perp_volume_usd": 76775680.0082,
+          "open_interest_usd": 28831676.811300002
+        },
+        "Bybit": {
+          "perp_volume_usd": 20950953.9409,
+          "open_interest_usd": 16223439.46
+        }
+      }
+    },
+    {
+      "symbol": "RENDER",
+      "name": "Render",
+      "rank": 65,
+      "market_cap_usd": 806799898.0438186,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 766887.2299900004,
+          "open_interest_usd": 2273928.4575
+        },
+        "OKX": {
+          "perp_volume_usd": 2894259.208,
+          "open_interest_usd": 2653082.366
+        },
+        "Bitget": {
+          "perp_volume_usd": 3127493.3511,
+          "open_interest_usd": 7962933.061999998
+        },
+        "Gate": {
+          "perp_volume_usd": 453549.0,
+          "open_interest_usd": 507672.5748
+        },
+        "MEXC": {
+          "perp_volume_usd": 2847116.206,
+          "open_interest_usd": 5031026.606000001
+        },
+        "Binance": {
+          "perp_volume_usd": 14263521.3039,
+          "open_interest_usd": 8647884.633
+        },
+        "Bybit": {
+          "perp_volume_usd": 6706186.892,
+          "open_interest_usd": 7636608.37
+        }
+      }
+    },
+    {
+      "symbol": "KAS",
+      "name": "Kaspa",
+      "rank": 66,
+      "market_cap_usd": 798652555.3970228,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 306853.221888,
+          "open_interest_usd": 1364312.320586
+        },
+        "Bitget": {
+          "perp_volume_usd": 859589.43877,
+          "open_interest_usd": 7560564.49816
+        },
+        "Gate": {
+          "perp_volume_usd": 353381.0,
+          "open_interest_usd": 8250446.4
+        },
+        "MEXC": {
+          "perp_volume_usd": 2450557.22,
+          "open_interest_usd": 8421848.82
+        },
+        "Binance": {
+          "perp_volume_usd": 2529368.38031,
+          "open_interest_usd": 1845413.28556
+        },
+        "Bybit": {
+          "perp_volume_usd": 1950608.8052,
+          "open_interest_usd": 5412648.68
+        }
+      }
+    },
+    {
+      "symbol": "JUP",
+      "name": "Jupiter",
+      "rank": 67,
+      "market_cap_usd": 770681795.4390061,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1535942.3002099998,
+          "open_interest_usd": 6554382.97842
+        },
+        "OKX": {
+          "perp_volume_usd": 2824390.242,
+          "open_interest_usd": 3048119.5859999997
+        },
+        "Bitget": {
+          "perp_volume_usd": 910303.1485,
+          "open_interest_usd": 3939904.6951
+        },
+        "Gate": {
+          "perp_volume_usd": 379856.0,
+          "open_interest_usd": 818305.308
+        },
+        "MEXC": {
+          "perp_volume_usd": 1708688.881,
+          "open_interest_usd": 4028033.217
+        },
+        "Binance": {
+          "perp_volume_usd": 8540784.2936,
+          "open_interest_usd": 10029001.22
+        },
+        "Bybit": {
+          "perp_volume_usd": 3935035.0309,
+          "open_interest_usd": 6028501.79
+        }
+      }
+    },
+    {
+      "symbol": "LIT",
+      "name": "Lighter",
+      "rank": 68,
+      "market_cap_usd": 768098010.3383667,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 29644388.358399987,
+          "open_interest_usd": 110168173.6368
+        },
+        "OKX": {
+          "perp_volume_usd": 45287967.7234,
+          "open_interest_usd": 23527018.606799997
+        },
+        "Bitget": {
+          "perp_volume_usd": 1862627.483,
+          "open_interest_usd": 3971901.668
+        },
+        "Gate": {
+          "perp_volume_usd": 2341996.0,
+          "open_interest_usd": 26943876.288
+        },
+        "MEXC": {
+          "perp_volume_usd": 13945108.64551,
+          "open_interest_usd": 4386655.963020001
+        },
+        "Binance": {
+          "perp_volume_usd": 46831674.406,
+          "open_interest_usd": 40060506.7854
+        },
+        "Bybit": {
+          "perp_volume_usd": 25143515.6702,
+          "open_interest_usd": 56549309.0
+        }
+      }
+    },
+    {
+      "symbol": "PI",
+      "name": "Pi",
+      "rank": 69,
+      "market_cap_usd": 747161445.4781864,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 7363496.20714,
+          "open_interest_usd": 1571116.45657
+        },
+        "Bitget": {
+          "perp_volume_usd": 2583698.27921,
+          "open_interest_usd": 2892307.46196
+        },
+        "Gate": {
+          "perp_volume_usd": 2667384.0,
+          "open_interest_usd": 1805114.2984
+        },
+        "MEXC": {
+          "perp_volume_usd": 1277966.30128,
+          "open_interest_usd": 5240715.56971
+        }
+      }
+    },
+    {
+      "symbol": "ATOM",
+      "name": "Cosmos",
+      "rank": 70,
+      "market_cap_usd": 707853263.6257607,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 810273.3276310004,
+          "open_interest_usd": 4326189.016954
+        },
+        "OKX": {
+          "perp_volume_usd": 4352515.3209999995,
+          "open_interest_usd": 3945307.6739999996
+        },
+        "Bitget": {
+          "perp_volume_usd": 2285972.3158,
+          "open_interest_usd": 4227103.6174
+        },
+        "Gate": {
+          "perp_volume_usd": 390778.0,
+          "open_interest_usd": 7339939.992
+        },
+        "MEXC": {
+          "perp_volume_usd": 2834742.3348,
+          "open_interest_usd": 4708954.9738
+        },
+        "Binance": {
+          "perp_volume_usd": 16560963.544,
+          "open_interest_usd": 14545010.185100002
+        },
+        "Bybit": {
+          "perp_volume_usd": 6590479.2389,
+          "open_interest_usd": 11229559.99
+        }
+      }
+    },
+    {
+      "symbol": "CAKE",
+      "name": "PancakeSwap",
+      "rank": 71,
+      "market_cap_usd": 693745126.5512846,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 367915.1883699999,
+          "open_interest_usd": 1560135.3264
+        },
+        "Bitget": {
+          "perp_volume_usd": 130566.21535,
+          "open_interest_usd": 1685751.3279999997
+        },
+        "Gate": {
+          "perp_volume_usd": 249090.0,
+          "open_interest_usd": 605846.3250400001
+        },
+        "MEXC": {
+          "perp_volume_usd": 287178.8533,
+          "open_interest_usd": 13744612.999
+        },
+        "Binance": {
+          "perp_volume_usd": 4771464.0173,
+          "open_interest_usd": 6978991.816
+        },
+        "Bybit": {
+          "perp_volume_usd": 674235.3389,
+          "open_interest_usd": 2875128.95
+        }
+      }
+    },
+    {
+      "symbol": "NIGHT",
+      "name": "Midnight",
+      "rank": 72,
+      "market_cap_usd": 643872464.7962223,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 3023734.5063,
+          "open_interest_usd": 2328839.6961
+        },
+        "Bitget": {
+          "perp_volume_usd": 244035.33975,
+          "open_interest_usd": 1106412.45225
+        },
+        "Gate": {
+          "perp_volume_usd": 195828.0,
+          "open_interest_usd": 246505.08779999998
+        },
+        "MEXC": {
+          "perp_volume_usd": 644817.189,
+          "open_interest_usd": 861531.6159999999
+        },
+        "Binance": {
+          "perp_volume_usd": 4758855.98325,
+          "open_interest_usd": 6487370.978239999
+        },
+        "Bybit": {
+          "perp_volume_usd": 1068172.0613,
+          "open_interest_usd": 1854839.93
+        }
+      }
+    },
+    {
+      "symbol": "XDC",
+      "name": "XDC Network",
+      "rank": 73,
+      "market_cap_usd": 635286811.7147131,
+      "exchanges": {
+        "Gate": {
+          "perp_volume_usd": 6099.0,
+          "open_interest_usd": 243888.27000000002
+        },
+        "Bybit": {
+          "perp_volume_usd": 775264.3946,
+          "open_interest_usd": 4426210.29
+        }
+      }
+    },
+    {
+      "symbol": "FIL",
+      "name": "Filecoin",
+      "rank": 74,
+      "market_cap_usd": 635838768.2861427,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1521940.6006350007,
+          "open_interest_usd": 5161581.464718
+        },
+        "OKX": {
+          "perp_volume_usd": 39095914.887719996,
+          "open_interest_usd": 10145687.819799999
+        },
+        "Bitget": {
+          "perp_volume_usd": 7307584.2669,
+          "open_interest_usd": 8116933.928839997
+        },
+        "Gate": {
+          "perp_volume_usd": 9077073.0,
+          "open_interest_usd": 19559038.788432
+        },
+        "Binance": {
+          "perp_volume_usd": 71056075.97591,
+          "open_interest_usd": 35407388.74974
+        },
+        "Bybit": {
+          "perp_volume_usd": 9094124.9054,
+          "open_interest_usd": 11870128.27
+        }
+      }
+    },
+    {
+      "symbol": "AERO",
+      "name": "Aero",
+      "rank": 75,
+      "market_cap_usd": 611764885.1242877,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 3847388.3921000008,
+          "open_interest_usd": 24006918.1008
+        },
+        "OKX": {
+          "perp_volume_usd": 8184587.664,
+          "open_interest_usd": 4715206.452
+        },
+        "Bitget": {
+          "perp_volume_usd": 2647483.7269,
+          "open_interest_usd": 5416191.3
+        },
+        "Gate": {
+          "perp_volume_usd": 1680774.0,
+          "open_interest_usd": 15168091.8688
+        },
+        "MEXC": {
+          "perp_volume_usd": 862890.185,
+          "open_interest_usd": 2104475.252
+        },
+        "Binance": {
+          "perp_volume_usd": 18477269.27035,
+          "open_interest_usd": 26215956.17874
+        },
+        "Bybit": {
+          "perp_volume_usd": 6535559.0354,
+          "open_interest_usd": 11638182.25
+        }
+      }
+    },
+    {
+      "symbol": "ZRO",
+      "name": "LayerZero",
+      "rank": 76,
+      "market_cap_usd": 611901531.8117402,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 7160156.8082799995,
+          "open_interest_usd": 48758067.79140001
+        },
+        "OKX": {
+          "perp_volume_usd": 9657976.1029,
+          "open_interest_usd": 7095851.563399999
+        },
+        "Bitget": {
+          "perp_volume_usd": 1646709.4375,
+          "open_interest_usd": 3704781.2399999998
+        },
+        "Gate": {
+          "perp_volume_usd": 731456.0,
+          "open_interest_usd": 17189477.6
+        },
+        "MEXC": {
+          "perp_volume_usd": 3243421.2234,
+          "open_interest_usd": 13697082.6815
+        },
+        "Binance": {
+          "perp_volume_usd": 25993976.89585,
+          "open_interest_usd": 27263449.391739998
+        },
+        "Bybit": {
+          "perp_volume_usd": 12607170.3457,
+          "open_interest_usd": 23910106.49
+        }
+      }
+    },
+    {
+      "symbol": "DASH",
+      "name": "Dash",
+      "rank": 77,
+      "market_cap_usd": 602551340.7771245,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1053714.80963,
+          "open_interest_usd": 2290522.66304
+        },
+        "OKX": {
+          "perp_volume_usd": 8467372.5738,
+          "open_interest_usd": 3070884.2745
+        },
+        "Bitget": {
+          "perp_volume_usd": 1425243.2853,
+          "open_interest_usd": 5681950.6685
+        },
+        "Gate": {
+          "perp_volume_usd": 664554.0,
+          "open_interest_usd": 6652831.535999999
+        },
+        "MEXC": {
+          "perp_volume_usd": 17704858.3331,
+          "open_interest_usd": 7868725.02
+        },
+        "Binance": {
+          "perp_volume_usd": 28275970.48,
+          "open_interest_usd": 14720665.13886
+        },
+        "Bybit": {
+          "perp_volume_usd": 5411375.9031,
+          "open_interest_usd": 6976029.99
+        }
+      }
+    },
+    {
+      "symbol": "STX",
+      "name": "Stacks",
+      "rank": 78,
+      "market_cap_usd": 587767412.1418715,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 705193.981198,
+          "open_interest_usd": 1218491.9157600002
+        },
+        "OKX": {
+          "perp_volume_usd": 3298181.2497,
+          "open_interest_usd": 2660404.6881000004
+        },
+        "Bitget": {
+          "perp_volume_usd": 859269.73292,
+          "open_interest_usd": 3908419.461420002
+        },
+        "Gate": {
+          "perp_volume_usd": 238926.0,
+          "open_interest_usd": 654968.167
+        },
+        "MEXC": {
+          "perp_volume_usd": 696286.468,
+          "open_interest_usd": 1067215.1139999998
+        },
+        "Binance": {
+          "perp_volume_usd": 8496898.5897,
+          "open_interest_usd": 7428093.984999999
+        },
+        "Bybit": {
+          "perp_volume_usd": 4475609.5122,
+          "open_interest_usd": 7286096.88
+        }
+      }
+    },
+    {
+      "symbol": "ETHFI",
+      "name": "ether.fi",
+      "rank": 79,
+      "market_cap_usd": 568438108.4344106,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 2808285.414800001,
+          "open_interest_usd": 9211853.2293
+        },
+        "OKX": {
+          "perp_volume_usd": 5412831.444,
+          "open_interest_usd": 4154719.9545
+        },
+        "Bitget": {
+          "perp_volume_usd": 1536659.28026,
+          "open_interest_usd": 4952753.735799996
+        },
+        "Gate": {
+          "perp_volume_usd": 1284948.0,
+          "open_interest_usd": 10258175.162720002
+        },
+        "MEXC": {
+          "perp_volume_usd": 2807644.0886,
+          "open_interest_usd": 2994934.5184
+        },
+        "Binance": {
+          "perp_volume_usd": 21154564.78812,
+          "open_interest_usd": 22878415.94652
+        },
+        "Bybit": {
+          "perp_volume_usd": 4867685.3332,
+          "open_interest_usd": 12140838.9
+        }
+      }
+    },
+    {
+      "symbol": "APT",
+      "name": "Aptos",
+      "rank": 80,
+      "market_cap_usd": 504510443.6853196,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1760292.1575879995,
+          "open_interest_usd": 3744399.2924579997
+        },
+        "OKX": {
+          "perp_volume_usd": 6744666.7145,
+          "open_interest_usd": 3836647.7435
+        },
+        "Bitget": {
+          "perp_volume_usd": 4332857.5445824,
+          "open_interest_usd": 5379849.048776999
+        },
+        "Gate": {
+          "perp_volume_usd": 2274372.0,
+          "open_interest_usd": 10874945.139840001
+        },
+        "MEXC": {
+          "perp_volume_usd": 4150722.47276,
+          "open_interest_usd": 9580351.172199998
+        },
+        "Binance": {
+          "perp_volume_usd": 27982430.63694,
+          "open_interest_usd": 13773950.941060001
+        },
+        "Bybit": {
+          "perp_volume_usd": 9393867.9255,
+          "open_interest_usd": 15625816.63
+        }
+      }
+    },
+    {
+      "symbol": "TUSD",
+      "name": "TrueUSD",
+      "rank": 81,
+      "market_cap_usd": 493683994.5415035,
+      "exchanges": {}
+    },
+    {
+      "symbol": "币安人生",
+      "name": "币安人生",
+      "rank": 82,
+      "market_cap_usd": 492056881.6900762,
+      "exchanges": {
+        "Gate": {
+          "perp_volume_usd": 164102.0,
+          "open_interest_usd": 413675.3592
+        },
+        "Binance": {
+          "perp_volume_usd": 2835570.4579,
+          "open_interest_usd": 35345492.7753
+        }
+      }
+    },
+    {
+      "symbol": "FLR",
+      "name": "Flare",
+      "rank": 83,
+      "market_cap_usd": 483187343.79547423,
+      "exchanges": {
+        "Gate": {
+          "perp_volume_usd": 3513.0,
+          "open_interest_usd": 37216.789
+        },
+        "MEXC": {
+          "perp_volume_usd": 121215.557,
+          "open_interest_usd": 1384280.991
+        },
+        "Bybit": {
+          "perp_volume_usd": 349104.3343,
+          "open_interest_usd": 1055455.57
+        }
+      }
+    },
+    {
+      "symbol": "PIEVERSE",
+      "name": "Pieverse",
+      "rank": 84,
+      "market_cap_usd": 479625670.5130872,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 30965640.476,
+          "open_interest_usd": 7246054.91
+        },
+        "Bitget": {
+          "perp_volume_usd": 1122124.16542,
+          "open_interest_usd": 3533971.69992
+        },
+        "Gate": {
+          "perp_volume_usd": 2877320.0,
+          "open_interest_usd": 10935533.61
+        },
+        "MEXC": {
+          "perp_volume_usd": 1250536.053,
+          "open_interest_usd": 781379.682
+        },
+        "Binance": {
+          "perp_volume_usd": 17977763.2296,
+          "open_interest_usd": 19760428.4144
+        },
+        "Bybit": {
+          "perp_volume_usd": 5546158.6701,
+          "open_interest_usd": 8445992.93
+        }
+      }
+    },
+    {
+      "symbol": "STABLE",
+      "name": "Stable",
+      "rank": 85,
+      "market_cap_usd": 475028158.0824722,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 236411.6111560001,
+          "open_interest_usd": 900325.377888
+        },
+        "OKX": {
+          "perp_volume_usd": 960554.056,
+          "open_interest_usd": 237983.704
+        },
+        "Bitget": {
+          "perp_volume_usd": 191317.01586,
+          "open_interest_usd": 521338.27655
+        },
+        "Gate": {
+          "perp_volume_usd": 89454.0,
+          "open_interest_usd": 259762.42400000003
+        },
+        "MEXC": {
+          "perp_volume_usd": 184788.393,
+          "open_interest_usd": 825954.2616
+        },
+        "Binance": {
+          "perp_volume_usd": 2643274.13585,
+          "open_interest_usd": 5572901.05287
+        },
+        "Bybit": {
+          "perp_volume_usd": 865847.7942,
+          "open_interest_usd": 1974838.27
+        }
+      }
+    },
+    {
+      "symbol": "PYTH",
+      "name": "Pyth Network",
+      "rank": 86,
+      "market_cap_usd": 471513359.3905877,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 415190.53077,
+          "open_interest_usd": 1528125.6551700002
+        },
+        "OKX": {
+          "perp_volume_usd": 3067096.2784,
+          "open_interest_usd": 1516947.9024
+        },
+        "Bitget": {
+          "perp_volume_usd": 1086633.79729,
+          "open_interest_usd": 2908335.2259500003
+        },
+        "Gate": {
+          "perp_volume_usd": 270686.0,
+          "open_interest_usd": 4470688.7232
+        },
+        "MEXC": {
+          "perp_volume_usd": 691692.1347,
+          "open_interest_usd": 1893307.3974
+        },
+        "Binance": {
+          "perp_volume_usd": 9303426.30145,
+          "open_interest_usd": 6424791.71493
+        },
+        "Bybit": {
+          "perp_volume_usd": 2223095.3439,
+          "open_interest_usd": 5550386.48
+        }
+      }
+    },
+    {
+      "symbol": "NEXO",
+      "name": "Nexo",
+      "rank": 87,
+      "market_cap_usd": 460369649.5447151,
+      "exchanges": {}
+    },
+    {
+      "symbol": "EURC",
+      "name": "EURC",
+      "rank": 88,
+      "market_cap_usd": 451577489.6044286,
+      "exchanges": {}
+    },
+    {
+      "symbol": "RAY",
+      "name": "Raydium",
+      "rank": 89,
+      "market_cap_usd": 447279417.85254765,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 5168652.2985000005,
+          "open_interest_usd": 2349532.8059
+        },
+        "Bitget": {
+          "perp_volume_usd": 1108320.60789,
+          "open_interest_usd": 2104532.191160001
+        },
+        "Gate": {
+          "perp_volume_usd": 206492.0,
+          "open_interest_usd": 263895.23840000003
+        },
+        "MEXC": {
+          "perp_volume_usd": 1012150.78517,
+          "open_interest_usd": 2465886.2820800003
+        }
+      }
+    },
+    {
+      "symbol": "VET",
+      "name": "VeChain",
+      "rank": 90,
+      "market_cap_usd": 440347745.7943479,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 169625.559249,
+          "open_interest_usd": 2516954.951843
+        },
+        "Gate": {
+          "perp_volume_usd": 30298.0,
+          "open_interest_usd": 183349.5888
+        },
+        "MEXC": {
+          "perp_volume_usd": 812895.999369,
+          "open_interest_usd": 12211219.642075999
+        },
+        "Binance": {
+          "perp_volume_usd": 4117087.195657,
+          "open_interest_usd": 3054999.9564239997
+        },
+        "Bybit": {
+          "perp_volume_usd": 1299147.5376,
+          "open_interest_usd": 2764284.28
+        }
+      }
+    },
+    {
+      "symbol": "TIA",
+      "name": "Celestia",
+      "rank": 91,
+      "market_cap_usd": 411770036.1442641,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1065353.697341,
+          "open_interest_usd": 5895762.897808
+        },
+        "OKX": {
+          "perp_volume_usd": 8332335.123,
+          "open_interest_usd": 4508878.802999999
+        },
+        "Bitget": {
+          "perp_volume_usd": 2279168.26395,
+          "open_interest_usd": 3748269.8543199995
+        },
+        "Gate": {
+          "perp_volume_usd": 1973082.0,
+          "open_interest_usd": 8123044.189200001
+        },
+        "MEXC": {
+          "perp_volume_usd": 8390613.6511,
+          "open_interest_usd": 8899833.2939
+        },
+        "Binance": {
+          "perp_volume_usd": 24464170.5254,
+          "open_interest_usd": 15191056.0536
+        },
+        "Bybit": {
+          "perp_volume_usd": 8874515.0626,
+          "open_interest_usd": 8174236.15
+        }
+      }
+    },
+    {
+      "symbol": "CRV",
+      "name": "Curve DAO Token",
+      "rank": 92,
+      "market_cap_usd": 402913397.8791623,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 3257502.3808560004,
+          "open_interest_usd": 11632255.850026
+        },
+        "OKX": {
+          "perp_volume_usd": 6427770.3425,
+          "open_interest_usd": 4977328.269
+        },
+        "Bitget": {
+          "perp_volume_usd": 1753371.6514,
+          "open_interest_usd": 3838500.8340000003
+        },
+        "Gate": {
+          "perp_volume_usd": 435850.0,
+          "open_interest_usd": 10230507.052000001
+        },
+        "MEXC": {
+          "perp_volume_usd": 2754096.11892,
+          "open_interest_usd": 3859730.83925
+        },
+        "Binance": {
+          "perp_volume_usd": 15122556.72422,
+          "open_interest_usd": 17327442.391289998
+        },
+        "Bybit": {
+          "perp_volume_usd": 7452428.1326,
+          "open_interest_usd": 16926432.96
+        }
+      }
+    },
+    {
+      "symbol": "PENGU",
+      "name": "Pudgy Penguins",
+      "rank": 93,
+      "market_cap_usd": 385653774.51565415,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1188983.4888949993,
+          "open_interest_usd": 3318505.865418
+        },
+        "OKX": {
+          "perp_volume_usd": 11468719.984,
+          "open_interest_usd": 5905724.142
+        },
+        "Bitget": {
+          "perp_volume_usd": 4053095.020186,
+          "open_interest_usd": 7396560.241363
+        },
+        "Gate": {
+          "perp_volume_usd": 3139151.0,
+          "open_interest_usd": 13456101.820799999
+        },
+        "MEXC": {
+          "perp_volume_usd": 4325061.60957,
+          "open_interest_usd": 6379178.803990001
+        },
+        "Binance": {
+          "perp_volume_usd": 32799507.957,
+          "open_interest_usd": 25392837.341184
+        },
+        "Bybit": {
+          "perp_volume_usd": 7561556.5131,
+          "open_interest_usd": 12222580.38
+        }
+      }
+    },
+    {
+      "symbol": "VIRTUAL",
+      "name": "Virtuals Protocol",
+      "rank": 94,
+      "market_cap_usd": 350465861.9304148,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 885059.988341,
+          "open_interest_usd": 5045012.22771
+        },
+        "OKX": {
+          "perp_volume_usd": 2570248.8902000003,
+          "open_interest_usd": 2095816.7291
+        },
+        "Bitget": {
+          "perp_volume_usd": 2393785.6309,
+          "open_interest_usd": 4077017.1519
+        },
+        "Gate": {
+          "perp_volume_usd": 1771356.0,
+          "open_interest_usd": 11312533.056
+        },
+        "MEXC": {
+          "perp_volume_usd": 1018956.486,
+          "open_interest_usd": 4811454.720000001
+        },
+        "Binance": {
+          "perp_volume_usd": 12499333.18938,
+          "open_interest_usd": 11405479.95588
+        },
+        "Bybit": {
+          "perp_volume_usd": 5136214.3495,
+          "open_interest_usd": 8238049.33
+        }
+      }
+    },
+    {
+      "symbol": "BTT",
+      "name": "BitTorrent [New]",
+      "rank": 95,
+      "market_cap_usd": 345668538.37030125,
+      "exchanges": {}
+    },
+    {
+      "symbol": "FET",
+      "name": "Artificial Superintelligence Alliance",
+      "rank": 96,
+      "market_cap_usd": 339768611.3972789,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1207446.2321499998,
+          "open_interest_usd": 5341481.040000001
+        },
+        "OKX": {
+          "perp_volume_usd": 2358482.0,
+          "open_interest_usd": 1222086.6
+        },
+        "Bitget": {
+          "perp_volume_usd": 4554485.6269,
+          "open_interest_usd": 10445753.360000001
+        },
+        "Gate": {
+          "perp_volume_usd": 2868883.0,
+          "open_interest_usd": 1908569.3200000003
+        },
+        "MEXC": {
+          "perp_volume_usd": 5097127.6,
+          "open_interest_usd": 11872708.4
+        },
+        "Binance": {
+          "perp_volume_usd": 26637414.5882,
+          "open_interest_usd": 18739811.860000003
+        }
+      }
+    },
+    {
+      "symbol": "SEI",
+      "name": "Sei",
+      "rank": 97,
+      "market_cap_usd": 332800849.5402046,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1052666.681667,
+          "open_interest_usd": 1978946.5570699999
+        },
+        "OKX": {
+          "perp_volume_usd": 2339400.7175,
+          "open_interest_usd": 2023648.9024999999
+        },
+        "Bitget": {
+          "perp_volume_usd": 1899831.65221,
+          "open_interest_usd": 6280798.2554
+        },
+        "Gate": {
+          "perp_volume_usd": 293646.0,
+          "open_interest_usd": 4455144.4399999995
+        },
+        "MEXC": {
+          "perp_volume_usd": 3434458.3281,
+          "open_interest_usd": 7229819.4413
+        },
+        "Binance": {
+          "perp_volume_usd": 11113235.9588,
+          "open_interest_usd": 7336506.3158
+        },
+        "Bybit": {
+          "perp_volume_usd": 5709837.8364,
+          "open_interest_usd": 6542445.31
+        }
+      }
+    },
+    {
+      "symbol": "BSV",
+      "name": "Bitcoin SV",
+      "rank": 98,
+      "market_cap_usd": 322707770.21900266,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 313921.1237900002,
+          "open_interest_usd": 645027.95258
+        },
+        "Bitget": {
+          "perp_volume_usd": 135382.8784,
+          "open_interest_usd": 1358690.1328
+        },
+        "Gate": {
+          "perp_volume_usd": 300983.0,
+          "open_interest_usd": 1462301.5276000001
+        },
+        "MEXC": {
+          "perp_volume_usd": 232022.9066,
+          "open_interest_usd": 475198.9305000001
+        },
+        "Binance": {
+          "perp_volume_usd": 751168.605,
+          "open_interest_usd": 1086878.715
+        },
+        "Bybit": {
+          "perp_volume_usd": 313166.1561,
+          "open_interest_usd": 990427.16
+        }
+      }
+    },
+    {
+      "symbol": "TRUMP",
+      "name": "OFFICIAL TRUMP",
+      "rank": 99,
+      "market_cap_usd": 322637745.01554805,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 6077536.186299996,
+          "open_interest_usd": 9807231.12882
+        },
+        "OKX": {
+          "perp_volume_usd": 68556335.0955,
+          "open_interest_usd": 12376657.620000001
+        },
+        "Bitget": {
+          "perp_volume_usd": 8382088.7173,
+          "open_interest_usd": 5284899.421500002
+        },
+        "Gate": {
+          "perp_volume_usd": 14032846.0,
+          "open_interest_usd": 50642093.8848
+        },
+        "Binance": {
+          "perp_volume_usd": 77285461.8468,
+          "open_interest_usd": 32446879.19298
+        },
+        "Bybit": {
+          "perp_volume_usd": 26853211.411,
+          "open_interest_usd": 18528137.12
+        }
+      }
+    },
+    {
+      "symbol": "SPX",
+      "name": "SPX6900",
+      "rank": 100,
+      "market_cap_usd": 315761607.159469,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1027666.5955810001,
+          "open_interest_usd": 3524911.376848
+        },
+        "OKX": {
+          "perp_volume_usd": 963068.3862,
+          "open_interest_usd": 533327.181
+        },
+        "Bitget": {
+          "perp_volume_usd": 211247.635,
+          "open_interest_usd": 1696245.1744
+        },
+        "Gate": {
+          "perp_volume_usd": 194883.0,
+          "open_interest_usd": 686272.5
+        },
+        "MEXC": {
+          "perp_volume_usd": 1261100.8339,
+          "open_interest_usd": 5059955.978
+        },
+        "Binance": {
+          "perp_volume_usd": 5021167.0395,
+          "open_interest_usd": 3105743.88
+        },
+        "Bybit": {
+          "perp_volume_usd": 2802152.8756,
+          "open_interest_usd": 9156883.25
+        }
+      }
+    },
+    {
+      "symbol": "KITE",
+      "name": "Kite",
+      "rank": 101,
+      "market_cap_usd": 312292003.8399012,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 1019683.2844,
+          "open_interest_usd": 1038876.4384
+        },
+        "Bitget": {
+          "perp_volume_usd": 579444.10146,
+          "open_interest_usd": 2352536.1101
+        },
+        "Gate": {
+          "perp_volume_usd": 83872.0,
+          "open_interest_usd": 222284.48500000002
+        },
+        "MEXC": {
+          "perp_volume_usd": 276150.2438,
+          "open_interest_usd": 373716.0298
+        },
+        "Binance": {
+          "perp_volume_usd": 4057547.76918,
+          "open_interest_usd": 17626659.43453
+        },
+        "Bybit": {
+          "perp_volume_usd": 523575.2065,
+          "open_interest_usd": 1384952.59
+        }
+      }
+    },
+    {
+      "symbol": "FF",
+      "name": "Falcon Finance",
+      "rank": 102,
+      "market_cap_usd": 302372196.66035247,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 262158.59661,
+          "open_interest_usd": 12316112.37208
+        },
+        "Gate": {
+          "perp_volume_usd": 417013.0,
+          "open_interest_usd": 17423649.7496
+        },
+        "MEXC": {
+          "perp_volume_usd": 107239.40859,
+          "open_interest_usd": 8401105.720859999
+        },
+        "Binance": {
+          "perp_volume_usd": 2577924.43392,
+          "open_interest_usd": 30367111.40397
+        },
+        "Bybit": {
+          "perp_volume_usd": 769634.537,
+          "open_interest_usd": 7915026.34
+        }
+      }
+    },
+    {
+      "symbol": "SUN",
+      "name": "Sun [New]",
+      "rank": 103,
+      "market_cap_usd": 294255924.3678678,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 29232.64116,
+          "open_interest_usd": 400098.84801
+        },
+        "Gate": {
+          "perp_volume_usd": 29420.0,
+          "open_interest_usd": 82833.5769732
+        },
+        "MEXC": {
+          "perp_volume_usd": 252825.546,
+          "open_interest_usd": 10703623.92
+        },
+        "Binance": {
+          "perp_volume_usd": 869267.132954,
+          "open_interest_usd": 1576831.749174
+        },
+        "Bybit": {
+          "perp_volume_usd": 109410.864,
+          "open_interest_usd": 480079.47
+        }
+      }
+    },
+    {
+      "symbol": "STRK",
+      "name": "Starknet",
+      "rank": 104,
+      "market_cap_usd": 283745887.09935844,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 2453198.133236,
+          "open_interest_usd": 22115520.7119
+        },
+        "OKX": {
+          "perp_volume_usd": 18360461.2158,
+          "open_interest_usd": 4234047.60009
+        },
+        "Bitget": {
+          "perp_volume_usd": 2628978.7533716,
+          "open_interest_usd": 2401956.723800001
+        },
+        "Gate": {
+          "perp_volume_usd": 1025276.0,
+          "open_interest_usd": 1193966.3412199998
+        },
+        "MEXC": {
+          "perp_volume_usd": 1247330.54513,
+          "open_interest_usd": 4229142.496280001
+        },
+        "Binance": {
+          "perp_volume_usd": 27468247.669708,
+          "open_interest_usd": 14866388.977509001
+        },
+        "Bybit": {
+          "perp_volume_usd": 13275865.0791,
+          "open_interest_usd": 12232531.68
+        }
+      }
+    },
+    {
+      "symbol": "FDUSD",
+      "name": "First Digital USD",
+      "rank": 105,
+      "market_cap_usd": 282800816.40522504,
+      "exchanges": {}
+    },
+    {
+      "symbol": "GNO",
+      "name": "Gnosis",
+      "rank": 106,
+      "market_cap_usd": 277221255.8938291,
+      "exchanges": {}
+    },
+    {
+      "symbol": "XTZ",
+      "name": "Tezos",
+      "rank": 107,
+      "market_cap_usd": 271205115.12939477,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 1108901.712,
+          "open_interest_usd": 1124354.8203
+        },
+        "Bitget": {
+          "perp_volume_usd": 368818.6014,
+          "open_interest_usd": 730505.7037000001
+        },
+        "Gate": {
+          "perp_volume_usd": 364090.0,
+          "open_interest_usd": 577354.128
+        },
+        "MEXC": {
+          "perp_volume_usd": 570885.95138,
+          "open_interest_usd": 717433.2170800001
+        },
+        "Binance": {
+          "perp_volume_usd": 4984932.07436,
+          "open_interest_usd": 3096866.04276
+        },
+        "Bybit": {
+          "perp_volume_usd": 1108756.8401,
+          "open_interest_usd": 2609916.64
+        }
+      }
+    },
+    {
+      "symbol": "PENDLE",
+      "name": "Pendle",
+      "rank": 108,
+      "market_cap_usd": 271079749.5320794,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 863642.7974000002,
+          "open_interest_usd": 7752865.449
+        },
+        "OKX": {
+          "perp_volume_usd": 2199657.019,
+          "open_interest_usd": 2568338.693
+        },
+        "Bitget": {
+          "perp_volume_usd": 875521.5733,
+          "open_interest_usd": 2603574.2802
+        },
+        "Gate": {
+          "perp_volume_usd": 443906.0,
+          "open_interest_usd": 880283.04
+        },
+        "MEXC": {
+          "perp_volume_usd": 944729.5307,
+          "open_interest_usd": 5506725.7190000005
+        },
+        "Binance": {
+          "perp_volume_usd": 8603191.022,
+          "open_interest_usd": 10521790.3965
+        },
+        "Bybit": {
+          "perp_volume_usd": 2515053.644,
+          "open_interest_usd": 8167354.2
+        }
+      }
+    },
+    {
+      "symbol": "LDO",
+      "name": "Lido DAO",
+      "rank": 109,
+      "market_cap_usd": 261323802.9012807,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 874340.0258979999,
+          "open_interest_usd": 8373284.789972001
+        },
+        "OKX": {
+          "perp_volume_usd": 3026008.0744000003,
+          "open_interest_usd": 2787314.7520000003
+        },
+        "Bitget": {
+          "perp_volume_usd": 1377383.44885,
+          "open_interest_usd": 2868738.4583
+        },
+        "Gate": {
+          "perp_volume_usd": 329064.0,
+          "open_interest_usd": 9688063.1808
+        },
+        "MEXC": {
+          "perp_volume_usd": 2912617.4468,
+          "open_interest_usd": 3844913.8501999998
+        },
+        "Binance": {
+          "perp_volume_usd": 10541498.3636,
+          "open_interest_usd": 9726317.37
+        },
+        "Bybit": {
+          "perp_volume_usd": 4239513.8681,
+          "open_interest_usd": 9863157.59
+        }
+      }
+    },
+    {
+      "symbol": "XPL",
+      "name": "Plasma",
+      "rank": 110,
+      "market_cap_usd": 244914684.6908915,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 15877362.346788,
+          "open_interest_usd": 37840863.505456
+        },
+        "OKX": {
+          "perp_volume_usd": 25717501.6455,
+          "open_interest_usd": 6747293.927
+        },
+        "Bitget": {
+          "perp_volume_usd": 5225194.98869,
+          "open_interest_usd": 4781587.41965
+        },
+        "Gate": {
+          "perp_volume_usd": 2206464.0,
+          "open_interest_usd": 13103992.0704
+        },
+        "MEXC": {
+          "perp_volume_usd": 3930882.93052,
+          "open_interest_usd": 4437138.07716
+        },
+        "Binance": {
+          "perp_volume_usd": 34667890.64734,
+          "open_interest_usd": 28177791.22307
+        },
+        "Bybit": {
+          "perp_volume_usd": 19013708.7331,
+          "open_interest_usd": 17787800.32
+        }
+      }
+    },
+    {
+      "symbol": "IMX",
+      "name": "Immutable",
+      "rank": 111,
+      "market_cap_usd": 242962441.32671547,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 554325.1539440004,
+          "open_interest_usd": 2927137.99516
+        },
+        "OKX": {
+          "perp_volume_usd": 2059721.70408,
+          "open_interest_usd": 1378542.7818
+        },
+        "Bitget": {
+          "perp_volume_usd": 412494.9533,
+          "open_interest_usd": 1035065.10278
+        },
+        "Gate": {
+          "perp_volume_usd": 363291.0,
+          "open_interest_usd": 414957.5304
+        },
+        "MEXC": {
+          "perp_volume_usd": 681123.5254,
+          "open_interest_usd": 899927.574
+        },
+        "Binance": {
+          "perp_volume_usd": 6629025.6953,
+          "open_interest_usd": 3155523.3091
+        },
+        "Bybit": {
+          "perp_volume_usd": 1467382.2849,
+          "open_interest_usd": 3889132.0
+        }
+      }
+    },
+    {
+      "symbol": "BONK",
+      "name": "Bonk",
+      "rank": 112,
+      "market_cap_usd": 236952325.40426227,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 3087991.7355,
+          "open_interest_usd": 1662167.2661
+        },
+        "Gate": {
+          "perp_volume_usd": 380590.0,
+          "open_interest_usd": 430458.096
+        }
+      }
+    },
+    {
+      "symbol": "OP",
+      "name": "Optimism",
+      "rank": 113,
+      "market_cap_usd": 225873737.40923873,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 775652.757509,
+          "open_interest_usd": 2863409.7110099997
+        },
+        "OKX": {
+          "perp_volume_usd": 8703801.79938,
+          "open_interest_usd": 3572849.03694
+        },
+        "Bitget": {
+          "perp_volume_usd": 3670861.33047,
+          "open_interest_usd": 4179195.9241200006
+        },
+        "Gate": {
+          "perp_volume_usd": 1138981.0,
+          "open_interest_usd": 9597472.342319999
+        },
+        "MEXC": {
+          "perp_volume_usd": 3318238.0931,
+          "open_interest_usd": 6996685.22972
+        },
+        "Binance": {
+          "perp_volume_usd": 20500469.579766,
+          "open_interest_usd": 12627141.187383
+        },
+        "Bybit": {
+          "perp_volume_usd": 9576333.1146,
+          "open_interest_usd": 10133926.99
+        }
+      }
+    },
+    {
+      "symbol": "LUNC",
+      "name": "Terra Classic",
+      "rank": 114,
+      "market_cap_usd": 214626528.03834435,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 392465.10531477,
+          "open_interest_usd": 748631.96501202
+        },
+        "Gate": {
+          "perp_volume_usd": 175608.0,
+          "open_interest_usd": 176541.2614
+        },
+        "MEXC": {
+          "perp_volume_usd": 881842.4165,
+          "open_interest_usd": 11337247.4121
+        }
+      }
+    },
+    {
+      "symbol": "DCR",
+      "name": "Decred",
+      "rank": 115,
+      "market_cap_usd": 214007909.7158606,
+      "exchanges": {}
+    },
+    {
+      "symbol": "CFX",
+      "name": "Conflux",
+      "rank": 116,
+      "market_cap_usd": 213578124.1151199,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 443008.9057379999,
+          "open_interest_usd": 2369942.429824
+        },
+        "OKX": {
+          "perp_volume_usd": 2574999.46,
+          "open_interest_usd": 1664575.055
+        },
+        "Bitget": {
+          "perp_volume_usd": 270178.49807,
+          "open_interest_usd": 1089934.7736600002
+        },
+        "Gate": {
+          "perp_volume_usd": 211290.0,
+          "open_interest_usd": 1002532.5648
+        },
+        "MEXC": {
+          "perp_volume_usd": 341841.49539,
+          "open_interest_usd": 352064.85391999997
+        },
+        "Binance": {
+          "perp_volume_usd": 4005579.1114,
+          "open_interest_usd": 3979272.3276500003
+        },
+        "Bybit": {
+          "perp_volume_usd": 705756.226,
+          "open_interest_usd": 1905263.39
+        }
+      }
+    },
+    {
+      "symbol": "AR",
+      "name": "Arweave",
+      "rank": 117,
+      "market_cap_usd": 204417547.3191019,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 233520.407127,
+          "open_interest_usd": 696025.6673259999
+        },
+        "OKX": {
+          "perp_volume_usd": 1914444.8798999998,
+          "open_interest_usd": 1194274.1861999999
+        },
+        "Bitget": {
+          "perp_volume_usd": 300762.7346,
+          "open_interest_usd": 2530892.9700999996
+        },
+        "Gate": {
+          "perp_volume_usd": 268615.0,
+          "open_interest_usd": 946443.8464
+        },
+        "MEXC": {
+          "perp_volume_usd": 401492.0474,
+          "open_interest_usd": 3077427.3476000004
+        },
+        "Binance": {
+          "perp_volume_usd": 5626882.807,
+          "open_interest_usd": 5166449.8452
+        },
+        "Bybit": {
+          "perp_volume_usd": 1029511.6381,
+          "open_interest_usd": 1556596.1
+        }
+      }
+    },
+    {
+      "symbol": "BEAM",
+      "name": "Beam",
+      "rank": 118,
+      "market_cap_usd": 202342371.26403445,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 1535736.485786,
+          "open_interest_usd": 1307962.03356
+        },
+        "Bybit": {
+          "perp_volume_usd": 6943644.0877,
+          "open_interest_usd": 4410995.58
+        }
+      }
+    },
+    {
+      "symbol": "GRT",
+      "name": "The Graph",
+      "rank": 119,
+      "market_cap_usd": 200745174.26449963,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 332420.79480000003,
+          "open_interest_usd": 572137.7098000001
+        },
+        "Bitget": {
+          "perp_volume_usd": 290032.773228,
+          "open_interest_usd": 1756862.8643679998
+        },
+        "Gate": {
+          "perp_volume_usd": 137149.0,
+          "open_interest_usd": 158572.23200000002
+        },
+        "MEXC": {
+          "perp_volume_usd": 420538.02606,
+          "open_interest_usd": 728588.0808
+        },
+        "Binance": {
+          "perp_volume_usd": 3519820.21584,
+          "open_interest_usd": 2308655.7113400004
+        },
+        "Bybit": {
+          "perp_volume_usd": 902239.2358,
+          "open_interest_usd": 2002935.37
+        }
+      }
+    },
+    {
+      "symbol": "COMP",
+      "name": "Compound",
+      "rank": 120,
+      "market_cap_usd": 197933832.95874777,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 248366.65669,
+          "open_interest_usd": 775181.5918
+        },
+        "OKX": {
+          "perp_volume_usd": 1039192.5599999999,
+          "open_interest_usd": 1257167.562
+        },
+        "Bitget": {
+          "perp_volume_usd": 283292.5226,
+          "open_interest_usd": 1783979.3825000008
+        },
+        "Gate": {
+          "perp_volume_usd": 64193.0,
+          "open_interest_usd": 357701.8432
+        },
+        "MEXC": {
+          "perp_volume_usd": 205153.9498,
+          "open_interest_usd": 814490.6016000002
+        },
+        "Binance": {
+          "perp_volume_usd": 3649300.55,
+          "open_interest_usd": 4384169.15748
+        },
+        "Bybit": {
+          "perp_volume_usd": 875711.7544,
+          "open_interest_usd": 4826279.17
+        }
+      }
+    },
+    {
+      "symbol": "FLOKI",
+      "name": "FLOKI",
+      "rank": 121,
+      "market_cap_usd": 195911840.99549133,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 722172.056,
+          "open_interest_usd": 636223.032
+        },
+        "Bitget": {
+          "perp_volume_usd": 209094.82542139,
+          "open_interest_usd": 1375057.96222368
+        },
+        "Gate": {
+          "perp_volume_usd": 219966.0,
+          "open_interest_usd": 243821.86239999998
+        },
+        "MEXC": {
+          "perp_volume_usd": 1906375.296,
+          "open_interest_usd": 3240618.37
+        }
+      }
+    },
+    {
+      "symbol": "KAIA",
+      "name": "Kaia",
+      "rank": 122,
+      "market_cap_usd": 195837878.81871423,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 448293.876202,
+          "open_interest_usd": 473839.9304219998
+        },
+        "Gate": {
+          "perp_volume_usd": 71571.0,
+          "open_interest_usd": 113822.8064
+        },
+        "MEXC": {
+          "perp_volume_usd": 152748.1755,
+          "open_interest_usd": 337391.8944
+        },
+        "Binance": {
+          "perp_volume_usd": 2375439.70762,
+          "open_interest_usd": 2039280.35087
+        },
+        "Bybit": {
+          "perp_volume_usd": 1206486.7107,
+          "open_interest_usd": 1368308.11
+        }
+      }
+    },
+    {
+      "symbol": "KMNO",
+      "name": "Kamino",
+      "rank": 123,
+      "market_cap_usd": 194105708.3353996,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 892274.82,
+          "open_interest_usd": 616984.461
+        },
+        "Bitget": {
+          "perp_volume_usd": 159784.8214,
+          "open_interest_usd": 593063.26506
+        },
+        "Gate": {
+          "perp_volume_usd": 46114.0,
+          "open_interest_usd": 87971.507
+        },
+        "MEXC": {
+          "perp_volume_usd": 134670.672,
+          "open_interest_usd": 503354.49600000004
+        },
+        "Binance": {
+          "perp_volume_usd": 2952237.83287,
+          "open_interest_usd": 2558987.48972
+        },
+        "Bybit": {
+          "perp_volume_usd": 429946.345,
+          "open_interest_usd": 1103228.26
+        }
+      }
+    },
+    {
+      "symbol": "NFT",
+      "name": "AINFT",
+      "rank": 124,
+      "market_cap_usd": 191158087.52036753,
+      "exchanges": {}
+    },
+    {
+      "symbol": "RUNE",
+      "name": "THORChain",
+      "rank": 125,
+      "market_cap_usd": 188625555.43291524,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 513417.3975999997,
+          "open_interest_usd": 1741314.88092
+        },
+        "Bitget": {
+          "perp_volume_usd": 519450.72483,
+          "open_interest_usd": 1202133.2146799993
+        },
+        "Gate": {
+          "perp_volume_usd": 222161.0,
+          "open_interest_usd": 237830.012
+        },
+        "MEXC": {
+          "perp_volume_usd": 818423.4656,
+          "open_interest_usd": 1749450.2808
+        },
+        "Binance": {
+          "perp_volume_usd": 4966579.4899,
+          "open_interest_usd": 4544316.4164
+        },
+        "Bybit": {
+          "perp_volume_usd": 1705214.4834,
+          "open_interest_usd": 2624852.57
+        }
+      }
+    },
+    {
+      "symbol": "MON",
+      "name": "Monad",
+      "rank": 126,
+      "market_cap_usd": 188418677.18191123,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 4121308.5746959997,
+          "open_interest_usd": 27438253.009496
+        },
+        "OKX": {
+          "perp_volume_usd": 3670228.8972,
+          "open_interest_usd": 2355769.6759
+        },
+        "Bitget": {
+          "perp_volume_usd": 506351.80696,
+          "open_interest_usd": 1343485.18311
+        },
+        "Gate": {
+          "perp_volume_usd": 367803.0,
+          "open_interest_usd": 395406.95040000003
+        },
+        "Binance": {
+          "perp_volume_usd": 8371398.82415,
+          "open_interest_usd": 15879095.985739999
+        },
+        "Bybit": {
+          "perp_volume_usd": 4467907.0402,
+          "open_interest_usd": 10008467.62
+        }
+      }
+    },
+    {
+      "symbol": "ENS",
+      "name": "Ethereum Name Service",
+      "rank": 127,
+      "market_cap_usd": 184901754.68944588,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 361259.7581560001,
+          "open_interest_usd": 1189302.5051400003
+        },
+        "OKX": {
+          "perp_volume_usd": 1413229.326,
+          "open_interest_usd": 1350655.5132
+        },
+        "Bitget": {
+          "perp_volume_usd": 334052.5822,
+          "open_interest_usd": 1949154.5504000008
+        },
+        "Gate": {
+          "perp_volume_usd": 123550.0,
+          "open_interest_usd": 207841.3824
+        },
+        "MEXC": {
+          "perp_volume_usd": 637922.1865,
+          "open_interest_usd": 1469179.5588
+        },
+        "Binance": {
+          "perp_volume_usd": 3855318.006,
+          "open_interest_usd": 2845661.7462
+        },
+        "Bybit": {
+          "perp_volume_usd": 1530198.8663,
+          "open_interest_usd": 2293216.51
+        }
+      }
+    },
+    {
+      "symbol": "BAT",
+      "name": "Basic Attention Token",
+      "rank": 128,
+      "market_cap_usd": 181718930.67713246,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 4813829.8495000005,
+          "open_interest_usd": 1841987.2135
+        },
+        "Bitget": {
+          "perp_volume_usd": 561702.159187,
+          "open_interest_usd": 958228.160997
+        },
+        "Gate": {
+          "perp_volume_usd": 401645.0,
+          "open_interest_usd": 174238.764
+        },
+        "MEXC": {
+          "perp_volume_usd": 565191.47535,
+          "open_interest_usd": 8556724.1295
+        },
+        "Binance": {
+          "perp_volume_usd": 8554033.346061,
+          "open_interest_usd": 6553904.9875920005
+        },
+        "Bybit": {
+          "perp_volume_usd": 1530257.8695,
+          "open_interest_usd": 2421345.33
+        }
+      }
+    },
+    {
+      "symbol": "AKT",
+      "name": "Akash Network",
+      "rank": 129,
+      "market_cap_usd": 177750074.4792067,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 362529.8857,
+          "open_interest_usd": 1279261.3011599998
+        },
+        "Gate": {
+          "perp_volume_usd": 58583.0,
+          "open_interest_usd": 344235.1302
+        },
+        "MEXC": {
+          "perp_volume_usd": 410173.5074,
+          "open_interest_usd": 11563209.174999999
+        },
+        "Binance": {
+          "perp_volume_usd": 2710832.67959,
+          "open_interest_usd": 2746444.97907
+        },
+        "Bybit": {
+          "perp_volume_usd": 939280.0081,
+          "open_interest_usd": 1126206.46
+        }
+      }
+    },
+    {
+      "symbol": "JASMY",
+      "name": "JasmyCoin",
+      "rank": 130,
+      "market_cap_usd": 176500106.2541197,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 514058.566248,
+          "open_interest_usd": 1224138.872432
+        },
+        "Gate": {
+          "perp_volume_usd": 145130.0,
+          "open_interest_usd": 272124.359584
+        },
+        "MEXC": {
+          "perp_volume_usd": 1837428.94047,
+          "open_interest_usd": 4295521.4967
+        },
+        "Binance": {
+          "perp_volume_usd": 4241782.994773,
+          "open_interest_usd": 2711492.826659
+        },
+        "Bybit": {
+          "perp_volume_usd": 1560315.5478,
+          "open_interest_usd": 2462006.21
+        }
+      }
+    },
+    {
+      "symbol": "JTO",
+      "name": "Jito",
+      "rank": 131,
+      "market_cap_usd": 175549500.88596448,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 629345.2206700002,
+          "open_interest_usd": 1608546.82338
+        },
+        "OKX": {
+          "perp_volume_usd": 2830164.8496,
+          "open_interest_usd": 2026103.7858
+        },
+        "Bitget": {
+          "perp_volume_usd": 574218.829,
+          "open_interest_usd": 1383757.9392
+        },
+        "Gate": {
+          "perp_volume_usd": 235647.0,
+          "open_interest_usd": 3077749.9055999997
+        },
+        "MEXC": {
+          "perp_volume_usd": 700411.7671,
+          "open_interest_usd": 1449124.7216
+        },
+        "Binance": {
+          "perp_volume_usd": 6817912.135,
+          "open_interest_usd": 6249623.364
+        },
+        "Bybit": {
+          "perp_volume_usd": 1349465.0986,
+          "open_interest_usd": 3530040.79
+        }
+      }
+    },
+    {
+      "symbol": "CVX",
+      "name": "Convex Finance",
+      "rank": 132,
+      "market_cap_usd": 174260352.18949032,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 584761.8,
+          "open_interest_usd": 327856.02
+        },
+        "Bitget": {
+          "perp_volume_usd": 188843.45741,
+          "open_interest_usd": 570943.5226800002
+        },
+        "Gate": {
+          "perp_volume_usd": 90719.0,
+          "open_interest_usd": 95809.50940000001
+        },
+        "MEXC": {
+          "perp_volume_usd": 185061.717,
+          "open_interest_usd": 845330.28
+        },
+        "Binance": {
+          "perp_volume_usd": 2222691.6443,
+          "open_interest_usd": 2047772.2650000001
+        },
+        "Bybit": {
+          "perp_volume_usd": 771019.8205,
+          "open_interest_usd": 1871350.92
+        }
+      }
+    },
+    {
+      "symbol": "ZBCN",
+      "name": "Zebec Network",
+      "rank": 133,
+      "market_cap_usd": 171308986.994954,
+      "exchanges": {
+        "Gate": {
+          "perp_volume_usd": 14244.0,
+          "open_interest_usd": 46146.0222
+        },
+        "Bybit": {
+          "perp_volume_usd": 964950.8914,
+          "open_interest_usd": 332898.16
+        }
+      }
+    },
+    {
+      "symbol": "MET",
+      "name": "Meteora",
+      "rank": 134,
+      "market_cap_usd": 167180910.19204658,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1765631.3834599995,
+          "open_interest_usd": 2382905.9245200003
+        },
+        "OKX": {
+          "perp_volume_usd": 9010487.1505,
+          "open_interest_usd": 1600319.2485
+        },
+        "Bitget": {
+          "perp_volume_usd": 2764286.7106,
+          "open_interest_usd": 664501.7331000001
+        },
+        "Gate": {
+          "perp_volume_usd": 902171.0,
+          "open_interest_usd": 203062.93380000003
+        },
+        "MEXC": {
+          "perp_volume_usd": 943097.0722,
+          "open_interest_usd": 611878.6902
+        },
+        "Binance": {
+          "perp_volume_usd": 26564346.1255,
+          "open_interest_usd": 4353854.511899999
+        },
+        "Bybit": {
+          "perp_volume_usd": 9904216.7533,
+          "open_interest_usd": 3206217.92
+        }
+      }
+    },
+    {
+      "symbol": "FLUID",
+      "name": "Fluid",
+      "rank": 135,
+      "market_cap_usd": 166702570.14014286,
+      "exchanges": {
+        "Bitget": {
+          "perp_volume_usd": 469963.64,
+          "open_interest_usd": 419604.84
+        },
+        "Gate": {
+          "perp_volume_usd": 82236.0,
+          "open_interest_usd": 113149.584
+        },
+        "MEXC": {
+          "perp_volume_usd": 351121.4983,
+          "open_interest_usd": 1064603.9252000002
+        },
+        "Binance": {
+          "perp_volume_usd": 2677560.7726,
+          "open_interest_usd": 2093722.6150000002
+        },
+        "Bybit": {
+          "perp_volume_usd": 863089.6769,
+          "open_interest_usd": 1970239.05
+        }
+      }
+    },
+    {
+      "symbol": "ZAMA",
+      "name": "Zama",
+      "rank": 136,
+      "market_cap_usd": 164622032.27331066,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 5373708.2945,
+          "open_interest_usd": 2706162.6135
+        },
+        "Bitget": {
+          "perp_volume_usd": 304170.08012,
+          "open_interest_usd": 2855854.344
+        },
+        "Gate": {
+          "perp_volume_usd": 955275.0,
+          "open_interest_usd": 1973902.1832000003
+        },
+        "MEXC": {
+          "perp_volume_usd": 212218.9696,
+          "open_interest_usd": 793726.1195
+        },
+        "Binance": {
+          "perp_volume_usd": 7077717.46687,
+          "open_interest_usd": 6554142.74655
+        },
+        "Bybit": {
+          "perp_volume_usd": 1308023.872,
+          "open_interest_usd": 2640493.7
+        }
+      }
+    },
+    {
+      "symbol": "TWT",
+      "name": "Trust Wallet Token",
+      "rank": 137,
+      "market_cap_usd": 163259333.54784864,
+      "exchanges": {
+        "Gate": {
+          "perp_volume_usd": 51921.0,
+          "open_interest_usd": 79066.6518
+        },
+        "MEXC": {
+          "perp_volume_usd": 182015.2253,
+          "open_interest_usd": 7675003.446
+        },
+        "Binance": {
+          "perp_volume_usd": 913771.528,
+          "open_interest_usd": 2287372.248
+        },
+        "Bybit": {
+          "perp_volume_usd": 561927.0755,
+          "open_interest_usd": 3177181.28
+        }
+      }
+    },
+    {
+      "symbol": "TRAC",
+      "name": "OriginTrail",
+      "rank": 138,
+      "market_cap_usd": 162772763.4959328,
+      "exchanges": {}
+    },
+    {
+      "symbol": "SYRUP",
+      "name": "Maple Finance",
+      "rank": 139,
+      "market_cap_usd": 158990514.93006384,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 538051.7349999998,
+          "open_interest_usd": 3406507.56374
+        },
+        "OKX": {
+          "perp_volume_usd": 1252736.264,
+          "open_interest_usd": 852614.945
+        },
+        "Bitget": {
+          "perp_volume_usd": 279640.358,
+          "open_interest_usd": 607961.9624
+        },
+        "Gate": {
+          "perp_volume_usd": 98864.0,
+          "open_interest_usd": 268228.92799999996
+        },
+        "MEXC": {
+          "perp_volume_usd": 160000.316,
+          "open_interest_usd": 707783.734
+        },
+        "Binance": {
+          "perp_volume_usd": 3641137.16322,
+          "open_interest_usd": 5708842.93976
+        },
+        "Bybit": {
+          "perp_volume_usd": 453258.8842,
+          "open_interest_usd": 1576398.6
+        }
+      }
+    },
+    {
+      "symbol": "IOTA",
+      "name": "IOTA",
+      "rank": 140,
+      "market_cap_usd": 158771982.59555167,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 260619.391292,
+          "open_interest_usd": 895112.2163960001
+        },
+        "OKX": {
+          "perp_volume_usd": 559488.1928,
+          "open_interest_usd": 408599.1227
+        },
+        "Bitget": {
+          "perp_volume_usd": 236618.714361,
+          "open_interest_usd": 1291706.1931409999
+        },
+        "Gate": {
+          "perp_volume_usd": 128747.0,
+          "open_interest_usd": 462989.31184000004
+        },
+        "MEXC": {
+          "perp_volume_usd": 169476.44321,
+          "open_interest_usd": 216293.19415999998
+        },
+        "Binance": {
+          "perp_volume_usd": 3164109.758931,
+          "open_interest_usd": 2071998.144993
+        },
+        "Bybit": {
+          "perp_volume_usd": 721467.9965,
+          "open_interest_usd": 1630501.35
+        }
+      }
+    },
+    {
+      "symbol": "CAP",
+      "name": "Cap",
+      "rank": 141,
+      "market_cap_usd": 157538972.19054946,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 28030774.38,
+          "open_interest_usd": 6240706.948
+        },
+        "Bitget": {
+          "perp_volume_usd": 2111851.60939,
+          "open_interest_usd": 2785298.4915299998
+        },
+        "Gate": {
+          "perp_volume_usd": 2508874.0,
+          "open_interest_usd": 1402303.1400000001
+        },
+        "MEXC": {
+          "perp_volume_usd": 519590.7726,
+          "open_interest_usd": 349074.735
+        },
+        "Binance": {
+          "perp_volume_usd": 23257453.78133,
+          "open_interest_usd": 27902927.00305
+        },
+        "Bybit": {
+          "perp_volume_usd": 7789148.7235,
+          "open_interest_usd": 9897390.8
+        }
+      }
+    },
+    {
+      "symbol": "EIGEN",
+      "name": "EigenCloud",
+      "rank": 142,
+      "market_cap_usd": 157831842.1663895,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 379119.0177329999,
+          "open_interest_usd": 1706989.0518119996
+        },
+        "OKX": {
+          "perp_volume_usd": 2248016.7632999998,
+          "open_interest_usd": 1174083.4248
+        },
+        "Bitget": {
+          "perp_volume_usd": 573206.8057,
+          "open_interest_usd": 1313700.5491000002
+        },
+        "Gate": {
+          "perp_volume_usd": 412385.0,
+          "open_interest_usd": 405973.52
+        },
+        "MEXC": {
+          "perp_volume_usd": 1127590.2787,
+          "open_interest_usd": 2979922.8063
+        },
+        "Binance": {
+          "perp_volume_usd": 7878782.6187,
+          "open_interest_usd": 4073849.252
+        },
+        "Bybit": {
+          "perp_volume_usd": 2012113.4418,
+          "open_interest_usd": 4095034.05
+        }
+      }
+    },
+    {
+      "symbol": "WIF",
+      "name": "dogwifhat",
+      "rank": 143,
+      "market_cap_usd": 154212640.89503077,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 1308508.23899,
+          "open_interest_usd": 3502629.3973
+        },
+        "OKX": {
+          "perp_volume_usd": 4898948.567,
+          "open_interest_usd": 3378262.4617999997
+        },
+        "Bitget": {
+          "perp_volume_usd": 2640094.92672,
+          "open_interest_usd": 3730618.4952399996
+        },
+        "Gate": {
+          "perp_volume_usd": 1867594.0,
+          "open_interest_usd": 934803.5242
+        },
+        "MEXC": {
+          "perp_volume_usd": 1891291.819,
+          "open_interest_usd": 12278526.795999998
+        },
+        "Binance": {
+          "perp_volume_usd": 11129208.26241,
+          "open_interest_usd": 10370123.86512
+        },
+        "Bybit": {
+          "perp_volume_usd": 7628472.5514,
+          "open_interest_usd": 8866074.61
+        }
+      }
+    },
+    {
+      "symbol": "GOMINING",
+      "name": "GoМining",
+      "rank": 144,
+      "market_cap_usd": 152252499.0259497,
+      "exchanges": {}
+    },
+    {
+      "symbol": "SOON",
+      "name": "SOON",
+      "rank": 145,
+      "market_cap_usd": 148331052.27827668,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 2526903.2192,
+          "open_interest_usd": 2490269.0752000003
+        },
+        "Bitget": {
+          "perp_volume_usd": 377757.8272,
+          "open_interest_usd": 7529107.2038
+        },
+        "Gate": {
+          "perp_volume_usd": 797331.0,
+          "open_interest_usd": 2633020.254
+        },
+        "Binance": {
+          "perp_volume_usd": 3428553.2083,
+          "open_interest_usd": 10837539.8028
+        },
+        "Bybit": {
+          "perp_volume_usd": 1344036.6268,
+          "open_interest_usd": 4009824.9
+        }
+      }
+    },
+    {
+      "symbol": "MANA",
+      "name": "Decentraland",
+      "rank": 146,
+      "market_cap_usd": 140199954.53531575,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 950538.0333,
+          "open_interest_usd": 561250.324
+        },
+        "Bitget": {
+          "perp_volume_usd": 389986.326192,
+          "open_interest_usd": 1443368.010816
+        },
+        "Gate": {
+          "perp_volume_usd": 60752.0,
+          "open_interest_usd": 171705.84923999998
+        },
+        "MEXC": {
+          "perp_volume_usd": 204977.78299,
+          "open_interest_usd": 2534517.7249
+        },
+        "Binance": {
+          "perp_volume_usd": 4524374.08867,
+          "open_interest_usd": 2903163.70904
+        },
+        "Bybit": {
+          "perp_volume_usd": 1112991.0588,
+          "open_interest_usd": 2153812.95
+        }
+      }
+    },
+    {
+      "symbol": "AXS",
+      "name": "Axie Infinity",
+      "rank": 147,
+      "market_cap_usd": 140021433.48176277,
+      "exchanges": {
+        "Hyperliquid": {
+          "perp_volume_usd": 139179.631961,
+          "open_interest_usd": 249958.2816
+        },
+        "OKX": {
+          "perp_volume_usd": 1217650.01688,
+          "open_interest_usd": 1071329.56656
+        },
+        "Bitget": {
+          "perp_volume_usd": 472744.6254,
+          "open_interest_usd": 2118423.7074
+        },
+        "Gate": {
+          "perp_volume_usd": 138523.0,
+          "open_interest_usd": 854524.6764000001
+        },
+        "MEXC": {
+          "perp_volume_usd": 400518.7347,
+          "open_interest_usd": 897789.4825
+        },
+        "Binance": {
+          "perp_volume_usd": 5119751.5497,
+          "open_interest_usd": 4037419.4
+        },
+        "Bybit": {
+          "perp_volume_usd": 1768774.5425,
+          "open_interest_usd": 1368454.19
+        }
+      }
+    },
+    {
+      "symbol": "THETA",
+      "name": "Theta Network",
+      "rank": 148,
+      "market_cap_usd": 138096836.4782601,
+      "exchanges": {
+        "OKX": {
+          "perp_volume_usd": 636972.4400000001,
+          "open_interest_usd": 391096.7142
+        },
+        "Bitget": {
+          "perp_volume_usd": 310028.5615,
+          "open_interest_usd": 750011.504
+        },
+        "Gate": {
+          "perp_volume_usd": 337021.0,
+          "open_interest_usd": 197574.146
+        },
+        "MEXC": {
+          "perp_volume_usd": 324950.9903,
+          "open_interest_usd": 790430.7420000001
+        },
+        "Binance": {
+          "perp_volume_usd": 2791428.4385,
+          "open_interest_usd": 1794649.0692000003
+        },
+        "Bybit": {
+          "perp_volume_usd": 1459103.0167,
+          "open_interest_usd": 1618564.76
+        }
+      }
+    },
+    {
+      "symbol": "TEL",
+      "name": "Telcoin",
+      "rank": 149,
+      "market_cap_usd": 135577570.83436203,
+      "exchanges": {}
+    },
+    {
+      "symbol": "MX",
+      "name": "MX Token",
+      "rank": 150,
+      "market_cap_usd": 132380329.87241322,
+      "exchanges": {
+        "MEXC": {
+          "perp_volume_usd": 0.0,
+          "open_interest_usd": 0.0
+        }
+      }
+    }
+  ]
+}
